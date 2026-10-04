@@ -1,0 +1,23 @@
+{
+  "backbone": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "precision": "nf4",
+  "lora_rank": 8,
+  "lora_targets": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj"
+  ],
+  "max_candidates": 160,
+  "max_tokens": 4096,
+  "updates": 100,
+  "accumulation": 1,
+  "learning_rate": 0.0001,
+  "brier_weight": 0.1,
+  "kl_beta": 0.05,
+  "save_every": 100,
+  "purpose": "same-size precision control: 4B NF4 versus 4B BF16, identical 100-update exposure",
+  "prompt_version": "myjev-qwen-chat-v2",
+  "nonquantized_dtype": "fp32"
+}

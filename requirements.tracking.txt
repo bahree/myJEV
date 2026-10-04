@@ -1,0 +1,2 @@
+# Optional SDK; reference inference requirements remain unchanged.
+wandb==0.30.0

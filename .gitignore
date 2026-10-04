@@ -1,0 +1,27 @@
+# Python and build outputs
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.coverage
+htmlcov/
+# Local environments and credentials
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.*
+secrets.*
+# Downloaded data and model artifacts
+.cache/
+data/
+artifacts/
+checkpoints/
+*.pt
+*.safetensors
+*.joblib

@@ -1,0 +1,8 @@
+{
+  "started_utc": "2026-10-04T20:59:46.870476+00:00",
+  "interval_seconds": 5,
+  "duration_seconds": 7200,
+  "scope": "Device-wide samples during concurrent study jobs; not per-run GPU efficiency or isolated latency.",
+  "stopped_utc": "2026-10-04T22:08:49.941271+00:00",
+  "stop_reason": "Operator stopped telemetry after all three study runners completed successfully; final device snapshot saved separately."
+}

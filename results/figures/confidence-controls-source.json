@@ -1,0 +1,218 @@
+[
+  {
+    "size": "0.8b",
+    "seed": 11,
+    "control": "scalar",
+    "brier": 0.4077160581059372
+  },
+  {
+    "size": "0.8b",
+    "seed": 11,
+    "control": "policy",
+    "brier": 0.44521013111754326
+  },
+  {
+    "size": "0.8b",
+    "seed": 11,
+    "control": "temperature",
+    "brier": 0.19593363028129368
+  },
+  {
+    "size": "0.8b",
+    "seed": 11,
+    "control": "constant",
+    "brier": 0.2451934814453125
+  },
+  {
+    "size": "0.8b",
+    "seed": 22,
+    "control": "scalar",
+    "brier": 0.36907952796280385
+  },
+  {
+    "size": "0.8b",
+    "seed": 22,
+    "control": "policy",
+    "brier": 0.49822877838691404
+  },
+  {
+    "size": "0.8b",
+    "seed": 22,
+    "control": "temperature",
+    "brier": 0.18872940650490555
+  },
+  {
+    "size": "0.8b",
+    "seed": 22,
+    "control": "constant",
+    "brier": 0.24267578125
+  },
+  {
+    "size": "0.8b",
+    "seed": 33,
+    "control": "scalar",
+    "brier": 0.44735782523414713
+  },
+  {
+    "size": "0.8b",
+    "seed": 33,
+    "control": "policy",
+    "brier": 0.4231846849548952
+  },
+  {
+    "size": "0.8b",
+    "seed": 33,
+    "control": "temperature",
+    "brier": 0.23510462965396006
+  },
+  {
+    "size": "0.8b",
+    "seed": 33,
+    "control": "constant",
+    "brier": 0.2497406005859375
+  },
+  {
+    "size": "4b",
+    "seed": 11,
+    "control": "scalar",
+    "brier": 0.3195991953655403
+  },
+  {
+    "size": "4b",
+    "seed": 11,
+    "control": "policy",
+    "brier": 0.4584697973087722
+  },
+  {
+    "size": "4b",
+    "seed": 11,
+    "control": "temperature",
+    "brier": 0.1457917871524799
+  },
+  {
+    "size": "4b",
+    "seed": 11,
+    "control": "constant",
+    "brier": 0.2191009521484375
+  },
+  {
+    "size": "4b",
+    "seed": 22,
+    "control": "scalar",
+    "brier": 0.2529152754996823
+  },
+  {
+    "size": "4b",
+    "seed": 22,
+    "control": "policy",
+    "brier": 0.7065814549943756
+  },
+  {
+    "size": "4b",
+    "seed": 22,
+    "control": "temperature",
+    "brier": 0.14975215742690412
+  },
+  {
+    "size": "4b",
+    "seed": 22,
+    "control": "constant",
+    "brier": 0.1947784423828125
+  },
+  {
+    "size": "4b",
+    "seed": 33,
+    "control": "scalar",
+    "brier": 0.2548642867580245
+  },
+  {
+    "size": "4b",
+    "seed": 33,
+    "control": "policy",
+    "brier": 0.649859621356971
+  },
+  {
+    "size": "4b",
+    "seed": 33,
+    "control": "temperature",
+    "brier": 0.14764364154809062
+  },
+  {
+    "size": "4b",
+    "seed": 33,
+    "control": "constant",
+    "brier": 0.193603515625
+  },
+  {
+    "size": "9b",
+    "seed": 11,
+    "control": "scalar",
+    "brier": 0.2702689059673341
+  },
+  {
+    "size": "9b",
+    "seed": 11,
+    "control": "policy",
+    "brier": 0.7134580867235742
+  },
+  {
+    "size": "9b",
+    "seed": 11,
+    "control": "temperature",
+    "brier": 0.14451515225168976
+  },
+  {
+    "size": "9b",
+    "seed": 11,
+    "control": "constant",
+    "brier": 0.1988067626953125
+  },
+  {
+    "size": "9b",
+    "seed": 22,
+    "control": "scalar",
+    "brier": 0.2187537645186315
+  },
+  {
+    "size": "9b",
+    "seed": 22,
+    "control": "policy",
+    "brier": 0.6420078499549196
+  },
+  {
+    "size": "9b",
+    "seed": 22,
+    "control": "temperature",
+    "brier": 0.13641560831708324
+  },
+  {
+    "size": "9b",
+    "seed": 22,
+    "control": "constant",
+    "brier": 0.1746063232421875
+  },
+  {
+    "size": "9b",
+    "seed": 33,
+    "control": "scalar",
+    "brier": 0.24913252582412845
+  },
+  {
+    "size": "9b",
+    "seed": 33,
+    "control": "policy",
+    "brier": 0.65291101158895
+  },
+  {
+    "size": "9b",
+    "seed": 33,
+    "control": "temperature",
+    "brier": 0.13965263504116276
+  },
+  {
+    "size": "9b",
+    "seed": 33,
+    "control": "constant",
+    "brier": 0.1898193359375
+  }
+]

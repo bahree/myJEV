@@ -1,0 +1,86 @@
+[
+  {
+    "size": "0.8b",
+    "method": "sft",
+    "accuracy_mean": 0.5130208333333334,
+    "accuracy_seed_sd": 0.05876710466873312,
+    "policy_brier_mean": 0.3309364663856702
+  },
+  {
+    "size": "0.8b",
+    "method": "continued_sft",
+    "accuracy_mean": 0.5729166666666666,
+    "accuracy_seed_sd": 0.039127550003428956,
+    "policy_brier_mean": 0.4555411981531175
+  },
+  {
+    "size": "0.8b",
+    "method": "exact",
+    "accuracy_mean": 0.5572916666666666,
+    "accuracy_seed_sd": 0.04103112306403315,
+    "policy_brier_mean": 0.2717676716565894
+  },
+  {
+    "size": "0.8b",
+    "method": "sampled",
+    "accuracy_mean": 0.4752604166666667,
+    "accuracy_seed_sd": 0.023867581744561668,
+    "policy_brier_mean": 0.2537105517773111
+  },
+  {
+    "size": "4b",
+    "method": "sft",
+    "accuracy_mean": 0.70703125,
+    "accuracy_seed_sd": 0.0,
+    "policy_brier_mean": 0.5075887963551153
+  },
+  {
+    "size": "4b",
+    "method": "continued_sft",
+    "accuracy_mean": 0.71875,
+    "accuracy_seed_sd": 0.03726325005534944,
+    "policy_brier_mean": 0.6049702912200395
+  },
+  {
+    "size": "4b",
+    "method": "exact",
+    "accuracy_mean": 0.7161458333333334,
+    "accuracy_seed_sd": 0.036295207981162377,
+    "policy_brier_mean": 0.20402212498203717
+  },
+  {
+    "size": "4b",
+    "method": "sampled",
+    "accuracy_mean": 0.6940104166666666,
+    "accuracy_seed_sd": 0.036295207981162377,
+    "policy_brier_mean": 0.21392890580965473
+  },
+  {
+    "size": "9b",
+    "method": "sft",
+    "accuracy_mean": 0.7369791666666666,
+    "accuracy_seed_sd": 0.03544442080420885,
+    "policy_brier_mean": 0.562596378232338
+  },
+  {
+    "size": "9b",
+    "method": "continued_sft",
+    "accuracy_mean": 0.75,
+    "accuracy_seed_sd": 0.02561499423555469,
+    "policy_brier_mean": 0.6694589827558146
+  },
+  {
+    "size": "9b",
+    "method": "exact",
+    "accuracy_mean": 0.7213541666666666,
+    "accuracy_seed_sd": 0.02004531812283939,
+    "policy_brier_mean": 0.19644783195440452
+  },
+  {
+    "size": "9b",
+    "method": "sampled",
+    "accuracy_mean": 0.6966145833333334,
+    "accuracy_seed_sd": 0.023545756927116045,
+    "policy_brier_mean": 0.21318704025780502
+  }
+]

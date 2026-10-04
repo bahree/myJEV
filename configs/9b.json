@@ -1,0 +1,23 @@
+{
+  "backbone": "Qwen/Qwen3.5-9B",
+  "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "precision": "nf4",
+  "lora_rank": 8,
+  "lora_targets": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj"
+  ],
+  "max_candidates": 160,
+  "max_tokens": 4096,
+  "updates": 100,
+  "accumulation": 1,
+  "learning_rate": 0.0001,
+  "brier_weight": 0.1,
+  "kl_beta": 0.05,
+  "save_every": 100,
+  "purpose": "100-update feasibility pilot; not a final matched comparison",
+  "prompt_version": "myjev-qwen-chat-v2",
+  "nonquantized_dtype": "fp32"
+}

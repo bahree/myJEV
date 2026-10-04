@@ -1,0 +1,2 @@
+# Optional generalist comparison; install after requirements.lock without resolving its broad dependencies.
+gliclass==0.1.20

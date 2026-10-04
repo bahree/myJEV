@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "myjev"
+version = "0.1.0"
+description = "Single-pass decision research and inference"
+requires-python = ">=3.11"
+dependencies = ["torch", "transformers", "peft", "huggingface-hub", "safetensors", "numpy", "scikit-learn", "fastapi", "uvicorn", "httpx"]
+
+[project.optional-dependencies]
+research = ["datasets", "matplotlib", "bitsandbytes"]
+tracking = ["wandb==0.30.0"]
+test = ["pytest"]
+
+[project.scripts]
+myjev = "myjev.cli:main"
+myjev-train = "myjev.train:main"
+myjev-evaluate = "myjev.evaluate:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

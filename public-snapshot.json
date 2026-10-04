@@ -1,0 +1,2378 @@
+{
+  "schema_version": 1,
+  "milestone": "inference-pilot",
+  "files": {
+    ".dockerignore": {
+      "sha256": "d1b2ebc8dd74f78dddb201e2debce0ba49e5d5df68c2dbc9a4b3b0468aa5edb9",
+      "mode": "100644"
+    },
+    ".gitignore": {
+      "sha256": "5d8140798ee712190a9d7cc4c8695de7cb6427e858dc8a805866c3b699881d60",
+      "mode": "100644"
+    },
+    "CHANGELOG.md": {
+      "sha256": "32ea768685b0861e89c8206afcb17a2f9109d309142c17dcd89214784f66b07b",
+      "mode": "100644"
+    },
+    "Dockerfile": {
+      "sha256": "11948809e50cfac88c198ce64c6d1576c9dd5be290f8767e4f4547f34ebd72ee",
+      "mode": "100644"
+    },
+    "README.md": {
+      "sha256": "41aeced61a940b594367cd39e99c00e9da5d6ef634310bbe39f44ef9064e3dbe",
+      "mode": "100644"
+    },
+    "configs/0.8b.json": {
+      "sha256": "3345eac1a617153662efc86503d0fc473da2e2b16911fb0e18021cc3771c7be6",
+      "mode": "100644"
+    },
+    "configs/4b-nf4.json": {
+      "sha256": "85936b81a7cd8264a2843b99b2788496c9c4b666e2f6ccc462b83415466ddde4",
+      "mode": "100644"
+    },
+    "configs/4b.json": {
+      "sha256": "f1f6bf06f58041ccd2e16ceba2fe13d6cad1c361b25f97930f9c550727227844",
+      "mode": "100644"
+    },
+    "configs/9b.json": {
+      "sha256": "65a2befb9a87454211e28017b3f17d909c3e364497cb01dc687826132093204b",
+      "mode": "100644"
+    },
+    "deploy/compose.yaml": {
+      "sha256": "1c1d7265fafdb005c2d0c356d4477c29a7fb49f2efe5f862d61373373f1696e7",
+      "mode": "100644"
+    },
+    "docs/README.md": {
+      "sha256": "7f7a517c9ce51d0902f971fa23a20acb341d220cd7cf207f954d0a9ef45a8bdc",
+      "mode": "100644"
+    },
+    "docs/architecture.md": {
+      "sha256": "bbb46938c998707d797e0f221cec136f1ce4cc4b20a2c3c5d0342772d19665b2",
+      "mode": "100644"
+    },
+    "docs/attribution.md": {
+      "sha256": "6e71b83c6582529e0d8b8a68006c22add96392d5450982b8193c474fde08f858",
+      "mode": "100644"
+    },
+    "docs/datasets/banking77.md": {
+      "sha256": "0fc9cc232a80a114b23f3e9003c074f8fea074565b99348a59319a5bdf85a5d1",
+      "mode": "100644"
+    },
+    "docs/datasets/clinc150.md": {
+      "sha256": "0b186cdc5f5b6a171e3deee8fd05222ee59374d5f8475738ae4276920412ca1a",
+      "mode": "100644"
+    },
+    "docs/datasets/synthetic.md": {
+      "sha256": "92ef08c587df9f07145ee0964cc11e984aa3097b4f30d501b4760a38ef2eeca6",
+      "mode": "100644"
+    },
+    "docs/experiments.md": {
+      "sha256": "a97b9c3b267e83915a5b0b45446029f992f5f0c5fcad28feb658b74baab154ae",
+      "mode": "100644"
+    },
+    "docs/hosting.md": {
+      "sha256": "031a3d144fe78f3d8379b77842cc23280774c6e36e3ca81c77586dd02788572d",
+      "mode": "100644"
+    },
+    "docs/models.md": {
+      "sha256": "2da526bd63b35994a8c3a03a50c7f447ab79232b199d6bfdd5835786be3309cb",
+      "mode": "100644"
+    },
+    "docs/openjev.md": {
+      "sha256": "6a3aaf49f96ce4d26887dbb637a2b0428be65964665a82620e16d1e050e2e75c",
+      "mode": "100644"
+    },
+    "docs/protocol.md": {
+      "sha256": "920884cde320afff28ff7e5f875ee54c3a9cdacc89ba1fa1a9bbf6e809094821",
+      "mode": "100644"
+    },
+    "docs/quickstart.md": {
+      "sha256": "b6ab76307f696badb491bef09a3cb9512ffe49fe3c9760d5b9b60776684eead6",
+      "mode": "100644"
+    },
+    "docs/roadmap.md": {
+      "sha256": "a058c5669b4d0178074f673603d4b068ec29dfebad9e3a93f3772f7ce393b1e2",
+      "mode": "100644"
+    },
+    "examples/client.py": {
+      "sha256": "7c1c257fd7d8656dbd181d9a239b44c91707ff9732e13474fec815ba456056c7",
+      "mode": "100644"
+    },
+    "examples/request.json": {
+      "sha256": "652783e9dc99e54b3afcfd830a29a07e6546176f3ff2c8ea5083cf67a994b197",
+      "mode": "100644"
+    },
+    "pyproject.toml": {
+      "sha256": "f27139f18bbdd8f93567bdaee23e17b50129afa563bc5a6daafe8ce4d0116b51",
+      "mode": "100644"
+    },
+    "requirements.lock": {
+      "sha256": "45e898b72a73dd62410cb593784a8e6b52118659eab437bf6bef4f59507d1e69",
+      "mode": "100644"
+    },
+    "requirements.research.txt": {
+      "sha256": "1265671b112138b60e8ae9c00c4314b9118ffcf5f6ef3aedb8525b3db39dd290",
+      "mode": "100644"
+    },
+    "requirements.tracking.txt": {
+      "sha256": "6b760643deb45b1904bc2d4a3831b486641878d5f89d73eee6f9725ee5d1624b",
+      "mode": "100644"
+    },
+    "results/artifact-equivalence-4b.json": {
+      "sha256": "a75f05ae64d58461374c5ec951af5ff9041ee4461c94981fee11042b3a0296da",
+      "mode": "100644"
+    },
+    "results/artifact-equivalence-9b.json": {
+      "sha256": "c2a765d65f7063a4b069922931290717f0ff9d0f9ef403419a9de0484f67c6c6",
+      "mode": "100644"
+    },
+    "results/artifact-equivalence.json": {
+      "sha256": "acdee69e0e944ea55dba9678f41525c6f0e5947703fd4ec0f9f10367fc6e3f59",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-0.8b-continued_sft-updates.jsonl": {
+      "sha256": "488382d50928a7a107003af6039a18d95a94f536fbeeb688f0812e43f543f079",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-0.8b-continued_sft.json": {
+      "sha256": "40fd35cb3420e63618e75e09526dc12592e32ba4ec9937324aa708455113946f",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-0.8b-exact-updates.jsonl": {
+      "sha256": "4384a53a0f0733e9b336a88cecb134939bfd58332128bc727c41c57c6eb570d8",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-0.8b-exact.json": {
+      "sha256": "c1ed8bfa32683993f3643ba8c74a1d559db4072fb3bc49e7d70259e8ebae55f0",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-0.8b-exact_correctness-updates.jsonl": {
+      "sha256": "ef5974c09adf85b8ab1e6a6aacbd61ee8c9fdbd2af2ff4b232ee7b694e14deca",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-0.8b-exact_correctness.json": {
+      "sha256": "d24817f5c75454b3ff1ad6ed5833a0dd1c8c94a8d7f7ed450258e21f79e06749",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-0.8b-sampled-updates.jsonl": {
+      "sha256": "8da71affcf26296f6489e2d298d89dda6fa0caaf3877c88feae1c0b72f2ce7e5",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-0.8b-sampled.json": {
+      "sha256": "f11079892061c223f9e0ac92d155c9a960adac92b1bca2c918647323f1dcf603",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-0.8b-sampled_correctness-updates.jsonl": {
+      "sha256": "4e3b70f1d6aeeb27ab95453d731518632a7dde3f0655f6daa24b53145606539c",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-0.8b-sampled_correctness.json": {
+      "sha256": "e1804519ae0abbd245b11ebd75293a75f07cff2cbc4780c8b32bc2834c25ebcf",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-0.8b-sft_brier-updates.jsonl": {
+      "sha256": "a4965a42eb31c959303762c115eb1d2d02d0fb48a0e9934e6dbaf5917de8c826",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-0.8b-sft_brier.json": {
+      "sha256": "1a39aef9db53d4374a251fb4443dcd86acf1ea4a63f9ae9e2743ef95db6cc0ae",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-0.8b-updates.jsonl": {
+      "sha256": "42c68a771b7b0824cd336e616896e3f9d5c7f05aaaa28821c7bc76ff1df390ee",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-0.8b.json": {
+      "sha256": "6bfd66f1b2007614c9b12cf1410e57d35b8d5f296960324b6154e65aa41a017c",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-4b-continued_sft-updates.jsonl": {
+      "sha256": "61c4efd6e4f0688520c8abf6320407eb4c9471988bb31ee6da22bb9ad5a6e839",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-4b-continued_sft.json": {
+      "sha256": "3306a4a1f891dc1a76e0491f0e368528a368666ab2b777957b0b1fc711062795",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-4b-exact-updates.jsonl": {
+      "sha256": "d91c7352c20faa72b3141781c58cff013e47c8644c5b0ba0b4dc0492346ffe9c",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-4b-exact.json": {
+      "sha256": "21f3129c6658af6bb721739551c204a6f7055d46692a513740ec4c8c64ad71ac",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-4b-exact_correctness-updates.jsonl": {
+      "sha256": "b7801dbea59e252cb8a0dfa64053a8186149481732922aa0a4cb715c9f380c22",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-4b-exact_correctness.json": {
+      "sha256": "79ef9a5543e9e2c3f5a1a8e871c4450a38a75a298358f483ac83a9a81c8aebe7",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-4b-nf4-updates.jsonl": {
+      "sha256": "7823aa870d60446a969a887a9d0d713021e307f7794b9461f98b71dd94aedc05",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-4b-nf4.json": {
+      "sha256": "7b51506910e9587b19769608f174f7cddebeb6d5e02bb2541f42902585c8f97f",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-4b-sampled-updates.jsonl": {
+      "sha256": "c02fc1b16b73dfb8a5975ca866fd722147d661bf36de73e4a9ec06f3d433cb3e",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-4b-sampled.json": {
+      "sha256": "89bbb0790afb1c411c24a126bc7668ce40dfb9dd4f765945be6d5fdbc054ad8e",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-4b-sampled_correctness-updates.jsonl": {
+      "sha256": "9ad8b6936a63c4cfb372c7128543b17718854307d74e947eeba9cce98a34e960",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-4b-sampled_correctness.json": {
+      "sha256": "46c98713e662f36c1d5fccc4bf544a1b6589852b88153021b94e658c082a595d",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-4b-sft_brier-updates.jsonl": {
+      "sha256": "e98b866349b85fe6a77f576977a021300163ee37db0d12e1b219b79bd84a7b7c",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-4b-sft_brier.json": {
+      "sha256": "4ef63203a4f835f34648494551d40fd2cfae52048d2cab821411765070ce7222",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-4b-updates.jsonl": {
+      "sha256": "f61d57d3991141b3adff72f1ab737bce3d3780c3ea80c090b40544529c9490f1",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-4b.json": {
+      "sha256": "bba2284569b6bae09e8d82f93f293f7694fc019b11645b2215192bb20ce4b88d",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-9b-continued_sft-updates.jsonl": {
+      "sha256": "d148ea7c751e5b5ee6aa82842841845823c6764b68ed256cd1e53e61df5fec06",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-9b-continued_sft.json": {
+      "sha256": "7457dc9ee10722dcef1a4686826969218572b00f99f2f942fc600608e9607f16",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-9b-exact-updates.jsonl": {
+      "sha256": "af46f3ffa26fd4c75ce7ce2b3589c7eb3b2feaa011d937bb4f8d3670e2e38c45",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-9b-exact.json": {
+      "sha256": "7a860e9dc756e59d7b13c33a7023e6659040c1c612eaea143f47b814ded3bc81",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-9b-exact_correctness-updates.jsonl": {
+      "sha256": "085f9a5ca2618c8c906ac360956f87cffa277e324c375c76bbb096dbc6ec48bd",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-9b-exact_correctness.json": {
+      "sha256": "14f332c69573c691e7ac6a0b09f077c1237086b55e418b7a73eddaca05c5e2f6",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-9b-sampled-updates.jsonl": {
+      "sha256": "4d905e79d9c03c447bee961f074cf4c90a90c958538383eec1089247ea616e38",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-9b-sampled.json": {
+      "sha256": "b4a01b36b42df36440f99a20933433bcfe70627e4558e0516eeabf43c1743919",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-9b-sampled_correctness-updates.jsonl": {
+      "sha256": "6e5c453377b1998e556d64d46b3dabc08b561353248bbdebb13239b73fcf7737",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-9b-sampled_correctness.json": {
+      "sha256": "ebe46502c8e549ecf02caaf6c1f635dd1590d32043c75b9e2fba5b299ac6ddbd",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-9b-sft_brier-updates.jsonl": {
+      "sha256": "62edb790719f0d3d38ec2e44aa62d1a5d511024a2d70a4827722d971c0d379a0",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-9b-sft_brier.json": {
+      "sha256": "8c73eccdab6e1043cec163272ea36ff9c093584f9b68c02de5830963472dd83b",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-9b-updates.jsonl": {
+      "sha256": "ced57ce177fbcb77667932826da3a249cb9607a8522bdbf0e6170a7c957cbab3",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/pilot-9b.json": {
+      "sha256": "b1e830b41e05e0f502fcd639ef7e4892e4d3d4654bebed5aeb153798b1b7cd7d",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-0.8b--seed-22--continued_sft-updates.jsonl": {
+      "sha256": "bb610955498280b1ad7c0fa397747816ad9fbbbc33f14f78fce8dd624abc6297",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-0.8b--seed-22--continued_sft.json": {
+      "sha256": "45926cca8c5c23166b50d4087ec6a42d123a25f44855039f2ff8536bba4a5c07",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-0.8b--seed-22--exact-updates.jsonl": {
+      "sha256": "57309b032a65913bd553b18fecc7bc8ad2e60f3bb5b3867c381d0924685a7856",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-0.8b--seed-22--exact.json": {
+      "sha256": "28abc26396d6b42ec964bdad052b12c71021530bd8b9133aeea7e7af7da927aa",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-0.8b--seed-22--sampled-updates.jsonl": {
+      "sha256": "1a2d1c8b9fa0a1a68f53d0c33404ec35511c85ddec389a06d7abeef0a0614bf5",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-0.8b--seed-22--sampled.json": {
+      "sha256": "57b93c9ba98775c0750cc17bed405aa8376b8fefd6b47f39da6e1288c1707158",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-0.8b--seed-22--sft-updates.jsonl": {
+      "sha256": "0e07cc1ae96ca607200614a91cdb3be3b10916d0112b81572b762ef8d28e6144",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-0.8b--seed-22--sft.json": {
+      "sha256": "a807902d49bf791ec1dfd7131d340bc10f710e0c2048dbd146eb346ff07d54eb",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-0.8b--seed-33--continued_sft-updates.jsonl": {
+      "sha256": "4f0c9258a5ba6438cbad97d3cac8ac94608aa222f1e408bc04340b56676b06d7",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-0.8b--seed-33--continued_sft.json": {
+      "sha256": "d3f272e28456c0401cce78c7f361bf494c507fb8e7612e99748efa009f774b5a",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-0.8b--seed-33--exact-updates.jsonl": {
+      "sha256": "0f39e18fcc054a3de63ecc422a1443742557816b0519a964ad983e985b7f13bc",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-0.8b--seed-33--exact.json": {
+      "sha256": "05dcdebf9e0fd3d04c3dbfffe9ac42d75fd9ff05dda03ab08b0c359ba096b99c",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-0.8b--seed-33--sampled-updates.jsonl": {
+      "sha256": "e8d31a626ea67041b6bc6ddbe45a29ae8f639c470898a8464f9d960ca6cc58c9",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-0.8b--seed-33--sampled.json": {
+      "sha256": "daec50637c84be811803d82bf2e855f0797c816f29a7879bdef21bb0b15303db",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-0.8b--seed-33--sft-updates.jsonl": {
+      "sha256": "0f6f0729a04bd6393e742b7d1292f7ba2122626c5c4ac083dbdd84eb36f28be4",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-0.8b--seed-33--sft.json": {
+      "sha256": "d7e9deb1c70381f3b8ae8739bfe516bea5f4d2b5ed40398c3fbfb0ac54fb6c21",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-4b--seed-22--continued_sft-updates.jsonl": {
+      "sha256": "7f4ccb06c8aedf1992e2a601ae5a965191bf827483e3e8bc92975a51ec586108",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-4b--seed-22--continued_sft.json": {
+      "sha256": "972897b99c45650c43700dc62501a26eaf0593f79fe3d468816b3365546f72b0",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-4b--seed-22--exact-updates.jsonl": {
+      "sha256": "5a2b2a7b6eac5dbb2fe2c0e4379449babb20e0a2081e47a6f5738293ddea46df",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-4b--seed-22--exact.json": {
+      "sha256": "9896b6bcc4d60950bf9108570fa27ea5f5e01f398e0a1400b72027db3d030dc0",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-4b--seed-22--sampled-updates.jsonl": {
+      "sha256": "dc856dcf4fd3832b8781970ae08c5c3573b66ab207d3799447a2e3db6bbcab09",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-4b--seed-22--sampled.json": {
+      "sha256": "b616083634febec14944cebc2c0f99e9bd374092d9c85909a5686dec42cded52",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-4b--seed-22--sft-updates.jsonl": {
+      "sha256": "81f9800ec4ef035e3e10319cae3c6651d18b03540fad8311fc447b7b4fe9f4b3",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-4b--seed-22--sft.json": {
+      "sha256": "0073fb62f92b426f047d8153d7f52dd533e3b9375f4ef60bb612f38ae6381859",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-4b--seed-33--continued_sft-updates.jsonl": {
+      "sha256": "c354b05da4188da0c0c8709b506d7e1bebc5b4ee7640d454752bed0769db2272",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-4b--seed-33--continued_sft.json": {
+      "sha256": "b0f7c75432a2f1f4c678413cd9ef5c5db38d3c8d59f1bc4e38273700cc479d0c",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-4b--seed-33--exact-updates.jsonl": {
+      "sha256": "ae809d5de6f3f3ca127d3d8f734da19ee964c01a4cbe28a1750552e63e147d47",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-4b--seed-33--exact.json": {
+      "sha256": "61059029082b85ccce2fd4a1111861d7846655438011848d17db6a9e8f0b4b38",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-4b--seed-33--sampled-updates.jsonl": {
+      "sha256": "fe8d1af322ac160d08ba17ebc5ec628d8e5c31107a1842002f4509422fb56c46",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-4b--seed-33--sampled.json": {
+      "sha256": "a57521cd199dd2e85df7f42d82690f935eba0de7f2de6d0373666df9fa50df12",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-4b--seed-33--sft-updates.jsonl": {
+      "sha256": "1a9ab31b60a83ec15ce869394019213a60a2651e3ebcebcbbfd2595e59ba9a1a",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-4b--seed-33--sft.json": {
+      "sha256": "c384b4d57179b342a456a036e6d151e1fab1503bc8f0ad9dfa104371ed415c72",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-9b--seed-22--continued_sft-updates.jsonl": {
+      "sha256": "f154f12650ad74d514a7723756e3026c6871c4bede592d705d6365470bed3a1c",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-9b--seed-22--continued_sft.json": {
+      "sha256": "222cc98f3323eba26da493e5ea54e0a1d17ad34b0acd72813727fa81861cdb96",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-9b--seed-22--exact-updates.jsonl": {
+      "sha256": "9298ac858704a2c246a0666021a6816783cb6c17b787f82b67b9bc6eb1355950",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-9b--seed-22--exact.json": {
+      "sha256": "ba05b60259de7f6eafea053d3dc9b7e58ad678520394f7cc995b99f557984d4a",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-9b--seed-22--sampled-updates.jsonl": {
+      "sha256": "2aec773f3e50ec80924f46aeab6ec96d1afd2aa99fb07f21742235c8acee8f17",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-9b--seed-22--sampled.json": {
+      "sha256": "9a1c8f1fb5808d27ca626c3045a10728aeecb81c77226746e1fadb5c21c6feb3",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-9b--seed-22--sft-updates.jsonl": {
+      "sha256": "3f2aceb041484fb80716c42f257467ac221a2f5b2213647e1709d9154c1f1b20",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-9b--seed-22--sft.json": {
+      "sha256": "6a6a65370a37f690cbd757d2a4047df89b10ebfdbdc16ad3e5ee7b995e38e4ac",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-9b--seed-33--continued_sft-updates.jsonl": {
+      "sha256": "e4410a26b98970604654f1072485350502431420da30c10231b7bd3c49732efb",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-9b--seed-33--continued_sft.json": {
+      "sha256": "0aaaeafbc75c4ce4a01a972f60656bb8635ea8cffb5d2bb217940c387713fb97",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-9b--seed-33--exact-updates.jsonl": {
+      "sha256": "89be4e94e6454ba4a2e044fb1908d4d0881c6df1791e17a8c42ae3111164068e",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-9b--seed-33--exact.json": {
+      "sha256": "a827b41236159caa68b7a55a9abbf72f6016b2cc4495b85130c51abf933395aa",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-9b--seed-33--sampled-updates.jsonl": {
+      "sha256": "c940be43ddf20b251b01eff7adfd1710e4320bd8396fd305b7c60956516fff01",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-9b--seed-33--sampled.json": {
+      "sha256": "dc67505800b1dab473fc171485081f144252a6b565edfc67434336e6b6610b56",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-9b--seed-33--sft-updates.jsonl": {
+      "sha256": "1d413941367e85033b69241d1272acb4bb1f50085b854125cb973f404d456314",
+      "mode": "100644"
+    },
+    "results/artifact-manifests/three-seed-9b--seed-33--sft.json": {
+      "sha256": "264157980588f2f85dadd7718a6831edbed51c94490d18d6df3bcaaf43b2b28f",
+      "mode": "100644"
+    },
+    "results/data-preparation.json": {
+      "sha256": "487c214a078219bd4397861b8e8918af70f1840ddb6f9f0f4fd69dbc9870ee60",
+      "mode": "100644"
+    },
+    "results/docker-size-validation/0.8b/equivalence.json": {
+      "sha256": "6be624ea13059519057c10ded4233cc05d9f934ddfab1289ceab997ed471b0d8",
+      "mode": "100644"
+    },
+    "results/docker-size-validation/0.8b/http-c1.json": {
+      "sha256": "8ef485daa18e606427d984b1e478f5c0f053f5083537b751603e688339739864",
+      "mode": "100644"
+    },
+    "results/docker-size-validation/0.8b/http-c4.json": {
+      "sha256": "830bd78ac52f4d10987bafdc1932c11e66ecd2482015d543efa1c0cd208d67f3",
+      "mode": "100644"
+    },
+    "results/docker-size-validation/4b/equivalence.json": {
+      "sha256": "182811bf70ef9453f61c1d7fbb4656dba3b0cfe3da77da5dec17a9fa3acdb063",
+      "mode": "100644"
+    },
+    "results/docker-size-validation/4b/http-c1.json": {
+      "sha256": "31a46fc8e733b560bfafd8d330a6fe2fe2c60aa5fdd1f94de854298ca5fedfec",
+      "mode": "100644"
+    },
+    "results/docker-size-validation/4b/http-c4.json": {
+      "sha256": "3f32a7f98e666ebd4e77d7ce38986f6acdf762b0723ea41a7a33938ec18795d8",
+      "mode": "100644"
+    },
+    "results/docker-size-validation/9b/equivalence.json": {
+      "sha256": "db61f4b802c639b26db557c6d04071c48a15691eae5d830f24ec2bda2730fb0d",
+      "mode": "100644"
+    },
+    "results/docker-size-validation/9b/http-c1.json": {
+      "sha256": "2138ed0be420e4bc537ee67c5b3f1e2ceef90a26b1963e336ba7680049227df1",
+      "mode": "100644"
+    },
+    "results/docker-size-validation/9b/http-c4.json": {
+      "sha256": "5bceedcff6550509bb41902183a06d3a9d0ebee2e5eca214ac333139f434b191",
+      "mode": "100644"
+    },
+    "results/docker-size-validation/environment.json": {
+      "sha256": "f9a3e9b074de27dd7026cab2306d4f2ce0f3be5bf01098c382927ae2661f1a96",
+      "mode": "100644"
+    },
+    "results/docker-size-validation/summary.json": {
+      "sha256": "1afa760f11c74cfd6ba1968642f5a4aaf49d4aa7af74c72c00756131e068f366",
+      "mode": "100644"
+    },
+    "results/figures/confidence-controls-source.json": {
+      "sha256": "51375f6423108f4b0ff31d140ea1c39f9da2dbd43561f140a1b5d2a4addfa1f5",
+      "mode": "100644"
+    },
+    "results/figures/confidence-controls.png": {
+      "sha256": "ab35ebe03f9d6ce8a2da637df8bd5c17e62eaedc63df1b344f241e945963ec92",
+      "mode": "100644"
+    },
+    "results/figures/three-seed-study-source.json": {
+      "sha256": "83a0c5dfdf89ad1e46a8e0cd9fd90610fb1a497928e95440a11ccc5dc27ecb59",
+      "mode": "100644"
+    },
+    "results/figures/three-seed-study.png": {
+      "sha256": "7a6a19228d79b85a3d7f976ddb733e477ad6a06cdc7c8720eb8da19a4bf39f49",
+      "mode": "100644"
+    },
+    "results/final-study-table.json": {
+      "sha256": "9a6259b1ed3e2eee31ff76c81b2183afcbadff0e4ba29c520d4bc7759c155913",
+      "mode": "100644"
+    },
+    "results/gpu-telemetry-20261004T205942Z/gpu-activity.png": {
+      "sha256": "9640a9608bd05553c16209a3cb1c17c75b0a39e0c42f54573393816c1521d919",
+      "mode": "100644"
+    },
+    "results/gpu-telemetry-20261004T205942Z/gpu.csv": {
+      "sha256": "e79e261e7141c47e79202cdf1febeee018eb8d4f23043e630f1133965a79514c",
+      "mode": "100644"
+    },
+    "results/gpu-telemetry-20261004T205942Z/metadata.json": {
+      "sha256": "7d6598b768e9f474891979b434e4491265f133612c2f57f550c7e79f0237be48",
+      "mode": "100644"
+    },
+    "results/gpu-telemetry-20261004T205942Z/nvidia-smi-end.txt": {
+      "sha256": "fad407f1897dc52692949be7fb462da9a78edc6ea5ad6c782354c559dd12da2c",
+      "mode": "100644"
+    },
+    "results/gpu-telemetry-20261004T205942Z/nvidia-smi-start.txt": {
+      "sha256": "311b1ae6156f8e6375a6154f48ad10f8ae1c0167fc1bb15f38018a235b9d3a58",
+      "mode": "100644"
+    },
+    "results/gpu-telemetry-20261004T205942Z/processes.jsonl": {
+      "sha256": "eb134edfedaf315f479e0030f1f3c87a0b3cf05fdb095f06cc40d9ef2a04a24d",
+      "mode": "100644"
+    },
+    "results/limits-0.8b.json": {
+      "sha256": "14481474f25ecf8b18dfc1460aa43d9f0d6911031b066525bf68476e663b2e51",
+      "mode": "100644"
+    },
+    "results/limits-4b.json": {
+      "sha256": "e6462003debdb12421e64bd7ed2a85b5f9f418ab9737dc5be0af8966a7d6fa14",
+      "mode": "100644"
+    },
+    "results/limits-9b.json": {
+      "sha256": "3deb81f37e42736991c581dd04e912ac111d309a367def72bc756b7222e7565e",
+      "mode": "100644"
+    },
+    "results/paired-comparisons.json": {
+      "sha256": "ee40e38f180b2456aca54616c3afe24f954688169cf7507b86007a599924773a",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-continued_sft-evaluation/calibration-predictions.jsonl": {
+      "sha256": "347acee1e4031fff2cb2ad2aca98e651d2e76246813f63fc81d0a8459bddc625",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-continued_sft-evaluation/metrics.json": {
+      "sha256": "a40549809cace96e349da0c98376b3a3b47f5e2a2e1435a877f91e4b8c39de72",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-continued_sft-evaluation/policy-metrics.json": {
+      "sha256": "f57b57c72da402477a1eaa3980db96ef6fbcf872fe208131a554bb088f8da097",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-continued_sft-evaluation/predictions.jsonl": {
+      "sha256": "abfb1a156a32100cf9b39ef72495593e41401ef443e2d5301ce9bf3e4240dcb8",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-continued_sft-evaluation/scalar-metrics.json": {
+      "sha256": "0151d2a794c03f19e01966cb5653ad2aa9abecdfa8e89b3b3be65f00b30ad8b4",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-continued_sft-evaluation/selection-metrics.json": {
+      "sha256": "b700b27fb4d5712cc7f2f50d8ee53ed84c77424130cbee808943620901c54fda",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-continued_sft-posthoc/constant-metrics.json": {
+      "sha256": "0706e622f0047ebaa9c7c85ce3f36cd528e02b97e875ba054d8925f43761cb5f",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-continued_sft-posthoc/constant-predictions.jsonl": {
+      "sha256": "f867cb1c0ae59d542ef9fcd07dc931456467398a4a5f8d88e0ba83ed721db6df",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-continued_sft-posthoc/half-metrics.json": {
+      "sha256": "2d177207d862b62e956c6ff807e9aada789c3ecea019b9b260b5553228e66891",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-continued_sft-posthoc/half-predictions.jsonl": {
+      "sha256": "85c41586ed6e4cdfc87b17eb1c8abdcf30ab8a7db602fdb849fb80818d7ab7f9",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-continued_sft-posthoc/temperature-metrics.json": {
+      "sha256": "800a544fae85e84f49411d864ab6d6bd5a5601fba546852a53ec74913000ba75",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-continued_sft-posthoc/temperature-predictions.jsonl": {
+      "sha256": "129d143697922a0309256fb752712e3084b6dbd659db7b488a685f4853aac5ed",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-exact-evaluation/calibration-predictions.jsonl": {
+      "sha256": "40fcd1608a276d479c4ba08d67bf9019cbc914057deb8f619d8a0f5ea5a839ae",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-exact-evaluation/metrics.json": {
+      "sha256": "ca6225a9b91a3d8dcfd573d3b2b0022d513db8af1278a8fb278c51ec1c0438c2",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-exact-evaluation/policy-metrics.json": {
+      "sha256": "b2795a86e144ba18f74c4ac40a55a20d91a0a5a757a2cf3630ec33545cecb4ac",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-exact-evaluation/predictions.jsonl": {
+      "sha256": "89e8aaf53e1a9be7eb1d0386031477484df64ea1206559d699cc7be097c1edb0",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-exact-evaluation/scalar-metrics.json": {
+      "sha256": "b531a8a6f4978ee2fe052b64bf5fecbd6c80053c80c3f54a9d48e3f574e80386",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-exact-evaluation/selection-metrics.json": {
+      "sha256": "8209c7d670019c0bf70e8498afcde5da69f8cddb874cd2bfe4c60f1a9327e869",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-exact_correctness-evaluation/calibration-predictions.jsonl": {
+      "sha256": "4e4e856faaab295be52f5e75b6bb4699da25ee5f08dd53021c73316ab2a0eae9",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-exact_correctness-evaluation/metrics.json": {
+      "sha256": "c57b4ab2446cd0dbfa806b51d5ef39ecc1863cea6d13d31d80a89cc83b655bb0",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-exact_correctness-evaluation/policy-metrics.json": {
+      "sha256": "7070635069878eb14ac704359ac9e0a7b9debd3e27e297069dbbc4ec8f4db3f8",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-exact_correctness-evaluation/predictions.jsonl": {
+      "sha256": "47bb003e67c79e9c0e955d743fd87a6a4a9fe2ac31f9b97b19ebacdc28c7f8a7",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-exact_correctness-evaluation/scalar-metrics.json": {
+      "sha256": "33c795191c198999cbdefbfad9dc4c3b42e4baa2782a5ffd72600fd4dc7d9328",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-exact_correctness-evaluation/selection-metrics.json": {
+      "sha256": "99125024edc75a25da151b4b7a57e444188ac1d243a6b8fc8ceb3a8c811a3c6a",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sampled-evaluation/calibration-predictions.jsonl": {
+      "sha256": "10e98c2a60fb1ed2c6febecc7978cde8aba538f81dbb8e3125efcddc3cabd0de",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sampled-evaluation/metrics.json": {
+      "sha256": "d3808aa07f2f957122aa838b8b721c3d22e7bdab2044687734dbcabf7ac6beea",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sampled-evaluation/policy-metrics.json": {
+      "sha256": "c89e691e08d4199417d18bc6f33966bdd28dfb963acb0d426f89f55710e3769b",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sampled-evaluation/predictions.jsonl": {
+      "sha256": "3ac052ad2bbb599d194e8d88cf88351620b5ced3c5962294a29c88cec52681a5",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sampled-evaluation/scalar-metrics.json": {
+      "sha256": "45978244d0062c0185ea6264e6bcd27160a6e1cbc08e13de380a2d1c95545e7f",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sampled-evaluation/selection-metrics.json": {
+      "sha256": "157c917edaa26d9170fb182677da6850cd48fb401641a0fdbf00ed05f799603d",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sampled_correctness-evaluation/calibration-predictions.jsonl": {
+      "sha256": "4eb6bda7d358580d824191da903aaa5d3a057dbcec6b9ada03d56e5cdb26cdda",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sampled_correctness-evaluation/metrics.json": {
+      "sha256": "8147cf0d0c436829433a637ad57a13a356c5e46e1e12c161140af5e49efab8a7",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sampled_correctness-evaluation/policy-metrics.json": {
+      "sha256": "5a50d2f24e8d95e8e1bf81773b3b81796c8d45c08475e16030a8ad3f739f2d55",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sampled_correctness-evaluation/predictions.jsonl": {
+      "sha256": "826512bcdd63ab2faa7db55d39bc76a9550459cb75bcd6643265c60b03b7ed0e",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sampled_correctness-evaluation/scalar-metrics.json": {
+      "sha256": "4866dbbea189abd5eba5ea7dc11a60667dca3ee3e774e1997b737ffaaa0383c9",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sampled_correctness-evaluation/selection-metrics.json": {
+      "sha256": "143da00d0e751822eb509821d858facdb4a9d20123ebbcf2134b41f8266bf1e0",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sft-evaluation/calibration-predictions.jsonl": {
+      "sha256": "598d69935bce3abceeac5688e5b03b5678c63c87a0be3eb05e5da1e7425fda85",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sft-evaluation/metrics.json": {
+      "sha256": "aef612bdb6f6c34febe644fa3c703c8ffebd852ddb4dd2c90c8d8ffe086eb2f7",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sft-evaluation/policy-metrics.json": {
+      "sha256": "d52f7736a82fccf8df060d050edb52eaf98ab1241084f09993692d2b123061b8",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sft-evaluation/predictions.jsonl": {
+      "sha256": "ef9b66e40267434e7b7dabad935658f07c7990ee5b42aa08c916abe59ed0dce3",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sft-evaluation/scalar-metrics.json": {
+      "sha256": "2d8b202e0a9e381b05ac2cc1fffc87051688c568c21d398bda7925490dcd1d04",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sft-evaluation/selection-metrics.json": {
+      "sha256": "417423508ceb565a38219a0e4926dceb78b9c87e68bbabceda747494188c0f0e",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sft-posthoc/constant-metrics.json": {
+      "sha256": "ba3ae769670d858080f43ba2e94664221441342ece18d0e244cbe46c32d1659f",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sft-posthoc/constant-predictions.jsonl": {
+      "sha256": "cffec0c169b3f4c9e758ccf5c2a96269ff30e1e896b816ab729c4a99f1ff11a1",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sft-posthoc/half-metrics.json": {
+      "sha256": "3f248db12acae11dbb1bd0c2e1822d7e54bb7707c12a0d9d630e0f002fc9148c",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sft-posthoc/half-predictions.jsonl": {
+      "sha256": "93ac9969adaf70f9ed646f1625aa551a1940a5bb5745b302269c6a77325d433a",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sft-posthoc/temperature-metrics.json": {
+      "sha256": "fbda0a29fc7dcbab60ca55430c86cf1747bd926303154440594802121e8a8d31",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sft-posthoc/temperature-predictions.jsonl": {
+      "sha256": "14b504f3835c930ed29dad2ec8f5bf357058d7317f31ba1148ea89e175e35e1a",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sft_brier-evaluation/calibration-predictions.jsonl": {
+      "sha256": "60f433f07886bfa459de968e27a0f4ce8443f4451cae562d0be7729a731a1039",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sft_brier-evaluation/metrics.json": {
+      "sha256": "da60e420a3b128756d718ff7bfab534269d5f61df422b14faafe480c42a5b38e",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sft_brier-evaluation/policy-metrics.json": {
+      "sha256": "20ffd3204b740d419694b9174bf8042172f3a2a116c9ffa9c06167608fb66725",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sft_brier-evaluation/predictions.jsonl": {
+      "sha256": "e028f0f468a81ba7b59c250621492006423daa913e514df3ec49cf722bf74743",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sft_brier-evaluation/scalar-metrics.json": {
+      "sha256": "b34c5efd8fafd0b3cb6f38356129f7fe2c2cbd2a061c47dec45778041ec5494b",
+      "mode": "100644"
+    },
+    "results/pilot-0.8b-sft_brier-evaluation/selection-metrics.json": {
+      "sha256": "c4b8983731020ea01073c5c46e1ea1baa9aa709731c2032506a2d932e3ef5c85",
+      "mode": "100644"
+    },
+    "results/pilot-4b-continued_sft-evaluation/calibration-predictions.jsonl": {
+      "sha256": "a5c34fecf6eeecf1660be8356dafac31029c94262c98a4c835f7c968666606a8",
+      "mode": "100644"
+    },
+    "results/pilot-4b-continued_sft-evaluation/metrics.json": {
+      "sha256": "c5a8e4b9eb0d7264f2c0dda6f32e8413d1d3fea8e2fe6df798a1fd5335406cf3",
+      "mode": "100644"
+    },
+    "results/pilot-4b-continued_sft-evaluation/policy-metrics.json": {
+      "sha256": "938050d9c8461fce067e0c762ea3bfe9b7a435574301f5a9f99498b77a7370f6",
+      "mode": "100644"
+    },
+    "results/pilot-4b-continued_sft-evaluation/predictions.jsonl": {
+      "sha256": "3eb8532bce79f58715c33a0725097681ee07bfd5bd550b53fbff2c1bd3ca06b9",
+      "mode": "100644"
+    },
+    "results/pilot-4b-continued_sft-evaluation/scalar-metrics.json": {
+      "sha256": "7829fbe017f4edaaefddf46c488f78be60b3642af40aedbca1edfad0ab9cf40f",
+      "mode": "100644"
+    },
+    "results/pilot-4b-continued_sft-evaluation/selection-metrics.json": {
+      "sha256": "4724eafd5f46a070c456e0c6e86bd2765fb692ac6f446756273ac7df8f1bfb8d",
+      "mode": "100644"
+    },
+    "results/pilot-4b-continued_sft-posthoc/constant-metrics.json": {
+      "sha256": "0f6d479d696f0b5ca92ad388fb30b0037ff1f430a5e0cb411cf62c6b33c720ab",
+      "mode": "100644"
+    },
+    "results/pilot-4b-continued_sft-posthoc/constant-predictions.jsonl": {
+      "sha256": "cabb15d28173bdc6a81a885ade7ff0583de446a8722cf003a900ceef7baee419",
+      "mode": "100644"
+    },
+    "results/pilot-4b-continued_sft-posthoc/half-metrics.json": {
+      "sha256": "184e140ad265ef7cd5042f1a0af95f011bd2b47ff7959e97732cbe0aad0a1b25",
+      "mode": "100644"
+    },
+    "results/pilot-4b-continued_sft-posthoc/half-predictions.jsonl": {
+      "sha256": "6e60b935c388554d24804c208e52b4e526ce1e7ac7348266181b3577eb1668f8",
+      "mode": "100644"
+    },
+    "results/pilot-4b-continued_sft-posthoc/temperature-metrics.json": {
+      "sha256": "939b4917a3a12ce305b5ca89188d7202d433d62da66c7c5dd3dce2d317402dc5",
+      "mode": "100644"
+    },
+    "results/pilot-4b-continued_sft-posthoc/temperature-predictions.jsonl": {
+      "sha256": "fb187802f4f57d63b32d460f7f0eeec50d01651040677690316e94faa4325203",
+      "mode": "100644"
+    },
+    "results/pilot-4b-exact-evaluation/calibration-predictions.jsonl": {
+      "sha256": "5a8cdffd878517f713d42afb70af063a573f1f555a822c7645de4ab24b6027f4",
+      "mode": "100644"
+    },
+    "results/pilot-4b-exact-evaluation/metrics.json": {
+      "sha256": "6f6ed81009e92bcba3a35b0cabb0ab1643128c47466cac8c18beefb9514dce4b",
+      "mode": "100644"
+    },
+    "results/pilot-4b-exact-evaluation/policy-metrics.json": {
+      "sha256": "0776bf8902e4368ce581fe3c2e4be85b2d74fe9b6e7f47682eb2e45a006e594f",
+      "mode": "100644"
+    },
+    "results/pilot-4b-exact-evaluation/predictions.jsonl": {
+      "sha256": "d07b54c89c4e93af639f9bb846bf8364ba0d47bcb6ba72ca7b077f67f724d0b7",
+      "mode": "100644"
+    },
+    "results/pilot-4b-exact-evaluation/scalar-metrics.json": {
+      "sha256": "85b2c8b6f4b3bbf3d5f8c11b45e155a80939f89be8e8b81d75bdf33847a1cd2d",
+      "mode": "100644"
+    },
+    "results/pilot-4b-exact-evaluation/selection-metrics.json": {
+      "sha256": "801f21c5a1cc809ef1a50ba8119b70725fece3b419a1a882ba619f28815abe6d",
+      "mode": "100644"
+    },
+    "results/pilot-4b-exact_correctness-evaluation/calibration-predictions.jsonl": {
+      "sha256": "a84fe5a52d27fc42dfaf7697cc321439b8d55eb6ca7e50230fe4c75f1b09bf0a",
+      "mode": "100644"
+    },
+    "results/pilot-4b-exact_correctness-evaluation/metrics.json": {
+      "sha256": "c6f1b927991e3342822616068079ef1fca0716b67e05eb2ea1aaf8ec159efec2",
+      "mode": "100644"
+    },
+    "results/pilot-4b-exact_correctness-evaluation/policy-metrics.json": {
+      "sha256": "7c774e66bfa948c1451ad507ba546281c459eadcf0710bf3e4cd6451b546dcbe",
+      "mode": "100644"
+    },
+    "results/pilot-4b-exact_correctness-evaluation/predictions.jsonl": {
+      "sha256": "a323339aa8d5e1d2f87614747af9e5dd4cace04b66f80061707d4ee97fde3b58",
+      "mode": "100644"
+    },
+    "results/pilot-4b-exact_correctness-evaluation/scalar-metrics.json": {
+      "sha256": "844a72a76d47aa610eb332e91cf9d87dffd784c6111fb3a97275c55ab94c3371",
+      "mode": "100644"
+    },
+    "results/pilot-4b-exact_correctness-evaluation/selection-metrics.json": {
+      "sha256": "65057c3d4f3d0bf5582fab961eb8679b6428b6d6caad3dcdcdd390f60b5ca9c0",
+      "mode": "100644"
+    },
+    "results/pilot-4b-nf4-evaluation/calibration-predictions.jsonl": {
+      "sha256": "adab3976f6f399e192d015d9c365735d680c29977108920f377dffd2f87ba417",
+      "mode": "100644"
+    },
+    "results/pilot-4b-nf4-evaluation/metrics.json": {
+      "sha256": "587739a776c28267c08301d88fd2e912cf7ca23feaa1186bb4e2c20748e22281",
+      "mode": "100644"
+    },
+    "results/pilot-4b-nf4-evaluation/policy-metrics.json": {
+      "sha256": "af0f2c5f888a69ac443798fdaf206de278dd34a4d211a5a694483891638af662",
+      "mode": "100644"
+    },
+    "results/pilot-4b-nf4-evaluation/predictions.jsonl": {
+      "sha256": "ecff629c2dfee56c13024b63702b563814ca4ea28ba0f207b2dc1d8eef24fd5f",
+      "mode": "100644"
+    },
+    "results/pilot-4b-nf4-evaluation/scalar-metrics.json": {
+      "sha256": "125375ec27eabb8f94cdc83697d34a03ee9ea6fc0a333e4f7a0fe7af17f9158f",
+      "mode": "100644"
+    },
+    "results/pilot-4b-nf4-evaluation/selection-metrics.json": {
+      "sha256": "0b0cd1ba1b6334926082af1b570a518394fc4c98f29b31450d6795d67e3ff113",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sampled-evaluation/calibration-predictions.jsonl": {
+      "sha256": "d6737e56692fc231507b3e43bc590b1322f0c13180abafe2c155692ee51f622a",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sampled-evaluation/metrics.json": {
+      "sha256": "81cf64904675ac18b854e9b14ea76a748ebfe0fb0b26529aa9c9832937bdac04",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sampled-evaluation/policy-metrics.json": {
+      "sha256": "6d582a213c8db7e3a72bc5e7c76bd6cc4c91174234f3c8804b5c97e275b81afd",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sampled-evaluation/predictions.jsonl": {
+      "sha256": "5f50c444e5ae5772106cc01f9a2c6433e80f9422efa114c432b04ab6114e85cd",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sampled-evaluation/scalar-metrics.json": {
+      "sha256": "606b5f3768e3411ff5109c61dbb6c5d6d7b9d85823998d22f64436aab12520a7",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sampled-evaluation/selection-metrics.json": {
+      "sha256": "be2af57f759e79150965bd2f27c7372a15968634142e30a90b297c6161de33d1",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sampled_correctness-evaluation/calibration-predictions.jsonl": {
+      "sha256": "c6635c0dccaa74eb2c893c9f4372ce7cfc36281c8e64acdcd5cc9e6db335a77c",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sampled_correctness-evaluation/metrics.json": {
+      "sha256": "88e9475cc370c672f3a4ca72e935650b507382bb3297e8c41bd0b2096ef51fba",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sampled_correctness-evaluation/policy-metrics.json": {
+      "sha256": "6fdc8eb5d6df6758c445d019bebe8ed3431221e132ca2f6f5ef45ccdde56ed88",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sampled_correctness-evaluation/predictions.jsonl": {
+      "sha256": "96dadd89463a578ae0413146f1d1c5eb91e90ac0eaf23760ff16e8ca9b9a4818",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sampled_correctness-evaluation/scalar-metrics.json": {
+      "sha256": "6edaa56f185584213d5f79960737c9f9f2e743d4eb4ab962d3615cc686b0b5c8",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sampled_correctness-evaluation/selection-metrics.json": {
+      "sha256": "e6c3b3aaa03a9f7b64a614ca17527364ee35654489cef0cf717c38dae473c19f",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sft-evaluation/calibration-predictions.jsonl": {
+      "sha256": "d5f1f2f569d2de7617d7d8630021dd8e426a47d4dfcf428c92357109447567ad",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sft-evaluation/metrics.json": {
+      "sha256": "fecbd2db1824226d1a1702ec76f948cbe4c5d0e7b1c8e085ea480e28e144a00b",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sft-evaluation/policy-metrics.json": {
+      "sha256": "3bd62222cf1400e5353849f87ef1acb2db3d1f563f8c7cdca3b6c1e6d2b81d90",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sft-evaluation/predictions.jsonl": {
+      "sha256": "2dce64cd00e7cb76dde5387b2dde8b6b768f15e8747cd3f03542385af536e4b1",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sft-evaluation/scalar-metrics.json": {
+      "sha256": "149a07692a63d78f8cde73664ff02c06d880a44886b7e179df5bfe827488bb82",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sft-evaluation/selection-metrics.json": {
+      "sha256": "951b574dbdada71a07368dc14acfe029a8d9e511b2381512b5890ae76f3ab08a",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sft-posthoc/constant-metrics.json": {
+      "sha256": "ec4661ceefc0fcdb22c584a77e371a399922f0349a3b3b3483f19a42fed92f0c",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sft-posthoc/constant-predictions.jsonl": {
+      "sha256": "abfb6c806ec9b6dbe5c566f73ff5ba1f9caaf363fb8c8a2cd37f80d48b1c7e05",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sft-posthoc/half-metrics.json": {
+      "sha256": "d881a6e4b345f3f9a1c11bff6f45f3ef9a4fa3f2608cc0d28d7b359edb0663aa",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sft-posthoc/half-predictions.jsonl": {
+      "sha256": "5a5c7c42a0002b61cb73afcdd4e7504905054ab6054c6627d68737f0ace7169f",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sft-posthoc/temperature-metrics.json": {
+      "sha256": "3431fb8e33f78a1fb4769be3c9b6472155eea1490c99cc165f0bc7aa846736ab",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sft-posthoc/temperature-predictions.jsonl": {
+      "sha256": "45c22f6a5afbe516e1fc253ff477528c805fa61cf2ced9ebc696cc124316eac3",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sft_brier-evaluation/calibration-predictions.jsonl": {
+      "sha256": "e1f81afe58250f4aa56faed2a07efbb6700bb106746f887e622814ebabca58ad",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sft_brier-evaluation/metrics.json": {
+      "sha256": "af36eb105c9147374f16ae4237f6056758948fa8679244df5a6b837640eeb16d",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sft_brier-evaluation/policy-metrics.json": {
+      "sha256": "e627362c1c0d8fb984bfdf40c95fd80e0dc05fdd61aefd6a7bfa65e8598a2553",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sft_brier-evaluation/predictions.jsonl": {
+      "sha256": "a76bbd308afaf23af58bbfc17b6898e6aa88f2b1b0b4742d9ad962fb79d21993",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sft_brier-evaluation/scalar-metrics.json": {
+      "sha256": "2e4d1fb5f3e0069ccbab17c136af5d4132441a9e852daa0d07a59b0246e75a48",
+      "mode": "100644"
+    },
+    "results/pilot-4b-sft_brier-evaluation/selection-metrics.json": {
+      "sha256": "2fb17064fe8e86a2d25b440b257049a5dbc6495742cb4c689e1b128e37f1c52b",
+      "mode": "100644"
+    },
+    "results/pilot-9b-continued_sft-evaluation/calibration-predictions.jsonl": {
+      "sha256": "56a57762cd2fd08a8d59cfaa47cc8aab0d0b0ac38878f6a1211b56bbbd0787e3",
+      "mode": "100644"
+    },
+    "results/pilot-9b-continued_sft-evaluation/metrics.json": {
+      "sha256": "13f40ed5b64bfc3125b3fb87fd9a5ed6a328613ea1fb0f0705262f48d9938628",
+      "mode": "100644"
+    },
+    "results/pilot-9b-continued_sft-evaluation/policy-metrics.json": {
+      "sha256": "4f9725cf28b274a19752670b3cd9086891683cc2a56c1c4ae92462d6fcb13715",
+      "mode": "100644"
+    },
+    "results/pilot-9b-continued_sft-evaluation/predictions.jsonl": {
+      "sha256": "e308a6220e43b02000544b71f16b9265d40697fadd7f86cbadafa0011efa4acb",
+      "mode": "100644"
+    },
+    "results/pilot-9b-continued_sft-evaluation/scalar-metrics.json": {
+      "sha256": "eb354ed3d79bdd1e1e383e5d28ecc6eae6246107eb7f791a6c870618c490d2d1",
+      "mode": "100644"
+    },
+    "results/pilot-9b-continued_sft-evaluation/selection-metrics.json": {
+      "sha256": "4824b2a92645693a2d583a4e0a0becaaa67dd4bf8fcefbcd8f9428c7997978dc",
+      "mode": "100644"
+    },
+    "results/pilot-9b-continued_sft-posthoc/constant-metrics.json": {
+      "sha256": "589e4432714ecf73bdb625cf0b40e408877ab3e660124a63c37f1211415f15d1",
+      "mode": "100644"
+    },
+    "results/pilot-9b-continued_sft-posthoc/constant-predictions.jsonl": {
+      "sha256": "de69601f56c8eb9272fe92ecd2c52c82a05ced770b38786c6874b851a7284468",
+      "mode": "100644"
+    },
+    "results/pilot-9b-continued_sft-posthoc/half-metrics.json": {
+      "sha256": "868ac0de2399d052d959822e3c3cb995f5c7413229d49332a221a1cee214b68a",
+      "mode": "100644"
+    },
+    "results/pilot-9b-continued_sft-posthoc/half-predictions.jsonl": {
+      "sha256": "dde7a57504c8694735a9875d1c1a5b00c3b2fcb234452e26aec902d226de19ff",
+      "mode": "100644"
+    },
+    "results/pilot-9b-continued_sft-posthoc/temperature-metrics.json": {
+      "sha256": "04f905c5f17cc4a1df87bbe023e50438baaaadc129e4b56088da7ad094b0185d",
+      "mode": "100644"
+    },
+    "results/pilot-9b-continued_sft-posthoc/temperature-predictions.jsonl": {
+      "sha256": "cb53dcd19a4f7cf1d215e7e3aaa3e52c863af6f8be170ed5ea29a62574239226",
+      "mode": "100644"
+    },
+    "results/pilot-9b-exact-evaluation/calibration-predictions.jsonl": {
+      "sha256": "5457d619f2a1977c40d43a8142818d90ac70cfaa8f978750dd66de887ec425c7",
+      "mode": "100644"
+    },
+    "results/pilot-9b-exact-evaluation/metrics.json": {
+      "sha256": "890cb69481bbc5d6f45e38836422309b8f112d9c744c88883ac3249a9027fef2",
+      "mode": "100644"
+    },
+    "results/pilot-9b-exact-evaluation/policy-metrics.json": {
+      "sha256": "5709a3ca28e790e0b484c5154557c13813c1096e8db9423351d7affb06840621",
+      "mode": "100644"
+    },
+    "results/pilot-9b-exact-evaluation/predictions.jsonl": {
+      "sha256": "3481169ea2f477e3730406201890899a3002a68b5996f1f68233d6e927373b0b",
+      "mode": "100644"
+    },
+    "results/pilot-9b-exact-evaluation/scalar-metrics.json": {
+      "sha256": "898b734c02467c056325065812c3e0bc78676f91e22d08188aa92c1f4f988c3a",
+      "mode": "100644"
+    },
+    "results/pilot-9b-exact-evaluation/selection-metrics.json": {
+      "sha256": "0b194f1122279d7e829d49bf5a94df59925ec5eeecb74831b71fc400eb8da3ae",
+      "mode": "100644"
+    },
+    "results/pilot-9b-exact_correctness-evaluation/calibration-predictions.jsonl": {
+      "sha256": "c053610fbc03ea5f8c82f64966978dbd3fa4b88166030fcfcf3ae7324031f930",
+      "mode": "100644"
+    },
+    "results/pilot-9b-exact_correctness-evaluation/metrics.json": {
+      "sha256": "4ef29cfab94e18e0ecffb1406ff846c77f0ce247b5ae91f0c265a6407431fd64",
+      "mode": "100644"
+    },
+    "results/pilot-9b-exact_correctness-evaluation/policy-metrics.json": {
+      "sha256": "218ad3d8882d5476dbadc91bde556c78b2632453f1633862ef86f32236559bce",
+      "mode": "100644"
+    },
+    "results/pilot-9b-exact_correctness-evaluation/predictions.jsonl": {
+      "sha256": "f09a8e9f8ae9dc859eac35f6ad59541addf85d932adce2ea6892e998437831da",
+      "mode": "100644"
+    },
+    "results/pilot-9b-exact_correctness-evaluation/scalar-metrics.json": {
+      "sha256": "0a0ad6b9aa51521af492012c8ca64017a303f9416469356f73624b03d3cf6a67",
+      "mode": "100644"
+    },
+    "results/pilot-9b-exact_correctness-evaluation/selection-metrics.json": {
+      "sha256": "f02b7d459d6284851832bcf9f2673a2e762f9e2f134964298031f2715b73c09c",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sampled-evaluation/calibration-predictions.jsonl": {
+      "sha256": "0da8f0d772941ee46643ed5be72d21077301495b989d2f8c7f4540c11f8c55e5",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sampled-evaluation/metrics.json": {
+      "sha256": "563439261e1428ee5825046958c4b69bea90ad1a29f262365c32bdee8ef85242",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sampled-evaluation/policy-metrics.json": {
+      "sha256": "ccfc7e4acc8bdcc4e589949102d3fd3e32e217f5ea6b419672221617d459cd3e",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sampled-evaluation/predictions.jsonl": {
+      "sha256": "ab7cea8d38205ffab34ecd7dab7d0b852a42231f16c7715b97e2275af0aade42",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sampled-evaluation/scalar-metrics.json": {
+      "sha256": "1b356d29b5d20fe151122b8891c4313578b58d83701f2ed0a2ae7d3785052fd2",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sampled-evaluation/selection-metrics.json": {
+      "sha256": "ae6527b761331fbe3216265978d0b4e27e3785f52d95678397c854bddf5b046c",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sampled_correctness-evaluation/calibration-predictions.jsonl": {
+      "sha256": "35abb2c3dc346105a7dc5db73e3430a3ca607c0e4555e670741b15a05547f19d",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sampled_correctness-evaluation/metrics.json": {
+      "sha256": "f861fe45bb1b0af3a4a545f1c611c00073f7b00b35473efb943a4b86cdf0b66d",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sampled_correctness-evaluation/policy-metrics.json": {
+      "sha256": "c785a3e95f2dd837d710abfbd922036000b965f4121a5b2dcbabf26b3482f179",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sampled_correctness-evaluation/predictions.jsonl": {
+      "sha256": "720c98db01f193afbe56c5b816f4543a6ab10b7314136b6456a3a81ae1e24a5a",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sampled_correctness-evaluation/scalar-metrics.json": {
+      "sha256": "940c079f558be68254cd00774e0247e29f730670c164d12aa62b8ad85903c533",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sampled_correctness-evaluation/selection-metrics.json": {
+      "sha256": "e0e7724731d645abb17c5c662ea075681376b7ea6af54ab24f3431f14b7546c9",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sft-evaluation/calibration-predictions.jsonl": {
+      "sha256": "1058973aeb13b827e1b0a426ed3ee49daa383a2f648da423b7f062b23c23cea1",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sft-evaluation/metrics.json": {
+      "sha256": "2dc5f54744cbccf904cc9b1cba5e0db170873ffab3aeda591fc4a6fecd887678",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sft-evaluation/policy-metrics.json": {
+      "sha256": "b88f95a316ddfddf878e968fcde7a8296aa8941bfbfddec5573be5e10ea609d6",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sft-evaluation/predictions.jsonl": {
+      "sha256": "bcd1411a353171a9a6f9c2c64e4297b9a364a86d4b4a5f25953fdcc3d9cc8e6a",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sft-evaluation/scalar-metrics.json": {
+      "sha256": "2eac160e1b9f3e2a0813c041f0152029bb0f3e7da9731eb21df79436c5233930",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sft-evaluation/selection-metrics.json": {
+      "sha256": "f48ecd67a5ffe5816312d6ac688701393a4c3824440310ce6b51996a3ef337ca",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sft-posthoc/constant-metrics.json": {
+      "sha256": "25fe60115002bd6767cfa6897629b2cd95f0dc4f67339832449c201089b74f02",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sft-posthoc/constant-predictions.jsonl": {
+      "sha256": "0cb5785de7cc62ae9bdd27cde5bb449a47b38cb03b56f053d857265cc9e474e9",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sft-posthoc/half-metrics.json": {
+      "sha256": "031b0506fbccf702b59d44804332593f21003bd1b47249efde422dbd38a8f358",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sft-posthoc/half-predictions.jsonl": {
+      "sha256": "bf6caf7568f70920650eaf07d4fca83065433d10f8386a3a13caa0c7d8d09145",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sft-posthoc/temperature-metrics.json": {
+      "sha256": "b97d50645024c97da27e26945eed251531348d616fccb5851f296e82569ddc6b",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sft-posthoc/temperature-predictions.jsonl": {
+      "sha256": "54acc316f01fe8eb5949f9cdddcd03a1d677a24054337c4bd43c70e393587bfd",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sft_brier-evaluation/calibration-predictions.jsonl": {
+      "sha256": "32dd054968d5b843c8ab9d92cba058352dd4f64abcce99489bceb43053202b79",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sft_brier-evaluation/metrics.json": {
+      "sha256": "a9a34c51c74876a06cfdbb22194446915487fd0d63b054622c70e14af56c5476",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sft_brier-evaluation/policy-metrics.json": {
+      "sha256": "0089a2585b140857a1d9c4e35da5ae13a154643e1e9e879bf11a8456fd4ecdd4",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sft_brier-evaluation/predictions.jsonl": {
+      "sha256": "6f4a3bdd9274f1e4feddc81262f7b8df8f1f2a779ed185c1dd46578e6783d085",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sft_brier-evaluation/scalar-metrics.json": {
+      "sha256": "218286670945489290f1ac3f6d081f69bc4a4ac3e65ee1b42d43054ea9fd306a",
+      "mode": "100644"
+    },
+    "results/pilot-9b-sft_brier-evaluation/selection-metrics.json": {
+      "sha256": "4c479c6e7f70f91adfd780929d257147642bca279bd2a6a7b6dd2412fbf4d073",
+      "mode": "100644"
+    },
+    "results/readout-reproduction.json": {
+      "sha256": "0bfaa418bf8a122c51119fe22b60b3c22ec95566abf5c3f3b4ea97ff1676d3c6",
+      "mode": "100644"
+    },
+    "results/reload-4b-with-fixture.json": {
+      "sha256": "6cf417481be42081ac7b0d9dccc4094fbeb62660076df6d3890a8120091352a3",
+      "mode": "100644"
+    },
+    "results/reload-9b-with-fixture.json": {
+      "sha256": "1ea4d345bd57cc5de61b6a76055476e37fb254ab6923e668d2f9e9953f85455e",
+      "mode": "100644"
+    },
+    "results/study-summary.json": {
+      "sha256": "00a70328da956355c4659679112a7a5c2773cc0b9a09ae22ab8ede5371a41404",
+      "mode": "100644"
+    },
+    "results/tests-final-checkpoint.txt": {
+      "sha256": "a5c67991d1fc4c21d05924e555c8dd57becda9677682313bf8af56acb0ea47ad",
+      "mode": "100644"
+    },
+    "results/tests.txt": {
+      "sha256": "1f1d62a4ee1e784842d873a03b30b3600eff5dc7075a696ac60ea305127ac461",
+      "mode": "100644"
+    },
+    "results/tfidf/constant-metrics.json": {
+      "sha256": "48e5513935fa3fc3144edcdad82983f2bfa1dd193f69afdab3c69e3227769719",
+      "mode": "100644"
+    },
+    "results/tfidf/half-metrics.json": {
+      "sha256": "570a393edfaa2bb3c84254b52e34bfb1f45a57f4bf582394f9bcd7eb128e0461",
+      "mode": "100644"
+    },
+    "results/tfidf/raw-metrics.json": {
+      "sha256": "4d9c4496d3d09858299402f1838aa58e8cb8b3bd30a3aaaa9d3b50038279e349",
+      "mode": "100644"
+    },
+    "results/tfidf/temperature-metrics.json": {
+      "sha256": "73af4790ca9f13813a611e3118ebdc2094e381567b5c0002a4c70d822eab03d1",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/continued_sft-posthoc/constant-metrics.json": {
+      "sha256": "4284640a0304e3fe35ca9050ddadb4e13c56e6b41bc235ddf7a6d71603551438",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/continued_sft-posthoc/constant-predictions.jsonl": {
+      "sha256": "269b8231b23114de7d13aab8b9d99bbf0dd9eb23a47eee6b965231ae006e57f5",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/continued_sft-posthoc/half-metrics.json": {
+      "sha256": "94d2c8c1dd7c3951ce7e922e210afd50d8252eac7c3b7bc8adf7ce6f866c0d23",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/continued_sft-posthoc/half-predictions.jsonl": {
+      "sha256": "ec5ccb91e6c1720680be64fed7b81861bf25880f74775e146879f98c8ec5a8ae",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/continued_sft-posthoc/temperature-metrics.json": {
+      "sha256": "efbcbb1998b12dbbb2e8f22a39b63982ff1a3e7223f23eb66596a11fd52ad070",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/continued_sft-posthoc/temperature-predictions.jsonl": {
+      "sha256": "4c24ed6e861f065cea853ecdb70cd21b0e4f1a23471dbaeafa300985d22ab17f",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/continued_sft/calibration-predictions.jsonl": {
+      "sha256": "5a224516427c5c9012fdab3f1d917ff696d0e4c49697a3ff9c018beceb1d6d15",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/continued_sft/metrics.json": {
+      "sha256": "e40db45a9dae088c12cee0cf5e11779fd63f0a586baf531f51277e32a2f62bfe",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/continued_sft/policy-metrics.json": {
+      "sha256": "e9fe1a79508a79641f4a5eaf5469f1eb4c6e4818a27c8518fb31104b4f13d652",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/continued_sft/predictions.jsonl": {
+      "sha256": "09221a2320aef3f9dd33dcd013fa40a34b97f04192939f39eeb7772f6159b143",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/continued_sft/scalar-metrics.json": {
+      "sha256": "413b34af39e2dae78eb8d4f49c2e219f72c3d718fabad044cdb2bb7fd19a2388",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/continued_sft/selection-metrics.json": {
+      "sha256": "0e40b2d6c1140192afcdf7af64d7555e155479f4d5393d61eb70740c3e07ec32",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/exact/calibration-predictions.jsonl": {
+      "sha256": "26e467fe5161ed0d923bdde734a372be4df20349716c02ba7c500d0395376c91",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/exact/metrics.json": {
+      "sha256": "aa224d672c4e7c63924d4b15f76d13b55e52187891e71824bdf10ca6271e29fb",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/exact/policy-metrics.json": {
+      "sha256": "78f7b67c139270d5368afb841a5402b330ab22dfa1e384556db2ce21ad8ed8df",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/exact/predictions.jsonl": {
+      "sha256": "878985c338dd864876054850bcf2125e62b4ae2ce0a92e765996c1c02a387a3c",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/exact/scalar-metrics.json": {
+      "sha256": "99098033835e20d2c0f2afe3da7e7114c2b6be6c4ff63d4c2310589e91d51cc3",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/exact/selection-metrics.json": {
+      "sha256": "4b6963491beebea2bba944ae0ec58ed73f06bf052ce76c78ddbde429795cc097",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/sampled/calibration-predictions.jsonl": {
+      "sha256": "dc02132dd0323cafff8a57c079dbb4d004af72748b4bf71e44b524b3791fcaa2",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/sampled/metrics.json": {
+      "sha256": "b1ff1d2a8672fe15b06fbf3f06726a4df26ad36fa48a7bc03fcb8dfa550e7095",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/sampled/policy-metrics.json": {
+      "sha256": "a072f63eccecc9fdaf7dae9a4a7342ccb8e4d3f0ed621aecc25fa314718db2ff",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/sampled/predictions.jsonl": {
+      "sha256": "423d641fd5267bddce69bb05d534b05dec19963003f12c0545f1e37efca942ef",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/sampled/scalar-metrics.json": {
+      "sha256": "050d73068dccaab51a98d1884af2eeb9dbbb3e4c02e783ae93982f96acb1c698",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/sampled/selection-metrics.json": {
+      "sha256": "cb611df524227d63f1c8bf2a6413532c5744408b2b7f47a7acfc5f86b6fabdf5",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/sft-posthoc/constant-metrics.json": {
+      "sha256": "b3c8510e80473b167710e834c7bf78d98447a7e275cae37dcf36cd2f6d6feeab",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/sft-posthoc/constant-predictions.jsonl": {
+      "sha256": "5803ccf52033d00bfc8545e482a5a813ced4c5e4070f3b1c0f56ec4d879641c3",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/sft-posthoc/half-metrics.json": {
+      "sha256": "2b54f0f3223857d576d4d72ebbe12b942553512f2d18493480b7af4886ffe788",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/sft-posthoc/half-predictions.jsonl": {
+      "sha256": "7f2e0ce5f03f2b57d21894019e7f0e5011f2893861d3873948315d638a069211",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/sft-posthoc/temperature-metrics.json": {
+      "sha256": "2e23e69aeeb60ac605a24eeaa650dff2973aa4d0d5187a708f2afce1cad06cef",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/sft-posthoc/temperature-predictions.jsonl": {
+      "sha256": "dcc080d6ad46e1c2b62ac3f2b30b33fe18b8126aa4323c5274126be86c8c2d87",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/sft/calibration-predictions.jsonl": {
+      "sha256": "6ec638b6de2a2f756f2b2e2c710c80b521bb134bd953e391906165be83bf3ecb",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/sft/metrics.json": {
+      "sha256": "13fa050fddb474ae93ac535cdcc71dd5947013c815286e3292df216731937978",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/sft/policy-metrics.json": {
+      "sha256": "b9c187bc9d5ef50322a99f26eeac1957a67cb83eb2488f2a2d077dcbc362e504",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/sft/predictions.jsonl": {
+      "sha256": "9b40b40d035cb8d31dfa567e573ff2422bcec9c6621b305bf35816105c15baa6",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/sft/scalar-metrics.json": {
+      "sha256": "0858f9fa6925f962e84c47f8262e2d96132871596a1d4a05017a1141f65f2347",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-22/sft/selection-metrics.json": {
+      "sha256": "37ddea1384e0773ea954c14076fdcc16fded78865d2a9f2d36830faf0cefc07c",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/continued_sft-posthoc/constant-metrics.json": {
+      "sha256": "2425978ac089c881ccbf52f5a5b2b118a0cde08a82100cd473a4a27f43afa6d4",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/continued_sft-posthoc/constant-predictions.jsonl": {
+      "sha256": "5224a5e2c96a53c94a884862f8b98916d13d2bd33cb639ab5261b69714bbeefd",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/continued_sft-posthoc/half-metrics.json": {
+      "sha256": "83574c6d51ea8400b95fb385bd24f842c3567f52fb40adca54b68db0af7f11ee",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/continued_sft-posthoc/half-predictions.jsonl": {
+      "sha256": "aa1431a7952a3cd0232994f1a65312066be4bddc5618f6baaba499e5521a27e8",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/continued_sft-posthoc/temperature-metrics.json": {
+      "sha256": "24d4337e075ca9981ecfec619e2e47cd70a9cd098bf05df6e3e66845e777fa74",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/continued_sft-posthoc/temperature-predictions.jsonl": {
+      "sha256": "481cef8c2dbe824162bdf772d6992561b54236494d2b093c1fdaf378684a4e9a",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/continued_sft/calibration-predictions.jsonl": {
+      "sha256": "4eebf1644a1a0c5f1e8f58bd85f8df071a41a63c728a4d8eb29a1e2691397247",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/continued_sft/metrics.json": {
+      "sha256": "0cd12b4e8aa7edba87541d566f60f35ae051bde7cb931ead3fdb3021324564fc",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/continued_sft/policy-metrics.json": {
+      "sha256": "3622506b6156a4ebabed47953c8008828841b5116e0f595ae635b4503cbeb541",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/continued_sft/predictions.jsonl": {
+      "sha256": "58dda1b60bbcad9fce6aabad6e8b8d897a613471c9add5dee26775547e89c959",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/continued_sft/scalar-metrics.json": {
+      "sha256": "9ec20b02e905e1a6cac98a9f2ebf7c63996748d35bd90335e2496e2c4da9ada3",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/continued_sft/selection-metrics.json": {
+      "sha256": "e3977042b257a8e5c8a9e9b118f1d21927f74f5facea2a35804192e97c434b34",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/exact/calibration-predictions.jsonl": {
+      "sha256": "bba5426e975bb00c7e1ea6712e10afbe94fe571be6e1a13367046695837eba92",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/exact/metrics.json": {
+      "sha256": "24777747d8e89c11f2c86ca77e8b0ee4d046f71c474b0daa6c707e8d808fe419",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/exact/policy-metrics.json": {
+      "sha256": "2479d6698469bbbe2fceb79823afe44b90e96c38856cfa6f1c77f22df062532e",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/exact/predictions.jsonl": {
+      "sha256": "c15c90df3cd8d54eae1c9745662e36cbe065ab96a4c8023f658379fa6af22626",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/exact/scalar-metrics.json": {
+      "sha256": "add7157230a01f030350dd4a850b9908fea8fd6dabe6301f1d80f9d56c65af04",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/exact/selection-metrics.json": {
+      "sha256": "f5d905846bd6455ea76fae99608ef76cce709609a6c494523ae5cd5694e4ae1f",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/sampled/calibration-predictions.jsonl": {
+      "sha256": "e56e55e541c178617015d090cd1008b1ddc3101596651745292891c252d432bd",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/sampled/metrics.json": {
+      "sha256": "813ba03b41608c8c49073f01589f7b79e33fd8b346cd6c82c90c31759f2257ff",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/sampled/policy-metrics.json": {
+      "sha256": "d82ca9de8fb2cc1ff0e99f507e0bff0f91861fd529977bbca26f4d075084ac61",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/sampled/predictions.jsonl": {
+      "sha256": "3e031cfba1db814a174055d5c0b0fcf55c81a401dff785218a59d30a70d0fe79",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/sampled/scalar-metrics.json": {
+      "sha256": "5f1bdf58ba97f2c98d992366ee0b59ec33671c895958f4e618011efa0244a62e",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/sampled/selection-metrics.json": {
+      "sha256": "a6df09d6af9babc8410b318d2834b496b1dd2ba056456a1e3810fedfe84f0bca",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/sft-posthoc/constant-metrics.json": {
+      "sha256": "e88e14efc800cf25aeeb8986c680afdee272b1aac90eca61d37b34c193a19b54",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/sft-posthoc/constant-predictions.jsonl": {
+      "sha256": "11d0e6d044b20af788007039ef03fd1a2eb0e2c4672e6e63b895ed0bf664739c",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/sft-posthoc/half-metrics.json": {
+      "sha256": "80e3fcc73fae2f6678e4a7914da0c4f1fd7682b11eb23769e36d01e25ab72970",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/sft-posthoc/half-predictions.jsonl": {
+      "sha256": "1b83dc0c0276863969c082eae9aab0f499b82f5b7bac92a65cc827853baf9039",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/sft-posthoc/temperature-metrics.json": {
+      "sha256": "dd6be0d6cfeb301872822b974d1f909cc913fffb3c0cbc51b2f0b6958c2a9d88",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/sft-posthoc/temperature-predictions.jsonl": {
+      "sha256": "0ef4f7ab8497cd497525f89e6af7f8855844be5ee2235d651dbcfcf10a7a7542",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/sft/calibration-predictions.jsonl": {
+      "sha256": "d429226c12420f8f86429e267663ccf95d4cea0f50291acf574e3715ef6b7f86",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/sft/metrics.json": {
+      "sha256": "97daa03599379e40f4e28afae589a5e212fd0fad94c7d260769856840f67d4df",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/sft/policy-metrics.json": {
+      "sha256": "81352c31799408da5aab7f7fb1152ef842d8571fe967ba18026c0fd1b70b209f",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/sft/predictions.jsonl": {
+      "sha256": "f431b1034ecbe85c1a2f2b6bbeb3e929e1e57c8470caaefe31c56780423d8ac1",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/sft/scalar-metrics.json": {
+      "sha256": "ad85414eead249f94c93475f3146937366aa2570b2fc950083a7e067a1f30836",
+      "mode": "100644"
+    },
+    "results/three-seed-0.8b/seed-33/sft/selection-metrics.json": {
+      "sha256": "eff2645ac8aa48e871adb875567ab030000dfa3038fea35176b9518e767f18d1",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/continued_sft-posthoc/constant-metrics.json": {
+      "sha256": "65a8cc6c670b5aeb8e18572a163d2dc378844634002bad71555ae910256e662f",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/continued_sft-posthoc/constant-predictions.jsonl": {
+      "sha256": "bf681f661385e7c5ec25448febc2ca02125a3bc7f0f973be212d7d64177e6b07",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/continued_sft-posthoc/half-metrics.json": {
+      "sha256": "ac1c4bf4563887c18b55895ffb0b94b5cbe97ee200e12adf612095537ef207f4",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/continued_sft-posthoc/half-predictions.jsonl": {
+      "sha256": "0301cfc3ecbcda898a00216742ff5c239dc0a39760f1df043f8fcb64df6938fe",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/continued_sft-posthoc/temperature-metrics.json": {
+      "sha256": "93465a68aade78f1df08abb2a2f7a9289b8c609274af52cc7fa1c65e8259a3a3",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/continued_sft-posthoc/temperature-predictions.jsonl": {
+      "sha256": "ccac7e7d681148841e9ce56e18141987b64f867128e57e40e80c049e973bbcc1",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/continued_sft/calibration-predictions.jsonl": {
+      "sha256": "c422c39a084a053ad14d630fe874f7831592d37d323b38a1bc0dafb4ed55ed42",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/continued_sft/metrics.json": {
+      "sha256": "4ae9c15ffc125ee67b67c3d692540422e2c0292c413a7e2e1815aceea2cc5bad",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/continued_sft/policy-metrics.json": {
+      "sha256": "42387cc6989a8a6dc903ff943129e578d29d443a4995b300548137245a0be8fc",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/continued_sft/predictions.jsonl": {
+      "sha256": "54dc4d9300d62bcc32e0c9826960a409a5cce0cebb3c76c8bac4135ffeb766b2",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/continued_sft/scalar-metrics.json": {
+      "sha256": "96a0f49e568ff4393f4436682eaf397d22d326deb880aed1ba62ae339209b065",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/continued_sft/selection-metrics.json": {
+      "sha256": "d1e3b2c06883efa5ef78eff02511abaf011025e3a9919c17536e66e7db69a2bf",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/exact/calibration-predictions.jsonl": {
+      "sha256": "1507c1535292d846b61cc9918f3fbbb4d3fddeb7583cc1bc2d3c85d37dd8a183",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/exact/metrics.json": {
+      "sha256": "59752bb849fb77fb6829a11570a263882818226759fdae70b48a662c1e1b15a5",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/exact/policy-metrics.json": {
+      "sha256": "115f7a627718792c5d9fcaca8873395794b0ed042f246d1ee87493c57a11531f",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/exact/predictions.jsonl": {
+      "sha256": "6fcef9a5dfe55bc24811349ea71fdf31af8dd880ff94ef30f2601298ec38ad6a",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/exact/scalar-metrics.json": {
+      "sha256": "813b2acb7cc5d87336992c94c2bd0205c48f777ff6f1f879adea301f72fcb2c8",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/exact/selection-metrics.json": {
+      "sha256": "2d894a8570d197004a087e50420075e14e1d9e7a4b4e96347909a8956b6837e5",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/sampled/calibration-predictions.jsonl": {
+      "sha256": "8f735fc907bd42b32b057685878e3a6c64d329dd99bcb41e53b6dac8c56af78a",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/sampled/metrics.json": {
+      "sha256": "6cd36fb7a32dce631859efd5c4e936177ddf38e01bd571cbb8c6ab94992e3643",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/sampled/policy-metrics.json": {
+      "sha256": "7f2cfc05a05940fcb10b4f8d8f6f9ac4410708a5391144284b6627f4d8de75a0",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/sampled/predictions.jsonl": {
+      "sha256": "54e11667a1df2eb5c43b1c5b063cb02b3dd742fabdf70f2aa5e1ee1db1ea617b",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/sampled/scalar-metrics.json": {
+      "sha256": "d5480517d91ccb7ae881fd0c001b2033757164925063db9a4ff955c2c225e384",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/sampled/selection-metrics.json": {
+      "sha256": "7deb035bea48cd844fb947d2af2ee83e2ed44bee025201b322fc864a8b3f10de",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/sft-posthoc/constant-metrics.json": {
+      "sha256": "1eecc9b8fd207c6b7d0d2c1b4210c8cd877fc253d9bbd16a37f29b5f76de09cd",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/sft-posthoc/constant-predictions.jsonl": {
+      "sha256": "5a323fd8d36e6598f60489bc548c6fe4f4e61e4ed24d8da0f87da5c3a424c777",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/sft-posthoc/half-metrics.json": {
+      "sha256": "60871782d866934f629bd69e37d417f18c96c2ea27c6c23de069095cfac1591f",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/sft-posthoc/half-predictions.jsonl": {
+      "sha256": "11a7aad58812d7ecb421281cd313163364373281a14114a28fc2cb3ce75f5d7a",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/sft-posthoc/temperature-metrics.json": {
+      "sha256": "55812a9acc2d342f501148e18e224098c75463388063ae172d3425ef6b6882b8",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/sft-posthoc/temperature-predictions.jsonl": {
+      "sha256": "9d223eb622461b758c32f8d7ac75ffda7fa196efa2cd40663f76b184bb8e5ef0",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/sft/calibration-predictions.jsonl": {
+      "sha256": "8d43c720744799afe52f9b1adda47c9576a26f1654ba632b06d3a619d417af78",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/sft/metrics.json": {
+      "sha256": "7cb062dbea7196bac6d511f2d89970d1537a3e1f89826be61ef1bf6f2693df7d",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/sft/policy-metrics.json": {
+      "sha256": "c49460001b94150064270a059a64fa5db39ff1d3294d3187e8a1d60d3236c023",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/sft/predictions.jsonl": {
+      "sha256": "b645ee9d14f5f5f66492f9ac11a8bba47e5bdd49c230c1287281b28fe6a34e61",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/sft/scalar-metrics.json": {
+      "sha256": "fdf75546c5d26afc42981e7e8e0fbdf13985df89164a1395e8fb52699f614a8d",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-22/sft/selection-metrics.json": {
+      "sha256": "deebf37e424995cb8f7dad8138ddf1bb5ae733389e0b13c5046b7e7486dc081c",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/continued_sft-posthoc/constant-metrics.json": {
+      "sha256": "9fa51a62c35711cfa9828b3271cd0764dfa0c137da53230d0fa613c47d96e894",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/continued_sft-posthoc/constant-predictions.jsonl": {
+      "sha256": "b66971573abf53c0fc0e17f3ad52024153e4012e4020276cac9fc209cab34ef4",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/continued_sft-posthoc/half-metrics.json": {
+      "sha256": "6df6aab026430885fc52965225ca1a3ec9b235260538819b2986122d1267fb72",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/continued_sft-posthoc/half-predictions.jsonl": {
+      "sha256": "3bb19631e4d441e267200c24fdcf697dbdcac49bf1f4e567b606c46fe2490783",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/continued_sft-posthoc/temperature-metrics.json": {
+      "sha256": "3fd57deb985001adcaae9cdea28bdf4150c5ea0c39193a39d73967b91349b41b",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/continued_sft-posthoc/temperature-predictions.jsonl": {
+      "sha256": "792b0ee98f53cb2262cc0c6faf51e18c368849101b7c66052bab82b08384b211",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/continued_sft/calibration-predictions.jsonl": {
+      "sha256": "6cd55cc4d6800f5a392535a20e98573ef48a64baa4004d7694aa2365ca4a312b",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/continued_sft/metrics.json": {
+      "sha256": "2a3920b7c859caf5d99fa41efc97f262685b0bfe137a8ecbb6b060d0fc1a338d",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/continued_sft/policy-metrics.json": {
+      "sha256": "ca283e04f055072a897f85731e328f3542ef55d2c22be1658ec019613a45eafc",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/continued_sft/predictions.jsonl": {
+      "sha256": "888fbd013b3533c0027d95afee0466e326c6427cf7cb2767cef4664b03062d8a",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/continued_sft/scalar-metrics.json": {
+      "sha256": "e1d813d645efb998a75ce9c794368cfd4039c335d983b06951f065fd8040df6e",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/continued_sft/selection-metrics.json": {
+      "sha256": "1a40442420c74af6fc2cb6ac5a9d823838d7e841356adf3a2e0a82941f3db402",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/exact/calibration-predictions.jsonl": {
+      "sha256": "2279947399d531ab5732c9158d25b5300a3feda7233ab7f0a741b7d92d60fbca",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/exact/metrics.json": {
+      "sha256": "6f15d39916e433c26592f31d436bee7ea4b0d4e6891a8ff4d542b5225ee8243f",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/exact/policy-metrics.json": {
+      "sha256": "ff7442cedce85432289fd726d4d890c47a60c4d00f7b869e66c674548ac3b4e5",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/exact/predictions.jsonl": {
+      "sha256": "a490360f5fa44af8660285bd55c5d84f544c846bd6ca3daaf11c75ca86f21dd2",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/exact/scalar-metrics.json": {
+      "sha256": "921c8d24e87fbcf0180a8dddd0d100ae24b206068e0ce62d2c13a19831da9188",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/exact/selection-metrics.json": {
+      "sha256": "a33309969572733aa2d80f66f8ae8153de3c7db6ef16381a5c7b112dc5c607bb",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/sampled/calibration-predictions.jsonl": {
+      "sha256": "0a5dc3f2c44eeb7394aee43d0f8645f8161302b67d8db4a61569488d0fc24c4b",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/sampled/metrics.json": {
+      "sha256": "f74caa38de283aff5a0a144409535b2fa980ce9d660d14eb005f08f07c2623be",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/sampled/policy-metrics.json": {
+      "sha256": "50c5cf6ceb4420d8333b8d2eb06eca0f146646c33054154717a6f86523486b7d",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/sampled/predictions.jsonl": {
+      "sha256": "9de5fb4b8fdf571c31a9d8247de729576867a1262b1ebda38cd50e4780acc246",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/sampled/scalar-metrics.json": {
+      "sha256": "18e31a1d71aaaa33e00ffd5f22c0fac844312ec2576f5d00fbf62e4e6e154ef6",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/sampled/selection-metrics.json": {
+      "sha256": "28658c9d449b8faca17c350d3ada6948ca46d6cd0062a2524b33df3c0000428d",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/sft-posthoc/constant-metrics.json": {
+      "sha256": "e47559f2db7597ee666794af92d0f6b8831b4e4815a13aa05629ea00b8e2ffb2",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/sft-posthoc/constant-predictions.jsonl": {
+      "sha256": "d35a968af338ec440dbf54930b78045c0d7882afd63fa717a9839fa59b2c3c8d",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/sft-posthoc/half-metrics.json": {
+      "sha256": "5c24a00e74628099f703927c0ca7468084d809c07b91f641d16ed95d270cc379",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/sft-posthoc/half-predictions.jsonl": {
+      "sha256": "388a4d62df60dcfc17006628a62c53f3b1e09512b9f06ecac349e88e3649e2e0",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/sft-posthoc/temperature-metrics.json": {
+      "sha256": "88679dd884c955b8e73f991718c54efe1235caf516b6a68c73733f737ab9007d",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/sft-posthoc/temperature-predictions.jsonl": {
+      "sha256": "ff4a578390e021071780eec182b09e6b4a09c5489168330af2fb9213175d1aa5",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/sft/calibration-predictions.jsonl": {
+      "sha256": "1e5fa2225047d3c73df7b0a92a4e359bd48bc9fb7b570292100241f1ff450d79",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/sft/metrics.json": {
+      "sha256": "3f205adcd6de369549306fc00c4c9833237c3849b7f5ed50f7fa2354e1dad211",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/sft/policy-metrics.json": {
+      "sha256": "81f45f02f74a852a3c20849c5917f6573004c19a1723799467faf28f7230146b",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/sft/predictions.jsonl": {
+      "sha256": "55941bc70bf3afab8eaadb677c4a7ab5fa2ae0c6cd22f53be0372a20b5a02629",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/sft/scalar-metrics.json": {
+      "sha256": "916457a2d825d1a6198580499ae6f294be068e432789f659620e74c66d243b02",
+      "mode": "100644"
+    },
+    "results/three-seed-4b/seed-33/sft/selection-metrics.json": {
+      "sha256": "09ea68887bf1f338729d48a03de7f0cec8a2665d95f924d8ac52a29725d1b1db",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/continued_sft-posthoc/constant-metrics.json": {
+      "sha256": "a756881a5d8aadcae4dd474c28efb7a0c243bee8225b7c1eb49d9259f90263fa",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/continued_sft-posthoc/constant-predictions.jsonl": {
+      "sha256": "b3503c483770bb58bbd93f38c30ff8e82f2029cb18f796c231836b3413dca54b",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/continued_sft-posthoc/half-metrics.json": {
+      "sha256": "20db4d786f3e352294cdcfe2ec423b4f9096ecbfd66a29e714c64e7261defbbc",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/continued_sft-posthoc/half-predictions.jsonl": {
+      "sha256": "6ff30922752b8f703977eaf705f94da62e059748f53d0486ef8f36293bcbf479",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/continued_sft-posthoc/temperature-metrics.json": {
+      "sha256": "56fe09a15d81bdc75adffae789556874e08071bf67f9d0274258a83bd359fa21",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/continued_sft-posthoc/temperature-predictions.jsonl": {
+      "sha256": "d2d6852ece5ae14d8809d0da317a1df7379b31b2575afbc672c1ba208b388277",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/continued_sft/calibration-predictions.jsonl": {
+      "sha256": "2a238d1779314ab398300c344ee1dded60573b78639723926892dd1b7484ca5f",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/continued_sft/metrics.json": {
+      "sha256": "45e589de7b8bbdce57d11833aa8c853c2bd69d13aaa96710339e66fa1a45de97",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/continued_sft/policy-metrics.json": {
+      "sha256": "6ad892115cda9565f975a9256ca485990fc495e43e747f521404b842d569c143",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/continued_sft/predictions.jsonl": {
+      "sha256": "ccb59c8c449306207457f783ed514f2e5ee45306da91b28cc9b543adbbe5b0da",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/continued_sft/scalar-metrics.json": {
+      "sha256": "fbe1a979ed219ce6b185aea01a61734dc257024caea9088d400233d87f5cac67",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/continued_sft/selection-metrics.json": {
+      "sha256": "bbf4903a126e0b89a48265121d2fe4646936d7c92d577236eb191ecee87c5294",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/exact/calibration-predictions.jsonl": {
+      "sha256": "65236affbd30b54538e846c9375ac579bdb8f7647d6613561625032d68d1ebfe",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/exact/metrics.json": {
+      "sha256": "ab213443e83c9341b5fcf8d2c9efeb93cef3dc929c568d84d8f285b652cb7f30",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/exact/policy-metrics.json": {
+      "sha256": "c19c6e1a5ad0fc272889cb5c82e4e481c15a3cd6412e34879293e227e296489b",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/exact/predictions.jsonl": {
+      "sha256": "b7bd75abb4469ec37ecb5bc15788c1f2d98434f6323588a35da2dcebbf7716c1",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/exact/scalar-metrics.json": {
+      "sha256": "6ac203ac6a0f146891dc48a1b7cc302ef91807b3e96541c794093f65649672a8",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/exact/selection-metrics.json": {
+      "sha256": "983e90b7785edb48ef069be9c3a9df6f1c35e38c70f9045f7d21d530ef8d62d9",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/sampled/calibration-predictions.jsonl": {
+      "sha256": "46ecc3ba692a4cee3e0ac4a930969c8f1035c3b5107aaf3551b536aca5ef4912",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/sampled/metrics.json": {
+      "sha256": "e7cbb88a66c19a5b49db149b72f93ca1e578f3a7fed1dca76343579bcf6f9a01",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/sampled/policy-metrics.json": {
+      "sha256": "a827e09e8abfc7e5eb4288821e8de36a4e77477d8a959024b3b330a2d2c44a27",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/sampled/predictions.jsonl": {
+      "sha256": "9155806fd9db2bd7d9b95f9517a89ad72342d46b132744b308f10adba3b5def5",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/sampled/scalar-metrics.json": {
+      "sha256": "dc6076c954dc5d3d575de40bcdc09e8be336c3a2bd28d3bda4da21fcddfb899e",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/sampled/selection-metrics.json": {
+      "sha256": "538e354b8049ffcf67844add8b51b22cd85ffa9bbcc992cceaeb85b8699a166c",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/sft-posthoc/constant-metrics.json": {
+      "sha256": "594317f8b8722310c9efb870932dafb37da6bb3875ad1ef6188024c6fbb030ae",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/sft-posthoc/constant-predictions.jsonl": {
+      "sha256": "0213143289c609d10b15a280c6111ed002889839e41f8f48a0f8ac695f0e1a01",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/sft-posthoc/half-metrics.json": {
+      "sha256": "625ef1e4c626245ad1666289a0ab8d784c057f429a1d13bc1f4e976cf93a91f2",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/sft-posthoc/half-predictions.jsonl": {
+      "sha256": "09d90b80a17cee53b0d36b5beb711b100f4be62d04f70aa86768b9454fba4b6c",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/sft-posthoc/temperature-metrics.json": {
+      "sha256": "7a3079c8344032c59d9cbbabaaf82f18d4d801f6e85430622fc95a65b368383a",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/sft-posthoc/temperature-predictions.jsonl": {
+      "sha256": "379280d393ba6c27963c89b727673f4aa417f0923ab187a846f181d59abf8bea",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/sft/calibration-predictions.jsonl": {
+      "sha256": "b8c0a1535a32e2e49807a487eddd84af8cb80814758789066cc5e13289c10f94",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/sft/metrics.json": {
+      "sha256": "e19c1117d926e87b61308e64ccb91a7b23bde5eeda30ba090e74cf89a675fb87",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/sft/policy-metrics.json": {
+      "sha256": "5b00febad29e87e9ceefad9a419b06051bca324c11d0e21ae1f0bcd3e36ade7b",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/sft/predictions.jsonl": {
+      "sha256": "6d00932f20dab916b09392a561d78df66e064505ab33a8e2d52ada8d8edff4df",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/sft/scalar-metrics.json": {
+      "sha256": "e1d15e8e16fdd65878634e542ea74cea182346b601a668fd0897baf25de496ec",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-22/sft/selection-metrics.json": {
+      "sha256": "e9cbfa41edfe37cbabbec6de8984ed8b034ba025b80edb357f05cf5fba606187",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/continued_sft-posthoc/constant-metrics.json": {
+      "sha256": "8f2dc4bc61baaf41a39be7b38a5c6b525995f3de0cf88dcf6a9c98e5bf271bf9",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/continued_sft-posthoc/constant-predictions.jsonl": {
+      "sha256": "e0b03dd816d3e2142a941bd6e6d36ddbc3590bae59dc59c54a645eced1ce79ac",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/continued_sft-posthoc/half-metrics.json": {
+      "sha256": "f75dd2dd81f6327d5d9696e88ccf5f2d5129e356db3704096343b816fc319dc1",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/continued_sft-posthoc/half-predictions.jsonl": {
+      "sha256": "09563cfc9405217ad92f0b8a3138f4c0ef4a64f05a227cc6285ae699cbf98f81",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/continued_sft-posthoc/temperature-metrics.json": {
+      "sha256": "ad138b7dd8b2775e1b4cea783ccf0038b45849c7d972715d026b376306e94764",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/continued_sft-posthoc/temperature-predictions.jsonl": {
+      "sha256": "09840e96315ca3e0c12736cd9e240294679caf626291d222d096a222e99abe37",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/continued_sft/calibration-predictions.jsonl": {
+      "sha256": "a305015f6102ffe89853ecd09d15cc9c71e481b84baa374288e061f298440ac8",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/continued_sft/metrics.json": {
+      "sha256": "a823124d2025277de942ed4cf0c1570bd2e48bb35a7927ac1caba44324385a58",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/continued_sft/policy-metrics.json": {
+      "sha256": "54dba137bc49db5c4c009061d0d42ca56d62f36d6adfbc9c0ff3fb72adc073ff",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/continued_sft/predictions.jsonl": {
+      "sha256": "5f52cabe4c474e2ae7c265fb18a2f1ee8a853f3eda363a361b6c899c76c40d9f",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/continued_sft/scalar-metrics.json": {
+      "sha256": "d0a88b5d6ad767877ea9d1c8ce0fda7e772066f648f1abf6f504cb982602618e",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/continued_sft/selection-metrics.json": {
+      "sha256": "0683b3ba4c5cb5c077754ede5c1055ee4eea87f7cd43f382563021e83761fdf5",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/exact/calibration-predictions.jsonl": {
+      "sha256": "b2e427316338fc785ea00b236b18c12f95ac926112e597138f80b48f7b550f26",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/exact/metrics.json": {
+      "sha256": "42c765f4972f19e85445616fcb5920b4095b0630994f82be0dc440dddbe78fde",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/exact/policy-metrics.json": {
+      "sha256": "8b70ad794defa84b4df76f3fda733f2f28095cd802253d00848ed3c4d376f422",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/exact/predictions.jsonl": {
+      "sha256": "e9201b25ec1b95216f4923475fdd57109f89f42705755f6b55b04286fd83857e",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/exact/scalar-metrics.json": {
+      "sha256": "2d2448b8268f09b59d978f51695472adc3ac7411aff630b8a43cdba4711d786e",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/exact/selection-metrics.json": {
+      "sha256": "7e48e98d3fd117751f44a6ad821e5d3b18955e929b5fddaa3f646f334896ece0",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/sampled/calibration-predictions.jsonl": {
+      "sha256": "2c1cef5243d9bd1a039e0771996c737ec1cb5f801ca5d391e49f8ad3bea28bb1",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/sampled/metrics.json": {
+      "sha256": "5bd9de9c4311f5f810eeba39ee6c1e2993b27843a150e14ed4231ce7c3902389",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/sampled/policy-metrics.json": {
+      "sha256": "938a742a355f0dd66580104806b7e9ce74ab4afc1a6bc05da77ab4e519ecf8a6",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/sampled/predictions.jsonl": {
+      "sha256": "e19ab120720e40824f1609d79ffba23bf44249f3accb70bb23aa8e6ac3e3d3ca",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/sampled/scalar-metrics.json": {
+      "sha256": "a2bcb680eb2c02f3af316c887200074e91c7d4f45b4970cadde6e54e79dddf25",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/sampled/selection-metrics.json": {
+      "sha256": "20395129a473779050c60e327572cfc4b0d2cec0909df1042ab6a11ac5129393",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/sft-posthoc/constant-metrics.json": {
+      "sha256": "5d7527554b756b55382e703569e4065bd8fed50a2904e63ab1eec09b9df08a6d",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/sft-posthoc/constant-predictions.jsonl": {
+      "sha256": "0263ade9c745de188745a27d7e3893546cd8ca056ff9e770b63c56bc670ad4d0",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/sft-posthoc/half-metrics.json": {
+      "sha256": "14907d75715d850654e3076f1e3506d486d8a9121a6d7af82af77f49a9f9967d",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/sft-posthoc/half-predictions.jsonl": {
+      "sha256": "645e1eab4c90a43595b79310a81aa3d5cc5ca40ec87a281a0040ed9e860ef132",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/sft-posthoc/temperature-metrics.json": {
+      "sha256": "f28382a80c91d558e02955501a209b3c48174f73b0de857a2a0ecd9488b54a7f",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/sft-posthoc/temperature-predictions.jsonl": {
+      "sha256": "273221dbe04fa22d9ff5298cee26d46a3a296e2a83b6b7dd231b97f21ef3abe1",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/sft/calibration-predictions.jsonl": {
+      "sha256": "a823bf4cdc4961e7b960cfee93cd62dded5c6c50d13e810fb31a2557fe1c1ee2",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/sft/metrics.json": {
+      "sha256": "fd2b441334d0b7b61d02e5a31a7e63d088be41071a666498c2ec855c08046c05",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/sft/policy-metrics.json": {
+      "sha256": "3d32cc0f090b22c76c8eb33ab99af9755c3920f8cd7ab32cafb32cb5ec593cc4",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/sft/predictions.jsonl": {
+      "sha256": "9a48f42bc9a732a80c4e2689013d48baf0692f1aa903f7e60c621962b8c67048",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/sft/scalar-metrics.json": {
+      "sha256": "d4e2c6aa09f78a0e7b8caafc40187567f5e456de1ca3ecbdbf73b4a920a3a188",
+      "mode": "100644"
+    },
+    "results/three-seed-9b/seed-33/sft/selection-metrics.json": {
+      "sha256": "8f8e5bbbe61d301c53b85a8683d0bf1e408b041a6a37b85334e0c7f8cfc91ec7",
+      "mode": "100644"
+    },
+    "scripts/analyze_completed_runs.py": {
+      "sha256": "7f820fb975f6c838bb456f783b4a3b84740773c647a19a2230ae9226e577fd28",
+      "mode": "100644"
+    },
+    "scripts/benchmark.py": {
+      "sha256": "99b48635ae4ade10938f743b8c084d48b1289462c2cc8b16dedc4684a045035f",
+      "mode": "100644"
+    },
+    "scripts/calibrate.py": {
+      "sha256": "230e313a04baec6545482c7dba9cbfc7d956fd93d540d8dfec2c14d8cd123cc9",
+      "mode": "100644"
+    },
+    "scripts/collect_evidence.py": {
+      "sha256": "1d49ca7046da98d60f5652ff51b73633a60ab4edc709fc5b341d96fdf5389398",
+      "mode": "100644"
+    },
+    "scripts/evaluate_robustness.py": {
+      "sha256": "bf2c843ee50d180d6b4bae6498d0bf04bd51ba7a6b3ceb84d31e3d87fd92ad1c",
+      "mode": "100644"
+    },
+    "scripts/evaluate_transfer.py": {
+      "sha256": "b6889307810c19f153d08ea58e83b80ace0bc7d22548b424a1e73309f75a455e",
+      "mode": "100644"
+    },
+    "scripts/gliclass_baseline.py": {
+      "sha256": "874b88e7bacd81a3dcc91f67a6d7073196de51b4d99895a0af1da0f865dd5477",
+      "mode": "100644"
+    },
+    "scripts/gpu_telemetry.py": {
+      "sha256": "4663de1c5bf36a41b83db9d49068068a3882d3af1399090bcf0933fd4794d398",
+      "mode": "100644"
+    },
+    "scripts/make_untouched.py": {
+      "sha256": "c9ee6dbb12d7197879f3f71b01eff227fd24a06d3ccd3329f1f099d72e90fd66",
+      "mode": "100644"
+    },
+    "scripts/openjev_baseline.py": {
+      "sha256": "fb0d631c66eb214b017fcb0d65117615a0a3b669054e63133d22ede61cc2152b",
+      "mode": "100644"
+    },
+    "scripts/paired_comparisons.py": {
+      "sha256": "94194a8bc0280f329c905ef0b5e69a55625138eaa7fd6f96efa7838f461a0a23",
+      "mode": "100644"
+    },
+    "scripts/pilot_suite.py": {
+      "sha256": "67133d1e9603073fe2a3a57bbd920758690462d0242b8f597751f3ea9e65dd3e",
+      "mode": "100644"
+    },
+    "scripts/plot_gpu_telemetry.py": {
+      "sha256": "116f8cf7c019d60750edc51ff3eb2edfc578d5f73bde20e7f4a3a23dab5b6f13",
+      "mode": "100644"
+    },
+    "scripts/plot_results.py": {
+      "sha256": "d0a448a6718640bb5560bd0cd4106fbb67b0428a47bfcc3225ba30c3fbb51c0e",
+      "mode": "100644"
+    },
+    "scripts/plot_study.py": {
+      "sha256": "14f55805f16d83c6b6915b541f6e412ea3aaec6b05577c5a69f879d477d6ef16",
+      "mode": "100644"
+    },
+    "scripts/posthoc_controls.py": {
+      "sha256": "5fdea0cbc47945822bafefba1e385fe04c83dd8c31e4ccd7bce4fe2c6a5dce84",
+      "mode": "100644"
+    },
+    "scripts/prepare_banking.py": {
+      "sha256": "24854db9af550db46d30075c38561a996e20ae1e6655cd9985af7bcb54e588b8",
+      "mode": "100644"
+    },
+    "scripts/prepare_clinc.py": {
+      "sha256": "e84bdc8453a5c3e89a56ad5d4ece3791ac682e9728f6bcd5cf2c83697782cb63",
+      "mode": "100644"
+    },
+    "scripts/reproduce_readout.py": {
+      "sha256": "4d26167ce11d188b171a80c2820ff8bebccbea8215a4c5804e809bbe828b856e",
+      "mode": "100644"
+    },
+    "scripts/run_comparison.py": {
+      "sha256": "8f9343f6296766846f384df69d999e376a4457e28e51ffc6fc0f8baff7473b47",
+      "mode": "100644"
+    },
+    "scripts/stress.py": {
+      "sha256": "c34a86a44ed32a0698b87325afe38babde90e47f63f75646958fbe8625da8ea6",
+      "mode": "100644"
+    },
+    "scripts/summarize_study.py": {
+      "sha256": "cab33db37015bb81c7486b30c980ba7c56ee902b6ea3e740072d31b794294be9",
+      "mode": "100644"
+    },
+    "scripts/tfidf_baseline.py": {
+      "sha256": "e47e767bc81d5158833db0bd755801b95f5b00d114a5d92d7564ddd3c721a25c",
+      "mode": "100644"
+    },
+    "scripts/three_seed_pilot.py": {
+      "sha256": "776a50819504db6004271d3681b076c1f14f6f22207ef2ac07404f4f6dec1476",
+      "mode": "100644"
+    },
+    "scripts/track_existing_run.py": {
+      "sha256": "9e793783ca0255500f54794c2be6de9cad99cadd38c17f24b17446c5bd9bb9eb",
+      "mode": "100644"
+    },
+    "scripts/validate_container_sizes.py": {
+      "sha256": "ca8bf6dfee1bf069bda5099b4436717d0e9e2a4eece0e5dd03e2d35576b14802",
+      "mode": "100644"
+    },
+    "scripts/validate_http.py": {
+      "sha256": "4a2b2d71ade0cfabb517b8d2af78c2b1db4a9606564f47abb5f00c7c30d8cc4b",
+      "mode": "100644"
+    },
+    "scripts/validate_limits.py": {
+      "sha256": "e84c734b06d2af0ab481ef267717f8a5c88baa51f54899be0e368069b6344ac7",
+      "mode": "100644"
+    },
+    "scripts/verify_artifact.py": {
+      "sha256": "7866fea9bd39dba79530d8c53b89f7ac3dc3b2def8ca9257a9240cd1fda1b505",
+      "mode": "100644"
+    },
+    "scripts/verify_reload.py": {
+      "sha256": "d5abc82b5ddf7a62f40a4864271925a9babb4d3ac44d968171518601d55ee38d",
+      "mode": "100644"
+    },
+    "src/myjev/__init__.py": {
+      "sha256": "1d35928e874e1ab0a0e91c8e80535c614294cf6ffdacba9539ee119ad0dea1ab",
+      "mode": "100644"
+    },
+    "src/myjev/artifacts.py": {
+      "sha256": "643054347ba05ca6c2461ee045b7b4f0745d8ae01a276f06097f0da770a1e404",
+      "mode": "100644"
+    },
+    "src/myjev/calibration.py": {
+      "sha256": "6959d6d88adcb67efe942a2b7554cc9c6b8cf3aa2de7162fb93c9e6eb396a290",
+      "mode": "100644"
+    },
+    "src/myjev/cli.py": {
+      "sha256": "6f0a5646a8d4659920d65cd65fdffffeaf64c06766680d0dae996c670236f7c3",
+      "mode": "100644"
+    },
+    "src/myjev/data.py": {
+      "sha256": "ffeb3a6f01bc73a2095e7435e70e36c4e9164b1efcb8628ecbef1a0a03599510",
+      "mode": "100644"
+    },
+    "src/myjev/evaluate.py": {
+      "sha256": "124822cc936eae36bac5761e42532d3658152dee5f4ff509e0fb6cb3d353ac6c",
+      "mode": "100644"
+    },
+    "src/myjev/inference.py": {
+      "sha256": "c8decfb3fbc53bffb0299bcefabab3ea1919c7f8e514094209ca97fa5c5184b4",
+      "mode": "100644"
+    },
+    "src/myjev/judging.py": {
+      "sha256": "93d79be81fffb3ff8b834c951545fd08b619c6c05462f7594d458eada0c4448a",
+      "mode": "100644"
+    },
+    "src/myjev/metrics.py": {
+      "sha256": "f81e4bb20629544c2545ebdfce88b025f92b7f4243c9f9652c79c28017343d43",
+      "mode": "100644"
+    },
+    "src/myjev/model.py": {
+      "sha256": "e668b74b1760a620ef5db5b01e1bc1b5b5daa4056b638caa6d7064a9b3e314a6",
+      "mode": "100644"
+    },
+    "src/myjev/objectives.py": {
+      "sha256": "eb8a70e07546a6f9c5d67303e502b4c199c3774d7a76246f2059d16527759b80",
+      "mode": "100644"
+    },
+    "src/myjev/prompt.py": {
+      "sha256": "71e4c8ffb0289c5b13e8a5a67276488e4524ea8e105ed35757e7273a70a54e67",
+      "mode": "100644"
+    },
+    "src/myjev/schema.py": {
+      "sha256": "c950567db916afe148c6be9b36dfce2fdfa89be8853c0dc35bfa4d50c1c6d55f",
+      "mode": "100644"
+    },
+    "src/myjev/server.py": {
+      "sha256": "6740eaf5d0f50965a4bdbdc5432a33bab3ef3fb96d65c7ab6d368c5e2ae72b63",
+      "mode": "100644"
+    },
+    "src/myjev/tracking.py": {
+      "sha256": "4900b0e7c472c09938d36768a8d2459d3ee1320d9b1009c4e81536c48e17117d",
+      "mode": "100644"
+    },
+    "src/myjev/train.py": {
+      "sha256": "800c878ec05a0b4d6d444444c73d4a7f1b8d0349c4aad916ece451cac0ebfcdd",
+      "mode": "100644"
+    },
+    "tests/test_contract.py": {
+      "sha256": "94f2980096a1a1690f2fabd7c9f51e5d4a971ed7401af734f5ff5a05b63b2fdf",
+      "mode": "100644"
+    },
+    "tests/test_objectives.py": {
+      "sha256": "ef263b42bd9775ddea4fc60ffcada86bc3a09b107ab7f0031960e10bbcfbabf0",
+      "mode": "100644"
+    }
+  }
+}

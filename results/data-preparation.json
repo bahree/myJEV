@@ -1,0 +1,18 @@
+{
+  "dataset": "PolyAI-LDN/task-specific-datasets/banking_data",
+  "revision": "57ec275d8078af65b7731c2a98be812d844a6d6b",
+  "split_seed": 42,
+  "counts": {
+    "train": 7999,
+    "validation": 997,
+    "calibration": 1000,
+    "test": 3080
+  },
+  "excluded_train_test_overlap": 7,
+  "sha256": {
+    "train": "3b37308dfb4e6be7dbfdbfdba6a3d9b2ce24fa0691ec9387b5353e28a995f360",
+    "validation": "557fbd135aaf844a535f48017de2e808d4e9e5ebf4b540af17f4ee19422586ca",
+    "calibration": "2e095c9b0712cf2ed78f67979cecf5ed023c349aa4be344981780a7063210475",
+    "test": "7d4fb64775dc350e37a99c6bc317edecea1639d54be336ab6b05028622b93f31"
+  }
+}

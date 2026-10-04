@@ -1,0 +1,25 @@
+# Documentation
+
+Start with the question you want to answer. All commands run from the repository root.
+
+| Question | Guide |
+|---|---|
+| How do I install, train, and run it? | [Quick start](quickstart.md) |
+| What happens in one forward pass? | [Architecture and objectives](architecture.md) |
+| What was actually measured? | [Experiments and evidence](experiments.md) |
+| How are methods compared fairly? | [Experimental protocol](protocol.md) |
+| How do I host it? | [Local and managed hosting](hosting.md) |
+| Where are released weights? | [Model release tracker](models.md) — releases pending |
+| What is complete, and what comes next? | [Roadmap](roadmap.md) |
+
+## Data and provenance
+
+- [BANKING77](datasets/banking77.md): controlled intent routing, official test split preserved.
+- [CLINC150](datasets/clinc150.md): unfamiliar-task and unsupported-request evaluation, excluded from tuning.
+- [Synthetic fixtures](datasets/synthetic.md): objective arithmetic and controlled uncertainty.
+- [Attribution](attribution.md): JevK5, SemIf, and JevForge architecture distinctions.
+- [OpenJev](openjev.md): a related released model with different scale, confidence semantics, and licensing.
+
+## Follow the project
+
+[Milestone history](../CHANGELOG.md) records the research and engineering state represented by each snapshot. The [blog](https://blog.desigeek.com) will explain the experiments; article links remain placeholders until published. The roadmap and model tracker are living reader documents, not promises that unfinished work has passed evaluation.

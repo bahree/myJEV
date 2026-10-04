@@ -1,0 +1,20 @@
+{
+  "artifact_revision": "84b7c1bdd97f5a1bf52220fdb2581898e270b98fa09049bf9baec7dd41021f14",
+  "results": [
+    {
+      "candidates": 2,
+      "accepted_tokens": 4096,
+      "rejected_tokens": 4097,
+      "seconds": 2.278659614999924,
+      "peak_vram_bytes": 13056883200
+    },
+    {
+      "candidates": 160,
+      "accepted_tokens": 4096,
+      "rejected_tokens": 4097,
+      "seconds": 1.3699036510006408,
+      "peak_vram_bytes": 13056883200
+    }
+  ],
+  "scope": "synthetic cap validation only; latency measured during other study jobs"
+}

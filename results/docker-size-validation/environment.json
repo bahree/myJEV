@@ -1,0 +1,7 @@
+{
+  "image": "myjev:study-checkpoint",
+  "image_id": "sha256:2f21b45a0df75eead5d0b935b7158211c67388075b76cea23b187e7a0259d0a3",
+  "gpu_uuid": "GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a",
+  "started_utc": "2026-10-04T22:00:32.666729+00:00",
+  "scope": "One container on an otherwise idle GPU; other GPUs may run study jobs. Cached backbone, short three-candidate fixture; not maximum-context or isolated-host performance."
+}

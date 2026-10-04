@@ -1,0 +1,19 @@
+{
+  "python_cli_http_equal": true,
+  "backbone_calls_per_request": 1,
+  "oversized_rejected": true,
+  "candidate_160_smoke": true,
+  "response": {
+    "selected_id": "billing",
+    "selection_scores": {
+      "billing": 0.9981769323348999,
+      "technical": 0.0011262844782322645,
+      "other": 0.0006968308007344604
+    },
+    "confidence": 0.981685996055603,
+    "confidence_mode": "scalar",
+    "artifact_revision": "c165b44445afc4ae392c6153e9f4f840f65a2b3945aca839661c5e314308213c",
+    "calibration_revision": "uncalibrated"
+  },
+  "scope": "short 160-candidate smoke; not a comprehensive length or calibration validation"
+}

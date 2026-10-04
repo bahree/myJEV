@@ -1,0 +1,7 @@
+{
+  "parameter_reload_exact": true,
+  "parameters_checked": 71,
+  "artifact_revision": "143a69124e169db8f6e441d8c68f1bac5ad79416a0a209db02ad67057991ae22",
+  "in_memory_vs_reload_response_exact": true,
+  "nonquantized_embeddings_fp32": true
+}

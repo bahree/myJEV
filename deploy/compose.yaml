@@ -1,0 +1,19 @@
+services:
+  myjev:
+    build: ..
+    image: myjev:0.1.0
+    ports: ["127.0.0.1:8000:8000"]
+    environment:
+      MYJEV_ARTIFACT: /artifact
+      MYJEV_QUEUE_SIZE: "8"
+      MYJEV_TIMEOUT: "30"
+    volumes:
+      - ${MYJEV_ARTIFACT_HOST:?Set artifact path}:/artifact:ro
+      - ${MYJEV_CACHE_HOST:?Set shared cache path}:/cache/huggingface
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

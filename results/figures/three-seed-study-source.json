@@ -1,0 +1,257 @@
+{
+  "scope": "Only complete three-seed method/size groups are plotted. Untrained/convergence claims are unsupported.",
+  "rows": [
+    {
+      "size": "0.8b",
+      "method": "sft",
+      "seed": 11,
+      "accuracy": 0.55078125,
+      "policy_brier": 0.3609303455668159
+    },
+    {
+      "size": "0.8b",
+      "method": "sft",
+      "seed": 22,
+      "accuracy": 0.54296875,
+      "policy_brier": 0.3315906068765397
+    },
+    {
+      "size": "0.8b",
+      "method": "sft",
+      "seed": 33,
+      "accuracy": 0.4453125,
+      "policy_brier": 0.30028844671365507
+    },
+    {
+      "size": "0.8b",
+      "method": "continued_sft",
+      "seed": 11,
+      "accuracy": 0.5703125,
+      "policy_brier": 0.44521013111754326
+    },
+    {
+      "size": "0.8b",
+      "method": "continued_sft",
+      "seed": 22,
+      "accuracy": 0.61328125,
+      "policy_brier": 0.49822877838691404
+    },
+    {
+      "size": "0.8b",
+      "method": "continued_sft",
+      "seed": 33,
+      "accuracy": 0.53515625,
+      "policy_brier": 0.4231846849548952
+    },
+    {
+      "size": "0.8b",
+      "method": "exact",
+      "seed": 11,
+      "accuracy": 0.55859375,
+      "policy_brier": 0.2570648015538022
+    },
+    {
+      "size": "0.8b",
+      "method": "exact",
+      "seed": 22,
+      "accuracy": 0.59765625,
+      "policy_brier": 0.259907894026684
+    },
+    {
+      "size": "0.8b",
+      "method": "exact",
+      "seed": 33,
+      "accuracy": 0.515625,
+      "policy_brier": 0.2983303193892819
+    },
+    {
+      "size": "0.8b",
+      "method": "sampled",
+      "seed": 11,
+      "accuracy": 0.49609375,
+      "policy_brier": 0.26713494085896305
+    },
+    {
+      "size": "0.8b",
+      "method": "sampled",
+      "seed": 22,
+      "accuracy": 0.44921875,
+      "policy_brier": 0.2606542676486071
+    },
+    {
+      "size": "0.8b",
+      "method": "sampled",
+      "seed": 33,
+      "accuracy": 0.48046875,
+      "policy_brier": 0.23334244682436317
+    },
+    {
+      "size": "4b",
+      "method": "sft",
+      "seed": 11,
+      "accuracy": 0.70703125,
+      "policy_brier": 0.42971862618123535
+    },
+    {
+      "size": "4b",
+      "method": "sft",
+      "seed": 22,
+      "accuracy": 0.70703125,
+      "policy_brier": 0.5440383786632155
+    },
+    {
+      "size": "4b",
+      "method": "sft",
+      "seed": 33,
+      "accuracy": 0.70703125,
+      "policy_brier": 0.5490093842208953
+    },
+    {
+      "size": "4b",
+      "method": "continued_sft",
+      "seed": 11,
+      "accuracy": 0.67578125,
+      "policy_brier": 0.4584697973087722
+    },
+    {
+      "size": "4b",
+      "method": "continued_sft",
+      "seed": 22,
+      "accuracy": 0.7421875,
+      "policy_brier": 0.7065814549943756
+    },
+    {
+      "size": "4b",
+      "method": "continued_sft",
+      "seed": 33,
+      "accuracy": 0.73828125,
+      "policy_brier": 0.649859621356971
+    },
+    {
+      "size": "4b",
+      "method": "exact",
+      "seed": 11,
+      "accuracy": 0.7578125,
+      "policy_brier": 0.1829381110812915
+    },
+    {
+      "size": "4b",
+      "method": "exact",
+      "seed": 22,
+      "accuracy": 0.69921875,
+      "policy_brier": 0.21257560297984296
+    },
+    {
+      "size": "4b",
+      "method": "exact",
+      "seed": 33,
+      "accuracy": 0.69140625,
+      "policy_brier": 0.21655266088497704
+    },
+    {
+      "size": "4b",
+      "method": "sampled",
+      "seed": 11,
+      "accuracy": 0.7109375,
+      "policy_brier": 0.21148288828584877
+    },
+    {
+      "size": "4b",
+      "method": "sampled",
+      "seed": 22,
+      "accuracy": 0.65234375,
+      "policy_brier": 0.22731024468667183
+    },
+    {
+      "size": "4b",
+      "method": "sampled",
+      "seed": 33,
+      "accuracy": 0.71875,
+      "policy_brier": 0.20299358445644355
+    },
+    {
+      "size": "9b",
+      "method": "sft",
+      "seed": 11,
+      "accuracy": 0.7421875,
+      "policy_brier": 0.6971772768314467
+    },
+    {
+      "size": "9b",
+      "method": "sft",
+      "seed": 22,
+      "accuracy": 0.76953125,
+      "policy_brier": 0.4627619046150845
+    },
+    {
+      "size": "9b",
+      "method": "sft",
+      "seed": 33,
+      "accuracy": 0.69921875,
+      "policy_brier": 0.5278499532504827
+    },
+    {
+      "size": "9b",
+      "method": "continued_sft",
+      "seed": 11,
+      "accuracy": 0.7265625,
+      "policy_brier": 0.7134580867235742
+    },
+    {
+      "size": "9b",
+      "method": "continued_sft",
+      "seed": 22,
+      "accuracy": 0.77734375,
+      "policy_brier": 0.6420078499549196
+    },
+    {
+      "size": "9b",
+      "method": "continued_sft",
+      "seed": 33,
+      "accuracy": 0.74609375,
+      "policy_brier": 0.65291101158895
+    },
+    {
+      "size": "9b",
+      "method": "exact",
+      "seed": 11,
+      "accuracy": 0.73828125,
+      "policy_brier": 0.1912362059600954
+    },
+    {
+      "size": "9b",
+      "method": "exact",
+      "seed": 22,
+      "accuracy": 0.7265625,
+      "policy_brier": 0.18465607781239535
+    },
+    {
+      "size": "9b",
+      "method": "exact",
+      "seed": 33,
+      "accuracy": 0.69921875,
+      "policy_brier": 0.2134512120907228
+    },
+    {
+      "size": "9b",
+      "method": "sampled",
+      "seed": 11,
+      "accuracy": 0.69921875,
+      "policy_brier": 0.21310732655627904
+    },
+    {
+      "size": "9b",
+      "method": "sampled",
+      "seed": 22,
+      "accuracy": 0.71875,
+      "policy_brier": 0.2030973671130713
+    },
+    {
+      "size": "9b",
+      "method": "sampled",
+      "seed": 33,
+      "accuracy": 0.671875,
+      "policy_brier": 0.22335642710406473
+    }
+  ]
+}

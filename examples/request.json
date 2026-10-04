@@ -1,0 +1,1 @@
+{"context":"I was charged twice.","instructions":"Select the appropriate support route.","candidates":[{"id":"billing","description":"Charges, invoices, and refunds"},{"id":"technical","description":"Errors and configuration"},{"id":"other","description":"Neither listed route applies"}]}
