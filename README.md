@@ -6,9 +6,9 @@ myJEV explores a compact interface for language models: give the model some cont
 
 This is a research and learning project by [Amit Bahree](https://blog.desigeek.com). The repository will grow through reviewable milestone commits. The first milestone includes working training and inference code, a completed short three-seed pilot, and the measurements needed to question its conclusions.
 
-> **Current milestone: inference pilot.** The 45 scheduled pilot evaluations are complete. Training is deliberately short, and neural evaluation uses 256 held-out test examples. Longer studies are planned. Downloadable trained adapters and a hosted demo are **not released yet**.
+> **Current milestone: inference pilot.** The 45 scheduled pilot evaluations are complete. Training is deliberately short, and neural evaluation uses 256 held-out test examples. The [longer matched study](docs/training.md) is now running; its results are pending. Downloadable trained adapters and a hosted demo are **not released yet**.
 
-[Start here](docs/quickstart.md) · [Documentation](docs/README.md) · [Measured results](docs/experiments.md) · [Roadmap](docs/roadmap.md) · [Model releases](docs/models.md)
+[Start here](docs/quickstart.md) · [Documentation](docs/README.md) · [Measured results](docs/experiments.md) · [Roadmap](docs/roadmap.md) · [Model releases](docs/models.md) · [Next training study](docs/training.md)
 
 ## What is a decision model?
 

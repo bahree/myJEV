@@ -11,7 +11,7 @@
       "mode": "100644"
     },
     "CHANGELOG.md": {
-      "sha256": "5af432c93b44f03f36a4e53aa07ba76879f9a0229e3aa23c9a6299348f207869",
+      "sha256": "78c8abbe7f170c766539758ec08ecb87de679936e6d3a81504605218ea846960",
       "mode": "100644"
     },
     "Dockerfile": {
@@ -19,7 +19,7 @@
       "mode": "100644"
     },
     "README.md": {
-      "sha256": "b67ff4afc88c6dda4dbb980e2e08990562d2f026c40dc85df31657e102bf0157",
+      "sha256": "3185b46f063eb328081d998e0dd72f64339ac9da87c7bab56475be17fc007358",
       "mode": "100644"
     },
     "configs/0.8b.json": {
@@ -47,7 +47,7 @@
       "mode": "100644"
     },
     "docs/README.md": {
-      "sha256": "252c42cb46fd14f2b371cc4ef4835ecc25342731af9066cdac5507b502838261",
+      "sha256": "9cb9c9a0b70c6287872a83087ab5655c6cef8e9a97cc7ec19cd3f6f409161025",
       "mode": "100644"
     },
     "docs/architecture.md": {
@@ -95,7 +95,11 @@
       "mode": "100644"
     },
     "docs/roadmap.md": {
-      "sha256": "0b6100270627746a03bbd1bb1055a95588092a57af9ec16154e087ad96d269e3",
+      "sha256": "a08ce97b703404c82e2083474aa4ba485abaad811c49b8493fad4132451fffaf",
+      "mode": "100644"
+    },
+    "docs/training.md": {
+      "sha256": "3e4d6ccd0ae25b55106c4472c33a9072546be395cc3c0e5611aed6216fac03c0",
       "mode": "100644"
     },
     "examples/client.py": {
@@ -2222,6 +2226,10 @@
       "sha256": "c9ee6dbb12d7197879f3f71b01eff227fd24a06d3ccd3329f1f099d72e90fd66",
       "mode": "100644"
     },
+    "scripts/monitor_longer_study.py": {
+      "sha256": "624e62e5f6cf1952bf5439a3bbc003b874a57a3b1531c7ec368aa6ce561d6e7c",
+      "mode": "100644"
+    },
     "scripts/openjev_baseline.py": {
       "sha256": "fb0d631c66eb214b017fcb0d65117615a0a3b669054e63133d22ede61cc2152b",
       "mode": "100644"
@@ -2264,6 +2272,10 @@
     },
     "scripts/run_comparison.py": {
       "sha256": "8f9343f6296766846f384df69d999e376a4457e28e51ffc6fc0f8baff7473b47",
+      "mode": "100644"
+    },
+    "scripts/run_longer_study.py": {
+      "sha256": "eee191382196d50bbbe1f5f0309375f9c8b40475a707b2a57f557c169d11530d",
       "mode": "100644"
     },
     "scripts/stress.py": {
@@ -2380,6 +2392,10 @@
     },
     "tests/test_objectives.py": {
       "sha256": "ef263b42bd9775ddea4fc60ffcada86bc3a09b107ab7f0031960e10bbcfbabf0",
+      "mode": "100644"
+    },
+    "tests/test_validation.py": {
+      "sha256": "781c14959405acd79dc63adba3dc0a1ad0b3e720734c28548d994e3b4d0944c8",
       "mode": "100644"
     }
   }

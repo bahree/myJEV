@@ -2,6 +2,17 @@
 
 This history describes what each reader-facing snapshot contains. It records the state of the project at publication; upcoming work is tracked separately in the [roadmap](docs/roadmap.md).
 
+## Longer comparison started: 2026-10-04
+
+- Added validation-only learning-rate selection with equal trial budgets.
+- Started the 0.8B, 4B, and 9B runners on the existing A30s.
+- Defined 4,000 initial and 4,000 continuation updates with full official-test evaluation after tuning.
+- Continuations now see matched subsequent examples rather than restarting the initial data subset.
+- Added resume-safe orchestration, frozen data/configuration checks, and progress monitoring.
+- Removed em dashes from project prose and GPU figure titles.
+
+Results from this batch are pending; no new quality claim is made.
+
 ## Inference pilot: prepared 2026-10-04
 
 ### Available

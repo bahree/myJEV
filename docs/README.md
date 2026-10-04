@@ -8,6 +8,7 @@ Start with the question you want to answer. All commands run from the repository
 | What happens in one forward pass? | [Architecture and objectives](architecture.md) |
 | What was actually measured? | [Experiments and evidence](experiments.md) |
 | How are methods compared fairly? | [Experimental protocol](protocol.md) |
+| What is the next training batch? | [Longer matched comparison](training.md), running |
 | How do I host it? | [Local and managed hosting](hosting.md) |
 | Where are released weights? | [Model release tracker](models.md): releases pending |
 | What is complete, and what comes next? | [Roadmap](roadmap.md) |

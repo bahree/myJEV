@@ -15,7 +15,7 @@ This page makes incomplete work visible as the project develops. Checked items d
 
 ## Milestone 2: Stronger training and evaluation
 
-- [ ] Longer matched training with equal validation-based tuning opportunities.
+- [ ] Longer matched training with equal validation-based tuning opportunities. [This batch is running](training.md); results are pending.
 - [ ] Frozen main neural comparison on the full official BANKING77 test split.
 - [ ] Replicated precision controls to separate capacity from quantization effects.
 - [ ] Transfer and robustness studies at every size, extending the initial 0.8B diagnostics.
