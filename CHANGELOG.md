@@ -4,6 +4,7 @@ This history describes what each reader-facing snapshot contains. It records the
 
 ## Longer comparison started: 2026-10-04
 
+- Documented AdamW versus training steps, the 168,000-step budget, and batch progress/ETA semantics.
 - Added validation-only learning-rate selection with equal trial budgets.
 - Started the 0.8B, 4B, and 9B runners on the existing A30s.
 - Defined 4,000 initial and 4,000 continuation updates with full official-test evaluation after tuning.

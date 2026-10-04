@@ -56,6 +56,8 @@ See [architecture and objectives](docs/architecture.md) for the confidence head 
 | Run a GPU container | [Docker quick start](docs/quickstart.md#docker) | Docker with NVIDIA GPU access |
 | Download a trained release | [Model release tracker](docs/models.md) | Planned; no download available yet |
 
+The longer study uses one optimizer, AdamW, across several training approaches. Its 168,000 planned training steps are spread over 60 runs. See [the training-budget breakdown](docs/training.md#why-168000-training-steps) for the controls, costs, and progress definitions.
+
 ## Three sizes, one experimental interface
 
 | Backbone | Pilot precision | Adaptation | Observed training peak* |

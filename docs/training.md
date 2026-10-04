@@ -23,6 +23,37 @@ The selected supervised tuning artifact is shared by all continuation trials. Th
 
 All hyperparameter decisions are frozen before test/calibration evaluation begins. The validation loader checks its partition filename, hash, and training-group isolation. Each runner also verifies hashes of all data partitions and refuses changes to its frozen plan.
 
+## One optimizer, several training approaches
+
+An optimizer is the rule that adjusts trainable parameters using gradients. These runs all use **AdamW**. A training step, also called an optimizer update, adjusts the LoRA adapters and confidence heads while the backbone weights stay frozen. With accumulation set to one in this schedule, each step consumes one training example.
+
+The four approaches are supervised learning, continued supervision, exact RL, and sampled RL. Exact versus sampled describes how the RL objective and gradient are computed. Both still use AdamW to apply parameter updates. Continued supervision is the control that tests whether extra training alone explains a gain attributed to RL.
+
+## Why 168,000 training steps?
+
+The count covers every planned run at all three sizes; it is not the number of optimizers or the training length of a single model.
+
+| Phase | Runs per size | Steps per run | Total steps per size |
+|---|---:|---:|---:|
+| Tuning: four approaches, two learning rates each | 8 | 1,000 | 8,000 |
+| Main comparison: four approaches, three seeds each | 12 | 4,000 | 48,000 |
+| Total per size | 20 | Varies | 56,000 |
+| All three sizes | 60 | Varies | 168,000 |
+
+Two learning-rate trials give each approach an equal tuning opportunity. Three main seeds expose run-to-run variation. The supervised artifact is trained once per main seed and reused as the starting point for its three continuation branches. Its creation is not counted three times.
+
+This budget is a declared experimental choice, not evidence that this amount of training is optimal or sufficient for convergence. Larger tuning grids or more seeds could improve the study at additional cost. The present schedule keeps those costs fixed and visible.
+
+## What progress and completion time mean
+
+The exact training percentage is completed optimizer steps divided by 168,000. It excludes validation, test evaluation, and post-hoc calibration work. A training counter reaching its end therefore does not mean the entire batch is finished.
+
+An approximate batch percentage can weight the remaining training and evaluation tasks by measured time. We use observed update and inference speeds where available. Until an RL timing is observed, the estimate assumes an RL update takes 1.3 times the supervised update time. A broad allowance around that estimate accounts for uncertainty; it is a planning range, not a statistical confidence interval. Estimates can change as more tasks finish.
+
+The three GPUs run independently. The overall finish estimate is the longest remaining per-GPU duration, not the sum of all three durations. A failed or stopped job makes its completion estimate unavailable until the problem is resolved.
+
+Batch completion means its scheduled training, validation selection, full-test evaluations, and calibration controls are finished. Analysis, broader transfer studies, archive adaptation, artifact releases, and blog publication remain separate project work. The [roadmap](roadmap.md) keeps those boundaries explicit; there is no invented whole-project completion percentage.
+
 ## Run it
 
 First complete the [installation and BANKING77 preparation](quickstart.md). The configurations share the original pinned backbone cache. Each command below assigns one independent study to one GPU; only run the assignments your machine supports.

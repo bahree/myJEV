@@ -11,7 +11,7 @@
       "mode": "100644"
     },
     "CHANGELOG.md": {
-      "sha256": "78c8abbe7f170c766539758ec08ecb87de679936e6d3a81504605218ea846960",
+      "sha256": "d55fb1b9742550339a7930f8d3d3f4d917c9c053da403b5ee2ec8c6683748351",
       "mode": "100644"
     },
     "Dockerfile": {
@@ -19,7 +19,7 @@
       "mode": "100644"
     },
     "README.md": {
-      "sha256": "3185b46f063eb328081d998e0dd72f64339ac9da87c7bab56475be17fc007358",
+      "sha256": "16c045d01b3416b294a1ca50745843aba019778d7f1767ab0991f723ee0fff76",
       "mode": "100644"
     },
     "configs/0.8b.json": {
@@ -99,7 +99,7 @@
       "mode": "100644"
     },
     "docs/training.md": {
-      "sha256": "3e4d6ccd0ae25b55106c4472c33a9072546be395cc3c0e5611aed6216fac03c0",
+      "sha256": "a2a5bc70ed01ade1490bfdf9eb9c881f288c4296168bb93b753d0f10f96ce52b",
       "mode": "100644"
     },
     "examples/client.py": {
