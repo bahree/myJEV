@@ -1,8 +1,8 @@
-# myJEV — Decision Models, Confidence, and Reinforcement Learning
+# myJEV: Decision Models, Confidence, and Reinforcement Learning
 
 **Choose an answer. Estimate whether it is right. Know when to ask for review.**
 
-myJEV explores a compact interface for language models: give the model some context and a set of candidate answers, then receive a structured decision in one backbone forward pass. There is no autoregressive answer generation. The project follows the whole process—from data and training objectives to calibration, evaluation, and a local GPU service—across **0.8B, 4B, and 9B** models.
+myJEV explores a compact interface for language models: give the model some context and a set of candidate answers, then receive a structured decision in one backbone forward pass. There is no autoregressive answer generation. The project covers data, training objectives, calibration, evaluation, and a local GPU service across **0.8B, 4B, and 9B** models.
 
 This is a research and learning project by [Amit Bahree](https://blog.desigeek.com). The repository will grow through reviewable milestone commits. The first milestone includes working training and inference code, a completed short three-seed pilot, and the measurements needed to question its conclusions.
 
@@ -128,8 +128,8 @@ The articles will be published on [Desi Geek](https://blog.desigeek.com), with l
 
 | Article | Publication status |
 |---|---|
-| Building myJEV (Part 1): Decision Models, Confidence, and Training | Planned — link to follow |
-| Building myJEV (Part 2): Evaluation, Inference, and Hosting | Planned — link to follow |
+| Building myJEV (Part 1): Decision Models, Confidence, and Training | Planned: link to follow |
+| Building myJEV (Part 2): Evaluation, Inference, and Hosting | Planned: link to follow |
 
 The [roadmap](docs/roadmap.md) separates completed engineering checks from upcoming experiments. The [model tracker](docs/models.md) reserves a place for adapters, model cards, image digests, and reproducible load commands as releases become available. There is no paid managed endpoint running.
 

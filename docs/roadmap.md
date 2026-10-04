@@ -2,7 +2,7 @@
 
 This page makes incomplete work visible as the project develops. Checked items describe the current milestone; unchecked items are planned work, not measured results or release dates.
 
-## Milestone 1 — Working implementation and feasibility
+## Milestone 1: Working implementation and feasibility
 
 - [x] Single-pass candidate selection and separate confidence estimation.
 - [x] Supervised, exact expected-reward, and sampled optimization implementations.
@@ -13,7 +13,7 @@ This page makes incomplete work visible as the project develops. Checked items d
 - [x] Python, CLI, HTTP, and GPU Docker checks at all three sizes.
 - [x] Synthetic input-boundary checks at 160 candidates and 4,096 tokens.
 
-## Milestone 2 — Stronger training and evaluation
+## Milestone 2: Stronger training and evaluation
 
 - [ ] Longer matched training with equal validation-based tuning opportunities.
 - [ ] Frozen main neural comparison on the full official BANKING77 test split.
@@ -21,7 +21,7 @@ This page makes incomplete work visible as the project develops. Checked items d
 - [ ] Transfer and robustness studies at every size, extending the initial 0.8B diagnostics.
 - [ ] More extensive uncertainty reporting for rare accepted-case errors.
 
-## Milestone 3 — New tasks and adaptation
+## Milestone 3: New tasks and adaptation
 
 - [ ] Publish a reviewed new-task protocol and dataset card.
 - [ ] Audit machine-assisted labels against independent human judgments.
@@ -30,7 +30,7 @@ This page makes incomplete work visible as the project develops. Checked items d
 
 This part remains exploratory. Annotation material and draft articles are not distributed here. Machine-label agreement must be distinguished from human-audited correctness.
 
-## Milestone 4 — Reusable releases
+## Milestone 4: Reusable releases
 
 - [ ] Select a default artifact using quality, deferral, latency, and memory measurements.
 - [ ] Publish adapters, heads, calibration, manifests, and model cards on Hugging Face.

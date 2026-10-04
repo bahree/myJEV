@@ -59,3 +59,19 @@ def request_from_row(row, rng=None):
     request["candidates"] = candidates
     target = next(i for i, c in enumerate(candidates) if c["id"] == row["label"])
     return request, target
+
+
+def training_order(rows, rng, offset=0):
+    """Replay the data RNG to start a continuation after its initial exposure."""
+    if not isinstance(offset, int) or offset < 0 or not rows:
+        raise ValueError("nonnegative integer data offset and nonempty rows required")
+    order = list(range(len(rows)))
+    rng.shuffle(order)
+    cursor = 0
+    for _ in range(offset):
+        if cursor == len(order):
+            rng.shuffle(order)
+            cursor = 0
+        request_from_row(rows[order[cursor]], rng)
+        cursor += 1
+    return order, cursor

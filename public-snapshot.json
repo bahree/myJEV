@@ -11,7 +11,7 @@
       "mode": "100644"
     },
     "CHANGELOG.md": {
-      "sha256": "32ea768685b0861e89c8206afcb17a2f9109d309142c17dcd89214784f66b07b",
+      "sha256": "5af432c93b44f03f36a4e53aa07ba76879f9a0229e3aa23c9a6299348f207869",
       "mode": "100644"
     },
     "Dockerfile": {
@@ -19,7 +19,7 @@
       "mode": "100644"
     },
     "README.md": {
-      "sha256": "41aeced61a940b594367cd39e99c00e9da5d6ef634310bbe39f44ef9064e3dbe",
+      "sha256": "b67ff4afc88c6dda4dbb980e2e08990562d2f026c40dc85df31657e102bf0157",
       "mode": "100644"
     },
     "configs/0.8b.json": {
@@ -38,12 +38,16 @@
       "sha256": "65a2befb9a87454211e28017b3f17d909c3e364497cb01dc687826132093204b",
       "mode": "100644"
     },
+    "configs/study-v1.json": {
+      "sha256": "f9452debb09fd9eb253ffa72f32d61c738577b502364afe1b7ebaaf61cd9bedb",
+      "mode": "100644"
+    },
     "deploy/compose.yaml": {
       "sha256": "1c1d7265fafdb005c2d0c356d4477c29a7fb49f2efe5f862d61373373f1696e7",
       "mode": "100644"
     },
     "docs/README.md": {
-      "sha256": "7f7a517c9ce51d0902f971fa23a20acb341d220cd7cf207f954d0a9ef45a8bdc",
+      "sha256": "252c42cb46fd14f2b371cc4ef4835ecc25342731af9066cdac5507b502838261",
       "mode": "100644"
     },
     "docs/architecture.md": {
@@ -75,7 +79,7 @@
       "mode": "100644"
     },
     "docs/models.md": {
-      "sha256": "2da526bd63b35994a8c3a03a50c7f447ab79232b199d6bfdd5835786be3309cb",
+      "sha256": "74d6ea1db4a0fb8c8699dd5fbbd2e329e3dc84d1df73ccadf64aa97f0898529c",
       "mode": "100644"
     },
     "docs/openjev.md": {
@@ -91,7 +95,7 @@
       "mode": "100644"
     },
     "docs/roadmap.md": {
-      "sha256": "a058c5669b4d0178074f673603d4b068ec29dfebad9e3a93f3772f7ce393b1e2",
+      "sha256": "0b6100270627746a03bbd1bb1055a95588092a57af9ec16154e087ad96d269e3",
       "mode": "100644"
     },
     "examples/client.py": {
@@ -567,7 +571,7 @@
       "mode": "100644"
     },
     "results/gpu-telemetry-20261004T205942Z/gpu-activity.png": {
-      "sha256": "9640a9608bd05553c16209a3cb1c17c75b0a39e0c42f54573393816c1521d919",
+      "sha256": "4e06020a622a61746b6ccd572e112d483fe4ab735e68db003b431940ea074927",
       "mode": "100644"
     },
     "results/gpu-telemetry-20261004T205942Z/gpu.csv": {
@@ -2231,7 +2235,7 @@
       "mode": "100644"
     },
     "scripts/plot_gpu_telemetry.py": {
-      "sha256": "116f8cf7c019d60750edc51ff3eb2edfc578d5f73bde20e7f4a3a23dab5b6f13",
+      "sha256": "cce051e7332eccfb67d481841bf7feaa5449bd17361f2385b331a094036c330c",
       "mode": "100644"
     },
     "scripts/plot_results.py": {
@@ -2319,7 +2323,7 @@
       "mode": "100644"
     },
     "src/myjev/data.py": {
-      "sha256": "ffeb3a6f01bc73a2095e7435e70e36c4e9164b1efcb8628ecbef1a0a03599510",
+      "sha256": "8e31a46a06578e66d7aff9aa302931b0558279e3afd6c4f726858e604ba79d66",
       "mode": "100644"
     },
     "src/myjev/evaluate.py": {
@@ -2363,7 +2367,11 @@
       "mode": "100644"
     },
     "src/myjev/train.py": {
-      "sha256": "800c878ec05a0b4d6d444444c73d4a7f1b8d0349c4aad916ece451cac0ebfcdd",
+      "sha256": "39ba9ad374c2a3574b60a042251d1e8cba064801172ce76b8c1566b65d85f8c2",
+      "mode": "100644"
+    },
+    "src/myjev/validation.py": {
+      "sha256": "53ca767a7adcaf39247a33f08164ae51182601ffc96a0a28bd23f2f3c9a6d4a8",
       "mode": "100644"
     },
     "tests/test_contract.py": {

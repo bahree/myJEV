@@ -9,7 +9,7 @@ import torch
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 from transformers import AutoTokenizer
 from .artifacts import save_artifact
-from .data import read_jsonl, request_from_row
+from .data import read_jsonl, request_from_row, training_order
 from .inference import DecisionModel
 from .model import DecisionNetwork, load_backbone
 from .objectives import exact_loss, joint_log_probs, sampled_loss, supervised_loss
@@ -87,9 +87,7 @@ def main():
     start = 0
     out = Path(args.output)
     out.mkdir(parents=True, exist_ok=True)
-    order = list(range(len(rows)))
-    rng.shuffle(order)
-    cursor = 0
+    order, cursor = training_order(rows, rng, cfg.get("data_offset", 0))
     if args.resume:
         state = torch.load(args.resume, map_location=args.device, weights_only=False)
         if state["data_sha256"] != digest or state["method"] != args.method or state["config"] != cfg or state.get("reward") != args.reward or state.get("initial") != args.initial:

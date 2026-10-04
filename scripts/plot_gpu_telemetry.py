@@ -28,7 +28,7 @@ axes[0].set_ylabel('GPU utilization (%)'); axes[0].set_ylim(0,105)
 axes[1].set_ylabel('Device memory (GiB)'); axes[1].set_xlabel('Minutes since '+start.strftime('%Y-%m-%d %H:%M:%S UTC'))
 for ax in axes:
     ax.legend(); ax.grid(alpha=.2)
-fig.suptitle('A30 study activity — concurrent training and evaluation')
+fig.suptitle('A30 study activity: concurrent training and evaluation')
 fig.text(.5,.01,'Device-wide telemetry; utilization does not measure computational efficiency.',ha='center',fontsize=9)
 fig.tight_layout(rect=[0,.03,1,.95])
 Path(a.output).parent.mkdir(parents=True,exist_ok=True)

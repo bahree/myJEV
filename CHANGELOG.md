@@ -2,7 +2,7 @@
 
 This history describes what each reader-facing snapshot contains. It records the state of the project at publication; upcoming work is tracked separately in the [roadmap](docs/roadmap.md).
 
-## Inference pilot — prepared 2026-10-04
+## Inference pilot: prepared 2026-10-04
 
 ### Available
 

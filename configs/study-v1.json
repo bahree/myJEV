@@ -1,0 +1,33 @@
+{
+  "study": "longer-matched-v1",
+  "sizes": [
+    "0.8b",
+    "4b",
+    "9b"
+  ],
+  "learning_rates": [
+    3e-05,
+    0.0001
+  ],
+  "tuning_seed": 101,
+  "tuning_updates": 1000,
+  "main_updates": 4000,
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "methods": [
+    "sft",
+    "continued_sft",
+    "exact",
+    "sampled"
+  ],
+  "accumulation": 1,
+  "save_every": 100,
+  "validation_selection": "highest accuracy, then lowest selection NLL, then lowest learning rate",
+  "evaluation": "all 3080 official test examples and all 1000 calibration examples, after tuning is frozen",
+  "scope": "Longer fixed-exposure main comparison. 4000 initial plus 4000 continuation examples is approximately one training epoch total; this is not a convergence guarantee.",
+  "precision": "0.8B and 4B BF16 LoRA; 9B NF4 QLoRA. Further precision replication remains required.",
+  "continuation_data": "Replay the seed-matched data RNG and skip the initial exposure; continued SFT, exact, and sampled see the same subsequent examples and candidate order."
+}

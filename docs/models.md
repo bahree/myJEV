@@ -1,6 +1,6 @@
 # Model and container releases
 
-**Release tracker — placeholders, not download links.** The pilot checkpoints exist on the training machine, but no trained myJEV artifact or container image is publicly released yet. You can train a local artifact with the [quick start](quickstart.md).
+**Release tracker: placeholders, not download links.** The pilot checkpoints exist on the training machine, but no trained myJEV artifact or container image is publicly released yet. You can train a local artifact with the [quick start](quickstart.md).
 
 | Planned artifact | Current state | Public model card / download |
 |---|---|---|

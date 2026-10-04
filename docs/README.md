@@ -9,7 +9,7 @@ Start with the question you want to answer. All commands run from the repository
 | What was actually measured? | [Experiments and evidence](experiments.md) |
 | How are methods compared fairly? | [Experimental protocol](protocol.md) |
 | How do I host it? | [Local and managed hosting](hosting.md) |
-| Where are released weights? | [Model release tracker](models.md) — releases pending |
+| Where are released weights? | [Model release tracker](models.md): releases pending |
 | What is complete, and what comes next? | [Roadmap](roadmap.md) |
 
 ## Data and provenance
