@@ -19,7 +19,7 @@
       "mode": "100644"
     },
     "README.md": {
-      "sha256": "f23cd66f27a87081b1030bbe66fd373f27815666bc01974a056de445daaa4688",
+      "sha256": "b9509809f46fca5d20bd3f0c06bcde14ad8a9b8cd2160974570d4ec4ba18046c",
       "mode": "100644"
     },
     "configs/0.8b.json": {
@@ -55,7 +55,7 @@
       "mode": "100644"
     },
     "docs/architecture.md": {
-      "sha256": "bbb46938c998707d797e0f221cec136f1ce4cc4b20a2c3c5d0342772d19665b2",
+      "sha256": "d62ee0b79d6d90860445cec983f9ad2e3ceb2b352471782137461e5abb6d90c3",
       "mode": "100644"
     },
     "docs/attribution.md": {
@@ -115,7 +115,7 @@
       "mode": "100644"
     },
     "docs/training.md": {
-      "sha256": "9825ca2b4766100d965c590aa1677068f7a0795783dcd68d82cd05790386f416",
+      "sha256": "7f111e2aae6fb28936ffbd39c46e1c3b0a40e588669fb55751cdf506743f20f7",
       "mode": "100644"
     },
     "examples/client.py": {

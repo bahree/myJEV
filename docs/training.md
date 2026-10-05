@@ -2,6 +2,22 @@
 
 **Status: running. No results from this batch are claimed yet.** The initial feasibility study remains available in [the results guide](experiments.md). This next comparison uses longer exposure, validation-only learning-rate selection, and the complete official BANKING77 test set.
 
+## Why fine-tune an already pretrained model?
+
+A pretrained model can already score candidate tokens in one forward pass. Fine-tuning is not required to create that inference interface, and it is not what removes autoregressive decoding. Our untouched-backbone control measures how well the same prompt and readout work before adaptation.
+
+We train to test two additional capabilities. First, can supervised examples improve discrimination among closely related BANKING77 intents when candidate descriptions and their token aliases appear in the request? Second, can the custom confidence heads learn useful estimates of selected-answer correctness? Those heads are newly initialized; simply attaching them to a pretrained backbone does not produce meaningful confidence. Randomizing candidate order discourages learning a permanent answer-to-alias mapping, but does not guarantee generalization or order invariance.
+
+The supervised stage establishes the adapted decision model and its confidence estimates. Continued supervision, exact RL and sampled RL then start from that same supervised artifact. This tests whether confidence-aware RL adds value beyond additional supervised exposure. Temperature scaling tests whether simpler post-hoc calibration is sufficient. Untouched-backbone and TF-IDF controls also leave open the possibility that adaptation is unnecessary or a simpler model is preferable.
+
+### Why LoRA and QLoRA?
+
+We freeze the pretrained backbone weights and train rank-8 LoRA adapters on the attention query, key, value and output projections, alongside the custom confidence heads. BF16 LoRA is used at 0.8B and 4B. The 9B backbone uses four-bit NF4 with LoRA, commonly called QLoRA, to reduce backbone storage on the available 24 GB GPUs. Configuration files record the exact precision and adapter setup.
+
+This keeps trainable parameter and optimizer-state storage smaller than updating the full backbone, and permits small adapter/head artifacts to share a pinned backbone cache. Backpropagation through the backbone still costs compute; LoRA does not make training free. We have not established that these adapters match or outperform full-parameter fine-tuning, and full-parameter training is not a control in this study.
+
+Changing 9B to NF4 changes precision as well as capacity. The same-size precision control is therefore necessary before attributing differences solely to scale. Fine-tuning on one intent-routing dataset also does not establish a generalist decision model: CLINC transfer, new-task adaptation and forgetting are separate evaluations.
+
 ## Frozen schedule
 
 | Setting | Value |

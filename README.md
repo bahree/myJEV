@@ -60,6 +60,8 @@ The longer study uses one optimizer, AdamW, across several training approaches. 
 
 ## Three sizes, one experimental interface
 
+Fine-tuning tests whether task-specific adaptation and learned correctness confidence improve on an untouched pretrained model. We use LoRA/QLoRA to fit the existing hardware and retain compact adapters. Training is not required for single-pass scoring itself, and its benefit remains an empirical question. Read [why we fine-tune and why these adapter methods](docs/training.md#why-fine-tune-an-already-pretrained-model).
+
 | Backbone | Pilot precision | Adaptation | Observed training peak* |
 |---|---|---|---:|
 | Qwen3.5 0.8B | BF16 | LoRA | 1.7 GiB |
