@@ -13,3 +13,7 @@ No upstream model code is vendored. `scripts/reproduce_readout.py` imports a pin
 Reference models: [Qwen3.5 0.8B](https://huggingface.co/Qwen/Qwen3.5-0.8B), [4B](https://huggingface.co/Qwen/Qwen3.5-4B), [9B](https://huggingface.co/Qwen/Qwen3.5-9B). Immutable revisions are in `configs/`. Backbone licensing and upstream notices continue to apply to adapters and any future merged release.
 
 OpenJev was subsequently inspected as an external comparison at the user's request. See [the inclusion decision](openjev.md) for its distinct backbone, confidence formula, candidate limit and execution status.
+
+## Related inference tutorial
+
+Avi Chawla, [Build your own Jev (100% local)](https://blog.dailydoseofds.com/p/build-your-own-jev-100-local), September 22, 2026, demonstrates single-token candidate scoring through SGLang. It explicitly separates the inference mechanism from Jev training/calibration and distinguishes restricted selection probabilities from empirical correctness. We cite it as related work, not a reproduction of its benchmark or an independent review of myJEV. It motivates the [planned serving comparison](hosting.md#planned-scoring-versus-generation-benchmark); no tutorial code or timing results are incorporated as myJEV evidence.

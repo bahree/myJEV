@@ -30,6 +30,23 @@ For remote use, place an authenticated HTTPS reverse proxy in front of the loopb
 
 Benchmark with `scripts/benchmark.py --output results/http-c1.json --concurrency 1`, then repeat with concurrency 2, 4 and 8. Report success rates alongside p50/p95; a fast overload response is not fast inference. Isolate the GPU for final latency measurements. Model-loading time and warm request latency are separate measures.
 
+## Planned scoring-versus-generation benchmark
+
+Status: planned, not executed. Run after the frozen training study, on an isolated host. This addition does not change training configurations or model-selection criteria.
+
+Compare four paths on the same pinned checkpoint, tokenizer, precision, candidate aliases and decision cases:
+
+1. Direct single-pass candidate scoring.
+2. Constrained generation of exactly one candidate token.
+3. Minimal structured JSON containing the selected candidate ID.
+4. Answer plus short explanation, explicitly measured as additional output work.
+
+Use the same rendered input where possible; retain and disclose any prompt/template differences needed by each output format. Record actual input/output token counts, decoding constraints, output caps, backend versions, hardware, cache state and warmup. Separate the readout-only comparison from myJEV's complete response, which also computes correctness confidence. Generation paths returning only an answer do not provide equivalent confidence outputs.
+
+Measure each path independently before mixed traffic. Repeat across representative lengths, candidate counts and concurrency levels, reporting accuracy, parsing/constraint failures, warm p50/p95, throughput, peak VRAM and cold starts. Save raw per-request timing and correctness records plus reproducible commands. Distinguish kernel/model time from end-to-end HTTP latency. If SGLang is used, first verify candidate-logit equivalence; its ordinary scoring endpoint does not implement myJEV's custom confidence heads. Backend or precision changes also require calibration checks.
+
+Related work: Avi Chawla, [Build your own Jev (100% local)](https://blog.dailydoseofds.com/p/build-your-own-jev-100-local), September 22, 2026. The tutorial demonstrates SGLang scoring and distinguishes inference mechanics from training and calibration. Its illustrated generation comparison requests an explanation with up to 32 output tokens while scoring and generation share a server. Our planned one-token and minimal-JSON controls will help separate output-work differences from serving overhead. This is related work, not independent validation of myJEV, and its timings are not our results.
+
 ## Hugging Face Inference Endpoints recipe
 
 **Recipe only; no paid endpoint was created.** [Official custom-container documentation](https://huggingface.co/docs/inference-endpoints/en/engines/custom_container) permits custom inference logic and mounts the selected model repository at `/repository`. [Configuration guidance](https://huggingface.co/docs/inference-endpoints/guides/configuration) describes the container port and health-route settings. Hosting adapter weights on the Hub is not an active endpoint.

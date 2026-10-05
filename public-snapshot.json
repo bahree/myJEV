@@ -7,11 +7,11 @@
       "mode": "100644"
     },
     ".gitignore": {
-      "sha256": "5d8140798ee712190a9d7cc4c8695de7cb6427e858dc8a805866c3b699881d60",
+      "sha256": "c8ee9240a97bedc0f67ccfcf50e2b35769d222b8d0534476139f02a84c1a45fa",
       "mode": "100644"
     },
     "CHANGELOG.md": {
-      "sha256": "d55fb1b9742550339a7930f8d3d3f4d917c9c053da403b5ee2ec8c6683748351",
+      "sha256": "d23b6d86cba32acbb0612f24a04e4ca554e435bc779f47fd0644c2bd6ff6ecd4",
       "mode": "100644"
     },
     "Dockerfile": {
@@ -19,7 +19,7 @@
       "mode": "100644"
     },
     "README.md": {
-      "sha256": "16c045d01b3416b294a1ca50745843aba019778d7f1767ab0991f723ee0fff76",
+      "sha256": "f23cd66f27a87081b1030bbe66fd373f27815666bc01974a056de445daaa4688",
       "mode": "100644"
     },
     "configs/0.8b.json": {
@@ -42,12 +42,16 @@
       "sha256": "f9452debb09fd9eb253ffa72f32d61c738577b502364afe1b7ebaaf61cd9bedb",
       "mode": "100644"
     },
+    "configs/wandb.env.example": {
+      "sha256": "d525b1311e3162a92aac659976377891be00860949b7f279492cc9e5da4741d7",
+      "mode": "100644"
+    },
     "deploy/compose.yaml": {
       "sha256": "1c1d7265fafdb005c2d0c356d4477c29a7fb49f2efe5f862d61373373f1696e7",
       "mode": "100644"
     },
     "docs/README.md": {
-      "sha256": "9cb9c9a0b70c6287872a83087ab5655c6cef8e9a97cc7ec19cd3f6f409161025",
+      "sha256": "b2ec6930414bbf6cacb2b7ad00ebdd79626a9994677dc4a6a5d59f958cd31f2c",
       "mode": "100644"
     },
     "docs/architecture.md": {
@@ -55,7 +59,7 @@
       "mode": "100644"
     },
     "docs/attribution.md": {
-      "sha256": "6e71b83c6582529e0d8b8a68006c22add96392d5450982b8193c474fde08f858",
+      "sha256": "af28e622e7f0e19b040b4a8ab7ad9411c66ab1e04a6b383e3457b8756059866a",
       "mode": "100644"
     },
     "docs/datasets/banking77.md": {
@@ -75,7 +79,15 @@
       "mode": "100644"
     },
     "docs/hosting.md": {
-      "sha256": "031a3d144fe78f3d8379b77842cc23280774c6e36e3ca81c77586dd02788572d",
+      "sha256": "9be7f5b0e5febbd7064bbc9ff37df41f9e193a2ad6ee5f030d5cf6f384089d81",
+      "mode": "100644"
+    },
+    "docs/inference.md": {
+      "sha256": "47d641587a4b9578761473f8b90ccf92e153c02f9f01875cc71f4de54140eca3",
+      "mode": "100644"
+    },
+    "docs/learnings.md": {
+      "sha256": "7d7d6a4d88d863e273d92388b91c08a64e5379b1eca9c8b5636a4b6ccd1a5d18",
       "mode": "100644"
     },
     "docs/models.md": {
@@ -91,15 +103,19 @@
       "mode": "100644"
     },
     "docs/quickstart.md": {
-      "sha256": "b6ab76307f696badb491bef09a3cb9512ffe49fe3c9760d5b9b60776684eead6",
+      "sha256": "7ef684e73088262d71766600c8890b9f7da65c19b331e39be25024172ca42274",
       "mode": "100644"
     },
     "docs/roadmap.md": {
-      "sha256": "a08ce97b703404c82e2083474aa4ba485abaad811c49b8493fad4132451fffaf",
+      "sha256": "a0d500eaf6d11614ee9a89288aa15c295310cd626e8a42a008b51d2819c0a2fb",
+      "mode": "100644"
+    },
+    "docs/tracking.md": {
+      "sha256": "0503dada3c68e8382c613abd236e94adef9406aca77d4f98a8475f143ccc9cb3",
       "mode": "100644"
     },
     "docs/training.md": {
-      "sha256": "a2a5bc70ed01ade1490bfdf9eb9c881f288c4296168bb93b753d0f10f96ce52b",
+      "sha256": "9825ca2b4766100d965c590aa1677068f7a0795783dcd68d82cd05790386f416",
       "mode": "100644"
     },
     "examples/client.py": {
@@ -2282,8 +2298,16 @@
       "sha256": "c34a86a44ed32a0698b87325afe38babde90e47f63f75646958fbe8625da8ea6",
       "mode": "100644"
     },
+    "scripts/study_progress.py": {
+      "sha256": "852599dc0cfb999f7393e4e84ad092c0511eab08832318f5b63b1da8942dadc3",
+      "mode": "100644"
+    },
     "scripts/summarize_study.py": {
       "sha256": "cab33db37015bb81c7486b30c980ba7c56ee902b6ea3e740072d31b794294be9",
+      "mode": "100644"
+    },
+    "scripts/sync_wandb_study.py": {
+      "sha256": "457d12776b4b95dd3146f304564d3c02773eff2984c4f08aa9f2da65cc122406",
       "mode": "100644"
     },
     "scripts/tfidf_baseline.py": {
@@ -2394,8 +2418,16 @@
       "sha256": "ef263b42bd9775ddea4fc60ffcada86bc3a09b107ab7f0031960e10bbcfbabf0",
       "mode": "100644"
     },
+    "tests/test_study_progress.py": {
+      "sha256": "bdb9328de77c8964fffc1a97e234cac55a7c1f15df2072f2d37cad5ed2e123c7",
+      "mode": "100644"
+    },
     "tests/test_validation.py": {
       "sha256": "781c14959405acd79dc63adba3dc0a1ad0b3e720734c28548d994e3b4d0944c8",
+      "mode": "100644"
+    },
+    "tests/test_wandb_sync.py": {
+      "sha256": "b6dfc74be5c6730146dad5a8238d40f0d65eeea3c05cce116c48119ec5fd6a13",
       "mode": "100644"
     }
   }

@@ -25,3 +25,5 @@ checkpoints/
 *.pt
 *.safetensors
 *.joblib
+wandb/
+results/wandb-sync*/

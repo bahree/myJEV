@@ -8,7 +8,7 @@ This is a research and learning project by [Amit Bahree](https://blog.desigeek.c
 
 > **Current milestone: inference pilot.** The 45 scheduled pilot evaluations are complete. Training is deliberately short, and neural evaluation uses 256 held-out test examples. The [longer matched study](docs/training.md) is now running; its results are pending. Downloadable trained adapters and a hosted demo are **not released yet**.
 
-[Start here](docs/quickstart.md) · [Documentation](docs/README.md) · [Measured results](docs/experiments.md) · [Roadmap](docs/roadmap.md) · [Model releases](docs/models.md) · [Next training study](docs/training.md)
+[Start here](docs/quickstart.md) · [Documentation](docs/README.md) · [Measured results](docs/experiments.md) · [Roadmap](docs/roadmap.md) · [Model releases](docs/models.md) · [Next training study](docs/training.md) · [W&B tracking](docs/tracking.md) · [Inference and Docker](docs/inference.md) · [Lessons](docs/learnings.md)
 
 ## What is a decision model?
 

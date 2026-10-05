@@ -87,3 +87,5 @@ docker compose -f deploy/compose.yaml up --build
 Compose publishes the service on host loopback port 8000. Use the same curl request as above. Stop it with `docker compose -f deploy/compose.yaml down`.
 
 The image is built locally; no public container registry release is available yet. [Hosting](hosting.md) documents the measured image, limits, benchmark conditions, and Hugging Face custom-container recipe. The cloud recipe has not been executed.
+
+For dashboard setup and a safe environment template, see [W&B tracking](tracking.md). For all inference interfaces, container startup and troubleshooting, see [inference and Docker](inference.md).

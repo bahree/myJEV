@@ -54,6 +54,16 @@ The three GPUs run independently. The overall finish estimate is the longest rem
 
 Batch completion means its scheduled training, validation selection, full-test evaluations, and calibration controls are finished. Analysis, broader transfer studies, archive adaptation, artifact releases, and blog publication remain separate project work. The [roadmap](roadmap.md) keeps those boundaries explicit; there is no invented whole-project completion percentage.
 
+## Improvement, epochs and stopping
+
+Each main stage processes 4,000 examples, or about 0.5001 epochs on the 7,999 training rows. The initial supervised model plus one continuation has about 1.0001 epochs of total exposure. Seeds and continuation branches are separate models, so their epochs must not be combined into one model's learning curve.
+
+Training loss is a diagnostic. Compare held-out accuracy/F1, correctness Brier and accepted-case error at fixed coverage to judge improvement. Supervised and RL losses have different meanings. Falling training loss with worsening validation performance suggests overfitting.
+
+Current tuning and main evaluations occur at stage endpoints. They cannot reliably identify a plateau. A future convergence study needs predefined periodic validation, meaningful improvement thresholds and a patience rule; test results must not influence stopping. Numerical failures and resource exhaustion are health conditions, not convergence evidence. Healthy runs in this batch finish their frozen budgets.
+
+The [W&B guide](tracking.md) explains live epoch counters, individual historical curves, GPU telemetry and retained evidence. The [lessons](learnings.md) describe why hardware, batch size and evaluation work all affect elapsed time.
+
 ## Run it
 
 First complete the [installation and BANKING77 preparation](quickstart.md). The configurations share the original pinned backbone cache. Each command below assigns one independent study to one GPU; only run the assignments your machine supports.

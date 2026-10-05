@@ -1,0 +1,31 @@
+# Engineering and experimental lessons
+
+These notes distinguish measured observations from choices and unresolved questions. The [experiment guide](experiments.md) contains the current pilot results; the longer study is still running.
+
+## Count work across experiments, not as one model
+
+The 168,000-step budget comprises 24,000 tuning steps and 144,000 main-comparison steps. It spans three model sizes, four training approaches, two tuning learning rates and three main seeds. All methods use AdamW; exact and sampled describe objective estimation, not additional optimizers. The [training guide](training.md) gives the full arithmetic.
+
+One initial supervised run consumes 4,000 examples. Each continuation consumes another 4,000, starting from that supervised artifact. With 7,999 training rows, each continuation model has roughly one epoch in its ancestry. Reusing the supervised artifact does not mean adding all three continuation branches into one model's history.
+
+## A fixed budget does not establish convergence
+
+The budget supports a matched comparison under equal exposure and tuning opportunity. It does not establish each model's best achievable result. Training loss can fall while held-out performance worsens, and losses from supervised and RL objectives are not interchangeable.
+
+Improvement should be assessed using held-out accuracy/F1, correctness Brier, calibration and accepted-case error at fixed coverage. A future convergence study needs predefined periodic validation, a meaningful improvement threshold and patience across several checks. Its stopping decisions must not use the test set. Current endpoint-only evaluations cannot establish a reliable plateau.
+
+Numerical failure is a different question: NaN/infinite loss, fatal process errors and disk exhaustion warrant stopping an affected job. A health check must not interpret a negative RL loss or ordinary fluctuations as failure. Our unattended monitoring does not claim autonomous scientific judgment between observations.
+
+## Hardware is only part of elapsed time
+
+The reference host has three 24 GB A30 GPUs, one independent size per GPU. The schedule uses one example per update, reference-policy computation for RL, frequent checkpointing and full evaluation passes. These choices also contribute to duration. Device utilization is not a measure of kernel efficiency, and no measured newer-GPU speedup is claimed. Batch-size or backend improvements should be benchmarked separately before changing a frozen comparison.
+
+## Keep observability separate from training
+
+Local logs remain authoritative even when a dashboard is unavailable. An independent W&B bridge can show live progress and import completed histories without restarting training. Record observation time, original step/time axes and historical-import labels explicitly. Keep secrets, weights and archive text outside telemetry uploads. See [W&B setup and usage](tracking.md).
+
+## Test inference through the real deployment path
+
+A successful image build and CUDA tensor operation did not prove that the first model request would work: the pilot container needed a C compiler for runtime kernel startup. A wrapper that resolved a virtualenv Python symlink also lost its environment's dependencies. Both failures were recorded and fixed. Python, CLI, HTTP and Docker checks must exercise the actual artifact and custom confidence head.
+
+The pilot passed these interface checks at all three sizes. Its short latency samples are not final service-level guarantees. Representative inputs, isolated benchmarks, final-checkpoint calibration and artifact/image releases remain pending. See [inference and Docker](inference.md) and [the hosting protocol](hosting.md).

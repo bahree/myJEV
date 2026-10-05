@@ -36,6 +36,7 @@ This part remains exploratory. Annotation material and draft articles are not di
 - [ ] Publish adapters, heads, calibration, manifests, and model cards on Hugging Face.
 - [ ] Publish a versioned container image with verified load and output behavior.
 - [ ] Expand serving benchmarks to isolated-host runs and representative document lengths.
+- [ ] Compare direct scoring, constrained one-token generation, minimal JSON, and answer plus explanation under matched serving conditions. See the [benchmark protocol](hosting.md#planned-scoring-versus-generation-benchmark) and its related-work reference.
 - [ ] Finalize source licensing and release packaging.
 - [ ] Add links to the two published blog articles.
 

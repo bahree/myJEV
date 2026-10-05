@@ -1,5 +1,11 @@
 # Milestone history
 
+## Tracking and reader guides
+
+- Added reusable W&B live monitoring, historical imports, evidence snapshots and a credential-free environment template.
+- Explained the 168,000-step budget, epoch counters, convergence limitations and retained local logs.
+- Added a Python/CLI/HTTP/Docker walkthrough and troubleshooting, separating pilot checks from pending release validation.
+
 This history describes what each reader-facing snapshot contains. It records the state of the project at publication; upcoming work is tracked separately in the [roadmap](docs/roadmap.md).
 
 ## Longer comparison started: 2026-10-04
