@@ -20,6 +20,12 @@ Numerical failure is a different question: NaN/infinite loss, fatal process erro
 
 The reference host has three 24 GB A30 GPUs, one independent size per GPU. The schedule uses one example per update, reference-policy computation for RL, frequent checkpointing and full evaluation passes. These choices also contribute to duration. Device utilization is not a measure of kernel efficiency, and no measured newer-GPU speedup is claimed. Batch-size or backend improvements should be benchmarked separately before changing a frozen comparison.
 
+## Small adapters do not imply a small serving model
+
+LoRA reduces the learned update and training state, while inference still needs the backbone. The size study controls the model family to investigate capacity, not to establish an optimal architecture. One-pass scoring avoids the output decoding loop, but still processes the full input. Fitting a training pilot on one 24 GiB A30 does not establish maximum-context serving capacity or Jev-equivalent latency.
+
+The [hardware and model-size rationale](training.md#choosing-model-size-around-the-hardware) distinguishes per-device fit from aggregate GPU memory. The [inference cost explanation](inference.md#what-the-adapter-saves-and-what-inference-still-costs) separates adapter files, backbone requirements, measured HTTP latency and untested optimizations. Final model selection must weigh quality against these costs; 9B is not automatically the default.
+
 ## Keep observability separate from training
 
 Local logs remain authoritative even when a dashboard is unavailable. An independent W&B bridge can show live progress and import completed histories without restarting training. Record observation time, original step/time axes and historical-import labels explicitly. Keep secrets, weights and archive text outside telemetry uploads. See [W&B setup and usage](tracking.md).

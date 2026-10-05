@@ -18,6 +18,34 @@ This keeps trainable parameter and optimizer-state storage smaller than updating
 
 Changing 9B to NF4 changes precision as well as capacity. The same-size precision control is therefore necessary before attributing differences solely to scale. Fine-tuning on one intent-routing dataset also does not establish a generalist decision model: CLINC transfer, new-task adaptation and forgetting are separate evaluations.
 
+## Choosing model size around the hardware
+
+“Small language model” has no universal parameter cutoff. The 0.8B model is already a small language backbone; 4B is relatively compact, while 9B carries a substantial deployment cost. A decision model describes the scoring interface and behavior, and can use any of these backbones. Calling it a decision model does not remove its transformer computation.
+
+Keeping the Qwen3.5 family across sizes makes capacity easier to study with a shared prompt, readout and training protocol. It does not establish that Qwen is the best production architecture. The 9B precision change remains a confound requiring a same-size control.
+
+The reference machine has three A30s, each with 24 GiB of device memory. We use one GPU per independent run. Those devices do not automatically act as one 72 GiB memory pool. Each configuration must fit its assigned GPU, including weights, activations, adapters, gradients, reference-policy work and runtime allocations.
+
+| Size | Pilot configuration | Observed peak allocated training memory |
+|---|---|---:|
+| 0.8B | BF16 LoRA | 1.7 GiB |
+| 4B | BF16 LoRA | 8.5 GiB |
+| 9B | NF4 QLoRA | 12.0 GiB |
+
+These are 100-update supervised pilot measurements for the tested inputs, not worst-case VRAM reservations or inference requirements. PyTorch allocated peaks also differ from total process memory reported by `nvidia-smi`. Longer inputs, larger batches and different objectives can change memory use. Quantization reduces weight storage but does not guarantee lower latency.
+
+For deployment, select the smallest model that meets measured accepted-case error, coverage, latency and memory requirements. A smaller encoder or distilled student is a follow-up experiment, not a completed comparison. A fixed-label TF-IDF classifier remains a serious low-cost control for BANKING77; request-supplied unfamiliar candidate descriptions motivate studying a language backbone. See [deployment costs](inference.md#what-the-adapter-saves-and-what-inference-still-costs).
+
+### Would an older Microsoft model be a better fit?
+
+[Phi-2](https://huggingface.co/microsoft/phi-2) has 2.7B parameters and a 2,048-token context; [Phi-3 Mini](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct) has 3.8B parameters in the linked 4K-context release. Both are language-model alternatives, and both are larger than our 0.8B backbone. They could support direct decision scoring after integration and evaluation, but neither has been tested here. Phi-2's shorter context would change our input limits, so it is not a drop-in replacement for a 4,096-token configuration. A new tokenizer also requires fresh alias verification.
+
+A more distinct comparison would use an encoder such as [DeBERTa-v3-small](https://huggingface.co/microsoft/deberta-v3-small). A fixed-label classification head suits a known taxonomy. Request-defined candidates need a different design, such as scoring context/description pairs or jointly encoding a candidate set. That changes the training interface and computation as candidate count grows; it cannot inherit our token-readout or latency claims unchanged.
+
+Using pretrained representations is a defensible transfer-learning choice. The token-alias readout is a pragmatic reuse of the vocabulary head, with real limitations: alias choice, order sensitivity and prompt length need testing. A candidate-conditioned scoring head can remove the dependence on vocabulary aliases, but must be trained and evaluated. The present study tests objectives and scale within one implementation; it does not establish that this is the smallest or fastest architecture for the task.
+
+A bounded follow-up should compare an encoder and an alternative small decoder with our smallest useful Qwen checkpoint, preserving data partitions and tuning opportunities. Report fixed-taxonomy accuracy separately from unfamiliar-candidate transfer, plus calibration, latency and memory on the same A30. This is proposed work, not an additional training job already launched.
+
 ## Frozen schedule
 
 | Setting | Value |

@@ -87,11 +87,11 @@
       "mode": "100644"
     },
     "docs/inference.md": {
-      "sha256": "47d641587a4b9578761473f8b90ccf92e153c02f9f01875cc71f4de54140eca3",
+      "sha256": "9bec93ccff82fa3686ebf0561e22ee7a3a8185ae7c8a60fe782e3e1d31514d79",
       "mode": "100644"
     },
     "docs/learnings.md": {
-      "sha256": "7d7d6a4d88d863e273d92388b91c08a64e5379b1eca9c8b5636a4b6ccd1a5d18",
+      "sha256": "163fb3841dfb997ca14d48d6d4ab50d5d81fa0334199e1c9b6f7f51fb361763d",
       "mode": "100644"
     },
     "docs/models.md": {
@@ -119,7 +119,7 @@
       "mode": "100644"
     },
     "docs/training.md": {
-      "sha256": "7f111e2aae6fb28936ffbd39c46e1c3b0a40e588669fb55751cdf506743f20f7",
+      "sha256": "604abc4d6543fd47569fe2110bdc0ae327bafd7fd642f956a3cf078d98f71055",
       "mode": "100644"
     },
     "examples/client.py": {
