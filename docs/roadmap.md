@@ -21,6 +21,18 @@ This page makes incomplete work visible as the project develops. Checked items d
 - [ ] Transfer and robustness studies at every size, extending the initial 0.8B diagnostics.
 - [ ] More extensive uncertainty reporting for rare accepted-case errors.
 
+## Follow-up: Phi and architecture efficiency
+
+The next backbone pilot will evaluate Microsoft Phi after the frozen Qwen batch. Start with [Phi-4-mini-instruct](https://huggingface.co/microsoft/Phi-4-mini-instruct), a 3.8B candidate, subject to a pinned revision, license/data review and local loader compatibility. This is scheduled follow-up work, not a launched job or a demonstrated improvement.
+
+- [ ] Verify token aliases, context limits, hidden-state extraction and adapter targets; run a 100-update memory/throughput pilot on one A30 before a larger commitment.
+- [ ] Compare untouched readout and supervised adaptation with matched data exposure and tuning opportunities. Reuse frozen partitions and reserve calibration data for calibration.
+- [ ] Benchmark against Qwen 4B for similar size and against the smallest useful Qwen model for deployment cost. Measure model-only and HTTP latency, memory, accuracy and accepted-case error/coverage across input lengths and candidate counts.
+- [ ] Treat a dedicated encoder/candidate head as a separate architecture comparison. A Phi swap alone does not test whether token-alias scoring is the right design.
+- [ ] Consider MAI only after identifying a specific locally downloadable checkpoint with suitable licensing, size and task support. API availability does not establish local fine-tuning feasibility.
+
+No Jev-equivalent latency is assumed. A useful comparison must disclose hardware and serving differences; generating fewer tokens alone does not prove a better decision architecture. Expand to RL or more seeds only after the pilot establishes a useful comparison and its resource cost.
+
 ## Milestone 3: New tasks and adaptation
 
 - [x] Publish the [blog-archive study card](datasets/blog-archive.md), with preparation and annotation status.
