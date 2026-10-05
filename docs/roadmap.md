@@ -33,6 +33,24 @@ The next backbone pilot will evaluate Microsoft Phi after the frozen Qwen batch.
 
 No Jev-equivalent latency is assumed. A useful comparison must disclose hardware and serving differences; generating fewer tokens alone does not prove a better decision architecture. Expand to RL or more seeds only after the pilot establishes a useful comparison and its resource cost.
 
+## Teaching extension: a decision model from random initialization
+
+This proposed extension returns to the build-and-explain approach of helloLondon. It is an original educational model, not a reconstruction of TypeSafe Jev's undisclosed internals. The official announcement describes architecture, parallel sampling and RLCD at a high level; that is insufficient to reproduce its network and training recipe.
+
+Alongside Phi, consider [SmolLM2-360M-Instruct](https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct) as a genuinely smaller pretrained decoder control. [SmolLM3-3B](https://huggingface.co/HuggingFaceTB/SmolLM3-3B) is an optional closer-size comparison with published training materials. Start with small pilots rather than repeating the entire main study for every backbone. These checkpoints are not yet integrated or evaluated.
+
+The from-scratch design starts with randomly initialized token embeddings and a small shared Transformer encoder, approximately 5-20M parameters as a design target. Encode the context and each candidate description, condition candidates on the context, optionally add attention across the candidate set, and use a shared scalar head to score each candidate. Keep candidate IDs outside the network and omit candidate-index positional embeddings. Add a separate correctness head, then the experimental confidence policy only after the supervised baseline works. This is one non-autoregressive computation graph, not a claim of constant cost as candidates increase.
+
+- [ ] Implement a minimal tokenizer from training-only data, encoder, masking and candidate scorer, with no pretrained weights or vocabulary-output head.
+- [ ] Start on generated rule-following tasks with known ambiguity; freeze disjoint rules/templates for transfer tests and derive uncertainty targets from the generator.
+- [ ] Verify padding masks, candidate-order equivariance in evaluation mode, absence of generation, and finite-action reward/gradient arithmetic.
+- [ ] Compare supervised, post-hoc calibration and matched exact/sampled confidence objectives. Report both selected-answer confidence and option-distribution calibration separately.
+- [ ] Evaluate BANKING77 with the existing isolated splits as a natural-language diagnostic. Its limited training data does not supply broad language pretraining; weak transfer is an informative result.
+- [ ] Measure parameter count, serialized weights, peak memory, model/HTTP latency, candidate scaling and accuracy on CPU and one A30. No speed or fit guarantee precedes measurement.
+- [ ] Publish runnable stages, diagrams, failure cases and raw evidence. Distinguish random initialization, pretrained adaptation and any later distillation in every result table.
+
+Foundations: [Deep Sets](https://arxiv.org/abs/1703.06114) for set symmetry, [Set Transformer](https://arxiv.org/abs/1810.00825) for attention over sets, and [On Calibration of Modern Neural Networks](https://arxiv.org/abs/1706.04599) for post-hoc calibration. These motivate components; none describes TypeSafe's proprietary architecture. [OpenJev-RLCD](https://arxiv.org/abs/2609.38850) is a separate implementation involving sampled rationales, so it must not be presented as our one-pass design or an official Jev architecture disclosure.
+
 ## Milestone 3: New tasks and adaptation
 
 - [x] Publish the [blog-archive study card](datasets/blog-archive.md), with preparation and annotation status.
