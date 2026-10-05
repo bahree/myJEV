@@ -41,3 +41,17 @@ This part remains exploratory. Annotation material and draft articles are not di
 - [ ] Add links to the two published blog articles.
 
 A paid cloud endpoint is optional and is not a required project deliverable. The documented managed-hosting recipe can be used independently once release artifacts exist.
+
+## Reader experience after the longer batch
+
+The existing guides are available now. The next presentation pass will make them easier to discover from the landing page, drawing on [helloLondon's documentation structure](https://github.com/bahree/helloLondon).
+
+- [ ] Add a prominent README documentation table linking the full index and each main reader task, including W&B, lessons and inference/Docker.
+- [ ] Clarify read-results, train-your-own and released-model entry paths; add an annotated directory map and experiment-lifecycle diagram.
+- [ ] Add an actual artifact-linked request/response example explaining scores, confidence and unsupported inputs.
+- [ ] Explain deployable artifacts versus resumable checkpoints and consolidate troubleshooting.
+- [ ] Refresh results and authentic training/GPU visuals after analysis, with source evidence, uncertainty and regeneration commands.
+- [ ] Validate the release inference/Docker walkthrough from a clean environment and replace pending model/image references with tested releases.
+- [ ] Add the two published blog links, mutual navigation and documentation link checks.
+
+These tasks follow the running training batch and do not change its frozen protocol. Research and release requirements above remain separate dependencies.
