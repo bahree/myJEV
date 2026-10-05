@@ -20,6 +20,7 @@ Start with the question you want to answer. All commands run from the repository
 
 - [BANKING77](datasets/banking77.md): controlled intent routing, official test split preserved.
 - [CLINC150](datasets/clinc150.md): unfamiliar-task and unsupported-request evaluation, excluded from tuning.
+- [Blog archive](datasets/blog-archive.md): post-format, instructional-completeness and claim-support rubrics; 40-post machine-annotation pilot complete, adaptation/evaluation pending.
 - [Synthetic fixtures](datasets/synthetic.md): objective arithmetic and controlled uncertainty.
 - [Attribution](attribution.md): JevK5, SemIf, and JevForge architecture distinctions.
 - [OpenJev](openjev.md): a related released model with different scale, confidence semantics, and licensing.

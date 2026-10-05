@@ -51,7 +51,7 @@
       "mode": "100644"
     },
     "docs/README.md": {
-      "sha256": "b2ec6930414bbf6cacb2b7ad00ebdd79626a9994677dc4a6a5d59f958cd31f2c",
+      "sha256": "76f3512371441999330832cb5943ad94cc12d8e6e1eb023f6e41b151dc912f21",
       "mode": "100644"
     },
     "docs/architecture.md": {
@@ -64,6 +64,10 @@
     },
     "docs/datasets/banking77.md": {
       "sha256": "0fc9cc232a80a114b23f3e9003c074f8fea074565b99348a59319a5bdf85a5d1",
+      "mode": "100644"
+    },
+    "docs/datasets/blog-archive.md": {
+      "sha256": "7070ee0c24c92255be4e9ab6dc0e156d64980b695698103ed076f1ac17c8952b",
       "mode": "100644"
     },
     "docs/datasets/clinc150.md": {
@@ -107,7 +111,7 @@
       "mode": "100644"
     },
     "docs/roadmap.md": {
-      "sha256": "6a4bbb25c60ef072fce4bf4595df43515f4d1cfeb715ebeba1a0a4fd726f60cd",
+      "sha256": "c064171f0435309d6d145616d4ea5cda787b8b6a441bd290584bb7a4aa177d7d",
       "mode": "100644"
     },
     "docs/tracking.md": {

@@ -23,7 +23,8 @@ This page makes incomplete work visible as the project develops. Checked items d
 
 ## Milestone 3: New tasks and adaptation
 
-- [ ] Publish a reviewed new-task protocol and dataset card.
+- [x] Publish the [blog-archive study card](datasets/blog-archive.md), with preparation and annotation status.
+- [ ] Review and freeze the archive rubrics, grouping and evaluation protocol.
 - [ ] Audit machine-assisted labels against independent human judgments.
 - [ ] Freeze evaluation groups before adaptation.
 - [ ] Compare unadapted and adapted artifacts and measure forgetting on public tasks.
