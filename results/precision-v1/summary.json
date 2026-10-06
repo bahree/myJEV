@@ -1,0 +1,8 @@
+{
+  "complete": false,
+  "completed_seed_pairs": 0,
+  "rows": [],
+  "sources": {},
+  "scope": "4B SFT, same seeds, 4000 examples, LR, adapter targets and readout. BF16 versus NF4 with FP32 nonquantized modules. Training configuration comparison, not an inference-only quantization toggle.",
+  "limitations": "Three seeds; final-checkpoint test. No new tuning. Does not identify the precision effect on RL, continued supervision or 9B. Capacity-only conclusions still require care."
+}

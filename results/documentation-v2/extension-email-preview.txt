@@ -1,0 +1,10 @@
+Transfer/robustness: 7/36 evaluation jobs complete (19.4% by job count; job durations differ).
+  0.8b: running, 4/12; {'seed': 22, 'method': 'continued_sft', 'kind': 'transfer'}; estimated 0.2-0.4 hours remaining.
+  4b: running, 2/12; {'seed': 11, 'method': 'exact', 'kind': 'transfer'}; estimated 0.6-1.1 hours remaining.
+  9b: running, 1/12; {'seed': 11, 'method': 'continued_sft', 'kind': 'robustness'}; ETA awaits measured transfer and robustness timings.
+Precision control: waiting; 0/12,100 new training updates. It also needs full-test evaluation and calibration controls.
+Release verification: waiting; 0/6 candidates verified and benchmarked. It waits for all other GPU jobs to finish.
+
+Already done: Qwen main training and paired findings; scratch teaching study; four draft blog bundles; operational uncertainty report; local candidate packaging.
+Still left after these jobs: interpret and write new findings, archive labels/audit and adaptation/forgetting, final release choice/licensing/uploads, clean-release environment and Hugo-theme checks.
+No whole-project percentage or total finish time is claimed. Queued stages have not yet supplied their own throughput measurements.

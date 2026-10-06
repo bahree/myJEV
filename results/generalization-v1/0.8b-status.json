@@ -14,14 +14,35 @@
       "kind": "robustness",
       "seconds": 65.33166790008545,
       "returncode": 0
+    },
+    {
+      "seed": 11,
+      "method": "exact",
+      "kind": "transfer",
+      "seconds": 206.82178449630737,
+      "returncode": 0
+    },
+    {
+      "seed": 11,
+      "method": "exact",
+      "kind": "robustness",
+      "seconds": 68.44492411613464,
+      "returncode": 0
+    },
+    {
+      "seed": 22,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "seconds": 195.28330063819885,
+      "returncode": 0
     }
   ],
   "state": "running",
   "started": 1791263669.7109902,
   "current": {
-    "seed": 11,
-    "method": "exact",
-    "kind": "transfer"
+    "seed": 22,
+    "method": "continued_sft",
+    "kind": "robustness"
   },
-  "updated": 1791263948.4534009
+  "updated": 1791264419.0065458
 }

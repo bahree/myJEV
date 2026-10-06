@@ -1,12 +1,27 @@
 {
   "size": "4b",
-  "jobs": [],
+  "jobs": [
+    {
+      "seed": 11,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "seconds": 453.6641721725464,
+      "returncode": 0
+    },
+    {
+      "seed": 11,
+      "method": "continued_sft",
+      "kind": "robustness",
+      "seconds": 119.84914636611938,
+      "returncode": 0
+    }
+  ],
   "state": "running",
   "started": 1791263669.7175992,
   "current": {
     "seed": 11,
-    "method": "continued_sft",
+    "method": "exact",
     "kind": "transfer"
   },
-  "updated": 1791263669.717761
+  "updated": 1791264243.23288
 }

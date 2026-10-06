@@ -1,5 +1,5 @@
 {
-  "completed_jobs": 2,
+  "completed_jobs": 8,
   "planned_jobs": 36,
   "complete": false,
   "rows": [
@@ -912,6 +912,2639 @@
           ]
         }
       }
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "exact",
+      "kind": "transfer",
+      "cohort": "distant",
+      "n": 256,
+      "requested": 256,
+      "rejected": 0,
+      "accuracy": 0.671875,
+      "correctness_brier": 0.22892129815313975,
+      "agreement": null,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.877386748790741,
+          "coverage": 0.4609375,
+          "accepted": 118,
+          "error": 0.1440677966101695,
+          "error_upper_95": 0.20823021597031008,
+          "error_cluster_ci95": [
+            0.0847457627118644,
+            0.2033898305084746
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.8580703735351562,
+          "coverage": 0.7890625,
+          "accepted": 202,
+          "error": 0.22277227722772278,
+          "error_upper_95": 0.2763152023136964,
+          "error_cluster_ci95": [
+            0.16831683168316833,
+            0.27722772277227725
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.7300527691841125,
+          "coverage": 0.91796875,
+          "accepted": 235,
+          "error": 0.28936170212765955,
+          "error_upper_95": 0.34196819635261083,
+          "error_cluster_ci95": [
+            0.23404255319148937,
+            0.35319148936170214
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.8832948207855225,
+          "coverage": 0.171875,
+          "accepted": 44,
+          "error": 0.1590909090909091,
+          "error_upper_95": 0.27814542079747706,
+          "error_cluster_ci95": [
+            0.06761363636363639,
+            0.2727272727272727
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.8748408555984497,
+          "coverage": 0.56640625,
+          "accepted": 145,
+          "error": 0.1724137931034483,
+          "error_upper_95": 0.23240407880420966,
+          "error_cluster_ci95": [
+            0.1103448275862069,
+            0.2413793103448276
+          ]
+        }
+      }
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "exact",
+      "kind": "transfer",
+      "cohort": "near",
+      "n": 256,
+      "requested": 256,
+      "rejected": 0,
+      "accuracy": 0.80078125,
+      "correctness_brier": 0.16626534790426062,
+      "agreement": null,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.877386748790741,
+          "coverage": 0.5390625,
+          "accepted": 138,
+          "error": 0.050724637681159424,
+          "error_upper_95": 0.09316106158087023,
+          "error_cluster_ci95": [
+            0.014492753623188406,
+            0.08695652173913043
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.8580703735351562,
+          "coverage": 0.80859375,
+          "accepted": 207,
+          "error": 0.1111111111111111,
+          "error_upper_95": 0.15373135356590625,
+          "error_cluster_ci95": [
+            0.06763285024154589,
+            0.15458937198067632
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.7300527691841125,
+          "coverage": 0.9453125,
+          "accepted": 242,
+          "error": 0.19008264462809918,
+          "error_upper_95": 0.23640706645651413,
+          "error_cluster_ci95": [
+            0.1446280991735537,
+            0.2397727272727272
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.8832948207855225,
+          "coverage": 0.26953125,
+          "accepted": 69,
+          "error": 0.0,
+          "error_upper_95": 0.04248741054859369,
+          "error_cluster_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.8748408555984497,
+          "coverage": 0.62109375,
+          "accepted": 159,
+          "error": 0.06289308176100629,
+          "error_upper_95": 0.10434534833029598,
+          "error_cluster_ci95": [
+            0.025157232704402517,
+            0.10062893081761007
+          ]
+        }
+      }
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "exact",
+      "kind": "transfer",
+      "cohort": "oos-deferral",
+      "n": 256,
+      "requested": 256,
+      "rejected": 0,
+      "accuracy": 0.0,
+      "correctness_brier": 0.3231416901562088,
+      "agreement": null,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.877386748790741,
+          "coverage": 0.04296875,
+          "accepted": 11,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.8580703735351562,
+          "coverage": 0.2109375,
+          "accepted": 54,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.7300527691841125,
+          "coverage": 0.421875,
+          "accepted": 108,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.8832948207855225,
+          "coverage": 0.00390625,
+          "accepted": 1,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.8748408555984497,
+          "coverage": 0.0625,
+          "accepted": 16,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "exact",
+      "kind": "transfer",
+      "cohort": "oos-none",
+      "n": 256,
+      "requested": 256,
+      "rejected": 0,
+      "accuracy": 0.0,
+      "correctness_brier": 0.31641107791106504,
+      "agreement": null,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.877386748790741,
+          "coverage": 0.0390625,
+          "accepted": 10,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.8580703735351562,
+          "coverage": 0.203125,
+          "accepted": 52,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.7300527691841125,
+          "coverage": 0.41796875,
+          "accepted": 107,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.8832948207855225,
+          "coverage": 0.00390625,
+          "accepted": 1,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.8748408555984497,
+          "coverage": 0.05078125,
+          "accepted": 13,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "exact",
+      "kind": "transfer",
+      "cohort": "unsupported-near-deferral",
+      "n": 150,
+      "requested": 150,
+      "rejected": 0,
+      "accuracy": 0.0,
+      "correctness_brier": 0.2916791661485444,
+      "agreement": null,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.877386748790741,
+          "coverage": 0.0,
+          "accepted": 0,
+          "error": null,
+          "error_upper_95": null,
+          "error_cluster_ci95": null
+        },
+        "coverage_0.8": {
+          "threshold": 0.8580703735351562,
+          "coverage": 0.13333333333333333,
+          "accepted": 20,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.7300527691841125,
+          "coverage": 0.36666666666666664,
+          "accepted": 55,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.8832948207855225,
+          "coverage": 0.0,
+          "accepted": 0,
+          "error": null,
+          "error_upper_95": null,
+          "error_cluster_ci95": null
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.8748408555984497,
+          "coverage": 0.006666666666666667,
+          "accepted": 1,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "exact",
+      "kind": "transfer",
+      "cohort": "unsupported-near-none",
+      "n": 150,
+      "requested": 150,
+      "rejected": 0,
+      "accuracy": 0.0,
+      "correctness_brier": 0.2868934721627387,
+      "agreement": null,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.877386748790741,
+          "coverage": 0.0,
+          "accepted": 0,
+          "error": null,
+          "error_upper_95": null,
+          "error_cluster_ci95": null
+        },
+        "coverage_0.8": {
+          "threshold": 0.8580703735351562,
+          "coverage": 0.10666666666666667,
+          "accepted": 16,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.7300527691841125,
+          "coverage": 0.36,
+          "accepted": 54,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.8832948207855225,
+          "coverage": 0.0,
+          "accepted": 0,
+          "error": null,
+          "error_upper_95": null,
+          "error_cluster_ci95": null
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.8748408555984497,
+          "coverage": 0.013333333333333334,
+          "accepted": 2,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "exact",
+      "kind": "robustness",
+      "cohort": "partial-description-paraphrases",
+      "n": 64,
+      "requested": 64,
+      "rejected": 0,
+      "accuracy": 0.828125,
+      "correctness_brier": 0.1251283768940202,
+      "agreement": 0.875,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.877386748790741,
+          "coverage": 0.53125,
+          "accepted": 34,
+          "error": 0.029411764705882353,
+          "error_upper_95": 0.13207382513147803,
+          "error_cluster_ci95": [
+            0.0,
+            0.08823529411764706
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.8580703735351562,
+          "coverage": 0.828125,
+          "accepted": 53,
+          "error": 0.07547169811320754,
+          "error_upper_95": 0.16444182211130057,
+          "error_cluster_ci95": [
+            0.018867924528301886,
+            0.1509433962264151
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.7300527691841125,
+          "coverage": 0.9375,
+          "accepted": 60,
+          "error": 0.13333333333333333,
+          "error_upper_95": 0.22773994566432493,
+          "error_cluster_ci95": [
+            0.05,
+            0.23333333333333334
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.8832948207855225,
+          "coverage": 0.234375,
+          "accepted": 15,
+          "error": 0.0,
+          "error_upper_95": 0.18103627252208462,
+          "error_cluster_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.8748408555984497,
+          "coverage": 0.609375,
+          "accepted": 39,
+          "error": 0.02564102564102564,
+          "error_upper_95": 0.1159521487579241,
+          "error_cluster_ci95": [
+            0.0,
+            0.07692307692307693
+          ]
+        }
+      }
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "exact",
+      "kind": "robustness",
+      "cohort": "irrelevant",
+      "n": 64,
+      "requested": 64,
+      "rejected": 0,
+      "accuracy": 0.828125,
+      "correctness_brier": 0.14863950660930308,
+      "agreement": 0.953125,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.877386748790741,
+          "coverage": 0.546875,
+          "accepted": 35,
+          "error": 0.02857142857142857,
+          "error_upper_95": 0.12850103634130067,
+          "error_cluster_ci95": [
+            0.0,
+            0.08571428571428572
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.8580703735351562,
+          "coverage": 0.859375,
+          "accepted": 55,
+          "error": 0.09090909090909091,
+          "error_upper_95": 0.1816898948464404,
+          "error_cluster_ci95": [
+            0.01818181818181818,
+            0.18181818181818182
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.7300527691841125,
+          "coverage": 0.90625,
+          "accepted": 58,
+          "error": 0.13793103448275862,
+          "error_upper_95": 0.2351368878887874,
+          "error_cluster_ci95": [
+            0.05172413793103448,
+            0.22413793103448276
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.8832948207855225,
+          "coverage": 0.3125,
+          "accepted": 20,
+          "error": 0.05,
+          "error_upper_95": 0.2161061642068473,
+          "error_cluster_ci95": [
+            0.0,
+            0.15
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.8748408555984497,
+          "coverage": 0.640625,
+          "accepted": 41,
+          "error": 0.024390243902439025,
+          "error_upper_95": 0.11055312897984333,
+          "error_cluster_ci95": [
+            0.0,
+            0.07317073170731707
+          ]
+        }
+      }
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "exact",
+      "kind": "robustness",
+      "cohort": "missing-correct",
+      "n": 64,
+      "requested": 64,
+      "rejected": 0,
+      "accuracy": 0.0,
+      "correctness_brier": 0.44253334373043435,
+      "agreement": 0.140625,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.877386748790741,
+          "coverage": 0.109375,
+          "accepted": 7,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.8580703735351562,
+          "coverage": 0.34375,
+          "accepted": 22,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.7300527691841125,
+          "coverage": 0.59375,
+          "accepted": 38,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.8832948207855225,
+          "coverage": 0.015625,
+          "accepted": 1,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.8748408555984497,
+          "coverage": 0.140625,
+          "accepted": 9,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "exact",
+      "kind": "robustness",
+      "cohort": "quoted-instruction",
+      "n": 64,
+      "requested": 64,
+      "rejected": 0,
+      "accuracy": 0.796875,
+      "correctness_brier": 0.08688569285656825,
+      "agreement": 0.890625,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.877386748790741,
+          "coverage": 0.453125,
+          "accepted": 29,
+          "error": 0.034482758620689655,
+          "error_upper_95": 0.1533920245261827,
+          "error_cluster_ci95": [
+            0.0,
+            0.10344827586206896
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.8580703735351562,
+          "coverage": 0.75,
+          "accepted": 48,
+          "error": 0.0625,
+          "error_upper_95": 0.1536889988733396,
+          "error_cluster_ci95": [
+            0.0,
+            0.14583333333333334
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.7300527691841125,
+          "coverage": 0.84375,
+          "accepted": 54,
+          "error": 0.09259259259259259,
+          "error_upper_95": 0.1848784434166947,
+          "error_cluster_ci95": [
+            0.018518518518518517,
+            0.16666666666666666
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.8832948207855225,
+          "coverage": 0.125,
+          "accepted": 8,
+          "error": 0.0,
+          "error_upper_95": 0.3123439780663678,
+          "error_cluster_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.8748408555984497,
+          "coverage": 0.59375,
+          "accepted": 38,
+          "error": 0.02631578947368421,
+          "error_upper_95": 0.11885412270056078,
+          "error_cluster_ci95": [
+            0.0,
+            0.07894736842105263
+          ]
+        }
+      }
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "exact",
+      "kind": "robustness",
+      "cohort": "original",
+      "n": 64,
+      "requested": 64,
+      "rejected": 0,
+      "accuracy": 0.796875,
+      "correctness_brier": 0.14513831175677885,
+      "agreement": 1.0,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.877386748790741,
+          "coverage": 0.546875,
+          "accepted": 35,
+          "error": 0.02857142857142857,
+          "error_upper_95": 0.12850103634130067,
+          "error_cluster_ci95": [
+            0.0,
+            0.08571428571428572
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.8580703735351562,
+          "coverage": 0.875,
+          "accepted": 56,
+          "error": 0.125,
+          "error_upper_95": 0.22200055225090248,
+          "error_cluster_ci95": [
+            0.05312500000000002,
+            0.23214285714285715
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.7300527691841125,
+          "coverage": 0.90625,
+          "accepted": 58,
+          "error": 0.15517241379310345,
+          "error_upper_95": 0.2551619834731897,
+          "error_cluster_ci95": [
+            0.06896551724137931,
+            0.2413793103448276
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.8832948207855225,
+          "coverage": 0.34375,
+          "accepted": 22,
+          "error": 0.045454545454545456,
+          "error_upper_95": 0.19812213163688158,
+          "error_cluster_ci95": [
+            0.0,
+            0.13636363636363635
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.8748408555984497,
+          "coverage": 0.65625,
+          "accepted": 42,
+          "error": 0.023809523809523808,
+          "error_upper_95": 0.10803769616121207,
+          "error_cluster_ci95": [
+            0.0,
+            0.07142857142857142
+          ]
+        }
+      }
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "exact",
+      "kind": "robustness",
+      "cohort": "length",
+      "n": 64,
+      "requested": 64,
+      "rejected": 0,
+      "accuracy": 0.859375,
+      "correctness_brier": 0.10888269902677478,
+      "agreement": 0.90625,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.877386748790741,
+          "coverage": 0.484375,
+          "accepted": 31,
+          "error": 0.03225806451612903,
+          "error_upper_95": 0.14409039131834475,
+          "error_cluster_ci95": [
+            0.0,
+            0.0967741935483871
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.8580703735351562,
+          "coverage": 0.828125,
+          "accepted": 53,
+          "error": 0.05660377358490566,
+          "error_upper_95": 0.13984873235230535,
+          "error_cluster_ci95": [
+            0.0,
+            0.11320754716981132
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.7300527691841125,
+          "coverage": 0.90625,
+          "accepted": 58,
+          "error": 0.08620689655172414,
+          "error_upper_95": 0.1727504227504208,
+          "error_cluster_ci95": [
+            0.017241379310344827,
+            0.1724137931034483
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.8832948207855225,
+          "coverage": 0.265625,
+          "accepted": 17,
+          "error": 0.0,
+          "error_upper_95": 0.16156611126074005,
+          "error_cluster_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.8748408555984497,
+          "coverage": 0.671875,
+          "accepted": 43,
+          "error": 0.023255813953488372,
+          "error_upper_95": 0.10563408261589403,
+          "error_cluster_ci95": [
+            0.0,
+            0.0703488372093018
+          ]
+        }
+      }
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "exact",
+      "kind": "robustness",
+      "cohort": "reverse",
+      "n": 64,
+      "requested": 64,
+      "rejected": 0,
+      "accuracy": 0.796875,
+      "correctness_brier": 0.14691023741657955,
+      "agreement": 0.890625,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.877386748790741,
+          "coverage": 0.609375,
+          "accepted": 39,
+          "error": 0.02564102564102564,
+          "error_upper_95": 0.1159521487579241,
+          "error_cluster_ci95": [
+            0.0,
+            0.07692307692307693
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.8580703735351562,
+          "coverage": 0.828125,
+          "accepted": 53,
+          "error": 0.1320754716981132,
+          "error_upper_95": 0.2338074340236229,
+          "error_cluster_ci95": [
+            0.05613207547169814,
+            0.22641509433962265
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.7300527691841125,
+          "coverage": 0.96875,
+          "accepted": 62,
+          "error": 0.1774193548387097,
+          "error_upper_95": 0.2765412236191703,
+          "error_cluster_ci95": [
+            0.08064516129032258,
+            0.27419354838709675
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.8832948207855225,
+          "coverage": 0.234375,
+          "accepted": 15,
+          "error": 0.06666666666666667,
+          "error_upper_95": 0.2793961936128765,
+          "error_cluster_ci95": [
+            0.0,
+            0.2
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.8748408555984497,
+          "coverage": 0.65625,
+          "accepted": 42,
+          "error": 0.047619047619047616,
+          "error_upper_95": 0.1424144765631462,
+          "error_cluster_ci95": [
+            0.0,
+            0.11904761904761904
+          ]
+        }
+      }
+    },
+    {
+      "size": "0.8b",
+      "seed": 22,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "cohort": "distant",
+      "n": 256,
+      "requested": 256,
+      "rejected": 0,
+      "accuracy": 0.671875,
+      "correctness_brier": 0.24095939566638133,
+      "agreement": null,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.9989858269691467,
+          "coverage": 0.42578125,
+          "accepted": 109,
+          "error": 0.10091743119266056,
+          "error_upper_95": 0.16151067603464805,
+          "error_cluster_ci95": [
+            0.045871559633027525,
+            0.1651376146788991
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9979789853096008,
+          "coverage": 0.6015625,
+          "accepted": 154,
+          "error": 0.12337662337662338,
+          "error_upper_95": 0.1757608872963083,
+          "error_cluster_ci95": [
+            0.07792207792207792,
+            0.17532467532467533
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.9909975528717041,
+          "coverage": 0.71875,
+          "accepted": 184,
+          "error": 0.16847826086956522,
+          "error_upper_95": 0.22053298565513255,
+          "error_cluster_ci95": [
+            0.11413043478260869,
+            0.22282608695652173
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9992954730987549,
+          "coverage": 0.15625,
+          "accepted": 40,
+          "error": 0.075,
+          "error_upper_95": 0.18258685001590122,
+          "error_cluster_ci95": [
+            0.0,
+            0.175
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9987711310386658,
+          "coverage": 0.52734375,
+          "accepted": 135,
+          "error": 0.1111111111111111,
+          "error_upper_95": 0.16592667230598496,
+          "error_cluster_ci95": [
+            0.05925925925925926,
+            0.17037037037037037
+          ]
+        }
+      }
+    },
+    {
+      "size": "0.8b",
+      "seed": 22,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "cohort": "near",
+      "n": 256,
+      "requested": 256,
+      "rejected": 0,
+      "accuracy": 0.8125,
+      "correctness_brier": 0.1604386245012982,
+      "agreement": null,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.9989858269691467,
+          "coverage": 0.51171875,
+          "accepted": 131,
+          "error": 0.030534351145038167,
+          "error_upper_95": 0.06850856466992067,
+          "error_cluster_ci95": [
+            0.0,
+            0.061068702290076333
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9979789853096008,
+          "coverage": 0.71484375,
+          "accepted": 183,
+          "error": 0.09289617486338798,
+          "error_upper_95": 0.13608329600155356,
+          "error_cluster_ci95": [
+            0.04918032786885246,
+            0.1366120218579235
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.9909975528717041,
+          "coverage": 0.828125,
+          "accepted": 212,
+          "error": 0.12735849056603774,
+          "error_upper_95": 0.17133021376943083,
+          "error_cluster_ci95": [
+            0.08490566037735849,
+            0.1792452830188679
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9992954730987549,
+          "coverage": 0.20703125,
+          "accepted": 53,
+          "error": 0.018867924528301886,
+          "error_upper_95": 0.08640681821816416,
+          "error_cluster_ci95": [
+            0.0,
+            0.05660377358490566
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9987711310386658,
+          "coverage": 0.5859375,
+          "accepted": 150,
+          "error": 0.05333333333333334,
+          "error_upper_95": 0.09417148229219563,
+          "error_cluster_ci95": [
+            0.02,
+            0.09333333333333334
+          ]
+        }
+      }
+    },
+    {
+      "size": "0.8b",
+      "seed": 22,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "cohort": "oos-deferral",
+      "n": 256,
+      "requested": 256,
+      "rejected": 0,
+      "accuracy": 0.0,
+      "correctness_brier": 0.40553291037257605,
+      "agreement": null,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.9989858269691467,
+          "coverage": 0.02734375,
+          "accepted": 7,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9979789853096008,
+          "coverage": 0.06640625,
+          "accepted": 17,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.9909975528717041,
+          "coverage": 0.1328125,
+          "accepted": 34,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9992954730987549,
+          "coverage": 0.0078125,
+          "accepted": 2,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9987711310386658,
+          "coverage": 0.04296875,
+          "accepted": 11,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "size": "0.8b",
+      "seed": 22,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "cohort": "oos-none",
+      "n": 256,
+      "requested": 256,
+      "rejected": 0,
+      "accuracy": 0.01171875,
+      "correctness_brier": 0.3947142421279032,
+      "agreement": null,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.9989858269691467,
+          "coverage": 0.02734375,
+          "accepted": 7,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9979789853096008,
+          "coverage": 0.0703125,
+          "accepted": 18,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.9909975528717041,
+          "coverage": 0.1328125,
+          "accepted": 34,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9992954730987549,
+          "coverage": 0.0078125,
+          "accepted": 2,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9987711310386658,
+          "coverage": 0.04296875,
+          "accepted": 11,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "size": "0.8b",
+      "seed": 22,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "cohort": "unsupported-near-deferral",
+      "n": 150,
+      "requested": 150,
+      "rejected": 0,
+      "accuracy": 0.0,
+      "correctness_brier": 0.45174560539498637,
+      "agreement": null,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.9989858269691467,
+          "coverage": 0.06,
+          "accepted": 9,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9979789853096008,
+          "coverage": 0.14,
+          "accepted": 21,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.9909975528717041,
+          "coverage": 0.24666666666666667,
+          "accepted": 37,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9992954730987549,
+          "coverage": 0.006666666666666667,
+          "accepted": 1,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9987711310386658,
+          "coverage": 0.1,
+          "accepted": 15,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "size": "0.8b",
+      "seed": 22,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "cohort": "unsupported-near-none",
+      "n": 150,
+      "requested": 150,
+      "rejected": 0,
+      "accuracy": 0.02,
+      "correctness_brier": 0.44353816730179857,
+      "agreement": null,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.9989858269691467,
+          "coverage": 0.06,
+          "accepted": 9,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9979789853096008,
+          "coverage": 0.14666666666666667,
+          "accepted": 22,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.9909975528717041,
+          "coverage": 0.22,
+          "accepted": 33,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9992954730987549,
+          "coverage": 0.006666666666666667,
+          "accepted": 1,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9987711310386658,
+          "coverage": 0.1,
+          "accepted": 15,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "cohort": "distant",
+      "n": 256,
+      "requested": 256,
+      "rejected": 0,
+      "accuracy": 0.8125,
+      "correctness_brier": 0.18169554517887546,
+      "agreement": null,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.999160647392273,
+          "coverage": 0.484375,
+          "accepted": 124,
+          "error": 0.024193548387096774,
+          "error_upper_95": 0.06133993235554627,
+          "error_cluster_ci95": [
+            0.0,
+            0.056451612903225805
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9966451525688171,
+          "coverage": 0.89453125,
+          "accepted": 229,
+          "error": 0.13100436681222707,
+          "error_upper_95": 0.17347169606181806,
+          "error_cluster_ci95": [
+            0.08733624454148471,
+            0.17467248908296942
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.9885130524635315,
+          "coverage": 0.9296875,
+          "accepted": 238,
+          "error": 0.14705882352941177,
+          "error_upper_95": 0.19020840991481647,
+          "error_cluster_ci95": [
+            0.10493697478991597,
+            0.19327731092436976
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9993916749954224,
+          "coverage": 0.125,
+          "accepted": 32,
+          "error": 0.0,
+          "error_upper_95": 0.08936819898626475,
+          "error_cluster_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9955952763557434,
+          "coverage": 0.91015625,
+          "accepted": 233,
+          "error": 0.13733905579399142,
+          "error_upper_95": 0.18004778928067,
+          "error_cluster_ci95": [
+            0.09871244635193133,
+            0.18025751072961374
+          ]
+        }
+      }
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "cohort": "near",
+      "n": 256,
+      "requested": 256,
+      "rejected": 0,
+      "accuracy": 0.89453125,
+      "correctness_brier": 0.1029930367646023,
+      "agreement": null,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.999160647392273,
+          "coverage": 0.60546875,
+          "accepted": 155,
+          "error": 0.03870967741935484,
+          "error_upper_95": 0.07496826266192844,
+          "error_cluster_ci95": [
+            0.012903225806451613,
+            0.07096774193548387
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9966451525688171,
+          "coverage": 0.91796875,
+          "accepted": 235,
+          "error": 0.06382978723404255,
+          "error_upper_95": 0.09658661976093988,
+          "error_cluster_ci95": [
+            0.03404255319148936,
+            0.09361702127659574
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.9885130524635315,
+          "coverage": 0.953125,
+          "accepted": 244,
+          "error": 0.0778688524590164,
+          "error_upper_95": 0.1121671417601763,
+          "error_cluster_ci95": [
+            0.045081967213114756,
+            0.11065573770491803
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9993916749954224,
+          "coverage": 0.1015625,
+          "accepted": 26,
+          "error": 0.0,
+          "error_upper_95": 0.1088303557607848,
+          "error_cluster_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9955952763557434,
+          "coverage": 0.92578125,
+          "accepted": 237,
+          "error": 0.06751054852320675,
+          "error_upper_95": 0.10073347918476279,
+          "error_cluster_ci95": [
+            0.0379746835443038,
+            0.10126582278481013
+          ]
+        }
+      }
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "cohort": "oos-deferral",
+      "n": 256,
+      "requested": 256,
+      "rejected": 0,
+      "accuracy": 0.0,
+      "correctness_brier": 0.9534849340977737,
+      "agreement": null,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.999160647392273,
+          "coverage": 0.0546875,
+          "accepted": 14,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9966451525688171,
+          "coverage": 0.1953125,
+          "accepted": 50,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.9885130524635315,
+          "coverage": 0.41015625,
+          "accepted": 105,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9993916749954224,
+          "coverage": 0.0078125,
+          "accepted": 2,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9955952763557434,
+          "coverage": 0.2265625,
+          "accepted": 58,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "cohort": "oos-none",
+      "n": 256,
+      "requested": 256,
+      "rejected": 0,
+      "accuracy": 0.82421875,
+      "correctness_brier": 0.17253099377608,
+      "agreement": null,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.999160647392273,
+          "coverage": 0.015625,
+          "accepted": 4,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9966451525688171,
+          "coverage": 0.6875,
+          "accepted": 176,
+          "error": 0.13068181818181818,
+          "error_upper_95": 0.18003435689110087,
+          "error_cluster_ci95": [
+            0.08508522727272727,
+            0.18181818181818182
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.9885130524635315,
+          "coverage": 0.91015625,
+          "accepted": 233,
+          "error": 0.14163090128755365,
+          "error_upper_95": 0.18477080785523126,
+          "error_cluster_ci95": [
+            0.09871244635193133,
+            0.1888412017167382
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9993916749954224,
+          "coverage": 0.0078125,
+          "accepted": 2,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9955952763557434,
+          "coverage": 0.76171875,
+          "accepted": 195,
+          "error": 0.1282051282051282,
+          "error_upper_95": 0.17443948418453373,
+          "error_cluster_ci95": [
+            0.08205128205128205,
+            0.1794871794871795
+          ]
+        }
+      }
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "cohort": "unsupported-near-deferral",
+      "n": 150,
+      "requested": 150,
+      "rejected": 0,
+      "accuracy": 0.0,
+      "correctness_brier": 0.9137259331922278,
+      "agreement": null,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.999160647392273,
+          "coverage": 0.10666666666666667,
+          "accepted": 16,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9966451525688171,
+          "coverage": 0.34,
+          "accepted": 51,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.9885130524635315,
+          "coverage": 0.47333333333333333,
+          "accepted": 71,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9993916749954224,
+          "coverage": 0.0,
+          "accepted": 0,
+          "error": null,
+          "error_upper_95": null,
+          "error_cluster_ci95": null
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9955952763557434,
+          "coverage": 0.3466666666666667,
+          "accepted": 52,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "cohort": "unsupported-near-none",
+      "n": 150,
+      "requested": 150,
+      "rejected": 0,
+      "accuracy": 0.47333333333333333,
+      "correctness_brier": 0.5142054324745725,
+      "agreement": null,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.999160647392273,
+          "coverage": 0.06666666666666667,
+          "accepted": 10,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9966451525688171,
+          "coverage": 0.44666666666666666,
+          "accepted": 67,
+          "error": 0.5074626865671642,
+          "error_upper_95": 0.6135198993478171,
+          "error_cluster_ci95": [
+            0.4026119402985075,
+            0.6268656716417911
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.9885130524635315,
+          "coverage": 0.76,
+          "accepted": 114,
+          "error": 0.43859649122807015,
+          "error_upper_95": 0.5199523426728212,
+          "error_cluster_ci95": [
+            0.3508771929824561,
+            0.526535087719298
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9993916749954224,
+          "coverage": 0.0,
+          "accepted": 0,
+          "error": null,
+          "error_upper_95": null,
+          "error_cluster_ci95": null
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9955952763557434,
+          "coverage": 0.56,
+          "accepted": 84,
+          "error": 0.4642857142857143,
+          "error_upper_95": 0.5595841211432306,
+          "error_cluster_ci95": [
+            0.35714285714285715,
+            0.5833333333333334
+          ]
+        }
+      }
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "continued_sft",
+      "kind": "robustness",
+      "cohort": "partial-description-paraphrases",
+      "n": 64,
+      "requested": 64,
+      "rejected": 0,
+      "accuracy": 0.921875,
+      "correctness_brier": 0.0728346567678897,
+      "agreement": 0.96875,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.999160647392273,
+          "coverage": 0.4375,
+          "accepted": 28,
+          "error": 0.0,
+          "error_upper_95": 0.10146573557272467,
+          "error_cluster_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9966451525688171,
+          "coverage": 0.828125,
+          "accepted": 53,
+          "error": 0.018867924528301886,
+          "error_upper_95": 0.08640681821816416,
+          "error_cluster_ci95": [
+            0.0,
+            0.05660377358490566
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.9885130524635315,
+          "coverage": 0.921875,
+          "accepted": 59,
+          "error": 0.05084745762711865,
+          "error_upper_95": 0.12620655673085027,
+          "error_cluster_ci95": [
+            0.0,
+            0.11864406779661017
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9993916749954224,
+          "coverage": 0.046875,
+          "accepted": 3,
+          "error": 0.0,
+          "error_upper_95": 0.6315968501359612,
+          "error_cluster_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9955952763557434,
+          "coverage": 0.859375,
+          "accepted": 55,
+          "error": 0.03636363636363636,
+          "error_upper_95": 0.11007944845474105,
+          "error_cluster_ci95": [
+            0.0,
+            0.09090909090909091
+          ]
+        }
+      }
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "continued_sft",
+      "kind": "robustness",
+      "cohort": "missing-correct",
+      "n": 64,
+      "requested": 64,
+      "rejected": 0,
+      "accuracy": 0.0,
+      "correctness_brier": 0.9279273874684613,
+      "agreement": 0.0625,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.999160647392273,
+          "coverage": 0.171875,
+          "accepted": 11,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9966451525688171,
+          "coverage": 0.3125,
+          "accepted": 20,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.9885130524635315,
+          "coverage": 0.484375,
+          "accepted": 31,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9993916749954224,
+          "coverage": 0.0,
+          "accepted": 0,
+          "error": null,
+          "error_upper_95": null,
+          "error_cluster_ci95": null
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9955952763557434,
+          "coverage": 0.359375,
+          "accepted": 23,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "continued_sft",
+      "kind": "robustness",
+      "cohort": "length",
+      "n": 64,
+      "requested": 64,
+      "rejected": 0,
+      "accuracy": 0.953125,
+      "correctness_brier": 0.0411968432799939,
+      "agreement": 0.984375,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.999160647392273,
+          "coverage": 0.4375,
+          "accepted": 28,
+          "error": 0.0,
+          "error_upper_95": 0.10146573557272467,
+          "error_cluster_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9966451525688171,
+          "coverage": 0.8125,
+          "accepted": 52,
+          "error": 0.0,
+          "error_upper_95": 0.05598218012623554,
+          "error_cluster_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.9885130524635315,
+          "coverage": 0.921875,
+          "accepted": 59,
+          "error": 0.01694915254237288,
+          "error_upper_95": 0.0778979215188183,
+          "error_cluster_ci95": [
+            0.0,
+            0.05084745762711865
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9993916749954224,
+          "coverage": 0.03125,
+          "accepted": 2,
+          "error": 0.0,
+          "error_upper_95": 0.776393202250021,
+          "error_cluster_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9955952763557434,
+          "coverage": 0.859375,
+          "accepted": 55,
+          "error": 0.0,
+          "error_upper_95": 0.05301105495125376,
+          "error_cluster_ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "continued_sft",
+      "kind": "robustness",
+      "cohort": "original",
+      "n": 64,
+      "requested": 64,
+      "rejected": 0,
+      "accuracy": 0.9375,
+      "correctness_brier": 0.056158956914876934,
+      "agreement": 1.0,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.999160647392273,
+          "coverage": 0.453125,
+          "accepted": 29,
+          "error": 0.0,
+          "error_upper_95": 0.0981446276772957,
+          "error_cluster_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9966451525688171,
+          "coverage": 0.84375,
+          "accepted": 54,
+          "error": 0.018518518518518517,
+          "error_upper_95": 0.08486195988423352,
+          "error_cluster_ci95": [
+            0.0,
+            0.05555555555555555
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.9885130524635315,
+          "coverage": 0.9375,
+          "accepted": 60,
+          "error": 0.03333333333333333,
+          "error_upper_95": 0.10123589492416163,
+          "error_cluster_ci95": [
+            0.0,
+            0.08333333333333333
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9993916749954224,
+          "coverage": 0.046875,
+          "accepted": 3,
+          "error": 0.0,
+          "error_upper_95": 0.6315968501359612,
+          "error_cluster_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9955952763557434,
+          "coverage": 0.875,
+          "accepted": 56,
+          "error": 0.017857142857142856,
+          "error_upper_95": 0.08193215952933154,
+          "error_cluster_ci95": [
+            0.0,
+            0.05357142857142857
+          ]
+        }
+      }
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "continued_sft",
+      "kind": "robustness",
+      "cohort": "reverse",
+      "n": 64,
+      "requested": 64,
+      "rejected": 0,
+      "accuracy": 0.9375,
+      "correctness_brier": 0.05878190792189997,
+      "agreement": 0.953125,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.999160647392273,
+          "coverage": 0.53125,
+          "accepted": 34,
+          "error": 0.0,
+          "error_upper_95": 0.08433964335062537,
+          "error_cluster_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9966451525688171,
+          "coverage": 0.875,
+          "accepted": 56,
+          "error": 0.03571428571428571,
+          "error_upper_95": 0.1081893581470904,
+          "error_cluster_ci95": [
+            0.0,
+            0.08928571428571429
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.9885130524635315,
+          "coverage": 0.953125,
+          "accepted": 61,
+          "error": 0.03278688524590164,
+          "error_upper_95": 0.0996348801942324,
+          "error_cluster_ci95": [
+            0.0,
+            0.08196721311475409
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9993916749954224,
+          "coverage": 0.109375,
+          "accepted": 7,
+          "error": 0.0,
+          "error_upper_95": 0.34816365513116077,
+          "error_cluster_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9955952763557434,
+          "coverage": 0.890625,
+          "accepted": 57,
+          "error": 0.03508771929824561,
+          "error_upper_95": 0.10636302593795688,
+          "error_cluster_ci95": [
+            0.0,
+            0.08771929824561403
+          ]
+        }
+      }
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "continued_sft",
+      "kind": "robustness",
+      "cohort": "quoted-instruction",
+      "n": 64,
+      "requested": 64,
+      "rejected": 0,
+      "accuracy": 0.9375,
+      "correctness_brier": 0.058967843181506385,
+      "agreement": 0.96875,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.999160647392273,
+          "coverage": 0.4375,
+          "accepted": 28,
+          "error": 0.0,
+          "error_upper_95": 0.10146573557272467,
+          "error_cluster_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9966451525688171,
+          "coverage": 0.84375,
+          "accepted": 54,
+          "error": 0.037037037037037035,
+          "error_upper_95": 0.11203669158882405,
+          "error_cluster_ci95": [
+            0.0,
+            0.09259259259259259
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.9885130524635315,
+          "coverage": 0.9375,
+          "accepted": 60,
+          "error": 0.05,
+          "error_upper_95": 0.12418721047743608,
+          "error_cluster_ci95": [
+            0.0,
+            0.11666666666666667
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9993916749954224,
+          "coverage": 0.03125,
+          "accepted": 2,
+          "error": 0.0,
+          "error_upper_95": 0.776393202250021,
+          "error_cluster_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9955952763557434,
+          "coverage": 0.875,
+          "accepted": 56,
+          "error": 0.03571428571428571,
+          "error_upper_95": 0.1081893581470904,
+          "error_cluster_ci95": [
+            0.0,
+            0.08928571428571429
+          ]
+        }
+      }
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "continued_sft",
+      "kind": "robustness",
+      "cohort": "irrelevant",
+      "n": 64,
+      "requested": 64,
+      "rejected": 0,
+      "accuracy": 0.9375,
+      "correctness_brier": 0.05613799705661998,
+      "agreement": 1.0,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.999160647392273,
+          "coverage": 0.453125,
+          "accepted": 29,
+          "error": 0.0,
+          "error_upper_95": 0.0981446276772957,
+          "error_cluster_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9966451525688171,
+          "coverage": 0.84375,
+          "accepted": 54,
+          "error": 0.018518518518518517,
+          "error_upper_95": 0.08486195988423352,
+          "error_cluster_ci95": [
+            0.0,
+            0.05555555555555555
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.9885130524635315,
+          "coverage": 0.9375,
+          "accepted": 60,
+          "error": 0.03333333333333333,
+          "error_upper_95": 0.10123589492416163,
+          "error_cluster_ci95": [
+            0.0,
+            0.08333333333333333
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9993916749954224,
+          "coverage": 0.046875,
+          "accepted": 3,
+          "error": 0.0,
+          "error_upper_95": 0.6315968501359612,
+          "error_cluster_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9955952763557434,
+          "coverage": 0.875,
+          "accepted": 56,
+          "error": 0.017857142857142856,
+          "error_upper_95": 0.08193215952933154,
+          "error_cluster_ci95": [
+            0.0,
+            0.05357142857142857
+          ]
+        }
+      }
+    },
+    {
+      "size": "9b",
+      "seed": 11,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "cohort": "distant",
+      "n": 256,
+      "requested": 256,
+      "rejected": 0,
+      "accuracy": 0.8125,
+      "correctness_brier": 0.18685092547116713,
+      "agreement": null,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.9992812275886536,
+          "coverage": 0.73828125,
+          "accepted": 189,
+          "error": 0.15343915343915343,
+          "error_upper_95": 0.20326504231584952,
+          "error_cluster_ci95": [
+            0.10582010582010581,
+            0.20634920634920634
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9990517497062683,
+          "coverage": 0.93359375,
+          "accepted": 239,
+          "error": 0.1589958158995816,
+          "error_upper_95": 0.20313554269372158,
+          "error_cluster_ci95": [
+            0.11297071129707113,
+            0.20502092050209206
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.998654842376709,
+          "coverage": 0.97265625,
+          "accepted": 249,
+          "error": 0.17269076305220885,
+          "error_upper_95": 0.21697023336777857,
+          "error_cluster_ci95": [
+            0.1285140562248996,
+            0.21686746987951808
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9994575381278992,
+          "coverage": 0.37109375,
+          "accepted": 95,
+          "error": 0.1368421052631579,
+          "error_upper_95": 0.2087344528478002,
+          "error_cluster_ci95": [
+            0.07368421052631578,
+            0.21052631578947367
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9990656971931458,
+          "coverage": 0.9296875,
+          "accepted": 238,
+          "error": 0.15966386554621848,
+          "error_upper_95": 0.20396626441884538,
+          "error_cluster_ci95": [
+            0.11754201680672269,
+            0.20588235294117646
+          ]
+        }
+      }
+    },
+    {
+      "size": "9b",
+      "seed": 11,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "cohort": "near",
+      "n": 256,
+      "requested": 256,
+      "rejected": 0,
+      "accuracy": 0.89453125,
+      "correctness_brier": 0.10455419471938111,
+      "agreement": null,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.9992812275886536,
+          "coverage": 0.66796875,
+          "accepted": 171,
+          "error": 0.07602339181286549,
+          "error_upper_95": 0.11815115269530717,
+          "error_cluster_ci95": [
+            0.04093567251461988,
+            0.11695906432748537
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9990517497062683,
+          "coverage": 0.90234375,
+          "accepted": 231,
+          "error": 0.08225108225108226,
+          "error_upper_95": 0.11835433805492791,
+          "error_cluster_ci95": [
+            0.047619047619047616,
+            0.11688311688311688
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.998654842376709,
+          "coverage": 0.953125,
+          "accepted": 244,
+          "error": 0.09836065573770492,
+          "error_upper_95": 0.13553660273123955,
+          "error_cluster_ci95": [
+            0.06557377049180328,
+            0.13524590163934427
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9994575381278992,
+          "coverage": 0.35546875,
+          "accepted": 91,
+          "error": 0.03296703296703297,
+          "error_upper_95": 0.0830022685421279,
+          "error_cluster_ci95": [
+            0.0,
+            0.07692307692307693
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9990656971931458,
+          "coverage": 0.90234375,
+          "accepted": 231,
+          "error": 0.08225108225108226,
+          "error_upper_95": 0.11835433805492791,
+          "error_cluster_ci95": [
+            0.047619047619047616,
+            0.11688311688311688
+          ]
+        }
+      }
+    },
+    {
+      "size": "9b",
+      "seed": 11,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "cohort": "oos-deferral",
+      "n": 256,
+      "requested": 256,
+      "rejected": 0,
+      "accuracy": 0.0,
+      "correctness_brier": 0.9599185537739136,
+      "agreement": null,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.9992812275886536,
+          "coverage": 0.08984375,
+          "accepted": 23,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9990517497062683,
+          "coverage": 0.1875,
+          "accepted": 48,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.998654842376709,
+          "coverage": 0.31640625,
+          "accepted": 81,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9994575381278992,
+          "coverage": 0.015625,
+          "accepted": 4,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9990656971931458,
+          "coverage": 0.1640625,
+          "accepted": 42,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "size": "9b",
+      "seed": 11,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "cohort": "oos-none",
+      "n": 256,
+      "requested": 256,
+      "rejected": 0,
+      "accuracy": 0.6328125,
+      "correctness_brier": 0.3663902479849252,
+      "agreement": null,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.9992812275886536,
+          "coverage": 0.12109375,
+          "accepted": 31,
+          "error": 0.9032258064516129,
+          "error_upper_95": 0.9730998803088509,
+          "error_cluster_ci95": [
+            0.7741935483870968,
+            1.0
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9990517497062683,
+          "coverage": 0.51171875,
+          "accepted": 131,
+          "error": 0.3969465648854962,
+          "error_upper_95": 0.4723101180845596,
+          "error_cluster_ci95": [
+            0.31297709923664124,
+            0.48091603053435117
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.998654842376709,
+          "coverage": 0.82421875,
+          "accepted": 211,
+          "error": 0.35071090047393366,
+          "error_upper_95": 0.4084546138338476,
+          "error_cluster_ci95": [
+            0.2937203791469194,
+            0.41706161137440756
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9994575381278992,
+          "coverage": 0.0234375,
+          "accepted": 6,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9990656971931458,
+          "coverage": 0.5,
+          "accepted": 128,
+          "error": 0.40625,
+          "error_upper_95": 0.4826473665258826,
+          "error_cluster_ci95": [
+            0.328125,
+            0.4921875
+          ]
+        }
+      }
+    },
+    {
+      "size": "9b",
+      "seed": 11,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "cohort": "unsupported-near-deferral",
+      "n": 150,
+      "requested": 150,
+      "rejected": 0,
+      "accuracy": 0.0,
+      "correctness_brier": 0.9522817129792016,
+      "agreement": null,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.9992812275886536,
+          "coverage": 0.04666666666666667,
+          "accepted": 7,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9990517497062683,
+          "coverage": 0.14,
+          "accepted": 21,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.998654842376709,
+          "coverage": 0.32666666666666666,
+          "accepted": 49,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9994575381278992,
+          "coverage": 0.0,
+          "accepted": 0,
+          "error": null,
+          "error_upper_95": null,
+          "error_cluster_ci95": null
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9990656971931458,
+          "coverage": 0.14,
+          "accepted": 21,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "size": "9b",
+      "seed": 11,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "cohort": "unsupported-near-none",
+      "n": 150,
+      "requested": 150,
+      "rejected": 0,
+      "accuracy": 0.32,
+      "correctness_brier": 0.6760979347141385,
+      "agreement": null,
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.9992812275886536,
+          "coverage": 0.04,
+          "accepted": 6,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.9990517497062683,
+          "coverage": 0.16,
+          "accepted": 24,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.998654842376709,
+          "coverage": 0.34,
+          "accepted": 51,
+          "error": 0.9803921568627451,
+          "error_upper_95": 0.9989947547275464,
+          "error_cluster_ci95": [
+            0.9411764705882353,
+            1.0
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9994575381278992,
+          "coverage": 0.0,
+          "accepted": 0,
+          "error": null,
+          "error_upper_95": null,
+          "error_cluster_ci95": null
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.9990656971931458,
+          "coverage": 0.14666666666666667,
+          "accepted": 22,
+          "error": 1.0,
+          "error_upper_95": 1.0,
+          "error_cluster_ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      }
     }
   ],
   "sources": {
@@ -921,7 +3554,33 @@
     "results/generalization-v1/0.8b/seed-11/continued_sft/transfer/oos-none-metrics.json": "ad6005abc6fb3f8446f4b6e12667760ba6eb436fe95179045fe8a318a5f86282",
     "results/generalization-v1/0.8b/seed-11/continued_sft/transfer/unsupported-near-deferral-metrics.json": "d8cbb117bca60f70061a34879e9ce14c0bf9af5413899709e322354d3b535d40",
     "results/generalization-v1/0.8b/seed-11/continued_sft/transfer/unsupported-near-none-metrics.json": "acf9e8c0495846f638c9fc4e5f5c5713da61ff28ad69b2240e51dc94158ccfa1",
-    "results/generalization-v1/0.8b/seed-11/continued_sft/robustness/report.json": "a4760ff106978614f7d0d1492d74ca4b142c63416bbeee09b37b390a8ef280a3"
+    "results/generalization-v1/0.8b/seed-11/continued_sft/robustness/report.json": "a4760ff106978614f7d0d1492d74ca4b142c63416bbeee09b37b390a8ef280a3",
+    "results/generalization-v1/0.8b/seed-11/exact/transfer/distant-metrics.json": "420d4968eb3655729a4f6b965668b30cbdc295e5da5b6b5c22292b43c1ea2b29",
+    "results/generalization-v1/0.8b/seed-11/exact/transfer/near-metrics.json": "4770a3d38cd9f1fb6b6ee47de184e2e6e07ec414717b4305ae294c2dda947081",
+    "results/generalization-v1/0.8b/seed-11/exact/transfer/oos-deferral-metrics.json": "cde25dcfb6223738257a211ed8e57b17d023ae7d742be05338777d1739c25e94",
+    "results/generalization-v1/0.8b/seed-11/exact/transfer/oos-none-metrics.json": "e16ff929c4ea170e0701796f69aba009d30b1deaa970dca912368b090fa70e30",
+    "results/generalization-v1/0.8b/seed-11/exact/transfer/unsupported-near-deferral-metrics.json": "a202dc479b33d62e378af40549fa89c1bda637be3d61fa9f86def2db2a13ad46",
+    "results/generalization-v1/0.8b/seed-11/exact/transfer/unsupported-near-none-metrics.json": "dbc2ae4801e8719d10cf294b104c3e1e25e66c03a3f963d74142ac476059a0e8",
+    "results/generalization-v1/0.8b/seed-11/exact/robustness/report.json": "5aec8d8b31f51483029f1884f43bafa2b10f06c72ac19a63e369e8c822ca00e1",
+    "results/generalization-v1/0.8b/seed-22/continued_sft/transfer/distant-metrics.json": "8dc56af04e6f6b5263f239e629d344b63fc646127c91d6008b5b3b92096ac812",
+    "results/generalization-v1/0.8b/seed-22/continued_sft/transfer/near-metrics.json": "c79efa6d7022345c0066b6d85342be170f5d376986b38e140f81478fc01f591b",
+    "results/generalization-v1/0.8b/seed-22/continued_sft/transfer/oos-deferral-metrics.json": "45089049601404da9d6e98d50f721546cd8119aa97ceab6e6929b43c6f0c19ac",
+    "results/generalization-v1/0.8b/seed-22/continued_sft/transfer/oos-none-metrics.json": "2c595fd4535bba54e9662c5603d21972296c0b1d728465cbc2d73c8cb1da0aa0",
+    "results/generalization-v1/0.8b/seed-22/continued_sft/transfer/unsupported-near-deferral-metrics.json": "ab89e02a429d2571f238b213226409c2fb877c5bb566dcaaca12dba12fea7a60",
+    "results/generalization-v1/0.8b/seed-22/continued_sft/transfer/unsupported-near-none-metrics.json": "68b2d6ec5109d5ed3bf8e59fb216d0435f7f0cfa1d62ef103907f1f2f34515a7",
+    "results/generalization-v1/4b/seed-11/continued_sft/transfer/distant-metrics.json": "6495314f3f2bba8b1b88a31090808f16e02e6bd6bf069ab8de2437ff8c682b79",
+    "results/generalization-v1/4b/seed-11/continued_sft/transfer/near-metrics.json": "94c12a4a428a6da1a65446d1b1e462587df07e08afd89731568198b986e1af17",
+    "results/generalization-v1/4b/seed-11/continued_sft/transfer/oos-deferral-metrics.json": "f83f5205bdaaa981bb726345b3cdca7510ffec114e8347c7ac9f8f08d82a74e9",
+    "results/generalization-v1/4b/seed-11/continued_sft/transfer/oos-none-metrics.json": "b3c479c5b6d3b862f64a568efa8a4d127c1361164ca5e81dde4bbef6a50749e4",
+    "results/generalization-v1/4b/seed-11/continued_sft/transfer/unsupported-near-deferral-metrics.json": "f60853336b107ef404545451ae0c266d5b75e5d78efab4a91f8ce0ef6db40d9c",
+    "results/generalization-v1/4b/seed-11/continued_sft/transfer/unsupported-near-none-metrics.json": "9baedf941df7760f451b91d605bee9f244dcf89dfd318a24f934bb045a8f7db1",
+    "results/generalization-v1/4b/seed-11/continued_sft/robustness/report.json": "4406ddbd69bbca27dfb2c96798facf2388d611c3d928f65eaa26c3944fa1ec61",
+    "results/generalization-v1/9b/seed-11/continued_sft/transfer/distant-metrics.json": "81c0c4adf819e282b0f71f1aff4e93d69304850baf22b81431c42b179207eb7b",
+    "results/generalization-v1/9b/seed-11/continued_sft/transfer/near-metrics.json": "27529735a2a059452d1aa06e3900473139539a7b28a9fe8c72d6e2d3a867b478",
+    "results/generalization-v1/9b/seed-11/continued_sft/transfer/oos-deferral-metrics.json": "5cc4207dd930e398a6c46e8cdadf8a2c6ffcaee10e44dbf339447d0ae1a4f7da",
+    "results/generalization-v1/9b/seed-11/continued_sft/transfer/oos-none-metrics.json": "7f55889411a76b3e38fd1e97a0156a4fea11d38b010af72562ee11ec7c1850a1",
+    "results/generalization-v1/9b/seed-11/continued_sft/transfer/unsupported-near-deferral-metrics.json": "cc3031745efc2d8e744663df07b0884d28a81e2f6cb21f3526b2ad5dd0a9e6cb",
+    "results/generalization-v1/9b/seed-11/continued_sft/transfer/unsupported-near-none-metrics.json": "aaca0a1944b2277158713b1d8d8ec05eb5a7b3cb7c305799d381cf16a676b403"
   },
   "scope": "Frozen subsample diagnostics with native scalar/policy confidence and unchanged BANKING77 thresholds. Near/distant use CLINC descriptions. None-option classification and confidence-based deferral are separate tasks. No transfer tuning.",
   "limitations": [

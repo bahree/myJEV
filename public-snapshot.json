@@ -107,7 +107,7 @@
       "mode": "100644"
     },
     "docs/models.md": {
-      "sha256": "74d6ea1db4a0fb8c8699dd5fbbd2e329e3dc84d1df73ccadf64aa97f0898529c",
+      "sha256": "b1bf20b7cc3afd3634d5b8b6d9335b29c76d6fbfb19452618edff526a07fb6e9",
       "mode": "100644"
     },
     "docs/openjev.md": {
@@ -610,6 +610,22 @@
       "sha256": "c66bcfd723c1932fd21f409cabb7a7997926b08715b5f6f52c69b15b2c61fcd8",
       "mode": "100644"
     },
+    "results/documentation-v2/extension-email-preview.txt": {
+      "sha256": "62d067ed4790f765f4da4c7e9d46a83d9b16e26e369fd6e41507d8d5e35fad14",
+      "mode": "100644"
+    },
+    "results/documentation-v2/public-link-checks.json": {
+      "sha256": "c74b31947fe716d9d10b6716ed393f7ce388f056965707aa8ee64d54735c3d47",
+      "mode": "100644"
+    },
+    "results/documentation-v2/scoring-path-tests.txt": {
+      "sha256": "10a11f3f440f564623a0e8a3e9733e890e18c9084c3cc1ddf8a1019ba43eace9",
+      "mode": "100644"
+    },
+    "results/extension-progress.json": {
+      "sha256": "377d469392201c47166b0a13e96e03ab02133b8a0474b3d9bf4a3cce9add6c95",
+      "mode": "100644"
+    },
     "results/figures/confidence-controls-source.json": {
       "sha256": "51375f6423108f4b0ff31d140ea1c39f9da2dbd43561f140a1b5d2a4addfa1f5",
       "mode": "100644"
@@ -631,7 +647,7 @@
       "mode": "100644"
     },
     "results/generalization-v1/0.8b-status.json": {
-      "sha256": "4b47690284ebe6a1de0997884ea58887152cabc8ce60dc413b439fa721eaa635",
+      "sha256": "c9caaf330709a42341e5f0bcb3368ce39ec09b80090dc144e412d58fc01eca5b",
       "mode": "100644"
     },
     "results/generalization-v1/0.8b/seed-11/continued_sft/robustness-complete.json": {
@@ -670,6 +686,18 @@
       "sha256": "acf9e8c0495846f638c9fc4e5f5c5713da61ff28ad69b2240e51dc94158ccfa1",
       "mode": "100644"
     },
+    "results/generalization-v1/0.8b/seed-11/exact/robustness-complete.json": {
+      "sha256": "3906ea5a86ed3e5cdc23f0184116c371bff35daaaa0ac76e0551e88719055acc",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-11/exact/robustness/report.json": {
+      "sha256": "5aec8d8b31f51483029f1884f43bafa2b10f06c72ac19a63e369e8c822ca00e1",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-11/exact/transfer-complete.json": {
+      "sha256": "fcffd9180fc244a79f5de31f39b7ff7014078aec4eab821ff84bfab630830a23",
+      "mode": "100644"
+    },
     "results/generalization-v1/0.8b/seed-11/exact/transfer/distant-metrics.json": {
       "sha256": "420d4968eb3655729a4f6b965668b30cbdc295e5da5b6b5c22292b43c1ea2b29",
       "mode": "100644"
@@ -678,8 +706,64 @@
       "sha256": "4770a3d38cd9f1fb6b6ee47de184e2e6e07ec414717b4305ae294c2dda947081",
       "mode": "100644"
     },
+    "results/generalization-v1/0.8b/seed-11/exact/transfer/oos-deferral-metrics.json": {
+      "sha256": "cde25dcfb6223738257a211ed8e57b17d023ae7d742be05338777d1739c25e94",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-11/exact/transfer/oos-none-metrics.json": {
+      "sha256": "e16ff929c4ea170e0701796f69aba009d30b1deaa970dca912368b090fa70e30",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-11/exact/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "a202dc479b33d62e378af40549fa89c1bda637be3d61fa9f86def2db2a13ad46",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-11/exact/transfer/unsupported-near-none-metrics.json": {
+      "sha256": "dbc2ae4801e8719d10cf294b104c3e1e25e66c03a3f963d74142ac476059a0e8",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/continued_sft/transfer-complete.json": {
+      "sha256": "505645494f4ebbabac79fba030f7a0ecaf5a6aaf937eb1d63cdbd3879aa129e2",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/continued_sft/transfer/distant-metrics.json": {
+      "sha256": "8dc56af04e6f6b5263f239e629d344b63fc646127c91d6008b5b3b92096ac812",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/continued_sft/transfer/near-metrics.json": {
+      "sha256": "c79efa6d7022345c0066b6d85342be170f5d376986b38e140f81478fc01f591b",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/continued_sft/transfer/oos-deferral-metrics.json": {
+      "sha256": "45089049601404da9d6e98d50f721546cd8119aa97ceab6e6929b43c6f0c19ac",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/continued_sft/transfer/oos-none-metrics.json": {
+      "sha256": "2c595fd4535bba54e9662c5603d21972296c0b1d728465cbc2d73c8cb1da0aa0",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/continued_sft/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "ab89e02a429d2571f238b213226409c2fb877c5bb566dcaaca12dba12fea7a60",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/continued_sft/transfer/unsupported-near-none-metrics.json": {
+      "sha256": "68b2d6ec5109d5ed3bf8e59fb216d0435f7f0cfa1d62ef103907f1f2f34515a7",
+      "mode": "100644"
+    },
     "results/generalization-v1/4b-status.json": {
-      "sha256": "3ffc142ab137047a74f31fa6ff3fe5e70809f98644d4a1fb43fe5eb224556229",
+      "sha256": "d5bfafb12d3bcfb194a0682881915333b55ffe3302bc8b4aee49e7a490474261",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-11/continued_sft/robustness-complete.json": {
+      "sha256": "2d50fc9481784955e0db52d23043a4824cda758ac78f5cb85589a5f4d6662c0e",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-11/continued_sft/robustness/report.json": {
+      "sha256": "4406ddbd69bbca27dfb2c96798facf2388d611c3d928f65eaa26c3944fa1ec61",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-11/continued_sft/transfer-complete.json": {
+      "sha256": "305a8d2bef9cd9f53c6174f5894392f7a562c6415dcacb26f6938f646dedc109",
       "mode": "100644"
     },
     "results/generalization-v1/4b/seed-11/continued_sft/transfer/distant-metrics.json": {
@@ -688,6 +772,10 @@
     },
     "results/generalization-v1/4b/seed-11/continued_sft/transfer/near-metrics.json": {
       "sha256": "94c12a4a428a6da1a65446d1b1e462587df07e08afd89731568198b986e1af17",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-11/continued_sft/transfer/oos-deferral-metrics.json": {
+      "sha256": "f83f5205bdaaa981bb726345b3cdca7510ffec114e8347c7ac9f8f08d82a74e9",
       "mode": "100644"
     },
     "results/generalization-v1/4b/seed-11/continued_sft/transfer/oos-none-metrics.json": {
@@ -702,8 +790,20 @@
       "sha256": "9baedf941df7760f451b91d605bee9f244dcf89dfd318a24f934bb045a8f7db1",
       "mode": "100644"
     },
+    "results/generalization-v1/4b/seed-11/exact/transfer/distant-metrics.json": {
+      "sha256": "5afad9178e28695c86beb216dc0cb756858783915ceb6252ed6a2ba73fb543f4",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-11/exact/transfer/near-metrics.json": {
+      "sha256": "dba9001f78e40a680630a518c1afc6d98c389d27cbeeb5fc25a2697bd1ad3b7b",
+      "mode": "100644"
+    },
     "results/generalization-v1/9b-status.json": {
-      "sha256": "d261702c990bb571c42f37c4c70b8800c354c5abf200299abe02fd5cab1b6983",
+      "sha256": "57392d6d57794b208b8afc637b6155548ded5dce9b2e0b516010de552247f558",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/continued_sft/transfer-complete.json": {
+      "sha256": "89c86c076c818baeec6ab64f318b82d4e9b0c1a5a95986282c92c8d0214e16e1",
       "mode": "100644"
     },
     "results/generalization-v1/9b/seed-11/continued_sft/transfer/distant-metrics.json": {
@@ -712,6 +812,18 @@
     },
     "results/generalization-v1/9b/seed-11/continued_sft/transfer/near-metrics.json": {
       "sha256": "27529735a2a059452d1aa06e3900473139539a7b28a9fe8c72d6e2d3a867b478",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/continued_sft/transfer/oos-deferral-metrics.json": {
+      "sha256": "5cc4207dd930e398a6c46e8cdadf8a2c6ffcaee10e44dbf339447d0ae1a4f7da",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/continued_sft/transfer/oos-none-metrics.json": {
+      "sha256": "7f55889411a76b3e38fd1e97a0156a4fea11d38b010af72562ee11ec7c1850a1",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/continued_sft/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "cc3031745efc2d8e744663df07b0884d28a81e2f6cb21f3526b2ad5dd0a9e6cb",
       "mode": "100644"
     },
     "results/generalization-v1/9b/seed-11/continued_sft/transfer/unsupported-near-none-metrics.json": {
@@ -723,11 +835,11 @@
       "mode": "100644"
     },
     "results/generalization-v1/report.md": {
-      "sha256": "217211626daed6b9522199e096e1359ec7fb45e75a882401696e56d3de6ef43f",
+      "sha256": "36663b14fe2eb907ddd628f8cd3f7c765e7c91f244cbea7c47868692a16f2f60",
       "mode": "100644"
     },
     "results/generalization-v1/summary.json": {
-      "sha256": "7ce1884a47fe169f75c733364feeef0ddbf32c06546f34992c8ef61123b96052",
+      "sha256": "75e1433a0fd9cd3f117515c8d097b58eececdee1db4f9e6a7f057fce0b081614",
       "mode": "100644"
     },
     "results/gpu-telemetry-20261004T205942Z/gpu-activity.png": {
@@ -2826,12 +2938,32 @@
       "sha256": "d6eb05ed448c2454cc1eb96206ded39f59140d10a235354b4591b5f9682ebe3f",
       "mode": "100644"
     },
+    "results/precision-v1/report.md": {
+      "sha256": "71a3bea8f94eb6ccabae45b0cff14f62fc3eb0a7a382f074b01815a971f255b9",
+      "mode": "100644"
+    },
     "results/precision-v1/status.json": {
       "sha256": "29afbb188e62bc5da0ac7c10b3ba0995034b45546f4eb164ee7adfd6560cffd2",
       "mode": "100644"
     },
+    "results/precision-v1/summary.json": {
+      "sha256": "d8c544123096800841a0bce7737b3223f6eb085be26f754625e43bffa9196506",
+      "mode": "100644"
+    },
     "results/readout-reproduction.json": {
       "sha256": "0bfaa418bf8a122c51119fe22b60b3c22ec95566abf5c3f3b4ea97ff1676d3c6",
+      "mode": "100644"
+    },
+    "results/release-candidates-v1/inventory.json": {
+      "sha256": "7e85dd1150732e695c7b8b9641805411feec28656eb06b480fbcc97e0f784080",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/frozen-plan.json": {
+      "sha256": "d8e26110135b5fec8ca5d3baf85b2dd46f3c0fd19868683c657270ea1a0d6cd8",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/status.json": {
+      "sha256": "d9c0d16da7eca6351a23c20b5d1bea8f727ab2cff95dc384647393ebaa5f01ef",
       "mode": "100644"
     },
     "results/reload-4b-with-fixture.json": {
@@ -4450,6 +4582,10 @@
       "sha256": "99b48635ae4ade10938f743b8c084d48b1289462c2cc8b16dedc4684a045035f",
       "mode": "100644"
     },
+    "scripts/benchmark_scoring_paths.py": {
+      "sha256": "ab723944200e81e41c8046d3629fef9102027acbf76c7660fb8103bbf51e41aa",
+      "mode": "100644"
+    },
     "scripts/calibrate.py": {
       "sha256": "230e313a04baec6545482c7dba9cbfc7d956fd93d540d8dfec2c14d8cd123cc9",
       "mode": "100644"
@@ -4468,6 +4604,10 @@
     },
     "scripts/evaluate_transfer.py": {
       "sha256": "b6889307810c19f153d08ea58e83b80ace0bc7d22548b424a1e73309f75a455e",
+      "mode": "100644"
+    },
+    "scripts/extension_progress.py": {
+      "sha256": "6efdb609b39319f33941a5720b2e1f4fe8a0ed731ded2696e42b484bae76b46b",
       "mode": "100644"
     },
     "scripts/gliclass_baseline.py": {
@@ -4522,6 +4662,10 @@
       "sha256": "e84bdc8453a5c3e89a56ad5d4ece3791ac682e9728f6bcd5cf2c83697782cb63",
       "mode": "100644"
     },
+    "scripts/prepare_release_candidates.py": {
+      "sha256": "02f478307fdd597ce8aa93c425af2bca47bfe6455a2cc1e8c8461f24f13025d0",
+      "mode": "100644"
+    },
     "scripts/reproduce_readout.py": {
       "sha256": "4d26167ce11d188b171a80c2820ff8bebccbea8215a4c5804e809bbe828b856e",
       "mode": "100644"
@@ -4540,6 +4684,10 @@
     },
     "scripts/run_precision_study.py": {
       "sha256": "b057355e2d054b350ab33560d629f466c58d6b445344698bdcabc841f125dc12",
+      "mode": "100644"
+    },
+    "scripts/run_release_validation.py": {
+      "sha256": "fe3964631cc6a3a9d200a05e7e15b0af4a9b11aafa3ff9861e65b66780bfa00c",
       "mode": "100644"
     },
     "scripts/run_scratch.py": {
@@ -4572,6 +4720,10 @@
     },
     "scripts/summarize_operating_points.py": {
       "sha256": "82d39f283b15e513a059c8d5172f0e5954fb67e623af5248c6020d561818c4be",
+      "mode": "100644"
+    },
+    "scripts/summarize_precision_study.py": {
+      "sha256": "4f4221512f0ee21b337e0d85cd27a6e3472ac289effd32e235bf5dc8984345d8",
       "mode": "100644"
     },
     "scripts/summarize_scratch_study.py": {
@@ -4708,6 +4860,10 @@
     },
     "tests/test_objectives.py": {
       "sha256": "ef263b42bd9775ddea4fc60ffcada86bc3a09b107ab7f0031960e10bbcfbabf0",
+      "mode": "100644"
+    },
+    "tests/test_scoring_benchmark.py": {
+      "sha256": "4c01f769642dbc6941d68405650327c6d0914d58ba578e0cdbbb7e9cbd8de22b",
       "mode": "100644"
     },
     "tests/test_scratch.py": {

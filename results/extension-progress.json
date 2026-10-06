@@ -1,0 +1,56 @@
+{
+  "utc_seconds": 1791264454.1328766,
+  "generalization": [
+    {
+      "size": "0.8b",
+      "state": "running",
+      "complete": 5,
+      "total": 12,
+      "current": {
+        "seed": 22,
+        "method": "continued_sft",
+        "kind": "robustness"
+      },
+      "remaining_seconds_estimate": 847.9409527778625
+    },
+    {
+      "size": "4b",
+      "state": "running",
+      "complete": 2,
+      "total": 12,
+      "current": {
+        "seed": 11,
+        "method": "exact",
+        "kind": "transfer"
+      },
+      "remaining_seconds_estimate": 2656.666841030121
+    },
+    {
+      "size": "9b",
+      "state": "running",
+      "complete": 1,
+      "total": 12,
+      "current": {
+        "seed": 11,
+        "method": "continued_sft",
+        "kind": "robustness"
+      },
+      "remaining_seconds_estimate": null
+    }
+  ],
+  "precision": {
+    "state": "waiting",
+    "completed": [],
+    "started": 1791263954.4524693,
+    "gpu": "0",
+    "updated": 1791263954.4524739
+  },
+  "precision_updates": 0,
+  "precision_updates_total": 12100,
+  "release": {
+    "state": "waiting",
+    "completed": [],
+    "started": 1791264311.1314108,
+    "updated": 1791264311.1314154
+  }
+}

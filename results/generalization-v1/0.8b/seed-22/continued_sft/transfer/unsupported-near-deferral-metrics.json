@@ -1,0 +1,186 @@
+{
+  "n": 150,
+  "accuracy": 0.0,
+  "accuracy_cluster_ci95": [
+    0.0,
+    0.0
+  ],
+  "macro_f1": 0.0,
+  "correctness_brier": 0.45174560539498637,
+  "selection_multiclass_brier": null,
+  "correctness_auroc": null,
+  "ece": 0.5765465703606606,
+  "ece_bins": "15 equal-width bins, final bin inclusive",
+  "reliability": [
+    {
+      "lo": 0.0,
+      "hi": 0.06666666666666667,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.06666666666666667,
+      "hi": 0.13333333333333333,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.13333333333333333,
+      "hi": 0.2,
+      "n": 19,
+      "confidence": 0.18359958811810143,
+      "accuracy": 0.0
+    },
+    {
+      "lo": 0.2,
+      "hi": 0.26666666666666666,
+      "n": 34,
+      "confidence": 0.22875011274043253,
+      "accuracy": 0.0
+    },
+    {
+      "lo": 0.26666666666666666,
+      "hi": 0.3333333333333333,
+      "n": 10,
+      "confidence": 0.288317608833313,
+      "accuracy": 0.0
+    },
+    {
+      "lo": 0.3333333333333333,
+      "hi": 0.4,
+      "n": 7,
+      "confidence": 0.3600885101727077,
+      "accuracy": 0.0
+    },
+    {
+      "lo": 0.4,
+      "hi": 0.4666666666666667,
+      "n": 4,
+      "confidence": 0.43250855058431625,
+      "accuracy": 0.0
+    },
+    {
+      "lo": 0.4666666666666667,
+      "hi": 0.5333333333333333,
+      "n": 4,
+      "confidence": 0.500702865421772,
+      "accuracy": 0.0
+    },
+    {
+      "lo": 0.5333333333333333,
+      "hi": 0.6,
+      "n": 3,
+      "confidence": 0.577773650487264,
+      "accuracy": 0.0
+    },
+    {
+      "lo": 0.6,
+      "hi": 0.6666666666666666,
+      "n": 2,
+      "confidence": 0.6348947584629059,
+      "accuracy": 0.0
+    },
+    {
+      "lo": 0.6666666666666666,
+      "hi": 0.7333333333333333,
+      "n": 6,
+      "confidence": 0.700993686914444,
+      "accuracy": 0.0
+    },
+    {
+      "lo": 0.7333333333333333,
+      "hi": 0.8,
+      "n": 3,
+      "confidence": 0.7640034953753153,
+      "accuracy": 0.0
+    },
+    {
+      "lo": 0.8,
+      "hi": 0.8666666666666667,
+      "n": 4,
+      "confidence": 0.8237614184617996,
+      "accuracy": 0.0
+    },
+    {
+      "lo": 0.8666666666666667,
+      "hi": 0.9333333333333333,
+      "n": 3,
+      "confidence": 0.9251482884089152,
+      "accuracy": 0.0
+    },
+    {
+      "lo": 0.9333333333333333,
+      "hi": 1.0,
+      "n": 51,
+      "confidence": 0.9903504825105854,
+      "accuracy": 0.0
+    }
+  ],
+  "operating_points": {
+    "coverage_0.5": {
+      "threshold": 0.9989858269691467,
+      "coverage": 0.06,
+      "accepted": 9,
+      "error": 1.0,
+      "error_upper_95": 1.0,
+      "error_cluster_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    "coverage_0.8": {
+      "threshold": 0.9979789853096008,
+      "coverage": 0.14,
+      "accepted": 21,
+      "error": 1.0,
+      "error_upper_95": 1.0,
+      "error_cluster_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    "coverage_0.9": {
+      "threshold": 0.9909975528717041,
+      "coverage": 0.24666666666666667,
+      "accepted": 37,
+      "error": 1.0,
+      "error_upper_95": 1.0,
+      "error_cluster_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    "empirical_error_0.01": {
+      "threshold": 0.9992954730987549,
+      "coverage": 0.006666666666666667,
+      "accepted": 1,
+      "error": 1.0,
+      "error_upper_95": 1.0,
+      "error_cluster_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    "empirical_error_0.05": {
+      "threshold": 0.9987711310386658,
+      "coverage": 0.1,
+      "accepted": 15,
+      "error": 1.0,
+      "error_upper_95": 1.0,
+      "error_cluster_ci95": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "sampled_policy": {
+    "expected_accuracy": 0.0,
+    "expected_confidence_reward": -7.414059605371411e-05,
+    "semantics": "exact expectation of sampled joint policy at raw training logits; distinct from deployed argmax behavior"
+  },
+  "threshold_source": "results/longer-v1/0.8b/main/seed-22/continued_sft/evaluation",
+  "artifact_revision": "d3c99627b2bdbe329cb6d2950ab39ac61ac904534b899851a833af68362fc336",
+  "subset_limit": 256
+}
