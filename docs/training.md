@@ -44,7 +44,7 @@ A more distinct comparison would use an encoder such as [DeBERTa-v3-small](https
 
 Using pretrained representations is a defensible transfer-learning choice. The token-alias readout is a pragmatic reuse of the vocabulary head, with real limitations: alias choice, order sensitivity and prompt length need testing. A candidate-conditioned scoring head can remove the dependence on vocabulary aliases, but must be trained and evaluated. The present study tests objectives and scale within one implementation; it does not establish that this is the smallest or fastest architecture for the task.
 
-A bounded follow-up should compare an encoder and an alternative small decoder with our smallest useful Qwen checkpoint, preserving data partitions and tuning opportunities. Report fixed-taxonomy accuracy separately from unfamiliar-candidate transfer, plus calibration, latency and memory on the same A30. This is proposed work, not an additional training job already launched.
+Alternative pretrained backbones, including Phi, are deferred. The active study now has two complementary tracks: building a small decision network from random initialization and adapting pretrained Qwen. A future backbone comparison could reuse the frozen partitions and tuning controls, but it is not scheduled or required for this release.
 
 ## Frozen schedule
 

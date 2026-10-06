@@ -21,9 +21,9 @@ This page makes incomplete work visible as the project develops. Checked items d
 - [ ] Transfer and robustness studies at every size, extending the initial 0.8B diagnostics.
 - [ ] More extensive uncertainty reporting for rare accepted-case errors.
 
-## Follow-up: Phi and architecture efficiency
+## Deferred: alternative pretrained backbones
 
-The next backbone pilot will evaluate Microsoft Phi after the frozen Qwen batch. Start with [Phi-4-mini-instruct](https://huggingface.co/microsoft/Phi-4-mini-instruct), a 3.8B candidate, subject to a pinned revision, license/data review and local loader compatibility. This is scheduled follow-up work, not a launched job or a demonstrated improvement.
+Phi, SmolLM and MAI exploration is parked to focus on the two active tracks: pretrained Qwen adaptation and a decision model built from scratch. No alternative-backbone run is scheduled. If this work is revisited, consider [Phi-4-mini-instruct](https://huggingface.co/microsoft/Phi-4-mini-instruct), a 3.8B candidate, subject to a pinned revision, license/data review and local loader compatibility. The checklist below is retained for a future decision, not as a requirement for the current two-track study.
 
 - [ ] Verify token aliases, context limits, hidden-state extraction and adapter targets; run a 100-update memory/throughput pilot on one A30 before a larger commitment.
 - [ ] Compare untouched readout and supervised adaptation with matched data exposure and tuning opportunities. Reuse frozen partitions and reserve calibration data for calibration.
@@ -37,7 +37,7 @@ No Jev-equivalent latency is assumed. A useful comparison must disclose hardware
 
 This proposed extension returns to the build-and-explain approach of helloLondon. It is an original educational model, not a reconstruction of TypeSafe Jev's undisclosed internals. The official announcement describes architecture, parallel sampling and RLCD at a high level; that is insufficient to reproduce its network and training recipe.
 
-Alongside Phi, consider [SmolLM2-360M-Instruct](https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct) as a genuinely smaller pretrained decoder control. [SmolLM3-3B](https://huggingface.co/HuggingFaceTB/SmolLM3-3B) is an optional closer-size comparison with published training materials. Start with small pilots rather than repeating the entire main study for every backbone. These checkpoints are not yet integrated or evaluated.
+For the deferred pretrained-backbone comparison, consider [SmolLM2-360M-Instruct](https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct) as a genuinely smaller pretrained decoder control. [SmolLM3-3B](https://huggingface.co/HuggingFaceTB/SmolLM3-3B) is an optional closer-size comparison with published training materials. Start with small pilots rather than repeating the entire main study for every backbone. These checkpoints are not yet integrated or evaluated.
 
 The from-scratch design starts with randomly initialized token embeddings and a small shared Transformer encoder, approximately 5-20M parameters as a design target. Encode the context and each candidate description, condition candidates on the context, optionally add attention across the candidate set, and use a shared scalar head to score each candidate. Keep candidate IDs outside the network and omit candidate-index positional embeddings. Add a separate correctness head, then the experimental confidence policy only after the supervised baseline works. This is one non-autoregressive computation graph, not a claim of constant cost as candidates increase.
 
@@ -92,7 +92,7 @@ These tasks follow the running training batch and do not change its frozen proto
 1. Finish the frozen Qwen batch while refining the teaching design and small test fixtures.
 2. Audit completed artifacts and aggregate the Qwen results before selecting further large runs.
 3. Implement the scratch model progressively: supervised synthetic task first, correctness confidence and calibration second, exact/sampled training after behavioral tests pass.
-4. Run the bounded Phi compatibility/resource pilot, then decide whether its results justify a larger matched comparison. SmolLM remains an additional small-model candidate.
+4. Evaluate the scratch model and Qwen artifacts on appropriate shared tasks, recording unequal pretraining exposure and complete serving costs. Phi, SmolLM and MAI remain deferred and are not release dependencies.
 5. Present both build tracks in the articles, preserving distinct learning goals and honest shared-task comparisons. Different purposes do not prevent one model from winning a measured metric; unequal pretraining prevents attributing that difference solely to architecture.
 
 The scratch extension is planned, not implemented. It complements the existing adaptation study and does not delay its result audit or silently expand the frozen training budget.
