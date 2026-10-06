@@ -6,9 +6,9 @@ myJEV explores a compact interface for language models: give the model some cont
 
 This is a research and learning project by [Amit Bahree](https://blog.desigeek.com). The repository will grow through reviewable milestone commits. The first milestone includes working training and inference code, a completed short three-seed pilot, and the measurements needed to question its conclusions.
 
-> **Current milestone: inference pilot.** The 45 scheduled pilot evaluations are complete. Training is deliberately short, and neural evaluation uses 256 held-out test examples. The [longer matched study](docs/training.md) is now running; its results are pending. Downloadable trained adapters and a hosted demo are **not released yet**.
+> **Current milestone: longer comparison complete.** All 60 training runs (168,000 updates) and 36 main evaluations across three sizes and seeds are complete. Read the [full-test descriptive findings](results/longer-v1/summary.md) and the [from-scratch implementation plan](docs/scratch-plan.md). Paired analysis, transfer and release validation remain pending. Downloadable trained adapters and a hosted demo are **not released yet**.
 
-[Start here](docs/quickstart.md) · [Documentation](docs/README.md) · [Measured results](docs/experiments.md) · [Roadmap](docs/roadmap.md) · [Model releases](docs/models.md) · [Next training study](docs/training.md) · [W&B tracking](docs/tracking.md) · [Inference and Docker](docs/inference.md) · [Lessons](docs/learnings.md)
+[Start here](docs/quickstart.md) · [Documentation](docs/README.md) · [Measured results](docs/experiments.md) · [Roadmap](docs/roadmap.md) · [Model releases](docs/models.md) · [Completed training protocol](docs/training.md) · [W&B tracking](docs/tracking.md) · [Inference and Docker](docs/inference.md) · [Lessons](docs/learnings.md)
 
 ## What is a decision model?
 

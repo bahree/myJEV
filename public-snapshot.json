@@ -11,7 +11,7 @@
       "mode": "100644"
     },
     "CHANGELOG.md": {
-      "sha256": "d23b6d86cba32acbb0612f24a04e4ca554e435bc779f47fd0644c2bd6ff6ecd4",
+      "sha256": "6bc0d45fafaf9e26615aa21c150d1f74e32bc594651496daf9ef7f8abfe101df",
       "mode": "100644"
     },
     "Dockerfile": {
@@ -19,7 +19,7 @@
       "mode": "100644"
     },
     "README.md": {
-      "sha256": "b9509809f46fca5d20bd3f0c06bcde14ad8a9b8cd2160974570d4ec4ba18046c",
+      "sha256": "b9ad75173b25cd43cdc115769a7343b024bf35037032ba0a3284c9fcf40e4c34",
       "mode": "100644"
     },
     "configs/0.8b.json": {

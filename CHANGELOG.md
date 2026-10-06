@@ -1,5 +1,12 @@
 # Milestone history
 
+## Longer comparison completed; scratch track planned
+
+- Retained all 60 completed training artifacts locally and recorded 168,000 updates across the frozen schedule.
+- Published full-test descriptive results for 36 main evaluations, source metric hashes, manifests and training histories, with a summary script.
+- Added the scratch model implementation plan, milestone gates, synthetic-data controls and two-track teaching scope. Alternative pretrained backbones remain deferred.
+- Kept statistical significance, transfer and final release selection explicitly pending.
+
 ## Tracking and reader guides
 
 - Added reusable W&B live monitoring, historical imports, evidence snapshots and a credential-free environment template.
