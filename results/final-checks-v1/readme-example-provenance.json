@@ -1,0 +1,39 @@
+{
+  "request": "examples/request.json",
+  "request_sha256": "652783e9dc99e54b3afcfd830a29a07e6546176f3ff2c8ea5083cf67a994b197",
+  "response_source": "results/release-validation-v1/myjev-4b-continued_sft-seed11/equivalence.json",
+  "response_source_sha256": "25a512d9d67f379b5bf3438fd2de8d2c07f48cbbd3dcf56cae5a8351a876d327",
+  "verification_script": "scripts/verify_artifact.py",
+  "source_contract": "verify_artifact.py reads examples/request.json; response copied verbatim from equivalence.json.response, not from benchmark request-3-0.json (different punctuation).",
+  "artifact_revision": "3a7979eeff5cfb0bd2cee2fe2ea559c314ad9f5eef2de4ef4cb44759dbd73f02",
+  "request_value": {
+    "context": "I was charged twice.",
+    "instructions": "Select the appropriate support route.",
+    "candidates": [
+      {
+        "id": "billing",
+        "description": "Charges, invoices, and refunds"
+      },
+      {
+        "id": "technical",
+        "description": "Errors and configuration"
+      },
+      {
+        "id": "other",
+        "description": "Neither listed route applies"
+      }
+    ]
+  },
+  "response_value": {
+    "selected_id": "billing",
+    "selection_scores": {
+      "billing": 0.9834240078926086,
+      "technical": 0.005727097392082214,
+      "other": 0.01084891613572836
+    },
+    "confidence": 0.9834240078926086,
+    "confidence_mode": "selection",
+    "artifact_revision": "3a7979eeff5cfb0bd2cee2fe2ea559c314ad9f5eef2de4ef4cb44759dbd73f02",
+    "calibration_revision": "f0d2ddcaf6650e1f44415d49b1cf8b303d4d6fef5f73bb6198ee91600560e8d1"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "gpu_assignment": "CUDA_VISIBLE_DEVICES=2",
+  "hf_home": "/home/amit/jev-pvt/.cache/huggingface",
+  "offline": true,
+  "initial_cache_error": "Initial 4B load used default HF cache and failed before inference. Retried with repository shared cache; error log preserved. First two 0.8B runs completed using default cache. Fixture and script unchanged.",
+  "nvidia_smi": "index, name, driver_version, memory.total [MiB]\n0, NVIDIA A30, 580.178.04, 24576 MiB\n1, NVIDIA A30, 580.178.04, 24576 MiB\n2, NVIDIA A30, 580.178.04, 24576 MiB\n"
+}

@@ -7,7 +7,7 @@ The first milestone asks whether the implementation works and whether the propos
 
 ## Completed longer comparison
 
-All three sizes completed the 168,000-update schedule, 24 tuning evaluations and 36 main evaluations on all 3,080 official test examples. The [regenerable summary](../results/longer-v1/summary.md) reports three-seed means, seed SD, deployed confidence and temperature controls. Continued supervision leads mean accuracy at 0.8B; exact RL leads at 4B and 9B. Continued supervision with temperature scaling has lower mean correctness Brier than both RL methods at every size. These are descriptive findings, not paired significance claims or a release selection.
+All three sizes completed the 168,000-update schedule, 24 tuning evaluations and 36 main evaluations on all 3,080 official test examples. The [regenerable summary](../results/longer-v1/summary.md) reports three-seed means, seed SD, deployed confidence and temperature controls. Continued supervision leads mean accuracy at 0.8B; exact RL leads at 4B and 9B. Continued supervision with temperature scaling has lower mean correctness Brier than both RL methods at every size. Paired conditional intervals and the local default recommendation are documented in the findings guide; neither establishes a production guarantee.
 
 The short pilot below remains separate evidence with different exposure and test size.
 
@@ -63,7 +63,7 @@ The completed baseline records include the following results. These are separate
 
 GLiClass uses revision `21edefaf7951f68c68c505f9139ba536d3b448f7` with supplied label descriptions and no task-specific training here. Its weak result is specific to this checkpoint and interface, not a claim about all generalist classifiers. Low Brier from low confidence is not evidence of a useful selector. The untouched measurements belong to the pilot subset; they do not establish the full-test fine-tuning effect. Source records live under `results/untouched-*-v2-evaluation/` and `results/gliclass/`.
 
-The initial 0.8B transfer/robustness work is limited. The frozen expanded study now covers all three sizes and seeds for continued supervision and exact RL. A new 4B NF4 SFT control is queued at the same 4,000-example exposure as the completed BF16 controls, after a 100-update fit pilot. It isolates a training configuration difference, including nonquantized dtype, rather than proving that every scale effect is caused by capacity alone.
+The initial 0.8B transfer/robustness work is limited. The frozen expanded study now covers all three sizes and seeds for continued supervision and exact RL. The three-seed 4B NF4 SFT control completed at the same 4,000-example exposure as the BF16 controls, after a 100-update fit pilot. It isolates a training configuration difference, including nonquantized dtype, rather than proving that every scale effect is caused by capacity alone.
 
 
 ## Find the underlying evidence
@@ -107,4 +107,8 @@ These runners skip completed artifacts/evaluations. An existing published `resul
 
 Local GPU container checks passed at all three sizes. Warm concurrency-one HTTP p50/p95 were 60.1/63.7 ms (0.8B), 78.6/81.0 ms (4B), and 101.2/103.7 ms (9B). Each check used 40 short three-candidate requests, cached backbones, and an idle target GPU while another GPU was still training. These are implementation measurements, not an isolated-host service-level guarantee.
 
-Read [hosting](hosting.md) for limits, readiness, queues, precision, and deployment details. Replicated precision controls and representative serving workloads remain on the [roadmap](roadmap.md).
+Read [hosting](hosting.md) for limits, readiness, queues, precision, and deployment details. Replicated precision controls and representative serving workloads are complete; remaining publication and archive work is tracked on the [roadmap](roadmap.md).
+
+## Completed extension analysis
+
+The [paired extension report](../results/extension-analysis-v1/report.md) analyzes precision and transfer using shared example groups. Reproduce with `python scripts/analyze_extensions.py`; the public compact inputs omit request text. All 36 transfer/robustness jobs and six final local serving candidates completed. [Model selection](models.md) explains the calibrated 4B supervised starting recommendation and alternatives.

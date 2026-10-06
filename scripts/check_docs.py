@@ -17,7 +17,8 @@ def check(root,blog=False):
             if len(re.findall(r'^```',raw,re.M))%2:failures.append(f'{path}: unbalanced code fences')
         text=re.sub(r'```.*?```','',raw,flags=re.S)
         for target in re.findall(r'!?\[[^\]]*\]\(([^)]+)\)',text):
-            target=target.split(' "')[0].strip('<>')
+            relref=re.fullmatch(r'\{\{<\s*relref\s+["\']([^"\']+)["\']\s*>\}\}',target.strip())
+            target=relref.group(1) if relref else target.split(' "')[0].strip('<>')
             parts=urlsplit(target)
             if parts.scheme or parts.netloc or target.startswith('/'):
                 continue
@@ -37,7 +38,7 @@ def check(root,blog=False):
                     anchors.add(slug+(f'-{count}' if count else ''))
                 if unquote(parts.fragment) not in anchors:
                     failures.append(f'{path}: missing heading anchor {target}')
-    return {'scope':'Local inline Markdown links and heading anchors; external URLs, generated Hugo rendering and reference-style links are not checked.',
+    return {'scope':'Local inline Markdown links, relative Hugo relref targets and heading anchors; external URLs, generated Hugo rendering and reference-style links are not checked.',
             'files':len(paths),'failures':failures,'passed':not failures}
 
 

@@ -30,9 +30,11 @@ For remote use, place an authenticated HTTPS reverse proxy in front of the loopb
 
 Benchmark with `scripts/benchmark.py --output results/http-c1.json --concurrency 1`, then repeat with concurrency 2, 4 and 8. Report success rates alongside p50/p95; a fast overload response is not fast inference. Isolate the GPU for final latency measurements. Model-loading time and warm request latency are separate measures.
 
-## Planned scoring-versus-generation benchmark
+<a id="planned-scoring-versus-generation-benchmark"></a>
 
-Status: planned, not executed. Run after the frozen training study, on an isolated host. This addition does not change training configurations or model-selection criteria.
+## Scoring-versus-generation benchmark
+
+Status: completed for six seed-11 release candidates in `results/release-validation-v1/`. All preceding GPU studies had terminated and no GPU compute processes were present at the start. The image and backbone caches were warm. This addition did not change training configurations.
 
 Compare four paths on the same pinned checkpoint, tokenizer, precision, candidate aliases and decision cases:
 
@@ -45,7 +47,7 @@ Use the same rendered input where possible; retain and disclose any prompt/templ
 
 Measure each path independently before mixed traffic. Repeat across representative lengths, candidate counts and concurrency levels, reporting accuracy, parsing/constraint failures, warm p50/p95, throughput, peak VRAM and cold starts. Save raw per-request timing and correctness records plus reproducible commands. Distinguish kernel/model time from end-to-end HTTP latency. If SGLang is used, first verify candidate-logit equivalence; its ordinary scoring endpoint does not implement myJEV's custom confidence heads. Backend or precision changes also require calibration checks.
 
-Related work: Avi Chawla, [Build your own Jev (100% local)](https://blog.dailydoseofds.com/p/build-your-own-jev-100-local), September 22, 2026. The tutorial demonstrates SGLang scoring and distinguishes inference mechanics from training and calibration. Its illustrated generation comparison requests an explanation with up to 32 output tokens while scoring and generation share a server. Our planned one-token and minimal-JSON controls will help separate output-work differences from serving overhead. This is related work, not independent validation of myJEV, and its timings are not our results.
+Related work: Avi Chawla, [Build your own Jev (100% local)](https://blog.dailydoseofds.com/p/build-your-own-jev-100-local), September 22, 2026. The tutorial demonstrates SGLang scoring and distinguishes inference mechanics from training and calibration. Its illustrated generation comparison requests an explanation with up to 32 output tokens while scoring and generation share a server. Our one-token and minimal-JSON controls help separate output-work differences from serving overhead. This is related work, not independent validation of myJEV, and its timings are not our results.
 
 ## Hugging Face Inference Endpoints recipe
 
@@ -80,3 +82,52 @@ The `myjev:study-checkpoint` image passed exact response equivalence at all thre
 Image digest: `sha256:2f21b45a0df75eead5d0b935b7158211c67388075b76cea23b187e7a0259d0a3`. This image is local; it has not been pushed to a public registry. A failed benchmark-launcher attempt is retained separately; the successful run uses the correct virtualenv interpreter.
 
 Startup is one observation per size in the order 0.8B → 4B → 9B. Shared filesystem/driver cache and prior GPU activity were not reset between sizes; the startup numbers are not a controlled model-size comparison.
+
+## Completed candidate validation and local default
+
+All six seed-11 candidates passed Python/CLI/HTTP equality, one backbone call, a short 160-candidate smoke check, oversized-input rejection and exact Docker/Python response equality. Each container completed 100 HTTP requests at concurrency 1 and 4 for each of three workloads. The local default recommendation is **4B continued supervised training with temperature calibration**, preserving seed 11 by the packaging convention. The 4B exact-reward artifact remains the BANKING77 accuracy-oriented alternative. See [model selection](https://github.com/bahree/myJEV/blob/main/docs/models.md) for the quality trade-off; the default is a local research choice, not a published or production-validated service.
+
+| Candidate | Short HTTP p50 / p95 (ms) | Startup to ready (s) | Largest allocated VRAM across measured scoring/generation workloads (GiB) |
+|---|---:|---:|---:|
+| 0.8B continued SFT + temperature | 57.48 / 61.15 | 20.49 | 1.58 |
+| 0.8B exact | 60.88 / 61.91 | 13.42 | 1.58 |
+| 4B continued SFT + temperature | 82.18 / 87.33 | 15.39 | 8.26 |
+| 4B exact | 81.85 / 83.30 | 15.40 | 8.26 |
+| 9B continued SFT + temperature | 115.09 / 118.64 | 19.40 | 11.35 |
+| 9B exact | 117.55 / 123.42 | 18.42 | 11.35 |
+
+HTTP figures use 100 warm concurrency-1 requests with three candidates on an A30. Startup is one observation with cached weights, not cold download time. Allocated VRAM excludes allocator reserve and driver/runtime allocations, and these workloads do not reach the 4,096-token acceptance cap. A 24 GB GPU is the validated local class; smaller managed GPU recommendations require new maximum-context measurements and runtime headroom. These figures supersede the earlier concurrent-study timings above without erasing that evidence.
+
+The four output paths executed, but runtime completion does not establish usable generation. In the short workload, direct and constrained one-token paths produced valid outputs on all 20 repeats for every candidate. JSON was invalid on all 20 repeats for both 0.8B candidates and 4B exact. The 0.8B exact explanation path also failed format checks on every repeat. The repeated request is a timing/format diagnostic, not an accuracy benchmark. Only direct scoring returns our trained correctness confidence. Do not present a fast invalid JSON response as an equivalent inference result.
+
+Regenerate the compact machine-readable summary with `python scripts/summarize_release_validation.py`. Raw requests, outputs, timing samples, container logs and source/image identities remain in `results/release-validation-v1/`; the summary is `results/release-readiness-v1/serving-summary.json`.
+
+## Publish the prepared packages
+
+The adapter-only `artifacts/hub-ready-v1/` snapshot adds MIT terms for the original adapter/head contributions, the pinned Qwen Apache-2.0 license and attribution, and BANKING77 provenance. Frozen study candidates are preserved separately. `results/release-readiness-v1/publication-manifest.json` records every upload file's checksum. No Hub namespace, visibility or image registry is assumed.
+
+After selecting a destination, review one package locally:
+
+```bash
+.venv/bin/python scripts/publish_hub_artifact.py \
+  --candidate myjev-4b-continued_sft-seed11 \
+  --repo-id YOUR_NAMESPACE/myjev-4b \
+  --visibility private
+```
+
+This command checks local files only. Add `--apply` to create/upload the selected repository using your configured Hugging Face credentials. The helper refuses altered packages, symlinks, nonempty destinations and visibility mismatches. It downloads the immutable uploaded commit and checks every file hash. Then load that pinned commit using `DecisionModel.load("YOUR_NAMESPACE/myjev-4b", revision="COMMIT")` and compare with the local response. Hub publication is still pending; the dry-run report is not an upload record.
+
+The local image tag is `myjev:0.1.0-release-candidate`. A registry destination is a separate owner choice:
+
+```bash
+# Choose and authenticate to your registry first.
+export MYJEV_REGISTRY_IMAGE=YOUR_REGISTRY/YOUR_NAMESPACE/myjev:0.1.0
+# Run these only when ready to publish the tested image.
+docker tag myjev:0.1.0-release-candidate "$MYJEV_REGISTRY_IMAGE"
+docker push "$MYJEV_REGISTRY_IMAGE"
+docker image inspect "$MYJEV_REGISTRY_IMAGE" --format '{{json .RepoDigests}}'
+```
+
+A local image ID is not a pullable registry digest. Record the registry digest from the push/inspect result and use that immutable reference in the endpoint configuration. The cloud recipe remains unexecuted and requires no paid deployment to reproduce local results.
+
+The recommended 4B temperature package additionally passed exact 4,096-token requests with 2 and 160 candidates, and rejected 4,097 tokens. Peak allocated VRAM was 9,538,996,736 bytes (8.88 GiB) in both synthetic cases, recorded in `results/release-readiness-v1/default-limits.json`. Other GPUs were active, so those elapsed times are not new isolated latency measurements. Continue using the tested 24 GB GPU class until total-process memory and startup headroom are measured on a smaller target.

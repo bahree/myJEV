@@ -19,6 +19,7 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'results/archive-machine-v1'
 ART=ROOT/'artifacts/archive-machine-v1'
 DATA=ROOT/'data/archive-machine-v1'
+JUDGE='annotation/local-judge-v1'
 BASE=ROOT/'artifacts/longer-v1/4b/main/seed-11/continued_sft/artifact'
 
 
@@ -29,7 +30,7 @@ def freeze():
     OUT.mkdir(parents=True,exist_ok=True)
     cfg=json.loads((ROOT/'results/longer-v1/4b/main/seed-11/continued_sft/config.json').read_text())
     cfg.update(updates=400,data_offset=0,purpose='exploratory archive machine-label adaptation; no human review')
-    plan={'teacher_plan_sha256':digest(ROOT/'annotation/local-judge-v1/frozen-plan.json'),
+    plan={'teacher_plan_sha256':digest(ROOT/JUDGE/'frozen-plan.json'),
           'student_initial_manifest_sha256':digest(BASE/'manifest.json'),'config':cfg,'seed':11,'pilot_updates':100,'main_updates':400,
           'labels':'Local 9B NF4 machine judgments; require at least 80% structurally valid development outputs before expansion.',
           'minimum_rows_per_split':12,'evaluation':'Full retained archive test; thresholds from archive calibration. Before/after native scalar confidence. Full BANKING77 forgetting after adaptation.',
@@ -44,7 +45,11 @@ def freeze():
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--freeze',action='store_true');p.add_argument('--gpu',default='1');p.add_argument('--wait-for',type=Path);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--version',choices=['v1','v2'],default='v1');p.add_argument('--freeze',action='store_true');p.add_argument('--gpu',default='1');p.add_argument('--wait-for',type=Path);a=p.parse_args()
+    global OUT,ART,DATA,JUDGE
+    if a.version=='v2':
+        OUT=ROOT/'results/archive-machine-v2';ART=ROOT/'artifacts/archive-machine-v2';DATA=ROOT/'data/archive-machine-v2'
+        JUDGE='annotation/local-judge-v2-expanded'
     plan=freeze()
     if a.freeze:print('Frozen local-judge and exploratory archive adaptation protocol');return
     lock=(OUT/'runner.lock').open('w');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
@@ -71,8 +76,8 @@ def main():
     def evaluate(artifact,data,cal,out,name):
         if not (out/'metrics.json').exists():run(['-m','myjev.evaluate','--artifact',str(artifact),'--data',str(data),'--calibration',str(cal),'--output',str(out)],name)
     try:
-        if not (ROOT/'annotation/local-judge-v1/complete.json').exists():run(['scripts/local_archive_judge.py','--execute'],'local-judge')
-        if not DATA.exists():run(['scripts/finalize_machine_annotations.py','--labels','annotation/local-judge-v1/labels.jsonl','--output',str(DATA)],'freeze-machine-splits')
+        if not (ROOT/JUDGE/'complete.json').exists():run(['scripts/local_archive_judge.py','--execute',*(['--span-expansion'] if a.version=='v2' else [])],'local-judge')
+        if not DATA.exists():run(['scripts/finalize_machine_annotations.py','--labels',str(Path(JUDGE)/'labels.jsonl'),'--output',str(DATA)],'freeze-machine-splits')
         manifest=json.loads((DATA/'manifest.json').read_text())
         if any(n<plan['minimum_rows_per_split'] for n in manifest['counts'].values()):raise ValueError('Too few retained machine labels for the planned split protocol')
         shutil.copy2(DATA/'manifest.json',OUT/'data-manifest.json')
@@ -91,7 +96,7 @@ def main():
         adapted=ART/'adapted/artifact'
         evaluate(adapted,DATA/'test.jsonl',DATA/'calibration.jsonl',OUT/'adapted/evaluation','adapted-evaluation')
         evaluate(adapted,ROOT/'data/banking77/test.jsonl',ROOT/'data/banking77/calibration.jsonl',OUT/'forgetting','forgetting-evaluation')
-        run(['scripts/summarize_archive_study.py'],'summary')
+        run(['scripts/summarize_archive_study.py','--version',a.version],'summary')
         status(state='completed',current=None)
     except Exception as error:status(state='failed',error=str(error));raise
 

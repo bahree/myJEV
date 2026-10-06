@@ -1,11 +1,13 @@
 """Report machine-reference agreement separately from public-task forgetting."""
+import argparse
 import hashlib
 import json
 from pathlib import Path
 from myjev.data import read_jsonl
 from myjev.metrics import summarize
 
-ROOT=Path('results/archive-machine-v1')
+parser=argparse.ArgumentParser();parser.add_argument('--version',choices=['v1','v2'],default='v1');args=parser.parse_args()
+ROOT=Path('results')/f'archive-machine-{args.version}'
 paths={'unadapted':ROOT/'unadapted/metrics.json','adapted':ROOT/'adapted/evaluation/metrics.json',
        'banking_before':Path('results/longer-v1/4b/main/seed-11/continued_sft/evaluation/metrics.json'),'banking_after':ROOT/'forgetting/metrics.json'}
 if not all(p.exists() for p in paths.values()):raise ValueError('Archive/forgetting evidence is incomplete')
@@ -15,7 +17,7 @@ report={'human_reviewed':False,'semantics':'Archive accuracy means agreement wit
         'results':records,'per_rubric':{},'banking_accuracy_change':records['banking_after']['accuracy']-records['banking_before']['accuracy']}
 for condition,predpath in [('unadapted',ROOT/'unadapted/predictions.jsonl'),('adapted',ROOT/'adapted/evaluation/predictions.jsonl')]:
     rows=read_jsonl(predpath)
-    source={r['id']:r['rubric'] for r in read_jsonl('data/archive-machine-v1/test.jsonl')}
+    source={r['id']:r['rubric'] for r in read_jsonl(Path('data')/f'archive-machine-{args.version}'/'test.jsonl')}
     thresholds={k:v['threshold'] for k,v in records[condition]['operating_points'].items()}
     report['per_rubric'][condition]={name:summarize([r for r in rows if source[r['id']]==name],thresholds) for name in sorted(set(source.values()))}
 (ROOT/'summary.json').write_text(json.dumps(report,indent=2)+'\n')

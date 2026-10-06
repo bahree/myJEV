@@ -52,13 +52,31 @@ That pattern is consistent with noisy estimation being a possible contributor, b
 - The best observed mean accuracy, 90.27%, belongs to 4B exact RL. That is a candidate for further evaluation, not an automatically selected production default. We did not perform a paired cross-size superiority test here, and precision complicates the 9B comparison.
 - TF-IDF/logistic regression reached 88.28% on the same official test split using the full training partition. Exposure and tuning differ, so it is not a matched neural training control, but this inexpensive fixed-taxonomy baseline remains operationally relevant.
 - The approximately one-epoch initial-plus-continuation budget supports a matched study; it does not prove convergence. Endpoint evaluations cannot reconstruct a validation learning curve or a principled early-stop decision.
-- LoRA adapters are compact updates, not self-contained inference engines. Final comparisons must include the pinned backbone, heads, precision, input lengths and HTTP overhead. Existing latency figures use pilot artifacts and do not establish final-checkpoint or Jev-equivalent performance.
+- LoRA adapters are compact updates, not self-contained inference engines. Final comparisons must include the pinned backbone, heads, precision, input lengths and HTTP overhead. Final-checkpoint measurements now exist for six packaged candidates; they still do not establish Jev-equivalent performance.
 
-## What this changes next
+## Completed transfer and precision follow-ups
 
-Finish transfer/robustness and release checks before recommending a default. Preserve calibrated supervised controls in every next study. The scratch teaching model should demonstrate the mechanisms on known-uncertainty tasks before adding natural-language complexity; it is not expected to inherit Qwen's language knowledge from a few thousand examples. Phi and other pretrained alternatives remain deferred.
+All 36 frozen transfer/robustness jobs completed, covering continued supervision and exact RL at three sizes and three seeds. CLINC diagnostics use fixed subsets, not the complete benchmark. Temperature controls reuse BANKING77 calibration without fitting on transfer outcomes.
 
-The Qwen reporting gate requires this findings guide, both private blog narratives, regenerable figures, source hashes and a public evidence snapshot before scratch implementation begins. The [scratch plan](scratch-plan.md) records the implementation gates. Remaining original-plan obligations include replicated precision controls, longer ablations, broader transfer, archive label auditing/adaptation and final hosting artifacts.
+| Size | Continued SFT near / distant accuracy | Exact RL near / distant accuracy | Continued SFT / exact explicit OOS-none accuracy |
+|---|---:|---:|---:|
+| 0.8B | 81.51% / 68.62% | 81.64% / 67.45% | 0.39% / 3.52% |
+| 4B | 87.50% / 80.86% | 86.72% / 79.56% | 76.30% / 59.38% |
+| 9B | 88.15% / 83.46% | 86.59% / 81.90% | 60.16% / 58.07% |
+
+The BANKING accuracy benefit does not establish an RL transfer benefit. The 4B near/distant paired intervals include zero; its exact-minus-supervised explicit OOS-none difference is -16.93 pp with a conditional 95% group interval [-19.53, -14.19]. The exact-RL OOS-none accuracies are 74.61%, 21.88% and 81.64% for seeds 11/22/33: this substantial initialization sensitivity is not represented by a bootstrap conditional on those seeds. None-option classification is distinct from deferral. On the OOS-deferral cohort, calibrated 4B supervision accepts 4.17% of requests at its original BANKING threshold, versus 7.68% for exact RL; all accepted answers there are wrong by construction. Changing coverage under shift prevents treating this as a matched-coverage guarantee.
+
+The replicated 4B NF4 SFT control also completed. NF4-minus-BF16 accuracy differs by -1.20, +0.78 and +2.86 pp across seeds. The mean is +0.81 pp, with conditional group interval [+0.28, +1.35]; Brier difference is +0.0002 [-0.0049, +0.0053]. This is evidence about these three trained checkpoints, not a universal quantization advantage. Nonquantized modules also changed dtype. It does not isolate precision effects on 9B or RL.
+
+The [paired extension report](../results/extension-analysis-v1/report.md) includes compact text-free inputs, source hashes and regeneration commands. Intervals average the observed seeds before resampling shared example groups; they are exploratory and do not include uncertainty over new training seeds or new task families.
+
+## Local default and alternatives
+
+The recommended starting artifact is **4B continued supervision with temperature confidence**, using seed 11 as the fixed packaging convention. It balances 89.23% mean BANKING accuracy, 0.0740 mean correctness Brier, stronger explicit unsupported-option transfer than 4B exact, and approximately 82 ms short-request HTTP p50 on the A30. This is a judgment across observed trade-offs, not a preregistered optimization or a production guarantee. Its confidence is a calibration-only selection-score proxy, not the supervised scalar head.
+
+Keep 4B exact RL as the higher in-domain-accuracy alternative (90.27% mean), and 0.8B as the lower-resource option. The measured 9B continued model is slower at approximately 115 ms HTTP p50, has essentially equal BANKING accuracy and better distant-CLINC accuracy; workload-specific priorities can therefore change the choice. Final local measurements use packaged seed-11 checkpoints; quality summaries use all three seeds. They are not measurements of an average model.
+
+The scratch model is already implemented and evaluated. Its unstable synthetic study and 1.30% BANKING diagnostic establish useful failure cases, not a useful natural-language replacement. Archive annotation/adaptation and external publication remain separate gates. See the [release tracker](models.md) and [scratch study](scratch-plan.md).
 
 ## Reproduce and inspect
 

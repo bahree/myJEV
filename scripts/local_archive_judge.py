@@ -22,9 +22,11 @@ def decode_judgment(row,text,truncated=False,span_mode=False):
     return (validate_span_judgment if span_mode else validate_judgment)(row,json.loads(text.strip()))
 
 
-def prepare(span_mode=False):
+def prepare(span_mode=False, expansion=False):
     global OUT
     OUT=ROOT/("annotation/local-judge-v2" if span_mode else "annotation/local-judge-v1")
+    if expansion:
+        OUT=ROOT/'annotation/local-judge-v2-expanded'
     rows=read_jsonl(ROOT/'annotation/requests.jsonl')
     validate_isolation({split:[r for r in rows if r['split']==split] for split in ('development','train','validation','calibration','test')})
     config=json.loads((ROOT/'configs/9b.json').read_text())
@@ -41,6 +43,16 @@ def prepare(span_mode=False):
                     system_sha256=sha(span_system()), scope='development only; no automatic expansion',
                     span_algorithm='lossless 400-character chunks, IDs s0000 onward',
                     implementation_sha256=sha((ROOT/'src/myjev/judging.py').read_text()))
+    if expansion:
+        gate=ROOT/'annotation/local-judge-v2/expansion-decision.json'
+        decision=json.loads(gate.read_text())
+        development=ROOT/'annotation/local-judge-v2/development-report.json'
+        if decision['development_report_sha256']!=sha(development.read_text()):
+            raise ValueError('Development gate evidence changed')
+        if not decision['proceed_exploratory'] or json.loads(development.read_text())['valid_fraction']<.8:
+            raise ValueError('Expansion gate not passed')
+        plan.update(scope='remaining 480 requests; exploratory machine reference only',
+                    expansion_decision_sha256=sha(gate.read_text()))
     OUT.mkdir(parents=True,exist_ok=True);path=OUT/'frozen-plan.json'
     if path.exists() and json.loads(path.read_text())!=plan:raise ValueError('Judge inputs changed after freeze')
     path.write_text(json.dumps(plan,indent=2)+'\n')
@@ -53,19 +65,21 @@ def span_system():
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--execute',action='store_true');p.add_argument('--span-development',action='store_true');p.add_argument('--device',default='cuda:0');a=p.parse_args()
-    rows,plan=prepare(a.span_development)
+    p=argparse.ArgumentParser();p.add_argument('--execute',action='store_true');p.add_argument('--span-development',action='store_true');p.add_argument('--span-expansion',action='store_true');p.add_argument('--device',default='cuda:0');a=p.parse_args()
+    if a.span_development and a.span_expansion:p.error('Choose development or expansion')
+    span_mode=a.span_development or a.span_expansion
+    rows,plan=prepare(span_mode,a.span_expansion)
     if not a.execute:print(json.dumps({'prepared':len(rows),'local_model_calls':0}));return
     model=load_backbone(plan['model'],plan['revision'],'nf4',a.device).eval()
     tokenizer=AutoTokenizer.from_pretrained(plan['model'],revision=plan['revision'])
     path=OUT/'labels.jsonl';done={r['id']:r for r in read_jsonl(path)} if path.exists() else {}
     if len(done)!=(len(read_jsonl(path)) if path.exists() else 0):raise ValueError('Duplicate judge records')
-    for phase in (('development',) if a.span_development else ('development','remaining')):
+    for phase in (('remaining',) if a.span_expansion else (('development',) if a.span_development else ('development','remaining'))):
         selected=[r for r in rows if (r['split']=='development')==(phase=='development')]
         for row in selected:
             if row['id'] in done:continue
-            payload={**(span_prompt(row) if a.span_development else prompt(row)),'output_schema':plan['schema']}
-            messages=[{'role':'system','content':span_system() if a.span_development else SYSTEM_JSON},{'role':'user','content':json.dumps(payload,ensure_ascii=False)}]
+            payload={**(span_prompt(row) if span_mode else prompt(row)),'output_schema':plan['schema']}
+            messages=[{'role':'system','content':span_system() if span_mode else SYSTEM_JSON},{'role':'user','content':json.dumps(payload,ensure_ascii=False)}]
             text=tokenizer.apply_chat_template(messages,tokenize=False,add_generation_prompt=True,enable_thinking=False)
             inputs=tokenizer(text,return_tensors='pt',add_special_tokens=False,truncation=False)
             record={'id':row['id'],'group':row['group'],'split':row['split'],'rubric':row['rubric'],
@@ -83,13 +97,13 @@ def main():
                 eos=model.generation_config.eos_token_id;eos=[eos] if isinstance(eos,int) else (eos or [])
                 truncated=len(generated)==plan['max_output_tokens'] and int(generated[-1]) not in eos
                 record.update(raw_text=raw,output_tokens=len(generated),truncated=truncated)
-                record.update(decode_judgment(row,raw,truncated,a.span_development),valid=True)
+                record.update(decode_judgment(row,raw,truncated,span_mode),valid=True)
             except (ValueError,KeyError) as error:
                 record.update(valid=False,validation_error=str(error))
             record['seconds']=time.perf_counter()-start
             with path.open('a') as f:f.write(json.dumps(record,ensure_ascii=False)+'\n')
             done[row['id']]=record
-            (OUT/'progress.json').write_text(json.dumps({'phase':phase,'records':len(done),'total':len(rows),'valid':sum(r['valid'] for r in done.values())},indent=2)+'\n')
+            (OUT/'progress.json').write_text(json.dumps({'phase':phase,'records':len(done),'total':len(selected),'valid':sum(r['valid'] for r in done.values())},indent=2)+'\n')
             print(json.dumps({'phase':phase,'records':len(done),'valid':record['valid']}),flush=True)
         if phase=='development':
             development=[done[r['id']] for r in selected]

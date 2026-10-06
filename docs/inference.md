@@ -1,6 +1,6 @@
 # Run inference locally and in Docker
 
-The pilot implementation has been checked through Python, CLI, HTTP and a GPU container at 0.8B, 4B and 9B. Final release artifacts and a registry image are still pending. There are no downloadable myJEV weights yet: train a pilot using [the quick start](quickstart.md), then substitute your artifact path below.
+Six trained seed-11 candidates have passed Python, CLI, HTTP and GPU-container equivalence at 0.8B, 4B and 9B. The local default is 4B continued supervised training with temperature calibration. Hub artifacts and a registry image are still pending. There are no downloadable myJEV weights yet: train a pilot using [the quick start](quickstart.md), then substitute your artifact path below.
 
 ## What the adapter saves and what inference still costs
 
@@ -8,7 +8,7 @@ The deployable computation is **backbone + adapter + confidence heads + calibrat
 
 A local completed 9B supervised artifact (`longer-v1/9b/main/seed-11/sft`) occupied about 7.6 MiB for the adapter directory and 4.1 MiB for `heads.safetensors`, measured with `du -h`. These are approximate on-disk sizes for that artifact, not total download size, parameter counts or VRAM. The separately pinned backbone is still required. Sharing its cache avoids downloading a new full backbone for every adapter.
 
-One forward pass reads the whole input and computes the decision scores. Avoiding an autoregressive output loop saves repeated decoding work, but input processing remains substantial, especially with long documents or many candidate descriptions. The reference service measured warm HTTP p50 latencies of 60.1, 78.6 and 101.2 ms at 0.8B, 4B and 9B on a short three-candidate request. See [benchmark conditions and p95](hosting.md#recorded-per-size-container-check); these are pilot measurements, not final service guarantees.
+One forward pass reads the whole input and computes the decision scores. Avoiding an autoregressive output loop saves repeated decoding work, but input processing remains substantial, especially with long documents or many candidate descriptions. The completed continued-SFT candidates measured warm HTTP p50 latencies of 57.48, 82.18 and 115.09 ms at 0.8B, 4B and 9B on a short three-candidate request. See [benchmark conditions and p95](hosting.md#completed-candidate-validation-and-local-default); these are measured research workloads, not service guarantees.
 
 No matched Jev speed comparison has been run. Different GPUs, prompt lengths, candidate counts, batching, server overhead and optimized kernels prevent interpreting another provider's latency as a direct architecture comparison. GPU utilization alone does not establish efficiency.
 
@@ -86,6 +86,6 @@ One process loads one selected model. Preserve the pinned backbone cache and mou
 | Backbone downloads again or disk fills | Set the same `HF_HOME` used for training; for fully cached pinned models use `HF_HUB_OFFLINE=1`. Preserve the cache and inspect interrupted downloads before cleanup |
 | Backend output differs | Recheck custom heads, precision, pinned revisions and calibration |
 
-Before releasing a checkpoint, repeat save/reload and Python/CLI/HTTP/Docker equivalence on that checkpoint and image. Measure warm p50/p95, throughput, peak VRAM, cold start and overload behavior on representative inputs. The proposed scoring-versus-generation controls are described in [the benchmark protocol](hosting.md#planned-scoring-versus-generation-benchmark); they are not completed results.
+Before releasing a checkpoint, repeat save/reload and Python/CLI/HTTP/Docker equivalence on that checkpoint and image. Measure warm p50/p95, throughput, peak VRAM, cold start and overload behavior on representative inputs. The completed scoring-versus-generation controls and their format failures are described in [the benchmark results](hosting.md#completed-candidate-validation-and-local-default).
 
 The [Hugging Face custom-container recipe](hosting.md#hugging-face-inference-endpoints-recipe) remains unexecuted. Publishing weights does not create a running endpoint. Replace local build tags with tested immutable image digests when registry releases become available.

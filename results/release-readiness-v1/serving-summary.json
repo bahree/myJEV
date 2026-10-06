@@ -1,0 +1,1147 @@
+{
+  "source": "results/release-validation-v1",
+  "environment": {
+    "image_tag": "myjev:scratch-checkpoint",
+    "image_id": "sha256:a17967b4d9364d318f3905a84b6b7d93ed3b801f9872b8563c61c82ab22e9ee4",
+    "gpu_processes_before": "",
+    "source_revision": "a5dcbf4db8949a0d87b4d0f6ffb7b4b8f263df9c",
+    "scope": "Local prebuilt reference image; not registry published. Other GPU compute jobs required to finish first."
+  },
+  "scope": "Six seed-11 candidates; isolated GPU-compute host at start; warm image/backbone caches. Short three-candidate and 32-candidate workloads. Generation format validity is not decision accuracy. Allocated VRAM excludes allocator reserve and driver/runtime memory.",
+  "candidates": [
+    {
+      "candidate": "myjev-0.8b-continued_sft-seed11",
+      "python_cli_http_equal": true,
+      "docker_python_equal": true,
+      "startup_to_ready_seconds": 20.491331024008105,
+      "short_http_c1": {
+        "concurrency": 1,
+        "requests": 100,
+        "warm_p50_p95_seconds": [
+          0.05748297199897934,
+          0.06115497649007011
+        ],
+        "successful_throughput_per_second": 16.612314065592635,
+        "elapsed_seconds": 6.0196309559978545,
+        "statuses": {
+          "200": 100
+        }
+      },
+      "paths": [
+        {
+          "candidates": 3,
+          "context_repeats": 0,
+          "path": "direct",
+          "direct_prompt_tokens": 92,
+          "p50_p95_seconds": [
+            0.0546288299956359,
+            0.05532587579218671
+          ],
+          "peak_allocated_vram_bytes": 1561081856,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 3,
+          "context_repeats": 0,
+          "path": "one_token",
+          "direct_prompt_tokens": 92,
+          "p50_p95_seconds": [
+            0.059906390495598316,
+            0.060193720553070304
+          ],
+          "peak_allocated_vram_bytes": 1580736512,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 3,
+          "context_repeats": 0,
+          "path": "json",
+          "direct_prompt_tokens": 92,
+          "p50_p95_seconds": [
+            0.1694598160102032,
+            0.17129195029265248
+          ],
+          "peak_allocated_vram_bytes": 1580925952,
+          "format_valid": 0,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 3,
+          "context_repeats": 0,
+          "path": "explanation",
+          "direct_prompt_tokens": 92,
+          "p50_p95_seconds": [
+            0.17095236750901677,
+            0.17525995829491875
+          ],
+          "peak_allocated_vram_bytes": 1580863488,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 0,
+          "path": "direct",
+          "direct_prompt_tokens": 488,
+          "p50_p95_seconds": [
+            0.0826742475037463,
+            0.08296188214007998
+          ],
+          "peak_allocated_vram_bytes": 1603853824,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 0,
+          "path": "one_token",
+          "direct_prompt_tokens": 488,
+          "p50_p95_seconds": [
+            0.0879369600006612,
+            0.08860184039513115
+          ],
+          "peak_allocated_vram_bytes": 1628582912,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 0,
+          "path": "json",
+          "direct_prompt_tokens": 488,
+          "p50_p95_seconds": [
+            0.20017249400552828,
+            0.2121689951105509
+          ],
+          "peak_allocated_vram_bytes": 1628662272,
+          "format_valid": 0,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 0,
+          "path": "explanation",
+          "direct_prompt_tokens": 488,
+          "p50_p95_seconds": [
+            0.20001258949923795,
+            0.20110041465377435
+          ],
+          "peak_allocated_vram_bytes": 1628634624,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 128,
+          "path": "direct",
+          "direct_prompt_tokens": 1000,
+          "p50_p95_seconds": [
+            0.12125486100558192,
+            0.12201237325061812
+          ],
+          "peak_allocated_vram_bytes": 1664126464,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 128,
+          "path": "one_token",
+          "direct_prompt_tokens": 1000,
+          "p50_p95_seconds": [
+            0.12719136450323276,
+            0.13407541659689742
+          ],
+          "peak_allocated_vram_bytes": 1694070272,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 128,
+          "path": "json",
+          "direct_prompt_tokens": 1000,
+          "p50_p95_seconds": [
+            0.23805502451432403,
+            0.2684995583826094
+          ],
+          "peak_allocated_vram_bytes": 1694094336,
+          "format_valid": 0,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 128,
+          "path": "explanation",
+          "direct_prompt_tokens": 1000,
+          "p50_p95_seconds": [
+            0.24889843648998067,
+            0.2616761544442852
+          ],
+          "peak_allocated_vram_bytes": 1694085120,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        }
+      ]
+    },
+    {
+      "candidate": "myjev-0.8b-exact-seed11",
+      "python_cli_http_equal": true,
+      "docker_python_equal": true,
+      "startup_to_ready_seconds": 13.420004929997958,
+      "short_http_c1": {
+        "concurrency": 1,
+        "requests": 100,
+        "warm_p50_p95_seconds": [
+          0.06087501950969454,
+          0.06190617612592177
+        ],
+        "successful_throughput_per_second": 16.36634156581639,
+        "elapsed_seconds": 6.110101001977455,
+        "statuses": {
+          "200": 100
+        }
+      },
+      "paths": [
+        {
+          "candidates": 3,
+          "context_repeats": 0,
+          "path": "direct",
+          "direct_prompt_tokens": 92,
+          "p50_p95_seconds": [
+            0.05409818449697923,
+            0.054482950040255676
+          ],
+          "peak_allocated_vram_bytes": 1561081856,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 3,
+          "context_repeats": 0,
+          "path": "one_token",
+          "direct_prompt_tokens": 92,
+          "p50_p95_seconds": [
+            0.05833758899825625,
+            0.05848401029797969
+          ],
+          "peak_allocated_vram_bytes": 1580736512,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 3,
+          "context_repeats": 0,
+          "path": "json",
+          "direct_prompt_tokens": 92,
+          "p50_p95_seconds": [
+            0.16605149050883483,
+            0.16836495580646443
+          ],
+          "peak_allocated_vram_bytes": 1580925952,
+          "format_valid": 0,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 3,
+          "context_repeats": 0,
+          "path": "explanation",
+          "direct_prompt_tokens": 92,
+          "p50_p95_seconds": [
+            0.37780534650664777,
+            0.38363509376795263
+          ],
+          "peak_allocated_vram_bytes": 1580863488,
+          "format_valid": 0,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 0,
+          "path": "direct",
+          "direct_prompt_tokens": 488,
+          "p50_p95_seconds": [
+            0.08325436800078023,
+            0.08542937596357661
+          ],
+          "peak_allocated_vram_bytes": 1603853824,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 0,
+          "path": "one_token",
+          "direct_prompt_tokens": 488,
+          "p50_p95_seconds": [
+            0.08485309551178943,
+            0.08575132501428015
+          ],
+          "peak_allocated_vram_bytes": 1628582912,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 0,
+          "path": "json",
+          "direct_prompt_tokens": 488,
+          "p50_p95_seconds": [
+            0.19357634300831705,
+            0.1939241883897921
+          ],
+          "peak_allocated_vram_bytes": 1628662272,
+          "format_valid": 0,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 0,
+          "path": "explanation",
+          "direct_prompt_tokens": 488,
+          "p50_p95_seconds": [
+            0.5188942395034246,
+            0.5256471146989498
+          ],
+          "peak_allocated_vram_bytes": 1628634624,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 128,
+          "path": "direct",
+          "direct_prompt_tokens": 1000,
+          "p50_p95_seconds": [
+            0.11579051299486309,
+            0.11738585641433019
+          ],
+          "peak_allocated_vram_bytes": 1664126464,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 128,
+          "path": "one_token",
+          "direct_prompt_tokens": 1000,
+          "p50_p95_seconds": [
+            0.12104774449835531,
+            0.12144306396512547
+          ],
+          "peak_allocated_vram_bytes": 1694070272,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 128,
+          "path": "json",
+          "direct_prompt_tokens": 1000,
+          "p50_p95_seconds": [
+            0.2304582584911259,
+            0.230731773932348
+          ],
+          "peak_allocated_vram_bytes": 1694094336,
+          "format_valid": 0,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 128,
+          "path": "explanation",
+          "direct_prompt_tokens": 1000,
+          "p50_p95_seconds": [
+            0.23071478948986623,
+            0.23118920418637573
+          ],
+          "peak_allocated_vram_bytes": 1694085120,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        }
+      ]
+    },
+    {
+      "candidate": "myjev-4b-continued_sft-seed11",
+      "python_cli_http_equal": true,
+      "docker_python_equal": true,
+      "startup_to_ready_seconds": 15.394169336999767,
+      "short_http_c1": {
+        "concurrency": 1,
+        "requests": 100,
+        "warm_p50_p95_seconds": [
+          0.08218291000230238,
+          0.08733447110425914
+        ],
+        "successful_throughput_per_second": 12.054806310886912,
+        "elapsed_seconds": 8.295446431991877,
+        "statuses": {
+          "200": 100
+        }
+      },
+      "paths": [
+        {
+          "candidates": 3,
+          "context_repeats": 0,
+          "path": "direct",
+          "direct_prompt_tokens": 92,
+          "p50_p95_seconds": [
+            0.07217979701817967,
+            0.07248903151339618
+          ],
+          "peak_allocated_vram_bytes": 8569534976,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 3,
+          "context_repeats": 0,
+          "path": "one_token",
+          "direct_prompt_tokens": 92,
+          "p50_p95_seconds": [
+            0.0779289859929122,
+            0.07903920741518959
+          ],
+          "peak_allocated_vram_bytes": 8623817216,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 3,
+          "context_repeats": 0,
+          "path": "json",
+          "direct_prompt_tokens": 92,
+          "p50_p95_seconds": [
+            0.4253866330109304,
+            0.42635773909423735
+          ],
+          "peak_allocated_vram_bytes": 8622687744,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 3,
+          "context_repeats": 0,
+          "path": "explanation",
+          "direct_prompt_tokens": 92,
+          "p50_p95_seconds": [
+            0.5808694510051282,
+            0.5836033426545327
+          ],
+          "peak_allocated_vram_bytes": 8622627840,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 0,
+          "path": "direct",
+          "direct_prompt_tokens": 488,
+          "p50_p95_seconds": [
+            0.12110338550701272,
+            0.12149031511944486
+          ],
+          "peak_allocated_vram_bytes": 8658338816,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 0,
+          "path": "one_token",
+          "direct_prompt_tokens": 488,
+          "p50_p95_seconds": [
+            0.1255420524830697,
+            0.12598553293355508
+          ],
+          "peak_allocated_vram_bytes": 8726608896,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 0,
+          "path": "json",
+          "direct_prompt_tokens": 488,
+          "p50_p95_seconds": [
+            0.7226640034932643,
+            0.743035723536741
+          ],
+          "peak_allocated_vram_bytes": 8727166464,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 0,
+          "path": "explanation",
+          "direct_prompt_tokens": 488,
+          "p50_p95_seconds": [
+            0.6247566179954447,
+            0.6287254687922541
+          ],
+          "peak_allocated_vram_bytes": 8726619648,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 128,
+          "path": "direct",
+          "direct_prompt_tokens": 1000,
+          "p50_p95_seconds": [
+            0.23800846900849137,
+            0.23890474159561564
+          ],
+          "peak_allocated_vram_bytes": 8783369216,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 128,
+          "path": "one_token",
+          "direct_prompt_tokens": 1000,
+          "p50_p95_seconds": [
+            0.2423170005058637,
+            0.24296870345715432
+          ],
+          "peak_allocated_vram_bytes": 8869707776,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 128,
+          "path": "json",
+          "direct_prompt_tokens": 1000,
+          "p50_p95_seconds": [
+            0.8389432330004638,
+            0.8417082881438546
+          ],
+          "peak_allocated_vram_bytes": 8869945856,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 128,
+          "path": "explanation",
+          "direct_prompt_tokens": 1000,
+          "p50_p95_seconds": [
+            0.7393305050063645,
+            0.7420727908189292
+          ],
+          "peak_allocated_vram_bytes": 8869865984,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        }
+      ]
+    },
+    {
+      "candidate": "myjev-4b-exact-seed11",
+      "python_cli_http_equal": true,
+      "docker_python_equal": true,
+      "startup_to_ready_seconds": 15.402901322988328,
+      "short_http_c1": {
+        "concurrency": 1,
+        "requests": 100,
+        "warm_p50_p95_seconds": [
+          0.08185046851576772,
+          0.08330151059490162
+        ],
+        "successful_throughput_per_second": 12.212324920170406,
+        "elapsed_seconds": 8.188449017994571,
+        "statuses": {
+          "200": 100
+        }
+      },
+      "paths": [
+        {
+          "candidates": 3,
+          "context_repeats": 0,
+          "path": "direct",
+          "direct_prompt_tokens": 92,
+          "p50_p95_seconds": [
+            0.07448435950209387,
+            0.07480505927815102
+          ],
+          "peak_allocated_vram_bytes": 8569534976,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 3,
+          "context_repeats": 0,
+          "path": "one_token",
+          "direct_prompt_tokens": 92,
+          "p50_p95_seconds": [
+            0.08102959849929903,
+            0.08463476171746151
+          ],
+          "peak_allocated_vram_bytes": 8623817216,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 3,
+          "context_repeats": 0,
+          "path": "json",
+          "direct_prompt_tokens": 92,
+          "p50_p95_seconds": [
+            0.23480961499444675,
+            0.24353510188375366
+          ],
+          "peak_allocated_vram_bytes": 8622687744,
+          "format_valid": 0,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 3,
+          "context_repeats": 0,
+          "path": "explanation",
+          "direct_prompt_tokens": 92,
+          "p50_p95_seconds": [
+            1.2083706720004557,
+            1.2188042162480996
+          ],
+          "peak_allocated_vram_bytes": 8622627840,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 0,
+          "path": "direct",
+          "direct_prompt_tokens": 488,
+          "p50_p95_seconds": [
+            0.12219168899173383,
+            0.12296782004705165
+          ],
+          "peak_allocated_vram_bytes": 8658338816,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 0,
+          "path": "one_token",
+          "direct_prompt_tokens": 488,
+          "p50_p95_seconds": [
+            0.12658628699136898,
+            0.1270004129881272
+          ],
+          "peak_allocated_vram_bytes": 8726608896,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 0,
+          "path": "json",
+          "direct_prompt_tokens": 488,
+          "p50_p95_seconds": [
+            0.27988947748963255,
+            0.28361003385216466
+          ],
+          "peak_allocated_vram_bytes": 8727166464,
+          "format_valid": 0,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 0,
+          "path": "explanation",
+          "direct_prompt_tokens": 488,
+          "p50_p95_seconds": [
+            1.1482883225107798,
+            1.1588006517893519
+          ],
+          "peak_allocated_vram_bytes": 8726619648,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 128,
+          "path": "direct",
+          "direct_prompt_tokens": 1000,
+          "p50_p95_seconds": [
+            0.24043008052103687,
+            0.2415319179330254
+          ],
+          "peak_allocated_vram_bytes": 8783369216,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 128,
+          "path": "one_token",
+          "direct_prompt_tokens": 1000,
+          "p50_p95_seconds": [
+            0.24433748649607878,
+            0.2462564535526326
+          ],
+          "peak_allocated_vram_bytes": 8869707776,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 128,
+          "path": "json",
+          "direct_prompt_tokens": 1000,
+          "p50_p95_seconds": [
+            0.39440918099717237,
+            0.39739618618768874
+          ],
+          "peak_allocated_vram_bytes": 8869945856,
+          "format_valid": 0,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 128,
+          "path": "explanation",
+          "direct_prompt_tokens": 1000,
+          "p50_p95_seconds": [
+            1.719971581493155,
+            1.7501983753041714
+          ],
+          "peak_allocated_vram_bytes": 8869865984,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        }
+      ]
+    },
+    {
+      "candidate": "myjev-9b-continued_sft-seed11",
+      "python_cli_http_equal": true,
+      "docker_python_equal": true,
+      "startup_to_ready_seconds": 19.39606015299796,
+      "short_http_c1": {
+        "concurrency": 1,
+        "requests": 100,
+        "warm_p50_p95_seconds": [
+          0.1150923990062438,
+          0.11864323322370182
+        ],
+        "successful_throughput_per_second": 8.66174898796114,
+        "elapsed_seconds": 11.545012460992439,
+        "statuses": {
+          "200": 100
+        }
+      },
+      "paths": [
+        {
+          "candidates": 3,
+          "context_repeats": 0,
+          "path": "direct",
+          "direct_prompt_tokens": 92,
+          "p50_p95_seconds": [
+            0.10441988000820857,
+            0.10937162842747057
+          ],
+          "peak_allocated_vram_bytes": 11860766208,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 3,
+          "context_repeats": 0,
+          "path": "one_token",
+          "direct_prompt_tokens": 92,
+          "p50_p95_seconds": [
+            0.11472542250703555,
+            0.11516671425633832
+          ],
+          "peak_allocated_vram_bytes": 11918800384,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 3,
+          "context_repeats": 0,
+          "path": "json",
+          "direct_prompt_tokens": 92,
+          "p50_p95_seconds": [
+            0.6090446565067396,
+            0.6206346142716939
+          ],
+          "peak_allocated_vram_bytes": 11922049536,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 3,
+          "context_repeats": 0,
+          "path": "explanation",
+          "direct_prompt_tokens": 92,
+          "p50_p95_seconds": [
+            0.3274240315076895,
+            0.3372747891582549
+          ],
+          "peak_allocated_vram_bytes": 11920933376,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 0,
+          "path": "direct",
+          "direct_prompt_tokens": 488,
+          "p50_p95_seconds": [
+            0.20396163199620787,
+            0.20473702531890012
+          ],
+          "peak_allocated_vram_bytes": 11919403520,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 0,
+          "path": "one_token",
+          "direct_prompt_tokens": 488,
+          "p50_p95_seconds": [
+            0.21217363551841117,
+            0.21356897280493287
+          ],
+          "peak_allocated_vram_bytes": 12007751168,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 0,
+          "path": "json",
+          "direct_prompt_tokens": 488,
+          "p50_p95_seconds": [
+            0.421418147496297,
+            0.4365165251336294
+          ],
+          "peak_allocated_vram_bytes": 12009038336,
+          "format_valid": 0,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 0,
+          "path": "explanation",
+          "direct_prompt_tokens": 488,
+          "p50_p95_seconds": [
+            0.42130142250971403,
+            0.42893355470732786
+          ],
+          "peak_allocated_vram_bytes": 12007311872,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 128,
+          "path": "direct",
+          "direct_prompt_tokens": 1000,
+          "p50_p95_seconds": [
+            0.3636154045088915,
+            0.3645101462796447
+          ],
+          "peak_allocated_vram_bytes": 12067453440,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 128,
+          "path": "one_token",
+          "direct_prompt_tokens": 1000,
+          "p50_p95_seconds": [
+            0.3724671509990003,
+            0.37370976950915064
+          ],
+          "peak_allocated_vram_bytes": 12178253312,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 128,
+          "path": "json",
+          "direct_prompt_tokens": 1000,
+          "p50_p95_seconds": [
+            0.5811353515164228,
+            0.5835014570533531
+          ],
+          "peak_allocated_vram_bytes": 12181828096,
+          "format_valid": 0,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 128,
+          "path": "explanation",
+          "direct_prompt_tokens": 1000,
+          "p50_p95_seconds": [
+            0.5814737385080662,
+            0.5968233759893338
+          ],
+          "peak_allocated_vram_bytes": 12179366400,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        }
+      ]
+    },
+    {
+      "candidate": "myjev-9b-exact-seed11",
+      "python_cli_http_equal": true,
+      "docker_python_equal": true,
+      "startup_to_ready_seconds": 18.419655881996732,
+      "short_http_c1": {
+        "concurrency": 1,
+        "requests": 100,
+        "warm_p50_p95_seconds": [
+          0.11754826550895814,
+          0.12341886499343672
+        ],
+        "successful_throughput_per_second": 8.455003938053082,
+        "elapsed_seconds": 11.827315603004536,
+        "statuses": {
+          "200": 100
+        }
+      },
+      "paths": [
+        {
+          "candidates": 3,
+          "context_repeats": 0,
+          "path": "direct",
+          "direct_prompt_tokens": 92,
+          "p50_p95_seconds": [
+            0.10464045450498816,
+            0.10863024259888335
+          ],
+          "peak_allocated_vram_bytes": 11860766208,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 3,
+          "context_repeats": 0,
+          "path": "one_token",
+          "direct_prompt_tokens": 92,
+          "p50_p95_seconds": [
+            0.11161775798245799,
+            0.1125163019853062
+          ],
+          "peak_allocated_vram_bytes": 11918800384,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 3,
+          "context_repeats": 0,
+          "path": "json",
+          "direct_prompt_tokens": 92,
+          "p50_p95_seconds": [
+            0.9936617284984095,
+            0.9985808745856047
+          ],
+          "peak_allocated_vram_bytes": 11922049536,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 3,
+          "context_repeats": 0,
+          "path": "explanation",
+          "direct_prompt_tokens": 92,
+          "p50_p95_seconds": [
+            0.31795109949598555,
+            0.32514891670434737
+          ],
+          "peak_allocated_vram_bytes": 11920933376,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 0,
+          "path": "direct",
+          "direct_prompt_tokens": 488,
+          "p50_p95_seconds": [
+            0.20395317401562352,
+            0.20507282150210812
+          ],
+          "peak_allocated_vram_bytes": 11919403520,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 0,
+          "path": "one_token",
+          "direct_prompt_tokens": 488,
+          "p50_p95_seconds": [
+            0.21083597450342495,
+            0.21164374636719002
+          ],
+          "peak_allocated_vram_bytes": 12007751168,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 0,
+          "path": "json",
+          "direct_prompt_tokens": 488,
+          "p50_p95_seconds": [
+            0.7582928570045624,
+            0.7634676945468527
+          ],
+          "peak_allocated_vram_bytes": 12009038336,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 0,
+          "path": "explanation",
+          "direct_prompt_tokens": 488,
+          "p50_p95_seconds": [
+            0.41544847648765426,
+            0.41719421070010865
+          ],
+          "peak_allocated_vram_bytes": 12007311872,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 128,
+          "path": "direct",
+          "direct_prompt_tokens": 1000,
+          "p50_p95_seconds": [
+            0.36400030298682395,
+            0.3656610394536983
+          ],
+          "peak_allocated_vram_bytes": 12067453440,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 128,
+          "path": "one_token",
+          "direct_prompt_tokens": 1000,
+          "p50_p95_seconds": [
+            0.3720735774986679,
+            0.3735073359144735
+          ],
+          "peak_allocated_vram_bytes": 12178253312,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 128,
+          "path": "json",
+          "direct_prompt_tokens": 1000,
+          "p50_p95_seconds": [
+            0.8490590549918124,
+            0.8513567956979387
+          ],
+          "peak_allocated_vram_bytes": 12181828096,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        },
+        {
+          "candidates": 32,
+          "context_repeats": 128,
+          "path": "explanation",
+          "direct_prompt_tokens": 1000,
+          "p50_p95_seconds": [
+            3.099913571990328,
+            3.1163383226361474
+          ],
+          "peak_allocated_vram_bytes": 12179366400,
+          "format_valid": 20,
+          "truncated": 0,
+          "requests": 20
+        }
+      ]
+    }
+  ]
+}

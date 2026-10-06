@@ -1,0 +1,10 @@
+{
+  "frozen_at": "2026-10-06T23:23:03.725509+00:00",
+  "fixture_sha256": "d12bd5073ef421ce9bfdc0f891a63044e767b237ccb033ef8849527686b3550c",
+  "script_sha256": "e7c4c5db0b0c8d24015c5a6d0f4751cf50d3d98c1828fbadd1c6a662d18f2c8b",
+  "source_revision": "85918207229ba411ad999827158e4f42bf1b9e4c",
+  "pairs": 24,
+  "requests": 48,
+  "design": "24 authored pairs from six templates; 16 required changes and 8 invariances, alternating candidate order. Labels fixed before inference. No tuning or threshold fitting. Six existing seed-11 released candidates, three sizes by continued SFT plus temperature or exact RL.",
+  "limits": "Synthetic correlated templates, one checkpoint per method/size, no population inference, no PolicyLM benchmark. Candidate scores and correctness confidence reported separately."
+}

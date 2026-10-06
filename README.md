@@ -4,9 +4,9 @@
 
 myJEV explores a compact interface for language models: give the model some context and a set of candidate answers, then receive a structured decision in one backbone forward pass. There is no autoregressive answer generation. The project covers data, training objectives, calibration, evaluation, and a local GPU service across **0.8B, 4B, and 9B** models.
 
-This is a research and learning project by [Amit Bahree](https://blog.desigeek.com). The repository will grow through reviewable milestone commits. The first milestone includes working training and inference code, a completed short three-seed pilot, and the measurements needed to question its conclusions.
+This is a research and learning project by [Amit Bahree](https://blog.desigeek.com). The repository will grow through reviewable milestone commits. The recorded milestones cover a scratch implementation, matched Qwen training, transfer tests, calibration controls, and local serving measurements.
 
-> **Current milestone: longer comparison complete.** All 60 training runs (168,000 updates) and 36 main evaluations across three sizes and seeds are complete. Read the [full-test descriptive findings](results/longer-v1/summary.md) and the [from-scratch implementation plan](docs/scratch-plan.md). Paired analysis is complete; broader transfer and release validation remain in progress. Downloadable trained adapters and a hosted demo are **not released yet**.
+> **Current milestone: training and local evaluation complete.** All 60 Qwen runs (168,000 updates), 36 main evaluations, 36 transfer/robustness jobs, the three-seed precision control and six local serving candidates are complete. The scratch model is built; its natural-language diagnostic failed. Read [the findings](docs/qwen-findings.md), [scratch lessons](docs/scratch.md) and [remaining work](docs/roadmap.md). Archive annotation/adaptation remains separate work in progress. Downloadable trained adapters and a hosted demo are **not released yet**.
 
 The second track now [builds a small decision model from scratch](docs/scratch.md), with recorded learning failures, a completed synthetic study and local serving checks. Its weak natural-language results remain separate from Qwen.
 
@@ -72,7 +72,7 @@ See [architecture and objectives](docs/architecture.md) for the confidence head 
 | Run a GPU container | [Docker quick start](docs/quickstart.md#docker) | Docker with NVIDIA GPU access |
 | Download a trained release | [Model release tracker](docs/models.md) | Planned; no download available yet |
 
-The longer study uses one optimizer, AdamW, across several training approaches. Its 168,000 planned training steps are spread over 60 runs. See [the training-budget breakdown](docs/training.md#why-168000-training-steps) for the controls, costs, and progress definitions.
+The longer study uses one optimizer, AdamW, across several training approaches. Its completed 168,000 training steps were spread over 60 runs. See [the training-budget breakdown](docs/training.md#why-168000-training-steps) for the controls, costs, and progress definitions.
 
 ## Three sizes, one experimental interface
 
@@ -86,21 +86,21 @@ Fine-tuning tests whether task-specific adaptation and learned correctness confi
 
 \*PyTorch allocated-memory peaks in the initial supervised pilots on 24 GB A30 GPUs. These are not maximum-context serving requirements or minimum GPU recommendations. The 9B precision change also limits conclusions about capacity alone. Configurations pin the backbone revisions; see [hosting measurements](docs/hosting.md).
 
-## What the first pilot found
+## What the completed comparison found
 
-Mean BANKING77 accuracy across three seeds, on the same fixed 256-example test subset:
+Mean BANKING77 accuracy across three seeds on all 3,080 official test examples:
 
 | Size | Supervised | Continued supervision | Exact RL | Sampled RL |
 |---|---:|---:|---:|---:|
-| 0.8B | 51.30% | **57.29%** | 55.73% | 47.53% |
-| 4B | 70.70% | **71.88%** | 71.61% | 69.40% |
-| 9B | 73.70% | **75.00%** | 72.14% | 69.66% |
+| 0.8B | 79.06% | **82.93%** | 81.36% | 80.53% |
+| 4B | 86.48% | 89.23% | **90.27%** | 88.20% |
+| 9B | 87.08% | 89.15% | **89.34%** | 88.54% |
 
-The initial supervised checkpoints received 100 updates. Continued supervision and each RL method received 100 more updates from the corresponding supervised checkpoint. This is feasibility evidence, not a convergence study. Continued supervision has the highest observed mean accuracy at each size; the pilot does not establish an RL advantage. Temperature scaling is also a stronger confidence control than the RL confidence policies in the mean Brier comparison.
+Initial supervised training receives 4,000 updates. Each continuation receives 4,000 more from its matched supervised checkpoint. Exact RL improves BANKING accuracy at 4B in the paired analysis; its advantage does not hold across all sizes or transfer tasks. Temperature scaling of continued supervision produces better mean confidence Brier than exact RL at every size. See [paired uncertainty, controls and limitations](docs/qwen-findings.md).
 
-![Three-seed pilot accuracy and confidence, with seed standard deviations](results/figures/three-seed-study.png)
+Our exploratory local starting recommendation is **4B continued supervision with temperature scaling**. It combines useful confidence, unsupported-option transfer and a measured 82.18 ms warm HTTP median on an A30 for short three-candidate requests. Exact RL remains available for its higher 4B BANKING accuracy. These are task-dependent trade-offs, not a universal ranking. [Candidate selection and resource measurements](docs/models.md#why-this-local-default)
 
-A separate TF-IDF/logistic-regression control reaches **88.28%** on all 3,080 official test examples after training on the complete training partition. Its exposure and test-set size differ from the neural pilot, so it is not a matched capacity comparison. Read the [results guide](docs/experiments.md) for confidence controls, uncertainty, evidence locations, and limitations.
+The [short pilot](docs/experiments.md) remains recorded as an earlier feasibility milestone. A TF-IDF/logistic-regression control reaches **88.28%** on the official test set, with different training exposure. The [policy-edit diagnostic](results/policy-edits-v1/report.md) separately probes explicit exceptions and changed rules; it is synthetic, uses one seed, and is not a PolicyLM benchmark.
 
 ## Quick start
 
@@ -122,7 +122,53 @@ For a local model, follow the [data preparation and training commands](docs/quic
 .venv/bin/myjev serve --artifact artifacts/pilot-0.8b/artifact
 ```
 
-The HTTP service provides `/score`, `/healthz`, and `/readyz`. It binds locally by default and rejects oversized requests. Python/CLI/HTTP/Docker equivalence has been checked at all three pilot sizes. See [the complete quick start](docs/quickstart.md) for Python, curl, and Docker examples.
+The HTTP service provides `/score`, `/healthz`, and `/readyz`. It binds locally by default and rejects oversized requests. Python/CLI/HTTP/Docker equivalence has been checked for all six final local candidates. See [the complete quick start](docs/quickstart.md) for Python, curl, and Docker examples.
+
+## An actual local request and response
+
+This recorded response comes from `myjev-4b-continued_sft-seed11`, the temperature-calibrated local starting candidate. It is an observed fixture result, not a made-up output or a public endpoint. [Validation evidence](results/release-validation-v1/myjev-4b-continued_sft-seed11/equivalence.json)
+
+Request:
+
+```json
+{
+  "context": "I was charged twice.",
+  "instructions": "Select the appropriate support route.",
+  "candidates": [
+    {
+      "id": "billing",
+      "description": "Charges, invoices, and refunds"
+    },
+    {
+      "id": "technical",
+      "description": "Errors and configuration"
+    },
+    {
+      "id": "other",
+      "description": "Neither listed route applies"
+    }
+  ]
+}
+```
+
+Response:
+
+```json
+{
+  "selected_id": "billing",
+  "selection_scores": {
+    "billing": 0.9834240078926086,
+    "technical": 0.005727097392082214,
+    "other": 0.01084891613572836
+  },
+  "confidence": 0.9834240078926086,
+  "confidence_mode": "selection",
+  "artifact_revision": "3a7979eeff5cfb0bd2cee2fe2ea559c314ad9f5eef2de4ef4cb44759dbd73f02",
+  "calibration_revision": "f0d2ddcaf6650e1f44415d49b1cf8b303d4d6fef5f73bb6198ee91600560e8d1"
+}
+```
+
+Here `confidence_mode: "selection"` means the artifact reports the temperature-scaled selected score as its correctness estimate. The RL artifacts instead use the expectation of their separate learned confidence policy. A confidence of 0.9834 for this fixture is not a guarantee of correctness or calibration on a new application.
 
 ## Repository map
 

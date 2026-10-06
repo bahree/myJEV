@@ -16,7 +16,7 @@ OpenJev was subsequently inspected as an external comparison at the user's reque
 
 ## Related inference tutorial
 
-Avi Chawla, [Build your own Jev (100% local)](https://blog.dailydoseofds.com/p/build-your-own-jev-100-local), September 22, 2026, demonstrates single-token candidate scoring through SGLang. It explicitly separates the inference mechanism from Jev training/calibration and distinguishes restricted selection probabilities from empirical correctness. We cite it as related work, not a reproduction of its benchmark or an independent review of myJEV. It motivates the [planned serving comparison](hosting.md#planned-scoring-versus-generation-benchmark); no tutorial code or timing results are incorporated as myJEV evidence.
+Avi Chawla, [Build your own Jev (100% local)](https://blog.dailydoseofds.com/p/build-your-own-jev-100-local), September 22, 2026, demonstrates single-token candidate scoring through SGLang. It explicitly separates the inference mechanism from Jev training/calibration and distinguishes restricted selection probabilities from empirical correctness. We cite it as related work, not a reproduction of its benchmark or an independent review of myJEV. It motivates the [planned serving comparison](hosting.md#scoring-versus-generation-benchmark); no tutorial code or timing results are incorporated as myJEV evidence.
 
 ## Backbone comparison across related implementations
 

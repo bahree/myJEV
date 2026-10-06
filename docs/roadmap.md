@@ -17,8 +17,8 @@ This page makes incomplete work visible as the project develops. Checked items d
 
 - [x] Longer matched training with equal validation-based tuning opportunities; [descriptive results](../results/longer-v1/summary.md) recorded.
 - [x] Frozen main neural comparison on the full official BANKING77 test split, all three seeds and sizes. Paired group analysis is recorded; broader uncertainty and release checks remain.
-- [ ] Replicated precision controls: three 4B NF4 SFT runs at matched 4,000-example exposure are frozen and queued after GPU 0 completes its transfer jobs; completed BF16 controls are reused.
-- [ ] Transfer and robustness studies at every size, extending the initial 0.8B diagnostics.
+- [x] Replicated precision controls: three 4B NF4 SFT runs at matched exposure, compared with completed BF16 controls; paired analysis retained.
+- [x] Transfer and robustness: 36 jobs across all sizes and three seeds, with fixed calibration thresholds and paired analysis.
 - [x] Per-seed operational report with accepted counts, fixed calibration thresholds, group intervals and conditional binomial upper bounds; production guarantees remain unsupported.
 
 ## Deferred: alternative pretrained backbones
@@ -49,7 +49,7 @@ The first prototype uses a deterministic byte tokenizer and a randomly initializ
 - [x] Complete the three-seed supervised, temperature/constant calibration and matched exact/sampled teaching comparison. Retain all seed results, including instability.
 - [x] Run the one-seed BANKING77 diagnostic on isolated splits. It collapsed to one class at 1.30% accuracy; this is a failed quality result.
 - [x] Measure serialized weights, CPU/A30 model latency and GPU Docker HTTP latency; verify Python/CLI/HTTP equivalence on the short synthetic request.
-- [x] Publish runnable stages, teaching explanations and reproducible evidence; update both private blog drafts.
+- [x] Publish runnable stages, teaching explanations and reproducible evidence; update the four draft articles.
 - [ ] Extend workload/candidate scaling, robustness and uncertainty measurements before recommending a deployment artifact.
 - [ ] Investigate seed and layout sensitivity under a newly frozen validation protocol if further scratch development is pursued. Do not retune against the existing test results.
 
@@ -68,11 +68,11 @@ This part remains exploratory. Annotation material and draft articles are not di
 
 ## Milestone 4: Reusable releases
 
-- [ ] Select a default artifact using quality, deferral, latency, and memory measurements.
+- [x] Select a default artifact using quality, deferral, latency, and memory measurements.
 - [ ] Publish adapters, heads, calibration, manifests, and model cards on Hugging Face.
 - [ ] Publish a versioned container image with verified load and output behavior.
-- [ ] Expand serving benchmarks to isolated-host runs and representative document lengths.
-- [ ] Compare direct scoring, constrained one-token generation, minimal JSON, and answer plus explanation under matched serving conditions. See the [benchmark protocol](hosting.md#planned-scoring-versus-generation-benchmark) and its related-work reference.
+- [x] Expand serving benchmarks to isolated-host runs and representative document lengths.
+- [x] Compare direct scoring, constrained one-token generation, minimal JSON, and answer plus explanation under matched serving conditions. See the [benchmark protocol](hosting.md#planned-scoring-versus-generation-benchmark) and its related-work reference.
 - [x] License the source code under MIT.
 - [ ] Finalize artifact licensing review and release packaging.
 - [ ] Add links to the published blog-series articles.
@@ -105,8 +105,8 @@ The scratch extension has completed its first controlled study, one-seed natural
 
 Current execution details and failed quality gates are recorded in the [scratch plan checkpoint](scratch-plan.md#execution-checkpoint). Implementation checks passing does not establish useful model quality.
 
-The expanded transfer/robustness study is frozen and running across 18 checkpoints (three sizes, three seeds, continued supervision and exact RL). Results will be reported after validation; this is not additional tuning. The blog scope now has four drafts: scratch/overview, Qwen training, evaluation/transfer, and inference/hosting.
+The expanded transfer/robustness study completed across 18 checkpoints (three sizes, three seeds, continued supervision and exact RL); analysis is published without additional tuning. The blog scope now has four drafts: scratch/overview, Qwen training, evaluation/transfer, and inference/hosting.
 
 ## October 6 checkpoint reconciliation
 
-The scratch network is built, with three-seed synthetic training and local deployment checks complete. Its BANKING77 diagnostic collapsed to one class; useful natural-language performance is not established. The full Qwen comparison, 36 transfer/robustness jobs, three-seed precision control and six local serving candidates are complete. Interpretation, default selection and final release packaging remain. Archive adaptation has not run: its local judge failed a development output-validation gate, and a source-span retry is development-only. PolicyLM is now related work and motivates a prospective policy-edit diagnostic and possible pretrained-encoder extension, not a replacement training matrix.
+The scratch network is built, with three-seed synthetic training and local deployment checks complete. Its BANKING77 diagnostic collapsed to one class; useful natural-language performance is not established. The full Qwen comparison, 36 transfer/robustness jobs, three-seed precision control and six local serving candidates are complete. Paired interpretation supports calibrated 4B continued supervision as the default; final external publication remains. Archive adaptation has not run: its first local judge failed a development output-validation gate, but the source-span retry passed and exploratory main labeling is executing. PolicyLM is now related work and motivates a prospective policy-edit diagnostic and possible pretrained-encoder extension, not a replacement training matrix.

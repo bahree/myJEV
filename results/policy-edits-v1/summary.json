@@ -1,0 +1,89 @@
+{
+  "scope": "Synthetic correlated templates, one checkpoint per method/size, no population inference, no PolicyLM benchmark. Candidate scores and correctness confidence reported separately.",
+  "rows": [
+    {
+      "size": "0.8b",
+      "method": "continued_sft",
+      "confidence_mode": "selection",
+      "requests": 48,
+      "pairs": 24,
+      "accuracy": 0.5208333333333334,
+      "both_variants_correct": 0.3333333333333333,
+      "changed_when_required": 0.3125,
+      "unchanged_when_required": 1.0,
+      "confidence_brier": 0.3730578901110359,
+      "mean_confidence_correct": 0.7291952407360077,
+      "mean_confidence_incorrect": 0.7580933259881061
+    },
+    {
+      "size": "0.8b",
+      "method": "exact",
+      "confidence_mode": "policy",
+      "requests": 48,
+      "pairs": 24,
+      "accuracy": 0.5625,
+      "both_variants_correct": 0.375,
+      "changed_when_required": 0.5625,
+      "unchanged_when_required": 0.625,
+      "confidence_brier": 0.20894893687682284,
+      "mean_confidence_correct": 0.572978005916984,
+      "mean_confidence_incorrect": 0.3701195965210597
+    },
+    {
+      "size": "4b",
+      "method": "continued_sft",
+      "confidence_mode": "selection",
+      "requests": 48,
+      "pairs": 24,
+      "accuracy": 1.0,
+      "both_variants_correct": 1.0,
+      "changed_when_required": 1.0,
+      "unchanged_when_required": 1.0,
+      "confidence_brier": 0.0061824890488770086,
+      "mean_confidence_correct": 0.9503415276606878,
+      "mean_confidence_incorrect": null
+    },
+    {
+      "size": "4b",
+      "method": "exact",
+      "confidence_mode": "policy",
+      "requests": 48,
+      "pairs": 24,
+      "accuracy": 0.8125,
+      "both_variants_correct": 0.7916666666666666,
+      "changed_when_required": 0.9375,
+      "unchanged_when_required": 1.0,
+      "confidence_brier": 0.14877519702981604,
+      "mean_confidence_correct": 0.851282517115275,
+      "mean_confidence_incorrect": 0.8350749479399787
+    },
+    {
+      "size": "9b",
+      "method": "continued_sft",
+      "confidence_mode": "selection",
+      "requests": 48,
+      "pairs": 24,
+      "accuracy": 0.9375,
+      "both_variants_correct": 0.875,
+      "changed_when_required": 0.8125,
+      "unchanged_when_required": 1.0,
+      "confidence_brier": 0.049875305105437175,
+      "mean_confidence_correct": 0.9538593212763469,
+      "mean_confidence_incorrect": 0.848063588142395
+    },
+    {
+      "size": "9b",
+      "method": "exact",
+      "confidence_mode": "policy",
+      "requests": 48,
+      "pairs": 24,
+      "accuracy": 1.0,
+      "both_variants_correct": 1.0,
+      "changed_when_required": 1.0,
+      "unchanged_when_required": 1.0,
+      "confidence_brier": 0.18661926891632283,
+      "mean_confidence_correct": 0.7049437890915821,
+      "mean_confidence_incorrect": null
+    }
+  ]
+}

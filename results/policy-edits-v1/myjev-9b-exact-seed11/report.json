@@ -1,0 +1,52 @@
+{
+  "artifact": "artifacts/release-candidates-v1/myjev-9b-exact-seed11",
+  "artifact_revision": "93499e5c987b1c4bc5278c3fa28df87dc15a56e1f92452d21db4ff143ef4fe0c",
+  "fixture_sha256": "d12bd5073ef421ce9bfdc0f891a63044e767b237ccb033ef8849527686b3550c",
+  "overall": {
+    "requests": 48,
+    "pairs": 24,
+    "accuracy": 1.0,
+    "both_variants_correct": 1.0,
+    "changed_when_required": 1.0,
+    "unchanged_when_required": 1.0,
+    "confidence_brier": 0.18661926891632283,
+    "mean_confidence_correct": 0.7049437890915821,
+    "mean_confidence_incorrect": null
+  },
+  "by_kind": {
+    "exception": {
+      "requests": 16,
+      "pairs": 8,
+      "accuracy": 1.0,
+      "both_variants_correct": 1.0,
+      "changed_when_required": 1.0,
+      "unchanged_when_required": null,
+      "confidence_brier": 0.015504000028511822,
+      "mean_confidence_correct": 0.8754861801862717,
+      "mean_confidence_incorrect": null
+    },
+    "invariance": {
+      "requests": 16,
+      "pairs": 8,
+      "accuracy": 1.0,
+      "both_variants_correct": 1.0,
+      "changed_when_required": null,
+      "unchanged_when_required": 1.0,
+      "confidence_brier": 0.4380057428924074,
+      "mean_confidence_correct": 0.4743405922781676,
+      "mean_confidence_incorrect": null
+    },
+    "threshold": {
+      "requests": 16,
+      "pairs": 8,
+      "accuracy": 1.0,
+      "both_variants_correct": 1.0,
+      "changed_when_required": 1.0,
+      "unchanged_when_required": null,
+      "confidence_brier": 0.10634806382804925,
+      "mean_confidence_correct": 0.765004594810307,
+      "mean_confidence_incorrect": null
+    }
+  },
+  "scope": "Synthetic correlated templates, one checkpoint per method/size, no population inference, no PolicyLM benchmark. Candidate scores and correctness confidence reported separately."
+}

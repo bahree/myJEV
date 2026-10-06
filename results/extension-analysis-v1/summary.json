@@ -1,0 +1,286 @@
+{
+  "scope": "Paired group bootstrap, 2000 draws, RNG 42; average the three observed seeds before resampling groups. Conditional on these seeds, exploratory, no multiplicity adjustment. Positive correctness delta favors the candidate; positive Brier delta favors the reference. Precision compares training configurations including nonquantized dtype. Transfer is a fixed subsample and uses accuracy only.",
+  "input_sha256": "8cb4feec47e52da501a765ea54d338dd4139661a49c747f6604d7041e8bc9eed",
+  "comparisons": [
+    {
+      "study": "precision",
+      "size": "4b",
+      "cohort": "test",
+      "metric": "correct",
+      "reference": "bf16",
+      "candidate": "nf4",
+      "n": 3080,
+      "groups": 3079,
+      "mean_delta": 0.008116883116883116,
+      "per_seed_deltas": [
+        -0.012012987012987014,
+        0.007792207792207792,
+        0.02857142857142857
+      ],
+      "ci95": [
+        0.0028102567263959665,
+        0.013528138528138528
+      ]
+    },
+    {
+      "study": "precision",
+      "size": "4b",
+      "cohort": "test",
+      "metric": "brier",
+      "reference": "bf16",
+      "candidate": "nf4",
+      "n": 3080,
+      "groups": 3079,
+      "mean_delta": 0.00015739167058338382,
+      "per_seed_deltas": [
+        0.01622771783566926,
+        -0.005080836873153606,
+        -0.010674705950765497
+      ],
+      "ci95": [
+        -0.004892876246418531,
+        0.005294465460840951
+      ]
+    },
+    {
+      "study": "transfer",
+      "size": "0.8b",
+      "cohort": "distant",
+      "metric": "correct",
+      "reference": "continued_sft",
+      "candidate": "exact",
+      "n": 256,
+      "groups": 256,
+      "mean_delta": -0.01171875,
+      "per_seed_deltas": [
+        -0.0234375,
+        -0.01171875,
+        0.0
+      ],
+      "ci95": [
+        -0.037760416666666664,
+        0.014322916666666666
+      ]
+    },
+    {
+      "study": "transfer",
+      "size": "0.8b",
+      "cohort": "near",
+      "metric": "correct",
+      "reference": "continued_sft",
+      "candidate": "exact",
+      "n": 256,
+      "groups": 256,
+      "mean_delta": 0.0013020833333333333,
+      "per_seed_deltas": [
+        -0.015625,
+        0.015625,
+        0.00390625
+      ],
+      "ci95": [
+        -0.018229166666666668,
+        0.0234375
+      ]
+    },
+    {
+      "study": "transfer",
+      "size": "0.8b",
+      "cohort": "oos-none",
+      "metric": "correct",
+      "reference": "continued_sft",
+      "candidate": "exact",
+      "n": 256,
+      "groups": 256,
+      "mean_delta": 0.03125,
+      "per_seed_deltas": [
+        0.0,
+        0.09375,
+        0.0
+      ],
+      "ci95": [
+        0.018229166666666664,
+        0.044303385416666494
+      ]
+    },
+    {
+      "study": "transfer",
+      "size": "0.8b",
+      "cohort": "unsupported-near-none",
+      "metric": "correct",
+      "reference": "continued_sft",
+      "candidate": "exact",
+      "n": 150,
+      "groups": 150,
+      "mean_delta": 0.04,
+      "per_seed_deltas": [
+        0.0,
+        0.10666666666666667,
+        0.013333333333333334
+      ],
+      "ci95": [
+        0.02222222222222222,
+        0.062222222222222213
+      ]
+    },
+    {
+      "study": "transfer",
+      "size": "4b",
+      "cohort": "distant",
+      "metric": "correct",
+      "reference": "continued_sft",
+      "candidate": "exact",
+      "n": 256,
+      "groups": 256,
+      "mean_delta": -0.013020833333333334,
+      "per_seed_deltas": [
+        0.00390625,
+        -0.015625,
+        -0.02734375
+      ],
+      "ci95": [
+        -0.037760416666666664,
+        0.011718749999999998
+      ]
+    },
+    {
+      "study": "transfer",
+      "size": "4b",
+      "cohort": "near",
+      "metric": "correct",
+      "reference": "continued_sft",
+      "candidate": "exact",
+      "n": 256,
+      "groups": 256,
+      "mean_delta": -0.0078125,
+      "per_seed_deltas": [
+        -0.03515625,
+        0.0234375,
+        -0.01171875
+      ],
+      "ci95": [
+        -0.024739583333333332,
+        0.0078125
+      ]
+    },
+    {
+      "study": "transfer",
+      "size": "4b",
+      "cohort": "oos-none",
+      "metric": "correct",
+      "reference": "continued_sft",
+      "candidate": "exact",
+      "n": 256,
+      "groups": 256,
+      "mean_delta": -0.16927083333333334,
+      "per_seed_deltas": [
+        -0.078125,
+        -0.51171875,
+        0.08203125
+      ],
+      "ci95": [
+        -0.1953125,
+        -0.14192708333333331
+      ]
+    },
+    {
+      "study": "transfer",
+      "size": "4b",
+      "cohort": "unsupported-near-none",
+      "metric": "correct",
+      "reference": "continued_sft",
+      "candidate": "exact",
+      "n": 150,
+      "groups": 150,
+      "mean_delta": -0.051111111111111114,
+      "per_seed_deltas": [
+        -0.04,
+        -0.17333333333333334,
+        0.06
+      ],
+      "ci95": [
+        -0.08888888888888888,
+        -0.015555555555555553
+      ]
+    },
+    {
+      "study": "transfer",
+      "size": "9b",
+      "cohort": "distant",
+      "metric": "correct",
+      "reference": "continued_sft",
+      "candidate": "exact",
+      "n": 256,
+      "groups": 256,
+      "mean_delta": -0.015625,
+      "per_seed_deltas": [
+        -0.0078125,
+        0.0078125,
+        -0.046875
+      ],
+      "ci95": [
+        -0.0390625,
+        0.00390625
+      ]
+    },
+    {
+      "study": "transfer",
+      "size": "9b",
+      "cohort": "near",
+      "metric": "correct",
+      "reference": "continued_sft",
+      "candidate": "exact",
+      "n": 256,
+      "groups": 256,
+      "mean_delta": -0.015625,
+      "per_seed_deltas": [
+        -0.015625,
+        -0.03125,
+        0.0
+      ],
+      "ci95": [
+        -0.031249999999999997,
+        -8.565197162636077e-19
+      ]
+    },
+    {
+      "study": "transfer",
+      "size": "9b",
+      "cohort": "oos-none",
+      "metric": "correct",
+      "reference": "continued_sft",
+      "candidate": "exact",
+      "n": 256,
+      "groups": 256,
+      "mean_delta": -0.020833333333333332,
+      "per_seed_deltas": [
+        0.09765625,
+        -0.22265625,
+        0.0625
+      ],
+      "ci95": [
+        -0.04296875,
+        0.002604166666666668
+      ]
+    },
+    {
+      "study": "transfer",
+      "size": "9b",
+      "cohort": "unsupported-near-none",
+      "metric": "correct",
+      "reference": "continued_sft",
+      "candidate": "exact",
+      "n": 150,
+      "groups": 150,
+      "mean_delta": 0.013333333333333334,
+      "per_seed_deltas": [
+        0.04,
+        -0.26,
+        0.26
+      ],
+      "ci95": [
+        -0.015555555555555553,
+        0.042222222222222223
+      ]
+    }
+  ]
+}

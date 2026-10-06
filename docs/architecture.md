@@ -43,4 +43,41 @@ Our two implemented tracks explore random initialization and Qwen adaptation. A 
 
 PolicyLM supports up to 16 categories per policy and a shared 2,048-token context, with windowing for long messages. Its published 35 ms L4 median concerns short messages; it is not comparable to our A30 HTTP measurements. Category scores are not automatically calibrated selected-answer correctness confidence. Its card discloses that all evaluation sets except OR-Bench were also used in development. See the [model card](https://huggingface.co/musubilabs/policylm-1.7b).
 
-Next evaluation work should include explicit exceptions and minimal policy edits with expected decision changes fixed before inference. Keep this prospective diagnostic separate from the completed comparison. A moderation classifier also does not supply verified archive labels or evidence quotations. No PolicyLM benchmark has been run here.
+We added a prospective diagnostic of explicit exceptions and minimal policy edits, with expected decisions fixed before inference. It is separate from the completed training comparison. A moderation classifier does not supply verified archive labels or evidence quotations. No PolicyLM benchmark has been run here.
+
+### What changes when the backbone becomes an encoder?
+
+Our adapted Qwen network retains its causal sequence computation. We read decision features from the final position and stop after that forward pass. Eliminating generated answer tokens saves decoding work, but it does not eliminate the cost of reading the prompt or storing the backbone. A small LoRA adapter only describes the learned update; inference still loads the base model.
+
+A bidirectional encoder lets token representations use context on both sides. That can suit classification because the entire policy and document are available before a decision is made. Pretraining supplies language features; the specialized head supplies task outputs. Our scratch encoder has the same broad opportunity to use both directions, but it starts with random weights and a tiny training corpus. Architecture alone does not supply the knowledge and representations learned during large-scale pretraining.
+
+The output contract matters just as much. A moderation system can legitimately assign high scores to several categories at once. Our interface instead chooses one candidate and estimates whether that selected answer is correct. Neither normalized candidate scores nor independent category scores automatically provide that latter probability. This is why a PolicyLM-inspired encoder experiment would need a declared task mapping, matched inputs, and its own calibration evaluation before becoming a comparable baseline.
+
+PolicyLM therefore informs our next hypothesis: a pretrained encoder may improve the language foundation missing from the scratch track while keeping a specialized decision interface. It does not establish that this architecture is faster or more accurate on our hardware and tasks. It also does not resolve subjective archive labels or provide evidence citations.
+
+### Aplomb: a specialized decision head on a Qwen backbone
+
+EmpirioLabs describes Aplomb 1 as a 5.3B-parameter multimodal decision model built on Qwen3.5-4B, with a Qwen3-Omni audio encoder and a custom decision head. This is another example of a language-model backbone adapted to emit structured decisions. Its advertised probability that an answer is absent from the input is a different event from our selected-answer correctness confidence. [Aplomb announcement](https://empiriolabs.ai/blog/introducing-aplomb-1)
+
+The publisher's roughly three-second million-token result uses its hosted fast long-context mode; the announcement separately reports about 111 seconds for reading the full input. Those figures cannot be treated as the latency of our full-read implementation or reproduced merely by downloading weights. The announced custom license also has commercial restrictions. We have not loaded Aplomb, verified its implementation, or measured it locally. It is related work, not a new row in our experimental results.
+
+### Can an edited policy change the decision?
+
+The PolicyLM discussion led to a bounded test rather than another training matrix. Before inference, we froze 24 original pairs from six templates: refund windows, numeric boundaries, explicit exceptions, exception removal, irrelevant exceptions, and quoted instructions. Sixteen pairs require an answer change; eight require the answer to stay the same. Each pair keeps the input and candidates fixed and changes only the policy. The six existing seed-11 release candidates then scored all 48 requests, without fitting new calibration parameters.
+
+| Size | Method | Answer accuracy | Both answers in pair correct | Confidence Brier |
+|---|---|---:|---:|---:|
+| 0.8b | Continued SFT + temperature | 52.1% | 33.3% | 0.3731 |
+| 0.8b | Exact RL | 56.2% | 37.5% | 0.2089 |
+| 4b | Continued SFT + temperature | 100.0% | 100.0% | 0.0062 |
+| 4b | Exact RL | 81.2% | 79.2% | 0.1488 |
+| 9b | Continued SFT + temperature | 93.8% | 87.5% | 0.0499 |
+| 9b | Exact RL | 100.0% | 100.0% | 0.1866 |
+
+The small model often ignored the meaningful edit. Its supervised candidate changed on only 5 of the 16 pairs that required a change. A perfect invariance score did not rescue it: it sometimes kept the same wrong answer. This is why we report both-answer correctness alongside change rates.
+
+Selection and confidence also told different stories. The 9B exact-RL candidate answered every fixture correctly, yet its confidence Brier was 0.1866, versus 0.0062 for the equally accurate 4B supervised candidate. The former reported expected confidence from its learned grid policy; the latter reported temperature-scaled selected probability. These are the deployed outputs, not a freshly fitted comparison. This result illustrates why correct decisions and useful confidence need separate checks; it does not establish calibration over a population.
+
+The fixtures are deliberately simple and correlated. One seed and six templates cannot establish an RL benefit, a scaling law, or reliable real-world policy compliance. Neither PolicyLM nor Aplomb was run. The learning is methodological: freeze the expected response to a rule edit, include edits that should change nothing, and inspect correctness and confidence separately.
+
+The [frozen diagnostic report](https://github.com/bahree/myJEV/blob/main/results/policy-edits-v1/report.md) includes all six candidates, reproduction commands, predictions, and limitations.
