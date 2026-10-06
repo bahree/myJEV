@@ -1,0 +1,429 @@
+
+{"utc": "2026-10-05T20:14:45.211873+00:00", "command": ["-m", "myjev.train", "--config", "results/longer-v1/9b/main/seed-33/continued_sft/config.json", "--data", "data/banking77/train.jsonl", "--output", "artifacts/longer-v1/9b/main/seed-33/continued_sft", "--method", "continued_sft", "--seed", "33", "--initial", "artifacts/longer-v1/9b/main/seed-33/sft/artifact"]}
+Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 1/427 [00:00<03:43,  1.91it/s]Loading weights:   0%|          | 2/427 [00:01<03:43,  1.90it/s]Loading weights:   2%|▏         | 9/427 [00:01<00:37, 11.26it/s]Loading weights:   4%|▎         | 15/427 [00:01<00:21, 19.18it/s]Loading weights:   7%|▋         | 29/427 [00:01<00:09, 40.29it/s]Loading weights:  10%|█         | 43/427 [00:01<00:06, 59.17it/s]Loading weights:  13%|█▎        | 54/427 [00:01<00:05, 69.46it/s]Loading weights:  16%|█▌        | 68/427 [00:01<00:04, 83.28it/s]Loading weights:  19%|█▉        | 82/427 [00:01<00:03, 93.97it/s]Loading weights:  22%|██▏       | 96/427 [00:01<00:03, 101.60it/s]Loading weights:  25%|██▌       | 108/427 [00:02<00:03, 103.71it/s]Loading weights:  28%|██▊       | 121/427 [00:02<00:02, 106.60it/s]Loading weights:  32%|███▏      | 135/427 [00:02<00:02, 111.19it/s]Loading weights:  35%|███▍      | 149/427 [00:02<00:02, 114.62it/s]Loading weights:  38%|███▊      | 161/427 [00:02<00:02, 114.22it/s]Loading weights:  41%|████      | 174/427 [00:02<00:02, 115.58it/s]Loading weights:  44%|████▍     | 188/427 [00:02<00:02, 117.41it/s]Loading weights:  47%|████▋     | 202/427 [00:02<00:01, 118.52it/s]Loading weights:  50%|█████     | 214/427 [00:02<00:01, 116.24it/s]Loading weights:  53%|█████▎    | 227/427 [00:03<00:01, 116.14it/s]Loading weights:  56%|█████▋    | 241/427 [00:03<00:01, 117.64it/s]Loading weights:  60%|█████▉    | 255/427 [00:03<00:01, 118.70it/s]Loading weights:  63%|██████▎   | 267/427 [00:03<00:01, 117.09it/s]Loading weights:  66%|██████▌   | 280/427 [00:03<00:01, 116.99it/s]Loading weights:  69%|██████▊   | 293/427 [00:03<00:01, 119.71it/s]Loading weights:  72%|███████▏  | 306/427 [00:03<00:00, 121.91it/s]Loading weights:  75%|███████▍  | 319/427 [00:03<00:01, 101.97it/s]Loading weights:  78%|███████▊  | 333/427 [00:04<00:00, 105.03it/s]Loading weights:  81%|████████  | 346/427 [00:04<00:00, 111.29it/s]Loading weights:  84%|████████▍ | 360/427 [00:04<00:00, 110.94it/s]Loading weights:  87%|████████▋ | 372/427 [00:04<00:00, 101.40it/s]Loading weights:  90%|█████████ | 386/427 [00:04<00:00, 104.02it/s]Loading weights:  94%|█████████▎| 400/427 [00:04<00:00, 105.96it/s]Loading weights:  97%|█████████▋| 414/427 [00:04<00:00, 106.99it/s]Loading weights: 100%|█████████▉| 425/427 [00:04<00:00, 103.67it/s]Loading weights: 100%|██████████| 427/427 [00:04<00:00, 87.31it/s] 
+wandb: Tracking run with wandb version 0.30.0
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in artifacts/longer-v1/9b/main/seed-33/continued_sft/tracking/wandb/offline-run-20261005_131502-xovy6746
+wandb: View this run in the terminal with `wandb leet`
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+{"step": 10, "loss": 0.014786896295845509, "examples": 10, "session_seconds": 14.433887143997708, "peak_vram_bytes": 12886780928}
+{"step": 20, "loss": 11.683422088623047, "examples": 20, "session_seconds": 27.300999851009692, "peak_vram_bytes": 12914940416}
+{"step": 30, "loss": 0.01459940243512392, "examples": 30, "session_seconds": 40.76551604500855, "peak_vram_bytes": 12914940416}
+{"step": 40, "loss": 0.014627012424170971, "examples": 40, "session_seconds": 53.60284777599736, "peak_vram_bytes": 12914940416}
+{"step": 50, "loss": 0.014564628712832928, "examples": 50, "session_seconds": 66.36058634400251, "peak_vram_bytes": 12914940416}
+{"step": 60, "loss": 0.014639772474765778, "examples": 60, "session_seconds": 79.20113527600188, "peak_vram_bytes": 12914940416}
+{"step": 70, "loss": 0.014541106298565865, "examples": 70, "session_seconds": 92.12596686700999, "peak_vram_bytes": 12914940416}
+{"step": 80, "loss": 4.387671947479248, "examples": 80, "session_seconds": 104.86205540099763, "peak_vram_bytes": 12914940416}
+{"step": 90, "loss": 0.014550439082086086, "examples": 90, "session_seconds": 117.3844203799963, "peak_vram_bytes": 12914940416}
+{"step": 100, "loss": 0.014767998829483986, "examples": 100, "session_seconds": 130.1394843779999, "peak_vram_bytes": 12914940416}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{"step": 110, "loss": 0.016323938965797424, "examples": 110, "session_seconds": 143.80323166800372, "peak_vram_bytes": 12914940416}
+{"step": 120, "loss": 0.015219639986753464, "examples": 120, "session_seconds": 156.80256316899613, "peak_vram_bytes": 12914940416}
+{"step": 130, "loss": 0.014812970533967018, "examples": 130, "session_seconds": 169.75911459499912, "peak_vram_bytes": 12914940416}
+{"step": 140, "loss": 0.014770648442208767, "examples": 140, "session_seconds": 182.4274080870091, "peak_vram_bytes": 12914940416}
+{"step": 150, "loss": 0.014786050654947758, "examples": 150, "session_seconds": 195.17073349900602, "peak_vram_bytes": 12931556864}
+{"step": 160, "loss": 0.015146112069487572, "examples": 160, "session_seconds": 207.4862797800015, "peak_vram_bytes": 12954251264}
+{"step": 170, "loss": 0.01778530888259411, "examples": 170, "session_seconds": 220.33779144700384, "peak_vram_bytes": 12954251264}
+{"step": 180, "loss": 0.015027533285319805, "examples": 180, "session_seconds": 233.39860552900063, "peak_vram_bytes": 12954251264}
+{"step": 190, "loss": 0.014701149426400661, "examples": 190, "session_seconds": 246.3244977120048, "peak_vram_bytes": 12954251264}
+{"step": 200, "loss": 0.014991064555943012, "examples": 200, "session_seconds": 258.7329573349998, "peak_vram_bytes": 12954251264}
+{"step": 210, "loss": 0.01603436842560768, "examples": 210, "session_seconds": 271.5094425270072, "peak_vram_bytes": 12954251264}
+{"step": 220, "loss": 0.016186218708753586, "examples": 220, "session_seconds": 284.7349104360037, "peak_vram_bytes": 12954251264}
+{"step": 230, "loss": 7.690181732177734, "examples": 230, "session_seconds": 297.75492730199767, "peak_vram_bytes": 12954251264}
+{"step": 240, "loss": 0.014984428882598877, "examples": 240, "session_seconds": 310.81755098600115, "peak_vram_bytes": 12954251264}
+{"step": 250, "loss": 0.015459883958101273, "examples": 250, "session_seconds": 323.7784903139982, "peak_vram_bytes": 12954251264}
+{"step": 260, "loss": 0.0148208262398839, "examples": 260, "session_seconds": 336.83012267299637, "peak_vram_bytes": 12954251264}
+{"step": 270, "loss": 0.02461206540465355, "examples": 270, "session_seconds": 349.8921330840094, "peak_vram_bytes": 12954251264}
+{"step": 280, "loss": 0.024123482406139374, "examples": 280, "session_seconds": 363.50131922100263, "peak_vram_bytes": 12954251264}
+{"step": 290, "loss": 0.016879495233297348, "examples": 290, "session_seconds": 376.45895916399604, "peak_vram_bytes": 12954251264}
+{"step": 300, "loss": 0.014758499339222908, "examples": 300, "session_seconds": 389.37143524800194, "peak_vram_bytes": 12954251264}
+{"step": 310, "loss": 0.014728620648384094, "examples": 310, "session_seconds": 402.1640604120039, "peak_vram_bytes": 12954251264}
+{"step": 320, "loss": 0.014675199054181576, "examples": 320, "session_seconds": 414.47121488300036, "peak_vram_bytes": 12954251264}
+{"step": 330, "loss": 0.014748664572834969, "examples": 330, "session_seconds": 426.86335115700786, "peak_vram_bytes": 12954251264}
+{"step": 340, "loss": 0.3944680690765381, "examples": 340, "session_seconds": 439.1967748800089, "peak_vram_bytes": 12954251264}
+{"step": 350, "loss": 0.015614503994584084, "examples": 350, "session_seconds": 451.76330643400433, "peak_vram_bytes": 12954251264}
+{"step": 360, "loss": 0.015003594569861889, "examples": 360, "session_seconds": 464.0606545430055, "peak_vram_bytes": 12954251264}
+{"step": 370, "loss": 0.015012240037322044, "examples": 370, "session_seconds": 476.41362243201, "peak_vram_bytes": 12954251264}
+{"step": 380, "loss": 0.013852204196155071, "examples": 380, "session_seconds": 488.7924389310065, "peak_vram_bytes": 12954251264}
+{"step": 390, "loss": 0.1045164093375206, "examples": 390, "session_seconds": 501.237352999, "peak_vram_bytes": 12954251264}
+{"step": 400, "loss": 0.019022133201360703, "examples": 400, "session_seconds": 513.5434774489986, "peak_vram_bytes": 12954251264}
+{"step": 410, "loss": 0.03989410400390625, "examples": 410, "session_seconds": 526.3740324800019, "peak_vram_bytes": 12954251264}
+{"step": 420, "loss": 0.014823918230831623, "examples": 420, "session_seconds": 538.9480498010089, "peak_vram_bytes": 12954251264}
+{"step": 430, "loss": 0.015656476840376854, "examples": 430, "session_seconds": 551.239449323999, "peak_vram_bytes": 12954251264}
+{"step": 440, "loss": 0.017818069085478783, "examples": 440, "session_seconds": 563.546874792999, "peak_vram_bytes": 12954251264}
+{"step": 450, "loss": 0.014383327215909958, "examples": 450, "session_seconds": 575.8457472330047, "peak_vram_bytes": 12954251264}
+{"step": 460, "loss": 0.014709549024701118, "examples": 460, "session_seconds": 588.1494593700045, "peak_vram_bytes": 12954251264}
+{"step": 470, "loss": 0.016942543908953667, "examples": 470, "session_seconds": 600.5502593819983, "peak_vram_bytes": 12954251264}
+{"step": 480, "loss": 0.013852745294570923, "examples": 480, "session_seconds": 612.863166702009, "peak_vram_bytes": 12954251264}
+{"step": 490, "loss": 0.014087273739278316, "examples": 490, "session_seconds": 625.6059589409997, "peak_vram_bytes": 12954251264}
+{"step": 500, "loss": 0.013878111727535725, "examples": 500, "session_seconds": 637.9762795100105, "peak_vram_bytes": 12954251264}
+{"step": 510, "loss": 0.013793446123600006, "examples": 510, "session_seconds": 650.7972863790055, "peak_vram_bytes": 12954251264}
+{"step": 520, "loss": 0.013883636333048344, "examples": 520, "session_seconds": 663.1166157889966, "peak_vram_bytes": 12954251264}
+{"step": 530, "loss": 0.01393407117575407, "examples": 530, "session_seconds": 675.479501941998, "peak_vram_bytes": 12954251264}
+{"step": 540, "loss": 0.014914027415215969, "examples": 540, "session_seconds": 687.9338356070075, "peak_vram_bytes": 12954251264}
+{"step": 550, "loss": 16.13527488708496, "examples": 550, "session_seconds": 700.421078763, "peak_vram_bytes": 12954251264}
+{"step": 560, "loss": 0.021068869158625603, "examples": 560, "session_seconds": 713.0369358349999, "peak_vram_bytes": 12954251264}
+{"step": 570, "loss": 0.014470190741121769, "examples": 570, "session_seconds": 725.4941593969997, "peak_vram_bytes": 12954251264}
+{"step": 580, "loss": 0.01444950606673956, "examples": 580, "session_seconds": 737.8650077820057, "peak_vram_bytes": 12954251264}
+{"step": 590, "loss": 0.01410222053527832, "examples": 590, "session_seconds": 750.169157641998, "peak_vram_bytes": 12954251264}
+{"step": 600, "loss": 0.016950208693742752, "examples": 600, "session_seconds": 762.5174993819965, "peak_vram_bytes": 12954251264}
+{"step": 610, "loss": 0.013906391337513924, "examples": 610, "session_seconds": 775.4405224430084, "peak_vram_bytes": 12954251264}
+{"step": 620, "loss": 0.013621710240840912, "examples": 620, "session_seconds": 788.0348740350018, "peak_vram_bytes": 12954251264}
+{"step": 630, "loss": 0.01407957449555397, "examples": 630, "session_seconds": 800.4617750559992, "peak_vram_bytes": 12954251264}
+{"step": 640, "loss": 0.013705584220588207, "examples": 640, "session_seconds": 812.74120162701, "peak_vram_bytes": 12954251264}
+{"step": 650, "loss": 0.013807457871735096, "examples": 650, "session_seconds": 825.1086334220017, "peak_vram_bytes": 12954251264}
+{"step": 660, "loss": 0.013731749728322029, "examples": 660, "session_seconds": 837.508548555008, "peak_vram_bytes": 12954251264}
+{"step": 670, "loss": 0.013638325966894627, "examples": 670, "session_seconds": 849.7639537759969, "peak_vram_bytes": 12954251264}
+{"step": 680, "loss": 14.83044147491455, "examples": 680, "session_seconds": 862.0398958470032, "peak_vram_bytes": 12954251264}
+{"step": 690, "loss": 0.01374739408493042, "examples": 690, "session_seconds": 874.6060779429972, "peak_vram_bytes": 12954251264}
+{"step": 700, "loss": 8.851249694824219, "examples": 700, "session_seconds": 886.9810527450027, "peak_vram_bytes": 12954251264}
+{"step": 710, "loss": 0.01416124776005745, "examples": 710, "session_seconds": 899.9609962660033, "peak_vram_bytes": 12954251264}
+{"step": 720, "loss": 0.014666177332401276, "examples": 720, "session_seconds": 912.4228865729965, "peak_vram_bytes": 12954251264}
+{"step": 730, "loss": 0.014632411301136017, "examples": 730, "session_seconds": 924.9276956009999, "peak_vram_bytes": 12954251264}
+{"step": 740, "loss": 0.017490960657596588, "examples": 740, "session_seconds": 937.3024130740087, "peak_vram_bytes": 12954251264}
+{"step": 750, "loss": 18.236345291137695, "examples": 750, "session_seconds": 949.5883627160074, "peak_vram_bytes": 12954251264}
+{"step": 760, "loss": 0.01395020354539156, "examples": 760, "session_seconds": 962.2656884540047, "peak_vram_bytes": 12954251264}
+{"step": 770, "loss": 0.05123639479279518, "examples": 770, "session_seconds": 974.5519696210104, "peak_vram_bytes": 12954251264}
+{"step": 780, "loss": 17.44072914123535, "examples": 780, "session_seconds": 987.2707709620008, "peak_vram_bytes": 12954251264}
+{"step": 790, "loss": 0.019090216606855392, "examples": 790, "session_seconds": 999.5622290050087, "peak_vram_bytes": 12954251264}
+{"step": 800, "loss": 0.023290276527404785, "examples": 800, "session_seconds": 1012.0250744810037, "peak_vram_bytes": 12954251264}
+{"step": 810, "loss": 0.01909603178501129, "examples": 810, "session_seconds": 1024.996230320001, "peak_vram_bytes": 12954251264}
+{"step": 820, "loss": 0.02635238692164421, "examples": 820, "session_seconds": 1037.4560932199965, "peak_vram_bytes": 12954251264}
+{"step": 830, "loss": 0.02972012758255005, "examples": 830, "session_seconds": 1050.659105357001, "peak_vram_bytes": 12954251264}
+{"step": 840, "loss": 0.014088082127273083, "examples": 840, "session_seconds": 1063.570996815004, "peak_vram_bytes": 12954251264}
+{"step": 850, "loss": 0.014020213857293129, "examples": 850, "session_seconds": 1076.2534503299976, "peak_vram_bytes": 12954251264}
+{"step": 860, "loss": 0.014494637958705425, "examples": 860, "session_seconds": 1088.8296745179978, "peak_vram_bytes": 12954251264}
+{"step": 870, "loss": 0.014913057908415794, "examples": 870, "session_seconds": 1101.4489029140095, "peak_vram_bytes": 12954251264}
+{"step": 880, "loss": 0.016696088016033173, "examples": 880, "session_seconds": 1114.1860765230085, "peak_vram_bytes": 12954251264}
+{"step": 890, "loss": 0.014368142932653427, "examples": 890, "session_seconds": 1126.7320001680055, "peak_vram_bytes": 12954251264}
+{"step": 900, "loss": 25.48645782470703, "examples": 900, "session_seconds": 1139.8158288139966, "peak_vram_bytes": 12954251264}
+{"step": 910, "loss": 15.95738697052002, "examples": 910, "session_seconds": 1152.8625232070044, "peak_vram_bytes": 12954251264}
+{"step": 920, "loss": 0.014631588011980057, "examples": 920, "session_seconds": 1165.4023450399982, "peak_vram_bytes": 12954251264}
+{"step": 930, "loss": 10.937228202819824, "examples": 930, "session_seconds": 1178.214195269, "peak_vram_bytes": 12954251264}
+{"step": 940, "loss": 0.016113994643092155, "examples": 940, "session_seconds": 1190.4221145600022, "peak_vram_bytes": 12954251264}
+{"step": 950, "loss": 0.17507822811603546, "examples": 950, "session_seconds": 1202.6999676080013, "peak_vram_bytes": 12954251264}
+{"step": 960, "loss": 0.013727960176765919, "examples": 960, "session_seconds": 1215.2717732809979, "peak_vram_bytes": 12954251264}
+{"step": 970, "loss": 0.014026863500475883, "examples": 970, "session_seconds": 1227.71309802201, "peak_vram_bytes": 12954251264}
+{"step": 980, "loss": 0.014262615703046322, "examples": 980, "session_seconds": 1239.9944412690093, "peak_vram_bytes": 12954251264}
+{"step": 990, "loss": 12.242118835449219, "examples": 990, "session_seconds": 1252.332862723997, "peak_vram_bytes": 12954251264}
+{"step": 1000, "loss": 0.017533140257000923, "examples": 1000, "session_seconds": 1264.6311894060054, "peak_vram_bytes": 12954251264}
+{"step": 1010, "loss": 0.014203466475009918, "examples": 1010, "session_seconds": 1277.4219858989964, "peak_vram_bytes": 12954251264}
+{"step": 1020, "loss": 0.017747102305293083, "examples": 1020, "session_seconds": 1289.8475386490027, "peak_vram_bytes": 12954251264}
+{"step": 1030, "loss": 8.715123176574707, "examples": 1030, "session_seconds": 1302.3766879339964, "peak_vram_bytes": 12954251264}
+{"step": 1040, "loss": 0.01407842431217432, "examples": 1040, "session_seconds": 1314.6611939610011, "peak_vram_bytes": 12954251264}
+{"step": 1050, "loss": 0.013678724877536297, "examples": 1050, "session_seconds": 1326.8933541250008, "peak_vram_bytes": 12954251264}
+{"step": 1060, "loss": 0.013641098514199257, "examples": 1060, "session_seconds": 1339.4323239860096, "peak_vram_bytes": 12954251264}
+{"step": 1070, "loss": 0.013812065124511719, "examples": 1070, "session_seconds": 1352.4567743540101, "peak_vram_bytes": 12954251264}
+{"step": 1080, "loss": 0.013623911887407303, "examples": 1080, "session_seconds": 1365.414602335004, "peak_vram_bytes": 12954251264}
+{"step": 1090, "loss": 19.672048568725586, "examples": 1090, "session_seconds": 1378.2503127070086, "peak_vram_bytes": 12954251264}
+{"step": 1100, "loss": 15.362671852111816, "examples": 1100, "session_seconds": 1391.7861030610075, "peak_vram_bytes": 12954251264}
+{"step": 1110, "loss": 0.01736033894121647, "examples": 1110, "session_seconds": 1405.1271564089984, "peak_vram_bytes": 12954251264}
+{"step": 1120, "loss": 10.681602478027344, "examples": 1120, "session_seconds": 1418.0755867179978, "peak_vram_bytes": 12954251264}
+{"step": 1130, "loss": 0.01698065549135208, "examples": 1130, "session_seconds": 1431.065302269999, "peak_vram_bytes": 12954251264}
+{"step": 1140, "loss": 0.014770222827792168, "examples": 1140, "session_seconds": 1443.9791050869972, "peak_vram_bytes": 12954251264}
+{"step": 1150, "loss": 0.014630995690822601, "examples": 1150, "session_seconds": 1456.7604261840024, "peak_vram_bytes": 12954251264}
+{"step": 1160, "loss": 18.94432258605957, "examples": 1160, "session_seconds": 1469.1511646220024, "peak_vram_bytes": 12954251264}
+{"step": 1170, "loss": 0.014257453382015228, "examples": 1170, "session_seconds": 1481.6791803890083, "peak_vram_bytes": 12954251264}
+{"step": 1180, "loss": 0.013978592120110989, "examples": 1180, "session_seconds": 1493.9158639180096, "peak_vram_bytes": 12954251264}
+{"step": 1190, "loss": 12.06090259552002, "examples": 1190, "session_seconds": 1506.1336509810062, "peak_vram_bytes": 12954251264}
+{"step": 1200, "loss": 0.01403031311929226, "examples": 1200, "session_seconds": 1519.1029120449966, "peak_vram_bytes": 12954251264}
+{"step": 1210, "loss": 0.014618851244449615, "examples": 1210, "session_seconds": 1532.4795590400026, "peak_vram_bytes": 12954251264}
+{"step": 1220, "loss": 0.014361884444952011, "examples": 1220, "session_seconds": 1544.8461714580044, "peak_vram_bytes": 12954251264}
+{"step": 1230, "loss": 0.013797308318316936, "examples": 1230, "session_seconds": 1557.1769266320043, "peak_vram_bytes": 12954251264}
+{"step": 1240, "loss": 0.015268320217728615, "examples": 1240, "session_seconds": 1569.6866076320002, "peak_vram_bytes": 12954251264}
+{"step": 1250, "loss": 0.013764338567852974, "examples": 1250, "session_seconds": 1582.147820913, "peak_vram_bytes": 12954251264}
+{"step": 1260, "loss": 0.021883532404899597, "examples": 1260, "session_seconds": 1594.5472390259965, "peak_vram_bytes": 12954251264}
+{"step": 1270, "loss": 0.015297573059797287, "examples": 1270, "session_seconds": 1607.0406776620075, "peak_vram_bytes": 12954251264}
+{"step": 1280, "loss": 0.015793869271874428, "examples": 1280, "session_seconds": 1619.756940760999, "peak_vram_bytes": 12954251264}
+{"step": 1290, "loss": 0.017951248213648796, "examples": 1290, "session_seconds": 1632.2051087110012, "peak_vram_bytes": 12954251264}
+{"step": 1300, "loss": 4.9764323234558105, "examples": 1300, "session_seconds": 1644.6427168590017, "peak_vram_bytes": 12954251264}
+{"step": 1310, "loss": 0.013585089705884457, "examples": 1310, "session_seconds": 1658.5316441390023, "peak_vram_bytes": 12954251264}
+{"step": 1320, "loss": 0.030790850520133972, "examples": 1320, "session_seconds": 1671.753501031999, "peak_vram_bytes": 12954251264}
+{"step": 1330, "loss": 0.014115557074546814, "examples": 1330, "session_seconds": 1684.5728310760023, "peak_vram_bytes": 12954251264}
+{"step": 1340, "loss": 0.013667086139321327, "examples": 1340, "session_seconds": 1697.0921678120067, "peak_vram_bytes": 12954251264}
+{"step": 1350, "loss": 0.013741769827902317, "examples": 1350, "session_seconds": 1709.6454285210057, "peak_vram_bytes": 12954251264}
+{"step": 1360, "loss": 0.013491530902683735, "examples": 1360, "session_seconds": 1722.1832580600021, "peak_vram_bytes": 12954251264}
+{"step": 1370, "loss": 12.137726783752441, "examples": 1370, "session_seconds": 1735.3408329410013, "peak_vram_bytes": 12954251264}
+{"step": 1380, "loss": 0.01687042787671089, "examples": 1380, "session_seconds": 1747.7269298269966, "peak_vram_bytes": 12954251264}
+{"step": 1390, "loss": 0.014498462900519371, "examples": 1390, "session_seconds": 1759.9898309440032, "peak_vram_bytes": 12954251264}
+{"step": 1400, "loss": 0.014089979231357574, "examples": 1400, "session_seconds": 1772.436386048008, "peak_vram_bytes": 12954251264}
+{"step": 1410, "loss": 0.013659206219017506, "examples": 1410, "session_seconds": 1785.1286785840057, "peak_vram_bytes": 12954251264}
+{"step": 1420, "loss": 0.013827395625412464, "examples": 1420, "session_seconds": 1797.4128120490059, "peak_vram_bytes": 12954251264}
+{"step": 1430, "loss": 0.017868507653474808, "examples": 1430, "session_seconds": 1809.7656436230027, "peak_vram_bytes": 12954251264}
+{"step": 1440, "loss": 14.319077491760254, "examples": 1440, "session_seconds": 1822.4100038940087, "peak_vram_bytes": 12954251264}
+{"step": 1450, "loss": 0.018312163650989532, "examples": 1450, "session_seconds": 1834.726555221001, "peak_vram_bytes": 12954251264}
+{"step": 1460, "loss": 0.01594618707895279, "examples": 1460, "session_seconds": 1847.1061606050062, "peak_vram_bytes": 12954251264}
+{"step": 1470, "loss": 0.014649154618382454, "examples": 1470, "session_seconds": 1859.4394417730073, "peak_vram_bytes": 12954251264}
+{"step": 1480, "loss": 0.0157877616584301, "examples": 1480, "session_seconds": 1871.7523390230053, "peak_vram_bytes": 12954251264}
+{"step": 1490, "loss": 0.015987984836101532, "examples": 1490, "session_seconds": 1884.116164430001, "peak_vram_bytes": 12954251264}
+{"step": 1500, "loss": 0.014823767356574535, "examples": 1500, "session_seconds": 1896.8587891360075, "peak_vram_bytes": 12954251264}
+{"step": 1510, "loss": 0.017516175284981728, "examples": 1510, "session_seconds": 1910.4132455880026, "peak_vram_bytes": 12954251264}
+{"step": 1520, "loss": 0.01405357662588358, "examples": 1520, "session_seconds": 1922.8566217269981, "peak_vram_bytes": 12954251264}
+{"step": 1530, "loss": 0.013553569093346596, "examples": 1530, "session_seconds": 1935.2566169119964, "peak_vram_bytes": 12954251264}
+{"step": 1540, "loss": 0.01589597389101982, "examples": 1540, "session_seconds": 1947.640230272009, "peak_vram_bytes": 12954251264}
+{"step": 1550, "loss": 0.014023397117853165, "examples": 1550, "session_seconds": 1960.0342926809972, "peak_vram_bytes": 12954251264}
+{"step": 1560, "loss": 0.014536483213305473, "examples": 1560, "session_seconds": 1972.3455562440067, "peak_vram_bytes": 12954251264}
+{"step": 1570, "loss": 0.019690154120326042, "examples": 1570, "session_seconds": 1984.856239204004, "peak_vram_bytes": 12954251264}
+{"step": 1580, "loss": 0.025725599378347397, "examples": 1580, "session_seconds": 1997.2253133250051, "peak_vram_bytes": 12954251264}
+{"step": 1590, "loss": 0.0184464268386364, "examples": 1590, "session_seconds": 2009.5114602579997, "peak_vram_bytes": 12954251264}
+{"step": 1600, "loss": 0.013865968212485313, "examples": 1600, "session_seconds": 2021.9069752939977, "peak_vram_bytes": 12954251264}
+{"step": 1610, "loss": 0.0141670573502779, "examples": 1610, "session_seconds": 2034.776155133004, "peak_vram_bytes": 12954251264}
+{"step": 1620, "loss": 0.013900293037295341, "examples": 1620, "session_seconds": 2047.075968938996, "peak_vram_bytes": 12954251264}
+{"step": 1630, "loss": 0.028354298323392868, "examples": 1630, "session_seconds": 2059.4666922150063, "peak_vram_bytes": 12954251264}
+{"step": 1640, "loss": 0.013853000476956367, "examples": 1640, "session_seconds": 2072.0843304989976, "peak_vram_bytes": 12954251264}
+{"step": 1650, "loss": 0.014286949299275875, "examples": 1650, "session_seconds": 2084.3562838450016, "peak_vram_bytes": 12954251264}
+{"step": 1660, "loss": 0.014961376786231995, "examples": 1660, "session_seconds": 2096.6822636370052, "peak_vram_bytes": 12954251264}
+{"step": 1670, "loss": 7.672465801239014, "examples": 1670, "session_seconds": 2108.959420077008, "peak_vram_bytes": 12954251264}
+{"step": 1680, "loss": 0.017857739701867104, "examples": 1680, "session_seconds": 2121.376370587008, "peak_vram_bytes": 12954251264}
+{"step": 1690, "loss": 0.019051559269428253, "examples": 1690, "session_seconds": 2133.6501086060016, "peak_vram_bytes": 12954251264}
+{"step": 1700, "loss": 0.01622128114104271, "examples": 1700, "session_seconds": 2145.9478057840024, "peak_vram_bytes": 12954251264}
+{"step": 1710, "loss": 0.018838081508874893, "examples": 1710, "session_seconds": 2159.2394913269964, "peak_vram_bytes": 12954251264}
+{"step": 1720, "loss": 0.014627063646912575, "examples": 1720, "session_seconds": 2171.5015321880055, "peak_vram_bytes": 12954251264}
+{"step": 1730, "loss": 0.014748410321772099, "examples": 1730, "session_seconds": 2183.801083297003, "peak_vram_bytes": 12954251264}
+{"step": 1740, "loss": 0.014747913926839828, "examples": 1740, "session_seconds": 2196.077545363005, "peak_vram_bytes": 12954251264}
+{"step": 1750, "loss": 0.015871942043304443, "examples": 1750, "session_seconds": 2208.39045936201, "peak_vram_bytes": 12954251264}
+{"step": 1760, "loss": 0.1071273535490036, "examples": 1760, "session_seconds": 2220.94829609101, "peak_vram_bytes": 12954251264}
+{"step": 1770, "loss": 0.014806151390075684, "examples": 1770, "session_seconds": 2233.5702905009966, "peak_vram_bytes": 12954251264}
+{"step": 1780, "loss": 0.016334781423211098, "examples": 1780, "session_seconds": 2245.881781573, "peak_vram_bytes": 12954251264}
+{"step": 1790, "loss": 0.01615099608898163, "examples": 1790, "session_seconds": 2258.1708017680066, "peak_vram_bytes": 12954251264}
+{"step": 1800, "loss": 0.014750746078789234, "examples": 1800, "session_seconds": 2270.598743171009, "peak_vram_bytes": 12954251264}
+{"step": 1810, "loss": 0.015018436126410961, "examples": 1810, "session_seconds": 2283.700149465003, "peak_vram_bytes": 12954251264}
+{"step": 1820, "loss": 0.015202109701931477, "examples": 1820, "session_seconds": 2296.461614896005, "peak_vram_bytes": 12954251264}
+{"step": 1830, "loss": 0.015663783997297287, "examples": 1830, "session_seconds": 2309.317773775998, "peak_vram_bytes": 12954251264}
+{"step": 1840, "loss": 0.018446383997797966, "examples": 1840, "session_seconds": 2321.9474634930084, "peak_vram_bytes": 12954251264}
+{"step": 1850, "loss": 0.015020348131656647, "examples": 1850, "session_seconds": 2334.298966743998, "peak_vram_bytes": 12954251264}
+{"step": 1860, "loss": 0.014504763297736645, "examples": 1860, "session_seconds": 2346.8798928540054, "peak_vram_bytes": 12954251264}
+{"step": 1870, "loss": 10.674942970275879, "examples": 1870, "session_seconds": 2359.4285265759972, "peak_vram_bytes": 12954251264}
+{"step": 1880, "loss": 0.041836366057395935, "examples": 1880, "session_seconds": 2371.730782412007, "peak_vram_bytes": 12954251264}
+{"step": 1890, "loss": 0.015066144987940788, "examples": 1890, "session_seconds": 2384.352709469007, "peak_vram_bytes": 12954251264}
+{"step": 1900, "loss": 0.014875977300107479, "examples": 1900, "session_seconds": 2396.8692970700067, "peak_vram_bytes": 12954251264}
+{"step": 1910, "loss": 0.015133420936763287, "examples": 1910, "session_seconds": 2409.6582417470054, "peak_vram_bytes": 12954251264}
+{"step": 1920, "loss": 0.01382285077124834, "examples": 1920, "session_seconds": 2421.9350826510054, "peak_vram_bytes": 12954251264}
+{"step": 1930, "loss": 4.907179355621338, "examples": 1930, "session_seconds": 2434.371148127, "peak_vram_bytes": 12954251264}
+{"step": 1940, "loss": 0.014510495588183403, "examples": 1940, "session_seconds": 2446.6708926919964, "peak_vram_bytes": 12954251264}
+{"step": 1950, "loss": 0.01674240082502365, "examples": 1950, "session_seconds": 2459.2057737680007, "peak_vram_bytes": 12954251264}
+{"step": 1960, "loss": 0.01532190665602684, "examples": 1960, "session_seconds": 2471.5038425950042, "peak_vram_bytes": 12954251264}
+{"step": 1970, "loss": 0.021715601906180382, "examples": 1970, "session_seconds": 2483.8744536790036, "peak_vram_bytes": 12954251264}
+{"step": 1980, "loss": 0.014079139567911625, "examples": 1980, "session_seconds": 2496.1942743210093, "peak_vram_bytes": 12954251264}
+{"step": 1990, "loss": 0.014304595068097115, "examples": 1990, "session_seconds": 2508.4709244660044, "peak_vram_bytes": 12954251264}
+{"step": 2000, "loss": 0.014087989926338196, "examples": 2000, "session_seconds": 2520.716191309999, "peak_vram_bytes": 12954251264}
+{"step": 2010, "loss": 14.928555488586426, "examples": 2010, "session_seconds": 2533.7349195910065, "peak_vram_bytes": 12954251264}
+{"step": 2020, "loss": 0.014169175177812576, "examples": 2020, "session_seconds": 2546.800448344002, "peak_vram_bytes": 12954251264}
+{"step": 2030, "loss": 0.01474814023822546, "examples": 2030, "session_seconds": 2559.4199901719985, "peak_vram_bytes": 12954251264}
+{"step": 2040, "loss": 0.013954540714621544, "examples": 2040, "session_seconds": 2572.0561942710046, "peak_vram_bytes": 12954251264}
+{"step": 2050, "loss": 0.01373017393052578, "examples": 2050, "session_seconds": 2584.5299824079993, "peak_vram_bytes": 12954251264}
+{"step": 2060, "loss": 0.014004831202328205, "examples": 2060, "session_seconds": 2597.0243198969983, "peak_vram_bytes": 12954251264}
+{"step": 2070, "loss": 0.014549790881574154, "examples": 2070, "session_seconds": 2609.501017778006, "peak_vram_bytes": 12954251264}
+{"step": 2080, "loss": 0.01760103367269039, "examples": 2080, "session_seconds": 2622.11451503, "peak_vram_bytes": 12958070272}
+{"step": 2090, "loss": 0.01404490228742361, "examples": 2090, "session_seconds": 2635.5152753800066, "peak_vram_bytes": 12958070272}
+{"step": 2100, "loss": 14.429405212402344, "examples": 2100, "session_seconds": 2648.285019834002, "peak_vram_bytes": 12958070272}
+{"step": 2110, "loss": 0.014936245046555996, "examples": 2110, "session_seconds": 2661.4196643379983, "peak_vram_bytes": 12958070272}
+{"step": 2120, "loss": 11.767400741577148, "examples": 2120, "session_seconds": 2673.9764765330037, "peak_vram_bytes": 12958070272}
+{"step": 2130, "loss": 0.015204266645014286, "examples": 2130, "session_seconds": 2686.5306705780094, "peak_vram_bytes": 12958070272}
+{"step": 2140, "loss": 0.014032848179340363, "examples": 2140, "session_seconds": 2699.012670422002, "peak_vram_bytes": 12958070272}
+{"step": 2150, "loss": 0.018049541860818863, "examples": 2150, "session_seconds": 2711.7963444540073, "peak_vram_bytes": 12958070272}
+{"step": 2160, "loss": 0.06832126528024673, "examples": 2160, "session_seconds": 2724.6377650180075, "peak_vram_bytes": 12958070272}
+{"step": 2170, "loss": 0.013969456776976585, "examples": 2170, "session_seconds": 2737.770060230003, "peak_vram_bytes": 12958070272}
+{"step": 2180, "loss": 0.013894337229430676, "examples": 2180, "session_seconds": 2750.728112419005, "peak_vram_bytes": 12958070272}
+{"step": 2190, "loss": 0.014517679810523987, "examples": 2190, "session_seconds": 2763.203469328, "peak_vram_bytes": 12958070272}
+{"step": 2200, "loss": 12.4745512008667, "examples": 2200, "session_seconds": 2775.5888153859996, "peak_vram_bytes": 12958070272}
+{"step": 2210, "loss": 0.018782729282975197, "examples": 2210, "session_seconds": 2788.7718688440073, "peak_vram_bytes": 12958070272}
+{"step": 2220, "loss": 0.019126100465655327, "examples": 2220, "session_seconds": 2801.569550993998, "peak_vram_bytes": 12958070272}
+{"step": 2230, "loss": 0.015122884884476662, "examples": 2230, "session_seconds": 2814.481464170007, "peak_vram_bytes": 12958070272}
+{"step": 2240, "loss": 0.014021610841155052, "examples": 2240, "session_seconds": 2827.5231087660068, "peak_vram_bytes": 12958070272}
+{"step": 2250, "loss": 0.013956274837255478, "examples": 2250, "session_seconds": 2840.351565723002, "peak_vram_bytes": 12958070272}
+{"step": 2260, "loss": 8.223424911499023, "examples": 2260, "session_seconds": 2853.199105043008, "peak_vram_bytes": 12958070272}
+{"step": 2270, "loss": 0.014829682186245918, "examples": 2270, "session_seconds": 2865.4669623930095, "peak_vram_bytes": 12958070272}
+{"step": 2280, "loss": 4.667507171630859, "examples": 2280, "session_seconds": 2878.028566392997, "peak_vram_bytes": 12958070272}
+{"step": 2290, "loss": 0.014110888354480267, "examples": 2290, "session_seconds": 2890.3412377839995, "peak_vram_bytes": 12958070272}
+{"step": 2300, "loss": 11.393939971923828, "examples": 2300, "session_seconds": 2902.8639044370066, "peak_vram_bytes": 12958070272}
+{"step": 2310, "loss": 0.013712860643863678, "examples": 2310, "session_seconds": 2916.3984914199973, "peak_vram_bytes": 12958070272}
+{"step": 2320, "loss": 0.014143344946205616, "examples": 2320, "session_seconds": 2928.8535411699995, "peak_vram_bytes": 12958070272}
+{"step": 2330, "loss": 0.014338906854391098, "examples": 2330, "session_seconds": 2941.825410578007, "peak_vram_bytes": 12958070272}
+{"step": 2340, "loss": 0.013591676950454712, "examples": 2340, "session_seconds": 2954.7656094730046, "peak_vram_bytes": 12958070272}
+{"step": 2350, "loss": 0.013553382828831673, "examples": 2350, "session_seconds": 2968.221403072006, "peak_vram_bytes": 12958070272}
+{"step": 2360, "loss": 0.18356108665466309, "examples": 2360, "session_seconds": 2981.2683598239964, "peak_vram_bytes": 12958070272}
+{"step": 2370, "loss": 0.05284338817000389, "examples": 2370, "session_seconds": 2993.719468698997, "peak_vram_bytes": 12958070272}
+{"step": 2380, "loss": 0.013960505835711956, "examples": 2380, "session_seconds": 3005.990856518998, "peak_vram_bytes": 12958070272}
+{"step": 2390, "loss": 0.016153251752257347, "examples": 2390, "session_seconds": 3018.283374004008, "peak_vram_bytes": 12958070272}
+{"step": 2400, "loss": 0.016140419989824295, "examples": 2400, "session_seconds": 3030.586220124009, "peak_vram_bytes": 12958070272}
+{"step": 2410, "loss": 0.013673597015440464, "examples": 2410, "session_seconds": 3043.6738884320075, "peak_vram_bytes": 12958070272}
+{"step": 2420, "loss": 0.022975075989961624, "examples": 2420, "session_seconds": 3056.0291128160025, "peak_vram_bytes": 12958070272}
+{"step": 2430, "loss": 13.32154369354248, "examples": 2430, "session_seconds": 3068.907966833998, "peak_vram_bytes": 12958070272}
+{"step": 2440, "loss": 0.01637621596455574, "examples": 2440, "session_seconds": 3081.854832669007, "peak_vram_bytes": 12958070272}
+{"step": 2450, "loss": 0.013841923326253891, "examples": 2450, "session_seconds": 3094.874236710006, "peak_vram_bytes": 12958070272}
+{"step": 2460, "loss": 0.013884968124330044, "examples": 2460, "session_seconds": 3107.738562657003, "peak_vram_bytes": 12958070272}
+{"step": 2470, "loss": 0.013974396511912346, "examples": 2470, "session_seconds": 3120.301969209002, "peak_vram_bytes": 12958070272}
+{"step": 2480, "loss": 0.013769084587693214, "examples": 2480, "session_seconds": 3132.5616057630104, "peak_vram_bytes": 12958070272}
+{"step": 2490, "loss": 0.013591011986136436, "examples": 2490, "session_seconds": 3144.907095825998, "peak_vram_bytes": 12958070272}
+{"step": 2500, "loss": 0.013611402362585068, "examples": 2500, "session_seconds": 3157.3171214339964, "peak_vram_bytes": 12958070272}
+{"step": 2510, "loss": 0.014424996450543404, "examples": 2510, "session_seconds": 3170.4165617370018, "peak_vram_bytes": 12958070272}
+{"step": 2520, "loss": 0.013891725800931454, "examples": 2520, "session_seconds": 3182.7826155770017, "peak_vram_bytes": 12958070272}
+{"step": 2530, "loss": 0.013724017888307571, "examples": 2530, "session_seconds": 3195.1388155260065, "peak_vram_bytes": 12958070272}
+{"step": 2540, "loss": 0.013706364668905735, "examples": 2540, "session_seconds": 3207.847105617009, "peak_vram_bytes": 12958070272}
+{"step": 2550, "loss": 0.01360213104635477, "examples": 2550, "session_seconds": 3220.405839672996, "peak_vram_bytes": 12958070272}
+{"step": 2560, "loss": 0.013600855134427547, "examples": 2560, "session_seconds": 3233.002918726008, "peak_vram_bytes": 12958070272}
+{"step": 2570, "loss": 0.013548395596444607, "examples": 2570, "session_seconds": 3245.7532522289985, "peak_vram_bytes": 12958070272}
+{"step": 2580, "loss": 0.013672159053385258, "examples": 2580, "session_seconds": 3258.3286906740104, "peak_vram_bytes": 12958070272}
+{"step": 2590, "loss": 0.015543715097010136, "examples": 2590, "session_seconds": 3270.776221811, "peak_vram_bytes": 12958070272}
+{"step": 2600, "loss": 0.013512193225324154, "examples": 2600, "session_seconds": 3283.3336791309994, "peak_vram_bytes": 12958070272}
+{"step": 2610, "loss": 0.013460581190884113, "examples": 2610, "session_seconds": 3296.724759955003, "peak_vram_bytes": 12958070272}
+{"step": 2620, "loss": 0.013604745268821716, "examples": 2620, "session_seconds": 3309.2659974280105, "peak_vram_bytes": 12958070272}
+{"step": 2630, "loss": 0.015720264986157417, "examples": 2630, "session_seconds": 3321.7487163390033, "peak_vram_bytes": 12958070272}
+{"step": 2640, "loss": 0.013442160561680794, "examples": 2640, "session_seconds": 3334.195922487008, "peak_vram_bytes": 12958070272}
+{"step": 2650, "loss": 0.01428233366459608, "examples": 2650, "session_seconds": 3346.6081174840074, "peak_vram_bytes": 12958070272}
+{"step": 2660, "loss": 0.013410971499979496, "examples": 2660, "session_seconds": 3358.930191068008, "peak_vram_bytes": 12958070272}
+{"step": 2670, "loss": 0.01341719925403595, "examples": 2670, "session_seconds": 3371.4127019279986, "peak_vram_bytes": 12958070272}
+{"step": 2680, "loss": 0.01370482612401247, "examples": 2680, "session_seconds": 3383.6647161370056, "peak_vram_bytes": 12958070272}
+{"step": 2690, "loss": 0.015235643833875656, "examples": 2690, "session_seconds": 3395.9106230920006, "peak_vram_bytes": 12958070272}
+{"step": 2700, "loss": 0.016768410801887512, "examples": 2700, "session_seconds": 3408.253140767003, "peak_vram_bytes": 12958070272}
+{"step": 2710, "loss": 0.013423997908830643, "examples": 2710, "session_seconds": 3421.3194688130025, "peak_vram_bytes": 12958070272}
+{"step": 2720, "loss": 15.49315357208252, "examples": 2720, "session_seconds": 3433.5839719060023, "peak_vram_bytes": 12958070272}
+{"step": 2730, "loss": 0.013583126477897167, "examples": 2730, "session_seconds": 3446.0181794579985, "peak_vram_bytes": 12958070272}
+{"step": 2740, "loss": 0.018217669799923897, "examples": 2740, "session_seconds": 3458.9214202389994, "peak_vram_bytes": 12958070272}
+{"step": 2750, "loss": 0.013513174839317799, "examples": 2750, "session_seconds": 3471.862582724003, "peak_vram_bytes": 12958070272}
+{"step": 2760, "loss": 0.013966169208288193, "examples": 2760, "session_seconds": 3484.7943336910103, "peak_vram_bytes": 12958070272}
+{"step": 2770, "loss": 0.014160605147480965, "examples": 2770, "session_seconds": 3497.787173634002, "peak_vram_bytes": 12958070272}
+{"step": 2780, "loss": 0.016567831858992577, "examples": 2780, "session_seconds": 3510.644751689004, "peak_vram_bytes": 12958070272}
+{"step": 2790, "loss": 0.01344776526093483, "examples": 2790, "session_seconds": 3523.512853555003, "peak_vram_bytes": 12958070272}
+{"step": 2800, "loss": 0.014416566118597984, "examples": 2800, "session_seconds": 3536.497912067003, "peak_vram_bytes": 12958070272}
+{"step": 2810, "loss": 5.118432998657227, "examples": 2810, "session_seconds": 3550.5402680080006, "peak_vram_bytes": 12958070272}
+{"step": 2820, "loss": 0.015573112294077873, "examples": 2820, "session_seconds": 3563.458425503006, "peak_vram_bytes": 12958070272}
+{"step": 2830, "loss": 0.013403843156993389, "examples": 2830, "session_seconds": 3576.4434680470004, "peak_vram_bytes": 12958070272}
+{"step": 2840, "loss": 0.01351489033550024, "examples": 2840, "session_seconds": 3589.384579316, "peak_vram_bytes": 12958070272}
+{"step": 2850, "loss": 0.04302817955613136, "examples": 2850, "session_seconds": 3601.689495658007, "peak_vram_bytes": 12958070272}
+{"step": 2860, "loss": 0.013739391230046749, "examples": 2860, "session_seconds": 3613.948515406999, "peak_vram_bytes": 12958070272}
+{"step": 2870, "loss": 0.013603267259895802, "examples": 2870, "session_seconds": 3626.752620503001, "peak_vram_bytes": 12958070272}
+{"step": 2880, "loss": 0.02151297777891159, "examples": 2880, "session_seconds": 3639.332558987997, "peak_vram_bytes": 12958070272}
+{"step": 2890, "loss": 0.013424452394247055, "examples": 2890, "session_seconds": 3651.886271812007, "peak_vram_bytes": 12958070272}
+{"step": 2900, "loss": 0.013498409651219845, "examples": 2900, "session_seconds": 3664.594951292005, "peak_vram_bytes": 12958070272}
+{"step": 2910, "loss": 0.013402224518358707, "examples": 2910, "session_seconds": 3677.619137656002, "peak_vram_bytes": 12958070272}
+{"step": 2920, "loss": 7.996580123901367, "examples": 2920, "session_seconds": 3690.2328219670017, "peak_vram_bytes": 12958070272}
+{"step": 2930, "loss": 0.013512293808162212, "examples": 2930, "session_seconds": 3702.49733460501, "peak_vram_bytes": 12958070272}
+{"step": 2940, "loss": 0.013405030593276024, "examples": 2940, "session_seconds": 3715.3762114940037, "peak_vram_bytes": 12958070272}
+{"step": 2950, "loss": 0.01350446604192257, "examples": 2950, "session_seconds": 3728.966131870009, "peak_vram_bytes": 12958070272}
+{"step": 2960, "loss": 0.013434263877570629, "examples": 2960, "session_seconds": 3741.891434188001, "peak_vram_bytes": 12958070272}
+{"step": 2970, "loss": 0.015459408983588219, "examples": 2970, "session_seconds": 3754.7805576310056, "peak_vram_bytes": 12958070272}
+{"step": 2980, "loss": 0.014960510656237602, "examples": 2980, "session_seconds": 3767.612900387001, "peak_vram_bytes": 12958070272}
+{"step": 2990, "loss": 0.01356617733836174, "examples": 2990, "session_seconds": 3779.8969683879986, "peak_vram_bytes": 12958070272}
+{"step": 3000, "loss": 0.013742193579673767, "examples": 3000, "session_seconds": 3792.131227617996, "peak_vram_bytes": 12958070272}
+{"step": 3010, "loss": 0.013660436496138573, "examples": 3010, "session_seconds": 3804.933094339998, "peak_vram_bytes": 12958070272}
+{"step": 3020, "loss": 16.619983673095703, "examples": 3020, "session_seconds": 3817.5651559690014, "peak_vram_bytes": 12958070272}
+{"step": 3030, "loss": 0.013455905951559544, "examples": 3030, "session_seconds": 3829.7995773540024, "peak_vram_bytes": 12958070272}
+{"step": 3040, "loss": 0.015107344835996628, "examples": 3040, "session_seconds": 3842.6516338200017, "peak_vram_bytes": 12958070272}
+{"step": 3050, "loss": 0.013417251408100128, "examples": 3050, "session_seconds": 3855.515671842004, "peak_vram_bytes": 12958070272}
+{"step": 3060, "loss": 0.21308107674121857, "examples": 3060, "session_seconds": 3868.513128375009, "peak_vram_bytes": 12958070272}
+{"step": 3070, "loss": 0.015545714646577835, "examples": 3070, "session_seconds": 3881.3535822880076, "peak_vram_bytes": 12958070272}
+{"step": 3080, "loss": 0.013500888831913471, "examples": 3080, "session_seconds": 3893.6707123810047, "peak_vram_bytes": 12958070272}
+{"step": 3090, "loss": 11.196446418762207, "examples": 3090, "session_seconds": 3906.3455834900087, "peak_vram_bytes": 12958070272}
+{"step": 3100, "loss": 6.015961647033691, "examples": 3100, "session_seconds": 3918.6594229309994, "peak_vram_bytes": 12958070272}
+{"step": 3110, "loss": 0.01801791600883007, "examples": 3110, "session_seconds": 3931.6911640769977, "peak_vram_bytes": 12958070272}
+{"step": 3120, "loss": 0.014160001650452614, "examples": 3120, "session_seconds": 3944.3098335920076, "peak_vram_bytes": 12958070272}
+{"step": 3130, "loss": 0.014209282584488392, "examples": 3130, "session_seconds": 3956.8737940810097, "peak_vram_bytes": 12958070272}
+{"step": 3140, "loss": 0.016688147559762, "examples": 3140, "session_seconds": 3969.633952899996, "peak_vram_bytes": 12958070272}
+{"step": 3150, "loss": 0.014709977433085442, "examples": 3150, "session_seconds": 3982.4681187670067, "peak_vram_bytes": 12958070272}
+{"step": 3160, "loss": 0.017424333840608597, "examples": 3160, "session_seconds": 3995.219993427003, "peak_vram_bytes": 12958070272}
+{"step": 3170, "loss": 0.016569020226597786, "examples": 3170, "session_seconds": 4007.7483599230036, "peak_vram_bytes": 12958070272}
+{"step": 3180, "loss": 12.161865234375, "examples": 3180, "session_seconds": 4020.6136494960083, "peak_vram_bytes": 12958070272}
+{"step": 3190, "loss": 0.013712632469832897, "examples": 3190, "session_seconds": 4033.520693084007, "peak_vram_bytes": 12958070272}
+{"step": 3200, "loss": 0.015116481110453606, "examples": 3200, "session_seconds": 4046.417266864999, "peak_vram_bytes": 12958070272}
+{"step": 3210, "loss": 0.01368480734527111, "examples": 3210, "session_seconds": 4059.6317715490004, "peak_vram_bytes": 12958070272}
+{"step": 3220, "loss": 0.014076661318540573, "examples": 3220, "session_seconds": 4072.770559425, "peak_vram_bytes": 12958070272}
+{"step": 3230, "loss": 0.016323642805218697, "examples": 3230, "session_seconds": 4085.709421143998, "peak_vram_bytes": 12958070272}
+{"step": 3240, "loss": 0.021257929503917694, "examples": 3240, "session_seconds": 4098.739040943998, "peak_vram_bytes": 12958070272}
+{"step": 3250, "loss": 0.01353618036955595, "examples": 3250, "session_seconds": 4111.235356521996, "peak_vram_bytes": 12958070272}
+{"step": 3260, "loss": 0.014015148393809795, "examples": 3260, "session_seconds": 4123.70928789601, "peak_vram_bytes": 12958070272}
+{"step": 3270, "loss": 0.021259861066937447, "examples": 3270, "session_seconds": 4136.414952923005, "peak_vram_bytes": 12958070272}
+{"step": 3280, "loss": 17.21036720275879, "examples": 3280, "session_seconds": 4148.9834754370095, "peak_vram_bytes": 12958070272}
+{"step": 3290, "loss": 0.014050088822841644, "examples": 3290, "session_seconds": 4161.907752594998, "peak_vram_bytes": 12958070272}
+{"step": 3300, "loss": 0.014856119640171528, "examples": 3300, "session_seconds": 4174.524445215007, "peak_vram_bytes": 12958070272}
+{"step": 3310, "loss": 0.014789010398089886, "examples": 3310, "session_seconds": 4187.694961223999, "peak_vram_bytes": 12958070272}
+{"step": 3320, "loss": 0.013387543149292469, "examples": 3320, "session_seconds": 4200.235968965004, "peak_vram_bytes": 12958070272}
+{"step": 3330, "loss": 0.013385646976530552, "examples": 3330, "session_seconds": 4212.705069108008, "peak_vram_bytes": 12958070272}
+{"step": 3340, "loss": 0.01349329762160778, "examples": 3340, "session_seconds": 4225.208071027999, "peak_vram_bytes": 12958070272}
+{"step": 3350, "loss": 0.013374113477766514, "examples": 3350, "session_seconds": 4237.756146347005, "peak_vram_bytes": 12958070272}
+{"step": 3360, "loss": 0.013392076827585697, "examples": 3360, "session_seconds": 4250.647261801001, "peak_vram_bytes": 12958070272}
+{"step": 3370, "loss": 0.013541103340685368, "examples": 3370, "session_seconds": 4263.230677965999, "peak_vram_bytes": 12958070272}
+{"step": 3380, "loss": 0.014751455746591091, "examples": 3380, "session_seconds": 4275.90181506901, "peak_vram_bytes": 12958070272}
+{"step": 3390, "loss": 0.013639775104820728, "examples": 3390, "session_seconds": 4288.564127543999, "peak_vram_bytes": 12958070272}
+{"step": 3400, "loss": 0.014551054686307907, "examples": 3400, "session_seconds": 4301.115278829006, "peak_vram_bytes": 12958070272}
+{"step": 3410, "loss": 1.373396873474121, "examples": 3410, "session_seconds": 4314.235575742001, "peak_vram_bytes": 12958070272}
+{"step": 3420, "loss": 0.013398868031799793, "examples": 3420, "session_seconds": 4326.789448761003, "peak_vram_bytes": 12958070272}
+{"step": 3430, "loss": 0.013491300866007805, "examples": 3430, "session_seconds": 4339.547264556997, "peak_vram_bytes": 12958070272}
+{"step": 3440, "loss": 0.023275204002857208, "examples": 3440, "session_seconds": 4351.983907710004, "peak_vram_bytes": 12958070272}
+{"step": 3450, "loss": 13.198646545410156, "examples": 3450, "session_seconds": 4364.693680160999, "peak_vram_bytes": 12958070272}
+{"step": 3460, "loss": 0.026774559170007706, "examples": 3460, "session_seconds": 4377.2828280770045, "peak_vram_bytes": 12958070272}
+{"step": 3470, "loss": 0.01400562934577465, "examples": 3470, "session_seconds": 4389.860425876002, "peak_vram_bytes": 12958070272}
+{"step": 3480, "loss": 0.025708172470331192, "examples": 3480, "session_seconds": 4402.357882979006, "peak_vram_bytes": 12958070272}
+{"step": 3490, "loss": 0.027956129983067513, "examples": 3490, "session_seconds": 4415.449456337999, "peak_vram_bytes": 12958070272}
+{"step": 3500, "loss": 0.01424021739512682, "examples": 3500, "session_seconds": 4428.119371502005, "peak_vram_bytes": 12958070272}
+{"step": 3510, "loss": 0.01417518313974142, "examples": 3510, "session_seconds": 4441.246653862996, "peak_vram_bytes": 12958070272}
+{"step": 3520, "loss": 0.015795979648828506, "examples": 3520, "session_seconds": 4453.907854012999, "peak_vram_bytes": 12958070272}
+{"step": 3530, "loss": 0.013825812377035618, "examples": 3530, "session_seconds": 4466.754326580005, "peak_vram_bytes": 12958070272}
+{"step": 3540, "loss": 0.015571543015539646, "examples": 3540, "session_seconds": 4479.404530448999, "peak_vram_bytes": 12958070272}
+{"step": 3550, "loss": 0.013787002302706242, "examples": 3550, "session_seconds": 4492.047684785008, "peak_vram_bytes": 12958070272}
+{"step": 3560, "loss": 0.013647816143929958, "examples": 3560, "session_seconds": 4505.648851541002, "peak_vram_bytes": 12958070272}
+{"step": 3570, "loss": 11.300030708312988, "examples": 3570, "session_seconds": 4518.600407908001, "peak_vram_bytes": 12958070272}
+{"step": 3580, "loss": 13.377455711364746, "examples": 3580, "session_seconds": 4531.346382668999, "peak_vram_bytes": 12958070272}
+{"step": 3590, "loss": 0.015346718952059746, "examples": 3590, "session_seconds": 4544.323070993996, "peak_vram_bytes": 12958070272}
+{"step": 3600, "loss": 0.014038008637726307, "examples": 3600, "session_seconds": 4557.147689532998, "peak_vram_bytes": 12958070272}
+{"step": 3610, "loss": 0.018532121554017067, "examples": 3610, "session_seconds": 4570.409320382998, "peak_vram_bytes": 12958070272}
+{"step": 3620, "loss": 0.22009748220443726, "examples": 3620, "session_seconds": 4582.843976057004, "peak_vram_bytes": 12958070272}
+{"step": 3630, "loss": 0.015013299882411957, "examples": 3630, "session_seconds": 4595.814079306001, "peak_vram_bytes": 12958070272}
+{"step": 3640, "loss": 9.524704933166504, "examples": 3640, "session_seconds": 4608.266334708009, "peak_vram_bytes": 12958070272}
+{"step": 3650, "loss": 0.0655202642083168, "examples": 3650, "session_seconds": 4620.771456344999, "peak_vram_bytes": 12958070272}
+{"step": 3660, "loss": 0.013639911077916622, "examples": 3660, "session_seconds": 4633.258947884009, "peak_vram_bytes": 12958070272}
+{"step": 3670, "loss": 0.013515051454305649, "examples": 3670, "session_seconds": 4646.072071927003, "peak_vram_bytes": 12958070272}
+{"step": 3680, "loss": 0.013558448292315006, "examples": 3680, "session_seconds": 4658.5825647220045, "peak_vram_bytes": 12958070272}
+{"step": 3690, "loss": 3.5688531398773193, "examples": 3690, "session_seconds": 4671.453975375, "peak_vram_bytes": 12958070272}
+{"step": 3700, "loss": 0.01361866295337677, "examples": 3700, "session_seconds": 4683.97377115101, "peak_vram_bytes": 12958070272}
+{"step": 3710, "loss": 13.118663787841797, "examples": 3710, "session_seconds": 4696.839582931003, "peak_vram_bytes": 12958070272}
+{"step": 3720, "loss": 0.013808732852339745, "examples": 3720, "session_seconds": 4709.074357933001, "peak_vram_bytes": 12958070272}
+{"step": 3730, "loss": 0.013747844845056534, "examples": 3730, "session_seconds": 4721.34583381901, "peak_vram_bytes": 12958070272}
+{"step": 3740, "loss": 0.01386324968189001, "examples": 3740, "session_seconds": 4733.635167115004, "peak_vram_bytes": 12958070272}
+{"step": 3750, "loss": 0.03266007453203201, "examples": 3750, "session_seconds": 4745.942554487003, "peak_vram_bytes": 12958070272}
+{"step": 3760, "loss": 0.015183850191533566, "examples": 3760, "session_seconds": 4758.548741132006, "peak_vram_bytes": 12958070272}
+{"step": 3770, "loss": 0.014152330346405506, "examples": 3770, "session_seconds": 4770.872517753, "peak_vram_bytes": 12958070272}
+{"step": 3780, "loss": 0.030295006930828094, "examples": 3780, "session_seconds": 4783.1026017179975, "peak_vram_bytes": 12958070272}
+{"step": 3790, "loss": 16.21919059753418, "examples": 3790, "session_seconds": 4795.495679496002, "peak_vram_bytes": 12958070272}
+{"step": 3800, "loss": 0.02007344178855419, "examples": 3800, "session_seconds": 4807.854436851005, "peak_vram_bytes": 12958070272}
+{"step": 3810, "loss": 0.013699655421078205, "examples": 3810, "session_seconds": 4820.752066034009, "peak_vram_bytes": 12958070272}
+{"step": 3820, "loss": 16.482711791992188, "examples": 3820, "session_seconds": 4833.069697113999, "peak_vram_bytes": 12958070272}
+{"step": 3830, "loss": 0.013536212965846062, "examples": 3830, "session_seconds": 4845.706435043001, "peak_vram_bytes": 12958070272}
+{"step": 3840, "loss": 0.01412988267838955, "examples": 3840, "session_seconds": 4858.0102699940035, "peak_vram_bytes": 12958070272}
+{"step": 3850, "loss": 0.060429222881793976, "examples": 3850, "session_seconds": 4870.392658344004, "peak_vram_bytes": 12958070272}
+{"step": 3860, "loss": 0.01434827409684658, "examples": 3860, "session_seconds": 4883.396038822, "peak_vram_bytes": 12958070272}
+{"step": 3870, "loss": 0.014378662221133709, "examples": 3870, "session_seconds": 4895.93294439801, "peak_vram_bytes": 12958070272}
+{"step": 3880, "loss": 0.10681493580341339, "examples": 3880, "session_seconds": 4908.280720584007, "peak_vram_bytes": 12958070272}
+{"step": 3890, "loss": 0.013818895444273949, "examples": 3890, "session_seconds": 4920.6349549870065, "peak_vram_bytes": 12958070272}
+{"step": 3900, "loss": 0.013847838155925274, "examples": 3900, "session_seconds": 4933.263251625001, "peak_vram_bytes": 12958070272}
+{"step": 3910, "loss": 0.014183931984007359, "examples": 3910, "session_seconds": 4946.204541457002, "peak_vram_bytes": 12958070272}
+{"step": 3920, "loss": 14.85828685760498, "examples": 3920, "session_seconds": 4958.649935349997, "peak_vram_bytes": 12958070272}
+{"step": 3930, "loss": 0.013515686616301537, "examples": 3930, "session_seconds": 4971.104799776003, "peak_vram_bytes": 12958070272}
+{"step": 3940, "loss": 0.014471798203885555, "examples": 3940, "session_seconds": 4983.62385332401, "peak_vram_bytes": 12958070272}
+{"step": 3950, "loss": 0.01359201967716217, "examples": 3950, "session_seconds": 4997.17688772401, "peak_vram_bytes": 12958070272}
+{"step": 3960, "loss": 0.013771823607385159, "examples": 3960, "session_seconds": 5010.082149280002, "peak_vram_bytes": 12958070272}
+{"step": 3970, "loss": 0.01350422203540802, "examples": 3970, "session_seconds": 5022.954326851002, "peak_vram_bytes": 12958070272}
+{"step": 3980, "loss": 0.016378561034798622, "examples": 3980, "session_seconds": 5035.833880902006, "peak_vram_bytes": 12958070272}
+{"step": 3990, "loss": 0.013313752599060535, "examples": 3990, "session_seconds": 5048.650229987004, "peak_vram_bytes": 12958070272}
+{"step": 4000, "loss": 0.013354813680052757, "examples": 4000, "session_seconds": 5061.63114330401, "peak_vram_bytes": 12958070272}
+wandb: 
+wandb: Run history:
+wandb:        examples ▁▁▁▁▁▁▂▂▂▂▃▃▃▃▃▃▄▄▄▄▅▅▅▅▅▅▅▅▆▆▆▆▆▆▆▇▇▇██
+wandb:            loss ▁▁▁▂▁▁▁▁▁▁▁▃▁▁▁▁▁█▁▁▁▇▁▁▁▄▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: peak_vram_bytes ▁▁▁▇▇▇▇▇▇▇▇▇▇▇▇▇████████████████████████
+wandb: session_seconds ▁▁▁▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇▇█████
+wandb:            step ▁▁▁▁▁▂▂▂▂▃▃▃▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇██
+wandb: 
+wandb: Run summary:
+wandb:        examples 4000
+wandb:            loss 0.01335
+wandb: peak_vram_bytes 12958070272
+wandb: session_seconds 5061.63114
+wandb:            step 4000
+wandb: 
+wandb: You can sync this run to the cloud by running:
+wandb: wandb sync artifacts/longer-v1/9b/main/seed-33/continued_sft/tracking/wandb/offline-run-20261005_131502-xovy6746
+wandb: Find logs at: artifacts/longer-v1/9b/main/seed-33/continued_sft/tracking/wandb/offline-run-20261005_131502-xovy6746/logs
+{"artifact": "artifacts/longer-v1/9b/main/seed-33/continued_sft/artifact", "elapsed_seconds": 5062.188424549997}

@@ -1,6 +1,6 @@
 # Longer matched training comparison
 
-**Status: running. No results from this batch are claimed yet.** The initial feasibility study remains available in [the results guide](experiments.md). This next comparison uses longer exposure, validation-only learning-rate selection, and the complete official BANKING77 test set.
+**Status: complete.** All 24 tuning runs and 36 main evaluations finished. See the [descriptive results](../results/longer-v1/summary.md); paired inference and broader release gates remain pending. The initial feasibility study remains available in [the results guide](experiments.md). This next comparison uses longer exposure, validation-only learning-rate selection, and the complete official BANKING77 test set.
 
 ## Why fine-tune an already pretrained model?
 

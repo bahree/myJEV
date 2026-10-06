@@ -1,0 +1,9 @@
+{
+  "partition": "validation",
+  "examples": 997,
+  "validation_sha256": "557fbd135aaf844a535f48017de2e808d4e9e5ebf4b540af17f4ee19422586ca",
+  "artifact_revision": "57dc24bf05d61dc9d0b7dfa8c19cfd1763995da48dedd3ea9fbea12926bd8a7e",
+  "accuracy": 0.7903711133400201,
+  "selection_nll": 1.773729010126867,
+  "selection_rule": "highest accuracy; lowest selection NLL; lowest learning rate"
+}

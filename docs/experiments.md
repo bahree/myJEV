@@ -2,6 +2,12 @@
 
 The first milestone asks whether the implementation works and whether the proposed comparisons are worth scaling. It does not establish that confidence-aware RL is better than supervision or post-hoc calibration.
 
+## Completed longer comparison
+
+All three sizes completed the 168,000-update schedule, 24 tuning evaluations and 36 main evaluations on all 3,080 official test examples. The [regenerable summary](../results/longer-v1/summary.md) reports three-seed means, seed SD, deployed confidence and temperature controls. Continued supervision leads mean accuracy at 0.8B; exact RL leads at 4B and 9B. Continued supervision with temperature scaling has lower mean correctness Brier than both RL methods at every size. These are descriptive findings, not paired significance claims or a release selection.
+
+The short pilot below remains separate evidence with different exposure and test size.
+
 ## Scope of the short comparison
 
 Three seeds (11, 22, 33) are used at each size. The initial supervised run receives 100 updates, with one example per update. Continued supervision and each RL branch receive another 100 updates from the seed-matched supervised checkpoint. All use the same fixed random 256-example BANKING77 official-test subset and 256 reserved calibration examples. The 0.8B and 4B runs use BF16 LoRA; 9B uses NF4 QLoRA.

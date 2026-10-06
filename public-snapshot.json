@@ -51,7 +51,7 @@
       "mode": "100644"
     },
     "docs/README.md": {
-      "sha256": "76f3512371441999330832cb5943ad94cc12d8e6e1eb023f6e41b151dc912f21",
+      "sha256": "c5529db5013c191b727b9e4cd9ff91e19faf8746be853222b6f08f6eac9d7dbc",
       "mode": "100644"
     },
     "docs/architecture.md": {
@@ -79,7 +79,7 @@
       "mode": "100644"
     },
     "docs/experiments.md": {
-      "sha256": "a97b9c3b267e83915a5b0b45446029f992f5f0c5fcad28feb658b74baab154ae",
+      "sha256": "a0085baa34304c50a5c3dbba7c07c4ddfe45efb2816d78c5f7e7afac76ece8ab",
       "mode": "100644"
     },
     "docs/hosting.md": {
@@ -91,7 +91,7 @@
       "mode": "100644"
     },
     "docs/learnings.md": {
-      "sha256": "163fb3841dfb997ca14d48d6d4ab50d5d81fa0334199e1c9b6f7f51fb361763d",
+      "sha256": "db6fb2a69da855c4c128ca1133f74c658942bf32a3216e0609c4c50a07f75019",
       "mode": "100644"
     },
     "docs/models.md": {
@@ -111,7 +111,11 @@
       "mode": "100644"
     },
     "docs/roadmap.md": {
-      "sha256": "7269e2e4f737d48a7db4a70f5e039bb118e62c6938005b00a55db183109e21b3",
+      "sha256": "2cc50160a1fa2b5e4bb5ccd8241a22f3c50a5a5cc32a0488024e16b3b920cc0a",
+      "mode": "100644"
+    },
+    "docs/scratch-plan.md": {
+      "sha256": "20d4f8cd146db78aa2190da4421d5acdd7db5ff621d19d9a13b0d6200fb7eb73",
       "mode": "100644"
     },
     "docs/tracking.md": {
@@ -119,7 +123,7 @@
       "mode": "100644"
     },
     "docs/training.md": {
-      "sha256": "0cc116977a2ae05c423a531b6624d07faf84af60f025dbf786b17e907e50bfca",
+      "sha256": "b876b3b53dfb342585875bb9234e34f83a8cb428da12c1743deb2513ce1847a4",
       "mode": "100644"
     },
     "examples/client.py": {
@@ -628,6 +632,1346 @@
     },
     "results/limits-9b.json": {
       "sha256": "3deb81f37e42736991c581dd04e912ac111d309a367def72bc756b7222e7565e",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/continued_sft/artifact-manifest.json": {
+      "sha256": "ef359160d3163c02007925683760550d699151f892386c19df4da06f7b3f70e4",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/continued_sft/evaluation/metrics.json": {
+      "sha256": "42aa893e414361b92ccffb581abdcca1497dbbabd668e0a5e50468c11442204b",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/continued_sft/evaluation/policy-metrics.json": {
+      "sha256": "73288da45687003ab38c795453ed467fb805c3f9c5c0ba8b6f96aeceaf58278e",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/continued_sft/evaluation/scalar-metrics.json": {
+      "sha256": "a0e726594749eb4dacbdfab8ae45247fe9275987d16359fce8798a6fd1c79a6d",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/continued_sft/evaluation/selection-metrics.json": {
+      "sha256": "e70273d1509bc50c614cb3cd9439dcd5c2c58518053c34d2502450b334cdd6ca",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/continued_sft/posthoc/constant-metrics.json": {
+      "sha256": "aaac98242c85fe5a04098716386048a84e215fb29abf9f5bfe083dd788b5dcf5",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/continued_sft/posthoc/half-metrics.json": {
+      "sha256": "9ab273ec1ca136f53c9fdc790b747f1c9adbaecba3f5e919ff2fc0d884a1a46a",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/continued_sft/posthoc/temperature-metrics.json": {
+      "sha256": "f0ae45cf90805c9a87d6431c2fac6ec7ed835670f639aa507b76a71c9c889e3f",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/continued_sft/train.log": {
+      "sha256": "220debc80d8bdf4d5d82bdf1fc634d5ed1a687356abda8e61167440457b0818d",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/continued_sft/training.jsonl": {
+      "sha256": "b00d38e1ad23922d8d00eaf327d51d2a6d549f41e029af7a443754c7cff3955e",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/exact/artifact-manifest.json": {
+      "sha256": "6ee8fef5c84570ca6d88f0defe8c6149dcbceba6d4d2c5130157f0d1a36e17bf",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/exact/evaluation/metrics.json": {
+      "sha256": "4dc87f31068395ab5b094160665566b9aee47fa71f1a95c813ba34e6464bcc3c",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/exact/evaluation/policy-metrics.json": {
+      "sha256": "8dfda08c4f33f444e5984fba000e962b754888dbac892ad578dc54108ed8a7db",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/exact/evaluation/scalar-metrics.json": {
+      "sha256": "2045f794591ea3f8180cee4323fe504fb214f862d06898d08d7f09988b6210f0",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/exact/evaluation/selection-metrics.json": {
+      "sha256": "98799e6e2510f136ff41ec044d134e6471b4c36d2f04ce49ee96261afda0f72f",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/exact/train.log": {
+      "sha256": "a971413cbe608b88c82d343cda843bd3c6cd7319131ed638957c347773e3413c",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/exact/training.jsonl": {
+      "sha256": "13cf20fd3dc5488b270ddbd9cc037a2f0a897bb90dfe1d39384d2291d88772df",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/sampled/artifact-manifest.json": {
+      "sha256": "d9c12b47840185b73204d9006094289d79248c4c6ab8b3590b467c868eebe572",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/sampled/evaluation/metrics.json": {
+      "sha256": "b7aa46467b2b1c15819d11324fe9327dff278602d2825bba73d62b963c11f49c",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/sampled/evaluation/policy-metrics.json": {
+      "sha256": "4eda150a3467f50a9a7e32b90ae7956d3d126502f03bd8831ae1acd4ca19e835",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/sampled/evaluation/scalar-metrics.json": {
+      "sha256": "f27fc0066688f459a977d7ad8c5697b1981d10007a691cb7f886f85ae8e4deab",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/sampled/evaluation/selection-metrics.json": {
+      "sha256": "fefabe58d0bb119f19ee38757ebba4eafbd211577e16dc8db306adc12b569246",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/sampled/train.log": {
+      "sha256": "31c1028dbb03ee5f4e18b6278ae5e3e606e312218c765f93efcb5c8263cc9c74",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/sampled/training.jsonl": {
+      "sha256": "ac47fb79c16d912bd95d81c60a0f906138f4644086993a212f12583babb26279",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/sft/artifact-manifest.json": {
+      "sha256": "e1febefbe38b0b2bfe2ed37ef7fa34a96705f7143d9ae1d2de81b50ce3d3c264",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/sft/evaluation/metrics.json": {
+      "sha256": "129f08f7a53e2813b7ac589543e4365fb6b2188a49ee923c4722f6498c6761fb",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/sft/evaluation/policy-metrics.json": {
+      "sha256": "f1f6293307338cf4938a44d6fa4c26e3dbfae06ef46296140515f408df26d666",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/sft/evaluation/scalar-metrics.json": {
+      "sha256": "075b56e4bbd3d634cb49e865f9ec9845b8393db186af409ef4136715c5cf8692",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/sft/evaluation/selection-metrics.json": {
+      "sha256": "f76fe13832a38857e2171796b0a880159e85215f220df207a709fb0e0df1d85c",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/sft/posthoc/constant-metrics.json": {
+      "sha256": "116095fdf9f877370f869d5910d32ce6ce3e1f4185c5700122a5c956a01e5a89",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/sft/posthoc/half-metrics.json": {
+      "sha256": "4e6d4fedf4abf0e8b2df5eb23538e793d2e603979152917be2a4ea3784adee8e",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/sft/posthoc/temperature-metrics.json": {
+      "sha256": "b44a6b7a54c6143d02963db2d8c78848fd133faf8ea5ccf9f0dc4ba0425a9ed4",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/sft/train.log": {
+      "sha256": "260a218735157c70c02c26dba3d20c282a27b36e7f560b94581ba9abf9fb2e48",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-11/sft/training.jsonl": {
+      "sha256": "41ef2f34068273fdea00abf81cced3ae6a4526fa308a78097862e6040c5c9a8e",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/continued_sft/artifact-manifest.json": {
+      "sha256": "9aca370e51e817d2f06f8c99913eb1146d3fbe56995deb46b77e4f1d0a4804eb",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/continued_sft/evaluation/metrics.json": {
+      "sha256": "60765f29a123698d62b0f86e5ea173f969746d1e5ac2f0eb6c4358d1a1dfe8ec",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/continued_sft/evaluation/policy-metrics.json": {
+      "sha256": "37604ae5a86f4a0bb58b75c52b6da42555c89734a545a94e812887d41d93b4cf",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/continued_sft/evaluation/scalar-metrics.json": {
+      "sha256": "80e26c57299045763c8a5e6e113c22b4cedba7bf18545d081bbc6a10161d4ddd",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/continued_sft/evaluation/selection-metrics.json": {
+      "sha256": "228dc62bf273fc6cec582cc653058b8d54c5fe71164fbab82156a76ce940135a",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/continued_sft/posthoc/constant-metrics.json": {
+      "sha256": "80c1853d0a450de48f74303cc9a8e0e018cf76fbc45bfc4868ff19aa38950cd9",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/continued_sft/posthoc/half-metrics.json": {
+      "sha256": "4ae7ce2eb140038bdfba6d6c447b238d95f9dfe48e68cc3b5ab8ed56d251e0b1",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/continued_sft/posthoc/temperature-metrics.json": {
+      "sha256": "e45523429bd8b36f228f32dcb242da3239873af76e73b7b29a68828e177f05b7",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/continued_sft/train.log": {
+      "sha256": "6d60c98548baa3b1a268b596096adb4658d33a1e0d4b43bac0bbc27aaa742202",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/continued_sft/training.jsonl": {
+      "sha256": "b497bc2e7ac5bcf383908dcf09dba085bdb3f65fc4e4a93d5174e2e463a283cb",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/exact/artifact-manifest.json": {
+      "sha256": "b972bcc8123221e19bac5415ef2580c467ffa85035d4b0c008256082e9e9eb67",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/exact/evaluation/metrics.json": {
+      "sha256": "da42c828c1227fcad931099eb61ea216898a715cf4d0712afbe4039d84b3564c",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/exact/evaluation/policy-metrics.json": {
+      "sha256": "1cffd02ffbb7beb4d8d0677faefcf322d1fedc884ccf89009457c4d5414fa360",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/exact/evaluation/scalar-metrics.json": {
+      "sha256": "c4e2be84a448dfab6c5c901c0f0d12308e889a47b9c0c2387e72e61c4dbed668",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/exact/evaluation/selection-metrics.json": {
+      "sha256": "07c15e4e7b7f277305c50a0ab603e60a385e33bb0e0f5bc69d6fa5b557c47445",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/exact/train.log": {
+      "sha256": "fbf77778c834bab598bba98ed65f35049786268b279f77a4d09c5312a4b020db",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/exact/training.jsonl": {
+      "sha256": "d141d578d67249a7ebf22b6fad1354be6e204263f4601e718702ee64fc571d83",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/sampled/artifact-manifest.json": {
+      "sha256": "59e0fa2fe1905413ccbe3230d789d0804047386010ddfb26d4b0c0ab81159009",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/sampled/evaluation/metrics.json": {
+      "sha256": "cd2e624837d61147c9a6f3f0fa76eb4e008db8a859e4236867292a4a1628972e",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/sampled/evaluation/policy-metrics.json": {
+      "sha256": "1202277fadf637b2985fa7aa6356ef88a5261da3b19ab0988288c64d330a269e",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/sampled/evaluation/scalar-metrics.json": {
+      "sha256": "81b7d13b2e827a80942fb1861d29169a8b11acbb9d9b989e2d657b55b8f54e89",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/sampled/evaluation/selection-metrics.json": {
+      "sha256": "f1d86c753a435ef81c217ff9bc86d65267f828cb935ce63d87c974c43ee1c75f",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/sampled/train.log": {
+      "sha256": "a1e4a4319c389012dc5d3266cd8758140b8324f769141011968b03ac6ed0d771",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/sampled/training.jsonl": {
+      "sha256": "040a72f0180fc30693662c3662238768c6ddf9ae9ecbc91aad54cc21fef9e5a1",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/sft/artifact-manifest.json": {
+      "sha256": "7b75646fe0388e419af868de8fe3a1c5d46e4c83391110571fb676ac661946f8",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/sft/evaluation/metrics.json": {
+      "sha256": "9ad6a42ac6bf32f96ace326ce8a607549a7158dd70b0c23432499ee1c0f32eed",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/sft/evaluation/policy-metrics.json": {
+      "sha256": "cc0dcd3b6e721c491ba2ee36c76dc1657e2cff15ee8b6b8a8a91bdad4cc83929",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/sft/evaluation/scalar-metrics.json": {
+      "sha256": "0068e8a691d579d275ca97e695371350dd3dc31da7dfea18fcc5bf49f8f9624b",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/sft/evaluation/selection-metrics.json": {
+      "sha256": "360af8fb1c76f92c19c69d646a3e2337c46521ad7ad8a49910c5da324a58b71c",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/sft/posthoc/constant-metrics.json": {
+      "sha256": "fc26c43176faf56112e0eb5623125a31b944c3f795126f8e25f65277a2cc4471",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/sft/posthoc/half-metrics.json": {
+      "sha256": "6d5778a7458d256ca343dce1f3d66d08fd52bb88fa116c4db25df3238a442ad4",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/sft/posthoc/temperature-metrics.json": {
+      "sha256": "f364add3e97ae5d38dcd5d1f834555bed0edcc4b5463b02430f94e293b2ac205",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/sft/train.log": {
+      "sha256": "e5fe7720ea639539f5f0298c29caba6faf215fa7b0a882348c59aaefc2e42444",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-22/sft/training.jsonl": {
+      "sha256": "761046765830b862d305463a9e52447bb574cc6d949f6a4184d28b48edbe5667",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/continued_sft/artifact-manifest.json": {
+      "sha256": "87769f5160369b924ae879fb08243f57d31b29de38b5f9a4e42691556849cc1b",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/continued_sft/evaluation/metrics.json": {
+      "sha256": "6696b6c70eeb24a4f23145d986bd125f39611b65bfb2d0c1a3534ec450848a61",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/continued_sft/evaluation/policy-metrics.json": {
+      "sha256": "4149483531bc8ff620833a73a96230b305fa13c563b2b9d0df3fe8bcdaf5af0a",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/continued_sft/evaluation/scalar-metrics.json": {
+      "sha256": "ed14f49fc4c04ad3d65410bc98d4fd7bee50b1bf8839f80bfb813addff8da86f",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/continued_sft/evaluation/selection-metrics.json": {
+      "sha256": "b4bcbf498fcc6da711bee4bf5949635eaacd242ff18f7b4ce56a51a9e00d24e4",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/continued_sft/posthoc/constant-metrics.json": {
+      "sha256": "89f6cbedeb5ef7ba932dda8eb949b79323fc5ff9031059fd84990d708289b298",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/continued_sft/posthoc/half-metrics.json": {
+      "sha256": "f746e30737b9f099c29b85bdff320daf0b67e6ea3dae9ab790c7db044061009f",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/continued_sft/posthoc/temperature-metrics.json": {
+      "sha256": "802d1d6db0d7083b4199d3af6d1830d339ffdc9e9ee79b6cef660de7a4244845",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/continued_sft/train.log": {
+      "sha256": "1e965e0b385d28bf66a357873e96363a366812222e7aa2f7c85339ba668917d7",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/continued_sft/training.jsonl": {
+      "sha256": "88314be9442e419102bc3cc628741c8e757f004747781a430854ddbbc56f477b",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/exact/artifact-manifest.json": {
+      "sha256": "2efdee64116e5fed056abcd836b763cb67227a87bfd34eca79bcfadcd5e49a32",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/exact/evaluation/metrics.json": {
+      "sha256": "7d46078d67f216147c9971ada1537c2f0405b1785720bcd6d33017f17291522b",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/exact/evaluation/policy-metrics.json": {
+      "sha256": "0845371e59f9331f7e71762e52c0db029eed04ef15a959020f8e93ac901d7bec",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/exact/evaluation/scalar-metrics.json": {
+      "sha256": "7b4e51ad048ad0730c6bd55086d49f35ea82cbaaad46ced4e93ccc35f117d97c",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/exact/evaluation/selection-metrics.json": {
+      "sha256": "dbaf11b8d39af01704006f9799ae8bbb1dd404edbe61f6d35b9e02deca18b7ab",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/exact/train.log": {
+      "sha256": "4a3198c3f12e7b5364ec2802b6ef1e776417b13de7788b29ab427634a4207fa5",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/exact/training.jsonl": {
+      "sha256": "87e5a947ca25260043780068be5db0a0a726b2708ada36796c57831b44f8b810",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/sampled/artifact-manifest.json": {
+      "sha256": "bf06ebea8a55034bd53a1406e04f33f2ecc219b1aa2bdcca4b522e0fe06116b1",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/sampled/evaluation/metrics.json": {
+      "sha256": "9466715b53182a815134c9d77d3873fd01b2bbf7e0985369eb94e496c4955401",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/sampled/evaluation/policy-metrics.json": {
+      "sha256": "17a6d3e4a9612b6b241d8701a765d4fdfe0380269ed770f0308474a13af1b9dd",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/sampled/evaluation/scalar-metrics.json": {
+      "sha256": "0f49fc47aecf4e895ee26a5972dcf496b771705e2ac684690b3d2da2d4e508bd",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/sampled/evaluation/selection-metrics.json": {
+      "sha256": "29bbcb8ffa48127e38bf8ef221afb00fb9a37a128fd8b365c9b3228d1bdc68c7",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/sampled/train.log": {
+      "sha256": "bf0c3b229fcf95fd311598fcf69bb8607fb4782222df4e410fa28689b01cc931",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/sampled/training.jsonl": {
+      "sha256": "46f78e1bba788638e6bca22a15bf6b165b18fc5b4a3e9eb066296b3f67aaee9c",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/sft/artifact-manifest.json": {
+      "sha256": "949f018f6924330fbee3f5a3e23d00ad94915a43acc1f4d97dfb041cc9a41ea1",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/sft/evaluation/metrics.json": {
+      "sha256": "64329350f3376d22586b3c737ae28b9f25aeacbb3e8703347e5c1de4523d8ccf",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/sft/evaluation/policy-metrics.json": {
+      "sha256": "e0c5d12614be66a6852d5acbaaf28aa2f5edef1f19244fc3a50843d30b3cf0f5",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/sft/evaluation/scalar-metrics.json": {
+      "sha256": "9c68ebc1a497d804cabce98ab68978a6ecfbccb420c1a8c76bb29937c3a5e525",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/sft/evaluation/selection-metrics.json": {
+      "sha256": "ec86949eda988c9a6259a9675aa5f78b3ac42a394e5a94b80df27dabb1e2ca48",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/sft/posthoc/constant-metrics.json": {
+      "sha256": "3595c879ac981afc3a9c4f13af3746d38a59ecd6a14869e65a38437501666081",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/sft/posthoc/half-metrics.json": {
+      "sha256": "bec20ab8f95e8d396476a545bd73a7dcd26f9c960b92c36d42943863c64669dc",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/sft/posthoc/temperature-metrics.json": {
+      "sha256": "5379b071612a261056330d9dc38a5a97a55f23e0bf5fcbce0b21b007918dba2e",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/sft/train.log": {
+      "sha256": "3f271e26e96dbf081049c9e4dff5a20d6e45f9dc81aef75cacfada462370aa52",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/main/seed-33/sft/training.jsonl": {
+      "sha256": "cce3257ad491f85c4b1d8b694f100e825aee7044cf027e86bb89a43ac92aee40",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/status.json": {
+      "sha256": "0ba086c0764950e92f7e223864f552f9dc0336d266192d385936aa318031109e",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/tuning/continued_sft/lr-0/validation/metrics.json": {
+      "sha256": "96a11b9e9ab13f3dea5e3ccdd5889f902d10e61cf95a0bf3e91f4d337b196f35",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/tuning/continued_sft/lr-1/validation/metrics.json": {
+      "sha256": "875d5aa69c6656fdc15ae4c987c58125a5b433648dacc7ed5be43645d4aa5d1a",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/tuning/exact/lr-0/validation/metrics.json": {
+      "sha256": "5db4dd6daf5c85234415d68351817e0e1029e9bdfc7601fc7ab2094c83473fca",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/tuning/exact/lr-1/validation/metrics.json": {
+      "sha256": "48c1aa13bb9b9a7efcb2da7b7f7e909c94632f0b80069a3cf38ad5620931e835",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/tuning/sampled/lr-0/validation/metrics.json": {
+      "sha256": "d7bba5ecc05b16960dbe6efec35c6a496e3b5113411f38a54896c94031dd9cb2",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/tuning/sampled/lr-1/validation/metrics.json": {
+      "sha256": "4457b083293d187f9e9bd0918a422dae676a6298dfd25896cbb0b8599c007850",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/tuning/sft/lr-0/validation/metrics.json": {
+      "sha256": "4228b6b07f6376fc89d92bbb6dcdba2fb74bb5b600662b4c299a1522c4648fd8",
+      "mode": "100644"
+    },
+    "results/longer-v1/0.8b/tuning/sft/lr-1/validation/metrics.json": {
+      "sha256": "179248fb4c14baee534034ea479bdc13ce418db4a372e3f5051f2106b2d26380",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/continued_sft/artifact-manifest.json": {
+      "sha256": "52d89a98ae79f5758da650c8fe9ce211a9f7d2500313e7508ea64c33542b0a03",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/continued_sft/evaluation/metrics.json": {
+      "sha256": "84097c4e02463a8be1b7bf1c47791f32a128965e44237810ab1a674d7d9998c6",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/continued_sft/evaluation/policy-metrics.json": {
+      "sha256": "7d6acc87a47c55f7b870d383be1ea33c148debde861e1d47f16be8ec22e5418c",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/continued_sft/evaluation/scalar-metrics.json": {
+      "sha256": "5ce685dfc9721c7fbafa52f4e71341afd5af62227e1cf6a4e578a4856c8385fc",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/continued_sft/evaluation/selection-metrics.json": {
+      "sha256": "a5e611874b63993632c5d13a303546d24a55219d5128a76fa579bc71f77c7fda",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/continued_sft/posthoc/constant-metrics.json": {
+      "sha256": "8b7a3bf0881f463da90407f420ddf16a3c0adff22c23a956ebe5949086289086",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/continued_sft/posthoc/half-metrics.json": {
+      "sha256": "8a408e540430f4c75a915998f75abda130651a0d7fbc61a732a9b384805c3811",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/continued_sft/posthoc/temperature-metrics.json": {
+      "sha256": "6bc5000f3c25d292fc3abe5d6e05897090b02b48088f76c990410e1412a0bf53",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/continued_sft/train.log": {
+      "sha256": "4895b45d8aab99b276c7768100af83add5795f7d93befec0832a6b527e709588",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/continued_sft/training.jsonl": {
+      "sha256": "c11b4d67dfd8f167e7452f3c55335ab99b2a17a1b636b72db522931c3a11e031",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/exact/artifact-manifest.json": {
+      "sha256": "da6890db9ea2d7ce1d0eef16e24bc4cb826c4c80610a894dedd412b812d696de",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/exact/evaluation/metrics.json": {
+      "sha256": "2524a8bb5f06e6f3584980231cbc3fddf226975aeeb9876559fc33d8a4b2051a",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/exact/evaluation/policy-metrics.json": {
+      "sha256": "5d55661324b6cf45d6109f71fdb3d576fe43ec005fd9e70829cb90e14a4d5cb8",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/exact/evaluation/scalar-metrics.json": {
+      "sha256": "736ef922dc9966b951ff41d0de86ce070b4f3d6437ceddfbafa3c7f94477f65a",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/exact/evaluation/selection-metrics.json": {
+      "sha256": "a7f78cfb408776b9adbefc545b7a03096c7887ca6f4e7499464559daa6c528ac",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/exact/train.log": {
+      "sha256": "466a015ccfba2163a561e690e09cd6c54c5e43ca7d5556d1453e1bb9a891a9ba",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/exact/training.jsonl": {
+      "sha256": "2aacd3bb68377691624959a78972f30763e253ab47b559d88da3af07d122b18d",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/sampled/artifact-manifest.json": {
+      "sha256": "cd8c4769e536ee8e0f9ceb93fd8daa1431f96e72f5a0a571081cff3e2455d6b2",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/sampled/evaluation/metrics.json": {
+      "sha256": "378286d809620f782bac492af2cd09bfb67c6d16cc8c099dc502fd5a7db2b37e",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/sampled/evaluation/policy-metrics.json": {
+      "sha256": "cc8e684c8046f007963b036d928d6fa1a2c1113326e232d1d5e258888e69a854",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/sampled/evaluation/scalar-metrics.json": {
+      "sha256": "17f1652e9e9db6d031d180c08428159ee6c47ba9662ed65d6bf2dd2a448dc40f",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/sampled/evaluation/selection-metrics.json": {
+      "sha256": "994bef49b23897558bc417d77aa7c14d320a6da8c6681c1b18bc25a3db830ffc",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/sampled/train.log": {
+      "sha256": "30f1b43d2a4bf9782012114606ab590912339cd43b24977af821d067b78c6500",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/sampled/training.jsonl": {
+      "sha256": "75bc3d40fc62cfcfa6cd97e6f0710bb067e789fc0e3cc95bd622292eab563626",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/sft/artifact-manifest.json": {
+      "sha256": "0dd98c2d3d07379c1def6595364d553b5865e227d45ca53c8144da3ae7783b98",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/sft/evaluation/metrics.json": {
+      "sha256": "5108f971f341e638a9d483302a135a5a68c45e7d8b00df8f8dc9b5c714f7c626",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/sft/evaluation/policy-metrics.json": {
+      "sha256": "5e8297e846a662561635b657498df53654cf7e6a6d4724cf85bd62296000aaec",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/sft/evaluation/scalar-metrics.json": {
+      "sha256": "baae4f60ac7b76685987eba7ca0440dd2622c890e124ee8fca38fac066e0d3ef",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/sft/evaluation/selection-metrics.json": {
+      "sha256": "c84efc6065528a52f62dfdb54df2176f89b1fb9688b0d0eb2b72de1c9d406bb4",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/sft/posthoc/constant-metrics.json": {
+      "sha256": "e0b24456296ef344af4ae10e91e9c7d75857eb88f1261f853e210564d3a702c4",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/sft/posthoc/half-metrics.json": {
+      "sha256": "2de698a9fe4010e62807a95c5ec7de39c02856e0533d94aef16f16bc1adedc03",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/sft/posthoc/temperature-metrics.json": {
+      "sha256": "c8a3acfd274bce4398accf90befba32f3bbf6fa751e94e5eea29290e443cdbeb",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/sft/train.log": {
+      "sha256": "560a09c1c102d4517aa89de099afbaa46388f6d5053ec2e6317be65776c9410c",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-11/sft/training.jsonl": {
+      "sha256": "af2aac96cc9e7e81a6d24fe58c6282476997b5a7feb2d8a7c8578f1b47825a41",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/continued_sft/artifact-manifest.json": {
+      "sha256": "7287ae212729791546bd7cec50a1583bd8ea2bacc6494dddf3e0f2c1d50d5497",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/continued_sft/evaluation/metrics.json": {
+      "sha256": "0173a7b952ae4326fd6cf54568e6f3c22277f2ea6ca6fcdba4573e29b55d755e",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/continued_sft/evaluation/policy-metrics.json": {
+      "sha256": "d944c964de9329f3f88b9f7e860c469183462977b27c4d7759871b9c3a71e1ad",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/continued_sft/evaluation/scalar-metrics.json": {
+      "sha256": "00045d14a7410584b4326175e735c20cc5a3cb0d96b728e56977fe485182334f",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/continued_sft/evaluation/selection-metrics.json": {
+      "sha256": "7c0b5ce9413a25d4d0d201e9209b2303da1bbb531f3f0e3c806583ccf992a7a3",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/continued_sft/posthoc/constant-metrics.json": {
+      "sha256": "712434afcac7a49230e2d42593c520175faad50b590f794b184c53d4b37168ed",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/continued_sft/posthoc/half-metrics.json": {
+      "sha256": "0674b600ac5d5c10d0f1142db0bc44c32f3b2c23309884795fd3198387238c9b",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/continued_sft/posthoc/temperature-metrics.json": {
+      "sha256": "dae82aa789225b79a3794942498d3fd82f27ac7ccebedaadef09d7291530022f",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/continued_sft/train.log": {
+      "sha256": "1f231676f83b3e17b9c92756a821531118e57937d288085a8c5a79642e8dc8b1",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/continued_sft/training.jsonl": {
+      "sha256": "2feb4644ea8a86c01ca50317a1220fe1ff99c41cf573a461f9b36609080607e9",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/exact/artifact-manifest.json": {
+      "sha256": "99ac398b5ae7de6845d0073fcbe54169d7efb478d3027e507b83670c8aa8280d",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/exact/evaluation/metrics.json": {
+      "sha256": "bab75d82e6d028df9305c5382e79b1202fa8a74a203888e978b48eca2fbd7980",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/exact/evaluation/policy-metrics.json": {
+      "sha256": "a65776465730e44f64cc1eabec7c973b91c1415aeb14fdb0f0473fb97176eb46",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/exact/evaluation/scalar-metrics.json": {
+      "sha256": "9d335fd056215d7c012b472e70205d34d2eaf301c1a6d5889863ea5b18367a55",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/exact/evaluation/selection-metrics.json": {
+      "sha256": "57411fce4dfe2878a82aedb424fbe450c9e4aba7579f7081f3355a289bdca4c7",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/exact/train.log": {
+      "sha256": "f55c76eaa004848f80613ea2570dd0ad482f297bffbaad2a2107149c5b5ada8c",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/exact/training.jsonl": {
+      "sha256": "758035ac77387c128fd7fbc22a3f61a7c4dfe9f2f018b3d8635929137ec66065",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/sampled/artifact-manifest.json": {
+      "sha256": "7ed3bf82df466e8cb5149ee643deffe7ed1dcb8b2484dc0ed9bc6ea9bb1006f1",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/sampled/evaluation/metrics.json": {
+      "sha256": "390fa7ee445ed6a05aafd2f15c6c621e47ebec8e68582218c3703e3d855dc80a",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/sampled/evaluation/policy-metrics.json": {
+      "sha256": "861df6d420395b93641fca0404011ec0443063883ad2587d0c88167cdc98dbb0",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/sampled/evaluation/scalar-metrics.json": {
+      "sha256": "ed13855aeb8d70faf4f0a3ca875db81163d2aff2e1c61f183a925acbe95ed11a",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/sampled/evaluation/selection-metrics.json": {
+      "sha256": "b78db7631a6f4a38ae0cd1252a1e547cf0cda1c23a12c998aded10cd1da9df43",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/sampled/train.log": {
+      "sha256": "249d60a5cb3c42ecf6be80efdf63cac305243bdf323a5a0f89690b2c95f590e3",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/sampled/training.jsonl": {
+      "sha256": "d8405add42d6e4eca1f04002319c30a546db593148f39097444ccfda1bb8b38e",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/sft/artifact-manifest.json": {
+      "sha256": "7a125859f6fedd5448524d4cc6357fc6be7a968c4db4fbc5c40ce8189238e4d2",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/sft/evaluation/metrics.json": {
+      "sha256": "c566193a0d68f60edb072ffc821b4b87589638b4ee5bd5a0e698de07fb9a7d11",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/sft/evaluation/policy-metrics.json": {
+      "sha256": "2e3c84844b520042fac72fc5f64fd5f09237f12430d4bf9c02772703b10a54d6",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/sft/evaluation/scalar-metrics.json": {
+      "sha256": "ecafa64b095ba4cdbb412293d9cdd959a6b5640eaadda915baed264acc92a079",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/sft/evaluation/selection-metrics.json": {
+      "sha256": "cd98ad8a83dacbba4ab16ab0916afa2ed4f437e11a96e14a46f09106a4c07127",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/sft/posthoc/constant-metrics.json": {
+      "sha256": "95ae5e66f2873a9ec7a149867abcaa81e24bbe2bb15c065f7d9df75f203f31c7",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/sft/posthoc/half-metrics.json": {
+      "sha256": "e959e05892d5c568efebe8ba8c805a7a31549525b5dfddf5c88d21c550e11295",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/sft/posthoc/temperature-metrics.json": {
+      "sha256": "f69f9c9b33775f880ba45d5dfbcc859d17d7a8788ed53491ed76b27df177d97b",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/sft/train.log": {
+      "sha256": "b8f7410a6b9908136543343abf64d3b135bcfad055056f885e5cd5c812830c2d",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-22/sft/training.jsonl": {
+      "sha256": "707aca93b0671a59f8710f934ae228fe98928bb336bfcbeeb58be1d44738b098",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/continued_sft/artifact-manifest.json": {
+      "sha256": "520901279530dcc08a0fc5fb7964f8ac818ebc5a85a76b2a34e04bfdbea17619",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/continued_sft/evaluation/metrics.json": {
+      "sha256": "d4c8c8802e227a1c3c201ef7680e3ad01e1f8db887e95bdc2f9cefd225fd725d",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/continued_sft/evaluation/policy-metrics.json": {
+      "sha256": "bb55c92938806f384434fa7d4853f54740d1f5d19dd3b35448c6dc171f5787d0",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/continued_sft/evaluation/scalar-metrics.json": {
+      "sha256": "e5082e0b4953068e0e69d2e3b781dcc488fcb18e6ff3bf94579e7f973363388c",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/continued_sft/evaluation/selection-metrics.json": {
+      "sha256": "4570e74339b90d4e1e7d9144bb06c69eeef5fe4c7814efb02f83ac5012a94794",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/continued_sft/posthoc/constant-metrics.json": {
+      "sha256": "2327d6805fd30eb62f90a8b073efa616e58efce5414337af329055eed8629f0f",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/continued_sft/posthoc/half-metrics.json": {
+      "sha256": "63e8dc2e79dd98201ec47b9b6276ac92ff1d22554a19900de2d657487c4982e7",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/continued_sft/posthoc/temperature-metrics.json": {
+      "sha256": "b743ca89175256bc6cc14e22c3ae1891901d6b505382ed613fc0036f0549a51b",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/continued_sft/train.log": {
+      "sha256": "293bea363edde7caa43cfef8abe952f9f79427bdd90c2696d608d8414e9dc7a5",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/continued_sft/training.jsonl": {
+      "sha256": "7845f3d6044b4129614a2dd5bb489c12d73498eec933b9a3614e23621f72e52f",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/exact/artifact-manifest.json": {
+      "sha256": "c3e9d7667dbdbe9d3c7ef1f3f05ea9cbcf85f86c5e574b488dcbae9c994f89d3",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/exact/evaluation/metrics.json": {
+      "sha256": "8e9252cf09f2f1c65b171c101a986960b91c9d65c22f2369b6610eac13be4f3f",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/exact/evaluation/policy-metrics.json": {
+      "sha256": "72526d0341d766970211f7f8719ba5a816685dfa15d28ba440a748622d7c264a",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/exact/evaluation/scalar-metrics.json": {
+      "sha256": "beb1ff6d1f71cf6680055ebb596b8f9f49e0fd855f36eda5e0649b65723c288f",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/exact/evaluation/selection-metrics.json": {
+      "sha256": "a5c2807f1eda33ee988c2aa3f21f062eb1ec0e2dd2ad2af19910a91dd12965f3",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/exact/train.log": {
+      "sha256": "af2e6d8387a619ef373811498b3b025ffe4ddd75643ef679444405a24d0762ff",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/exact/training.jsonl": {
+      "sha256": "df8c6b41fe57d4ef241ac03cc08f2ce35d735157b4b7da5baa3fdb5cac3e880b",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/sampled/artifact-manifest.json": {
+      "sha256": "d312e5009dc9ab0a069d018f4acd17b2e84175d63a98c92e252679f28e0a0dc2",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/sampled/evaluation/metrics.json": {
+      "sha256": "ac1f46587fccad43d3184df29c04100268b9c4a33b3c8eca4e723e0436ce1d40",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/sampled/evaluation/policy-metrics.json": {
+      "sha256": "e64e276ab92343936ee81df56cefa5cd5c3cbbc62099fe6610d0d70e51526bda",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/sampled/evaluation/scalar-metrics.json": {
+      "sha256": "f42931ac6617fa2d5ae13eb37acec2380c92437c9304c42a9d3b3e9d349fcf46",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/sampled/evaluation/selection-metrics.json": {
+      "sha256": "ab6d34c838ea4e32adf70e1075295a92aec1c70835a6469665baab7c7fe35b8b",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/sampled/train.log": {
+      "sha256": "7dd8f222c7b14fe0413d2594c8c820e7d28e1b4d6fd1345f274fe32db7a78481",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/sampled/training.jsonl": {
+      "sha256": "d7578076ba42f341baaa85a42263dbe21dd60be2576af4eae6cf89ccdc287358",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/sft/artifact-manifest.json": {
+      "sha256": "76bc80f88ec47dc571a4c79dd5b6afedf90e0e37f8b45c62cd79f56c1b708975",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/sft/evaluation/metrics.json": {
+      "sha256": "f478d53e3f382b280c75a91f413d7159974aa65d4db99f2002b20e30bca5592a",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/sft/evaluation/policy-metrics.json": {
+      "sha256": "835f0994a03d8a1580e1a9f60f7e5ebee8b9cb32278474002017910821627d1f",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/sft/evaluation/scalar-metrics.json": {
+      "sha256": "d7b1711551cdcd376e0979bb4241a3432a35f75ef25771b62ed71a3c17620288",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/sft/evaluation/selection-metrics.json": {
+      "sha256": "de90804e506498879d537e9adddcad93f5946c551c97c0bf4bcfa898e3e066ae",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/sft/posthoc/constant-metrics.json": {
+      "sha256": "5751ad62d8717a78e78b8093d556b3c820221c0d6df07486dfb3f55e94993c25",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/sft/posthoc/half-metrics.json": {
+      "sha256": "8faa069ac03d44ea206042440b26c9f032ff4512b2da7817c4aafe19e5d74aa4",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/sft/posthoc/temperature-metrics.json": {
+      "sha256": "4a67c5b788355c9e92a12e5921405fcd6cfa7e0e3d1455ee44d21717b45d7586",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/sft/train.log": {
+      "sha256": "3742fd8d4005938e48faafc559a3c926f6aee2c772303eb0999e98e9baba5dab",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/main/seed-33/sft/training.jsonl": {
+      "sha256": "ed838fbbf2bee915c7dbb07a8a6f0eecf010b5e0e8c74b24417a1501c820bdd0",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/status.json": {
+      "sha256": "fb779a82b6e58836944ee93e8b0411ed33448e055122bfe2b7e99ac3070c5ad6",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/tuning/continued_sft/lr-0/validation/metrics.json": {
+      "sha256": "4f613e13b23e1631231d4500d6b0d87f809888c81236522b71dd1707e7e0ac49",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/tuning/continued_sft/lr-1/validation/metrics.json": {
+      "sha256": "0774be304841400966b14b868842ee54d99373d66ae2f9e8c7cac051513b7dff",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/tuning/exact/lr-0/validation/metrics.json": {
+      "sha256": "657b81fbbf0aeb8482a12cbb5a6761317e7b59eab35cf296cdce73085e69fffc",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/tuning/exact/lr-1/validation/metrics.json": {
+      "sha256": "fea0fdde16e2e1d40e94f879624eb8e4f3d52c753e28160644d61d3b918195eb",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/tuning/sampled/lr-0/validation/metrics.json": {
+      "sha256": "8fd21d3a41c44f81e89f17e7cf14959c349f1943e69d312d7f33d4659fdabd5c",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/tuning/sampled/lr-1/validation/metrics.json": {
+      "sha256": "cc28653bead5793c21dde6339bf6d89feb63d05e317432f0d3c13542d08d9c49",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/tuning/sft/lr-0/validation/metrics.json": {
+      "sha256": "c7065c4de347de309ec74b2357fb81a01d2aee1f4d6df8eca87483312b8ade18",
+      "mode": "100644"
+    },
+    "results/longer-v1/4b/tuning/sft/lr-1/validation/metrics.json": {
+      "sha256": "f252fddb933715872a2b6cb388ecf7dab692ab02201e7b24e69dd01fbcf95811",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/continued_sft/artifact-manifest.json": {
+      "sha256": "951b77ad8cd60d52839b24f75089acfaa96e11e4744e81ef1c7f46e9a8f796c3",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/continued_sft/evaluation/metrics.json": {
+      "sha256": "8f9bff3f4742282861ec73183c3221b21a0611b357f0afe1164926e19d8a5454",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/continued_sft/evaluation/policy-metrics.json": {
+      "sha256": "f340b26256044943b93d2c2e118c768da3903e364e5792e65c3af4b64c6ba4ef",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/continued_sft/evaluation/scalar-metrics.json": {
+      "sha256": "39c1c420181a78562bec8e07c98ee8997ba264a4778b21b38330ea28908efc6c",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/continued_sft/evaluation/selection-metrics.json": {
+      "sha256": "4a963a6fa43a9f2c63c8898434ec9279f29af34d3fa5e9bdfcc52b226aec97ac",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/continued_sft/posthoc/constant-metrics.json": {
+      "sha256": "f901afd1fb5397c2ad2c888fb83eca4a3a467da9e596ad08eba544206faeedfe",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/continued_sft/posthoc/half-metrics.json": {
+      "sha256": "411c8b9b2cb140925c618308a036728538ce05805c3c40e0a6dc928d20bfeb45",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/continued_sft/posthoc/temperature-metrics.json": {
+      "sha256": "8a280989a8d054af8afc9c9c560c616d018d1dbe54e9af2047a62c6d9e2a3f15",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/continued_sft/train.log": {
+      "sha256": "ed3790d9f9e43cfc3137caed70b931d8460033f9303c8088b17ae5bf9522c807",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/continued_sft/training.jsonl": {
+      "sha256": "0b2ee613793ac78b96888efe835247203796748ecfc33d6aa09189e9bba0367f",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/exact/artifact-manifest.json": {
+      "sha256": "69aa5ec8614b24b76f7f8adbde5a576c3bcf6228c4956f3e06a1392e96bed4ac",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/exact/evaluation/metrics.json": {
+      "sha256": "ed44ca5d01707d10e687e662e2bdd0fdaab8554794341242fafa91f19aca8fab",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/exact/evaluation/policy-metrics.json": {
+      "sha256": "3df83221aa7949cd7e2ec212ae2f51c1431cd80a7d621cd9de2efd4d3ab594f3",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/exact/evaluation/scalar-metrics.json": {
+      "sha256": "0ce55b598fa9c1347ae0ff05a933bf28c2b86c8f59cf78baefe2ab94d9c6aa4b",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/exact/evaluation/selection-metrics.json": {
+      "sha256": "a860644bb8b526906d57d61c3adab5d8d6d41e2aee26d8938684a808c1244afa",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/exact/train.log": {
+      "sha256": "80b42a740abc8dfcb732b50e282b8a82379d796613edf8e857138026cba700b8",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/exact/training.jsonl": {
+      "sha256": "fccb29d131048d7036100800fdb655e284846e7aa46b0174b3a186cec810b939",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/sampled/artifact-manifest.json": {
+      "sha256": "e1ae659769483af30a8891a60fc70a087da54dc281985634c564fbd6b30c1046",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/sampled/evaluation/metrics.json": {
+      "sha256": "be76c1bb7b0fa5e4074b0ae1242a0289a906b5dbe822947a858a1c6ac6cf35b5",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/sampled/evaluation/policy-metrics.json": {
+      "sha256": "fafaaa28a020955a213dbd79f5d586ada8cf5f697c23824f7498bed99fe90b90",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/sampled/evaluation/scalar-metrics.json": {
+      "sha256": "d4a4a6e231db3d9bb8990b66c43fe996d6b1542b6ca3e6a012258ea1b231e113",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/sampled/evaluation/selection-metrics.json": {
+      "sha256": "fe454d192da3610196157a7d8e474d3fa1464aa8f5807c3b1bb3849d243a7029",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/sampled/train.log": {
+      "sha256": "6e298201e5394eeaf3f52793141003897c48f086fb29741f99690dbf3298f499",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/sampled/training.jsonl": {
+      "sha256": "17ed4b82bf06ff3957d949af9d1675078f1691fba18ebf07e8860f90df91a52d",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/sft/artifact-manifest.json": {
+      "sha256": "30a07a875fcaff7f043166c50e0cf5b4e300ee9d2bb00eea8bd88fbc6d62187c",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/sft/evaluation/metrics.json": {
+      "sha256": "4882e51ef42e74224b0a19ad105270fb432c174fd71264d32b40c285214c057e",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/sft/evaluation/policy-metrics.json": {
+      "sha256": "d3f8241c19d1a306489245dfbc1fc44f672a215bcd85abfb5a85bb15e60c2e7c",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/sft/evaluation/scalar-metrics.json": {
+      "sha256": "7583d38a30859873823d8c6b756342e342bc6a50fa27907a74e899f5879e0c7d",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/sft/evaluation/selection-metrics.json": {
+      "sha256": "6379f0f44859e7a4968020712e9e633a100ad1a4a0f9c23fe200741e37278c74",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/sft/posthoc/constant-metrics.json": {
+      "sha256": "0daee1a73ed07f851f8cfaeb279b459d5aa31919b6d30f6021195c28f0a7af78",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/sft/posthoc/half-metrics.json": {
+      "sha256": "c8abb87391e4b473a9ec2791ef741d1fd15ca3eff55c258be4ae6f503b8b5d8a",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/sft/posthoc/temperature-metrics.json": {
+      "sha256": "f497818e468a92290a100de90ab2a239b29e530febef4ba9af04b0c09580ed2b",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/sft/train.log": {
+      "sha256": "93ed7c0d3771a964d2ba05ae6f071591d2dc419f67306b2d3138a8f85e723181",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-11/sft/training.jsonl": {
+      "sha256": "a2cac3bad3c10702207b9f4a63bc168e4d7237b8b0ad53f66a01256e40f2112f",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/continued_sft/artifact-manifest.json": {
+      "sha256": "065618a89605d46513a5a8f7db4e75138fce0647b60dd1caafe1d28b859fb885",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/continued_sft/evaluation/metrics.json": {
+      "sha256": "4598a8e5b1a22bfe98d8c17352eecf3901375e49cab75bc18ff754bdfa31f6b2",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/continued_sft/evaluation/policy-metrics.json": {
+      "sha256": "54515b15631a2d51c70d0e7b2f569fdba99534ad526eb7655214facca94534a3",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/continued_sft/evaluation/scalar-metrics.json": {
+      "sha256": "b2bc9cca4ae1a9e8da2c84e4c55591bb1282851b09826a1d3d2ecfea69aec77c",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/continued_sft/evaluation/selection-metrics.json": {
+      "sha256": "9ca01b3e3b09565e4b508d5f852a1de2c7b0d08086c0e7c61b2ae011cd712d76",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/continued_sft/posthoc/constant-metrics.json": {
+      "sha256": "5ce93d37d89e1e4a646210f27dac9bc414a5d75cf5ef299c5f1815c8789c8320",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/continued_sft/posthoc/half-metrics.json": {
+      "sha256": "d22730b8f8bbd62a55706be3b8b476f8b2b292a615d2a31a99291ee25f42cdb3",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/continued_sft/posthoc/temperature-metrics.json": {
+      "sha256": "396ebd77956b1ddb629753792964584117ab21ac4a07bb4d64b0c2bd13e804e8",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/continued_sft/train.log": {
+      "sha256": "5c967ace740796e0ff11ebb0dd33f5c6fbcdb2a0690223f2c176379745fb8d89",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/continued_sft/training.jsonl": {
+      "sha256": "cb175a1a38e568cc063079e376d861c7439acf03423992aefc08613f38e6d382",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/exact/artifact-manifest.json": {
+      "sha256": "d0d85322ccba45382846e9d4becb379ee8b92fbd376906451a40c2b8a1c20c4f",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/exact/evaluation/metrics.json": {
+      "sha256": "65f266d9edd45715ff365c1ad9d90903a4ed1d1a05a09e515b575e5438733df8",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/exact/evaluation/policy-metrics.json": {
+      "sha256": "e07ef93a0476cd4ab71ca745fc4b9ea8665440f37160bea7bf447732e1b673e8",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/exact/evaluation/scalar-metrics.json": {
+      "sha256": "e8c8da801b26b31650b40cf9414b915aa43b78100d26769de191f054c76bcff9",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/exact/evaluation/selection-metrics.json": {
+      "sha256": "2ba79711bcfe9a7b6f44e41cfe5ad54e8cef00d70cb26d69cdb3cd02867e86c0",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/exact/train.log": {
+      "sha256": "898f1a8d44d1b25b9ae2ea6f81817a820a3457212fab0ae027711033cb9f45ac",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/exact/training.jsonl": {
+      "sha256": "55111873f723efd2370da9fafb632adad18547c4cf4adb199944b65e78b4e9e2",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/sampled/artifact-manifest.json": {
+      "sha256": "2927b23afbb17204f3df3ce874d5c0b5076e33b9278caf694aacb11c15d231ad",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/sampled/evaluation/metrics.json": {
+      "sha256": "5b5597c1e4cf1e0223cbd13eb40eb17810acbf6eec79342b64b90ca0aa47bd9a",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/sampled/evaluation/policy-metrics.json": {
+      "sha256": "cdc413ceeda5051e7042d28c7f9a98890e068ff12efef9feffb2d4949ba6b291",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/sampled/evaluation/scalar-metrics.json": {
+      "sha256": "16734d43260ef9b1d9d97c58ff4db9d93d114d3ee6befcda732654a24e882b00",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/sampled/evaluation/selection-metrics.json": {
+      "sha256": "930e5e88f12f004495f01423b63758a4457d67f0cc427cbf4b08fb4a395d9fac",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/sampled/train.log": {
+      "sha256": "6efebf00bae34d9277aa59d4cc965fcd2c56d8551c7371ca196d6281fa818529",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/sampled/training.jsonl": {
+      "sha256": "ea82980d0cc9df90b1448416dd2e61444266cac5ee76d3a5f97bf1f22c5d3131",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/sft/artifact-manifest.json": {
+      "sha256": "47cfb6900f9b2de808be8d2695c2639860f5bcdab3fe4793f9b72dafcb85f958",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/sft/evaluation/metrics.json": {
+      "sha256": "10d0c71a28899cb7e0c116753b2b068b5e26e33e138e4bf553e6f0a0a55b68ab",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/sft/evaluation/policy-metrics.json": {
+      "sha256": "a367d2bb6bb1e6fc24fd44735d52584347dfe63cb641ce92ea7d64f40493bfeb",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/sft/evaluation/scalar-metrics.json": {
+      "sha256": "78771be1e3d32f9100c2161672aa3ea5739abe9b3fd438e8606ad7677c2aa594",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/sft/evaluation/selection-metrics.json": {
+      "sha256": "0f8e18d394d9fc63ff434f39cd12eef875e9e9a95908dc5b1bccd28bbf978c06",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/sft/posthoc/constant-metrics.json": {
+      "sha256": "15d845c25f924795bd8411166681bcbe8db1e4b68821ad0dca41a159f15f505c",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/sft/posthoc/half-metrics.json": {
+      "sha256": "fd822bb88b793a834e2bf40db35c938c761b47933ffd72d768d7eb93dcfded15",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/sft/posthoc/temperature-metrics.json": {
+      "sha256": "5b58ddfe87000777690769f47705341074ad2f5fe4b73d2dd173470eb595cd10",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/sft/train.log": {
+      "sha256": "bdff8ac36ca58761be94ba69b0a6233f90ce3a4eda4e1e7ef8ca7c435589c28b",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-22/sft/training.jsonl": {
+      "sha256": "c0cf7cedf7f60e8698a277c49cd19632e2d79dc408cca6f61c355294a631a791",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/continued_sft/artifact-manifest.json": {
+      "sha256": "a18627a90cbb496525c5801372b72cab57c2b03a88afb52fc58fc6fb1f86caf6",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/continued_sft/evaluation/metrics.json": {
+      "sha256": "d810206c213d48ab1ada8b52bc3bb45aaf2c94258e8a7335b07680c065c5aa00",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/continued_sft/evaluation/policy-metrics.json": {
+      "sha256": "ee8c64764e0951a3d1c8a33a81c2c5e2b70a210ce603442499836af24514abd7",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/continued_sft/evaluation/scalar-metrics.json": {
+      "sha256": "c1f6024c4282178dd1578fa0320aa24532fee1b59b089d3ef697d589a8cbbb41",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/continued_sft/evaluation/selection-metrics.json": {
+      "sha256": "aca38728093fa6b5a08aa625aecb4f0663904c4a9ec78de1e6a0574f8fe8de55",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/continued_sft/posthoc/constant-metrics.json": {
+      "sha256": "8daf5629e6f3f1cf4032aa6c8a67cca2c0aef81980cd2f22daedb06f8c6e66ad",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/continued_sft/posthoc/half-metrics.json": {
+      "sha256": "bca12b499c48050f3a8d99078fb07ce59ea06136e053c4ca8622972a7584d0b1",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/continued_sft/posthoc/temperature-metrics.json": {
+      "sha256": "92489dad1e61381fc884cf68efb926da831301ed65a8ced86e289884c65527ac",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/continued_sft/train.log": {
+      "sha256": "9ed44cf9fb65649ecb9b6c9dace46e6d8813beef7b193e262e41e103803370e4",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/continued_sft/training.jsonl": {
+      "sha256": "db1fa6f9dfe231c102efd6fce7420ea4a975460bdd36221f35dcea03e2c628bf",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/exact/artifact-manifest.json": {
+      "sha256": "096b713ab8d5af250e751791f744fb6772802568fb0d7d1b4bbc8d2e8208f316",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/exact/evaluation/metrics.json": {
+      "sha256": "672c797d6d036443390bed8e9026e64768a19278f3642e8bc32a83f8047110f5",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/exact/evaluation/policy-metrics.json": {
+      "sha256": "b72401472359d0e245fc6e2545b75e228d910a05cfd5b5810f73365a2947b5da",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/exact/evaluation/scalar-metrics.json": {
+      "sha256": "0d9fc21d855655b6b9ed8bfc1aeea869fe74ceadce988ca478f844cde07f0aa3",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/exact/evaluation/selection-metrics.json": {
+      "sha256": "4becfde6b23c9f4a1f24d63ac9951d5eb0483da9bf083b076bcf00addd380ae8",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/exact/train.log": {
+      "sha256": "9e47f8ff9df4165aa6cacf13e9ed94d3d83fb76c34c09fd3bf01cd8e45b97f4b",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/exact/training.jsonl": {
+      "sha256": "5d76991536c6f92c7355aa66502d77d95ecab0ea001afefaf2cc3f24ef5d7b30",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/sampled/artifact-manifest.json": {
+      "sha256": "ca98e7a5f41b933f4e929562c13c9e2f631629021e1e9dda1537bb10bf2d86ff",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/sampled/evaluation/metrics.json": {
+      "sha256": "4fe4a25b3b816b0e2cdd15221d913addf7e981c2f386fc375217948f009a87f3",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/sampled/evaluation/policy-metrics.json": {
+      "sha256": "72063f6d969a5936da9755bebb1c7014193034b79a39c6ceb4433aa28d6cf3d6",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/sampled/evaluation/scalar-metrics.json": {
+      "sha256": "068741aa9083ac67ccc92a07612ed50395ec26337585fc191efc6fe0aca5ed7c",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/sampled/evaluation/selection-metrics.json": {
+      "sha256": "b1753198f8222cb1e68607f427b865fd50201fd4aa3f51e3882fbc6b8ca9d456",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/sampled/train.log": {
+      "sha256": "1c90df4b010d9e7e0c7e2979d67e2ea215b0514c5fb0a9642522bcdbed763478",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/sampled/training.jsonl": {
+      "sha256": "bcc0e6ca615a2447354e8d3f98e96bc7d9bcf788d95985dfbc40b242c26c73fd",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/sft/artifact-manifest.json": {
+      "sha256": "02ebb863d1919e7362e056541f1db2491f1e86f985a7633d2e1cb36825b368a4",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/sft/evaluation/metrics.json": {
+      "sha256": "3ade5260f800f57a8058b49bedf830aa3105ad2fb6a73f932860e0134bd2dd57",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/sft/evaluation/policy-metrics.json": {
+      "sha256": "a0e461a4e194007a02793779594ca28d37dc483e8387d569f279cf1613597f53",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/sft/evaluation/scalar-metrics.json": {
+      "sha256": "39ac254a0bd640252c117c62226afb1e6e7e291c7778feb21c3882937e31a38b",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/sft/evaluation/selection-metrics.json": {
+      "sha256": "f2eeacc606758095f7f66da20b6640daf3e3415ca1fe016ee82e92e3ae76dced",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/sft/posthoc/constant-metrics.json": {
+      "sha256": "09e55c178d36cee70d1b962c1054769a1d6b7baf739f5e5a0332b5438007c1f3",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/sft/posthoc/half-metrics.json": {
+      "sha256": "9644acdc7fc052dd5c519c1e123030f008e2db38e639d21816b1ab792a536b79",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/sft/posthoc/temperature-metrics.json": {
+      "sha256": "ca61438559589af238888b6310b49c902c0284b5dcc7fa8b5fcfa7eb3f6e593b",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/sft/train.log": {
+      "sha256": "9a1878ff521b54a51c9abf4e295fb7dcedb8a2016828372ea44ac963dd3bf7d1",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/main/seed-33/sft/training.jsonl": {
+      "sha256": "89d80e435a1acd9826a002fa135b958bab81d640cb66dcef12532440c22b1139",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/status.json": {
+      "sha256": "5760f9aa956e82b1357ca8780e186ba577dc0ef615b4835000016b86c7615f2b",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/tuning/continued_sft/lr-0/validation/metrics.json": {
+      "sha256": "6cd7a14ff40fa100b420f6c3aa3d2e292eec6de0de669005abbf8ad4d5af7cd7",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/tuning/continued_sft/lr-1/validation/metrics.json": {
+      "sha256": "5c5c76b4b0a54b25786ce244a7f9cab57d72d43a966d3397cc53f5c139fcd6ad",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/tuning/exact/lr-0/validation/metrics.json": {
+      "sha256": "d4304f7bb275d35385734ad1ce7812c4c0186220a002e9dd90279b8bd1b78711",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/tuning/exact/lr-1/validation/metrics.json": {
+      "sha256": "c68c9ffbb80c388f6ca787a1dd9c4f932f7ccfb3e9c3704f4ab7f61cf1469e28",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/tuning/sampled/lr-0/validation/metrics.json": {
+      "sha256": "7701a246ec3263b2356bd950a21095a469cff529610369faca01b7bf445f64bd",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/tuning/sampled/lr-1/validation/metrics.json": {
+      "sha256": "42a28e0f8dc3bb73adff3ec16a37bc4b457d13e42a06f0d5f9063c41e0015cbf",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/tuning/sft/lr-0/validation/metrics.json": {
+      "sha256": "da81769bcef400ec33fb33f14bd83d726c25036ed6daab81b1d377c912668754",
+      "mode": "100644"
+    },
+    "results/longer-v1/9b/tuning/sft/lr-1/validation/metrics.json": {
+      "sha256": "642a97a92978b6eca3ec9b27d377fae66bf66bed6815c5815bb4ee70afb602a1",
+      "mode": "100644"
+    },
+    "results/longer-v1/summary.json": {
+      "sha256": "f14b02901fb1925ee778bc8d4922abe796b5dd44c68fcfec7773856382c551a6",
+      "mode": "100644"
+    },
+    "results/longer-v1/summary.md": {
+      "sha256": "97438bfaaac492628392cfb89b43a9f8b16b294313d15008effa2e73724f5a0d",
       "mode": "100644"
     },
     "results/paired-comparisons.json": {
@@ -2304,6 +3648,10 @@
     },
     "scripts/study_progress.py": {
       "sha256": "852599dc0cfb999f7393e4e84ad092c0511eab08832318f5b63b1da8942dadc3",
+      "mode": "100644"
+    },
+    "scripts/summarize_longer_study.py": {
+      "sha256": "d55ac03e5b4ab90418e6960a9c4e544389482de674d5b283bb43a057bd469d63",
       "mode": "100644"
     },
     "scripts/summarize_study.py": {

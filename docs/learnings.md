@@ -1,6 +1,6 @@
 # Engineering and experimental lessons
 
-These notes distinguish measured observations from choices and unresolved questions. The [experiment guide](experiments.md) contains the current pilot results; the longer study is still running.
+These notes distinguish measured observations from choices and unresolved questions. The [experiment guide](experiments.md) contains the current pilot results; the longer study is complete with [descriptive results](../results/longer-v1/summary.md).
 
 ## Count work across experiments, not as one model
 

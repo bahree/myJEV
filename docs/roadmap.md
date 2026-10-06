@@ -15,8 +15,8 @@ This page makes incomplete work visible as the project develops. Checked items d
 
 ## Milestone 2: Stronger training and evaluation
 
-- [ ] Longer matched training with equal validation-based tuning opportunities. [This batch is running](training.md); results are pending.
-- [ ] Frozen main neural comparison on the full official BANKING77 test split.
+- [x] Longer matched training with equal validation-based tuning opportunities; [descriptive results](../results/longer-v1/summary.md) recorded.
+- [x] Frozen main neural comparison on the full official BANKING77 test split, all three seeds and sizes. Paired uncertainty analysis remains pending.
 - [ ] Replicated precision controls to separate capacity from quantization effects.
 - [ ] Transfer and robustness studies at every size, extending the initial 0.8B diagnostics.
 - [ ] More extensive uncertainty reporting for rare accepted-case errors.
@@ -34,6 +34,8 @@ Phi, SmolLM and MAI exploration is parked to focus on the two active tracks: pre
 No Jev-equivalent latency is assumed. A useful comparison must disclose hardware and serving differences; generating fewer tokens alone does not prove a better decision architecture. Expand to RL or more seeds only after the pilot establishes a useful comparison and its resource cost.
 
 ## Teaching extension: a decision model from random initialization
+
+See the [implementation plan](scratch-plan.md) for architecture, milestones S0-S6, test gates, data generation, resource budgeting and completion criteria.
 
 This proposed extension returns to the build-and-explain approach of helloLondon. It is an original educational model, not a reconstruction of TypeSafe Jev's undisclosed internals. The official announcement describes architecture, parallel sampling and RLCD at a high level; that is insufficient to reproduce its network and training recipe.
 

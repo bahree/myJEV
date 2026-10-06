@@ -1,0 +1,186 @@
+{
+  "n": 3080,
+  "accuracy": 0.8123376623376624,
+  "accuracy_cluster_ci95": [
+    0.7984404282426435,
+    0.8259835523126663
+  ],
+  "macro_f1": 0.807236543315338,
+  "correctness_brier": 0.16694160814707362,
+  "selection_multiclass_brier": 0.35065201891303055,
+  "correctness_auroc": 0.7002916697783641,
+  "ece": 0.16739860375883517,
+  "ece_bins": "15 equal-width bins, final bin inclusive",
+  "reliability": [
+    {
+      "lo": 0.0,
+      "hi": 0.06666666666666667,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.06666666666666667,
+      "hi": 0.13333333333333333,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.13333333333333333,
+      "hi": 0.2,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.2,
+      "hi": 0.26666666666666666,
+      "n": 3,
+      "confidence": 0.22327367961406708,
+      "accuracy": 0.0
+    },
+    {
+      "lo": 0.26666666666666666,
+      "hi": 0.3333333333333333,
+      "n": 6,
+      "confidence": 0.29570811490217846,
+      "accuracy": 0.5
+    },
+    {
+      "lo": 0.3333333333333333,
+      "hi": 0.4,
+      "n": 4,
+      "confidence": 0.362190917134285,
+      "accuracy": 0.0
+    },
+    {
+      "lo": 0.4,
+      "hi": 0.4666666666666667,
+      "n": 10,
+      "confidence": 0.43134990334510803,
+      "accuracy": 0.2
+    },
+    {
+      "lo": 0.4666666666666667,
+      "hi": 0.5333333333333333,
+      "n": 14,
+      "confidence": 0.49845283372061594,
+      "accuracy": 0.21428571428571427
+    },
+    {
+      "lo": 0.5333333333333333,
+      "hi": 0.6,
+      "n": 24,
+      "confidence": 0.5605267484982809,
+      "accuracy": 0.25
+    },
+    {
+      "lo": 0.6,
+      "hi": 0.6666666666666666,
+      "n": 19,
+      "confidence": 0.6307936404880724,
+      "accuracy": 0.3684210526315789
+    },
+    {
+      "lo": 0.6666666666666666,
+      "hi": 0.7333333333333333,
+      "n": 20,
+      "confidence": 0.695786890387535,
+      "accuracy": 0.3
+    },
+    {
+      "lo": 0.7333333333333333,
+      "hi": 0.8,
+      "n": 18,
+      "confidence": 0.7611704104476504,
+      "accuracy": 0.3333333333333333
+    },
+    {
+      "lo": 0.8,
+      "hi": 0.8666666666666667,
+      "n": 29,
+      "confidence": 0.8361753574733076,
+      "accuracy": 0.41379310344827586
+    },
+    {
+      "lo": 0.8666666666666667,
+      "hi": 0.9333333333333333,
+      "n": 43,
+      "confidence": 0.9041170685790306,
+      "accuracy": 0.32558139534883723
+    },
+    {
+      "lo": 0.9333333333333333,
+      "hi": 1.0,
+      "n": 2890,
+      "confidence": 0.9978445948820213,
+      "accuracy": 0.8453287197231834
+    }
+  ],
+  "operating_points": {
+    "coverage_0.5": {
+      "threshold": 0.9998793601989746,
+      "coverage": 0.5175324675324675,
+      "accepted": 1594,
+      "error": 0.11166875784190715,
+      "error_upper_95": 0.12549286410497026,
+      "error_cluster_ci95": [
+        0.096045197740113,
+        0.12664576802507838
+      ]
+    },
+    "coverage_0.8": {
+      "threshold": 0.9979419112205505,
+      "coverage": 0.812987012987013,
+      "accepted": 2504,
+      "error": 0.1365814696485623,
+      "error_upper_95": 0.14838435885202486,
+      "error_cluster_ci95": [
+        0.12380068138483416,
+        0.1502197363164203
+      ]
+    },
+    "coverage_0.9": {
+      "threshold": 0.9761265516281128,
+      "coverage": 0.9110389610389611,
+      "accepted": 2806,
+      "error": 0.14718460441910192,
+      "error_upper_95": 0.15863638640615807,
+      "error_cluster_ci95": [
+        0.13435495367070563,
+        0.16079179070059957
+      ]
+    },
+    "empirical_error_0.01": {
+      "threshold": 0.9999946355819702,
+      "coverage": 0.06493506493506493,
+      "accepted": 200,
+      "error": 0.085,
+      "error_upper_95": 0.12477113319232826,
+      "error_cluster_ci95": [
+        0.04987500000000001,
+        0.125
+      ]
+    },
+    "empirical_error_0.05": {
+      "threshold": 0.9999890327453613,
+      "coverage": 0.1353896103896104,
+      "accepted": 417,
+      "error": 0.08872901678657075,
+      "error_upper_95": 0.11507367310605975,
+      "error_cluster_ci95": [
+        0.06235011990407674,
+        0.11750599520383694
+      ]
+    }
+  },
+  "sampled_policy": {
+    "expected_accuracy": 0.8094350556708132,
+    "expected_confidence_reward": 0.6555624725632921,
+    "semantics": "exact expectation of sampled joint policy at raw training logits; distinct from deployed argmax behavior"
+  },
+  "confidence_mode": "selection",
+  "artifact_revision": "3439ad264d677b502c6c9c79103bd0a7852f757bf748019e3792baa03b1f434f",
+  "subset_limit": null
+}

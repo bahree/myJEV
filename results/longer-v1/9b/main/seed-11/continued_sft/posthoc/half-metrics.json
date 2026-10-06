@@ -1,0 +1,183 @@
+{
+  "n": 3080,
+  "accuracy": 0.8935064935064935,
+  "accuracy_cluster_ci95": [
+    0.8821428571428571,
+    0.9051647840629653
+  ],
+  "macro_f1": 0.8915370025683255,
+  "correctness_brier": 0.25,
+  "selection_multiclass_brier": 0.19910516718182342,
+  "correctness_auroc": 0.5,
+  "ece": 0.39350649350649347,
+  "ece_bins": "15 equal-width bins, final bin inclusive",
+  "reliability": [
+    {
+      "lo": 0.0,
+      "hi": 0.06666666666666667,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.06666666666666667,
+      "hi": 0.13333333333333333,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.13333333333333333,
+      "hi": 0.2,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.2,
+      "hi": 0.26666666666666666,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.26666666666666666,
+      "hi": 0.3333333333333333,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.3333333333333333,
+      "hi": 0.4,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.4,
+      "hi": 0.4666666666666667,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.4666666666666667,
+      "hi": 0.5333333333333333,
+      "n": 3080,
+      "confidence": 0.5,
+      "accuracy": 0.8935064935064935
+    },
+    {
+      "lo": 0.5333333333333333,
+      "hi": 0.6,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.6,
+      "hi": 0.6666666666666666,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.6666666666666666,
+      "hi": 0.7333333333333333,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.7333333333333333,
+      "hi": 0.8,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.8,
+      "hi": 0.8666666666666667,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.8666666666666667,
+      "hi": 0.9333333333333333,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.9333333333333333,
+      "hi": 1.0,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    }
+  ],
+  "operating_points": {
+    "coverage_0.5": {
+      "threshold": 0.5,
+      "coverage": 1.0,
+      "accepted": 3080,
+      "error": 0.10649350649350649,
+      "error_upper_95": 0.11607698479554493,
+      "error_cluster_ci95": [
+        0.09483521593703471,
+        0.11785714285714285
+      ]
+    },
+    "coverage_0.8": {
+      "threshold": 0.5,
+      "coverage": 1.0,
+      "accepted": 3080,
+      "error": 0.10649350649350649,
+      "error_upper_95": 0.11607698479554493,
+      "error_cluster_ci95": [
+        0.09483521593703471,
+        0.11785714285714285
+      ]
+    },
+    "coverage_0.9": {
+      "threshold": 0.5,
+      "coverage": 1.0,
+      "accepted": 3080,
+      "error": 0.10649350649350649,
+      "error_upper_95": 0.11607698479554493,
+      "error_cluster_ci95": [
+        0.09483521593703471,
+        0.11785714285714285
+      ]
+    },
+    "empirical_error_0.01": {
+      "threshold": 1.000001,
+      "coverage": 0.0,
+      "accepted": 0,
+      "error": null,
+      "error_upper_95": null,
+      "error_cluster_ci95": null
+    },
+    "empirical_error_0.05": {
+      "threshold": 1.000001,
+      "coverage": 0.0,
+      "accepted": 0,
+      "error": null,
+      "error_upper_95": null,
+      "error_cluster_ci95": null
+    }
+  },
+  "sampled_policy": {
+    "expected_accuracy": 0.892800928251593,
+    "expected_confidence_reward": 1.208885582731803e-07,
+    "semantics": "exact expectation of sampled joint policy at raw training logits; distinct from deployed argmax behavior"
+  },
+  "temperature": 1.948626997528114,
+  "base_rate": 0.871,
+  "calibration_n": 1000,
+  "confidence_mode": "half",
+  "source_artifact_revision": "1dec050b9c0bb4d393a70849280953b77aeb70be4e692cf9af94a95acec4064f",
+  "calibration_sha256": "558be022b546a77e44e006cb4b4410ae263b378ba978e0acfb727eec57e94a33"
+}

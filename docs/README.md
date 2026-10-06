@@ -8,7 +8,8 @@ Start with the question you want to answer. All commands run from the repository
 | What happens in one forward pass? | [Architecture and objectives](architecture.md) |
 | What was actually measured? | [Experiments and evidence](experiments.md) |
 | How are methods compared fairly? | [Experimental protocol](protocol.md) |
-| What is the next training batch? | [Longer matched comparison](training.md), running |
+| What did the longer training batch find? | [Completed comparison](../results/longer-v1/summary.md) |
+| How will we build the scratch model? | [Implementation plan and acceptance gates](scratch-plan.md) |
 | How do I watch training and read epochs? | [W&B integration](tracking.md) |
 | What have we learned about budgets and convergence? | [Engineering lessons](learnings.md) |
 | How do I run Python, CLI, HTTP and Docker inference? | [Inference walkthrough](inference.md) |
