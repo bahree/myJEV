@@ -86,3 +86,13 @@ The existing guides are available now. The next presentation pass will make them
 - [ ] Add the two published blog links, mutual navigation and documentation link checks.
 
 These tasks follow the running training batch and do not change its frozen protocol. Research and release requirements above remain separate dependencies.
+
+## Sequence the work without changing the current experiment
+
+1. Finish the frozen Qwen batch while refining the teaching design and small test fixtures.
+2. Audit completed artifacts and aggregate the Qwen results before selecting further large runs.
+3. Implement the scratch model progressively: supervised synthetic task first, correctness confidence and calibration second, exact/sampled training after behavioral tests pass.
+4. Run the bounded Phi compatibility/resource pilot, then decide whether its results justify a larger matched comparison. SmolLM remains an additional small-model candidate.
+5. Present both build tracks in the articles, preserving distinct learning goals and honest shared-task comparisons. Different purposes do not prevent one model from winning a measured metric; unequal pretraining prevents attributing that difference solely to architecture.
+
+The scratch extension is planned, not implemented. It complements the existing adaptation study and does not delay its result audit or silently expand the frozen training budget.
