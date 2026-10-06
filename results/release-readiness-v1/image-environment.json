@@ -1,0 +1,11 @@
+{
+  "cuda_available": true,
+  "gpu": "NVIDIA A30",
+  "myjev": "0.1.0",
+  "torch": "2.14.1+cu130",
+  "transformers": "5.18.0",
+  "license_expression": "MIT",
+  "license_files": [
+    "myjev-0.1.0.dist-info/licenses/LICENSE"
+  ]
+}

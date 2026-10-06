@@ -1,0 +1,134 @@
+{
+  "context": "I was charged twice. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. ",
+  "instructions": "Select the appropriate support route.",
+  "candidates": [
+    {
+      "id": "billing",
+      "description": "Charges, invoices and refunds"
+    },
+    {
+      "id": "technical",
+      "description": "Errors and configuration"
+    },
+    {
+      "id": "other",
+      "description": "Neither listed route applies"
+    },
+    {
+      "id": "distractor-0",
+      "description": "Unrelated routing category 0"
+    },
+    {
+      "id": "distractor-1",
+      "description": "Unrelated routing category 1"
+    },
+    {
+      "id": "distractor-2",
+      "description": "Unrelated routing category 2"
+    },
+    {
+      "id": "distractor-3",
+      "description": "Unrelated routing category 3"
+    },
+    {
+      "id": "distractor-4",
+      "description": "Unrelated routing category 4"
+    },
+    {
+      "id": "distractor-5",
+      "description": "Unrelated routing category 5"
+    },
+    {
+      "id": "distractor-6",
+      "description": "Unrelated routing category 6"
+    },
+    {
+      "id": "distractor-7",
+      "description": "Unrelated routing category 7"
+    },
+    {
+      "id": "distractor-8",
+      "description": "Unrelated routing category 8"
+    },
+    {
+      "id": "distractor-9",
+      "description": "Unrelated routing category 9"
+    },
+    {
+      "id": "distractor-10",
+      "description": "Unrelated routing category 10"
+    },
+    {
+      "id": "distractor-11",
+      "description": "Unrelated routing category 11"
+    },
+    {
+      "id": "distractor-12",
+      "description": "Unrelated routing category 12"
+    },
+    {
+      "id": "distractor-13",
+      "description": "Unrelated routing category 13"
+    },
+    {
+      "id": "distractor-14",
+      "description": "Unrelated routing category 14"
+    },
+    {
+      "id": "distractor-15",
+      "description": "Unrelated routing category 15"
+    },
+    {
+      "id": "distractor-16",
+      "description": "Unrelated routing category 16"
+    },
+    {
+      "id": "distractor-17",
+      "description": "Unrelated routing category 17"
+    },
+    {
+      "id": "distractor-18",
+      "description": "Unrelated routing category 18"
+    },
+    {
+      "id": "distractor-19",
+      "description": "Unrelated routing category 19"
+    },
+    {
+      "id": "distractor-20",
+      "description": "Unrelated routing category 20"
+    },
+    {
+      "id": "distractor-21",
+      "description": "Unrelated routing category 21"
+    },
+    {
+      "id": "distractor-22",
+      "description": "Unrelated routing category 22"
+    },
+    {
+      "id": "distractor-23",
+      "description": "Unrelated routing category 23"
+    },
+    {
+      "id": "distractor-24",
+      "description": "Unrelated routing category 24"
+    },
+    {
+      "id": "distractor-25",
+      "description": "Unrelated routing category 25"
+    },
+    {
+      "id": "distractor-26",
+      "description": "Unrelated routing category 26"
+    },
+    {
+      "id": "distractor-27",
+      "description": "Unrelated routing category 27"
+    },
+    {
+      "id": "distractor-28",
+      "description": "Unrelated routing category 28"
+    }
+  ]
+}

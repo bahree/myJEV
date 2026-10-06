@@ -104,12 +104,13 @@ Regenerate the compact machine-readable summary with `python scripts/summarize_r
 
 ## Publish the prepared packages
 
-The adapter-only `artifacts/hub-ready-v1/` snapshot adds MIT terms for the original adapter/head contributions, the pinned Qwen Apache-2.0 license and attribution, and BANKING77 provenance. Frozen study candidates are preserved separately. `results/release-readiness-v1/publication-manifest.json` records every upload file's checksum. No Hub namespace, visibility or image registry is assumed.
+The adapter-only `artifacts/hub-ready-v3/` snapshot adds MIT terms for the original adapter/head contributions, the pinned Qwen Apache-2.0 license and attribution, and BANKING77 provenance. Frozen study candidates are preserved separately. `results/release-readiness-v1/publication-manifest-v3.json` records every upload file's checksum. No Hub namespace, visibility or image registry is assumed.
 
 After selecting a destination, review one package locally:
 
 ```bash
 .venv/bin/python scripts/publish_hub_artifact.py \
+  --manifest results/release-readiness-v1/publication-manifest-v3.json \
   --candidate myjev-4b-continued_sft-seed11 \
   --repo-id YOUR_NAMESPACE/myjev-4b \
   --visibility private
@@ -131,3 +132,20 @@ docker image inspect "$MYJEV_REGISTRY_IMAGE" --format '{{json .RepoDigests}}'
 A local image ID is not a pullable registry digest. Record the registry digest from the push/inspect result and use that immutable reference in the endpoint configuration. The cloud recipe remains unexecuted and requires no paid deployment to reproduce local results.
 
 The recommended 4B temperature package additionally passed exact 4,096-token requests with 2 and 160 candidates, and rejected 4,097 tokens. Peak allocated VRAM was 9,538,996,736 bytes (8.88 GiB) in both synthetic cases, recorded in `results/release-readiness-v1/default-limits.json`. Other GPUs were active, so those elapsed times are not new isolated latency measurements. Continue using the tested 24 GB GPU class until total-process memory and startup headroom are measured on a smaller target.
+
+## Clean release image verification
+
+The rebuilt local `myjev:0.1.0-release-candidate` image installs the pinned dependencies into the base image and now includes the MIT license file in the installed wheel. Its local image ID is `sha256:238c4bb857950fcca869c4d8d6eb87ee179b4592d91ca2a082dbe5618de31643`; this is not yet a pullable registry reference. GPU access, Python/CLI/HTTP equivalence, the single-forward contract, 160-candidate smoke input, oversize rejection, real HTTP response equality and duplicate-ID rejection passed for the selected 4B temperature package. The managed `/health` and `/generate` aliases also passed. These checks used a read-only pre-cached backbone; they do not measure cold downloading or cloud deployment.
+
+The evidence is under `results/release-readiness-v1/`, including the image build log, source checksums, package metadata, contract checks and container log. Reproduce the live-container check with:
+
+```bash
+.venv/bin/python scripts/verify_release_container.py \
+  --artifact artifacts/hub-ready-v3/myjev-4b-continued_sft-seed11 \
+  --image myjev:0.1.0-release-candidate --cache .cache/huggingface \
+  --expected results/release-validation-v1/myjev-4b-continued_sft-seed11/equivalence.json
+```
+
+The `hub-ready-v3` cards pin public source commit `048afa79f43d6f0e84fc203cf43f5602372320c0`. The earlier packaging snapshots are retained for provenance. Version 1 predated the public source pin; version 2 predated the clarification that these individual artifacts have no archive adaptation. Adapter weights and inference manifests are unchanged between those packaging snapshots.
+
+A separate fresh host virtual environment also installed `requirements.lock` and the built package successfully, passed `pip check`, and reproduced the previous Python/CLI/HTTP response exactly. Its response matched the clean Docker installation as well. Installation logs, the full package freeze and `clean-host-equivalence.json` are retained; the disposable verification environment was removed afterward to return disk space to training. This completes local direct-install and container checks for the selected checkpoint. It does not replace the remaining pinned Hub-download check after publication.

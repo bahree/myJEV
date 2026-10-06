@@ -1,0 +1,7 @@
+{
+  "image_tag": "myjev:scratch-checkpoint",
+  "image_id": "sha256:a17967b4d9364d318f3905a84b6b7d93ed3b801f9872b8563c61c82ab22e9ee4",
+  "gpu_processes_before": "",
+  "source_revision": "a5dcbf4db8949a0d87b4d0f6ffb7b4b8f263df9c",
+  "scope": "Local prebuilt reference image; not registry published. Other GPU compute jobs required to finish first."
+}

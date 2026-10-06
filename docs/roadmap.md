@@ -85,9 +85,9 @@ The existing guides are available now. The next presentation pass will make them
 
 - [x] Add a prominent README documentation table linking the full index and each main reader task, including W&B, lessons and inference/Docker.
 - [x] Clarify read-results, train-your-own and released-model entry paths; add an annotated directory map and experiment-lifecycle diagram.
-- [ ] Add an actual artifact-linked request/response example explaining scores, confidence and unsupported inputs.
+- [x] Add an actual artifact-linked request/response example explaining scores, confidence and unsupported inputs.
 - [x] Explain deployable artifacts versus resumable checkpoints and consolidate troubleshooting, including shared-cache/disk failures.
-- [ ] Refresh results and authentic training/GPU visuals after analysis, with source evidence, uncertainty and regeneration commands.
+- [x] Refresh results and authentic training/GPU visuals after analysis, with source evidence, uncertainty and regeneration commands.
 - [ ] Validate the release inference/Docker walkthrough from a clean environment and replace pending model/image references with tested releases.
 - [ ] Add the published blog-series links, mutual navigation and documentation link checks.
 
@@ -95,7 +95,7 @@ These tasks follow the completed training batch and do not change its frozen pro
 
 ## Sequence the work without changing the current experiment
 
-1. Finish the Qwen reporting gate: audit, paired analysis, lessons in both blog drafts and the public repo, regenerable figures and pushed evidence. Complete this before scratch implementation.
+1. Finish the Qwen reporting gate: audit, paired analysis, lessons in the four blog drafts and the public repo, regenerable figures and pushed evidence. Complete this before scratch implementation.
 2. Audit completed artifacts and aggregate the Qwen results before selecting further large runs.
 3. Implement the scratch model progressively: supervised synthetic task first, correctness confidence and calibration second, exact/sampled training after behavioral tests pass.
 4. Evaluate the scratch model and Qwen artifacts on appropriate shared tasks, recording unequal pretraining exposure and complete serving costs. Phi, SmolLM and MAI remain deferred and are not release dependencies.

@@ -1,0 +1,7 @@
+{
+  "startup_to_ready_seconds": 15.402901322988328,
+  "container_id": "0382585105c2779b9185898b3cb0babe298f6cb8fea5991b00e93f2c243e2ac2",
+  "image_id": "sha256:a17967b4d9364d318f3905a84b6b7d93ed3b801f9872b8563c61c82ab22e9ee4",
+  "docker_python_equal": true,
+  "scope": "Warm image and backbone caches; one startup observation, not cold-cache cost."
+}

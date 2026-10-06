@@ -1,0 +1,32 @@
+{
+  "backbones": [
+    {
+      "backbone": "Qwen/Qwen3.5-0.8B",
+      "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+      "license": "apache-2.0",
+      "license_url": "https://huggingface.co/Qwen/Qwen3.5-0.8B/blob/2fc06364715b967f1860aea9cf38778875588b17/LICENSE",
+      "license_sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a"
+    },
+    {
+      "backbone": "Qwen/Qwen3.5-4B",
+      "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+      "license": "apache-2.0",
+      "license_url": "https://huggingface.co/Qwen/Qwen3.5-4B/blob/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/LICENSE",
+      "license_sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a"
+    },
+    {
+      "backbone": "Qwen/Qwen3.5-9B",
+      "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "license": "apache-2.0",
+      "license_url": "https://huggingface.co/Qwen/Qwen3.5-9B/blob/c202236235762e1c871ad0ccb60c8ee5ba337b9a/LICENSE",
+      "license_sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a"
+    }
+  ],
+  "original_contributions": "MIT, copyright Amit Bahree",
+  "training_dataset": {
+    "name": "BANKING77",
+    "license": "CC BY 4.0",
+    "card": "https://huggingface.co/datasets/PolyAI/banking77"
+  },
+  "redistributed": "Original adapter/head weights, code, metadata, MIT license, upstream license text. No backbone weights or training records."
+}

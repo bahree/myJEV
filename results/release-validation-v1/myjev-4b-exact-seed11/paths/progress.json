@@ -1,0 +1,3606 @@
+[
+  {
+    "candidates": 3,
+    "context_repeats": 0,
+    "path": "direct",
+    "request": {
+      "context": "I was charged twice. ",
+      "instructions": "Select the appropriate support route.",
+      "candidates": [
+        {
+          "id": "billing",
+          "description": "Charges, invoices and refunds"
+        },
+        {
+          "id": "technical",
+          "description": "Errors and configuration"
+        },
+        {
+          "id": "other",
+          "description": "Neither listed route applies"
+        }
+      ]
+    },
+    "direct_prompt_tokens": 92,
+    "seconds": [
+      0.07448178000049666,
+      0.07379703299375251,
+      0.07409529699361883,
+      0.07469860999844968,
+      0.073309600003995,
+      0.07418754199170507,
+      0.07481758599169552,
+      0.07433920801850036,
+      0.07456803199602291,
+      0.07448927298537455,
+      0.07480439997743815,
+      0.0746079969976563,
+      0.0744744949915912,
+      0.07416186400223523,
+      0.07448693900369108,
+      0.07437248100177385,
+      0.07418834400596097,
+      0.07463448800262995,
+      0.0746458109933883,
+      0.07477850999566726
+    ],
+    "p50_p95_seconds": [
+      0.07448435950209387,
+      0.07480505927815102
+    ],
+    "outputs": [
+      {
+        "selected_id": "billing",
+        "confidence": 0.8590281009674072,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8590281009674072,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8590281009674072,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8590281009674072,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8590281009674072,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8590281009674072,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8590281009674072,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8590281009674072,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8590281009674072,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8590281009674072,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8590281009674072,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8590281009674072,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8590281009674072,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8590281009674072,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8590281009674072,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8590281009674072,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8590281009674072,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8590281009674072,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8590281009674072,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8590281009674072,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      }
+    ],
+    "peak_allocated_vram_bytes": 8569534976
+  },
+  {
+    "candidates": 3,
+    "context_repeats": 0,
+    "path": "one_token",
+    "request": {
+      "context": "I was charged twice. ",
+      "instructions": "Select the appropriate support route.",
+      "candidates": [
+        {
+          "id": "billing",
+          "description": "Charges, invoices and refunds"
+        },
+        {
+          "id": "technical",
+          "description": "Errors and configuration"
+        },
+        {
+          "id": "other",
+          "description": "Neither listed route applies"
+        }
+      ]
+    },
+    "direct_prompt_tokens": 92,
+    "seconds": [
+      0.08088954299455509,
+      0.08186035198741592,
+      0.08149124300689436,
+      0.08143457601545379,
+      0.08088882200536318,
+      0.07968460299889557,
+      0.08018792499206029,
+      0.07930493401363492,
+      0.08070610699360259,
+      0.08114116999786347,
+      0.0810162540001329,
+      0.08090212699607946,
+      0.08097688099951483,
+      0.08104294299846515,
+      0.08080774900736287,
+      0.08127559500280768,
+      0.08325522398808971,
+      0.08187936901231296,
+      0.08461693301796913,
+      0.0849735070078168
+    ],
+    "p50_p95_seconds": [
+      0.08102959849929903,
+      0.08463476171746151
+    ],
+    "outputs": [
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 92,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 92,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 92,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 92,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 92,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 92,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 92,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 92,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 92,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 92,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 92,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 92,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 92,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 92,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 92,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 92,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 92,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 92,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 92,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 92,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      }
+    ],
+    "peak_allocated_vram_bytes": 8623817216
+  },
+  {
+    "candidates": 3,
+    "context_repeats": 0,
+    "path": "json",
+    "request": {
+      "context": "I was charged twice. ",
+      "instructions": "Select the appropriate support route.",
+      "candidates": [
+        {
+          "id": "billing",
+          "description": "Charges, invoices and refunds"
+        },
+        {
+          "id": "technical",
+          "description": "Errors and configuration"
+        },
+        {
+          "id": "other",
+          "description": "Neither listed route applies"
+        }
+      ]
+    },
+    "direct_prompt_tokens": 92,
+    "seconds": [
+      0.23477936297422275,
+      0.23504794100881554,
+      0.23752567201154307,
+      0.24480287500773557,
+      0.24346837698249146,
+      0.23716213600710034,
+      0.23577326399390586,
+      0.2345853949955199,
+      0.23483986701467074,
+      0.23549293298856355,
+      0.23146601801272482,
+      0.23182024899870157,
+      0.23033126897644252,
+      0.22966072900453582,
+      0.23485179099952802,
+      0.23391009698389098,
+      0.2339858199993614,
+      0.23319653602084145,
+      0.23276280501158908,
+      0.23729809300857596
+    ],
+    "p50_p95_seconds": [
+      0.23480961499444675,
+      0.24353510188375366
+    ],
+    "outputs": [
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 101,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 101,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 101,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 101,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 101,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 101,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 101,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 101,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 101,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 101,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 101,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 101,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 101,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 101,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 101,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 101,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 101,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 101,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 101,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 101,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      }
+    ],
+    "peak_allocated_vram_bytes": 8622687744
+  },
+  {
+    "candidates": 3,
+    "context_repeats": 0,
+    "path": "explanation",
+    "request": {
+      "context": "I was charged twice. ",
+      "instructions": "Select the appropriate support route.",
+      "candidates": [
+        {
+          "id": "billing",
+          "description": "Charges, invoices and refunds"
+        },
+        {
+          "id": "technical",
+          "description": "Errors and configuration"
+        },
+        {
+          "id": "other",
+          "description": "Neither listed route applies"
+        }
+      ]
+    },
+    "direct_prompt_tokens": 92,
+    "seconds": [
+      1.2001663300034124,
+      1.2127256160019897,
+      1.2004296620143577,
+      1.1927173879812472,
+      1.1972772360022645,
+      1.2087539519998245,
+      1.2075588899897411,
+      1.2083924300095532,
+      1.2001533590082545,
+      1.2157170349964872,
+      1.2111026780039538,
+      1.2083489139913581,
+      1.1957871980266646,
+      1.2184463599987794,
+      1.2256034849851858,
+      1.2102058780146763,
+      1.1966143900062889,
+      1.2104257259925362,
+      1.1993267590005416,
+      1.2154291860060766
+    ],
+    "p50_p95_seconds": [
+      1.2083706720004557,
+      1.2188042162480996
+    ],
+    "outputs": [
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 98,
+        "output_tokens": 23,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u8303\u7574\uff0c\u6d89\u53ca\u91cd\u590d\u6263\u6b3e\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 98,
+        "output_tokens": 23,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u8303\u7574\uff0c\u6d89\u53ca\u91cd\u590d\u6263\u6b3e\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 98,
+        "output_tokens": 23,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u8303\u7574\uff0c\u6d89\u53ca\u91cd\u590d\u6263\u6b3e\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 98,
+        "output_tokens": 23,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u8303\u7574\uff0c\u6d89\u53ca\u91cd\u590d\u6263\u6b3e\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 98,
+        "output_tokens": 23,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u8303\u7574\uff0c\u6d89\u53ca\u91cd\u590d\u6263\u6b3e\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 98,
+        "output_tokens": 23,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u8303\u7574\uff0c\u6d89\u53ca\u91cd\u590d\u6263\u6b3e\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 98,
+        "output_tokens": 23,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u8303\u7574\uff0c\u6d89\u53ca\u91cd\u590d\u6263\u6b3e\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 98,
+        "output_tokens": 23,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u8303\u7574\uff0c\u6d89\u53ca\u91cd\u590d\u6263\u6b3e\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 98,
+        "output_tokens": 23,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u8303\u7574\uff0c\u6d89\u53ca\u91cd\u590d\u6263\u6b3e\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 98,
+        "output_tokens": 23,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u8303\u7574\uff0c\u6d89\u53ca\u91cd\u590d\u6263\u6b3e\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 98,
+        "output_tokens": 23,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u8303\u7574\uff0c\u6d89\u53ca\u91cd\u590d\u6263\u6b3e\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 98,
+        "output_tokens": 23,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u8303\u7574\uff0c\u6d89\u53ca\u91cd\u590d\u6263\u6b3e\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 98,
+        "output_tokens": 23,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u8303\u7574\uff0c\u6d89\u53ca\u91cd\u590d\u6263\u6b3e\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 98,
+        "output_tokens": 23,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u8303\u7574\uff0c\u6d89\u53ca\u91cd\u590d\u6263\u6b3e\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 98,
+        "output_tokens": 23,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u8303\u7574\uff0c\u6d89\u53ca\u91cd\u590d\u6263\u6b3e\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 98,
+        "output_tokens": 23,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u8303\u7574\uff0c\u6d89\u53ca\u91cd\u590d\u6263\u6b3e\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 98,
+        "output_tokens": 23,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u8303\u7574\uff0c\u6d89\u53ca\u91cd\u590d\u6263\u6b3e\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 98,
+        "output_tokens": 23,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u8303\u7574\uff0c\u6d89\u53ca\u91cd\u590d\u6263\u6b3e\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 98,
+        "output_tokens": 23,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u8303\u7574\uff0c\u6d89\u53ca\u91cd\u590d\u6263\u6b3e\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 98,
+        "output_tokens": 23,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u8303\u7574\uff0c\u6d89\u53ca\u91cd\u590d\u6263\u6b3e\u3002",
+        "truncated": false
+      }
+    ],
+    "peak_allocated_vram_bytes": 8622627840
+  },
+  {
+    "candidates": 32,
+    "context_repeats": 0,
+    "path": "direct",
+    "request": {
+      "context": "I was charged twice. ",
+      "instructions": "Select the appropriate support route.",
+      "candidates": [
+        {
+          "id": "billing",
+          "description": "Charges, invoices and refunds"
+        },
+        {
+          "id": "technical",
+          "description": "Errors and configuration"
+        },
+        {
+          "id": "other",
+          "description": "Neither listed route applies"
+        },
+        {
+          "id": "distractor-0",
+          "description": "Unrelated routing category 0"
+        },
+        {
+          "id": "distractor-1",
+          "description": "Unrelated routing category 1"
+        },
+        {
+          "id": "distractor-2",
+          "description": "Unrelated routing category 2"
+        },
+        {
+          "id": "distractor-3",
+          "description": "Unrelated routing category 3"
+        },
+        {
+          "id": "distractor-4",
+          "description": "Unrelated routing category 4"
+        },
+        {
+          "id": "distractor-5",
+          "description": "Unrelated routing category 5"
+        },
+        {
+          "id": "distractor-6",
+          "description": "Unrelated routing category 6"
+        },
+        {
+          "id": "distractor-7",
+          "description": "Unrelated routing category 7"
+        },
+        {
+          "id": "distractor-8",
+          "description": "Unrelated routing category 8"
+        },
+        {
+          "id": "distractor-9",
+          "description": "Unrelated routing category 9"
+        },
+        {
+          "id": "distractor-10",
+          "description": "Unrelated routing category 10"
+        },
+        {
+          "id": "distractor-11",
+          "description": "Unrelated routing category 11"
+        },
+        {
+          "id": "distractor-12",
+          "description": "Unrelated routing category 12"
+        },
+        {
+          "id": "distractor-13",
+          "description": "Unrelated routing category 13"
+        },
+        {
+          "id": "distractor-14",
+          "description": "Unrelated routing category 14"
+        },
+        {
+          "id": "distractor-15",
+          "description": "Unrelated routing category 15"
+        },
+        {
+          "id": "distractor-16",
+          "description": "Unrelated routing category 16"
+        },
+        {
+          "id": "distractor-17",
+          "description": "Unrelated routing category 17"
+        },
+        {
+          "id": "distractor-18",
+          "description": "Unrelated routing category 18"
+        },
+        {
+          "id": "distractor-19",
+          "description": "Unrelated routing category 19"
+        },
+        {
+          "id": "distractor-20",
+          "description": "Unrelated routing category 20"
+        },
+        {
+          "id": "distractor-21",
+          "description": "Unrelated routing category 21"
+        },
+        {
+          "id": "distractor-22",
+          "description": "Unrelated routing category 22"
+        },
+        {
+          "id": "distractor-23",
+          "description": "Unrelated routing category 23"
+        },
+        {
+          "id": "distractor-24",
+          "description": "Unrelated routing category 24"
+        },
+        {
+          "id": "distractor-25",
+          "description": "Unrelated routing category 25"
+        },
+        {
+          "id": "distractor-26",
+          "description": "Unrelated routing category 26"
+        },
+        {
+          "id": "distractor-27",
+          "description": "Unrelated routing category 27"
+        },
+        {
+          "id": "distractor-28",
+          "description": "Unrelated routing category 28"
+        }
+      ]
+    },
+    "direct_prompt_tokens": 488,
+    "seconds": [
+      0.1222380810067989,
+      0.12226720800390467,
+      0.12223353298031725,
+      0.121700805000728,
+      0.12194150098366663,
+      0.12271110800793394,
+      0.12191803698078729,
+      0.12195522600086406,
+      0.12248476900276728,
+      0.12200179501087405,
+      0.12238596199313179,
+      0.12207561399554834,
+      0.1218244890042115,
+      0.12173078299383633,
+      0.12189097399823368,
+      0.1229662109981291,
+      0.12299839197658002,
+      0.1226980020001065,
+      0.12243814000976272,
+      0.1221498450031504
+    ],
+    "p50_p95_seconds": [
+      0.12219168899173383,
+      0.12296782004705165
+    ],
+    "outputs": [
+      {
+        "selected_id": "billing",
+        "confidence": 0.8588957190513611,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8588957190513611,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8588957190513611,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8588957190513611,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8588957190513611,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8588957190513611,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8588957190513611,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8588957190513611,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8588957190513611,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8588957190513611,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8588957190513611,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8588957190513611,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8588957190513611,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8588957190513611,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8588957190513611,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8588957190513611,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8588957190513611,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8588957190513611,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8588957190513611,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8588957190513611,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      }
+    ],
+    "peak_allocated_vram_bytes": 8658338816
+  },
+  {
+    "candidates": 32,
+    "context_repeats": 0,
+    "path": "one_token",
+    "request": {
+      "context": "I was charged twice. ",
+      "instructions": "Select the appropriate support route.",
+      "candidates": [
+        {
+          "id": "billing",
+          "description": "Charges, invoices and refunds"
+        },
+        {
+          "id": "technical",
+          "description": "Errors and configuration"
+        },
+        {
+          "id": "other",
+          "description": "Neither listed route applies"
+        },
+        {
+          "id": "distractor-0",
+          "description": "Unrelated routing category 0"
+        },
+        {
+          "id": "distractor-1",
+          "description": "Unrelated routing category 1"
+        },
+        {
+          "id": "distractor-2",
+          "description": "Unrelated routing category 2"
+        },
+        {
+          "id": "distractor-3",
+          "description": "Unrelated routing category 3"
+        },
+        {
+          "id": "distractor-4",
+          "description": "Unrelated routing category 4"
+        },
+        {
+          "id": "distractor-5",
+          "description": "Unrelated routing category 5"
+        },
+        {
+          "id": "distractor-6",
+          "description": "Unrelated routing category 6"
+        },
+        {
+          "id": "distractor-7",
+          "description": "Unrelated routing category 7"
+        },
+        {
+          "id": "distractor-8",
+          "description": "Unrelated routing category 8"
+        },
+        {
+          "id": "distractor-9",
+          "description": "Unrelated routing category 9"
+        },
+        {
+          "id": "distractor-10",
+          "description": "Unrelated routing category 10"
+        },
+        {
+          "id": "distractor-11",
+          "description": "Unrelated routing category 11"
+        },
+        {
+          "id": "distractor-12",
+          "description": "Unrelated routing category 12"
+        },
+        {
+          "id": "distractor-13",
+          "description": "Unrelated routing category 13"
+        },
+        {
+          "id": "distractor-14",
+          "description": "Unrelated routing category 14"
+        },
+        {
+          "id": "distractor-15",
+          "description": "Unrelated routing category 15"
+        },
+        {
+          "id": "distractor-16",
+          "description": "Unrelated routing category 16"
+        },
+        {
+          "id": "distractor-17",
+          "description": "Unrelated routing category 17"
+        },
+        {
+          "id": "distractor-18",
+          "description": "Unrelated routing category 18"
+        },
+        {
+          "id": "distractor-19",
+          "description": "Unrelated routing category 19"
+        },
+        {
+          "id": "distractor-20",
+          "description": "Unrelated routing category 20"
+        },
+        {
+          "id": "distractor-21",
+          "description": "Unrelated routing category 21"
+        },
+        {
+          "id": "distractor-22",
+          "description": "Unrelated routing category 22"
+        },
+        {
+          "id": "distractor-23",
+          "description": "Unrelated routing category 23"
+        },
+        {
+          "id": "distractor-24",
+          "description": "Unrelated routing category 24"
+        },
+        {
+          "id": "distractor-25",
+          "description": "Unrelated routing category 25"
+        },
+        {
+          "id": "distractor-26",
+          "description": "Unrelated routing category 26"
+        },
+        {
+          "id": "distractor-27",
+          "description": "Unrelated routing category 27"
+        },
+        {
+          "id": "distractor-28",
+          "description": "Unrelated routing category 28"
+        }
+      ]
+    },
+    "direct_prompt_tokens": 488,
+    "seconds": [
+      0.1274675659951754,
+      0.12682567999581806,
+      0.12670393000007607,
+      0.12627895499463193,
+      0.12659494299441576,
+      0.12615985801676288,
+      0.12625566200586036,
+      0.125941396021517,
+      0.12600439501693472,
+      0.12658401200314984,
+      0.12679387000389397,
+      0.12697582598775625,
+      0.12672666300204583,
+      0.12633384900982492,
+      0.12659121697652154,
+      0.1264325359952636,
+      0.12601402300060727,
+      0.12658856197958812,
+      0.12615154398372397,
+      0.12665103102335706
+    ],
+    "p50_p95_seconds": [
+      0.12658628699136898,
+      0.1270004129881272
+    ],
+    "outputs": [
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 488,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 488,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 488,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 488,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 488,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 488,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 488,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 488,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 488,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 488,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 488,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 488,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 488,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 488,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 488,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 488,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 488,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 488,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 488,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 488,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      }
+    ],
+    "peak_allocated_vram_bytes": 8726608896
+  },
+  {
+    "candidates": 32,
+    "context_repeats": 0,
+    "path": "json",
+    "request": {
+      "context": "I was charged twice. ",
+      "instructions": "Select the appropriate support route.",
+      "candidates": [
+        {
+          "id": "billing",
+          "description": "Charges, invoices and refunds"
+        },
+        {
+          "id": "technical",
+          "description": "Errors and configuration"
+        },
+        {
+          "id": "other",
+          "description": "Neither listed route applies"
+        },
+        {
+          "id": "distractor-0",
+          "description": "Unrelated routing category 0"
+        },
+        {
+          "id": "distractor-1",
+          "description": "Unrelated routing category 1"
+        },
+        {
+          "id": "distractor-2",
+          "description": "Unrelated routing category 2"
+        },
+        {
+          "id": "distractor-3",
+          "description": "Unrelated routing category 3"
+        },
+        {
+          "id": "distractor-4",
+          "description": "Unrelated routing category 4"
+        },
+        {
+          "id": "distractor-5",
+          "description": "Unrelated routing category 5"
+        },
+        {
+          "id": "distractor-6",
+          "description": "Unrelated routing category 6"
+        },
+        {
+          "id": "distractor-7",
+          "description": "Unrelated routing category 7"
+        },
+        {
+          "id": "distractor-8",
+          "description": "Unrelated routing category 8"
+        },
+        {
+          "id": "distractor-9",
+          "description": "Unrelated routing category 9"
+        },
+        {
+          "id": "distractor-10",
+          "description": "Unrelated routing category 10"
+        },
+        {
+          "id": "distractor-11",
+          "description": "Unrelated routing category 11"
+        },
+        {
+          "id": "distractor-12",
+          "description": "Unrelated routing category 12"
+        },
+        {
+          "id": "distractor-13",
+          "description": "Unrelated routing category 13"
+        },
+        {
+          "id": "distractor-14",
+          "description": "Unrelated routing category 14"
+        },
+        {
+          "id": "distractor-15",
+          "description": "Unrelated routing category 15"
+        },
+        {
+          "id": "distractor-16",
+          "description": "Unrelated routing category 16"
+        },
+        {
+          "id": "distractor-17",
+          "description": "Unrelated routing category 17"
+        },
+        {
+          "id": "distractor-18",
+          "description": "Unrelated routing category 18"
+        },
+        {
+          "id": "distractor-19",
+          "description": "Unrelated routing category 19"
+        },
+        {
+          "id": "distractor-20",
+          "description": "Unrelated routing category 20"
+        },
+        {
+          "id": "distractor-21",
+          "description": "Unrelated routing category 21"
+        },
+        {
+          "id": "distractor-22",
+          "description": "Unrelated routing category 22"
+        },
+        {
+          "id": "distractor-23",
+          "description": "Unrelated routing category 23"
+        },
+        {
+          "id": "distractor-24",
+          "description": "Unrelated routing category 24"
+        },
+        {
+          "id": "distractor-25",
+          "description": "Unrelated routing category 25"
+        },
+        {
+          "id": "distractor-26",
+          "description": "Unrelated routing category 26"
+        },
+        {
+          "id": "distractor-27",
+          "description": "Unrelated routing category 27"
+        },
+        {
+          "id": "distractor-28",
+          "description": "Unrelated routing category 28"
+        }
+      ]
+    },
+    "direct_prompt_tokens": 488,
+    "seconds": [
+      0.27675863201147877,
+      0.2789093149767723,
+      0.28059133898932487,
+      0.28026873999624513,
+      0.2801151879830286,
+      0.2799756449821871,
+      0.27996461500879377,
+      0.27988700798596255,
+      0.28029661302571185,
+      0.27981149399420246,
+      0.27976646900060587,
+      0.2791944250056986,
+      0.27989194699330255,
+      0.28328982199309394,
+      0.2848231050011236,
+      0.27873639899189584,
+      0.2783658769913018,
+      0.2835461880022194,
+      0.27750230199308135,
+      0.27887953000026755
+    ],
+    "p50_p95_seconds": [
+      0.27988947748963255,
+      0.28361003385216466
+    ],
+    "outputs": [
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 497,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 497,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 497,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 497,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 497,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 497,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 497,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 497,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 497,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 497,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 497,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 497,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 497,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 497,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 497,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 497,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 497,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 497,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 497,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 497,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      }
+    ],
+    "peak_allocated_vram_bytes": 8727166464
+  },
+  {
+    "candidates": 32,
+    "context_repeats": 0,
+    "path": "explanation",
+    "request": {
+      "context": "I was charged twice. ",
+      "instructions": "Select the appropriate support route.",
+      "candidates": [
+        {
+          "id": "billing",
+          "description": "Charges, invoices and refunds"
+        },
+        {
+          "id": "technical",
+          "description": "Errors and configuration"
+        },
+        {
+          "id": "other",
+          "description": "Neither listed route applies"
+        },
+        {
+          "id": "distractor-0",
+          "description": "Unrelated routing category 0"
+        },
+        {
+          "id": "distractor-1",
+          "description": "Unrelated routing category 1"
+        },
+        {
+          "id": "distractor-2",
+          "description": "Unrelated routing category 2"
+        },
+        {
+          "id": "distractor-3",
+          "description": "Unrelated routing category 3"
+        },
+        {
+          "id": "distractor-4",
+          "description": "Unrelated routing category 4"
+        },
+        {
+          "id": "distractor-5",
+          "description": "Unrelated routing category 5"
+        },
+        {
+          "id": "distractor-6",
+          "description": "Unrelated routing category 6"
+        },
+        {
+          "id": "distractor-7",
+          "description": "Unrelated routing category 7"
+        },
+        {
+          "id": "distractor-8",
+          "description": "Unrelated routing category 8"
+        },
+        {
+          "id": "distractor-9",
+          "description": "Unrelated routing category 9"
+        },
+        {
+          "id": "distractor-10",
+          "description": "Unrelated routing category 10"
+        },
+        {
+          "id": "distractor-11",
+          "description": "Unrelated routing category 11"
+        },
+        {
+          "id": "distractor-12",
+          "description": "Unrelated routing category 12"
+        },
+        {
+          "id": "distractor-13",
+          "description": "Unrelated routing category 13"
+        },
+        {
+          "id": "distractor-14",
+          "description": "Unrelated routing category 14"
+        },
+        {
+          "id": "distractor-15",
+          "description": "Unrelated routing category 15"
+        },
+        {
+          "id": "distractor-16",
+          "description": "Unrelated routing category 16"
+        },
+        {
+          "id": "distractor-17",
+          "description": "Unrelated routing category 17"
+        },
+        {
+          "id": "distractor-18",
+          "description": "Unrelated routing category 18"
+        },
+        {
+          "id": "distractor-19",
+          "description": "Unrelated routing category 19"
+        },
+        {
+          "id": "distractor-20",
+          "description": "Unrelated routing category 20"
+        },
+        {
+          "id": "distractor-21",
+          "description": "Unrelated routing category 21"
+        },
+        {
+          "id": "distractor-22",
+          "description": "Unrelated routing category 22"
+        },
+        {
+          "id": "distractor-23",
+          "description": "Unrelated routing category 23"
+        },
+        {
+          "id": "distractor-24",
+          "description": "Unrelated routing category 24"
+        },
+        {
+          "id": "distractor-25",
+          "description": "Unrelated routing category 25"
+        },
+        {
+          "id": "distractor-26",
+          "description": "Unrelated routing category 26"
+        },
+        {
+          "id": "distractor-27",
+          "description": "Unrelated routing category 27"
+        },
+        {
+          "id": "distractor-28",
+          "description": "Unrelated routing category 28"
+        }
+      ]
+    },
+    "direct_prompt_tokens": 488,
+    "seconds": [
+      1.1381794979970437,
+      1.146403355000075,
+      1.153588241984835,
+      1.1614385510038119,
+      1.1432106120046228,
+      1.1586618149885908,
+      1.1411818120104726,
+      1.1328838670160621,
+      1.1423252480162773,
+      1.1315918730106205,
+      1.1575257279910147,
+      1.1517897059966344,
+      1.1469971320184413,
+      1.1495795130031183,
+      1.1554396519786678,
+      1.1516196480079088,
+      1.1495907469943631,
+      1.1544462949968874,
+      1.13283758299076,
+      1.1451847559947055
+    ],
+    "p50_p95_seconds": [
+      1.1482883225107798,
+      1.1588006517893519
+    ],
+    "outputs": [
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 494,
+        "output_tokens": 21,
+        "format_valid": true,
+        "text": "A\n\u8be5\u9009\u9879\u6d89\u53ca\u8d26\u5355\u3001\u53d1\u7968\u548c\u9000\u6b3e\uff0c\u5904\u7406\u91cd\u590d\u6536\u8d39\u5c5e\u4e8e\u6b64\u7c7b\u95ee\u9898\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 494,
+        "output_tokens": 21,
+        "format_valid": true,
+        "text": "A\n\u8be5\u9009\u9879\u6d89\u53ca\u8d26\u5355\u3001\u53d1\u7968\u548c\u9000\u6b3e\uff0c\u5904\u7406\u91cd\u590d\u6536\u8d39\u5c5e\u4e8e\u6b64\u7c7b\u95ee\u9898\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 494,
+        "output_tokens": 21,
+        "format_valid": true,
+        "text": "A\n\u8be5\u9009\u9879\u6d89\u53ca\u8d26\u5355\u3001\u53d1\u7968\u548c\u9000\u6b3e\uff0c\u5904\u7406\u91cd\u590d\u6536\u8d39\u5c5e\u4e8e\u6b64\u7c7b\u95ee\u9898\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 494,
+        "output_tokens": 21,
+        "format_valid": true,
+        "text": "A\n\u8be5\u9009\u9879\u6d89\u53ca\u8d26\u5355\u3001\u53d1\u7968\u548c\u9000\u6b3e\uff0c\u5904\u7406\u91cd\u590d\u6536\u8d39\u5c5e\u4e8e\u6b64\u7c7b\u95ee\u9898\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 494,
+        "output_tokens": 21,
+        "format_valid": true,
+        "text": "A\n\u8be5\u9009\u9879\u6d89\u53ca\u8d26\u5355\u3001\u53d1\u7968\u548c\u9000\u6b3e\uff0c\u5904\u7406\u91cd\u590d\u6536\u8d39\u5c5e\u4e8e\u6b64\u7c7b\u95ee\u9898\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 494,
+        "output_tokens": 21,
+        "format_valid": true,
+        "text": "A\n\u8be5\u9009\u9879\u6d89\u53ca\u8d26\u5355\u3001\u53d1\u7968\u548c\u9000\u6b3e\uff0c\u5904\u7406\u91cd\u590d\u6536\u8d39\u5c5e\u4e8e\u6b64\u7c7b\u95ee\u9898\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 494,
+        "output_tokens": 21,
+        "format_valid": true,
+        "text": "A\n\u8be5\u9009\u9879\u6d89\u53ca\u8d26\u5355\u3001\u53d1\u7968\u548c\u9000\u6b3e\uff0c\u5904\u7406\u91cd\u590d\u6536\u8d39\u5c5e\u4e8e\u6b64\u7c7b\u95ee\u9898\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 494,
+        "output_tokens": 21,
+        "format_valid": true,
+        "text": "A\n\u8be5\u9009\u9879\u6d89\u53ca\u8d26\u5355\u3001\u53d1\u7968\u548c\u9000\u6b3e\uff0c\u5904\u7406\u91cd\u590d\u6536\u8d39\u5c5e\u4e8e\u6b64\u7c7b\u95ee\u9898\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 494,
+        "output_tokens": 21,
+        "format_valid": true,
+        "text": "A\n\u8be5\u9009\u9879\u6d89\u53ca\u8d26\u5355\u3001\u53d1\u7968\u548c\u9000\u6b3e\uff0c\u5904\u7406\u91cd\u590d\u6536\u8d39\u5c5e\u4e8e\u6b64\u7c7b\u95ee\u9898\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 494,
+        "output_tokens": 21,
+        "format_valid": true,
+        "text": "A\n\u8be5\u9009\u9879\u6d89\u53ca\u8d26\u5355\u3001\u53d1\u7968\u548c\u9000\u6b3e\uff0c\u5904\u7406\u91cd\u590d\u6536\u8d39\u5c5e\u4e8e\u6b64\u7c7b\u95ee\u9898\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 494,
+        "output_tokens": 21,
+        "format_valid": true,
+        "text": "A\n\u8be5\u9009\u9879\u6d89\u53ca\u8d26\u5355\u3001\u53d1\u7968\u548c\u9000\u6b3e\uff0c\u5904\u7406\u91cd\u590d\u6536\u8d39\u5c5e\u4e8e\u6b64\u7c7b\u95ee\u9898\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 494,
+        "output_tokens": 21,
+        "format_valid": true,
+        "text": "A\n\u8be5\u9009\u9879\u6d89\u53ca\u8d26\u5355\u3001\u53d1\u7968\u548c\u9000\u6b3e\uff0c\u5904\u7406\u91cd\u590d\u6536\u8d39\u5c5e\u4e8e\u6b64\u7c7b\u95ee\u9898\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 494,
+        "output_tokens": 21,
+        "format_valid": true,
+        "text": "A\n\u8be5\u9009\u9879\u6d89\u53ca\u8d26\u5355\u3001\u53d1\u7968\u548c\u9000\u6b3e\uff0c\u5904\u7406\u91cd\u590d\u6536\u8d39\u5c5e\u4e8e\u6b64\u7c7b\u95ee\u9898\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 494,
+        "output_tokens": 21,
+        "format_valid": true,
+        "text": "A\n\u8be5\u9009\u9879\u6d89\u53ca\u8d26\u5355\u3001\u53d1\u7968\u548c\u9000\u6b3e\uff0c\u5904\u7406\u91cd\u590d\u6536\u8d39\u5c5e\u4e8e\u6b64\u7c7b\u95ee\u9898\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 494,
+        "output_tokens": 21,
+        "format_valid": true,
+        "text": "A\n\u8be5\u9009\u9879\u6d89\u53ca\u8d26\u5355\u3001\u53d1\u7968\u548c\u9000\u6b3e\uff0c\u5904\u7406\u91cd\u590d\u6536\u8d39\u5c5e\u4e8e\u6b64\u7c7b\u95ee\u9898\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 494,
+        "output_tokens": 21,
+        "format_valid": true,
+        "text": "A\n\u8be5\u9009\u9879\u6d89\u53ca\u8d26\u5355\u3001\u53d1\u7968\u548c\u9000\u6b3e\uff0c\u5904\u7406\u91cd\u590d\u6536\u8d39\u5c5e\u4e8e\u6b64\u7c7b\u95ee\u9898\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 494,
+        "output_tokens": 21,
+        "format_valid": true,
+        "text": "A\n\u8be5\u9009\u9879\u6d89\u53ca\u8d26\u5355\u3001\u53d1\u7968\u548c\u9000\u6b3e\uff0c\u5904\u7406\u91cd\u590d\u6536\u8d39\u5c5e\u4e8e\u6b64\u7c7b\u95ee\u9898\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 494,
+        "output_tokens": 21,
+        "format_valid": true,
+        "text": "A\n\u8be5\u9009\u9879\u6d89\u53ca\u8d26\u5355\u3001\u53d1\u7968\u548c\u9000\u6b3e\uff0c\u5904\u7406\u91cd\u590d\u6536\u8d39\u5c5e\u4e8e\u6b64\u7c7b\u95ee\u9898\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 494,
+        "output_tokens": 21,
+        "format_valid": true,
+        "text": "A\n\u8be5\u9009\u9879\u6d89\u53ca\u8d26\u5355\u3001\u53d1\u7968\u548c\u9000\u6b3e\uff0c\u5904\u7406\u91cd\u590d\u6536\u8d39\u5c5e\u4e8e\u6b64\u7c7b\u95ee\u9898\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 494,
+        "output_tokens": 21,
+        "format_valid": true,
+        "text": "A\n\u8be5\u9009\u9879\u6d89\u53ca\u8d26\u5355\u3001\u53d1\u7968\u548c\u9000\u6b3e\uff0c\u5904\u7406\u91cd\u590d\u6536\u8d39\u5c5e\u4e8e\u6b64\u7c7b\u95ee\u9898\u3002",
+        "truncated": false
+      }
+    ],
+    "peak_allocated_vram_bytes": 8726619648
+  },
+  {
+    "candidates": 32,
+    "context_repeats": 128,
+    "path": "direct",
+    "request": {
+      "context": "I was charged twice. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. ",
+      "instructions": "Select the appropriate support route.",
+      "candidates": [
+        {
+          "id": "billing",
+          "description": "Charges, invoices and refunds"
+        },
+        {
+          "id": "technical",
+          "description": "Errors and configuration"
+        },
+        {
+          "id": "other",
+          "description": "Neither listed route applies"
+        },
+        {
+          "id": "distractor-0",
+          "description": "Unrelated routing category 0"
+        },
+        {
+          "id": "distractor-1",
+          "description": "Unrelated routing category 1"
+        },
+        {
+          "id": "distractor-2",
+          "description": "Unrelated routing category 2"
+        },
+        {
+          "id": "distractor-3",
+          "description": "Unrelated routing category 3"
+        },
+        {
+          "id": "distractor-4",
+          "description": "Unrelated routing category 4"
+        },
+        {
+          "id": "distractor-5",
+          "description": "Unrelated routing category 5"
+        },
+        {
+          "id": "distractor-6",
+          "description": "Unrelated routing category 6"
+        },
+        {
+          "id": "distractor-7",
+          "description": "Unrelated routing category 7"
+        },
+        {
+          "id": "distractor-8",
+          "description": "Unrelated routing category 8"
+        },
+        {
+          "id": "distractor-9",
+          "description": "Unrelated routing category 9"
+        },
+        {
+          "id": "distractor-10",
+          "description": "Unrelated routing category 10"
+        },
+        {
+          "id": "distractor-11",
+          "description": "Unrelated routing category 11"
+        },
+        {
+          "id": "distractor-12",
+          "description": "Unrelated routing category 12"
+        },
+        {
+          "id": "distractor-13",
+          "description": "Unrelated routing category 13"
+        },
+        {
+          "id": "distractor-14",
+          "description": "Unrelated routing category 14"
+        },
+        {
+          "id": "distractor-15",
+          "description": "Unrelated routing category 15"
+        },
+        {
+          "id": "distractor-16",
+          "description": "Unrelated routing category 16"
+        },
+        {
+          "id": "distractor-17",
+          "description": "Unrelated routing category 17"
+        },
+        {
+          "id": "distractor-18",
+          "description": "Unrelated routing category 18"
+        },
+        {
+          "id": "distractor-19",
+          "description": "Unrelated routing category 19"
+        },
+        {
+          "id": "distractor-20",
+          "description": "Unrelated routing category 20"
+        },
+        {
+          "id": "distractor-21",
+          "description": "Unrelated routing category 21"
+        },
+        {
+          "id": "distractor-22",
+          "description": "Unrelated routing category 22"
+        },
+        {
+          "id": "distractor-23",
+          "description": "Unrelated routing category 23"
+        },
+        {
+          "id": "distractor-24",
+          "description": "Unrelated routing category 24"
+        },
+        {
+          "id": "distractor-25",
+          "description": "Unrelated routing category 25"
+        },
+        {
+          "id": "distractor-26",
+          "description": "Unrelated routing category 26"
+        },
+        {
+          "id": "distractor-27",
+          "description": "Unrelated routing category 27"
+        },
+        {
+          "id": "distractor-28",
+          "description": "Unrelated routing category 28"
+        }
+      ]
+    },
+    "direct_prompt_tokens": 1000,
+    "seconds": [
+      0.24046107899630442,
+      0.2386902449943591,
+      0.2391813049907796,
+      0.24047608699765988,
+      0.24016794402268715,
+      0.23890057299286127,
+      0.2392764249816537,
+      0.24060976100736298,
+      0.24163223698269576,
+      0.24044315502396785,
+      0.24006621999433264,
+      0.23845884701586328,
+      0.2409296770056244,
+      0.24152663798304275,
+      0.24141147901536897,
+      0.2414312670007348,
+      0.24113751997356303,
+      0.2404170060181059,
+      0.24028882299899124,
+      0.2396104889921844
+    ],
+    "p50_p95_seconds": [
+      0.24043008052103687,
+      0.2415319179330254
+    ],
+    "outputs": [
+      {
+        "selected_id": "billing",
+        "confidence": 0.8569923639297485,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8569923639297485,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8569923639297485,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8569923639297485,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8569923639297485,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8569923639297485,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8569923639297485,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8569923639297485,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8569923639297485,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8569923639297485,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8569923639297485,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8569923639297485,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8569923639297485,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8569923639297485,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8569923639297485,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8569923639297485,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8569923639297485,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8569923639297485,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8569923639297485,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": 0.8569923639297485,
+        "output_tokens": 0,
+        "format_valid": true,
+        "truncated": false
+      }
+    ],
+    "peak_allocated_vram_bytes": 8783369216
+  },
+  {
+    "candidates": 32,
+    "context_repeats": 128,
+    "path": "one_token",
+    "request": {
+      "context": "I was charged twice. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. ",
+      "instructions": "Select the appropriate support route.",
+      "candidates": [
+        {
+          "id": "billing",
+          "description": "Charges, invoices and refunds"
+        },
+        {
+          "id": "technical",
+          "description": "Errors and configuration"
+        },
+        {
+          "id": "other",
+          "description": "Neither listed route applies"
+        },
+        {
+          "id": "distractor-0",
+          "description": "Unrelated routing category 0"
+        },
+        {
+          "id": "distractor-1",
+          "description": "Unrelated routing category 1"
+        },
+        {
+          "id": "distractor-2",
+          "description": "Unrelated routing category 2"
+        },
+        {
+          "id": "distractor-3",
+          "description": "Unrelated routing category 3"
+        },
+        {
+          "id": "distractor-4",
+          "description": "Unrelated routing category 4"
+        },
+        {
+          "id": "distractor-5",
+          "description": "Unrelated routing category 5"
+        },
+        {
+          "id": "distractor-6",
+          "description": "Unrelated routing category 6"
+        },
+        {
+          "id": "distractor-7",
+          "description": "Unrelated routing category 7"
+        },
+        {
+          "id": "distractor-8",
+          "description": "Unrelated routing category 8"
+        },
+        {
+          "id": "distractor-9",
+          "description": "Unrelated routing category 9"
+        },
+        {
+          "id": "distractor-10",
+          "description": "Unrelated routing category 10"
+        },
+        {
+          "id": "distractor-11",
+          "description": "Unrelated routing category 11"
+        },
+        {
+          "id": "distractor-12",
+          "description": "Unrelated routing category 12"
+        },
+        {
+          "id": "distractor-13",
+          "description": "Unrelated routing category 13"
+        },
+        {
+          "id": "distractor-14",
+          "description": "Unrelated routing category 14"
+        },
+        {
+          "id": "distractor-15",
+          "description": "Unrelated routing category 15"
+        },
+        {
+          "id": "distractor-16",
+          "description": "Unrelated routing category 16"
+        },
+        {
+          "id": "distractor-17",
+          "description": "Unrelated routing category 17"
+        },
+        {
+          "id": "distractor-18",
+          "description": "Unrelated routing category 18"
+        },
+        {
+          "id": "distractor-19",
+          "description": "Unrelated routing category 19"
+        },
+        {
+          "id": "distractor-20",
+          "description": "Unrelated routing category 20"
+        },
+        {
+          "id": "distractor-21",
+          "description": "Unrelated routing category 21"
+        },
+        {
+          "id": "distractor-22",
+          "description": "Unrelated routing category 22"
+        },
+        {
+          "id": "distractor-23",
+          "description": "Unrelated routing category 23"
+        },
+        {
+          "id": "distractor-24",
+          "description": "Unrelated routing category 24"
+        },
+        {
+          "id": "distractor-25",
+          "description": "Unrelated routing category 25"
+        },
+        {
+          "id": "distractor-26",
+          "description": "Unrelated routing category 26"
+        },
+        {
+          "id": "distractor-27",
+          "description": "Unrelated routing category 27"
+        },
+        {
+          "id": "distractor-28",
+          "description": "Unrelated routing category 28"
+        }
+      ]
+    },
+    "direct_prompt_tokens": 1000,
+    "seconds": [
+      0.24259721499402076,
+      0.24295100499875844,
+      0.24284828000236303,
+      0.2430832459940575,
+      0.24325450000469573,
+      0.24419932899763808,
+      0.24387549600214697,
+      0.24502992202178575,
+      0.24624427300295793,
+      0.2455177259980701,
+      0.24331103800795972,
+      0.2440598660032265,
+      0.24544261398841627,
+      0.2444756439945195,
+      0.24475806701229885,
+      0.2440983790147584,
+      0.24648788399645127,
+      0.24529542599339038,
+      0.24541910001426004,
+      0.24540362099651247
+    ],
+    "p50_p95_seconds": [
+      0.24433748649607878,
+      0.2462564535526326
+    ],
+    "outputs": [
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1000,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1000,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1000,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1000,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1000,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1000,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1000,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1000,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1000,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1000,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1000,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1000,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1000,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1000,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1000,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1000,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1000,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1000,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1000,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1000,
+        "output_tokens": 1,
+        "format_valid": true,
+        "text": "A",
+        "truncated": false
+      }
+    ],
+    "peak_allocated_vram_bytes": 8869707776
+  },
+  {
+    "candidates": 32,
+    "context_repeats": 128,
+    "path": "json",
+    "request": {
+      "context": "I was charged twice. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. ",
+      "instructions": "Select the appropriate support route.",
+      "candidates": [
+        {
+          "id": "billing",
+          "description": "Charges, invoices and refunds"
+        },
+        {
+          "id": "technical",
+          "description": "Errors and configuration"
+        },
+        {
+          "id": "other",
+          "description": "Neither listed route applies"
+        },
+        {
+          "id": "distractor-0",
+          "description": "Unrelated routing category 0"
+        },
+        {
+          "id": "distractor-1",
+          "description": "Unrelated routing category 1"
+        },
+        {
+          "id": "distractor-2",
+          "description": "Unrelated routing category 2"
+        },
+        {
+          "id": "distractor-3",
+          "description": "Unrelated routing category 3"
+        },
+        {
+          "id": "distractor-4",
+          "description": "Unrelated routing category 4"
+        },
+        {
+          "id": "distractor-5",
+          "description": "Unrelated routing category 5"
+        },
+        {
+          "id": "distractor-6",
+          "description": "Unrelated routing category 6"
+        },
+        {
+          "id": "distractor-7",
+          "description": "Unrelated routing category 7"
+        },
+        {
+          "id": "distractor-8",
+          "description": "Unrelated routing category 8"
+        },
+        {
+          "id": "distractor-9",
+          "description": "Unrelated routing category 9"
+        },
+        {
+          "id": "distractor-10",
+          "description": "Unrelated routing category 10"
+        },
+        {
+          "id": "distractor-11",
+          "description": "Unrelated routing category 11"
+        },
+        {
+          "id": "distractor-12",
+          "description": "Unrelated routing category 12"
+        },
+        {
+          "id": "distractor-13",
+          "description": "Unrelated routing category 13"
+        },
+        {
+          "id": "distractor-14",
+          "description": "Unrelated routing category 14"
+        },
+        {
+          "id": "distractor-15",
+          "description": "Unrelated routing category 15"
+        },
+        {
+          "id": "distractor-16",
+          "description": "Unrelated routing category 16"
+        },
+        {
+          "id": "distractor-17",
+          "description": "Unrelated routing category 17"
+        },
+        {
+          "id": "distractor-18",
+          "description": "Unrelated routing category 18"
+        },
+        {
+          "id": "distractor-19",
+          "description": "Unrelated routing category 19"
+        },
+        {
+          "id": "distractor-20",
+          "description": "Unrelated routing category 20"
+        },
+        {
+          "id": "distractor-21",
+          "description": "Unrelated routing category 21"
+        },
+        {
+          "id": "distractor-22",
+          "description": "Unrelated routing category 22"
+        },
+        {
+          "id": "distractor-23",
+          "description": "Unrelated routing category 23"
+        },
+        {
+          "id": "distractor-24",
+          "description": "Unrelated routing category 24"
+        },
+        {
+          "id": "distractor-25",
+          "description": "Unrelated routing category 25"
+        },
+        {
+          "id": "distractor-26",
+          "description": "Unrelated routing category 26"
+        },
+        {
+          "id": "distractor-27",
+          "description": "Unrelated routing category 27"
+        },
+        {
+          "id": "distractor-28",
+          "description": "Unrelated routing category 28"
+        }
+      ]
+    },
+    "direct_prompt_tokens": 1000,
+    "seconds": [
+      0.39437976499903016,
+      0.3929294999979902,
+      0.39233016400248744,
+      0.39259479599422775,
+      0.3951754219888244,
+      0.3944385969953146,
+      0.39398225297918543,
+      0.39435514001525007,
+      0.39575738401617855,
+      0.3972902369860094,
+      0.39940922101959586,
+      0.39638450200436637,
+      0.39406400799634866,
+      0.3941707019985188,
+      0.3945082599821035,
+      0.394219874026021,
+      0.39294084202265367,
+      0.3946427660121117,
+      0.3964687529951334,
+      0.3956862020131666
+    ],
+    "p50_p95_seconds": [
+      0.39440918099717237,
+      0.39739618618768874
+    ],
+    "outputs": [
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 1009,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 1009,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 1009,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 1009,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 1009,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 1009,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 1009,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 1009,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 1009,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 1009,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 1009,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 1009,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 1009,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 1009,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 1009,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 1009,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 1009,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 1009,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 1009,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      },
+      {
+        "selected_id": null,
+        "confidence": null,
+        "input_tokens": 1009,
+        "output_tokens": 4,
+        "format_valid": false,
+        "text": "A",
+        "truncated": false
+      }
+    ],
+    "peak_allocated_vram_bytes": 8869945856
+  },
+  {
+    "candidates": 32,
+    "context_repeats": 128,
+    "path": "explanation",
+    "request": {
+      "context": "I was charged twice. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. Background account information. ",
+      "instructions": "Select the appropriate support route.",
+      "candidates": [
+        {
+          "id": "billing",
+          "description": "Charges, invoices and refunds"
+        },
+        {
+          "id": "technical",
+          "description": "Errors and configuration"
+        },
+        {
+          "id": "other",
+          "description": "Neither listed route applies"
+        },
+        {
+          "id": "distractor-0",
+          "description": "Unrelated routing category 0"
+        },
+        {
+          "id": "distractor-1",
+          "description": "Unrelated routing category 1"
+        },
+        {
+          "id": "distractor-2",
+          "description": "Unrelated routing category 2"
+        },
+        {
+          "id": "distractor-3",
+          "description": "Unrelated routing category 3"
+        },
+        {
+          "id": "distractor-4",
+          "description": "Unrelated routing category 4"
+        },
+        {
+          "id": "distractor-5",
+          "description": "Unrelated routing category 5"
+        },
+        {
+          "id": "distractor-6",
+          "description": "Unrelated routing category 6"
+        },
+        {
+          "id": "distractor-7",
+          "description": "Unrelated routing category 7"
+        },
+        {
+          "id": "distractor-8",
+          "description": "Unrelated routing category 8"
+        },
+        {
+          "id": "distractor-9",
+          "description": "Unrelated routing category 9"
+        },
+        {
+          "id": "distractor-10",
+          "description": "Unrelated routing category 10"
+        },
+        {
+          "id": "distractor-11",
+          "description": "Unrelated routing category 11"
+        },
+        {
+          "id": "distractor-12",
+          "description": "Unrelated routing category 12"
+        },
+        {
+          "id": "distractor-13",
+          "description": "Unrelated routing category 13"
+        },
+        {
+          "id": "distractor-14",
+          "description": "Unrelated routing category 14"
+        },
+        {
+          "id": "distractor-15",
+          "description": "Unrelated routing category 15"
+        },
+        {
+          "id": "distractor-16",
+          "description": "Unrelated routing category 16"
+        },
+        {
+          "id": "distractor-17",
+          "description": "Unrelated routing category 17"
+        },
+        {
+          "id": "distractor-18",
+          "description": "Unrelated routing category 18"
+        },
+        {
+          "id": "distractor-19",
+          "description": "Unrelated routing category 19"
+        },
+        {
+          "id": "distractor-20",
+          "description": "Unrelated routing category 20"
+        },
+        {
+          "id": "distractor-21",
+          "description": "Unrelated routing category 21"
+        },
+        {
+          "id": "distractor-22",
+          "description": "Unrelated routing category 22"
+        },
+        {
+          "id": "distractor-23",
+          "description": "Unrelated routing category 23"
+        },
+        {
+          "id": "distractor-24",
+          "description": "Unrelated routing category 24"
+        },
+        {
+          "id": "distractor-25",
+          "description": "Unrelated routing category 25"
+        },
+        {
+          "id": "distractor-26",
+          "description": "Unrelated routing category 26"
+        },
+        {
+          "id": "distractor-27",
+          "description": "Unrelated routing category 27"
+        },
+        {
+          "id": "distractor-28",
+          "description": "Unrelated routing category 28"
+        }
+      ]
+    },
+    "direct_prompt_tokens": 1000,
+    "seconds": [
+      1.7172948860097677,
+      1.7001096029998735,
+      1.6929979879932944,
+      1.7020027709950227,
+      1.7129887589835562,
+      1.752049494010862,
+      1.7201614969817456,
+      1.716737162991194,
+      1.7248011069896165,
+      1.7314908170083072,
+      1.7205319539934862,
+      1.7197816660045646,
+      1.7388065760023892,
+      1.7501009480038192,
+      1.724219975003507,
+      1.7071631230064668,
+      1.7093407599895727,
+      1.7174150210048538,
+      1.7376069439924322,
+      1.7388182989961933
+    ],
+    "p50_p95_seconds": [
+      1.719971581493155,
+      1.7501983753041714
+    ],
+    "outputs": [
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1006,
+        "output_tokens": 30,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u7c7b\u522b\uff0c\u56e0\u4e3a\u7528\u6237\u9047\u5230\u4e86\u91cd\u590d\u6263\u6b3e\uff08charged twice\uff09\u7684\u60c5\u51b5\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1006,
+        "output_tokens": 30,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u7c7b\u522b\uff0c\u56e0\u4e3a\u7528\u6237\u9047\u5230\u4e86\u91cd\u590d\u6263\u6b3e\uff08charged twice\uff09\u7684\u60c5\u51b5\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1006,
+        "output_tokens": 30,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u7c7b\u522b\uff0c\u56e0\u4e3a\u7528\u6237\u9047\u5230\u4e86\u91cd\u590d\u6263\u6b3e\uff08charged twice\uff09\u7684\u60c5\u51b5\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1006,
+        "output_tokens": 30,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u7c7b\u522b\uff0c\u56e0\u4e3a\u7528\u6237\u9047\u5230\u4e86\u91cd\u590d\u6263\u6b3e\uff08charged twice\uff09\u7684\u60c5\u51b5\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1006,
+        "output_tokens": 30,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u7c7b\u522b\uff0c\u56e0\u4e3a\u7528\u6237\u9047\u5230\u4e86\u91cd\u590d\u6263\u6b3e\uff08charged twice\uff09\u7684\u60c5\u51b5\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1006,
+        "output_tokens": 30,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u7c7b\u522b\uff0c\u56e0\u4e3a\u7528\u6237\u9047\u5230\u4e86\u91cd\u590d\u6263\u6b3e\uff08charged twice\uff09\u7684\u60c5\u51b5\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1006,
+        "output_tokens": 30,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u7c7b\u522b\uff0c\u56e0\u4e3a\u7528\u6237\u9047\u5230\u4e86\u91cd\u590d\u6263\u6b3e\uff08charged twice\uff09\u7684\u60c5\u51b5\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1006,
+        "output_tokens": 30,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u7c7b\u522b\uff0c\u56e0\u4e3a\u7528\u6237\u9047\u5230\u4e86\u91cd\u590d\u6263\u6b3e\uff08charged twice\uff09\u7684\u60c5\u51b5\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1006,
+        "output_tokens": 30,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u7c7b\u522b\uff0c\u56e0\u4e3a\u7528\u6237\u9047\u5230\u4e86\u91cd\u590d\u6263\u6b3e\uff08charged twice\uff09\u7684\u60c5\u51b5\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1006,
+        "output_tokens": 30,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u7c7b\u522b\uff0c\u56e0\u4e3a\u7528\u6237\u9047\u5230\u4e86\u91cd\u590d\u6263\u6b3e\uff08charged twice\uff09\u7684\u60c5\u51b5\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1006,
+        "output_tokens": 30,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u7c7b\u522b\uff0c\u56e0\u4e3a\u7528\u6237\u9047\u5230\u4e86\u91cd\u590d\u6263\u6b3e\uff08charged twice\uff09\u7684\u60c5\u51b5\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1006,
+        "output_tokens": 30,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u7c7b\u522b\uff0c\u56e0\u4e3a\u7528\u6237\u9047\u5230\u4e86\u91cd\u590d\u6263\u6b3e\uff08charged twice\uff09\u7684\u60c5\u51b5\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1006,
+        "output_tokens": 30,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u7c7b\u522b\uff0c\u56e0\u4e3a\u7528\u6237\u9047\u5230\u4e86\u91cd\u590d\u6263\u6b3e\uff08charged twice\uff09\u7684\u60c5\u51b5\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1006,
+        "output_tokens": 30,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u7c7b\u522b\uff0c\u56e0\u4e3a\u7528\u6237\u9047\u5230\u4e86\u91cd\u590d\u6263\u6b3e\uff08charged twice\uff09\u7684\u60c5\u51b5\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1006,
+        "output_tokens": 30,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u7c7b\u522b\uff0c\u56e0\u4e3a\u7528\u6237\u9047\u5230\u4e86\u91cd\u590d\u6263\u6b3e\uff08charged twice\uff09\u7684\u60c5\u51b5\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1006,
+        "output_tokens": 30,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u7c7b\u522b\uff0c\u56e0\u4e3a\u7528\u6237\u9047\u5230\u4e86\u91cd\u590d\u6263\u6b3e\uff08charged twice\uff09\u7684\u60c5\u51b5\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1006,
+        "output_tokens": 30,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u7c7b\u522b\uff0c\u56e0\u4e3a\u7528\u6237\u9047\u5230\u4e86\u91cd\u590d\u6263\u6b3e\uff08charged twice\uff09\u7684\u60c5\u51b5\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1006,
+        "output_tokens": 30,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u7c7b\u522b\uff0c\u56e0\u4e3a\u7528\u6237\u9047\u5230\u4e86\u91cd\u590d\u6263\u6b3e\uff08charged twice\uff09\u7684\u60c5\u51b5\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1006,
+        "output_tokens": 30,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u7c7b\u522b\uff0c\u56e0\u4e3a\u7528\u6237\u9047\u5230\u4e86\u91cd\u590d\u6263\u6b3e\uff08charged twice\uff09\u7684\u60c5\u51b5\u3002",
+        "truncated": false
+      },
+      {
+        "selected_id": "billing",
+        "confidence": null,
+        "input_tokens": 1006,
+        "output_tokens": 30,
+        "format_valid": true,
+        "text": "A\n\u8be5\u95ee\u9898\u5c5e\u4e8e\u201cCharges, invoices and refunds\"\u7c7b\u522b\uff0c\u56e0\u4e3a\u7528\u6237\u9047\u5230\u4e86\u91cd\u590d\u6263\u6b3e\uff08charged twice\uff09\u7684\u60c5\u51b5\u3002",
+        "truncated": false
+      }
+    ],
+    "peak_allocated_vram_bytes": 8869865984
+  }
+]

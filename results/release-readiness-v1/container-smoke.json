@@ -1,0 +1,10 @@
+{
+  "image_tag": "myjev:0.1.0-release-candidate",
+  "image_id": "sha256:238c4bb857950fcca869c4d8d6eb87ee179b4592d91ca2a082dbe5618de31643",
+  "artifact": "artifacts/hub-ready-v1/myjev-4b-continued_sft-seed11",
+  "startup_to_ready_seconds": 16.93222353598685,
+  "python_docker_equal": true,
+  "managed_aliases_equal": true,
+  "duplicate_ids_rejected": true,
+  "scope": "Clean image, cached pinned backbone, concurrent work on other GPUs. Readiness/contract verification, not isolated latency."
+}

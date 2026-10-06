@@ -67,7 +67,7 @@
       "mode": "100644"
     },
     "docs/architecture.md": {
-      "sha256": "8f19a9211579c02a8d7ca67590ca2cc04c22b8999eed90d9c74deb32e1a3fce4",
+      "sha256": "27db8bbcd3821bfdff03010867fd7bbaf729f68c2b86629099fd24bd36ec9717",
       "mode": "100644"
     },
     "docs/attribution.md": {
@@ -99,7 +99,7 @@
       "mode": "100644"
     },
     "docs/hosting.md": {
-      "sha256": "0d99d33e9d8c9d0a9ed8e0e8f90d1a7291a1fd1e2d24e34b170d297e30797970",
+      "sha256": "a2b659e3a94a4a0924051ec26cfd7af1e8d9f4b26958cd4aad96836d2cedb57e",
       "mode": "100644"
     },
     "docs/inference.md": {
@@ -131,7 +131,7 @@
       "mode": "100644"
     },
     "docs/roadmap.md": {
-      "sha256": "672e99934d60b05ffcd2057842e258f236cce9483091f6e48c410b5fd8d1908c",
+      "sha256": "62bca17a72d8287b1464b396277a5b952f99090072f24a30dfff32c431499f1d",
       "mode": "100644"
     },
     "docs/scratch-plan.md": {
@@ -4026,8 +4026,40 @@
       "sha256": "a0dd4c87b701ffeab008d0c6dd01ae0a22f4ff5b861a9194e5bded82ad3b5bc6",
       "mode": "100644"
     },
+    "results/release-readiness-v1/clean-image-equivalence.json": {
+      "sha256": "25a512d9d67f379b5bf3438fd2de8d2c07f48cbbd3dcf56cae5a8351a876d327",
+      "mode": "100644"
+    },
+    "results/release-readiness-v1/container-smoke.json": {
+      "sha256": "4182d473bd2f241b1f7397505b22e9291b2e627270cbea9ca59014aedd918d95",
+      "mode": "100644"
+    },
+    "results/release-readiness-v1/default-limits.json": {
+      "sha256": "91b60bea794867d1a6858519a6e5118a9d13b1065f057fb5c573e4d726a6b704",
+      "mode": "100644"
+    },
+    "results/release-readiness-v1/hub-dry-run-v3.json": {
+      "sha256": "86e9b5ee991414b3a32c1a8d3da36d73cbc4c1019f7abea4bdb5268b835fd9f0",
+      "mode": "100644"
+    },
     "results/release-readiness-v1/hub-dry-run.json": {
       "sha256": "86e9b5ee991414b3a32c1a8d3da36d73cbc4c1019f7abea4bdb5268b835fd9f0",
+      "mode": "100644"
+    },
+    "results/release-readiness-v1/image-environment.json": {
+      "sha256": "5e20a253736ab37dbbf6bdfe3e307455140fd65acb1459a3d4ffaa910eb95df3",
+      "mode": "100644"
+    },
+    "results/release-readiness-v1/image-provenance.json": {
+      "sha256": "5c63b8c4334703fa139bdb99fb785ebc598dcbd227b1977c440b69883b8f695a",
+      "mode": "100644"
+    },
+    "results/release-readiness-v1/license-provenance.json": {
+      "sha256": "015daf1d21308f955243a49e753ea88940bba54e6dcab3e18d527a3bc17e8db0",
+      "mode": "100644"
+    },
+    "results/release-readiness-v1/publication-manifest-v3.json": {
+      "sha256": "d3d427dffca937bbd1eb5c911dd29958990f6dd92d4b0fa2df77ac61202a9ce4",
       "mode": "100644"
     },
     "results/release-readiness-v1/publication-manifest.json": {
@@ -4036,6 +4068,22 @@
     },
     "results/release-readiness-v1/serving-summary.json": {
       "sha256": "33b865cb7a5bb95d4b62157f7e643d07b9acd277c95de985a9897aa03b0cdc9b",
+      "mode": "100644"
+    },
+    "results/release-readiness-v1/upstream/0.8b-LICENSE": {
+      "sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
+      "mode": "100644"
+    },
+    "results/release-readiness-v1/upstream/4b-LICENSE": {
+      "sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
+      "mode": "100644"
+    },
+    "results/release-readiness-v1/upstream/9b-LICENSE": {
+      "sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/environment.json": {
+      "sha256": "bfce4080c1ffd5f01ec33d15ce56e660e8c2697b80c87d28f85560b13bc3f530",
       "mode": "100644"
     },
     "results/release-validation-v1/frozen-plan.json": {
@@ -4050,24 +4098,312 @@
       "sha256": "47dd11cc90d982eef1bd63df7f93813637819bb0682bd55cb8e9cdf213be3b77",
       "mode": "100644"
     },
+    "results/release-validation-v1/myjev-0.8b-continued_sft-seed11/http-3-0-c1.json": {
+      "sha256": "8f69d11df4f8060ff0ecdf5ab00c5dbafc787512dadf7c7525239bb4c059a833",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-0.8b-continued_sft-seed11/http-3-0-c4.json": {
+      "sha256": "41461d621b0e2c44c5ce8024376ff62422bad9963b3c3152ddb53afa49b002ed",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-0.8b-continued_sft-seed11/http-32-0-c1.json": {
+      "sha256": "6539d915af5ea8f3ab258b70cd7e37f7eb40be8b9f6e04e0de50a8085d1ef78c",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-0.8b-continued_sft-seed11/http-32-0-c4.json": {
+      "sha256": "af46ff95b0e6f2dd6a759b6fbc44076ba80b43f190529cab5ed308da272c7f35",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-0.8b-continued_sft-seed11/http-32-128-c1.json": {
+      "sha256": "57b8e0cdf7a3df9ad4ec56c6ca19469c694c8cd1ed77e47ae0131ae3b32d56bb",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-0.8b-continued_sft-seed11/http-32-128-c4.json": {
+      "sha256": "abd80b15bcc58d8dd8ce71ffddab237e881425d704eeac520a990817dc5854ca",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-0.8b-continued_sft-seed11/http-complete.json": {
+      "sha256": "009d2ff44f2837dcffed05040c3399fad629cf90f85e91e3ea6692d76b08182c",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-0.8b-continued_sft-seed11/paths/progress.json": {
+      "sha256": "f257d5f38b77f7ccdbb36fc9b1dbced19e9a9d0625edf089de2ea6d60591c78a",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-0.8b-continued_sft-seed11/paths/report.json": {
+      "sha256": "c089a01a79b2d15540e8d53f7af6943fda380b199c006ca454e77f4a94b0cca1",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-0.8b-continued_sft-seed11/request-3-0.json": {
+      "sha256": "629f5ea51171ae6279eba235916e161198997a08bee7155790993eb405eacd01",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-0.8b-continued_sft-seed11/request-32-0.json": {
+      "sha256": "14e4b1ae70e1ba89605f2ce111e02036d4cca254810a27de26a0c54295f16c1e",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-0.8b-continued_sft-seed11/request-32-128.json": {
+      "sha256": "8874d04a65990a7f5b45e9c5af783a31317b48d9e2220c3fb72c9626f5673b38",
+      "mode": "100644"
+    },
     "results/release-validation-v1/myjev-0.8b-exact-seed11/equivalence.json": {
       "sha256": "26207f0346961faa62745daa8a575c04924910c835cc86e607a9ec1991c435fc",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-0.8b-exact-seed11/http-3-0-c1.json": {
+      "sha256": "3e68ded9ad56f27654341df2c5a10ce914034c71d87e6b0a9efc0558713d12ef",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-0.8b-exact-seed11/http-3-0-c4.json": {
+      "sha256": "53d2632332a3e67a81e2be24658a6dbb5c323b3d7fc06c3cd72c9eb177184b80",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-0.8b-exact-seed11/http-32-0-c1.json": {
+      "sha256": "38d91dd641fa11031bc9ad7d20bc166d0c70787e320024de35b2966b45e7a9ac",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-0.8b-exact-seed11/http-32-0-c4.json": {
+      "sha256": "dac2cb9bf88accc402573c04c3d59f4fdb3dbcc8a75357979ac46e10d3e9d34d",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-0.8b-exact-seed11/http-32-128-c1.json": {
+      "sha256": "34246a6eac163421f3bcb8a4e474873fdb14dfddc171d041bacb898e64a02b61",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-0.8b-exact-seed11/http-32-128-c4.json": {
+      "sha256": "b2c06cfa08d5a09d3e5c5585c01a883f6128126c995939a3555b5c24fcde86fb",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-0.8b-exact-seed11/http-complete.json": {
+      "sha256": "e301d1e5c97040ff111811ca6cb6f6855e44bd8f2c94825794a48b043ef1f1b6",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-0.8b-exact-seed11/paths/progress.json": {
+      "sha256": "8c86c2e64f4dcf73311c0b9341ce37e6c434d63b7f710032b331222df40d0192",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-0.8b-exact-seed11/paths/report.json": {
+      "sha256": "f8cd5b7101ef53a58114d713608f7d49367b1ab67664f79160419a88f9db8a18",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-0.8b-exact-seed11/request-3-0.json": {
+      "sha256": "629f5ea51171ae6279eba235916e161198997a08bee7155790993eb405eacd01",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-0.8b-exact-seed11/request-32-0.json": {
+      "sha256": "14e4b1ae70e1ba89605f2ce111e02036d4cca254810a27de26a0c54295f16c1e",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-0.8b-exact-seed11/request-32-128.json": {
+      "sha256": "8874d04a65990a7f5b45e9c5af783a31317b48d9e2220c3fb72c9626f5673b38",
       "mode": "100644"
     },
     "results/release-validation-v1/myjev-4b-continued_sft-seed11/equivalence.json": {
       "sha256": "25a512d9d67f379b5bf3438fd2de8d2c07f48cbbd3dcf56cae5a8351a876d327",
       "mode": "100644"
     },
+    "results/release-validation-v1/myjev-4b-continued_sft-seed11/http-3-0-c1.json": {
+      "sha256": "a8851781641045d774ce85a7824faedcb4cabc2d43a9ad7af3683e75eb0326fa",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-4b-continued_sft-seed11/http-3-0-c4.json": {
+      "sha256": "4321854cebb2edf63b69b419b3103038d9254f029d1c8165dd68cdb7a210d7c9",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-4b-continued_sft-seed11/http-32-0-c1.json": {
+      "sha256": "39ef74800db57843111f652b7684ef1e7e2e1ae37e867ec09ad35c8fc930f5ce",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-4b-continued_sft-seed11/http-32-0-c4.json": {
+      "sha256": "84631e32c66e9dc0ae039f655a10a0daf9ef4f5bbad93084184fed4d09836eaf",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-4b-continued_sft-seed11/http-32-128-c1.json": {
+      "sha256": "80654381d76f48c1b14362da39697ea6a881867cd29e7e148b80d835baedcbec",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-4b-continued_sft-seed11/http-32-128-c4.json": {
+      "sha256": "4ca63868f319844b8ad32f1fb39cb552da6ec19166826e4b2705857fc340c1b4",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-4b-continued_sft-seed11/http-complete.json": {
+      "sha256": "92cd85b2e6528b22eb0854d129a78ae3cc143a8ba23cd6374447c81522db4cca",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-4b-continued_sft-seed11/paths/progress.json": {
+      "sha256": "bcf884bf0d1d920ab4ec138f9dc000d60dcbf516d4b8cb2000772c286589f93e",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-4b-continued_sft-seed11/paths/report.json": {
+      "sha256": "6a0c3443a9a4a79d47385f40dd441beafd081803f2dd800067a4084825c933b4",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-4b-continued_sft-seed11/request-3-0.json": {
+      "sha256": "629f5ea51171ae6279eba235916e161198997a08bee7155790993eb405eacd01",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-4b-continued_sft-seed11/request-32-0.json": {
+      "sha256": "14e4b1ae70e1ba89605f2ce111e02036d4cca254810a27de26a0c54295f16c1e",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-4b-continued_sft-seed11/request-32-128.json": {
+      "sha256": "8874d04a65990a7f5b45e9c5af783a31317b48d9e2220c3fb72c9626f5673b38",
+      "mode": "100644"
+    },
     "results/release-validation-v1/myjev-4b-exact-seed11/equivalence.json": {
       "sha256": "5c4ea740c3b52bbc2b31ae80450d526612d0ea7a970a63b4b4d1629dc1c6166f",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-4b-exact-seed11/http-3-0-c1.json": {
+      "sha256": "251d60a408d2797d59b469ddbaa41795e9928ba41efd43d73cfef734f36f1aaf",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-4b-exact-seed11/http-3-0-c4.json": {
+      "sha256": "50514d475f3e2ff1c2009cd20b1fe25d130fefbd73d3458965e673532caeb5e1",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-4b-exact-seed11/http-32-0-c1.json": {
+      "sha256": "995b9dccf3ee83a70a83ca260b0ad3066f7c4d7a65cd59d3686f922290a277f2",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-4b-exact-seed11/http-32-0-c4.json": {
+      "sha256": "162befeb5a651dc78b6fb7cf569acd4a82b64081bb5823d3fb400d51503e615f",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-4b-exact-seed11/http-32-128-c1.json": {
+      "sha256": "6b26e08470f611d50bf6919cc45ac32f7f06203e184fc135b0ea798c3a44a03d",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-4b-exact-seed11/http-32-128-c4.json": {
+      "sha256": "347fdc679e9478e43df3bfcc47d47ff7c1495874869cded6f68b89cc69903d10",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-4b-exact-seed11/http-complete.json": {
+      "sha256": "746c535655b5ca5854b2e1d37667e78633e35a68edeb6257008043504a0e6a29",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-4b-exact-seed11/paths/progress.json": {
+      "sha256": "a68832f91ff301e582dbafcfb662f75f749f3fb90e22642d11345a713e337922",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-4b-exact-seed11/paths/report.json": {
+      "sha256": "b292fb0b6ecf1d2060759ad3eeacf06a91153ad91e17127f7580e42af6f722cb",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-4b-exact-seed11/request-3-0.json": {
+      "sha256": "629f5ea51171ae6279eba235916e161198997a08bee7155790993eb405eacd01",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-4b-exact-seed11/request-32-0.json": {
+      "sha256": "14e4b1ae70e1ba89605f2ce111e02036d4cca254810a27de26a0c54295f16c1e",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-4b-exact-seed11/request-32-128.json": {
+      "sha256": "8874d04a65990a7f5b45e9c5af783a31317b48d9e2220c3fb72c9626f5673b38",
       "mode": "100644"
     },
     "results/release-validation-v1/myjev-9b-continued_sft-seed11/equivalence.json": {
       "sha256": "b0e2aef1c7986ad8090241e17ebeb0a8216c611c79f7c2b7ff365cc95d11bcc8",
       "mode": "100644"
     },
+    "results/release-validation-v1/myjev-9b-continued_sft-seed11/http-3-0-c1.json": {
+      "sha256": "823139594ea7da4f9426e8f538ea1ba3ede412dfc348f293a0c6a6b48a0bde1b",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-9b-continued_sft-seed11/http-3-0-c4.json": {
+      "sha256": "babd098adfa3b8e3afd240621224d801d05bdebd6d1cb4caa0e959396f093310",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-9b-continued_sft-seed11/http-32-0-c1.json": {
+      "sha256": "c586dae866ca72cd0b70bf1d3c4fc3f96bcb900bcd2b25132db1d7a27d78cfe1",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-9b-continued_sft-seed11/http-32-0-c4.json": {
+      "sha256": "a603a6a8f8e10b5a686b0656f5fa3a39f7b1ef92e72a00a79a5a5115b8627f0f",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-9b-continued_sft-seed11/http-32-128-c1.json": {
+      "sha256": "a867a43c5398a8bc22bf6d0e8ec6ede598a616c0b0305466891c662ff44f4969",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-9b-continued_sft-seed11/http-32-128-c4.json": {
+      "sha256": "f6cd7caf4edffafa39fce40e88dd0cbd864aea52610699595d55d0cbb639c302",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-9b-continued_sft-seed11/http-complete.json": {
+      "sha256": "61a90962ff25e91bdd285d905ab401995e94c7eee4a05c640134fca1c4dc35b5",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-9b-continued_sft-seed11/paths/progress.json": {
+      "sha256": "9cb1e5f8d5c3e076677cd6f98499cc0b8a7ced81b7a8efcb74a40848e256e4e4",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-9b-continued_sft-seed11/paths/report.json": {
+      "sha256": "9a00eccfecea99b9a037a70319a2f5ac1104fe13274cb224292fdebd4dab6b76",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-9b-continued_sft-seed11/request-3-0.json": {
+      "sha256": "629f5ea51171ae6279eba235916e161198997a08bee7155790993eb405eacd01",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-9b-continued_sft-seed11/request-32-0.json": {
+      "sha256": "14e4b1ae70e1ba89605f2ce111e02036d4cca254810a27de26a0c54295f16c1e",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-9b-continued_sft-seed11/request-32-128.json": {
+      "sha256": "8874d04a65990a7f5b45e9c5af783a31317b48d9e2220c3fb72c9626f5673b38",
+      "mode": "100644"
+    },
     "results/release-validation-v1/myjev-9b-exact-seed11/equivalence.json": {
       "sha256": "a76cf8cb1c203dbb0c9b08c9553b7ca6663654479e52dfc73687a682a15ef7c7",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-9b-exact-seed11/http-3-0-c1.json": {
+      "sha256": "8945b4c513805df95ae750b69d66b2cc2c829151213f0d50421a888615905bdf",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-9b-exact-seed11/http-3-0-c4.json": {
+      "sha256": "b21a332d1f5dcf46e1a4ffaad3b4b44e512a3e6abb10f592a7e9fa3160f918f3",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-9b-exact-seed11/http-32-0-c1.json": {
+      "sha256": "f76b9d2e67e9e9c95b2f00f702c333f18a53a651220b949b4db397a0cd7b28c7",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-9b-exact-seed11/http-32-0-c4.json": {
+      "sha256": "8346805e17c92c5bc317b1166853dabbb417038278f3058d6e8e65158e3a7555",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-9b-exact-seed11/http-32-128-c1.json": {
+      "sha256": "e1277a562e2063b94c100f658e2dd4c7e62a0d100aa10d019b2b5c614185c043",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-9b-exact-seed11/http-32-128-c4.json": {
+      "sha256": "9a7413a6c2c9ce88fca22b46a7f4c050a27b2bfe4e349c4e3284968820346f24",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-9b-exact-seed11/http-complete.json": {
+      "sha256": "8e504545e310670861a78197785df5e9744899e5350e72804e128ab9d4bb35a5",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-9b-exact-seed11/paths/progress.json": {
+      "sha256": "bc4cdf00f50805174df8ca89bbd1b1527b0cd836ccbbd1a51cd986b21ef41cd4",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-9b-exact-seed11/paths/report.json": {
+      "sha256": "ca18b72538360ea2a7d4ad85f55d07d680b7dfa510a511a3ebd19dbf66e61244",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-9b-exact-seed11/request-3-0.json": {
+      "sha256": "629f5ea51171ae6279eba235916e161198997a08bee7155790993eb405eacd01",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-9b-exact-seed11/request-32-0.json": {
+      "sha256": "14e4b1ae70e1ba89605f2ce111e02036d4cca254810a27de26a0c54295f16c1e",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/myjev-9b-exact-seed11/request-32-128.json": {
+      "sha256": "8874d04a65990a7f5b45e9c5af783a31317b48d9e2220c3fb72c9626f5673b38",
       "mode": "100644"
     },
     "results/release-validation-v1/status.json": {
@@ -5726,6 +6062,10 @@
       "sha256": "e8f45ef2164a8f66c23dc5f764a0fc893d18b80fdba140338f8b3fd0c3807fc6",
       "mode": "100644"
     },
+    "scripts/finalize_machine_annotations.py": {
+      "sha256": "b98974bee730aa88a8131a9d3cb9ad088e87a7891b6d352a94bf665497d204c8",
+      "mode": "100644"
+    },
     "scripts/gliclass_baseline.py": {
       "sha256": "874b88e7bacd81a3dcc91f67a6d7073196de51b4d99895a0af1da0f865dd5477",
       "mode": "100644"
@@ -5783,7 +6123,7 @@
       "mode": "100644"
     },
     "scripts/prepare_hub_release.py": {
-      "sha256": "373b5d3f0db138c346aae375443b03730c62f5e5364dd95f755595bf40a2e383",
+      "sha256": "a8b307b87c70098f9e8716e00b60bf0b7560aab734b6c93b19d73d8ae35502ae",
       "mode": "100644"
     },
     "scripts/prepare_release_candidates.py": {
@@ -5912,6 +6252,10 @@
     },
     "scripts/verify_artifact.py": {
       "sha256": "7866fea9bd39dba79530d8c53b89f7ac3dc3b2def8ca9257a9240cd1fda1b505",
+      "mode": "100644"
+    },
+    "scripts/verify_release_container.py": {
+      "sha256": "0d01a86bbec6df481164545d906c5c106c5d5d2712df686c9f15cdfd8cf0dfb6",
       "mode": "100644"
     },
     "scripts/verify_reload.py": {
