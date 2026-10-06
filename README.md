@@ -6,11 +6,25 @@ myJEV explores a compact interface for language models: give the model some cont
 
 This is a research and learning project by [Amit Bahree](https://blog.desigeek.com). The repository will grow through reviewable milestone commits. The first milestone includes working training and inference code, a completed short three-seed pilot, and the measurements needed to question its conclusions.
 
-> **Current milestone: longer comparison complete.** All 60 training runs (168,000 updates) and 36 main evaluations across three sizes and seeds are complete. Read the [full-test descriptive findings](results/longer-v1/summary.md) and the [from-scratch implementation plan](docs/scratch-plan.md). Paired analysis, transfer and release validation remain pending. Downloadable trained adapters and a hosted demo are **not released yet**.
+> **Current milestone: longer comparison complete.** All 60 training runs (168,000 updates) and 36 main evaluations across three sizes and seeds are complete. Read the [full-test descriptive findings](results/longer-v1/summary.md) and the [from-scratch implementation plan](docs/scratch-plan.md). Paired analysis is complete; broader transfer and release validation remain in progress. Downloadable trained adapters and a hosted demo are **not released yet**.
 
 The second track now [builds a small decision model from scratch](docs/scratch.md), with recorded learning failures, a completed synthetic study and local serving checks. Its weak natural-language results remain separate from Qwen.
 
-[Start here](docs/quickstart.md) · [Documentation](docs/README.md) · [Measured results](docs/experiments.md) · [Roadmap](docs/roadmap.md) · [Model releases](docs/models.md) · [Completed training protocol](docs/training.md) · [W&B tracking](docs/tracking.md) · [Inference and Docker](docs/inference.md) · [Lessons](docs/learnings.md)
+[Start here](docs/quickstart.md) · [Documentation](docs/README.md) · [Measured results](docs/qwen-findings.md) · [Roadmap](docs/roadmap.md)
+
+## Documentation by reader task
+
+| I want to... | Guide |
+|---|---|
+| Follow the complete documentation | [Documentation index](docs/README.md) |
+| Build the small model and inspect its failures | [Scratch walkthrough](docs/scratch.md) |
+| Understand Qwen results and their limits | [Qwen findings](docs/qwen-findings.md) |
+| Reproduce training and understand the update budget | [Training](docs/training.md) |
+| Track runs, epochs and GPU evidence | [W&B and local tracking](docs/tracking.md) |
+| Check data provenance and evaluation rules | [Dataset cards](docs/README.md#data-and-provenance) and [protocol](docs/protocol.md) |
+| Load, score and serve a local artifact | [Inference](docs/inference.md) |
+| Run Docker or prepare managed hosting | [Hosting](docs/hosting.md) |
+| Understand lessons, failures and remaining work | [Learnings](docs/learnings.md) and [roadmap](docs/roadmap.md) |
 
 ## What is a decision model?
 
@@ -134,8 +148,10 @@ The articles will be published on [Desi Geek](https://blog.desigeek.com), with l
 
 | Article | Publication status |
 |---|---|
-| Building myJEV (Part 1): Decision Models, Confidence, and Training | Planned: link to follow |
-| Building myJEV (Part 2): Evaluation, Inference, and Hosting | Planned: link to follow |
+| Building myJEV (Part 1): Decision Models and a Build from Scratch | Draft; publication link to follow |
+| Building myJEV (Part 2): Fine-Tuning Qwen and Learning from Training | Draft; publication link to follow |
+| Building myJEV (Part 3): Evaluation, Confidence, and Transfer | Draft; publication link to follow |
+| Building myJEV (Part 4): Inference, Docker, and Hosting | Draft; publication link to follow |
 
 The [roadmap](docs/roadmap.md) separates completed engineering checks from upcoming experiments. The [model tracker](docs/models.md) reserves a place for adapters, model cards, image digests, and reproducible load commands as releases become available. There is no paid managed endpoint running.
 

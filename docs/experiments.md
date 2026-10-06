@@ -52,7 +52,19 @@ Constant base-rate confidence is included because a low Brier score alone does n
 
 TF-IDF/logistic regression reaches **88.28% accuracy** on all 3,080 official test examples. Temperature scaling reduces correctness Brier from **0.1246 to 0.0703**, without changing argmax decisions. It trains on the complete training partition, so exposure and test-set size differ from the neural pilot.
 
-The available scripts also support an untouched-backbone control, GLiClass, CLINC transfer cohorts, and paired robustness diagnostics. The initial 0.8B transfer/robustness work is limited; the roadmap calls for broader checks before drawing generalization conclusions. One-seed precision diagnostics do not isolate quantization effects robustly.
+The completed baseline records include the following results. These are separate interface/exposure controls, not a matched leaderboard:
+
+| Control | Test examples | Accuracy | Confidence source |
+|---|---:|---:|---|
+| Untouched Qwen 0.8B | Fixed 256-example subset | 15.23% | Selection-score proxy |
+| Untouched Qwen 4B | Same subset | 61.33% | Selection-score proxy |
+| Untouched Qwen 9B | Same subset | 54.69% | Selection-score proxy |
+| GLiClass small v1.0 | Full 3,080 | 10.81% | Maximum normalized class score |
+
+GLiClass uses revision `21edefaf7951f68c68c505f9139ba536d3b448f7` with supplied label descriptions and no task-specific training here. Its weak result is specific to this checkpoint and interface, not a claim about all generalist classifiers. Low Brier from low confidence is not evidence of a useful selector. The untouched measurements belong to the pilot subset; they do not establish the full-test fine-tuning effect. Source records live under `results/untouched-*-v2-evaluation/` and `results/gliclass/`.
+
+The initial 0.8B transfer/robustness work is limited. The frozen expanded study now covers all three sizes and seeds for continued supervision and exact RL. A new 4B NF4 SFT control is queued at the same 4,000-example exposure as the completed BF16 controls, after a 100-update fit pilot. It isolates a training configuration difference, including nonquantized dtype, rather than proving that every scale effect is caused by capacity alone.
+
 
 ## Find the underlying evidence
 
@@ -95,4 +107,4 @@ These runners skip completed artifacts/evaluations. An existing published `resul
 
 Local GPU container checks passed at all three sizes. Warm concurrency-one HTTP p50/p95 were 60.1/63.7 ms (0.8B), 78.6/81.0 ms (4B), and 101.2/103.7 ms (9B). Each check used 40 short three-candidate requests, cached backbones, and an idle target GPU while another GPU was still training. These are implementation measurements, not an isolated-host service-level guarantee.
 
-Read [hosting](hosting.md) for limits, readiness, queues, precision, and deployment details. Longer training, full-test neural comparison, replicated precision controls, and representative serving workloads remain on the [roadmap](roadmap.md).
+Read [hosting](hosting.md) for limits, readiness, queues, precision, and deployment details. Replicated precision controls and representative serving workloads remain on the [roadmap](roadmap.md).

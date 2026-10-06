@@ -1,0 +1,27 @@
+{
+  "size": "0.8b",
+  "jobs": [
+    {
+      "seed": 11,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "seconds": 213.40868186950684,
+      "returncode": 0
+    },
+    {
+      "seed": 11,
+      "method": "continued_sft",
+      "kind": "robustness",
+      "seconds": 65.33166790008545,
+      "returncode": 0
+    }
+  ],
+  "state": "running",
+  "started": 1791263669.7109902,
+  "current": {
+    "seed": 11,
+    "method": "exact",
+    "kind": "transfer"
+  },
+  "updated": 1791263948.4534009
+}

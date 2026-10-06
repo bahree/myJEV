@@ -68,3 +68,7 @@ python3 scripts/analyze_longer_study.py
 ```
 
 The second command requires NumPy and Matplotlib from the research environment. Its public compressed inputs contain only IDs, groups, label IDs, correctness and squared confidence error. Full original predictions remain in the private evidence archive, with hashes linking the compact extract to its sources. `--extract` rebuilds that extract where the original files are available. The summary, paired intervals and plots are locally regenerated rather than copied from an external dashboard.
+
+## Operational uncertainty, not just point estimates
+
+The [per-seed operating-point report](../results/longer-v1/operational/report.md) retains 135 fixed-threshold measurements from 27 model/confidence combinations. For 4B exact RL, the calibration 1% empirical-error target gave test coverage of 16.75-34.42%, error of 0.39-1.32%, and one-sided 95% binomial upper bounds of 1.22-2.06%. This does not establish a 1% production guarantee. Seeds share test examples and are not pooled as independent observations. Group intervals and the independence assumptions of binomial bounds are explicit in the report.

@@ -36,9 +36,10 @@ def main():
     p.add_argument('--banking-evaluation',required=True)
     p.add_argument('--output',required=True)
     p.add_argument('--limit',type=int,default=64)
+    p.add_argument('--device',default='cuda:0')
     a=p.parse_args()
     bank=json.loads((Path(a.banking_evaluation)/'metrics.json').read_text())
-    model=DecisionModel.load(a.artifact)
+    model=DecisionModel.load(a.artifact,device=a.device)
     if model.manifest['artifact_revision']!=bank['artifact_revision']:
         raise ValueError('thresholds must belong to the same artifact')
     thresholds={k:v['threshold'] for k,v in bank['operating_points'].items()}
@@ -67,7 +68,7 @@ def main():
                  selection_agreement_with_original=sum(r['selected_id']==originals[r['source_id']]['selected_id'] for r in preds)/len(preds) if preds else None)
         reports[name]=m
     (out/'report.json').write_text(json.dumps({'artifact_revision':model.manifest['artifact_revision'],
-        'scope':'64-example paired diagnostic sample; description paraphrases cover eight candidates and are not human-validated',
+        'scope':f'{len(rows)}-example paired diagnostic sample; description paraphrases cover eight candidates and are not human-validated',
         'threshold_source':a.banking_evaluation,'cohorts':reports,'rejections':failures},indent=2))
 
 if __name__=='__main__':

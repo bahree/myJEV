@@ -1,0 +1,55 @@
+{
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "pilot_updates": 100,
+  "main_updates": 4000,
+  "method": "sft",
+  "config": {
+    "backbone": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "precision": "nf4",
+    "lora_rank": 8,
+    "lora_targets": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ],
+    "max_candidates": 160,
+    "max_tokens": 4096,
+    "updates": 4000,
+    "accumulation": 1,
+    "learning_rate": 0.0001,
+    "brier_weight": 0.1,
+    "kl_beta": 0.05,
+    "save_every": 100,
+    "purpose": "replicated-precision-v1",
+    "prompt_version": "myjev-qwen-chat-v2",
+    "nonquantized_dtype": "fp32",
+    "data_offset": 0
+  },
+  "reference": "Completed longer-v1 4B BF16 SFT, same seeds, training data order, 4000 examples and learning rate. No new hyperparameter selection.",
+  "scope": "Training-configuration precision control: NF4 plus FP32 nonquantized modules versus BF16, not solely inference rounding. SFT only; does not isolate RL or 9B capacity.",
+  "hashes": {
+    "data/banking77/train.jsonl": "3b37308dfb4e6be7dbfdbfdba6a3d9b2ce24fa0691ec9387b5353e28a995f360",
+    "data/banking77/validation.jsonl": "557fbd135aaf844a535f48017de2e808d4e9e5ebf4b540af17f4ee19422586ca",
+    "data/banking77/calibration.jsonl": "2e095c9b0712cf2ed78f67979cecf5ed023c349aa4be344981780a7063210475",
+    "data/banking77/test.jsonl": "7d4fb64775dc350e37a99c6bc317edecea1639d54be336ab6b05028622b93f31",
+    "results/longer-v1/4b/main/seed-11/sft/config.json": "bbc2a81b9fd3f942e22fb3d19d808e5569b9c46fe4ca88c56b51cf9a8f833441",
+    "results/longer-v1/4b/main/seed-11/sft/artifact-manifest.json": "0dd98c2d3d07379c1def6595364d553b5865e227d45ca53c8144da3ae7783b98",
+    "results/longer-v1/4b/main/seed-11/sft/evaluation/metrics.json": "5108f971f341e638a9d483302a135a5a68c45e7d8b00df8f8dc9b5c714f7c626",
+    "results/longer-v1/4b/main/seed-22/sft/config.json": "bbc2a81b9fd3f942e22fb3d19d808e5569b9c46fe4ca88c56b51cf9a8f833441",
+    "results/longer-v1/4b/main/seed-22/sft/artifact-manifest.json": "7a125859f6fedd5448524d4cc6357fc6be7a968c4db4fbc5c40ce8189238e4d2",
+    "results/longer-v1/4b/main/seed-22/sft/evaluation/metrics.json": "c566193a0d68f60edb072ffc821b4b87589638b4ee5bd5a0e698de07fb9a7d11",
+    "results/longer-v1/4b/main/seed-33/sft/config.json": "bbc2a81b9fd3f942e22fb3d19d808e5569b9c46fe4ca88c56b51cf9a8f833441",
+    "results/longer-v1/4b/main/seed-33/sft/artifact-manifest.json": "76bc80f88ec47dc571a4c79dd5b6afedf90e0e37f8b45c62cd79f56c1b708975",
+    "results/longer-v1/4b/main/seed-33/sft/evaluation/metrics.json": "f478d53e3f382b280c75a91f413d7159974aa65d4db99f2002b20e30bca5592a",
+    "src/myjev/train.py": "39ba9ad374c2a3574b60a042251d1e8cba064801172ce76b8c1566b65d85f8c2",
+    "src/myjev/model.py": "e668b74b1760a620ef5db5b01e1bc1b5b5daa4056b638caa6d7064a9b3e314a6",
+    "src/myjev/prompt.py": "71e4c8ffb0289c5b13e8a5a67276488e4524ea8e105ed35757e7273a70a54e67",
+    "src/myjev/objectives.py": "eb8a70e07546a6f9c5d67303e502b4c199c3774d7a76246f2059d16527759b80"
+  }
+}

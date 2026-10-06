@@ -83,6 +83,7 @@ One process loads one selected model. Preserve the pinned backbone cache and mou
 | First model call needs a compiler | Use the repository image, which includes `gcc` and `libc6-dev` |
 | Python dependencies disappear in a wrapper | Invoke `.venv/bin/python` directly; do not resolve its symlink to system Python |
 | HTTP 429 or 504 | Queue capacity, request length and timeouts; failed requests are not fast inference |
+| Backbone downloads again or disk fills | Set the same `HF_HOME` used for training; for fully cached pinned models use `HF_HUB_OFFLINE=1`. Preserve the cache and inspect interrupted downloads before cleanup |
 | Backend output differs | Recheck custom heads, precision, pinned revisions and calibration |
 
 Before releasing a checkpoint, repeat save/reload and Python/CLI/HTTP/Docker equivalence on that checkpoint and image. Measure warm p50/p95, throughput, peak VRAM, cold start and overload behavior on representative inputs. The proposed scoring-versus-generation controls are described in [the benchmark protocol](hosting.md#planned-scoring-versus-generation-benchmark); they are not completed results.

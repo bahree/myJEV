@@ -17,9 +17,9 @@ This page makes incomplete work visible as the project develops. Checked items d
 
 - [x] Longer matched training with equal validation-based tuning opportunities; [descriptive results](../results/longer-v1/summary.md) recorded.
 - [x] Frozen main neural comparison on the full official BANKING77 test split, all three seeds and sizes. Paired group analysis is recorded; broader uncertainty and release checks remain.
-- [ ] Replicated precision controls to separate capacity from quantization effects.
+- [ ] Replicated precision controls: three 4B NF4 SFT runs at matched 4,000-example exposure are frozen and queued after GPU 0 completes its transfer jobs; completed BF16 controls are reused.
 - [ ] Transfer and robustness studies at every size, extending the initial 0.8B diagnostics.
-- [ ] More extensive uncertainty reporting for rare accepted-case errors.
+- [x] Per-seed operational report with accepted counts, fixed calibration thresholds, group intervals and conditional binomial upper bounds; production guarantees remain unsupported.
 
 ## Deferred: alternative pretrained backbones
 
@@ -73,7 +73,7 @@ This part remains exploratory. Annotation material and draft articles are not di
 - [ ] Expand serving benchmarks to isolated-host runs and representative document lengths.
 - [ ] Compare direct scoring, constrained one-token generation, minimal JSON, and answer plus explanation under matched serving conditions. See the [benchmark protocol](hosting.md#planned-scoring-versus-generation-benchmark) and its related-work reference.
 - [ ] Finalize source licensing and release packaging.
-- [ ] Add links to the two published blog articles.
+- [ ] Add links to the published blog-series articles.
 
 A paid cloud endpoint is optional and is not a required project deliverable. The documented managed-hosting recipe can be used independently once release artifacts exist.
 
@@ -81,13 +81,13 @@ A paid cloud endpoint is optional and is not a required project deliverable. The
 
 The existing guides are available now. The next presentation pass will make them easier to discover from the landing page, drawing on [helloLondon's documentation structure](https://github.com/bahree/helloLondon).
 
-- [ ] Add a prominent README documentation table linking the full index and each main reader task, including W&B, lessons and inference/Docker.
-- [ ] Clarify read-results, train-your-own and released-model entry paths; add an annotated directory map and experiment-lifecycle diagram.
+- [x] Add a prominent README documentation table linking the full index and each main reader task, including W&B, lessons and inference/Docker.
+- [x] Clarify read-results, train-your-own and released-model entry paths; add an annotated directory map and experiment-lifecycle diagram.
 - [ ] Add an actual artifact-linked request/response example explaining scores, confidence and unsupported inputs.
-- [ ] Explain deployable artifacts versus resumable checkpoints and consolidate troubleshooting.
+- [x] Explain deployable artifacts versus resumable checkpoints and consolidate troubleshooting, including shared-cache/disk failures.
 - [ ] Refresh results and authentic training/GPU visuals after analysis, with source evidence, uncertainty and regeneration commands.
 - [ ] Validate the release inference/Docker walkthrough from a clean environment and replace pending model/image references with tested releases.
-- [ ] Add the two published blog links, mutual navigation and documentation link checks.
+- [ ] Add the published blog-series links, mutual navigation and documentation link checks.
 
 These tasks follow the completed training batch and do not change its frozen protocol. Research and release requirements above remain separate dependencies.
 
@@ -102,3 +102,5 @@ These tasks follow the completed training batch and do not change its frozen pro
 The scratch extension has completed its first controlled study, one-seed natural-language failure diagnostic and pilot serving checks; see the [walkthrough](scratch.md) for completed checks and remaining evidence. It complements the existing adaptation study and does not delay its result audit or silently expand the frozen training budget.
 
 Current execution details and failed quality gates are recorded in the [scratch plan checkpoint](scratch-plan.md#execution-checkpoint). Implementation checks passing does not establish useful model quality.
+
+The expanded transfer/robustness study is frozen and running across 18 checkpoints (three sizes, three seeds, continued supervision and exact RL). Results will be reported after validation; this is not additional tuning. The blog scope now has four drafts: scratch/overview, Qwen training, evaluation/transfer, and inference/hosting.

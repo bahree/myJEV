@@ -1,0 +1,77 @@
+{
+  "sizes": [
+    "0.8b",
+    "4b",
+    "9b"
+  ],
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "methods": [
+    "continued_sft",
+    "exact"
+  ],
+  "transfer_limit_per_cohort": 256,
+  "robustness_limit": 64,
+  "selection_seed": 42,
+  "confidence": "native deployed scalar for continued_sft and policy for exact",
+  "threshold_source": "unchanged corresponding BANKING77 calibration operating points",
+  "purpose": "Post-training diagnostic extension, not tuning or release selection on transfer data.",
+  "limitations": [
+    "Fixed subsamples, not full CLINC evaluation",
+    "Paraphrases cover eight labels and are not human validated",
+    "Sampled RL not included in this bounded transfer extension",
+    "No temperature control in this first extension"
+  ],
+  "hashes": {
+    "data/clinc150/distant.jsonl": "28939d79010b9303f41ba4c84b5ad2777b5e6e6f69a16d97f2d29cf7d19327dd",
+    "data/clinc150/near.jsonl": "050c71d14f57624be4db65531eaf560fc9c312306675af49e208091d5afc5a54",
+    "data/clinc150/oos-deferral.jsonl": "338648defc7615cdfc67622a2cd619c56acb3f54727b9262ddb34e9f0c62a362",
+    "data/clinc150/oos-none.jsonl": "f78d09e7d1050c5f720c2a7ba0d48608af0baa86b05418b7d2bc082bf3f2c88b",
+    "data/clinc150/unsupported-near-deferral.jsonl": "de261ce80c5d8e83c3f86909964c696a667eac92f0c4d83fd34d1205b1dc5151",
+    "data/clinc150/unsupported-near-none.jsonl": "27e238896425725b0333561b87a1a757aebef8c02eef1bc3d15039f119bd2c00",
+    "data/banking77/test.jsonl": "7d4fb64775dc350e37a99c6bc317edecea1639d54be336ab6b05028622b93f31",
+    "artifacts/longer-v1/0.8b/main/seed-11/continued_sft/artifact/manifest.json": "ef359160d3163c02007925683760550d699151f892386c19df4da06f7b3f70e4",
+    "artifacts/longer-v1/0.8b/main/seed-11/exact/artifact/manifest.json": "6ee8fef5c84570ca6d88f0defe8c6149dcbceba6d4d2c5130157f0d1a36e17bf",
+    "artifacts/longer-v1/0.8b/main/seed-22/continued_sft/artifact/manifest.json": "9aca370e51e817d2f06f8c99913eb1146d3fbe56995deb46b77e4f1d0a4804eb",
+    "artifacts/longer-v1/0.8b/main/seed-22/exact/artifact/manifest.json": "b972bcc8123221e19bac5415ef2580c467ffa85035d4b0c008256082e9e9eb67",
+    "artifacts/longer-v1/0.8b/main/seed-33/continued_sft/artifact/manifest.json": "87769f5160369b924ae879fb08243f57d31b29de38b5f9a4e42691556849cc1b",
+    "artifacts/longer-v1/0.8b/main/seed-33/exact/artifact/manifest.json": "2efdee64116e5fed056abcd836b763cb67227a87bfd34eca79bcfadcd5e49a32",
+    "artifacts/longer-v1/4b/main/seed-11/continued_sft/artifact/manifest.json": "52d89a98ae79f5758da650c8fe9ce211a9f7d2500313e7508ea64c33542b0a03",
+    "artifacts/longer-v1/4b/main/seed-11/exact/artifact/manifest.json": "da6890db9ea2d7ce1d0eef16e24bc4cb826c4c80610a894dedd412b812d696de",
+    "artifacts/longer-v1/4b/main/seed-22/continued_sft/artifact/manifest.json": "7287ae212729791546bd7cec50a1583bd8ea2bacc6494dddf3e0f2c1d50d5497",
+    "artifacts/longer-v1/4b/main/seed-22/exact/artifact/manifest.json": "99ac398b5ae7de6845d0073fcbe54169d7efb478d3027e507b83670c8aa8280d",
+    "artifacts/longer-v1/4b/main/seed-33/continued_sft/artifact/manifest.json": "520901279530dcc08a0fc5fb7964f8ac818ebc5a85a76b2a34e04bfdbea17619",
+    "artifacts/longer-v1/4b/main/seed-33/exact/artifact/manifest.json": "c3e9d7667dbdbe9d3c7ef1f3f05ea9cbcf85f86c5e574b488dcbae9c994f89d3",
+    "artifacts/longer-v1/9b/main/seed-11/continued_sft/artifact/manifest.json": "951b77ad8cd60d52839b24f75089acfaa96e11e4744e81ef1c7f46e9a8f796c3",
+    "artifacts/longer-v1/9b/main/seed-11/exact/artifact/manifest.json": "69aa5ec8614b24b76f7f8adbde5a576c3bcf6228c4956f3e06a1392e96bed4ac",
+    "artifacts/longer-v1/9b/main/seed-22/continued_sft/artifact/manifest.json": "065618a89605d46513a5a8f7db4e75138fce0647b60dd1caafe1d28b859fb885",
+    "artifacts/longer-v1/9b/main/seed-22/exact/artifact/manifest.json": "d0d85322ccba45382846e9d4becb379ee8b92fbd376906451a40c2b8a1c20c4f",
+    "artifacts/longer-v1/9b/main/seed-33/continued_sft/artifact/manifest.json": "a18627a90cbb496525c5801372b72cab57c2b03a88afb52fc58fc6fb1f86caf6",
+    "artifacts/longer-v1/9b/main/seed-33/exact/artifact/manifest.json": "096b713ab8d5af250e751791f744fb6772802568fb0d7d1b4bbc8d2e8208f316",
+    "results/longer-v1/0.8b/main/seed-11/continued_sft/evaluation/metrics.json": "42aa893e414361b92ccffb581abdcca1497dbbabd668e0a5e50468c11442204b",
+    "results/longer-v1/0.8b/main/seed-11/exact/evaluation/metrics.json": "4dc87f31068395ab5b094160665566b9aee47fa71f1a95c813ba34e6464bcc3c",
+    "results/longer-v1/0.8b/main/seed-22/continued_sft/evaluation/metrics.json": "60765f29a123698d62b0f86e5ea173f969746d1e5ac2f0eb6c4358d1a1dfe8ec",
+    "results/longer-v1/0.8b/main/seed-22/exact/evaluation/metrics.json": "da42c828c1227fcad931099eb61ea216898a715cf4d0712afbe4039d84b3564c",
+    "results/longer-v1/0.8b/main/seed-33/continued_sft/evaluation/metrics.json": "6696b6c70eeb24a4f23145d986bd125f39611b65bfb2d0c1a3534ec450848a61",
+    "results/longer-v1/0.8b/main/seed-33/exact/evaluation/metrics.json": "7d46078d67f216147c9971ada1537c2f0405b1785720bcd6d33017f17291522b",
+    "results/longer-v1/4b/main/seed-11/continued_sft/evaluation/metrics.json": "84097c4e02463a8be1b7bf1c47791f32a128965e44237810ab1a674d7d9998c6",
+    "results/longer-v1/4b/main/seed-11/exact/evaluation/metrics.json": "2524a8bb5f06e6f3584980231cbc3fddf226975aeeb9876559fc33d8a4b2051a",
+    "results/longer-v1/4b/main/seed-22/continued_sft/evaluation/metrics.json": "0173a7b952ae4326fd6cf54568e6f3c22277f2ea6ca6fcdba4573e29b55d755e",
+    "results/longer-v1/4b/main/seed-22/exact/evaluation/metrics.json": "bab75d82e6d028df9305c5382e79b1202fa8a74a203888e978b48eca2fbd7980",
+    "results/longer-v1/4b/main/seed-33/continued_sft/evaluation/metrics.json": "d4c8c8802e227a1c3c201ef7680e3ad01e1f8db887e95bdc2f9cefd225fd725d",
+    "results/longer-v1/4b/main/seed-33/exact/evaluation/metrics.json": "8e9252cf09f2f1c65b171c101a986960b91c9d65c22f2369b6610eac13be4f3f",
+    "results/longer-v1/9b/main/seed-11/continued_sft/evaluation/metrics.json": "8f9bff3f4742282861ec73183c3221b21a0611b357f0afe1164926e19d8a5454",
+    "results/longer-v1/9b/main/seed-11/exact/evaluation/metrics.json": "ed44ca5d01707d10e687e662e2bdd0fdaab8554794341242fafa91f19aca8fab",
+    "results/longer-v1/9b/main/seed-22/continued_sft/evaluation/metrics.json": "4598a8e5b1a22bfe98d8c17352eecf3901375e49cab75bc18ff754bdfa31f6b2",
+    "results/longer-v1/9b/main/seed-22/exact/evaluation/metrics.json": "65f266d9edd45715ff365c1ad9d90903a4ed1d1a05a09e515b575e5438733df8",
+    "results/longer-v1/9b/main/seed-33/continued_sft/evaluation/metrics.json": "d810206c213d48ab1ada8b52bc3bb45aaf2c94258e8a7335b07680c065c5aa00",
+    "results/longer-v1/9b/main/seed-33/exact/evaluation/metrics.json": "672c797d6d036443390bed8e9026e64768a19278f3642e8bc32a83f8047110f5"
+  },
+  "scripts": {
+    "scripts/evaluate_transfer.py": "b6889307810c19f153d08ea58e83b80ace0bc7d22548b424a1e73309f75a455e",
+    "scripts/evaluate_robustness.py": "c4e05a30719121eca592c80c492048234152f26710e6ee47a884502c52f45eb7"
+  }
+}

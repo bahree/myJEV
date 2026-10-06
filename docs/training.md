@@ -138,3 +138,32 @@ Per-size logs and state live under `results/longer-v1/`; adapters and resumable 
 ## What this batch does not cover
 
 This batch focuses on the four main methods. It does not complete the remaining correctness-only/Brier ablations at longer exposure, replicated precision controls, broad transfer, archive adaptation, or final release selection. Those remain on the [roadmap](roadmap.md). New results should be reported with the actual completed seeds, data exposure, precision, and evaluation scope.
+
+## Which files serve a model, and which resume training?
+
+| File or directory | Role | Required for inference? |
+|---|---|---|
+| `artifact/manifest.json` | Pinned revisions, aliases, precision, head semantics and checksums | Yes |
+| `artifact/adapter/` | Qwen LoRA parameters | Yes for adapted Qwen |
+| `artifact/heads.safetensors` | Selection/correctness head parameters | Yes |
+| `resume.pt` | Trainable weights, optimizer state, data cursor/order and RNG state | No; trusted local training recovery only |
+| `training.jsonl` | Per-update loss, exposure, time and allocated GPU memory | Evidence, not model parameters |
+| Shared Hugging Face cache | Full pinned backbone and tokenizer | Yes for Qwen; adapters do not replace it |
+| Scratch artifact | Its complete small network, byte-tokenizer specification and manifest | Yes for scratch; no pretrained backbone |
+
+Training retention stores selected deployable artifacts and resumable state. It does not promise that every historical update has a permanently saved checkpoint. The scratch teaching runner currently saves completed stage artifacts and does not resume partially completed optimizer state.
+
+```mermaid
+flowchart LR
+    A[Freeze data and configuration] --> B[Fit pilot and train]
+    B --> C[Select with validation]
+    C --> D[Fit calibration thresholds]
+    D --> E[Evaluate frozen test and transfer]
+    E --> F[Measure serving and reloads]
+    F --> G[Package artifact and model card]
+    G --> H[Publish reviewed release]
+    B --> I[Logs and resumable state]
+    E --> J[Predictions and figures]
+```
+
+The arrows describe a dependency order, not permission to tune again after observing test performance. A new exploratory recipe needs its own declared protocol and honest disclosure of previously inspected tests.

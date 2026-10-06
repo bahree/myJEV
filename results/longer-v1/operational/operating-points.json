@@ -1,0 +1,2328 @@
+{
+  "scope": "Full official BANKING77 test, thresholds fixed using each run calibration data. Individual seeds shown; no pooling of repeated test examples as independent observations.",
+  "uncertainty": "error_upper_95 is the one-sided 95% Clopper-Pearson bound conditional on a fixed threshold, under independent Bernoulli sampling. error_cluster_ci95 is the existing group bootstrap interval. Neither accounts for repeated comparison selection or a new deployment distribution.",
+  "warning": "Zero observed errors or a degenerate bootstrap interval do not establish zero risk. A calibration empirical-error target is not a test guarantee.",
+  "sources": {
+    "results/longer-v1/0.8b/main/seed-11/continued_sft/posthoc/temperature-metrics.json": "f0ae45cf90805c9a87d6431c2fac6ec7ed835670f639aa507b76a71c9c889e3f",
+    "results/longer-v1/0.8b/main/seed-11/exact/evaluation/metrics.json": "4dc87f31068395ab5b094160665566b9aee47fa71f1a95c813ba34e6464bcc3c",
+    "results/longer-v1/0.8b/main/seed-11/sampled/evaluation/metrics.json": "b7aa46467b2b1c15819d11324fe9327dff278602d2825bba73d62b963c11f49c",
+    "results/longer-v1/0.8b/main/seed-22/continued_sft/posthoc/temperature-metrics.json": "e45523429bd8b36f228f32dcb242da3239873af76e73b7b29a68828e177f05b7",
+    "results/longer-v1/0.8b/main/seed-22/exact/evaluation/metrics.json": "da42c828c1227fcad931099eb61ea216898a715cf4d0712afbe4039d84b3564c",
+    "results/longer-v1/0.8b/main/seed-22/sampled/evaluation/metrics.json": "cd2e624837d61147c9a6f3f0fa76eb4e008db8a859e4236867292a4a1628972e",
+    "results/longer-v1/0.8b/main/seed-33/continued_sft/posthoc/temperature-metrics.json": "802d1d6db0d7083b4199d3af6d1830d339ffdc9e9ee79b6cef660de7a4244845",
+    "results/longer-v1/0.8b/main/seed-33/exact/evaluation/metrics.json": "7d46078d67f216147c9971ada1537c2f0405b1785720bcd6d33017f17291522b",
+    "results/longer-v1/0.8b/main/seed-33/sampled/evaluation/metrics.json": "9466715b53182a815134c9d77d3873fd01b2bbf7e0985369eb94e496c4955401",
+    "results/longer-v1/4b/main/seed-11/continued_sft/posthoc/temperature-metrics.json": "6bc5000f3c25d292fc3abe5d6e05897090b02b48088f76c990410e1412a0bf53",
+    "results/longer-v1/4b/main/seed-11/exact/evaluation/metrics.json": "2524a8bb5f06e6f3584980231cbc3fddf226975aeeb9876559fc33d8a4b2051a",
+    "results/longer-v1/4b/main/seed-11/sampled/evaluation/metrics.json": "378286d809620f782bac492af2cd09bfb67c6d16cc8c099dc502fd5a7db2b37e",
+    "results/longer-v1/4b/main/seed-22/continued_sft/posthoc/temperature-metrics.json": "dae82aa789225b79a3794942498d3fd82f27ac7ccebedaadef09d7291530022f",
+    "results/longer-v1/4b/main/seed-22/exact/evaluation/metrics.json": "bab75d82e6d028df9305c5382e79b1202fa8a74a203888e978b48eca2fbd7980",
+    "results/longer-v1/4b/main/seed-22/sampled/evaluation/metrics.json": "390fa7ee445ed6a05aafd2f15c6c621e47ebec8e68582218c3703e3d855dc80a",
+    "results/longer-v1/4b/main/seed-33/continued_sft/posthoc/temperature-metrics.json": "b743ca89175256bc6cc14e22c3ae1891901d6b505382ed613fc0036f0549a51b",
+    "results/longer-v1/4b/main/seed-33/exact/evaluation/metrics.json": "8e9252cf09f2f1c65b171c101a986960b91c9d65c22f2369b6610eac13be4f3f",
+    "results/longer-v1/4b/main/seed-33/sampled/evaluation/metrics.json": "ac1f46587fccad43d3184df29c04100268b9c4a33b3c8eca4e723e0436ce1d40",
+    "results/longer-v1/9b/main/seed-11/continued_sft/posthoc/temperature-metrics.json": "8a280989a8d054af8afc9c9c560c616d018d1dbe54e9af2047a62c6d9e2a3f15",
+    "results/longer-v1/9b/main/seed-11/exact/evaluation/metrics.json": "ed44ca5d01707d10e687e662e2bdd0fdaab8554794341242fafa91f19aca8fab",
+    "results/longer-v1/9b/main/seed-11/sampled/evaluation/metrics.json": "be76c1bb7b0fa5e4074b0ae1242a0289a906b5dbe822947a858a1c6ac6cf35b5",
+    "results/longer-v1/9b/main/seed-22/continued_sft/posthoc/temperature-metrics.json": "396ebd77956b1ddb629753792964584117ab21ac4a07bb4d64b0c2bd13e804e8",
+    "results/longer-v1/9b/main/seed-22/exact/evaluation/metrics.json": "65f266d9edd45715ff365c1ad9d90903a4ed1d1a05a09e515b575e5438733df8",
+    "results/longer-v1/9b/main/seed-22/sampled/evaluation/metrics.json": "5b5597c1e4cf1e0223cbd13eb40eb17810acbf6eec79342b64b90ca0aa47bd9a",
+    "results/longer-v1/9b/main/seed-33/continued_sft/posthoc/temperature-metrics.json": "92489dad1e61381fc884cf68efb926da831301ed65a8ced86e289884c65527ac",
+    "results/longer-v1/9b/main/seed-33/exact/evaluation/metrics.json": "672c797d6d036443390bed8e9026e64768a19278f3642e8bc32a83f8047110f5",
+    "results/longer-v1/9b/main/seed-33/sampled/evaluation/metrics.json": "4fe4a25b3b816b0e2cdd15221d913addf7e981c2f386fc375217948f009a87f3"
+  },
+  "rows": [
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.916951309540233,
+      "coverage": 0.5324675324675324,
+      "accepted": 1640,
+      "error": 0.045121951219512194,
+      "error_upper_95": 0.05448456765513686,
+      "error_cluster_ci95": [
+        0.03474137449962053,
+        0.055453991468616695
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.7860949067355486,
+      "coverage": 0.8327922077922078,
+      "accepted": 2565,
+      "error": 0.08771929824561403,
+      "error_upper_95": 0.09745468762832674,
+      "error_cluster_ci95": [
+        0.07602339181286549,
+        0.09790957409324409
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.6101235089646896,
+      "coverage": 0.9074675324675324,
+      "accepted": 2795,
+      "error": 0.11699463327370305,
+      "error_upper_95": 0.12747206949123654,
+      "error_cluster_ci95": [
+        0.10517982886917149,
+        0.128444798654925
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.9772515436500345,
+      "coverage": 0.09123376623376624,
+      "accepted": 281,
+      "error": 0.0498220640569395,
+      "error_upper_95": 0.0767924557815342,
+      "error_cluster_ci95": [
+        0.02491103202846975,
+        0.07473309608540925
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.8934615985382177,
+      "coverage": 0.6295454545454545,
+      "accepted": 1939,
+      "error": 0.05415162454873646,
+      "error_upper_95": 0.06337773669899394,
+      "error_cluster_ci95": [
+        0.0443298969072165,
+        0.06443382044097552
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.877386748790741,
+      "coverage": 0.5340909090909091,
+      "accepted": 1645,
+      "error": 0.04437689969604863,
+      "error_upper_95": 0.0536586818908014,
+      "error_cluster_ci95": [
+        0.03464992964430673,
+        0.05474452554744526
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.8580703735351562,
+      "coverage": 0.8383116883116883,
+      "accepted": 2582,
+      "error": 0.10534469403563129,
+      "error_upper_95": 0.11581008980857753,
+      "error_cluster_ci95": [
+        0.09372579395817196,
+        0.11735089078233928
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.7300527691841125,
+      "coverage": 0.9149350649350649,
+      "accepted": 2818,
+      "error": 0.13307310149041873,
+      "error_upper_95": 0.14405756909161568,
+      "error_cluster_ci95": [
+        0.12105076322328719,
+        0.1453411102737677
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.8832948207855225,
+      "coverage": 0.2831168831168831,
+      "accepted": 872,
+      "error": 0.016055045871559634,
+      "error_upper_95": 0.024985604276376094,
+      "error_cluster_ci95": [
+        0.008027522935779817,
+        0.02522935779816514
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.8748408555984497,
+      "coverage": 0.6324675324675325,
+      "accepted": 1948,
+      "error": 0.059548254620123205,
+      "error_upper_95": 0.06912851489418313,
+      "error_cluster_ci95": [
+        0.049280682032485465,
+        0.06981519507186858
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.8677152991294861,
+      "coverage": 0.5438311688311688,
+      "accepted": 1675,
+      "error": 0.060298507462686564,
+      "error_upper_95": 0.07075088477422434,
+      "error_cluster_ci95": [
+        0.04948042566197105,
+        0.07164179104477612
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.860335111618042,
+      "coverage": 0.8288961038961039,
+      "accepted": 2553,
+      "error": 0.11398354876615746,
+      "error_upper_95": 0.12485459689596118,
+      "error_cluster_ci95": [
+        0.10253724871019392,
+        0.12540164576802507
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.8223573565483093,
+      "coverage": 0.9188311688311688,
+      "accepted": 2830,
+      "error": 0.14346289752650176,
+      "error_upper_95": 0.15475131226956443,
+      "error_cluster_ci95": [
+        0.13003533568904593,
+        0.15618512578581004
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.8716076612472534,
+      "coverage": 0.01461038961038961,
+      "accepted": 45,
+      "error": 0.08888888888888889,
+      "error_upper_95": 0.19197631701164247,
+      "error_cluster_ci95": [
+        0.0216666666666667,
+        0.17777777777777778
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 11,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.8716076612472534,
+      "coverage": 0.01461038961038961,
+      "accepted": 45,
+      "error": 0.08888888888888889,
+      "error_upper_95": 0.19197631701164247,
+      "error_cluster_ci95": [
+        0.0216666666666667,
+        0.17777777777777778
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 22,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.893301065859526,
+      "coverage": 0.5321428571428571,
+      "accepted": 1639,
+      "error": 0.03355704697986577,
+      "error_upper_95": 0.04182933530845809,
+      "error_cluster_ci95": [
+        0.025030143234841224,
+        0.04151404151404151
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 22,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.7642676501344883,
+      "coverage": 0.824025974025974,
+      "accepted": 2538,
+      "error": 0.08786446020488574,
+      "error_upper_95": 0.09766123054761723,
+      "error_cluster_ci95": [
+        0.07725432108727837,
+        0.09968479117415288
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 22,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.5446566512139552,
+      "coverage": 0.9064935064935065,
+      "accepted": 2792,
+      "error": 0.11962750716332378,
+      "error_upper_95": 0.13020547492188345,
+      "error_cluster_ci95": [
+        0.10815626997292659,
+        0.13185897319949308
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 22,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.9667565847178873,
+      "coverage": 0.04415584415584416,
+      "accepted": 136,
+      "error": 0.0,
+      "error_upper_95": 0.021786610611001893,
+      "error_cluster_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 22,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.8572048684566165,
+      "coverage": 0.6821428571428572,
+      "accepted": 2101,
+      "error": 0.049976201808662545,
+      "error_upper_95": 0.05851295199729875,
+      "error_cluster_ci95": [
+        0.04140836043368411,
+        0.058992138671675985
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 22,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.8556314706802368,
+      "coverage": 0.5321428571428571,
+      "accepted": 1639,
+      "error": 0.04392922513727883,
+      "error_upper_95": 0.05319023758107,
+      "error_cluster_ci95": [
+        0.03418803418803419,
+        0.05311355311355311
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 22,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.7031503915786743,
+      "coverage": 0.824025974025974,
+      "accepted": 2538,
+      "error": 0.11189913317572892,
+      "error_upper_95": 0.12272255943853862,
+      "error_cluster_ci95": [
+        0.09972408356326369,
+        0.12455656286953094
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 22,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.00502537377178669,
+      "coverage": 0.9090909090909091,
+      "accepted": 2800,
+      "error": 0.1525,
+      "error_upper_95": 0.1641222801821598,
+      "error_cluster_ci95": [
+        0.1392295426313192,
+        0.16613076098606644
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 22,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.858853816986084,
+      "coverage": 0.15097402597402598,
+      "accepted": 465,
+      "error": 0.017204301075268817,
+      "error_upper_95": 0.030827635998410215,
+      "error_cluster_ci95": [
+        0.0064516129032258064,
+        0.030107526881720432
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 22,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.8477175831794739,
+      "coverage": 0.6603896103896104,
+      "accepted": 2034,
+      "error": 0.06588003933136677,
+      "error_upper_95": 0.0756475309779763,
+      "error_cluster_ci95": [
+        0.055090321398014376,
+        0.07625241863067736
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 22,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.8506379127502441,
+      "coverage": 0.5159090909090909,
+      "accepted": 1589,
+      "error": 0.042794210195091255,
+      "error_upper_95": 0.05211240233591412,
+      "error_cluster_ci95": [
+        0.032724984266834484,
+        0.05349276274386407
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 22,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.7364652752876282,
+      "coverage": 0.8256493506493506,
+      "accepted": 2543,
+      "error": 0.10931970114038538,
+      "error_upper_95": 0.12002991174929419,
+      "error_cluster_ci95": [
+        0.0971675845790716,
+        0.12234461054287962
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 22,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.009568476118147373,
+      "coverage": 0.9061688311688312,
+      "accepted": 2791,
+      "error": 0.14618416338230025,
+      "error_upper_95": 0.15763761673423593,
+      "error_cluster_ci95": [
+        0.13261411251810087,
+        0.16010172060932656
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 22,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.8602502942085266,
+      "coverage": 0.025324675324675326,
+      "accepted": 78,
+      "error": 0.0,
+      "error_upper_95": 0.03767863420096847,
+      "error_cluster_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 22,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.8437070846557617,
+      "coverage": 0.6396103896103896,
+      "accepted": 1970,
+      "error": 0.0583756345177665,
+      "error_upper_95": 0.06781817080075198,
+      "error_cluster_ci95": [
+        0.04819827277470585,
+        0.06852878886703291
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 33,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.9246791652154107,
+      "coverage": 0.5146103896103896,
+      "accepted": 1585,
+      "error": 0.031545741324921134,
+      "error_upper_95": 0.03976059154771631,
+      "error_cluster_ci95": [
+        0.023328395342115043,
+        0.04037918618360259
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 33,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.7173680246742455,
+      "coverage": 0.827922077922078,
+      "accepted": 2550,
+      "error": 0.10313725490196078,
+      "error_upper_95": 0.1135804274953142,
+      "error_cluster_ci95": [
+        0.09137254901960784,
+        0.1160352043114501
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 33,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.30974461699621925,
+      "coverage": 0.9295454545454546,
+      "accepted": 2863,
+      "error": 0.14460356269647223,
+      "error_upper_95": 0.1558587586686881,
+      "error_cluster_ci95": [
+        0.1330295654304016,
+        0.1586303284416492
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 33,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.9755657666815627,
+      "coverage": 0.0788961038961039,
+      "accepted": 243,
+      "error": 0.012345679012345678,
+      "error_upper_95": 0.031597154772831995,
+      "error_cluster_ci95": [
+        0.0,
+        0.02880658436213992
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 33,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.9161828010435591,
+      "coverage": 0.5525974025974026,
+      "accepted": 1702,
+      "error": 0.03760282021151586,
+      "error_upper_95": 0.04609876007149482,
+      "error_cluster_ci95": [
+        0.028789659224441832,
+        0.04636286431869714
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 33,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.8477070927619934,
+      "coverage": 0.5272727272727272,
+      "accepted": 1624,
+      "error": 0.04002463054187192,
+      "error_upper_95": 0.04897635644293111,
+      "error_cluster_ci95": [
+        0.030190539550003188,
+        0.04990757855822551
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 33,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.8226180076599121,
+      "coverage": 0.8172077922077922,
+      "accepted": 2517,
+      "error": 0.09455701231624951,
+      "error_upper_95": 0.10470202329711904,
+      "error_cluster_ci95": [
+        0.0834658187599364,
+        0.10683187920236119
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 33,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.20732475817203522,
+      "coverage": 0.9064935064935065,
+      "accepted": 2792,
+      "error": 0.13252148997134672,
+      "error_upper_95": 0.14354103011768088,
+      "error_cluster_ci95": [
+        0.11993949658019973,
+        0.1458348262271587
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 33,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.849722683429718,
+      "coverage": 0.025324675324675326,
+      "accepted": 78,
+      "error": 0.01282051282051282,
+      "error_upper_95": 0.05937849206012715,
+      "error_cluster_ci95": [
+        0.0,
+        0.038461538461538464
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 33,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.8441447615623474,
+      "coverage": 0.6409090909090909,
+      "accepted": 1974,
+      "error": 0.05268490374873354,
+      "error_upper_95": 0.06171610990300858,
+      "error_cluster_ci95": [
+        0.0425742200558605,
+        0.06284845413076533
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 33,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.8291072845458984,
+      "coverage": 0.5152597402597403,
+      "accepted": 1587,
+      "error": 0.05229993698802773,
+      "error_upper_95": 0.06244203540431745,
+      "error_cluster_ci95": [
+        0.041561712846347604,
+        0.06297229219143577
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 33,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.7768771052360535,
+      "coverage": 0.8116883116883117,
+      "accepted": 2500,
+      "error": 0.1056,
+      "error_upper_95": 0.11625503061913797,
+      "error_cluster_ci95": [
+        0.09359812949640288,
+        0.11830772182254197
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 33,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.014541465789079666,
+      "coverage": 0.9071428571428571,
+      "accepted": 2794,
+      "error": 0.1467430207587688,
+      "error_upper_95": 0.15820700679892807,
+      "error_cluster_ci95": [
+        0.13461331901181525,
+        0.16028765960280336
+      ]
+    },
+    {
+      "size": "0.8b",
+      "seed": 33,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 1.000001,
+      "coverage": 0.0,
+      "accepted": 0,
+      "error": null,
+      "error_upper_95": null,
+      "error_cluster_ci95": null
+    },
+    {
+      "size": "0.8b",
+      "seed": 33,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.8298903107643127,
+      "coverage": 0.425,
+      "accepted": 1309,
+      "error": 0.04201680672268908,
+      "error_upper_95": 0.052317844227186314,
+      "error_cluster_ci95": [
+        0.032084949177450306,
+        0.053516819571865444
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.9511293000088981,
+      "coverage": 0.5269480519480519,
+      "accepted": 1623,
+      "error": 0.014171287738755391,
+      "error_upper_95": 0.020017887399489735,
+      "error_cluster_ci95": [
+        0.00862600123228589,
+        0.01972872996300863
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.9000833387185285,
+      "coverage": 0.813961038961039,
+      "accepted": 2507,
+      "error": 0.03709613083366574,
+      "error_upper_95": 0.04391992998121175,
+      "error_cluster_ci95": [
+        0.029529130087789304,
+        0.04470136558668124
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.7943811250275027,
+      "coverage": 0.9048701298701298,
+      "accepted": 2787,
+      "error": 0.06063867958378184,
+      "error_upper_95": 0.06860334984803071,
+      "error_cluster_ci95": [
+        0.051328068916008614,
+        0.06996770721205597
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.9617664291688391,
+      "coverage": 0.3512987012987013,
+      "accepted": 1082,
+      "error": 0.012014787430683918,
+      "error_upper_95": 0.019034470787350242,
+      "error_cluster_ci95": [
+        0.006434885868285141,
+        0.018484288354898338
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.8801672771724965,
+      "coverage": 0.8474025974025974,
+      "accepted": 2610,
+      "error": 0.04291187739463601,
+      "error_upper_95": 0.05002035847743175,
+      "error_cluster_ci95": [
+        0.03526255270218474,
+        0.050594097355308544
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.8578165769577026,
+      "coverage": 0.5324675324675324,
+      "accepted": 1640,
+      "error": 0.01951219512195122,
+      "error_upper_95": 0.02612084929107386,
+      "error_cluster_ci95": [
+        0.01340645947592931,
+        0.026203933874347884
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.8463033437728882,
+      "coverage": 0.825974025974026,
+      "accepted": 2544,
+      "error": 0.03734276729559748,
+      "error_upper_95": 0.04413151868864113,
+      "error_cluster_ci95": [
+        0.030279197797876523,
+        0.04481132075471698
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.817490816116333,
+      "coverage": 0.9198051948051948,
+      "accepted": 2833,
+      "error": 0.05188845746558419,
+      "error_upper_95": 0.05927094653828892,
+      "error_cluster_ci95": [
+        0.04412283798093893,
+        0.059683439203216324
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.8594378232955933,
+      "coverage": 0.16753246753246753,
+      "accepted": 516,
+      "error": 0.003875968992248062,
+      "error_upper_95": 0.01215046123505863,
+      "error_cluster_ci95": [
+        0.0,
+        0.009689922480620155
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.8440919518470764,
+      "coverage": 0.8506493506493507,
+      "accepted": 2620,
+      "error": 0.03816793893129771,
+      "error_upper_95": 0.044911834374698666,
+      "error_cluster_ci95": [
+        0.03165492331086298,
+        0.04618320610687023
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.8522318005561829,
+      "coverage": 0.5285714285714286,
+      "accepted": 1628,
+      "error": 0.009828009828009828,
+      "error_upper_95": 0.014888938982338921,
+      "error_cluster_ci95": [
+        0.005518087063151441,
+        0.014151134422570037
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.8271569013595581,
+      "coverage": 0.8298701298701299,
+      "accepted": 2556,
+      "error": 0.0418622848200313,
+      "error_upper_95": 0.048975500057888706,
+      "error_cluster_ci95": [
+        0.03442879499217527,
+        0.05010713826337017
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.8089778423309326,
+      "coverage": 0.9090909090909091,
+      "accepted": 2800,
+      "error": 0.06285714285714286,
+      "error_upper_95": 0.07092553961728709,
+      "error_cluster_ci95": [
+        0.05392857142857143,
+        0.07110383947157634
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.8529585599899292,
+      "coverage": 0.3181818181818182,
+      "accepted": 980,
+      "error": 0.009183673469387756,
+      "error_upper_95": 0.015970917988431296,
+      "error_cluster_ci95": [
+        0.004081632653061225,
+        0.0163265306122449
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 11,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.8308668732643127,
+      "coverage": 0.8185064935064935,
+      "accepted": 2521,
+      "error": 0.039666798889329634,
+      "error_upper_95": 0.04666908981388899,
+      "error_cluster_ci95": [
+        0.03211736716891356,
+        0.04756289715898429
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 22,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.9440954854652255,
+      "coverage": 0.5172077922077922,
+      "accepted": 1593,
+      "error": 0.010043942247332079,
+      "error_upper_95": 0.015215210204011927,
+      "error_cluster_ci95": [
+        0.005630646961280683,
+        0.015693659761456372
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 22,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.8714205386300463,
+      "coverage": 0.8211038961038961,
+      "accepted": 2529,
+      "error": 0.036773428232502965,
+      "error_upper_95": 0.04353921067298383,
+      "error_cluster_ci95": [
+        0.029667428243764733,
+        0.04426921231501148
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 22,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.8034064822273039,
+      "coverage": 0.9090909090909091,
+      "accepted": 2800,
+      "error": 0.05607142857142857,
+      "error_upper_95": 0.0637531313100826,
+      "error_cluster_ci95": [
+        0.04751654608788853,
+        0.0646434345174297
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 22,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.9488526677540581,
+      "coverage": 0.4720779220779221,
+      "accepted": 1454,
+      "error": 0.009628610729023384,
+      "error_upper_95": 0.015011764805683366,
+      "error_cluster_ci95": [
+        0.004814305364511692,
+        0.015120274914089347
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 22,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.8848361915727121,
+      "coverage": 0.7909090909090909,
+      "accepted": 2436,
+      "error": 0.0332512315270936,
+      "error_upper_95": 0.03986474736971603,
+      "error_cluster_ci95": [
+        0.026272577996715927,
+        0.04064039408866995
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 22,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.8616958260536194,
+      "coverage": 0.538961038961039,
+      "accepted": 1660,
+      "error": 0.015060240963855422,
+      "error_upper_95": 0.02097086358909545,
+      "error_cluster_ci95": [
+        0.00963855421686747,
+        0.02167401695886496
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 22,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.8444973230361938,
+      "coverage": 0.8415584415584415,
+      "accepted": 2592,
+      "error": 0.03935185185185185,
+      "error_upper_95": 0.04622535677882572,
+      "error_cluster_ci95": [
+        0.032407094956506836,
+        0.0466820987654321
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 22,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.8304353356361389,
+      "coverage": 0.9188311688311688,
+      "accepted": 2830,
+      "error": 0.05971731448763251,
+      "error_upper_95": 0.06756532628984235,
+      "error_cluster_ci95": [
+        0.050486851900114434,
+        0.06822198656769177
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 22,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.8643693923950195,
+      "coverage": 0.34415584415584416,
+      "accepted": 1060,
+      "error": 0.013207547169811321,
+      "error_upper_95": 0.020570775722399647,
+      "error_cluster_ci95": [
+        0.006603773584905661,
+        0.020754716981132074
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 22,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.8390908241271973,
+      "coverage": 0.8857142857142857,
+      "accepted": 2728,
+      "error": 0.04985337243401759,
+      "error_upper_95": 0.057258176180317706,
+      "error_cluster_ci95": [
+        0.042139978013924516,
+        0.05791788856304985
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 22,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.8617360591888428,
+      "coverage": 0.5282467532467533,
+      "accepted": 1627,
+      "error": 0.022741241548862937,
+      "error_upper_95": 0.029809655763410506,
+      "error_cluster_ci95": [
+        0.01597051597051597,
+        0.030117242398607143
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 22,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.8607345819473267,
+      "coverage": 0.8256493506493506,
+      "accepted": 2543,
+      "error": 0.04876130554463232,
+      "error_upper_95": 0.0563787220844651,
+      "error_cluster_ci95": [
+        0.040855810980633414,
+        0.05697445972495088
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 22,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.8502435684204102,
+      "coverage": 0.912012987012987,
+      "accepted": 2809,
+      "error": 0.0626557493770025,
+      "error_upper_95": 0.07069927206985918,
+      "error_cluster_ci95": [
+        0.053754828808504046,
+        0.07188676078035901
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 22,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.8622149229049683,
+      "coverage": 0.29935064935064937,
+      "accepted": 922,
+      "error": 0.02386117136659436,
+      "error_upper_95": 0.0338981214198991,
+      "error_cluster_ci95": [
+        0.015167930660888408,
+        0.033659066232356136
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 22,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.861045777797699,
+      "coverage": 0.814935064935065,
+      "accepted": 2510,
+      "error": 0.04661354581673307,
+      "error_upper_95": 0.05413765512669772,
+      "error_cluster_ci95": [
+        0.038660821044240734,
+        0.055001992825827024
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 33,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.9544844368371924,
+      "coverage": 0.5110389610389611,
+      "accepted": 1574,
+      "error": 0.026683608640406607,
+      "error_upper_95": 0.03437768557989154,
+      "error_cluster_ci95": [
+        0.01905972045743329,
+        0.0349428208386277
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 33,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.8920054101808683,
+      "coverage": 0.8321428571428572,
+      "accepted": 2563,
+      "error": 0.05267264923917284,
+      "error_upper_95": 0.0605139205931791,
+      "error_cluster_ci95": [
+        0.04408895825204838,
+        0.06089909000448646
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 33,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.6722019752124225,
+      "coverage": 0.922077922077922,
+      "accepted": 2840,
+      "error": 0.08169014084507042,
+      "error_upper_95": 0.09064353592246391,
+      "error_cluster_ci95": [
+        0.07147887323943662,
+        0.09151787706173684
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 33,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.9740780508673751,
+      "coverage": 0.18474025974025973,
+      "accepted": 569,
+      "error": 0.014059753954305799,
+      "error_upper_95": 0.025225098083107793,
+      "error_cluster_ci95": [
+        0.005272407732864675,
+        0.02464788732394366
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 33,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.8910333040615503,
+      "coverage": 0.836038961038961,
+      "accepted": 2575,
+      "error": 0.05359223300970874,
+      "error_upper_95": 0.061472223173415094,
+      "error_cluster_ci95": [
+        0.045454545454545456,
+        0.06255583374473986
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 33,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.859997034072876,
+      "coverage": 0.5428571428571428,
+      "accepted": 1672,
+      "error": 0.014354066985645933,
+      "error_upper_95": 0.020127888173312614,
+      "error_cluster_ci95": [
+        0.008976660682226212,
+        0.020347097546379412
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 33,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.8418093919754028,
+      "coverage": 0.8266233766233766,
+      "accepted": 2546,
+      "error": 0.037706205813040065,
+      "error_upper_95": 0.044520430879020405,
+      "error_cluster_ci95": [
+        0.030648029113042992,
+        0.04556166535742341
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 33,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.7778688669204712,
+      "coverage": 0.9253246753246753,
+      "accepted": 2850,
+      "error": 0.05964912280701754,
+      "error_upper_95": 0.06746384068959183,
+      "error_cluster_ci95": [
+        0.05122762096402001,
+        0.069154625319129
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 33,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.8617802858352661,
+      "coverage": 0.29675324675324677,
+      "accepted": 914,
+      "error": 0.006564551422319475,
+      "error_upper_95": 0.01291528685530349,
+      "error_cluster_ci95": [
+        0.002188183807439825,
+        0.012035010940919038
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 33,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.8297887444496155,
+      "coverage": 0.8743506493506493,
+      "accepted": 2693,
+      "error": 0.04455997029335314,
+      "error_upper_95": 0.051663635090103376,
+      "error_cluster_ci95": [
+        0.03714710252600297,
+        0.0519871147970993
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 33,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.8043088912963867,
+      "coverage": 0.5175324675324675,
+      "accepted": 1594,
+      "error": 0.11543287327478043,
+      "error_upper_95": 0.1294401369790763,
+      "error_cluster_ci95": [
+        0.10037641154328733,
+        0.13048933500627352
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 33,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.8043009638786316,
+      "coverage": 0.8327922077922078,
+      "accepted": 2565,
+      "error": 0.13333333333333333,
+      "error_upper_95": 0.1448791287284957,
+      "error_cluster_ci95": [
+        0.12085652231383863,
+        0.14737385227086405
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 33,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.8042740821838379,
+      "coverage": 0.9227272727272727,
+      "accepted": 2842,
+      "error": 0.14074595355383532,
+      "error_upper_95": 0.15192583091097242,
+      "error_cluster_ci95": [
+        0.12807881773399016,
+        0.15452913118458014
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 33,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.8052323460578918,
+      "coverage": 0.02564935064935065,
+      "accepted": 79,
+      "error": 0.0379746835443038,
+      "error_upper_95": 0.09522930786397449,
+      "error_cluster_ci95": [
+        0.0,
+        0.0759493670886076
+      ]
+    },
+    {
+      "size": "4b",
+      "seed": 33,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.8043528199195862,
+      "coverage": 0.08149350649350649,
+      "accepted": 251,
+      "error": 0.06374501992031872,
+      "error_upper_95": 0.09521023892864919,
+      "error_cluster_ci95": [
+        0.035856573705179286,
+        0.09561752988047809
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 11,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.9443409556613437,
+      "coverage": 0.5191558441558441,
+      "accepted": 1599,
+      "error": 0.014383989993746092,
+      "error_upper_95": 0.02031743781101012,
+      "error_cluster_ci95": [
+        0.008760951188986232,
+        0.02065081351689612
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 11,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.8758180261793591,
+      "coverage": 0.8288961038961039,
+      "accepted": 2553,
+      "error": 0.04661182922052487,
+      "error_upper_95": 0.05406698844238625,
+      "error_cluster_ci95": [
+        0.03840087787801431,
+        0.05486764875553253
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 11,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.7918866802716916,
+      "coverage": 0.9253246753246753,
+      "accepted": 2850,
+      "error": 0.06807017543859649,
+      "error_upper_95": 0.07634032974537122,
+      "error_cluster_ci95": [
+        0.058237350132086974,
+        0.07784147781796708
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 11,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.9491551589582703,
+      "coverage": 0.4655844155844156,
+      "accepted": 1434,
+      "error": 0.013249651324965132,
+      "error_upper_95": 0.019381338280132512,
+      "error_cluster_ci95": [
+        0.007670850767085077,
+        0.019539427773900907
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 11,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.8694590970302201,
+      "coverage": 0.8415584415584415,
+      "accepted": 2592,
+      "error": 0.048996913580246916,
+      "error_upper_95": 0.0565519295613269,
+      "error_cluster_ci95": [
+        0.04050925925925926,
+        0.05750675414897723
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 11,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.8785501718521118,
+      "coverage": 0.535064935064935,
+      "accepted": 1648,
+      "error": 0.01516990291262136,
+      "error_upper_95": 0.02112310184239929,
+      "error_cluster_ci95": [
+        0.009708590672781974,
+        0.021250758955676987
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 11,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.8562252521514893,
+      "coverage": 0.8318181818181818,
+      "accepted": 2562,
+      "error": 0.040983606557377046,
+      "error_upper_95": 0.04802308084810311,
+      "error_cluster_ci95": [
+        0.03358030488553914,
+        0.04881738162927531
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 11,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.6133043766021729,
+      "coverage": 0.9175324675324675,
+      "accepted": 2826,
+      "error": 0.06617126680820948,
+      "error_upper_95": 0.07437875974800841,
+      "error_cluster_ci95": [
+        0.05697098372257608,
+        0.0753722168987092
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 11,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.8789802193641663,
+      "coverage": 0.42987012987012985,
+      "accepted": 1324,
+      "error": 0.014350453172205438,
+      "error_upper_95": 0.020986142635733306,
+      "error_cluster_ci95": [
+        0.008308157099697885,
+        0.02113287411400619
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 11,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.8549288511276245,
+      "coverage": 0.837987012987013,
+      "accepted": 2581,
+      "error": 0.041456799690042616,
+      "error_upper_95": 0.048502861851281935,
+      "error_cluster_ci95": [
+        0.033720603605957675,
+        0.049206211011296026
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 11,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.8731741905212402,
+      "coverage": 0.5376623376623376,
+      "accepted": 1656,
+      "error": 0.014492753623188406,
+      "error_upper_95": 0.02032178456898526,
+      "error_cluster_ci95": [
+        0.008459214501510574,
+        0.02051901025950513
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 11,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.8640761375427246,
+      "coverage": 0.8340909090909091,
+      "accepted": 2569,
+      "error": 0.043207473725184894,
+      "error_upper_95": 0.05039852367469554,
+      "error_cluster_ci95": [
+        0.0362008563643441,
+        0.050993100549445884
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 11,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.7451004981994629,
+      "coverage": 0.9142857142857143,
+      "accepted": 2816,
+      "error": 0.06569602272727272,
+      "error_upper_95": 0.07389368141635562,
+      "error_cluster_ci95": [
+        0.05681767757446671,
+        0.07528409090909091
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 11,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.8732999563217163,
+      "coverage": 0.4409090909090909,
+      "accepted": 1358,
+      "error": 0.009572901325478646,
+      "error_upper_95": 0.015176873210997567,
+      "error_cluster_ci95": [
+        0.005147058823529412,
+        0.014738393515106854
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 11,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.8662904500961304,
+      "coverage": 0.8152597402597402,
+      "accepted": 2511,
+      "error": 0.039028275587415374,
+      "error_upper_95": 0.045996865192968674,
+      "error_cluster_ci95": [
+        0.03144904458598726,
+        0.046215139442231074
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 22,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.9551463074005717,
+      "coverage": 0.5237012987012987,
+      "accepted": 1613,
+      "error": 0.009299442033477991,
+      "error_upper_95": 0.014283403544998326,
+      "error_cluster_ci95": [
+        0.0049597024178549285,
+        0.01425914445133292
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 22,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.8750361367526176,
+      "coverage": 0.8094155844155844,
+      "accepted": 2493,
+      "error": 0.036101083032490974,
+      "error_upper_95": 0.04286616625902938,
+      "error_cluster_ci95": [
+        0.028848551838830148,
+        0.043348277263013796
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 22,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.7786846603397567,
+      "coverage": 0.9032467532467533,
+      "accepted": 2782,
+      "error": 0.06182602444284687,
+      "error_upper_95": 0.06986497684879116,
+      "error_cluster_ci95": [
+        0.05285868392664509,
+        0.07048596211937092
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 22,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.9589553194113422,
+      "coverage": 0.4775974025974026,
+      "accepted": 1471,
+      "error": 0.008157715839564922,
+      "error_upper_95": 0.013183803966897098,
+      "error_cluster_ci95": [
+        0.004076086956521739,
+        0.01358718743534419
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 22,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.8809054478703844,
+      "coverage": 0.7996753246753247,
+      "accepted": 2463,
+      "error": 0.03288672350791717,
+      "error_upper_95": 0.039429221060546936,
+      "error_cluster_ci95": [
+        0.02640103177720763,
+        0.040194884287454324
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 22,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.8770804405212402,
+      "coverage": 0.5207792207792208,
+      "accepted": 1604,
+      "error": 0.008728179551122194,
+      "error_upper_95": 0.013611384696370363,
+      "error_cluster_ci95": [
+        0.004364089775561097,
+        0.01372426699937617
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 22,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.819898247718811,
+      "coverage": 0.812987012987013,
+      "accepted": 2504,
+      "error": 0.02915335463258786,
+      "error_upper_95": 0.03530971564821953,
+      "error_cluster_ci95": [
+        0.022763351093340475,
+        0.035566601515307376
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 22,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.05111055448651314,
+      "coverage": 0.9201298701298701,
+      "accepted": 2834,
+      "error": 0.05963302752293578,
+      "error_upper_95": 0.06747036054668627,
+      "error_cluster_ci95": [
+        0.05082950935404165,
+        0.06810222411487159
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 22,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.8817790746688843,
+      "coverage": 0.06818181818181818,
+      "accepted": 210,
+      "error": 0.004761904761904762,
+      "error_upper_95": 0.022389462021820895,
+      "error_cluster_ci95": [
+        0.0,
+        0.01904761904761905
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 22,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.7768019437789917,
+      "coverage": 0.8243506493506494,
+      "accepted": 2539,
+      "error": 0.032296179598267034,
+      "error_upper_95": 0.03868032743214747,
+      "error_cluster_ci95": [
+        0.025600630169358016,
+        0.03900709219858156
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 22,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.8542473316192627,
+      "coverage": 0.5451298701298701,
+      "accepted": 1679,
+      "error": 0.023228111971411555,
+      "error_upper_95": 0.030231115903563307,
+      "error_cluster_ci95": [
+        0.016661703394877905,
+        0.03156640857653365
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 22,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.8400871157646179,
+      "coverage": 0.8162337662337662,
+      "accepted": 2514,
+      "error": 0.04494828957836118,
+      "error_upper_95": 0.052349108483809866,
+      "error_cluster_ci95": [
+        0.03700719266971652,
+        0.053322721846398725
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 22,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.054539769887924194,
+      "coverage": 0.912012987012987,
+      "accepted": 2809,
+      "error": 0.07475970096119615,
+      "error_upper_95": 0.08343339381068185,
+      "error_cluster_ci95": [
+        0.0650942230918218,
+        0.08505338078291814
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 22,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.8585357666015625,
+      "coverage": 0.2405844155844156,
+      "accepted": 741,
+      "error": 0.008097165991902834,
+      "error_upper_95": 0.015918689507233293,
+      "error_cluster_ci95": [
+        0.002699055330634278,
+        0.014844804318488529
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 22,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.8520148992538452,
+      "coverage": 0.7344155844155844,
+      "accepted": 2262,
+      "error": 0.033156498673740056,
+      "error_upper_95": 0.04003721409393855,
+      "error_cluster_ci95": [
+        0.025198938992042442,
+        0.04065444843097334
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 33,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.9575663570699572,
+      "coverage": 0.5224025974025974,
+      "accepted": 1609,
+      "error": 0.00870105655686762,
+      "error_upper_95": 0.01356919103549188,
+      "error_cluster_ci95": [
+        0.00435052827843381,
+        0.013074400022221386
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 33,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.8618665285081509,
+      "coverage": 0.813961038961039,
+      "accepted": 2507,
+      "error": 0.04268049461507778,
+      "error_upper_95": 0.04992911006455931,
+      "error_cluster_ci95": [
+        0.03510171519744715,
+        0.050678371907422186
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 33,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.7390773727788449,
+      "coverage": 0.9038961038961039,
+      "accepted": 2784,
+      "error": 0.06824712643678162,
+      "error_upper_95": 0.0766302291604051,
+      "error_cluster_ci95": [
+        0.05928853754940711,
+        0.07758690386211853
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 33,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.9716432269650638,
+      "coverage": 0.31883116883116885,
+      "accepted": 982,
+      "error": 0.0050916496945010185,
+      "error_upper_95": 0.010675709278093736,
+      "error_cluster_ci95": [
+        0.0010193679918450561,
+        0.010193679918450561
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 33,
+      "method": "continued_sft",
+      "confidence": "temperature",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.8347232106325919,
+      "coverage": 0.8441558441558441,
+      "accepted": 2600,
+      "error": 0.047692307692307694,
+      "error_upper_95": 0.0551475752805814,
+      "error_cluster_ci95": [
+        0.039614623366641045,
+        0.05536385413894065
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 33,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.8454543948173523,
+      "coverage": 0.5253246753246753,
+      "accepted": 1618,
+      "error": 0.012360939431396786,
+      "error_upper_95": 0.017911342620823754,
+      "error_cluster_ci95": [
+        0.007421035612806759,
+        0.01792336217552534
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 33,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.8131463527679443,
+      "coverage": 0.8237012987012987,
+      "accepted": 2537,
+      "error": 0.039416633819471816,
+      "error_upper_95": 0.046375831696274995,
+      "error_cluster_ci95": [
+        0.03229968361038399,
+        0.04652996845425868
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 33,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.7907624244689941,
+      "coverage": 0.9201298701298701,
+      "accepted": 2834,
+      "error": 0.06598447424135498,
+      "error_upper_95": 0.07416972041206274,
+      "error_cluster_ci95": [
+        0.057114894396373676,
+        0.07519214282407073
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 33,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.8478394746780396,
+      "coverage": 0.37467532467532466,
+      "accepted": 1154,
+      "error": 0.006932409012131715,
+      "error_upper_95": 0.012473499503942612,
+      "error_cluster_ci95": [
+        0.0025996533795493936,
+        0.012131715771230503
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 33,
+      "method": "exact",
+      "confidence": "policy",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.8103973865509033,
+      "coverage": 0.8412337662337662,
+      "accepted": 2591,
+      "error": 0.04361250482439213,
+      "error_upper_95": 0.05079924186923155,
+      "error_cluster_ci95": [
+        0.03550752605171748,
+        0.051361003861003854
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 33,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.5",
+      "test_n": 3080,
+      "threshold": 0.827172040939331,
+      "coverage": 0.5483766233766234,
+      "accepted": 1689,
+      "error": 0.023682652457075192,
+      "error_upper_95": 0.03071801231301368,
+      "error_cluster_ci95": [
+        0.01656780239275804,
+        0.03137951450562463
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 33,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.8",
+      "test_n": 3080,
+      "threshold": 0.7992324829101562,
+      "coverage": 0.8172077922077922,
+      "accepted": 2517,
+      "error": 0.055621771950735005,
+      "error_upper_95": 0.06372716414306072,
+      "error_cluster_ci95": [
+        0.04686212426543181,
+        0.06478537360890302
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 33,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "coverage_0.9",
+      "test_n": 3080,
+      "threshold": 0.7820413112640381,
+      "coverage": 0.912012987012987,
+      "accepted": 2809,
+      "error": 0.08330366678533285,
+      "error_upper_95": 0.09238371696513949,
+      "error_cluster_ci95": [
+        0.0733274564408865,
+        0.0939844608142935
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 33,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "empirical_error_0.01",
+      "test_n": 3080,
+      "threshold": 0.8296011090278625,
+      "coverage": 0.43474025974025976,
+      "accepted": 1339,
+      "error": 0.01344286781179985,
+      "error_upper_95": 0.019869347721988503,
+      "error_cluster_ci95": [
+        0.007473841554559043,
+        0.01941783853599779
+      ]
+    },
+    {
+      "size": "9b",
+      "seed": 33,
+      "method": "sampled",
+      "confidence": "policy",
+      "target": "empirical_error_0.05",
+      "test_n": 3080,
+      "threshold": 0.8160039186477661,
+      "coverage": 0.750974025974026,
+      "accepted": 2313,
+      "error": 0.041504539559014265,
+      "error_upper_95": 0.048987675761198814,
+      "error_cluster_ci95": [
+        0.03287161702248611,
+        0.04969803067177701
+      ]
+    }
+  ]
+}

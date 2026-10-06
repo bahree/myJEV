@@ -1,0 +1,12 @@
+{
+  "size": "4b",
+  "jobs": [],
+  "state": "running",
+  "started": 1791263669.7175992,
+  "current": {
+    "seed": 11,
+    "method": "continued_sft",
+    "kind": "transfer"
+  },
+  "updated": 1791263669.717761
+}
