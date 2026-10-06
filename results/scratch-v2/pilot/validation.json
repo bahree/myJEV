@@ -1,0 +1,7 @@
+{
+  "n": 256,
+  "accuracy": 0.7890625,
+  "known_expected_accuracy": 0.7890625,
+  "partition": "validation",
+  "changes": "v2 varied training layouts and nonce lengths; 500 updates versus initial 100; not a single-factor ablation"
+}

@@ -16,10 +16,16 @@ records = [json.loads(line) for line in (root/'training.jsonl').read_text().spli
 steps = [r['step'] for r in records]
 if not steps or any(right <= left for left, right in zip(steps, steps[1:])):
     raise ValueError('training steps must increase strictly; separate restarted sessions before import')
-run = start_run(a.output, {'artifact_revision': manifest['artifact_revision'],
-    'backbone': manifest['backbone'], 'precision': manifest['precision'],
-    'training': manifest['training'], 'scope': 'historical metrics; no reconstructed system telemetry'},
-    mode=a.mode, historical=True)
+config = {'artifact_revision': manifest['artifact_revision'],
+          'scope': 'historical metrics; no reconstructed system telemetry'}
+if manifest.get('format') == 'myjev-scratch-v1':
+    config.update(backbone='randomly initialized scratch encoder', precision='FP32',
+                  architecture=manifest['config'], training=json.loads((root/'run.json').read_text()))
+else:
+    config.update(backbone=manifest['backbone'], precision=manifest['precision'], training=manifest['training'])
+run = start_run(a.output, config, mode=a.mode, historical=True)
+Path(a.output).mkdir(parents=True, exist_ok=True)
+(Path(a.output)/'run-url.json').write_text(json.dumps({'url': run.url, 'id': run.id, 'historical': True}, indent=2)+'\n')
 try:
     for record in records:
         run.log(record, step=record['step'])

@@ -1,0 +1,11 @@
+{"step": 100, "loss": 4.415793418884277, "examples": 800, "seconds": 7.89635002000432}
+{"step": 200, "loss": 4.314258575439453, "examples": 1600, "seconds": 14.335049688001163}
+{"step": 300, "loss": 5.093888282775879, "examples": 2400, "seconds": 20.702243578009075}
+{"step": 400, "loss": 4.355293273925781, "examples": 3200, "seconds": 27.35280039900681}
+{"step": 500, "loss": 4.307062149047852, "examples": 4000, "seconds": 34.37657873000717}
+{"step": 600, "loss": 4.301375865936279, "examples": 4800, "seconds": 40.85079794700141}
+{"step": 700, "loss": 4.414874076843262, "examples": 5600, "seconds": 47.282772627004306}
+{"step": 800, "loss": 4.51164436340332, "examples": 6400, "seconds": 53.66596531000687}
+{"step": 900, "loss": 4.583158016204834, "examples": 7200, "seconds": 60.715420180000365}
+{"step": 1000, "loss": 4.233292579650879, "examples": 8000, "seconds": 67.19313897100801}
+{"parameters": 217559, "updates": 1000, "seconds": 67.20374291201006, "peak_allocated_vram": 326564864, "artifact_revision": "a0751067242768da5048e57e8a0360973efc9410c9ce3f47df1b49fff496757e"}

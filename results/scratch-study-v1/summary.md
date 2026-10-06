@@ -1,0 +1,24 @@
+# Controlled scratch study
+
+Completed 13,000 updates: two 500-update SFT tuning trials, then three seeds with 1,000 initial SFT and three separate 1,000-update continuations. Batch size 8; FP32; 201,175 parameters. Same initial checkpoint and subsequent examples per seed. Shared SFT-selected learning rate across methods, unlike Qwen's method-specific tuning. This is a teaching comparison, not an optimized RL claim.
+
+| Method | Confidence | Accuracy mean | Seed SD | Correctness Brier | Confidence MSE against known probability |
+|---|---|---:|---:|---:|---:|
+| sft | scalar | 60.74% | 30.66% | 0.1647 | 0.1132 |
+| sft | temperature | 60.74% | 30.66% | 0.2880 | 0.2392 |
+| sft | constant | 60.74% | 30.66% | 0.4066 | 0.3590 |
+| continued_sft | scalar | 66.34% | 33.61% | 0.1408 | 0.0866 |
+| continued_sft | temperature | 66.34% | 33.61% | 0.2128 | 0.1637 |
+| continued_sft | constant | 66.34% | 33.61% | 0.3571 | 0.3101 |
+| exact | policy | 51.43% | 22.13% | 0.2062 | 0.1584 |
+| exact | constant | 51.43% | 22.13% | 0.2895 | 0.2453 |
+| sampled | policy | 40.62% | 11.45% | 0.2218 | 0.1703 |
+| sampled | constant | 40.62% | 11.45% | 0.2394 | 0.1899 |
+
+The 512-row test has held-out templates and ambiguous pairings, with a quarter of rows having two equally likely outcomes. An ideal selector has expected 87.5% correctness under the generator, but realized sampled-label accuracy can differ. Known-probability MSE compares confidence with the actual conditional probability of the selected action, separating confidence error from latent-outcome noise.
+
+Seed SD is not a confidence interval. Synthetic success is not natural-language competence. These data expose whether direct scoring and confidence learning work under a declared artificial rule; there is no claim of Jev reproduction.
+
+![Synthetic accuracy across seeds](figures/synthetic-accuracy.png)
+
+Reproduce: `python scripts/summarize_scratch_study.py`. All source metrics, configurations and training logs are retained. The separate BANKING77 diagnostic has a different input budget and parameter count and must not be pooled into this table.

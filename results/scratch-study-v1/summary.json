@@ -1,0 +1,176 @@
+{
+  "rows": [
+    {
+      "method": "sft",
+      "mode": "evaluation",
+      "accuracy": 0.607421875,
+      "accuracy_seed_sd": 0.30660330186871254,
+      "brier": 0.16465364815216257,
+      "known_confidence_mse": 0.11316585169731695,
+      "known_distribution_brier": 0.3279894395120352,
+      "per_seed_accuracy": [
+        0.86328125,
+        0.267578125,
+        0.69140625
+      ]
+    },
+    {
+      "method": "sft",
+      "mode": "temperature",
+      "accuracy": 0.607421875,
+      "accuracy_seed_sd": 0.30660330186871254,
+      "brier": 0.2880331159842812,
+      "known_confidence_mse": 0.23923280712546066,
+      "known_distribution_brier": 0.5138209256769444,
+      "per_seed_accuracy": [
+        0.86328125,
+        0.267578125,
+        0.69140625
+      ]
+    },
+    {
+      "method": "sft",
+      "mode": "constant",
+      "accuracy": 0.607421875,
+      "accuracy_seed_sd": 0.30660330186871254,
+      "brier": 0.4066162109375,
+      "known_confidence_mse": 0.3590494791666667,
+      "known_distribution_brier": 0.3279894395120352,
+      "per_seed_accuracy": [
+        0.86328125,
+        0.267578125,
+        0.69140625
+      ]
+    },
+    {
+      "method": "continued_sft",
+      "mode": "evaluation",
+      "accuracy": 0.6634114583333334,
+      "accuracy_seed_sd": 0.33608697921953395,
+      "brier": 0.14077199521407208,
+      "known_confidence_mse": 0.08655931982299656,
+      "known_distribution_brier": 0.2643087577107325,
+      "per_seed_accuracy": [
+        0.8515625,
+        0.275390625,
+        0.86328125
+      ]
+    },
+    {
+      "method": "continued_sft",
+      "mode": "temperature",
+      "accuracy": 0.6634114583333334,
+      "accuracy_seed_sd": 0.33608697921953395,
+      "brier": 0.2127713807837997,
+      "known_confidence_mse": 0.16371453663827445,
+      "known_distribution_brier": 0.3835407220217254,
+      "per_seed_accuracy": [
+        0.8515625,
+        0.275390625,
+        0.86328125
+      ]
+    },
+    {
+      "method": "continued_sft",
+      "mode": "constant",
+      "accuracy": 0.6634114583333334,
+      "accuracy_seed_sd": 0.33608697921953395,
+      "brier": 0.3570760091145833,
+      "known_confidence_mse": 0.31005859375,
+      "known_distribution_brier": 0.2643087577107325,
+      "per_seed_accuracy": [
+        0.8515625,
+        0.275390625,
+        0.86328125
+      ]
+    },
+    {
+      "method": "exact",
+      "mode": "evaluation",
+      "accuracy": 0.5143229166666666,
+      "accuracy_seed_sd": 0.2213187395056736,
+      "brier": 0.20620686793046974,
+      "known_confidence_mse": 0.1584073500254406,
+      "known_distribution_brier": 0.5800505423913931,
+      "per_seed_accuracy": [
+        0.580078125,
+        0.267578125,
+        0.6953125
+      ]
+    },
+    {
+      "method": "exact",
+      "mode": "constant",
+      "accuracy": 0.5143229166666666,
+      "accuracy_seed_sd": 0.2213187395056736,
+      "brier": 0.2894999186197917,
+      "known_confidence_mse": 0.2453130086263021,
+      "known_distribution_brier": 0.5800505423913931,
+      "per_seed_accuracy": [
+        0.580078125,
+        0.267578125,
+        0.6953125
+      ]
+    },
+    {
+      "method": "sampled",
+      "mode": "evaluation",
+      "accuracy": 0.40625,
+      "accuracy_seed_sd": 0.1145370852452793,
+      "brier": 0.2217557017056395,
+      "known_confidence_mse": 0.17025420206146932,
+      "known_distribution_brier": 0.7625213099784864,
+      "per_seed_accuracy": [
+        0.455078125,
+        0.275390625,
+        0.48828125
+      ]
+    },
+    {
+      "method": "sampled",
+      "mode": "constant",
+      "accuracy": 0.40625,
+      "accuracy_seed_sd": 0.1145370852452793,
+      "brier": 0.2393951416015625,
+      "known_confidence_mse": 0.1899286905924479,
+      "known_distribution_brier": 0.7625213099784864,
+      "per_seed_accuracy": [
+        0.455078125,
+        0.275390625,
+        0.48828125
+      ]
+    }
+  ],
+  "source_sha256": {
+    "results/scratch-study-v1/main/seed-11/sft/evaluation/metrics.json": "ff2f7fc2f097c3997197472992c676df73528c684cd809165136e2792e7a004a",
+    "results/scratch-study-v1/main/seed-22/sft/evaluation/metrics.json": "cd17c2328292f9dfbc411502923dbbda55ef3402d0367189efc5a43def80e7d5",
+    "results/scratch-study-v1/main/seed-33/sft/evaluation/metrics.json": "7866cc9d34bc760104732d1a52cfd3b865387dba50d3acfd6092f3112a6d3402",
+    "results/scratch-study-v1/main/seed-11/sft/temperature/metrics.json": "056509628f9de7d7114317c00002c6ef6ee250729b79b4ac3fbdc1079d1217d3",
+    "results/scratch-study-v1/main/seed-22/sft/temperature/metrics.json": "0119d77ac505478cacb1be6ce58b3bb7dc82e5e8dbe9942d532d6d5a2a9a92f4",
+    "results/scratch-study-v1/main/seed-33/sft/temperature/metrics.json": "5d331b158031cba22d9c235a672eb6c26c69e7b923610cdbb517fe37aa42d62d",
+    "results/scratch-study-v1/main/seed-11/sft/constant/metrics.json": "7abb6f6fcaac901afa750d2b45f1c1a4465f3f179d1031b22679db71b991fdb0",
+    "results/scratch-study-v1/main/seed-22/sft/constant/metrics.json": "d0d45273d16e67c2981b9ebdcb2a03da4aec1ba09d87495371f59cae83b71e40",
+    "results/scratch-study-v1/main/seed-33/sft/constant/metrics.json": "ab8709674aafdc05832863c93bf1076756259e205255a0308617593f3d309db9",
+    "results/scratch-study-v1/main/seed-11/continued_sft/evaluation/metrics.json": "693de5672fa9e7e8d21f100f0b17252cd6bd5b7183b2c4447784df1df25c0634",
+    "results/scratch-study-v1/main/seed-22/continued_sft/evaluation/metrics.json": "cfdef0ae9fa61bcbe7c80529ba38e38dae518f3cc40c327d7c071fee1b73493e",
+    "results/scratch-study-v1/main/seed-33/continued_sft/evaluation/metrics.json": "3928c695f8749e21fee418b8208c01afeab98e76dfb3c4b988aadced9a6ef7f1",
+    "results/scratch-study-v1/main/seed-11/continued_sft/temperature/metrics.json": "b8573d6bb4b90472b872a5e08edce4d06543396dc85cf92b1890691cf0fda931",
+    "results/scratch-study-v1/main/seed-22/continued_sft/temperature/metrics.json": "592a7b1dc5cac7599257d755fc34d53518a89d791bbd48c1f8c5f3ae6ac2b622",
+    "results/scratch-study-v1/main/seed-33/continued_sft/temperature/metrics.json": "4227a3c5a64b26361d306223e6a8c749fdc80285aac4fd7550ba8369b633da90",
+    "results/scratch-study-v1/main/seed-11/continued_sft/constant/metrics.json": "44a5d993899e54f62e2949467a02f40144d5c47254e290ddc05d8db81b712de7",
+    "results/scratch-study-v1/main/seed-22/continued_sft/constant/metrics.json": "c21326b6169cd3c4c74dc6ed6b3d66d7da8a10c27d4f32125dedb52c22c83ade",
+    "results/scratch-study-v1/main/seed-33/continued_sft/constant/metrics.json": "56ab8a6774d6a462c654cc76feae0961f3070b1090060daf62b64d3d477bc867",
+    "results/scratch-study-v1/main/seed-11/exact/evaluation/metrics.json": "825b65ee985231a90f86be22f9796d01357d7ac354ffe4a49954449ae16946cf",
+    "results/scratch-study-v1/main/seed-22/exact/evaluation/metrics.json": "70e747acc9d43e3233351f9d62eccd22a3b44682c9c181f75834bafc56137277",
+    "results/scratch-study-v1/main/seed-33/exact/evaluation/metrics.json": "f550e6f0adeec45f3f52c64a7b9caa68a89e5711c3f99b243bbd6189e1369048",
+    "results/scratch-study-v1/main/seed-11/exact/constant/metrics.json": "142b18915eef2e05992956e6b4c25903bdfdd75abf100640544b228c61706728",
+    "results/scratch-study-v1/main/seed-22/exact/constant/metrics.json": "ada6f27ae8f81c88607e822acad24ff9823faefcb869080e0d4d1183ef2eb1df",
+    "results/scratch-study-v1/main/seed-33/exact/constant/metrics.json": "3b9a70306d11937f2c33d4d96f4195dbb0634b37bad81c31104055df510d256c",
+    "results/scratch-study-v1/main/seed-11/sampled/evaluation/metrics.json": "dae41d70c5b2e2be294f10da3a55f69de5ab25cdbbda5d724bb8a0d289170b2d",
+    "results/scratch-study-v1/main/seed-22/sampled/evaluation/metrics.json": "ba06bd19b73d607b0ae20862a3785ed909e56093b31ccf78d34da8b180ff36c5",
+    "results/scratch-study-v1/main/seed-33/sampled/evaluation/metrics.json": "b2da7dd8fada016440372357ed6ffd4c6d5102e18c5785984ea7933608b5c309",
+    "results/scratch-study-v1/main/seed-11/sampled/constant/metrics.json": "0b39845a2bad234aa50f261fb81c2320ebd42c05c0e0832bb747eb3eb580be3f",
+    "results/scratch-study-v1/main/seed-22/sampled/constant/metrics.json": "ce0aeaca45c1b74ddf4b0780f9a8348b4f0bee07674bd864508b431bef1a6ffe",
+    "results/scratch-study-v1/main/seed-33/sampled/constant/metrics.json": "899da24cb7c9b239743db11b81ff78e91f49d1b85e08618f258d3375e378121f"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "partition": "validation",
+  "n": 256,
+  "accuracy": 0.20703125,
+  "known_expected_accuracy": 0.2109375,
+  "scope": "100-update selection-only pilot, CPU inference; no confidence estimate fitted"
+}

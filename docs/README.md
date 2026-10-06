@@ -12,7 +12,7 @@ Start with the question you want to answer. All commands run from the repository
 | What was actually measured? | [Experiments and evidence](experiments.md) |
 | How are methods compared fairly? | [Experimental protocol](protocol.md) |
 | What did the longer training batch find? | [Completed comparison](../results/longer-v1/summary.md) |
-| How will we build the scratch model? | [Implementation plan and acceptance gates](scratch-plan.md) |
+| How do I build and run the scratch model? | [Scratch walkthrough and findings](scratch.md), [implementation gates](scratch-plan.md) |
 | How do I watch training and read epochs? | [W&B integration](tracking.md) |
 | What have we learned about budgets and convergence? | [Engineering lessons](learnings.md) |
 | How do I run Python, CLI, HTTP and Docker inference? | [Inference walkthrough](inference.md) |
@@ -26,6 +26,7 @@ Start with the question you want to answer. All commands run from the repository
 - [CLINC150](datasets/clinc150.md): unfamiliar-task and unsupported-request evaluation, excluded from tuning.
 - [Blog archive](datasets/blog-archive.md): post-format, instructional-completeness and claim-support rubrics; 40-post machine-annotation pilot complete, adaptation/evaluation pending.
 - [Synthetic fixtures](datasets/synthetic.md): objective arithmetic and controlled uncertainty.
+- [Scratch routing](datasets/scratch-routing.md): original rules, known ambiguity, versioned templates and held-out combinations.
 - [Attribution](attribution.md): JevK5, SemIf, and JevForge architecture distinctions.
 - [OpenJev](openjev.md): a related released model with different scale, confidence semantics, and licensing.
 

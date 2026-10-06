@@ -1,0 +1,189 @@
+{
+  "n": 512,
+  "accuracy": 0.86328125,
+  "accuracy_cluster_ci95": [
+    0.830078125,
+    0.892578125
+  ],
+  "macro_f1": 0.8615107257739482,
+  "correctness_brier": 0.11514722846248865,
+  "selection_multiclass_brier": 0.235066722035253,
+  "correctness_auroc": 0.89240465416936,
+  "ece": 0.10488074633758515,
+  "ece_bins": "15 equal-width bins, final bin inclusive",
+  "reliability": [
+    {
+      "lo": 0.0,
+      "hi": 0.06666666666666667,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.06666666666666667,
+      "hi": 0.13333333333333333,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.13333333333333333,
+      "hi": 0.2,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.2,
+      "hi": 0.26666666666666666,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.26666666666666666,
+      "hi": 0.3333333333333333,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.3333333333333333,
+      "hi": 0.4,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.4,
+      "hi": 0.4666666666666667,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.4666666666666667,
+      "hi": 0.5333333333333333,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.5333333333333333,
+      "hi": 0.6,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.6,
+      "hi": 0.6666666666666666,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.6666666666666666,
+      "hi": 0.7333333333333333,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.7333333333333333,
+      "hi": 0.8,
+      "n": 7,
+      "confidence": 0.7817689861570086,
+      "accuracy": 0.42857142857142855
+    },
+    {
+      "lo": 0.8,
+      "hi": 0.8666666666666667,
+      "n": 30,
+      "confidence": 0.834049650033315,
+      "accuracy": 0.5333333333333333
+    },
+    {
+      "lo": 0.8666666666666667,
+      "hi": 0.9333333333333333,
+      "n": 40,
+      "confidence": 0.91296077221632,
+      "accuracy": 0.475
+    },
+    {
+      "lo": 0.9333333333333333,
+      "hi": 1.0,
+      "n": 435,
+      "confidence": 0.9854865260507869,
+      "accuracy": 0.9287356321839081
+    }
+  ],
+  "operating_points": {
+    "coverage_0.5": {
+      "threshold": 0.8218851089477539,
+      "coverage": 0.970703125,
+      "accepted": 497,
+      "error": 0.1227364185110664,
+      "error_upper_95": 0.14963932555647536,
+      "error_cluster_ci95": [
+        0.09456740442655935,
+        0.15090543259557343
+      ]
+    },
+    "coverage_0.8": {
+      "threshold": 0.705031156539917,
+      "coverage": 1.0,
+      "accepted": 512,
+      "error": 0.13671875,
+      "error_upper_95": 0.16423502329479156,
+      "error_cluster_ci95": [
+        0.107421875,
+        0.169921875
+      ]
+    },
+    "coverage_0.9": {
+      "threshold": 0.7001281976699829,
+      "coverage": 1.0,
+      "accepted": 512,
+      "error": 0.13671875,
+      "error_upper_95": 0.16423502329479156,
+      "error_cluster_ci95": [
+        0.107421875,
+        0.169921875
+      ]
+    },
+    "empirical_error_0.01": {
+      "threshold": 0.9852961897850037,
+      "coverage": 0.564453125,
+      "accepted": 289,
+      "error": 0.010380622837370242,
+      "error_upper_95": 0.026609323852090486,
+      "error_cluster_ci95": [
+        0.0,
+        0.02422145328719723
+      ]
+    },
+    "empirical_error_0.05": {
+      "threshold": 0.9328222870826721,
+      "coverage": 0.8515625,
+      "accepted": 436,
+      "error": 0.07339449541284404,
+      "error_upper_95": 0.0973304907132257,
+      "error_cluster_ci95": [
+        0.05045871559633028,
+        0.0963302752293578
+      ]
+    }
+  },
+  "artifact_revision": "4cff20aab47a28d280a37ea9aac94ed40175662cc7d326f62e8bf2ac12e57c0e",
+  "temperature": 1.0,
+  "confidence_mode": "scalar",
+  "calibration_sha256": "70469c20dc3707ff457cf31f676e9499b7d588bbb4284ac708b72508148a0544",
+  "evaluation_sha256": "54a2de64cf5b6f5435d8c96f1696f66d050ecb1afa32234e0c70f0e83d3ce6fb",
+  "latency_p50_p95_seconds": [
+    0.0031008080040919594,
+    0.0033032113999070132
+  ],
+  "known_probability_confidence_mse": 0.04717555501764386,
+  "known_distribution_brier": 0.0915988779989337
+}

@@ -1,0 +1,23 @@
+{
+  "generator": "scratch-routing-v1",
+  "seed": 42,
+  "counts": {
+    "train": 2048,
+    "validation": 256,
+    "calibration": 256,
+    "test": 512
+  },
+  "license": "CC0-1.0 for these original synthetic fixtures",
+  "limitations": [
+    "Small color vocabulary; not broad language understanding.",
+    "Template and test ambiguity-combination holdouts; clean task rule is shared.",
+    "Nonce includes split name; it identifies a case but carries no label information.",
+    "One latent label per row; known probabilities are evaluator-only metadata."
+  ],
+  "files": {
+    "calibration.jsonl": "70469c20dc3707ff457cf31f676e9499b7d588bbb4284ac708b72508148a0544",
+    "validation.jsonl": "a21f39823b108d5ee0ac9dba56bba8c436f0b4c4f629e9458988f95b6a2d92af",
+    "test.jsonl": "54a2de64cf5b6f5435d8c96f1696f66d050ecb1afa32234e0c70f0e83d3ce6fb",
+    "train.jsonl": "d7bda1c665b4b65ecb2b2a7a649e21dde901b2850931d128c8dccf1671d60289"
+  }
+}

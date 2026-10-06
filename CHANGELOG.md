@@ -1,5 +1,13 @@
 # Milestone history
 
+## Qwen lessons and implemented scratch teaching track
+
+- Completed the Qwen reporting gate with paired analysis, public lessons and figures for both private Hugo drafts.
+- Added a random-initialized 201K-parameter scorer, byte tokenizer, synthetic generator, training and calibration controls.
+- Retained the failed template pilot, unstable three-seed synthetic study and one-class BANKING77 failure diagnostic.
+- Verified shared Python/CLI/HTTP loading and GPU Docker behavior; recorded CPU/A30 and HTTP timings without implying matched Jev performance.
+- Preserved local logs and imported twelve completed scratch histories into W&B as historical runs.
+
 ## Longer comparison completed; scratch track planned
 
 - Retained all 60 completed training artifacts locally and recorded 168,000 updates across the frozen schedule.

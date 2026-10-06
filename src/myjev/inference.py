@@ -26,6 +26,11 @@ class DecisionModel:
                 raise ValueError("Hub artifacts require an immutable 40-character commit revision")
             path = Path(snapshot_download(artifact, revision=revision))
         m = json.loads((path / "manifest.json").read_text())
+        if m.get("format") == "myjev-scratch-v1":
+            if adapter_trainable:
+                raise ValueError("scratch artifacts do not contain LoRA adapters")
+            from .scratch.model import ScratchDecisionModel
+            return ScratchDecisionModel.load(path, device=device)
         if m["schema_version"] != 1 or m["prompt_version"] != PROMPT_VERSION:
             raise ValueError("unsupported manifest/prompt version")
         if not re.fullmatch(r"[0-9a-f]{40}", m["backbone_revision"]):

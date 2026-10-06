@@ -1,0 +1,44 @@
+{
+  "artifact_revision": "3bc6e8b6b8f654752af80b5679de080fca38264e30cabb1e4aaa6384f31f5a12",
+  "response": {
+    "selected_id": "red",
+    "selection_scores": {
+      "red": 0.9934955835342407,
+      "blue": 1.3589195077656768e-05,
+      "green": 0.0002976343675982207,
+      "other": 0.006193189881742001
+    },
+    "confidence": 0.9899999499320984,
+    "confidence_mode": "scalar",
+    "artifact_revision": "3bc6e8b6b8f654752af80b5679de080fca38264e30cabb1e4aaa6384f31f5a12",
+    "calibration_revision": "none"
+  },
+  "max_absolute_difference": {
+    "cli": 0.0,
+    "http": 9.313225746154785e-09
+  },
+  "oversized_http_status": 422,
+  "model_timings": {
+    "cpu": {
+      "warm_p50_p95_seconds": [
+        0.0019747199985431507,
+        0.002010749292821856
+      ],
+      "requests": 100,
+      "load_and_first_score_seconds": 0.010110895993420854,
+      "peak_allocated_bytes": null,
+      "weights_bytes": 809244
+    },
+    "cuda:2": {
+      "warm_p50_p95_seconds": [
+        0.0029380935011431575,
+        0.002986170804797439
+      ],
+      "requests": 100,
+      "load_and_first_score_seconds": 0.4427202450024197,
+      "peak_allocated_bytes": 10057728,
+      "weights_bytes": 809244
+    }
+  },
+  "scope": "Short four-candidate synthetic request; CPU two threads and one A30. HTTP container on same host. This is not a matched Qwen or Jev benchmark."
+}

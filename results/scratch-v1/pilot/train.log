@@ -1,0 +1,2 @@
+{"step": 100, "loss": 0.15121763944625854, "examples": 800, "seconds": 2.2670703920011874}
+{"parameters": 201175, "updates": 100, "seconds": 2.272891005006386, "peak_allocated_vram": 32075776, "artifact_revision": "f6970573f96b70f7aa807d15282657cdff681f5ada5da1d22ce1b9eea6fbfd53"}

@@ -1,0 +1,19 @@
+{
+  "format": "myjev-scratch-v1",
+  "tokenizer": "utf8-byte-v1",
+  "config": {
+    "width": 64,
+    "layers": 2,
+    "heads": 4,
+    "ff_multiplier": 4,
+    "max_context_bytes": 256,
+    "max_candidate_bytes": 64,
+    "max_candidates": 32,
+    "candidate_interaction": true
+  },
+  "confidence_mode": "scalar",
+  "temperature": 1.0,
+  "calibration_revision": "none",
+  "weights_sha256": "de1546b3b48212b32b3145d807adabb970a355b4883726dd6084b2225c85dfe5",
+  "artifact_revision": "c5d7ad8de2f16c348a8d78731705b115fd277395fb34e222acb3a071943eb2b2"
+}

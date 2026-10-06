@@ -1,0 +1,20 @@
+{
+  "blogs": [
+    {
+      "file": "07_blog/myjev-part1-decision-models-and-training/index.md",
+      "sha256": "a0a4ab0d2d2055c2a27673a11f41d171c5e406c36c95820c035de7acd4466805",
+      "images_checked": 5
+    },
+    {
+      "file": "07_blog/myjev-part2-evaluation-and-hosting/index.md",
+      "sha256": "b17aad9716caa0d38af8e72c096e63989e9fdc0ab85024c24125780e8b135b8d",
+      "images_checked": 2
+    }
+  ],
+  "checks": [
+    "no em dash",
+    "balanced fences",
+    "local image files exist"
+  ],
+  "hugo_theme_render": "not executed; user copies bundles to blog repo"
+}

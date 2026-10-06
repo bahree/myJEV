@@ -1,0 +1,183 @@
+{
+  "n": 512,
+  "accuracy": 0.580078125,
+  "accuracy_cluster_ci95": [
+    0.537109375,
+    0.623046875
+  ],
+  "macro_f1": 0.5174014182266414,
+  "correctness_brier": 0.20313330801706836,
+  "selection_multiclass_brier": 0.7972823892858785,
+  "correctness_auroc": 0.7194659776055125,
+  "ece": 0.17154018452856692,
+  "ece_bins": "15 equal-width bins, final bin inclusive",
+  "reliability": [
+    {
+      "lo": 0.0,
+      "hi": 0.06666666666666667,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.06666666666666667,
+      "hi": 0.13333333333333333,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.13333333333333333,
+      "hi": 0.2,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.2,
+      "hi": 0.26666666666666666,
+      "n": 109,
+      "confidence": 0.25076589617160483,
+      "accuracy": 0.07339449541284404
+    },
+    {
+      "lo": 0.26666666666666666,
+      "hi": 0.3333333333333333,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.3333333333333333,
+      "hi": 0.4,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.4,
+      "hi": 0.4666666666666667,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.4666666666666667,
+      "hi": 0.5333333333333333,
+      "n": 16,
+      "confidence": 0.4818897731602192,
+      "accuracy": 0.5625
+    },
+    {
+      "lo": 0.5333333333333333,
+      "hi": 0.6,
+      "n": 387,
+      "confidence": 0.5498570331615379,
+      "accuracy": 0.7235142118863049
+    },
+    {
+      "lo": 0.6,
+      "hi": 0.6666666666666666,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.6666666666666666,
+      "hi": 0.7333333333333333,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.7333333333333333,
+      "hi": 0.8,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.8,
+      "hi": 0.8666666666666667,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.8666666666666667,
+      "hi": 0.9333333333333333,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.9333333333333333,
+      "hi": 1.0,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    }
+  ],
+  "operating_points": {
+    "coverage_0.5": {
+      "threshold": 0.550000011920929,
+      "coverage": 0.724609375,
+      "accepted": 371,
+      "error": 0.2884097035040431,
+      "error_upper_95": 0.32961964329148885,
+      "error_cluster_ci95": [
+        0.24528301886792453,
+        0.33423180592991913
+      ]
+    },
+    "coverage_0.8": {
+      "threshold": 0.25154125690460205,
+      "coverage": 0.787109375,
+      "accepted": 403,
+      "error": 0.28287841191067,
+      "error_upper_95": 0.32213912288645186,
+      "error_cluster_ci95": [
+        0.23821339950372208,
+        0.3300868486352357
+      ]
+    },
+    "coverage_0.9": {
+      "threshold": 0.25111889839172363,
+      "coverage": 0.787109375,
+      "accepted": 403,
+      "error": 0.28287841191067,
+      "error_upper_95": 0.32213912288645186,
+      "error_cluster_ci95": [
+        0.23821339950372208,
+        0.3300868486352357
+      ]
+    },
+    "empirical_error_0.01": {
+      "threshold": 1.000001,
+      "coverage": 0.0,
+      "accepted": 0,
+      "error": null,
+      "error_upper_95": null,
+      "error_cluster_ci95": null
+    },
+    "empirical_error_0.05": {
+      "threshold": 1.000001,
+      "coverage": 0.0,
+      "accepted": 0,
+      "error": null,
+      "error_upper_95": null,
+      "error_cluster_ci95": null
+    }
+  },
+  "artifact_revision": "c18558db6e24511e4972e4bff4a135204011362cddc299f9e604768b311515c7",
+  "temperature": 1.0,
+  "confidence_mode": "policy",
+  "calibration_sha256": "70469c20dc3707ff457cf31f676e9499b7d588bbb4284ac708b72508148a0544",
+  "evaluation_sha256": "54a2de64cf5b6f5435d8c96f1696f66d050ecb1afa32234e0c70f0e83d3ce6fb",
+  "latency_p50_p95_seconds": [
+    0.0031869000013102777,
+    0.0034022720989014487
+  ],
+  "known_probability_confidence_mse": 0.1511030138730079,
+  "known_distribution_brier": 0.6676129181098418
+}

@@ -8,6 +8,8 @@ This is a research and learning project by [Amit Bahree](https://blog.desigeek.c
 
 > **Current milestone: longer comparison complete.** All 60 training runs (168,000 updates) and 36 main evaluations across three sizes and seeds are complete. Read the [full-test descriptive findings](results/longer-v1/summary.md) and the [from-scratch implementation plan](docs/scratch-plan.md). Paired analysis, transfer and release validation remain pending. Downloadable trained adapters and a hosted demo are **not released yet**.
 
+The second track now [builds a small decision model from scratch](docs/scratch.md), with recorded learning failures, a completed synthetic study and local serving checks. Its weak natural-language results remain separate from Qwen.
+
 [Start here](docs/quickstart.md) · [Documentation](docs/README.md) · [Measured results](docs/experiments.md) · [Roadmap](docs/roadmap.md) · [Model releases](docs/models.md) · [Completed training protocol](docs/training.md) · [W&B tracking](docs/tracking.md) · [Inference and Docker](docs/inference.md) · [Lessons](docs/learnings.md)
 
 ## What is a decision model?

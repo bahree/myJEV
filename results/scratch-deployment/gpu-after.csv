@@ -1,0 +1,4 @@
+name, memory.used [MiB], memory.total [MiB], utilization.gpu [%]
+NVIDIA A30, 0 MiB, 24576 MiB, 0 %
+NVIDIA A30, 0 MiB, 24576 MiB, 2 %
+NVIDIA A30, 0 MiB, 24576 MiB, 2 %

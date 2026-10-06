@@ -1,0 +1,181 @@
+{
+  "n": 3080,
+  "accuracy": 0.012987012987012988,
+  "accuracy_cluster_ci95": [
+    0.009409398066009768,
+    0.017538161740824943
+  ],
+  "macro_f1": 0.000333000333000333,
+  "correctness_brier": 0.012833564198582222,
+  "selection_multiclass_brier": 0.9874824100516231,
+  "correctness_auroc": 0.6852302631578947,
+  "ece": 0.006246422018323625,
+  "ece_bins": "15 equal-width bins, final bin inclusive",
+  "reliability": [
+    {
+      "lo": 0.0,
+      "hi": 0.06666666666666667,
+      "n": 3080,
+      "confidence": 0.019233435005336613,
+      "accuracy": 0.012987012987012988
+    },
+    {
+      "lo": 0.06666666666666667,
+      "hi": 0.13333333333333333,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.13333333333333333,
+      "hi": 0.2,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.2,
+      "hi": 0.26666666666666666,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.26666666666666666,
+      "hi": 0.3333333333333333,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.3333333333333333,
+      "hi": 0.4,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.4,
+      "hi": 0.4666666666666667,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.4666666666666667,
+      "hi": 0.5333333333333333,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.5333333333333333,
+      "hi": 0.6,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.6,
+      "hi": 0.6666666666666666,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.6666666666666666,
+      "hi": 0.7333333333333333,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.7333333333333333,
+      "hi": 0.8,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.8,
+      "hi": 0.8666666666666667,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.8666666666666667,
+      "hi": 0.9333333333333333,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.9333333333333333,
+      "hi": 1.0,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    }
+  ],
+  "operating_points": {
+    "coverage_0.5": {
+      "threshold": 0.01905485801398754,
+      "coverage": 0.4435064935064935,
+      "accepted": 1366,
+      "error": 0.9802342606149341,
+      "error_upper_95": 0.9860125381575883,
+      "error_cluster_ci95": [
+        0.972913616398243,
+        0.986822840409956
+      ]
+    },
+    "coverage_0.8": {
+      "threshold": 0.017735162749886513,
+      "coverage": 0.7451298701298701,
+      "accepted": 2295,
+      "error": 0.9830065359477124,
+      "error_upper_95": 0.9871970777229663,
+      "error_cluster_ci95": [
+        0.9777777777777777,
+        0.9882352941176471
+      ]
+    },
+    "coverage_0.9": {
+      "threshold": 0.017530590295791626,
+      "coverage": 0.8564935064935065,
+      "accepted": 2638,
+      "error": 0.9848369977255497,
+      "error_upper_95": 0.9885343493670163,
+      "error_cluster_ci95": [
+        0.9799014031095943,
+        0.9890151515151515
+      ]
+    },
+    "empirical_error_0.01": {
+      "threshold": 1.000001,
+      "coverage": 0.0,
+      "accepted": 0,
+      "error": null,
+      "error_upper_95": null,
+      "error_cluster_ci95": null
+    },
+    "empirical_error_0.05": {
+      "threshold": 1.000001,
+      "coverage": 0.0,
+      "accepted": 0,
+      "error": null,
+      "error_upper_95": null,
+      "error_cluster_ci95": null
+    }
+  },
+  "artifact_revision": "a0751067242768da5048e57e8a0360973efc9410c9ce3f47df1b49fff496757e",
+  "temperature": 0.9120108393559097,
+  "confidence_mode": "temperature",
+  "calibration_sha256": "2e095c9b0712cf2ed78f67979cecf5ed023c349aa4be344981780a7063210475",
+  "evaluation_sha256": "7d4fb64775dc350e37a99c6bc317edecea1639d54be336ab6b05028622b93f31",
+  "latency_p50_p95_seconds": [
+    0.007870919500419404,
+    0.008295283010374988
+  ]
+}

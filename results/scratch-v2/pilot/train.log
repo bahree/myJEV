@@ -1,0 +1,6 @@
+{"step": 100, "loss": 1.3960697650909424, "examples": 800, "seconds": 2.544100751998485}
+{"step": 200, "loss": 1.3036541938781738, "examples": 1600, "seconds": 4.321189895999851}
+{"step": 300, "loss": 0.6702186465263367, "examples": 2400, "seconds": 5.891995418001898}
+{"step": 400, "loss": 0.9113732576370239, "examples": 3200, "seconds": 7.5901346470054705}
+{"step": 500, "loss": 0.4918113946914673, "examples": 4000, "seconds": 9.252140691009117}
+{"parameters": 201175, "updates": 500, "seconds": 9.26161179599876, "peak_allocated_vram": 34260992, "artifact_revision": "fe49749913b90c807a841c7402938a0dba011a85fc3d1149d0038acdee91267e"}

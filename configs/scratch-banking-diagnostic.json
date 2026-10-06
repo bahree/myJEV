@@ -1,0 +1,17 @@
+{
+  "scope": "One-seed natural-language diagnostic from random initialization; not a matched three-seed architecture comparison",
+  "seed": 11,
+  "width": 64,
+  "layers": 2,
+  "max_context_bytes": 512,
+  "max_candidate_bytes": 64,
+  "max_candidates": 160,
+  "pilot_updates": 100,
+  "main_updates": 1000,
+  "batch_size": 8,
+  "learning_rate": 0.001,
+  "selection_rule": "Fixed learning rate from synthetic work; no BANKING77 tuning or test-based choices",
+  "precision": "FP32",
+  "evaluation": "Full official test and separate calibration partitions; temperature fit on calibration only",
+  "limitation": "8000 training examples processed from a 7999-row partition; candidate byte encoding and architecture differ from Qwen. No convergence claim."
+}

@@ -97,4 +97,6 @@ These tasks follow the completed training batch and do not change its frozen pro
 4. Evaluate the scratch model and Qwen artifacts on appropriate shared tasks, recording unequal pretraining exposure and complete serving costs. Phi, SmolLM and MAI remain deferred and are not release dependencies.
 5. Present both build tracks in the articles, preserving distinct learning goals and honest shared-task comparisons. Different purposes do not prevent one model from winning a measured metric; unequal pretraining prevents attributing that difference solely to architecture.
 
-The scratch extension is planned, not implemented. It complements the existing adaptation study and does not delay its result audit or silently expand the frozen training budget.
+The scratch extension has completed its first controlled study, one-seed natural-language failure diagnostic and pilot serving checks; see the [walkthrough](scratch.md) for completed checks and remaining evidence. It complements the existing adaptation study and does not delay its result audit or silently expand the frozen training budget.
+
+Current execution details and failed quality gates are recorded in the [scratch plan checkpoint](scratch-plan.md#execution-checkpoint). Implementation checks passing does not establish useful model quality.

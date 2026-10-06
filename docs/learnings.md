@@ -38,3 +38,9 @@ Local logs remain authoritative even when a dashboard is unavailable. An indepen
 A successful image build and CUDA tensor operation did not prove that the first model request would work: the pilot container needed a C compiler for runtime kernel startup. A wrapper that resolved a virtualenv Python symlink also lost its environment's dependencies. Both failures were recorded and fixed. Python, CLI, HTTP and Docker checks must exercise the actual artifact and custom confidence head.
 
 The pilot passed these interface checks at all three sizes. Its short latency samples are not final service-level guarantees. Representative inputs, isolated benchmarks, final-checkpoint calibration and artifact/image releases remain pending. See [inference and Docker](inference.md) and [the hosting protocol](hosting.md).
+
+## Scratch models exposed two different failure modes
+
+A small encoder fit the initial routing template but failed a reordered layout. Restoring that layout recovered some accuracy; varied training layouts and more exposure improved validation, but the final three-seed study remained unstable. See the [scratch evidence](scratch.md) rather than a single successful example.
+
+The BANKING77 scratch diagnostic collapsed to one class at 1.30% accuracy. Its low correctness Brier was a consequence of low confidence in usually wrong predictions, not useful classification. A fast model and a low calibration loss can coexist with an unusable system. This is why the teaching tracks retain quality, uncertainty, data exposure and serving costs together.

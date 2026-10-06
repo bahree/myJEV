@@ -1,0 +1,10 @@
+{
+  "context": "signal: red; case demo",
+  "instructions": "Choose the signal color. Two listed signals are equally likely. Choose other if the color has no option.",
+  "candidates": [
+    {"id": "red", "description": "red"},
+    {"id": "blue", "description": "blue"},
+    {"id": "green", "description": "green"},
+    {"id": "other", "description": "other"}
+  ]
+}

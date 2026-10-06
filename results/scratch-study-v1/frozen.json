@@ -1,0 +1,41 @@
+{
+  "plan": {
+    "study": "scratch-controlled-v1",
+    "purpose": "Teaching study on original synthetic routing, not natural-language or Jev performance",
+    "data": "data/scratch-routing-v2",
+    "width": 64,
+    "layers": 2,
+    "parameters_observed": 201175,
+    "tuning_seed": 101,
+    "learning_rates": [
+      0.001,
+      0.0003
+    ],
+    "tuning_updates": 500,
+    "main_updates": 1000,
+    "batch_size": 8,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "methods": [
+      "sft",
+      "continued_sft",
+      "exact",
+      "sampled"
+    ],
+    "beta": 0.05,
+    "selection": "Highest validation accuracy, then lowest selection NLL, then lower learning rate. Shared selected supervised learning rate across continuation methods in this small teaching study; this does not match Qwen's per-method tuning opportunity.",
+    "precision": "FP32 on one A30",
+    "scope": "The validation-reviewed selection pilots preceded this freeze. Main test was not evaluated during those pilots. No early stopping or test-selected training settings. Three observed seeds, no production claims."
+  },
+  "source_commit": "80cee550cd00e4a8f6552dbc04aa034ee9a68ddd",
+  "config_sha256": "76c2be8710830fa9a3613d3aec6b9d816f79270a90add7eb035ccba20dc02793",
+  "data_sha256": {
+    "train": "2e6957cb176903857337f91670a419129682d6a9421abf11c52db1b57f9d5253",
+    "validation": "a21f39823b108d5ee0ac9dba56bba8c436f0b4c4f629e9458988f95b6a2d92af",
+    "calibration": "70469c20dc3707ff457cf31f676e9499b7d588bbb4284ac708b72508148a0544",
+    "test": "54a2de64cf5b6f5435d8c96f1696f66d050ecb1afa32234e0c70f0e83d3ce6fb"
+  }
+}
