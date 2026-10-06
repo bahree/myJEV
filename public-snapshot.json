@@ -127,7 +127,7 @@
       "mode": "100644"
     },
     "docs/roadmap.md": {
-      "sha256": "d0f9cdafcce182749847c64ef3a6d62a8f3df51fc3e87b981869362365b76bb2",
+      "sha256": "da1f9dedb14f028e6094cecdce08008c41e075855971d6645adf901c7071fe3a",
       "mode": "100644"
     },
     "docs/scratch-plan.md": {
@@ -3404,6 +3404,14 @@
     },
     "results/scratch-v2/pilot/validation.json": {
       "sha256": "790c99645074273ae159a449972520a2c97755181c93331412724979ee8e916e",
+      "mode": "100644"
+    },
+    "results/scratch-v2/public-export-tests.txt": {
+      "sha256": "9c2ff083248104906fbd24683392115c74b7885772c9eb2a5bab98bc2d0cf208",
+      "mode": "100644"
+    },
+    "results/scratch-v2/public-summary-regeneration.txt": {
+      "sha256": "79eb82518be048282fa454ae4c9cc33af06533a7bcd747b08c7ad1f7f5f908e7",
       "mode": "100644"
     },
     "results/study-summary.json": {

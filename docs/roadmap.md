@@ -37,19 +37,21 @@ No Jev-equivalent latency is assumed. A useful comparison must disclose hardware
 
 See the [implementation plan](scratch-plan.md) for architecture, milestones S0-S6, test gates, data generation, resource budgeting and completion criteria.
 
-This proposed extension returns to the build-and-explain approach of helloLondon. It is an original educational model, not a reconstruction of TypeSafe Jev's undisclosed internals. The official announcement describes architecture, parallel sampling and RLCD at a high level; that is insufficient to reproduce its network and training recipe.
+This implemented teaching checkpoint returns to the build-and-explain approach of helloLondon. It is an original educational model, not a reconstruction of TypeSafe Jev's undisclosed internals. The official announcement describes architecture, parallel sampling and RLCD at a high level; that is insufficient to reproduce its network and training recipe.
 
 For the deferred pretrained-backbone comparison, consider [SmolLM2-360M-Instruct](https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct) as a genuinely smaller pretrained decoder control. [SmolLM3-3B](https://huggingface.co/HuggingFaceTB/SmolLM3-3B) is an optional closer-size comparison with published training materials. Start with small pilots rather than repeating the entire main study for every backbone. These checkpoints are not yet integrated or evaluated.
 
-The from-scratch design starts with randomly initialized token embeddings and a small shared Transformer encoder, approximately 5-20M parameters as a design target. Encode the context and each candidate description, condition candidates on the context, optionally add attention across the candidate set, and use a shared scalar head to score each candidate. Keep candidate IDs outside the network and omit candidate-index positional embeddings. Add a separate correctness head, then the experimental confidence policy only after the supervised baseline works. This is one non-autoregressive computation graph, not a claim of constant cost as candidates increase.
+The first prototype uses a deterministic byte tokenizer and a randomly initialized shared Transformer encoder with 201,175 parameters. The BANKING77 configuration has 217,559 parameters because its positional embedding budget is larger. The original 5-20M design remains a possible extension, not an implemented model. Candidate IDs remain outside the network. Shared candidate scoring, scalar confidence and the experimental confidence policy are implemented.
 
-- [ ] Implement a minimal tokenizer from training-only data, encoder, masking and candidate scorer, with no pretrained weights or vocabulary-output head.
-- [ ] Start on generated rule-following tasks with known ambiguity; freeze disjoint rules/templates for transfer tests and derive uncertainty targets from the generator.
-- [ ] Verify padding masks, candidate-order equivariance in evaluation mode, absence of generation, and finite-action reward/gradient arithmetic.
-- [ ] Compare supervised, post-hoc calibration and matched exact/sampled confidence objectives. Report both selected-answer confidence and option-distribution calibration separately.
-- [ ] Evaluate BANKING77 with the existing isolated splits as a natural-language diagnostic. Its limited training data does not supply broad language pretraining; weak transfer is an informative result.
-- [ ] Measure parameter count, serialized weights, peak memory, model/HTTP latency, candidate scaling and accuracy on CPU and one A30. No speed or fit guarantee precedes measurement.
-- [ ] Publish runnable stages, diagrams, failure cases and raw evidence. Distinguish random initialization, pretrained adaptation and any later distillation in every result table.
+- [x] Implement the byte tokenizer, encoder, masking and candidate scorer without pretrained weights.
+- [x] Generate versioned tasks with known uncertainty and held-out templates/pairings; retain the failed layout-transfer pilot.
+- [x] Verify padding, candidate-order equivariance, renamed IDs, absence of generation and finite-action reward/gradient arithmetic.
+- [x] Complete the three-seed supervised, temperature/constant calibration and matched exact/sampled teaching comparison. Retain all seed results, including instability.
+- [x] Run the one-seed BANKING77 diagnostic on isolated splits. It collapsed to one class at 1.30% accuracy; this is a failed quality result.
+- [x] Measure serialized weights, CPU/A30 model latency and GPU Docker HTTP latency; verify Python/CLI/HTTP equivalence on the short synthetic request.
+- [x] Publish runnable stages, teaching explanations and reproducible evidence; update both private blog drafts.
+- [ ] Extend workload/candidate scaling, robustness and uncertainty measurements before recommending a deployment artifact.
+- [ ] Investigate seed and layout sensitivity under a newly frozen validation protocol if further scratch development is pursued. Do not retune against the existing test results.
 
 Foundations: [Deep Sets](https://arxiv.org/abs/1703.06114) for set symmetry, [Set Transformer](https://arxiv.org/abs/1810.00825) for attention over sets, and [On Calibration of Modern Neural Networks](https://arxiv.org/abs/1706.04599) for post-hoc calibration. These motivate components; none describes TypeSafe's proprietary architecture. [OpenJev-RLCD](https://arxiv.org/abs/2609.38850) is a separate implementation involving sampled rationales, so it must not be presented as our one-pass design or an official Jev architecture disclosure.
 
