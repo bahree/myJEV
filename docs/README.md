@@ -1,5 +1,8 @@
 # Documentation
 
+Read the [completed Qwen findings and lessons](qwen-findings.md), including paired uncertainty, confidence controls and what changes next.
+
+
 Start with the question you want to answer. All commands run from the repository root.
 
 | Question | Guide |

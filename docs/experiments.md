@@ -1,5 +1,8 @@
 # Experiments and evidence
 
+Read the [completed Qwen findings and lessons](qwen-findings.md), including paired uncertainty, confidence controls and what changes next.
+
+
 The first milestone asks whether the implementation works and whether the proposed comparisons are worth scaling. It does not establish that confidence-aware RL is better than supervision or post-hoc calibration.
 
 ## Completed longer comparison

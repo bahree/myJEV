@@ -16,7 +16,7 @@ This page makes incomplete work visible as the project develops. Checked items d
 ## Milestone 2: Stronger training and evaluation
 
 - [x] Longer matched training with equal validation-based tuning opportunities; [descriptive results](../results/longer-v1/summary.md) recorded.
-- [x] Frozen main neural comparison on the full official BANKING77 test split, all three seeds and sizes. Paired uncertainty analysis remains pending.
+- [x] Frozen main neural comparison on the full official BANKING77 test split, all three seeds and sizes. Paired group analysis is recorded; broader uncertainty and release checks remain.
 - [ ] Replicated precision controls to separate capacity from quantization effects.
 - [ ] Transfer and robustness studies at every size, extending the initial 0.8B diagnostics.
 - [ ] More extensive uncertainty reporting for rare accepted-case errors.
@@ -87,11 +87,11 @@ The existing guides are available now. The next presentation pass will make them
 - [ ] Validate the release inference/Docker walkthrough from a clean environment and replace pending model/image references with tested releases.
 - [ ] Add the two published blog links, mutual navigation and documentation link checks.
 
-These tasks follow the running training batch and do not change its frozen protocol. Research and release requirements above remain separate dependencies.
+These tasks follow the completed training batch and do not change its frozen protocol. Research and release requirements above remain separate dependencies.
 
 ## Sequence the work without changing the current experiment
 
-1. Finish the frozen Qwen batch while refining the teaching design and small test fixtures.
+1. Finish the Qwen reporting gate: audit, paired analysis, lessons in both blog drafts and the public repo, regenerable figures and pushed evidence. Complete this before scratch implementation.
 2. Audit completed artifacts and aggregate the Qwen results before selecting further large runs.
 3. Implement the scratch model progressively: supervised synthetic task first, correctness confidence and calibration second, exact/sampled training after behavioral tests pass.
 4. Evaluate the scratch model and Qwen artifacts on appropriate shared tasks, recording unequal pretraining exposure and complete serving costs. Phi, SmolLM and MAI remain deferred and are not release dependencies.

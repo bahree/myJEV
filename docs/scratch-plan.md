@@ -22,7 +22,7 @@ There is no vocabulary projection for answer aliases and no generation loop. The
 
 | Stage | Implementation and evidence | Gate before moving on |
 |---|---|---|
-| S0: close Qwen batch | Validate manifests/counts, regenerate per-seed summary, retain source hashes and logs; then paired uncertainty analysis | Distinguish descriptive means from significant effects and deployed from policy confidence |
+| S0: close and teach the Qwen batch | Validate manifests/counts, paired analysis, findings guide, both blog narratives, regenerable figures, source hashes and public evidence snapshot | Findings and limitations are written, checked and pushed before scratch implementation starts |
 | S1: minimal scorer | Add `src/myjev/scratch/` encoder/scorer/config and tiny deterministic fixtures; use random weights and a CPU training smoke run | Overfit a small unambiguous fixture; candidate padding has no effect; reordering maps scores correctly; save/reload agrees |
 | S2: controlled learning | Add versioned synthetic generator and dataset card; train-only tokenizer; grouped train/validation/calibration/test split | Disjoint templates/compositions, exact labels and known uncertainty verified; baselines run on identical groups |
 | S3: confidence | Scalar confidence and temperature/constant controls; then 21-bin policy and exact/eight-sample leave-one-out RL with KL | Reward/gradient checks, same initialization/exposure, deterministic deployment evaluated separately; thresholds fit on calibration only |

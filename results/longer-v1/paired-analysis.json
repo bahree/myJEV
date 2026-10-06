@@ -1,0 +1,276 @@
+{
+  "scope": "Paired group bootstrap, 2000 draws, RNG 42; averages the three observed seeds. Conditional on those seeds, not a population interval over initializations. Exploratory contrasts, no multiple-comparison adjustment. Positive accuracy delta is better; positive Brier delta is worse. Confidence sources differ in Brier contrasts.",
+  "input_sha256": "f1e3daae1828fbee5ce702cb62085f1c3cf38d0c2abb7aa1a04a61d5ac1fba45",
+  "comparisons": [
+    {
+      "size": "0.8b",
+      "reference": "continued_sft/deployed",
+      "candidate": "exact/deployed",
+      "metric": "correct",
+      "mean_delta": -0.015692640692640692,
+      "group_ci95": [
+        -0.021969875353076065,
+        -0.009523732245251234
+      ],
+      "per_seed_deltas": [
+        -0.01753246753246753,
+        -0.02857142857142857,
+        -0.000974025974025974
+      ],
+      "groups": 3079,
+      "n": 3080
+    },
+    {
+      "size": "0.8b",
+      "reference": "continued_sft/deployed",
+      "candidate": "sampled/deployed",
+      "metric": "correct",
+      "mean_delta": -0.024025974025974027,
+      "group_ci95": [
+        -0.030392014026423497,
+        -0.017529903381234994
+      ],
+      "per_seed_deltas": [
+        -0.026623376623376622,
+        -0.025324675324675326,
+        -0.02012987012987013
+      ],
+      "groups": 3079,
+      "n": 3080
+    },
+    {
+      "size": "0.8b",
+      "reference": "exact/deployed",
+      "candidate": "sampled/deployed",
+      "metric": "correct",
+      "mean_delta": -0.008333333333333333,
+      "group_ci95": [
+        -0.013203570409237834,
+        -0.003572588502760636
+      ],
+      "per_seed_deltas": [
+        -0.00909090909090909,
+        0.003246753246753247,
+        -0.019155844155844155
+      ],
+      "groups": 3079,
+      "n": 3080
+    },
+    {
+      "size": "0.8b",
+      "reference": "continued_sft/temperature",
+      "candidate": "exact/deployed",
+      "metric": "brier",
+      "mean_delta": 0.02481006402602523,
+      "group_ci95": [
+        0.020104753222213174,
+        0.02971613264469599
+      ],
+      "per_seed_deltas": [
+        0.020461648537184508,
+        0.03763650600679014,
+        0.016332037534101042
+      ],
+      "groups": 3079,
+      "n": 3080
+    },
+    {
+      "size": "0.8b",
+      "reference": "continued_sft/temperature",
+      "candidate": "sampled/deployed",
+      "metric": "brier",
+      "mean_delta": 0.027458077362363432,
+      "group_ci95": [
+        0.02259577009998735,
+        0.03228775967504965
+      ],
+      "per_seed_deltas": [
+        0.028517028558154543,
+        0.035211208803993706,
+        0.018645994724942046
+      ],
+      "groups": 3079,
+      "n": 3080
+    },
+    {
+      "size": "4b",
+      "reference": "continued_sft/deployed",
+      "candidate": "exact/deployed",
+      "metric": "correct",
+      "mean_delta": 0.01038961038961039,
+      "group_ci95": [
+        0.005627705627705628,
+        0.014939915556999025
+      ],
+      "per_seed_deltas": [
+        0.006168831168831169,
+        -0.001948051948051948,
+        0.026948051948051947
+      ],
+      "groups": 3079,
+      "n": 3080
+    },
+    {
+      "size": "4b",
+      "reference": "continued_sft/deployed",
+      "candidate": "sampled/deployed",
+      "metric": "correct",
+      "mean_delta": -0.010281385281385282,
+      "group_ci95": [
+        -0.015800994096301015,
+        -0.005088232109992421
+      ],
+      "per_seed_deltas": [
+        -0.00551948051948052,
+        -0.005844155844155844,
+        -0.01948051948051948
+      ],
+      "groups": 3079,
+      "n": 3080
+    },
+    {
+      "size": "4b",
+      "reference": "exact/deployed",
+      "candidate": "sampled/deployed",
+      "metric": "correct",
+      "mean_delta": -0.02067099567099567,
+      "group_ci95": [
+        -0.025010418424666024,
+        -0.016545259304831025
+      ],
+      "per_seed_deltas": [
+        -0.011688311688311689,
+        -0.003896103896103896,
+        -0.04642857142857143
+      ],
+      "groups": 3079,
+      "n": 3080
+    },
+    {
+      "size": "4b",
+      "reference": "continued_sft/temperature",
+      "candidate": "exact/deployed",
+      "metric": "brier",
+      "mean_delta": 0.007798932085382143,
+      "group_ci95": [
+        0.004650771680274155,
+        0.010879503830000008
+      ],
+      "per_seed_deltas": [
+        0.009276946926123528,
+        0.015417306559611967,
+        -0.0012974572295890651
+      ],
+      "groups": 3079,
+      "n": 3080
+    },
+    {
+      "size": "4b",
+      "reference": "continued_sft/temperature",
+      "candidate": "sampled/deployed",
+      "metric": "brier",
+      "mean_delta": 0.02667133064547491,
+      "group_ci95": [
+        0.023092461235674776,
+        0.030216335137183806
+      ],
+      "per_seed_deltas": [
+        0.019705572859345905,
+        0.016400308011383737,
+        0.043908111065695095
+      ],
+      "groups": 3079,
+      "n": 3080
+    },
+    {
+      "size": "9b",
+      "reference": "continued_sft/deployed",
+      "candidate": "exact/deployed",
+      "metric": "correct",
+      "mean_delta": 0.001948051948051948,
+      "group_ci95": [
+        -0.0035752651321829627,
+        0.007142915139423746
+      ],
+      "per_seed_deltas": [
+        -0.002922077922077922,
+        0.0022727272727272726,
+        0.006493506493506494
+      ],
+      "groups": 3079,
+      "n": 3080
+    },
+    {
+      "size": "9b",
+      "reference": "continued_sft/deployed",
+      "candidate": "sampled/deployed",
+      "metric": "correct",
+      "mean_delta": -0.006060606060606061,
+      "group_ci95": [
+        -0.011692107827216629,
+        -0.0006495510045487233
+      ],
+      "per_seed_deltas": [
+        -0.005844155844155844,
+        -0.0035714285714285713,
+        -0.008766233766233766
+      ],
+      "groups": 3079,
+      "n": 3080
+    },
+    {
+      "size": "9b",
+      "reference": "exact/deployed",
+      "candidate": "sampled/deployed",
+      "metric": "correct",
+      "mean_delta": -0.008008658008658008,
+      "group_ci95": [
+        -0.011908628342535454,
+        -0.004005597020171558
+      ],
+      "per_seed_deltas": [
+        -0.002922077922077922,
+        -0.005844155844155844,
+        -0.01525974025974026
+      ],
+      "groups": 3079,
+      "n": 3080
+    },
+    {
+      "size": "9b",
+      "reference": "continued_sft/temperature",
+      "candidate": "exact/deployed",
+      "metric": "brier",
+      "mean_delta": 0.020001583298337094,
+      "group_ci95": [
+        0.015160534526668368,
+        0.024825131983296205
+      ],
+      "per_seed_deltas": [
+        0.012531280720602918,
+        0.03743607168573685,
+        0.010037397488671516
+      ],
+      "groups": 3079,
+      "n": 3080
+    },
+    {
+      "size": "9b",
+      "reference": "continued_sft/temperature",
+      "candidate": "sampled/deployed",
+      "metric": "brier",
+      "mean_delta": 0.028986009968764652,
+      "group_ci95": [
+        0.024632364649253377,
+        0.03380253772577019
+      ],
+      "per_seed_deltas": [
+        0.010169971279891976,
+        0.04819643096417058,
+        0.02859162766223137
+      ],
+      "groups": 3079,
+      "n": 3080
+    }
+  ]
+}
