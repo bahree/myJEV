@@ -1,0 +1,10 @@
+{
+  "state": "failed",
+  "completed": [],
+  "started": 1791265081.164392,
+  "gpu": "1",
+  "updated": 1791268459.0391777,
+  "preceding_gpu_job_state": "completed",
+  "current": "local-judge",
+  "error": "Command '['/home/amit/jev-pvt/.venv/bin/python', 'scripts/local_archive_judge.py', '--execute']' returned non-zero exit status 1."
+}

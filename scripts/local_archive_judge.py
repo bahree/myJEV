@@ -9,7 +9,7 @@ import time
 import torch
 from transformers import AutoTokenizer
 from myjev.data import read_jsonl,validate_isolation
-from myjev.judging import SYSTEM,Judgment,prompt,sha,validate_judgment
+from myjev.judging import SYSTEM,Judgment,prompt,sha,validate_judgment,SpanJudgment,span_prompt,validate_span_judgment
 from myjev.model import load_backbone
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -17,12 +17,14 @@ OUT=ROOT/'annotation/local-judge-v1'
 SYSTEM_JSON=SYSTEM.replace('Emit the annotation using the submit_annotation tool.','Return only one JSON object matching the supplied schema, without Markdown fences or extra text.')
 
 
-def decode_judgment(row,text,truncated=False):
+def decode_judgment(row,text,truncated=False,span_mode=False):
     if truncated:raise ValueError('Generation reached its token budget without EOS')
-    return validate_judgment(row,json.loads(text.strip()))
+    return (validate_span_judgment if span_mode else validate_judgment)(row,json.loads(text.strip()))
 
 
-def prepare():
+def prepare(span_mode=False):
+    global OUT
+    OUT=ROOT/("annotation/local-judge-v2" if span_mode else "annotation/local-judge-v1")
     rows=read_jsonl(ROOT/'annotation/requests.jsonl')
     validate_isolation({split:[r for r in rows if r['split']==split] for split in ('development','train','validation','calibration','test')})
     config=json.loads((ROOT/'configs/9b.json').read_text())
@@ -34,26 +36,36 @@ def prepare():
                          'Cross-check against the earlier session judgments is descriptive; no human audit is implied.',
                          'Previously prepared exact visible text and grouped splits are reused; six posts were excerpted during preparation.'],
           'requests':len(rows),'human_reviewed':False}
+    if span_mode:
+        plan.update(prompt_version='archive-judge-v2-source-spans', schema=SpanJudgment.model_json_schema(),
+                    system_sha256=sha(span_system()), scope='development only; no automatic expansion',
+                    span_algorithm='lossless 400-character chunks, IDs s0000 onward',
+                    implementation_sha256=sha((ROOT/'src/myjev/judging.py').read_text()))
     OUT.mkdir(parents=True,exist_ok=True);path=OUT/'frozen-plan.json'
     if path.exists() and json.loads(path.read_text())!=plan:raise ValueError('Judge inputs changed after freeze')
     path.write_text(json.dumps(plan,indent=2)+'\n')
     return rows,plan
 
 
+def span_system():
+    return SYSTEM_JSON.replace('Provide 1-3 short exact excerpts from the supplied text as evidence,',
+        'Provide 1-3 evidence_ids from source_spans instead of retyping quotes; label must be an allowed string ID,')
+
+
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--execute',action='store_true');p.add_argument('--device',default='cuda:0');a=p.parse_args()
-    rows,plan=prepare()
+    p=argparse.ArgumentParser();p.add_argument('--execute',action='store_true');p.add_argument('--span-development',action='store_true');p.add_argument('--device',default='cuda:0');a=p.parse_args()
+    rows,plan=prepare(a.span_development)
     if not a.execute:print(json.dumps({'prepared':len(rows),'local_model_calls':0}));return
     model=load_backbone(plan['model'],plan['revision'],'nf4',a.device).eval()
     tokenizer=AutoTokenizer.from_pretrained(plan['model'],revision=plan['revision'])
     path=OUT/'labels.jsonl';done={r['id']:r for r in read_jsonl(path)} if path.exists() else {}
     if len(done)!=(len(read_jsonl(path)) if path.exists() else 0):raise ValueError('Duplicate judge records')
-    for phase in ('development','remaining'):
+    for phase in (('development',) if a.span_development else ('development','remaining')):
         selected=[r for r in rows if (r['split']=='development')==(phase=='development')]
         for row in selected:
             if row['id'] in done:continue
-            payload={**prompt(row),'output_schema':Judgment.model_json_schema()}
-            messages=[{'role':'system','content':SYSTEM_JSON},{'role':'user','content':json.dumps(payload,ensure_ascii=False)}]
+            payload={**(span_prompt(row) if a.span_development else prompt(row)),'output_schema':plan['schema']}
+            messages=[{'role':'system','content':span_system() if a.span_development else SYSTEM_JSON},{'role':'user','content':json.dumps(payload,ensure_ascii=False)}]
             text=tokenizer.apply_chat_template(messages,tokenize=False,add_generation_prompt=True,enable_thinking=False)
             inputs=tokenizer(text,return_tensors='pt',add_special_tokens=False,truncation=False)
             record={'id':row['id'],'group':row['group'],'split':row['split'],'rubric':row['rubric'],
@@ -71,7 +83,7 @@ def main():
                 eos=model.generation_config.eos_token_id;eos=[eos] if isinstance(eos,int) else (eos or [])
                 truncated=len(generated)==plan['max_output_tokens'] and int(generated[-1]) not in eos
                 record.update(raw_text=raw,output_tokens=len(generated),truncated=truncated)
-                record.update(decode_judgment(row,raw,truncated),valid=True)
+                record.update(decode_judgment(row,raw,truncated,a.span_development),valid=True)
             except (ValueError,KeyError) as error:
                 record.update(valid=False,validation_error=str(error))
             record['seconds']=time.perf_counter()-start
@@ -89,6 +101,6 @@ def main():
                     'human_reviewed':False,'semantics':'Machine-judge agreement, not audited accuracy; valid means schema and quote checks only.'}
             (OUT/'development-report.json').write_text(json.dumps(review,indent=2)+'\n')
             if valid<.8:raise ValueError('Development structural-validity gate failed; remaining labels not generated')
-    (OUT/'complete.json').write_text(json.dumps({'records':len(done),'human_reviewed':False,'completed_utc':datetime.now(timezone.utc).isoformat()},indent=2)+'\n')
+    (OUT/'complete.json').write_text(json.dumps({'records':len(done),'scope':plan.get('scope','all requests'),'human_reviewed':False,'completed_utc':datetime.now(timezone.utc).isoformat()},indent=2)+'\n')
 
 if __name__=='__main__':main()

@@ -1,0 +1,185 @@
+{
+  "n": 256,
+  "accuracy": 0.51171875,
+  "accuracy_cluster_ci95": [
+    0.44921875,
+    0.5703125
+  ],
+  "macro_f1": 0.010919396515795616,
+  "correctness_brier": 0.29956145305681636,
+  "selection_multiclass_brier": 0.7411617658539618,
+  "correctness_auroc": 0.513526717557252,
+  "ece": 0.21423113320308393,
+  "ece_bins": "15 equal-width bins, final bin inclusive",
+  "reliability": [
+    {
+      "lo": 0.0,
+      "hi": 0.06666666666666667,
+      "n": 0,
+      "confidence": null,
+      "accuracy": null
+    },
+    {
+      "lo": 0.06666666666666667,
+      "hi": 0.13333333333333333,
+      "n": 4,
+      "confidence": 0.12452349092548726,
+      "accuracy": 0.25
+    },
+    {
+      "lo": 0.13333333333333333,
+      "hi": 0.2,
+      "n": 20,
+      "confidence": 0.16685324974679555,
+      "accuracy": 0.4
+    },
+    {
+      "lo": 0.2,
+      "hi": 0.26666666666666666,
+      "n": 23,
+      "confidence": 0.23550723005008095,
+      "accuracy": 0.5652173913043478
+    },
+    {
+      "lo": 0.26666666666666666,
+      "hi": 0.3333333333333333,
+      "n": 36,
+      "confidence": 0.3018037031044434,
+      "accuracy": 0.4166666666666667
+    },
+    {
+      "lo": 0.3333333333333333,
+      "hi": 0.4,
+      "n": 29,
+      "confidence": 0.36999236754353193,
+      "accuracy": 0.5172413793103449
+    },
+    {
+      "lo": 0.4,
+      "hi": 0.4666666666666667,
+      "n": 28,
+      "confidence": 0.43693955336421053,
+      "accuracy": 0.5
+    },
+    {
+      "lo": 0.4666666666666667,
+      "hi": 0.5333333333333333,
+      "n": 24,
+      "confidence": 0.4904017449643833,
+      "accuracy": 0.7083333333333334
+    },
+    {
+      "lo": 0.5333333333333333,
+      "hi": 0.6,
+      "n": 25,
+      "confidence": 0.5690815593498347,
+      "accuracy": 0.64
+    },
+    {
+      "lo": 0.6,
+      "hi": 0.6666666666666666,
+      "n": 22,
+      "confidence": 0.6376040063043941,
+      "accuracy": 0.7272727272727273
+    },
+    {
+      "lo": 0.6666666666666666,
+      "hi": 0.7333333333333333,
+      "n": 16,
+      "confidence": 0.6936976060891189,
+      "accuracy": 0.8125
+    },
+    {
+      "lo": 0.7333333333333333,
+      "hi": 0.8,
+      "n": 11,
+      "confidence": 0.759778242399126,
+      "accuracy": 0.2727272727272727
+    },
+    {
+      "lo": 0.8,
+      "hi": 0.8666666666666667,
+      "n": 8,
+      "confidence": 0.8220531524005152,
+      "accuracy": 0.0
+    },
+    {
+      "lo": 0.8666666666666667,
+      "hi": 0.9333333333333333,
+      "n": 9,
+      "confidence": 0.9080070841444517,
+      "accuracy": 0.0
+    },
+    {
+      "lo": 0.9333333333333333,
+      "hi": 1.0,
+      "n": 1,
+      "confidence": 0.9410958706185508,
+      "accuracy": 0.0
+    }
+  ],
+  "operating_points": {
+    "coverage_0.5": {
+      "threshold": 0.9575663570699572,
+      "coverage": 0.0,
+      "accepted": 0,
+      "error": null,
+      "error_upper_95": null,
+      "error_cluster_ci95": null
+    },
+    "coverage_0.8": {
+      "threshold": 0.8618665285081509,
+      "coverage": 0.0390625,
+      "accepted": 10,
+      "error": 1.0,
+      "error_upper_95": 1.0,
+      "error_cluster_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    "coverage_0.9": {
+      "threshold": 0.7390773727788449,
+      "coverage": 0.11328125,
+      "accepted": 29,
+      "error": 0.896551724137931,
+      "error_upper_95": 0.9712044909012783,
+      "error_cluster_ci95": [
+        0.7586206896551724,
+        1.0
+      ]
+    },
+    "empirical_error_0.01": {
+      "threshold": 0.9716432269650638,
+      "coverage": 0.0,
+      "accepted": 0,
+      "error": null,
+      "error_upper_95": null,
+      "error_cluster_ci95": null
+    },
+    "empirical_error_0.05": {
+      "threshold": 0.8347232106325919,
+      "coverage": 0.046875,
+      "accepted": 12,
+      "error": 1.0,
+      "error_upper_95": 1.0,
+      "error_cluster_ci95": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "sampled_policy": {
+    "expected_accuracy": 0.4910364923400891,
+    "expected_confidence_reward": 0.00012951173133712857,
+    "semantics": "exact expectation of sampled joint policy at raw training logits; distinct from deployed argmax behavior"
+  },
+  "source_predictions": "results/generalization-v1/9b/seed-33/continued_sft/transfer/oos-none-predictions.jsonl",
+  "source_predictions_sha256": "7e8cf57f83e4875beb2828505863994ba7c74e4c9bc7f4eee9e9a46cb0baf246",
+  "temperature": 2.075811154010072,
+  "threshold_source": "results/longer-v1/9b/main/seed-33/continued_sft/posthoc/temperature-metrics.json",
+  "threshold_source_sha256": "92489dad1e61381fc884cf68efb926da831301ed65a8ced86e289884c65527ac",
+  "confidence_mode": "temperature",
+  "selection_unchanged": true,
+  "scope": "Saved diagnostic predictions; original BANKING temperature and thresholds unchanged. No transfer fitting."
+}

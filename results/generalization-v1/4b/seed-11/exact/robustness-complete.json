@@ -1,0 +1,7 @@
+{
+  "seed": 11,
+  "method": "exact",
+  "kind": "robustness",
+  "seconds": 115.93868827819824,
+  "returncode": 0
+}

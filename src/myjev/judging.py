@@ -57,3 +57,39 @@ def request_body(row, model, max_tokens=768, order_seed=42):
             'tools':[{'name':'submit_annotation','description':'Record a rubric label and exact textual evidence.',
                       'input_schema':Judgment.model_json_schema()}],
             'tool_choice':{'type':'tool','name':'submit_annotation'}}
+
+
+class SpanJudgment(BaseModel):
+    """Evidence addresses source spans; the model never retypes quotations."""
+    model_config = ConfigDict(extra='forbid', strict=True)
+    label: str | None
+    status: Literal['labelled', 'uncertain', 'not_applicable']
+    evidence_ids: list[str] = Field(max_length=3)
+    explanation: str = Field(min_length=1, max_length=1500)
+
+
+def source_spans(text):
+    # Lossless fixed-width chunks: no whitespace, punctuation or code rewriting.
+    return {f's{i // 400:04d}': text[i:i+400] for i in range(0, len(text), 400)}
+
+
+def span_prompt(row):
+    payload = prompt(row)
+    payload.pop('text')
+    payload['source_spans'] = source_spans(row['context'])
+    payload['allowed_label_ids'] = [c['id'] for c in row['candidates']]
+    return payload
+
+
+def validate_span_judgment(row, value):
+    result = SpanJudgment.model_validate(value)
+    spans = source_spans(row['context'])
+    if len(set(result.evidence_ids)) != len(result.evidence_ids):
+        raise ValueError('Duplicate evidence span ID')
+    if any(key not in spans for key in result.evidence_ids):
+        raise ValueError('Unknown evidence span ID')
+    evidence = [spans[key] for key in result.evidence_ids]
+    validated = validate_judgment(row, {
+        'label': result.label, 'status': result.status,
+        'evidence': evidence, 'explanation': result.explanation})
+    return {**validated, 'evidence_ids': result.evidence_ids}

@@ -67,7 +67,7 @@
       "mode": "100644"
     },
     "docs/architecture.md": {
-      "sha256": "d62ee0b79d6d90860445cec983f9ad2e3ceb2b352471782137461e5abb6d90c3",
+      "sha256": "dd29cfb3da935e4f1403bba53309e679c91c338aa3263dcb8cd4a9ebf1858b54",
       "mode": "100644"
     },
     "docs/attribution.md": {
@@ -131,7 +131,7 @@
       "mode": "100644"
     },
     "docs/roadmap.md": {
-      "sha256": "5cbeb9c710203d8161d915ac900fb217f2e16cbaf5005930d7add7a413b5fe87",
+      "sha256": "bbc7c3b2efc5ba597fe6ca759144c2a013be4469e996014149bf89a9e6cf385b",
       "mode": "100644"
     },
     "docs/scratch-plan.md": {
@@ -184,6 +184,10 @@
     },
     "results/archive-machine-v1/frozen-plan.json": {
       "sha256": "68bd8575df464f99868583175bfd30dcb6357ca30a50f224db5aa200a0999bcf",
+      "mode": "100644"
+    },
+    "results/archive-machine-v1/status.json": {
+      "sha256": "88146fd4009d1978d641aa3ec053c16bc8f229b63790f658c35d8557ad0315d2",
       "mode": "100644"
     },
     "results/artifact-equivalence-4b.json": {
@@ -651,7 +655,7 @@
       "mode": "100644"
     },
     "results/extension-progress.json": {
-      "sha256": "377d469392201c47166b0a13e96e03ab02133b8a0474b3d9bf4a3cce9add6c95",
+      "sha256": "83aa06b0f78c840464dc9278794603340d11b769f65bdb7dae175251e99b3864",
       "mode": "100644"
     },
     "results/figures/confidence-controls-source.json": {
@@ -675,7 +679,7 @@
       "mode": "100644"
     },
     "results/generalization-v1/0.8b-status.json": {
-      "sha256": "c9caaf330709a42341e5f0bcb3368ce39ec09b80090dc144e412d58fc01eca5b",
+      "sha256": "6db030863727b2a706cbe57f7d6a94c3cb236af830c7955f52651af02d5f1b34",
       "mode": "100644"
     },
     "results/generalization-v1/0.8b/seed-11/continued_sft/robustness-complete.json": {
@@ -684,6 +688,58 @@
     },
     "results/generalization-v1/0.8b/seed-11/continued_sft/robustness/report.json": {
       "sha256": "a4760ff106978614f7d0d1492d74ca4b142c63416bbeee09b37b390a8ef280a3",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-11/continued_sft/temperature-controls/robustness/irrelevant-metrics.json": {
+      "sha256": "f86841dd074a644e42567c15ce453ca9f9f05e23bf072e4d3c119dfec8d4a74d",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-11/continued_sft/temperature-controls/robustness/length-metrics.json": {
+      "sha256": "794c8f227eccb1783e2ca23e9ec90249c3c0a0bb4c72f9ac1047596f01c24f03",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-11/continued_sft/temperature-controls/robustness/missing-correct-metrics.json": {
+      "sha256": "009886bd8dc58c2b6e7e345e7b712e99c2fb09223e5024011caada449eed0fbb",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-11/continued_sft/temperature-controls/robustness/original-metrics.json": {
+      "sha256": "064c3fbf0f67102890892d02796e5a4ab59e6a18a6ab0a4f67ff3d21fcb7af16",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-11/continued_sft/temperature-controls/robustness/partial-description-paraphrases-metrics.json": {
+      "sha256": "f57c96ba361fe8ef8b35bcdc4fd53bd1c0396fefec51e7dd22db248fcc853e11",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-11/continued_sft/temperature-controls/robustness/quoted-instruction-metrics.json": {
+      "sha256": "8328dde71fcb54f69abb76377de3e0d6c4964f0032524f7157d7d955c8190be7",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-11/continued_sft/temperature-controls/robustness/reverse-metrics.json": {
+      "sha256": "74b3158b9fa92d86daad61e211bb87778b5b5f35165d1e16b2b52829384a3a4e",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-11/continued_sft/temperature-controls/transfer/distant-metrics.json": {
+      "sha256": "0bbd9c741e8a482908650733377e3357c572070b525f3152a4e067b06af6facd",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-11/continued_sft/temperature-controls/transfer/near-metrics.json": {
+      "sha256": "86a74531a3681c5acc8ada30a2e83a9f0b87839e6305187884d2d9d8e2884c2a",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-11/continued_sft/temperature-controls/transfer/oos-deferral-metrics.json": {
+      "sha256": "ceebd2ff07b62ea01f3bce56c2addd663a038ed0b6fba9cb3be1151ccea2b8c0",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-11/continued_sft/temperature-controls/transfer/oos-none-metrics.json": {
+      "sha256": "f726327f38707a91b2b2dec865c6a29b67744e25481ec0a425d38251da45b54e",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-11/continued_sft/temperature-controls/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "3b72a9de58d91f386b1dc6aa8d519dff62a7d4d716cd6a95e7e8b27201ff88a1",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-11/continued_sft/temperature-controls/transfer/unsupported-near-none-metrics.json": {
+      "sha256": "b04fea20213b546d5cb642b138a316ba34759e5f0d036de063dac0a9af979fc7",
       "mode": "100644"
     },
     "results/generalization-v1/0.8b/seed-11/continued_sft/transfer-complete.json": {
@@ -750,6 +806,66 @@
       "sha256": "dbc2ae4801e8719d10cf294b104c3e1e25e66c03a3f963d74142ac476059a0e8",
       "mode": "100644"
     },
+    "results/generalization-v1/0.8b/seed-22/continued_sft/robustness-complete.json": {
+      "sha256": "95f1878cdb1b5957a2d5b9e371286600546bd5cd098d0238a8deacc4853733a4",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/continued_sft/robustness/report.json": {
+      "sha256": "af964f4b0bad4453d9fd2ae16487d87bf470230329219bb334f7c738e9a3cd34",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/continued_sft/temperature-controls/robustness/irrelevant-metrics.json": {
+      "sha256": "1162732128742651fa1de5c2973b917096a4045b785d850ba1ea7d41543f96fd",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/continued_sft/temperature-controls/robustness/length-metrics.json": {
+      "sha256": "89394168873af5724219cf6ecdcb739e1ea4fbdf7e342e4e8a3614e80b0a6f87",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/continued_sft/temperature-controls/robustness/missing-correct-metrics.json": {
+      "sha256": "df5011bdf3981653fd1a3c788c1fbb04b8508d28307c6520998a3174a508686d",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/continued_sft/temperature-controls/robustness/original-metrics.json": {
+      "sha256": "d51679b0c07885571bbee42394acd0bb7bbbd0c4b7e5f79218a4b85ae734bba2",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/continued_sft/temperature-controls/robustness/partial-description-paraphrases-metrics.json": {
+      "sha256": "3df561efec904304ddbf525b172a1326f91060d4ca320e1ef0b3cf77d497d51d",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/continued_sft/temperature-controls/robustness/quoted-instruction-metrics.json": {
+      "sha256": "0260811c9d3617e39d473711d78fb77622d13497a531990fe2a46768553f7d46",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/continued_sft/temperature-controls/robustness/reverse-metrics.json": {
+      "sha256": "134e378ddf44d9b660052368fe13d8e1522c5e8a387a6e3e05d8394af0b96bce",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/continued_sft/temperature-controls/transfer/distant-metrics.json": {
+      "sha256": "1c6c410e7e8a0732b079aed26aba1e9744b80f28149de5280d9df789547e48ec",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/continued_sft/temperature-controls/transfer/near-metrics.json": {
+      "sha256": "b988a47fde0933040d105f5165f4a623114154e4b61cd376ec9f6042b2ca7d96",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/continued_sft/temperature-controls/transfer/oos-deferral-metrics.json": {
+      "sha256": "d534b45a1b20f592fe3171e4c4fa064c9b64c166dc5cbca976d0a418dbda1b69",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/continued_sft/temperature-controls/transfer/oos-none-metrics.json": {
+      "sha256": "6db11b4a4ae7b405e0cdbab174f2e9c07f4f78c056944b54b372d31f6915d869",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/continued_sft/temperature-controls/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "96927350b647f7bcdeb69fca700916f2a22bfeed4f3d4e051610645c619bd8fd",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/continued_sft/temperature-controls/transfer/unsupported-near-none-metrics.json": {
+      "sha256": "5a6ddc0c241376d862939680c8ef72d98190747d23bff4897b3777c13cc5cfe9",
+      "mode": "100644"
+    },
     "results/generalization-v1/0.8b/seed-22/continued_sft/transfer-complete.json": {
       "sha256": "505645494f4ebbabac79fba030f7a0ecaf5a6aaf937eb1d63cdbd3879aa129e2",
       "mode": "100644"
@@ -778,8 +894,168 @@
       "sha256": "68b2d6ec5109d5ed3bf8e59fb216d0435f7f0cfa1d62ef103907f1f2f34515a7",
       "mode": "100644"
     },
+    "results/generalization-v1/0.8b/seed-22/exact/robustness-complete.json": {
+      "sha256": "c51d96d46fdb77426973e5602e76242a1174ab8d02419fd64b515a02984c65ad",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/exact/robustness/report.json": {
+      "sha256": "b961c11306b4e66c8b93dc5e3d1ed9a2e77e191ae40d82a5a81aa7eec0a77a3f",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/exact/transfer-complete.json": {
+      "sha256": "140ac5c2d6804e77d98671a20caf48b83b98fef076b058bb076964392cc012b6",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/exact/transfer/distant-metrics.json": {
+      "sha256": "992671a6764a342b0ba49956f9620c1f6b6dfef7848d2e7a46b971918593e763",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/exact/transfer/near-metrics.json": {
+      "sha256": "397f89b05236d9c98ff04fe05138699d41ae843bde78b2726fdcf3f85f4d793c",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/exact/transfer/oos-deferral-metrics.json": {
+      "sha256": "1bf7532bfbdad8ac197c7e0acce9e117c691b9e2994e3d71cc1d1e7973e2aca4",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/exact/transfer/oos-none-metrics.json": {
+      "sha256": "3333f67fea5ed0c60151f295f57c8e5242fef7cb8f7c906cb08399c8ca052f9f",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/exact/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "29dc91b70f984e4fbd233d57174f96c250bc02e3a152dc32751ed07d83321456",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-22/exact/transfer/unsupported-near-none-metrics.json": {
+      "sha256": "c0c223ea9bb916ecaf3967812401f39b4c06c23ef2657992773d547927eb2ea2",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/continued_sft/robustness-complete.json": {
+      "sha256": "fbf9e88abb5f0317b6e2860f8610f6a1edcc5fd4cc1d26fdd2dd1423b5952e9a",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/continued_sft/robustness/report.json": {
+      "sha256": "3adc5ffa5710679c51f610fdec20c6c3881815547c036b5d2595d00a63c7b444",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/continued_sft/temperature-controls/robustness/irrelevant-metrics.json": {
+      "sha256": "5500c8d1ced10370bc2a4376dccdd25a809eb4624b87ab95335dfcad169fe5ab",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/continued_sft/temperature-controls/robustness/length-metrics.json": {
+      "sha256": "893739a42f2dab1b4d1ebc4b91ea08c1533485b4c37f6efe3e7ceefe81991791",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/continued_sft/temperature-controls/robustness/missing-correct-metrics.json": {
+      "sha256": "0d3bd6bcf9fbb24321e983ea55a4a57c727728d3997fe9703c4d3424dce50f01",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/continued_sft/temperature-controls/robustness/original-metrics.json": {
+      "sha256": "6378485c6af016096bbdbb9cc4ba5130d938f04efb815e689d2032f0d94f7573",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/continued_sft/temperature-controls/robustness/partial-description-paraphrases-metrics.json": {
+      "sha256": "0c8eee4b79ae1ed942cfc3a5464e39a205f638fb9854c85df215ad1bd680ae2a",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/continued_sft/temperature-controls/robustness/quoted-instruction-metrics.json": {
+      "sha256": "a00e7d4c194954a6ab07d603eda4c343289c1c5ae8148763fa34df5cd356a363",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/continued_sft/temperature-controls/robustness/reverse-metrics.json": {
+      "sha256": "dff28966845122c5e6b7a02a756684c698faa21070969ef58cf8a4b452f2d4ce",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/continued_sft/temperature-controls/transfer/distant-metrics.json": {
+      "sha256": "1f1e83ae9a74eb0f7c1e29b7c40b5c9719f4c27ff9c9c5c0a065119bfde56200",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/continued_sft/temperature-controls/transfer/near-metrics.json": {
+      "sha256": "5d2a6d7bf5401908de28c5e3ec5168aa53a5465ff18b15af8ae4f40e1ec4e764",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/continued_sft/temperature-controls/transfer/oos-deferral-metrics.json": {
+      "sha256": "924d52b4468c29f067894348237b08fd021b06509f5d4c1081c10af87ffba5e2",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/continued_sft/temperature-controls/transfer/oos-none-metrics.json": {
+      "sha256": "bfab57e064b9e7746c1d3dd202b3a6e734c10bb8d40f76ef1014d10b5960eb7c",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/continued_sft/temperature-controls/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "272b06fa6f345cfd9e10d79c31b19bf769539071eed9be06df6cdab947b38714",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/continued_sft/temperature-controls/transfer/unsupported-near-none-metrics.json": {
+      "sha256": "73d1837b65bd1be4a983f7572ec4398700bb0a80737d07e451d2cea883845ad4",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/continued_sft/transfer-complete.json": {
+      "sha256": "af72fab44163f4dbeda27f6681648d18a39d22668d6433218ede74a80b346fb2",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/continued_sft/transfer/distant-metrics.json": {
+      "sha256": "4577786a381cb74b1eb3736c56e474a83db4a9fa62c1d97fbd60e079569259e4",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/continued_sft/transfer/near-metrics.json": {
+      "sha256": "ad9dba0c12e4c6ae93d8da9476b866f5b59dfbe5d6acc624a4bd28ff21ba5292",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/continued_sft/transfer/oos-deferral-metrics.json": {
+      "sha256": "002f2541f95903405de25375f0df3dfe602a42ca1e5a47ad66395874a47f560f",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/continued_sft/transfer/oos-none-metrics.json": {
+      "sha256": "a1467918a3ee5b0078c739d8016cf49f1c48f3bfca9980c063322f7b171c856d",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/continued_sft/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "593a6f6c7fe01c6652f4e57fe7059449a54f6094ae838fce4004d9f3c4189663",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/continued_sft/transfer/unsupported-near-none-metrics.json": {
+      "sha256": "0ac1c23bf75c5291b11aada5474977cb369d4744c5d4b416a35a64aed079eb21",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/exact/robustness-complete.json": {
+      "sha256": "6237a67ed656be24aacc504b962cdffc17d3937e7f93bff6bdb727636b68c266",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/exact/robustness/report.json": {
+      "sha256": "d8af66811f873f663cf7229ef3e8276e15604210b9fa0928cfc86dcd86feacf4",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/exact/transfer-complete.json": {
+      "sha256": "a9c2ce3b58d5909670ef8fbb13ed525bc3f81e9b32308c7c9a5a85053b5d2a72",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/exact/transfer/distant-metrics.json": {
+      "sha256": "757a0ea39d5a308a769b80660c55e33bc62220bf90b47e122b4980671e1b3191",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/exact/transfer/near-metrics.json": {
+      "sha256": "3a45681f391a41be1d6f87881921c0749aaf2012e3eba066a4a4b104c0371f19",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/exact/transfer/oos-deferral-metrics.json": {
+      "sha256": "7d696491f65af0bd0f74c638543f4a41003626dd0c1c99bc37c09be37ff59ac6",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/exact/transfer/oos-none-metrics.json": {
+      "sha256": "b6ec5f273a8cbea94122fa0b0ab3d46dc6fbabbdb88e364f874d2d4207804d9a",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/exact/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "62332a13769520df30af2e1aa341ef3e8f50174b82ac2b80798af168adc634c7",
+      "mode": "100644"
+    },
+    "results/generalization-v1/0.8b/seed-33/exact/transfer/unsupported-near-none-metrics.json": {
+      "sha256": "ac9c2d7bdfb29528c9344a76e954c045f87016501efd6c8cc992f911398639c0",
+      "mode": "100644"
+    },
     "results/generalization-v1/4b-status.json": {
-      "sha256": "d5bfafb12d3bcfb194a0682881915333b55ffe3302bc8b4aee49e7a490474261",
+      "sha256": "c117ea06f3c048a9b8fe26e1b75ad9ef18e1cdba13c1f558d81fabaccb3f6306",
       "mode": "100644"
     },
     "results/generalization-v1/4b/seed-11/continued_sft/robustness-complete.json": {
@@ -788,6 +1064,58 @@
     },
     "results/generalization-v1/4b/seed-11/continued_sft/robustness/report.json": {
       "sha256": "4406ddbd69bbca27dfb2c96798facf2388d611c3d928f65eaa26c3944fa1ec61",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-11/continued_sft/temperature-controls/robustness/irrelevant-metrics.json": {
+      "sha256": "799937c7c1132f6f6d49f46a5a0ac2f9b95dad653b4d1563b68e2862b219a208",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-11/continued_sft/temperature-controls/robustness/length-metrics.json": {
+      "sha256": "21c267ef2d00af85564e19b6a94aff6dc3860a6ff6a3c9a64c5476af3d02fbfd",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-11/continued_sft/temperature-controls/robustness/missing-correct-metrics.json": {
+      "sha256": "884e962413338a62698f10d866ce96bd50f78399c382c59609577e97ae8f1b64",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-11/continued_sft/temperature-controls/robustness/original-metrics.json": {
+      "sha256": "c4e19586b50c55a50518f900fdd200cc8df9fb9bb0ffa6603b23c4ca27075c1b",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-11/continued_sft/temperature-controls/robustness/partial-description-paraphrases-metrics.json": {
+      "sha256": "7bf2b13d845b54d146ea4a71e18261b2a409b4a1c5bd40df88a80f466a31252a",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-11/continued_sft/temperature-controls/robustness/quoted-instruction-metrics.json": {
+      "sha256": "98f33e80dace9d9e093fb93a9f818a6701f701c2dbcd3540a976bc51d6b23c90",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-11/continued_sft/temperature-controls/robustness/reverse-metrics.json": {
+      "sha256": "082bf2389c9050e55c10b72ca113bc9020e497962c31a5557bafa1973e4cf2eb",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-11/continued_sft/temperature-controls/transfer/distant-metrics.json": {
+      "sha256": "3f076b228fde59d7f4abc27ed81ec9f0620f40de8195cbe6b2d76f40db3a2957",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-11/continued_sft/temperature-controls/transfer/near-metrics.json": {
+      "sha256": "277af657d5239e5c37f427f19d1b05eaba690b7cef5a1fa17f5418eeb08af4a3",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-11/continued_sft/temperature-controls/transfer/oos-deferral-metrics.json": {
+      "sha256": "be85f244a90dc6b7c2a3a7380224cd684f0c352940577e9ea85d0f1d78e4f7b8",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-11/continued_sft/temperature-controls/transfer/oos-none-metrics.json": {
+      "sha256": "a18e3b6d01bded2e3816fb1a7073528c0f8d59d42328c033f097d6fa57a9e41e",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-11/continued_sft/temperature-controls/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "9d58121d2dd1d37713129be285712370b2482891adc38fe606fc5d1719079b23",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-11/continued_sft/temperature-controls/transfer/unsupported-near-none-metrics.json": {
+      "sha256": "0b7c663d41223d0879ad047852a3955c2683da30fc9f65507645b971b5637e80",
       "mode": "100644"
     },
     "results/generalization-v1/4b/seed-11/continued_sft/transfer-complete.json": {
@@ -818,6 +1146,18 @@
       "sha256": "9baedf941df7760f451b91d605bee9f244dcf89dfd318a24f934bb045a8f7db1",
       "mode": "100644"
     },
+    "results/generalization-v1/4b/seed-11/exact/robustness-complete.json": {
+      "sha256": "1f3e67ca24be4b235ef9de4aa34912876c94feed5fce2cbeeb3cef6b98598777",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-11/exact/robustness/report.json": {
+      "sha256": "036f714a48b95a13ef8be3c296c98b49dc9c5c0797d8249d863a47d0f699e403",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-11/exact/transfer-complete.json": {
+      "sha256": "ac0bfa62d48e71adaeb172b40e042d216e8b63d1fe18bdd6908efb3734b3cdf1",
+      "mode": "100644"
+    },
     "results/generalization-v1/4b/seed-11/exact/transfer/distant-metrics.json": {
       "sha256": "5afad9178e28695c86beb216dc0cb756858783915ceb6252ed6a2ba73fb543f4",
       "mode": "100644"
@@ -826,8 +1166,332 @@
       "sha256": "dba9001f78e40a680630a518c1afc6d98c389d27cbeeb5fc25a2697bd1ad3b7b",
       "mode": "100644"
     },
+    "results/generalization-v1/4b/seed-11/exact/transfer/oos-deferral-metrics.json": {
+      "sha256": "fd103cd8256f961d6ebb7d22c90199f3df0e1ffd89f40959cadf60b99f6d52ed",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-11/exact/transfer/oos-none-metrics.json": {
+      "sha256": "07b31658429d7fc984a7a821cf509e1b9a4e062c922663ade9b4dcabf445c427",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-11/exact/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "e88e324f4b03947e4d19ba3c3fef1e6ee67e596f4925483e7c85261881945e99",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-11/exact/transfer/unsupported-near-none-metrics.json": {
+      "sha256": "f4bd5bb9f021100b2fb585ab084157679b5e402b31293177e95ed1a8081795f5",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/continued_sft/robustness-complete.json": {
+      "sha256": "7145e95b93addc0ac53eb5e71a7c43022604ebe51432654576380e4c23af8f63",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/continued_sft/robustness/report.json": {
+      "sha256": "71919a77e04ba518791248653be89b703c604f390e4e64597a5a739ad068475b",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/continued_sft/temperature-controls/robustness/irrelevant-metrics.json": {
+      "sha256": "05fd51353a36e0277d253e95fdae2acf7751fa3732e263029cc39999e323f35b",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/continued_sft/temperature-controls/robustness/length-metrics.json": {
+      "sha256": "b4b1daf199ac9a973257b9654b1dfbac52bd3d98becebfe0bf70a3ac6c25bbac",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/continued_sft/temperature-controls/robustness/missing-correct-metrics.json": {
+      "sha256": "50dfcf516de61ca3064f8394a2cd22a853c9e98f017162324b639d3c6d626e98",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/continued_sft/temperature-controls/robustness/original-metrics.json": {
+      "sha256": "20b7fa04a904cfd6b247fa433105020cd844c54893ff5e11f5d670444f0803b6",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/continued_sft/temperature-controls/robustness/partial-description-paraphrases-metrics.json": {
+      "sha256": "d91a1bc60132af910509b8df94f40f346a6baaf459631328c7218facbdf98e25",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/continued_sft/temperature-controls/robustness/quoted-instruction-metrics.json": {
+      "sha256": "5f55e721e28e47d12a2adac72336822f304bb6cbff02c33e9aef23b6fdad61f6",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/continued_sft/temperature-controls/robustness/reverse-metrics.json": {
+      "sha256": "0f5d493b438e8b3caa46728be46ab2776b5508b40d000558a921a0d9dc537313",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/continued_sft/temperature-controls/transfer/distant-metrics.json": {
+      "sha256": "486c7193e10ba4b3078b34860e4f07b0258717571c216bd6657c573a04a51bdf",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/continued_sft/temperature-controls/transfer/near-metrics.json": {
+      "sha256": "4f8fb2ccc186b77691aabf8914827ab1fa0d0ecf4e320afbd98777ab127ffbdb",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/continued_sft/temperature-controls/transfer/oos-deferral-metrics.json": {
+      "sha256": "d22018721eef53d06c774e30f48ad026caf137bfe4d975728b11ff7c1e848e36",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/continued_sft/temperature-controls/transfer/oos-none-metrics.json": {
+      "sha256": "3065672e9285007501195a132dcca904fdcc40de599d540b4a8c040ab81d7895",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/continued_sft/temperature-controls/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "4565be5995145a88a4256e824e0a2521a992c1ad4de3f5fa3e6f1e2e64c4567e",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/continued_sft/temperature-controls/transfer/unsupported-near-none-metrics.json": {
+      "sha256": "4eb9f6581c6c274298ef55d5a23d1bacaffc95dd8963bcdc7db51acb5c318026",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/continued_sft/transfer-complete.json": {
+      "sha256": "676cdf0d90984e65e3182e0ce472a3e41eafd91f70671d66de72219424594504",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/continued_sft/transfer/distant-metrics.json": {
+      "sha256": "bba5ae9bedc37db60aaa16585a7341163c4ffe3230cf552ad12a856dd9592e23",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/continued_sft/transfer/near-metrics.json": {
+      "sha256": "53dfbacfe39422d1ee443cbc9ede8ab52426e8206db535fb84f2b53b0cbf90b5",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/continued_sft/transfer/oos-deferral-metrics.json": {
+      "sha256": "1c0695d246eeedccf8f41f8f50ec3715234d28f61a91f28950aaf1eb31765bec",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/continued_sft/transfer/oos-none-metrics.json": {
+      "sha256": "eb19089fbf69e8603eebb99ead8a8486cd84b97ce087e04ce90a8a72e0248b03",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/continued_sft/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "d7494fc1244dec0e460865060663a0e8390179045a4f9fcff1c233ce35758e4a",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/continued_sft/transfer/unsupported-near-none-metrics.json": {
+      "sha256": "9419ee672e1cef5e83c01c25edcacc703df89dc740e1798bee297e5e2bfaa644",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/exact/robustness-complete.json": {
+      "sha256": "a282295c6418c3fc7a5948dcda17c354f821c4b34193e94ed4daa3e04cf82df7",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/exact/robustness/report.json": {
+      "sha256": "43cb89c8ca7fed71a68be63ea26813c0053d594182f368eccd68c375cd0f8fba",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/exact/transfer-complete.json": {
+      "sha256": "6e4f0a09369145acf21100c94faf9d38fa347fbfa0604215b943dc8adfaa4a5b",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/exact/transfer/distant-metrics.json": {
+      "sha256": "195c953ec36e7bd629a3cc1b1f157a10118a905d9d72aed93f78f61016951744",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/exact/transfer/near-metrics.json": {
+      "sha256": "ac4b4d3b1a4805128e25f5ba310355e2029f7bd3e89de252fad7eddc8eee6377",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/exact/transfer/oos-deferral-metrics.json": {
+      "sha256": "97b00c521cf1fbc2e5e6539b749fdb5c0edc15c02bf022405fc4a9005ba0b7ad",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/exact/transfer/oos-none-metrics.json": {
+      "sha256": "72fdc33af363dc0846def87d4a655f6e3a8cfbcce8710a722d258fa771b228f6",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/exact/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "134dfa63ca1d6ec30730a00129d0ad028798d46e010165c4ddf5716bffac1b1e",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-22/exact/transfer/unsupported-near-none-metrics.json": {
+      "sha256": "3e1ec3c0a93d338c28b3b59d809782e400bf2304a9f6425a923da8311145c166",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/continued_sft/robustness-complete.json": {
+      "sha256": "7f2521b8c42871d9bc1463b721314bd13dc84f792bb6880044862785c709b8f5",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/continued_sft/robustness/report.json": {
+      "sha256": "d2252935f284741d3e3f35a95cfb45fdb5c046d5c36dc806ad26e0c9f3514e62",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/continued_sft/temperature-controls/robustness/irrelevant-metrics.json": {
+      "sha256": "58a3b45ce2dffded8940378a31b4b48332fd6b849c43b62d0460124eec5260be",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/continued_sft/temperature-controls/robustness/length-metrics.json": {
+      "sha256": "e36c76b734f4a3a09d9f43a6facf684c226d9cda4b5742859225834120865e21",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/continued_sft/temperature-controls/robustness/missing-correct-metrics.json": {
+      "sha256": "338a99af7b6313aaf208acead8c20a9f7e3c18036b2ad2f52ced13e1f5c32b3e",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/continued_sft/temperature-controls/robustness/original-metrics.json": {
+      "sha256": "f2c289245dcdbb884812183c9f0b40d2d02c6d3748841cf7cc2ec0529b6a8ffa",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/continued_sft/temperature-controls/robustness/partial-description-paraphrases-metrics.json": {
+      "sha256": "a61177bdc00fe5e5c70e2b09fd361361fe7d9a5a073f71a060bf3826be83eaa6",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/continued_sft/temperature-controls/robustness/quoted-instruction-metrics.json": {
+      "sha256": "1cfbe3f16b7e0cd2be668bdb77cbd4c5e119524f43914a1786ceae7f7d8f4d1c",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/continued_sft/temperature-controls/robustness/reverse-metrics.json": {
+      "sha256": "4534b29759b6b0c832bffad9d3d609c6adbc865418967c7378237785cebb5b14",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/continued_sft/temperature-controls/transfer/distant-metrics.json": {
+      "sha256": "07bfeb74efd20ca8f9e5c280f0a1f923dff9afaada13185e90b730db8924f92e",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/continued_sft/temperature-controls/transfer/near-metrics.json": {
+      "sha256": "28231c6a73b63360fbade1d193b7ce808ad9c96360895444e34f30ac242d7802",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/continued_sft/temperature-controls/transfer/oos-deferral-metrics.json": {
+      "sha256": "20af5a4d37d5f8c5a7bc4389ab7a45e58171823f72c275079f8af2ebc98e45cf",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/continued_sft/temperature-controls/transfer/oos-none-metrics.json": {
+      "sha256": "63b66c7db0a78df8431e5800738dccc838bfb48c83a5eab163065fd4a6911afe",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/continued_sft/temperature-controls/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "a8fd96a11506c16be6784b0baa5625ae2f02391dae49d751ebcbfc3bde89ee3f",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/continued_sft/temperature-controls/transfer/unsupported-near-none-metrics.json": {
+      "sha256": "a0fc091a5a0475d87197d71cba12147e609d4746b94ff2ca10f62d8ca0534793",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/continued_sft/transfer-complete.json": {
+      "sha256": "d9fe561fb38c1b718d9913c2949164e3b263b24070b8762ad56303455844f141",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/continued_sft/transfer/distant-metrics.json": {
+      "sha256": "0469c0a09dab58f3831e58d99b5308145f31632a628678323a973c87e1a20e0b",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/continued_sft/transfer/near-metrics.json": {
+      "sha256": "9c1a35e2fd3e865c7e70552203d0b845ea5feb29ee65c2026e4518efb85dcd6d",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/continued_sft/transfer/oos-deferral-metrics.json": {
+      "sha256": "38538c2f20472aceac1d15f0d7074081f3986a53c53417ac198707f32b71c08d",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/continued_sft/transfer/oos-none-metrics.json": {
+      "sha256": "9687a071b69016f40df1333df32daf5e6fd209f19c2978f4c3d9d03c9aff10b6",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/continued_sft/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "b9faa1c0a639593254567fcf7f8680b68c27488914a9aaf4e349863703b55921",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/continued_sft/transfer/unsupported-near-none-metrics.json": {
+      "sha256": "6616840d4fc48ba64207c713a712ccced878f283daa24c263d9b8496543564c1",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/exact/robustness-complete.json": {
+      "sha256": "734599dea91f170769c7ed84cb88043d4ebcd409645a6c18b97b0cc048492fd1",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/exact/robustness/report.json": {
+      "sha256": "520c9d6d11b2e6643b1234918ca035877fed4528c92d3c57c84c18c3523841fa",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/exact/transfer-complete.json": {
+      "sha256": "cb03217674986fb39ad8df3ba6e9c337e706726dea590d55b418cdedb6805db1",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/exact/transfer/distant-metrics.json": {
+      "sha256": "833db81072aabbceee0794a46fd1ab9fa0a2c5c78f90055cc19fc9e6bdf6f104",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/exact/transfer/near-metrics.json": {
+      "sha256": "864ad0725eebe90f0aee04a8dfbe11b057c51c3a9a57e169a8da92fcd743c5ab",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/exact/transfer/oos-deferral-metrics.json": {
+      "sha256": "c0c2a6a441b109edc1715e5fb21c20a547da691491e70cfed72ea00f13654e99",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/exact/transfer/oos-none-metrics.json": {
+      "sha256": "d8ebe6dc8b13aeae0e1fc6949935db78e4f68c0366ee9a893e6e8d53f28b0a2d",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/exact/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "fbe0edd2a7aba47502a0c38332840f0de10c92e942bf6db9a9772835d9db52f5",
+      "mode": "100644"
+    },
+    "results/generalization-v1/4b/seed-33/exact/transfer/unsupported-near-none-metrics.json": {
+      "sha256": "2bb8b2e72915019d1c5fd0d19851ebf84f3e135e0546c76bcd487fc243d2d3db",
+      "mode": "100644"
+    },
     "results/generalization-v1/9b-status.json": {
-      "sha256": "57392d6d57794b208b8afc637b6155548ded5dce9b2e0b516010de552247f558",
+      "sha256": "250eac6195a47a518f4653e46d6214013b6837a69abebb668cf5b56f9b50d1a3",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/continued_sft/robustness-complete.json": {
+      "sha256": "3bc544efc8320f053c701c0f175feede4f45f8b0919d2a35727cb5a6cb58d404",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/continued_sft/robustness/report.json": {
+      "sha256": "7d42b345863a7b7ba500f42933cce0227bc88249ef1d1d91c1fbb0469224407f",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/continued_sft/temperature-controls/robustness/irrelevant-metrics.json": {
+      "sha256": "9f5c54cce11fd29ed1d05cf7a7e9442dc8768a0f3b821e4d0b119fce5d745d8f",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/continued_sft/temperature-controls/robustness/length-metrics.json": {
+      "sha256": "bc77b15de26ac3996a4d6a06230aed2dcaca1846339217f2b326d4af98d2748e",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/continued_sft/temperature-controls/robustness/missing-correct-metrics.json": {
+      "sha256": "7b714ace6c8aa6b370b0111b7f2b57e4795a4814df5b36918364dd0c3209708c",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/continued_sft/temperature-controls/robustness/original-metrics.json": {
+      "sha256": "a87e64f4517a80340b232ab21c18d25ea815cdf1ae6e2f7adf3b6c3b0d778916",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/continued_sft/temperature-controls/robustness/partial-description-paraphrases-metrics.json": {
+      "sha256": "084c36192953cb3cc463fb9e60df9923a00fd5f98da3c18200b87fc5d7a6e728",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/continued_sft/temperature-controls/robustness/quoted-instruction-metrics.json": {
+      "sha256": "bcbe9a40739db740a991e65a1b4e35dd22cd5ffb9a1d073193cc3cd85c3d2710",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/continued_sft/temperature-controls/robustness/reverse-metrics.json": {
+      "sha256": "a3ef8378969be83a09f846c24fcb2a2dacf9b47071f15923430210638ef4a4ef",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/continued_sft/temperature-controls/transfer/distant-metrics.json": {
+      "sha256": "9848a853cd9946d48bd086a004126abcf51549c880292cc9c5dbd845fb2f6e22",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/continued_sft/temperature-controls/transfer/near-metrics.json": {
+      "sha256": "47915d18e82280cf5b0581b8ba80b7bb5cd545dfb5f0b98efb303eef0dd4f3b0",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/continued_sft/temperature-controls/transfer/oos-deferral-metrics.json": {
+      "sha256": "6cb78b7eda829266828cb34988f16696dc4d53e11488b2eedb7bea23ef325a95",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/continued_sft/temperature-controls/transfer/oos-none-metrics.json": {
+      "sha256": "e3274b0deab5199858bc34ea303bdadbf6725f6cb2baf74c5a395bb20f45ae3b",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/continued_sft/temperature-controls/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "ffdf3ce01a10684f0db16517e73c83bde4f9fea2d4ab640088acfc4fca844841",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/continued_sft/temperature-controls/transfer/unsupported-near-none-metrics.json": {
+      "sha256": "a265db325c3196894e0841705ac544824fac4c9e0ee786a5afe36fae88703ff5",
       "mode": "100644"
     },
     "results/generalization-v1/9b/seed-11/continued_sft/transfer-complete.json": {
@@ -858,16 +1522,300 @@
       "sha256": "aaca0a1944b2277158713b1d8d8ec05eb5a7b3cb7c305799d381cf16a676b403",
       "mode": "100644"
     },
+    "results/generalization-v1/9b/seed-11/exact/robustness-complete.json": {
+      "sha256": "f5222148a99366dad827463900f7f238324979810553c7572d746be6a664cb6c",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/exact/robustness/report.json": {
+      "sha256": "08ed7e05b376a55aa175f0b6f962a466e8ff3c7b15f8abb9d26db33951bc1b47",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/exact/transfer-complete.json": {
+      "sha256": "0fed13cec4e0a0be11346e7db880d2b3f86300b19fcfb0f1c820b9eba93d7d1f",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/exact/transfer/distant-metrics.json": {
+      "sha256": "823c1e3e5beab29c4cba7dd63bcae5b5e9ac5ddf4939235cac39bf2f9d7dcfc1",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/exact/transfer/near-metrics.json": {
+      "sha256": "43b3dcc770bd25f35c90de99e6055299152c15ee444474cee47280b48e420262",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/exact/transfer/oos-deferral-metrics.json": {
+      "sha256": "c857ffa26095f11561ca9884c7d6add61995936a7fc4ba52bb0ff502a4961f98",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/exact/transfer/oos-none-metrics.json": {
+      "sha256": "8ed448d2f5356edad81655c749c5bc9c6ef32ec9f95ad2cd95272fbad629a76f",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/exact/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "9156d63cfe6240264fbf96f732f30cc2785b40abd6ee1e826d73efa79b0bd494",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-11/exact/transfer/unsupported-near-none-metrics.json": {
+      "sha256": "0f8a08ab0e919a902914721d9297f98299ee5cf8875ac78fb9367e73758217fe",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/continued_sft/robustness-complete.json": {
+      "sha256": "c48dca1e6ceb27a1450719fa599bb7b8fa80da3e0b3f0006a02374cbf4783985",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/continued_sft/robustness/report.json": {
+      "sha256": "177d21d6b4d5a3621fc7d20c72efd6d8e5b47c939506749328755d8522cfed60",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/continued_sft/temperature-controls/robustness/irrelevant-metrics.json": {
+      "sha256": "f742764697b43504207cc63ba70745c21112a34f08addb17b2ddfd28555988ea",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/continued_sft/temperature-controls/robustness/length-metrics.json": {
+      "sha256": "8b30ea473c803dc9fad90f7c2196d81e067b8dcf6145f97d257e6ec1af04b128",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/continued_sft/temperature-controls/robustness/missing-correct-metrics.json": {
+      "sha256": "d73cd121e63e6702bc342894aa51dd3e7df0e35f7bbd21f54fbfbf0f808e6f5a",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/continued_sft/temperature-controls/robustness/original-metrics.json": {
+      "sha256": "fed247cdfdc06d3ab4bef4d7e401c094cbb5bdf8f6a1c7faa267971389acce81",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/continued_sft/temperature-controls/robustness/partial-description-paraphrases-metrics.json": {
+      "sha256": "1b46ac71574abd765092128ac865818b53c3c9915abb200fd529305a01758a13",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/continued_sft/temperature-controls/robustness/quoted-instruction-metrics.json": {
+      "sha256": "14d2b2a30be024e22d3910729934188b3ba3fb28ee56926efc057332e7070fb7",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/continued_sft/temperature-controls/robustness/reverse-metrics.json": {
+      "sha256": "af1f8419da907662e2bc5f00c3de8721dce27e032acd8a3d1df42c17ac0f58dc",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/continued_sft/temperature-controls/transfer/distant-metrics.json": {
+      "sha256": "137bb2e137cabe212721e141e55503bc7b9057a25155894c193c288e3bea8612",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/continued_sft/temperature-controls/transfer/near-metrics.json": {
+      "sha256": "7de7f01fe713cab41b31422c0c8c80ced1918a53ae04933728e65aae9eea0361",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/continued_sft/temperature-controls/transfer/oos-deferral-metrics.json": {
+      "sha256": "f791e4f5515ce5745c5864b045ceb1cc207a24fdd79392fbcf2571a309ee77f3",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/continued_sft/temperature-controls/transfer/oos-none-metrics.json": {
+      "sha256": "b2682862f434aebd70f32353ced1ed9eda147f3cc6712ec30b912365599d16bc",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/continued_sft/temperature-controls/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "445c6b00ba8b95ac70bfef343e683ee18088930b8c5f571ea53df9c88e7b3ebb",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/continued_sft/temperature-controls/transfer/unsupported-near-none-metrics.json": {
+      "sha256": "f4030a743f82ea0eb7ddf7754b668814975a2e0b800aa3bbaec6cc9a336874df",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/continued_sft/transfer-complete.json": {
+      "sha256": "9388893572b8134a60add0e127e68d4b3073b6ed3aac638ed560353f22a43f04",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/continued_sft/transfer/distant-metrics.json": {
+      "sha256": "350a4bccc71fb10655f992ad86ca1774bf4ff73236c4016698c46365d721eed4",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/continued_sft/transfer/near-metrics.json": {
+      "sha256": "42626c9d9e2ab8e2023f2d434e638df7398b7561ab4fb9a225f9166e9be86842",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/continued_sft/transfer/oos-deferral-metrics.json": {
+      "sha256": "29aaade8f96a8435b514573c6f2994dee804ce1c0196e574abb827d51c8326ca",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/continued_sft/transfer/oos-none-metrics.json": {
+      "sha256": "99eb2ee60ee1c1f4f4c9fde76cfd4a11f43f6d1c91030f9f1dbe11dd41b00261",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/continued_sft/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "acfe034ce512a9fd7d7340b19480c942f943292333c8e126156213f19d3b0777",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/continued_sft/transfer/unsupported-near-none-metrics.json": {
+      "sha256": "d0a18c47f5eeda8e2223929f9cf3d8e51d732193aae1f7e9c6f8c28456e8ea87",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/exact/robustness-complete.json": {
+      "sha256": "a61eb1c6f66fa3f8437f9ebd9de9294d9bd2ea7de6be0cd0345cf93d5a6fd5de",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/exact/robustness/report.json": {
+      "sha256": "d57ec9eef62c1813a0e4dc69afdf31b50ab2954a853df7c11adeac6995355851",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/exact/transfer-complete.json": {
+      "sha256": "5beb4daf31ee03383c5ed54cfa32444c71dda3eefa9e6bf51a8497957c2589df",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/exact/transfer/distant-metrics.json": {
+      "sha256": "7182b462061d0918d0105c163c33538c176e4f02010cddef2b531eb23d171ed5",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/exact/transfer/near-metrics.json": {
+      "sha256": "de0fd5a5050a1d99bf282a9077265cf0acc8f5c2a657f233e5bd5e49d94d9615",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/exact/transfer/oos-deferral-metrics.json": {
+      "sha256": "bb2fb267374d1b8202a3ed7fbd64247558828b8859bc6c7bea9625e77ec32909",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/exact/transfer/oos-none-metrics.json": {
+      "sha256": "a458ce56b8cbf18942060cc9332865c673b57e8577accecee08fb046144cc645",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/exact/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "c8529f80dce286cae402e19811f15b1c1eb07d2d3fa510a57d31b8e32cfb9453",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-22/exact/transfer/unsupported-near-none-metrics.json": {
+      "sha256": "6f1ea7fd43a02ea1530bb3570bcb8b29d19687e7181dece59d292be67681528a",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/continued_sft/robustness-complete.json": {
+      "sha256": "cd93d8d1f34a382b9a6348901201d78f7eabec15fb8b0ab3d6526da4afe1b137",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/continued_sft/robustness/report.json": {
+      "sha256": "9e6179e42f10bb1562097fa47be9e23f87413a5b83e570d33da68c283d2cfde0",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/continued_sft/temperature-controls/robustness/irrelevant-metrics.json": {
+      "sha256": "78e371a69bd0bdafd1433316db2e6ddc2179d2e88fc8666c57d951fc893fac49",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/continued_sft/temperature-controls/robustness/length-metrics.json": {
+      "sha256": "6999fcb123c29c59ce0f06c3e2294c1f74da2dc44af76719a1c9e07a603e5020",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/continued_sft/temperature-controls/robustness/missing-correct-metrics.json": {
+      "sha256": "98a054b04dbf8841cac0f4d5a3d98986da0896d9c636caf17bc4b8e2d9bc03c7",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/continued_sft/temperature-controls/robustness/original-metrics.json": {
+      "sha256": "eed6af70591b3786e30a09a52a0a32d6d34c2a28d451d2ea7eebfd484717d29b",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/continued_sft/temperature-controls/robustness/partial-description-paraphrases-metrics.json": {
+      "sha256": "abb66f0659454afb711dcf274618187ed325b1b047aef92588a12140db058ac8",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/continued_sft/temperature-controls/robustness/quoted-instruction-metrics.json": {
+      "sha256": "f06e75c7300b62f635c0d9dad06c17771dd81098cfef3d772da43b73921fe652",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/continued_sft/temperature-controls/robustness/reverse-metrics.json": {
+      "sha256": "07ed2d909eb820bf33b0bb3103c7a57a4b9ad56c6fe59dc0535c20c0e5bea297",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/continued_sft/temperature-controls/transfer/distant-metrics.json": {
+      "sha256": "18a707aa5f9ffb5044a7ab586c7950a3534cfc20caa0791d4366fb8fec91227c",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/continued_sft/temperature-controls/transfer/near-metrics.json": {
+      "sha256": "530b1d6400f24163cbaa8fd70e142f9904acfce0adcd206484ee5bcca92d09f3",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/continued_sft/temperature-controls/transfer/oos-deferral-metrics.json": {
+      "sha256": "996af73ad608922722964be9513695361ac3be47be5a6df5086f01d922f91f16",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/continued_sft/temperature-controls/transfer/oos-none-metrics.json": {
+      "sha256": "4a846453678e86244511da36156cdf425921a9de35572f425581f27f4bf93d89",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/continued_sft/temperature-controls/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "675ea6a89aff7367800cc762e632a504de53b7d2f7fda7f66bd6a784f40e857c",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/continued_sft/temperature-controls/transfer/unsupported-near-none-metrics.json": {
+      "sha256": "4b51ee9dc0c6d2f955978c0a2952192b9fe5ed0a880787922467337d72218ff2",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/continued_sft/transfer-complete.json": {
+      "sha256": "468517933463bb2daf758baa4c7894c13b6c7fc68401d18178ab315dfcb55a88",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/continued_sft/transfer/distant-metrics.json": {
+      "sha256": "a394815003214ceb36f0d96b17c0324a52f7bbbaf526b2c364bf20b8627b4610",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/continued_sft/transfer/near-metrics.json": {
+      "sha256": "cc9ddd3d4f5b2c11eb100b79e23ce59e4af99940d60be9b10c41b8a44fa74aa2",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/continued_sft/transfer/oos-deferral-metrics.json": {
+      "sha256": "13e720a9cfd13796f4f5fc8cbae6c751e0691dce1dfc7bd20b3a9b81d33a4a44",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/continued_sft/transfer/oos-none-metrics.json": {
+      "sha256": "a35edb8636d5f439d717bce693c315072124ef873a20916570bed50551b26dcf",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/continued_sft/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "979ca405699228b744d2b92675ffccae858e1f4496036912497a2035f60574c8",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/continued_sft/transfer/unsupported-near-none-metrics.json": {
+      "sha256": "e2889bbbcb2da0764dc4b4e04fdb1d6b63c09a331852ae80aea040963fa33af0",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/exact/robustness-complete.json": {
+      "sha256": "32f0c2e0ef1d881eb1ffd97d8f8d4720e1e4d057c68f70fa520b7b251ac1bf9d",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/exact/robustness/report.json": {
+      "sha256": "a331513b3e63679e2182d2596a7f0a8a94296c70398a2e0dfcdbc116f0991d94",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/exact/transfer-complete.json": {
+      "sha256": "2ab295b623f6161a08cfa8651cf8080050c21085122e1dcd644cf605da2a465b",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/exact/transfer/distant-metrics.json": {
+      "sha256": "2737831d02751bd6595e41975c063c300513a8c144125f408c0a0f730746bd16",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/exact/transfer/near-metrics.json": {
+      "sha256": "c7ed52e8f057b87d105e08cf54e79b34c0c431ac5ca6402cd08ed19c51525db4",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/exact/transfer/oos-deferral-metrics.json": {
+      "sha256": "7d4ce91262a5262420263f95ae8fde4ca95cf796a3413aad00d7090d174b0afe",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/exact/transfer/oos-none-metrics.json": {
+      "sha256": "352988067e1a1937b271577e7f9042e6094919a2bbcc42c38f0e28d296804df7",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/exact/transfer/unsupported-near-deferral-metrics.json": {
+      "sha256": "f8669365519353fb765af5309e777a48d0fa15c1b66f9ea764d560188bf5254b",
+      "mode": "100644"
+    },
+    "results/generalization-v1/9b/seed-33/exact/transfer/unsupported-near-none-metrics.json": {
+      "sha256": "a9c2c5a560f271b7678ec6222f3da55293f2e8165a16d32db2a302a675d9d0d1",
+      "mode": "100644"
+    },
     "results/generalization-v1/frozen-plan.json": {
       "sha256": "25aa5ae954dffa429fe0ac6f6d133b86443eadf3da9d50610e126354976b1a0e",
       "mode": "100644"
     },
     "results/generalization-v1/report.md": {
-      "sha256": "36663b14fe2eb907ddd628f8cd3f7c765e7c91f244cbea7c47868692a16f2f60",
+      "sha256": "013152ad65f9a50a6b0a2586f4f8355804bd444d33aa1ca41580de93168e9bbf",
       "mode": "100644"
     },
     "results/generalization-v1/summary.json": {
-      "sha256": "75e1433a0fd9cd3f117515c8d097b58eececdee1db4f9e6a7f057fce0b081614",
+      "sha256": "3541a453e01acf731f850e340dfb22141bfc0a49089e8713858db866d208c06e",
       "mode": "100644"
     },
     "results/generalization-v1/temperature-control-plan.json": {
@@ -2971,15 +3919,15 @@
       "mode": "100644"
     },
     "results/precision-v1/report.md": {
-      "sha256": "71a3bea8f94eb6ccabae45b0cff14f62fc3eb0a7a382f074b01815a971f255b9",
+      "sha256": "34aa6796fe4db7b0e5fb8b14ae8d5f56530259fd0f30b70c0f72cba816e6c6da",
       "mode": "100644"
     },
     "results/precision-v1/status.json": {
-      "sha256": "29afbb188e62bc5da0ac7c10b3ba0995034b45546f4eb164ee7adfd6560cffd2",
+      "sha256": "7c82c2a9a8874e7782cf75faba6a91fabaecd1bcaacf7403e56e77b61c013678",
       "mode": "100644"
     },
     "results/precision-v1/summary.json": {
-      "sha256": "d8c544123096800841a0bce7737b3223f6eb085be26f754625e43bffa9196506",
+      "sha256": "31dc7d6e5233cd60f1d12a10304df0ba2c28a5c5eb86a2dee19d4372329a4a51",
       "mode": "100644"
     },
     "results/readout-reproduction.json": {
@@ -2999,7 +3947,7 @@
       "mode": "100644"
     },
     "results/release-validation-v1/status.json": {
-      "sha256": "d9c0d16da7eca6351a23c20b5d1bea8f727ab2cff95dc384647393ebaa5f01ef",
+      "sha256": "cb5e9083defc3283d837608711688c4d21c15e91e4b999f5b74ac2343d8af462",
       "mode": "100644"
     },
     "results/reload-4b-with-fixture.json": {
@@ -4643,7 +5591,7 @@
       "mode": "100644"
     },
     "scripts/extension_progress.py": {
-      "sha256": "8db3ff4eaae95a75553ac8f6d95f87b0589e79cd3b5331938e5f242f4acda210",
+      "sha256": "e8f45ef2164a8f66c23dc5f764a0fc893d18b80fdba140338f8b3fd0c3807fc6",
       "mode": "100644"
     },
     "scripts/gliclass_baseline.py": {
@@ -4655,7 +5603,7 @@
       "mode": "100644"
     },
     "scripts/local_archive_judge.py": {
-      "sha256": "97ac31104703366c6c0e6adbd527dfe2d659f9f795e4370d68e6263952a0abda",
+      "sha256": "12a88fc5965bc899cfd3dd7de90864bb2a6217bae247347f3252dca8c2c471d4",
       "mode": "100644"
     },
     "scripts/make_untouched.py": {
@@ -4855,7 +5803,7 @@
       "mode": "100644"
     },
     "src/myjev/judging.py": {
-      "sha256": "93d79be81fffb3ff8b834c951545fd08b619c6c05462f7594d458eada0c4448a",
+      "sha256": "b633e23bf4ecfd471e7d45b6d736ea3800e287d5d3bd652be0cd7355364867af",
       "mode": "100644"
     },
     "src/myjev/metrics.py": {

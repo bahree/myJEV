@@ -41,7 +41,10 @@ def message(s):
     lines=[f'Transfer/robustness: {done}/36 evaluation jobs complete ({100*done/36:.1f}% by job count; job durations differ).']
     for j in s['generalization']:
         eta=j['remaining_seconds_estimate']
-        estimate=f"estimated {eta*.8/3600:.1f}-{eta*1.5/3600:.1f} hours remaining" if eta is not None else 'ETA awaits measured transfer and robustness timings'
+        if eta is None:estimate='ETA awaits measured transfer and robustness timings'
+        elif j['state']=='completed':estimate='completed'
+        elif eta<3600:estimate=f"estimated {max(1,eta*.8/60):.0f}-{max(1,eta*1.5/60):.0f} minutes remaining"
+        else:estimate=f"estimated {eta*.8/3600:.1f}-{eta*1.5/3600:.1f} hours remaining"
         lines.append(f"  {j['size']}: {j['state']}, {j['complete']}/12; {j['current']}; {estimate}.")
     lines += [f"Precision control: {s['precision']['state']}; {s['precision_updates']:,}/12,100 new training updates. It also needs full-test evaluation and calibration controls.",
               f"Release verification: {s['release']['state']}; {len(s['release'].get('completed',[]))}/6 candidates verified and benchmarked. It waits for all other GPU jobs to finish.",

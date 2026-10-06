@@ -7,14 +7,87 @@
       "kind": "transfer",
       "seconds": 663.3315126895905,
       "returncode": 0
+    },
+    {
+      "seed": 11,
+      "method": "continued_sft",
+      "kind": "robustness",
+      "seconds": 172.84625792503357,
+      "returncode": 0
+    },
+    {
+      "seed": 11,
+      "method": "exact",
+      "kind": "transfer",
+      "seconds": 662.2373428344727,
+      "returncode": 0
+    },
+    {
+      "seed": 11,
+      "method": "exact",
+      "kind": "robustness",
+      "seconds": 173.93950986862183,
+      "returncode": 0
+    },
+    {
+      "seed": 22,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "seconds": 663.1791627407074,
+      "returncode": 0
+    },
+    {
+      "seed": 22,
+      "method": "continued_sft",
+      "kind": "robustness",
+      "seconds": 171.52967429161072,
+      "returncode": 0
+    },
+    {
+      "seed": 22,
+      "method": "exact",
+      "kind": "transfer",
+      "seconds": 660.0291585922241,
+      "returncode": 0
+    },
+    {
+      "seed": 22,
+      "method": "exact",
+      "kind": "robustness",
+      "seconds": 172.427818775177,
+      "returncode": 0
+    },
+    {
+      "seed": 33,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "seconds": 657.6569635868073,
+      "returncode": 0
+    },
+    {
+      "seed": 33,
+      "method": "continued_sft",
+      "kind": "robustness",
+      "seconds": 172.9499433040619,
+      "returncode": 0
+    },
+    {
+      "seed": 33,
+      "method": "exact",
+      "kind": "transfer",
+      "seconds": 663.5741291046143,
+      "returncode": 0
+    },
+    {
+      "seed": 33,
+      "method": "exact",
+      "kind": "robustness",
+      "seconds": 173.7381637096405,
+      "returncode": 0
     }
   ],
-  "state": "running",
+  "state": "completed",
   "started": 1791263669.7812488,
-  "current": {
-    "seed": 11,
-    "method": "continued_sft",
-    "kind": "robustness"
-  },
-  "updated": 1791264333.1138604
+  "current": null,
+  "updated": 1791268677.231224
 }

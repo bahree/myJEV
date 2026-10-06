@@ -106,3 +106,7 @@ The scratch extension has completed its first controlled study, one-seed natural
 Current execution details and failed quality gates are recorded in the [scratch plan checkpoint](scratch-plan.md#execution-checkpoint). Implementation checks passing does not establish useful model quality.
 
 The expanded transfer/robustness study is frozen and running across 18 checkpoints (three sizes, three seeds, continued supervision and exact RL). Results will be reported after validation; this is not additional tuning. The blog scope now has four drafts: scratch/overview, Qwen training, evaluation/transfer, and inference/hosting.
+
+## October 6 checkpoint reconciliation
+
+The scratch network is built, with three-seed synthetic training and local deployment checks complete. Its BANKING77 diagnostic collapsed to one class; useful natural-language performance is not established. The full Qwen comparison, 36 transfer/robustness jobs, three-seed precision control and six local serving candidates are complete. Interpretation, default selection and final release packaging remain. Archive adaptation has not run: its local judge failed a development output-validation gate, and a source-span retry is development-only. PolicyLM is now related work and motivates a prospective policy-edit diagnostic and possible pretrained-encoder extension, not a replacement training matrix.

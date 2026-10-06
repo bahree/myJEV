@@ -1,8 +1,62 @@
 {
-  "complete": false,
-  "completed_seed_pairs": 0,
-  "rows": [],
-  "sources": {},
+  "complete": true,
+  "completed_seed_pairs": 3,
+  "rows": [
+    {
+      "seed": 11,
+      "bf16": {
+        "n": 3080,
+        "accuracy": 0.8743506493506493,
+        "correctness_brier": 0.11851929444396449
+      },
+      "nf4": {
+        "n": 3080,
+        "accuracy": 0.8623376623376623,
+        "correctness_brier": 0.13474701227963373
+      },
+      "nf4_minus_bf16_accuracy": -0.01201298701298703,
+      "nf4_minus_bf16_brier": 0.016227717835669245
+    },
+    {
+      "seed": 22,
+      "bf16": {
+        "n": 3080,
+        "accuracy": 0.8717532467532467,
+        "correctness_brier": 0.12432519235679024
+      },
+      "nf4": {
+        "n": 3080,
+        "accuracy": 0.8795454545454545,
+        "correctness_brier": 0.11924435548363664
+      },
+      "nf4_minus_bf16_accuracy": 0.007792207792207795,
+      "nf4_minus_bf16_brier": -0.005080836873153596
+    },
+    {
+      "seed": 33,
+      "bf16": {
+        "n": 3080,
+        "accuracy": 0.8483766233766233,
+        "correctness_brier": 0.13069400786634416
+      },
+      "nf4": {
+        "n": 3080,
+        "accuracy": 0.8769480519480519,
+        "correctness_brier": 0.12001930191557866
+      },
+      "nf4_minus_bf16_accuracy": 0.02857142857142858,
+      "nf4_minus_bf16_brier": -0.0106747059507655
+    }
+  ],
+  "sources": {
+    "results/longer-v1/4b/main/seed-11/sft/evaluation/metrics.json": "5108f971f341e638a9d483302a135a5a68c45e7d8b00df8f8dc9b5c714f7c626",
+    "results/precision-v1/seed-11/evaluation/metrics.json": "89ddffe80213a1ca5ab45c1b4ba03189b173db8641d669193e6258fb3e22d92e",
+    "results/longer-v1/4b/main/seed-22/sft/evaluation/metrics.json": "c566193a0d68f60edb072ffc821b4b87589638b4ee5bd5a0e698de07fb9a7d11",
+    "results/precision-v1/seed-22/evaluation/metrics.json": "053056acbade358fb708dd92876e2c91727a43324fec16c384c5d18c86d6a41b",
+    "results/longer-v1/4b/main/seed-33/sft/evaluation/metrics.json": "f478d53e3f382b280c75a91f413d7159974aa65d4db99f2002b20e30bca5592a",
+    "results/precision-v1/seed-33/evaluation/metrics.json": "1ec4266364ef2114d6f8d404047a018dc1c139a617f46dfb3c068cf4d6b49093"
+  },
   "scope": "4B SFT, same seeds, 4000 examples, LR, adapter targets and readout. BF16 versus NF4 with FP32 nonquantized modules. Training configuration comparison, not an inference-only quantization toggle.",
-  "limitations": "Three seeds; final-checkpoint test. No new tuning. Does not identify the precision effect on RL, continued supervision or 9B. Capacity-only conclusions still require care."
+  "limitations": "Three seeds; final-checkpoint test. No new tuning. Does not identify the precision effect on RL, continued supervision or 9B. Capacity-only conclusions still require care.",
+  "mean_accuracy_difference": 0.008116883116883114
 }

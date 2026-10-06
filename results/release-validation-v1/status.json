@@ -1,6 +1,21 @@
 {
-  "state": "waiting",
-  "completed": [],
-  "started": 1791264311.1314108,
-  "updated": 1791264311.1314154
+  "state": "completed",
+  "completed": [
+    "myjev-0.8b-continued_sft-seed11",
+    "myjev-0.8b-exact-seed11",
+    "myjev-4b-continued_sft-seed11",
+    "myjev-4b-exact-seed11",
+    "myjev-9b-continued_sft-seed11",
+    "myjev-9b-exact-seed11"
+  ],
+  "started": 1791265081.2398229,
+  "updated": 1791284233.1946313,
+  "preceding_gpu_jobs": [
+    "completed",
+    "completed",
+    "completed",
+    "completed",
+    "failed"
+  ],
+  "current": null
 }

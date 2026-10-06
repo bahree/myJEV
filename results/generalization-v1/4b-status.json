@@ -14,14 +14,80 @@
       "kind": "robustness",
       "seconds": 119.84914636611938,
       "returncode": 0
+    },
+    {
+      "seed": 11,
+      "method": "exact",
+      "kind": "transfer",
+      "seconds": 450.61067056655884,
+      "returncode": 0
+    },
+    {
+      "seed": 11,
+      "method": "exact",
+      "kind": "robustness",
+      "seconds": 115.93868827819824,
+      "returncode": 0
+    },
+    {
+      "seed": 22,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "seconds": 455.2412300109863,
+      "returncode": 0
+    },
+    {
+      "seed": 22,
+      "method": "continued_sft",
+      "kind": "robustness",
+      "seconds": 118.39795994758606,
+      "returncode": 0
+    },
+    {
+      "seed": 22,
+      "method": "exact",
+      "kind": "transfer",
+      "seconds": 455.3687629699707,
+      "returncode": 0
+    },
+    {
+      "seed": 22,
+      "method": "exact",
+      "kind": "robustness",
+      "seconds": 115.813227891922,
+      "returncode": 0
+    },
+    {
+      "seed": 33,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "seconds": 449.78915762901306,
+      "returncode": 0
+    },
+    {
+      "seed": 33,
+      "method": "continued_sft",
+      "kind": "robustness",
+      "seconds": 116.67990589141846,
+      "returncode": 0
+    },
+    {
+      "seed": 33,
+      "method": "exact",
+      "kind": "transfer",
+      "seconds": 452.3854913711548,
+      "returncode": 0
+    },
+    {
+      "seed": 33,
+      "method": "exact",
+      "kind": "robustness",
+      "seconds": 115.18493008613586,
+      "returncode": 0
     }
   ],
-  "state": "running",
+  "state": "completed",
   "started": 1791263669.7175992,
-  "current": {
-    "seed": 11,
-    "method": "exact",
-    "kind": "transfer"
-  },
-  "updated": 1791264243.23288
+  "current": null,
+  "updated": 1791267088.6512275
 }

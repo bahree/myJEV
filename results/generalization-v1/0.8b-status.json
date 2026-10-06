@@ -35,14 +35,59 @@
       "kind": "transfer",
       "seconds": 195.28330063819885,
       "returncode": 0
+    },
+    {
+      "seed": 22,
+      "method": "continued_sft",
+      "kind": "robustness",
+      "seconds": 62.94390392303467,
+      "returncode": 0
+    },
+    {
+      "seed": 22,
+      "method": "exact",
+      "kind": "transfer",
+      "seconds": 194.98898935317993,
+      "returncode": 0
+    },
+    {
+      "seed": 22,
+      "method": "exact",
+      "kind": "robustness",
+      "seconds": 60.748050689697266,
+      "returncode": 0
+    },
+    {
+      "seed": 33,
+      "method": "continued_sft",
+      "kind": "transfer",
+      "seconds": 197.9200668334961,
+      "returncode": 0
+    },
+    {
+      "seed": 33,
+      "method": "continued_sft",
+      "kind": "robustness",
+      "seconds": 59.61640691757202,
+      "returncode": 0
+    },
+    {
+      "seed": 33,
+      "method": "exact",
+      "kind": "transfer",
+      "seconds": 196.4317488670349,
+      "returncode": 0
+    },
+    {
+      "seed": 33,
+      "method": "exact",
+      "kind": "robustness",
+      "seconds": 59.95693850517273,
+      "returncode": 0
     }
   ],
-  "state": "running",
+  "state": "completed",
   "started": 1791263669.7109902,
-  "current": {
-    "seed": 22,
-    "method": "continued_sft",
-    "kind": "robustness"
-  },
-  "updated": 1791264419.0065458
+  "current": null,
+  "updated": 1791265251.618224
 }
