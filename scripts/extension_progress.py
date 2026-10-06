@@ -31,7 +31,9 @@ def snapshot():
                 try:updates+=min(target,json.loads(line)['step']);break
                 except json.JSONDecodeError:continue
     release=read(ROOT/'results/release-validation-v1/status.json',{'state':'not-started'})
-    return {'utc_seconds':time.time(),'generalization':jobs,'precision':precision,'precision_updates':updates,'precision_updates_total':12100,'release':release}
+    archive=read(ROOT/'results/archive-machine-v1/status.json',{'state':'not-started'})
+    judge=read(ROOT/'annotation/local-judge-v1/progress.json',{})
+    return {'archive':archive,'judge':judge,'utc_seconds':time.time(),'generalization':jobs,'precision':precision,'precision_updates':updates,'precision_updates_total':12100,'release':release}
 
 
 def message(s):
@@ -43,8 +45,8 @@ def message(s):
         lines.append(f"  {j['size']}: {j['state']}, {j['complete']}/12; {j['current']}; {estimate}.")
     lines += [f"Precision control: {s['precision']['state']}; {s['precision_updates']:,}/12,100 new training updates. It also needs full-test evaluation and calibration controls.",
               f"Release verification: {s['release']['state']}; {len(s['release'].get('completed',[]))}/6 candidates verified and benchmarked. It waits for all other GPU jobs to finish.",
-              '', 'Already done: Qwen main training and paired findings; scratch teaching study; four draft blog bundles; operational uncertainty report; local candidate packaging.',
-              'Still left after these jobs: interpret and write new findings, archive labels/audit and adaptation/forgetting, final release choice/licensing/uploads, clean-release environment and Hugo-theme checks.',
+              f"Archive machine-label study: {s['archive']['state']}; {s['judge'].get('records',0)}/600 judge records, then bounded adaptation and forgetting. Human review remains separate.", '', 'Already done: Qwen main training and paired findings; scratch teaching study; four draft blog bundles; operational uncertainty report; local candidate packaging.',
+              'Still left after these jobs: interpret and write new findings, human archive audit and interpretation of the machine-label adaptation study, final release choice/weight-license review/uploads, clean-release environment and Hugo-theme checks.',
               'No whole-project percentage or total finish time is claimed. Queued stages have not yet supplied their own throughput measurements.']
     return '\n'.join(lines)
 

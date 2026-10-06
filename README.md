@@ -159,4 +159,4 @@ The [roadmap](docs/roadmap.md) separates completed engineering checks from upcom
 
 This project studies ideas from several decision-model implementations; it does not reproduce all of their architectures or published scores. See [attribution](docs/attribution.md), [OpenJev notes](docs/openjev.md), and the [dataset cards](docs/README.md#data-and-provenance).
 
-A source-code license for this repository has not yet been selected. Dataset and backbone licenses remain separate; public visibility alone does not grant a software license. A license decision is tracked in the roadmap.
+The source code and accompanying repository documentation are licensed under [MIT](LICENSE), copyright Amit Bahree. Dataset, pretrained-backbone and other third-party licenses remain separate; this license does not replace them. Release model cards will document the applicable weight terms.

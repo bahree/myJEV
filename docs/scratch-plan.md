@@ -58,7 +58,7 @@ Measure total scratch weights against Qwen backbone plus adapters and heads. Rep
 
 ## Blog integration and completion
 
-Part 1 builds the scratch scorer with visible tensors and a worked decision, then explains how Qwen pretraining, LoRA/QLoRA and confidence objectives change the problem. Part 2 evaluates both tracks, examines where each fails, and serves verified artifacts. Retain two posts unless runnable explanations become too long, in which case split rather than remove depth.
+The expanded four-post series separates the scratch build, Qwen adaptation/training, evaluation/transfer, and inference/hosting. Each post keeps a focused reader outcome while preserving runnable explanations and measured failures.
 
 The scratch track will be complete when a fresh checkout can train the small controlled example, reproduce the reported evaluation, load its saved artifact and make the same decision through supported interfaces. Competitive broad-language accuracy is a research outcome, not a prerequisite for an honest teaching release.
 

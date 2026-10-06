@@ -1,0 +1,46 @@
+{
+  "teacher_plan_sha256": "c2ebf2f9ec91661e1f083971217e8bcbf3f7678d71278fe82675bc2392c6e563",
+  "student_initial_manifest_sha256": "52d89a98ae79f5758da650c8fe9ce211a9f7d2500313e7508ea64c33542b0a03",
+  "config": {
+    "backbone": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "precision": "bf16",
+    "lora_rank": 8,
+    "lora_targets": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ],
+    "max_candidates": 160,
+    "max_tokens": 4096,
+    "updates": 400,
+    "accumulation": 1,
+    "learning_rate": 0.0001,
+    "brier_weight": 0.1,
+    "kl_beta": 0.05,
+    "save_every": 100,
+    "purpose": "exploratory archive machine-label adaptation; no human review",
+    "prompt_version": "myjev-qwen-chat-v2",
+    "nonquantized_dtype": "bf16",
+    "data_offset": 0
+  },
+  "seed": 11,
+  "pilot_updates": 100,
+  "main_updates": 400,
+  "labels": "Local 9B NF4 machine judgments; require at least 80% structurally valid development outputs before expansion.",
+  "minimum_rows_per_split": 12,
+  "evaluation": "Full retained archive test; thresholds from archive calibration. Before/after native scalar confidence. Full BANKING77 forgetting after adaptation.",
+  "limits": [
+    "No human ground truth; metrics measure teacher agreement.",
+    "Single adaptation seed and fixed budget; no convergence or production error claim.",
+    "Same model family for teacher and student may share systematic errors.",
+    "Existing provisional post groups are used; semantic series grouping has not been human audited.",
+    "Temperature scaling on mixed candidate-count archive tasks is not included in this first study."
+  ],
+  "code_sha256": {
+    "scripts/local_archive_judge.py": "97ac31104703366c6c0e6adbd527dfe2d659f9f795e4370d68e6263952a0abda",
+    "src/myjev/judging.py": "93d79be81fffb3ff8b834c951545fd08b619c6c05462f7594d458eada0c4448a",
+    "scripts/finalize_machine_annotations.py": "b98974bee730aa88a8131a9d3cb9ad088e87a7891b6d352a94bf665497d204c8"
+  }
+}

@@ -35,15 +35,18 @@ def main():
         state.update(kw,updated=time.time());tmp=OUT/'status.tmp';tmp.write_text(json.dumps(state,indent=2)+'\n');tmp.replace(OUT/'status.json')
     update()
     if a.wait:
-        prerequisites=[ROOT/f'results/generalization-v1/{s}-status.json' for s in ('0.8b','4b','9b')]+[ROOT/'results/precision-v1/status.json']
+        prerequisites=[ROOT/f'results/generalization-v1/{s}-status.json' for s in ('0.8b','4b','9b')]+[ROOT/'results/precision-v1/status.json',ROOT/'results/archive-machine-v1/status.json']
         while True:
             values=[]
             for path in prerequisites:
                 try:values.append(json.loads(path.read_text()))
                 except (FileNotFoundError,json.JSONDecodeError):values.append({})
-            if any(v.get('state') in ('failed','blocked') for v in values):update(state='blocked',reason='Prerequisite failed');return
-            if all(v.get('state')=='completed' for v in values):break
+            if all(v.get('state') in ('completed','failed','blocked') for v in values):
+                update(preceding_gpu_jobs=[v.get('state') for v in values]);break
             time.sleep(15)
+    for name,expected in plan['hashes'].items():
+        if hashlib.sha256((ROOT/name).read_bytes()).hexdigest()!=expected:
+            update(state='failed',reason=f'Frozen input changed: {name}');return
     # Refuse claimed isolation if another GPU compute process is still present.
     active=subprocess.check_output(['nvidia-smi','--query-compute-apps=pid','--format=csv,noheader'],text=True).strip()
     if active:

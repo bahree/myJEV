@@ -7,6 +7,7 @@ import argparse
 import fcntl
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import shutil
@@ -52,9 +53,10 @@ def main():
     if a.wait_for:
         while True:
             if a.wait_for.exists():
-                wait=json.loads(a.wait_for.read_text())
-                if wait['state']=='completed':break
-                if wait['state']=='failed':status(state='blocked',reason='Prerequisite evaluation failed');return
+                try:wait=json.loads(a.wait_for.read_text())
+                except json.JSONDecodeError:wait={}
+                if wait.get('state') in ('completed','failed','blocked'):
+                    status(preceding_gpu_job_state=wait['state']);break
             time.sleep(15)
     env={**os.environ,'CUDA_VISIBLE_DEVICES':a.gpu,'HF_HOME':str(ROOT/'.cache/huggingface'),'HF_HUB_OFFLINE':'1','OMP_NUM_THREADS':'2','MKL_NUM_THREADS':'2','MYJEV_TRACKING_MODE':'offline'}
     # Existing owner-configured W&B settings are optional; never print credentials.
@@ -84,6 +86,8 @@ def main():
                     cmd+=['--resume',str(resume)]
                 run(cmd,record/'train.log')
             shutil.copy2(output/'training.jsonl',record/'training.jsonl');shutil.copy2(manifest,record/'artifact-manifest.json')
+            if any(not math.isfinite(json.loads(line)['loss']) for line in (record/'training.jsonl').read_text().splitlines()):
+                raise RuntimeError('Nonfinite training loss; stop this precision configuration')
             if label!='pilot':
                 status(current={'label':label,'phase':'evaluation'})
                 if not (record/'evaluation/metrics.json').exists():

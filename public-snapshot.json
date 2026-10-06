@@ -11,15 +11,19 @@
       "mode": "100644"
     },
     "CHANGELOG.md": {
-      "sha256": "645058fb4cfda630bf733c65ebdbc40ed29a9e194deec95b711fd1554fe4aea7",
+      "sha256": "a4a384c444acf6e608a2a42f6346935ae4b012038e5e7a91475da81ba3f3686b",
       "mode": "100644"
     },
     "Dockerfile": {
       "sha256": "11948809e50cfac88c198ce64c6d1576c9dd5be290f8767e4f4547f34ebd72ee",
       "mode": "100644"
     },
+    "LICENSE": {
+      "sha256": "db3c3a606627fa722da02b2a96af21bcef474a5e34d18aead7872874148042b4",
+      "mode": "100644"
+    },
     "README.md": {
-      "sha256": "36fa31bfecf3f4aa1938a1ed2f11fed919b46c848fe993a44cf5c07a96b91142",
+      "sha256": "6b202b51e25e7a2423c50b45499810d958d264e59f67e4ca5f36ae14e3b34614",
       "mode": "100644"
     },
     "configs/0.8b.json": {
@@ -75,7 +79,7 @@
       "mode": "100644"
     },
     "docs/datasets/blog-archive.md": {
-      "sha256": "7070ee0c24c92255be4e9ab6dc0e156d64980b695698103ed076f1ac17c8952b",
+      "sha256": "546b811fee021f6c7cf44acf00339e5557f26263a8de2553d65bc438a3448f0a",
       "mode": "100644"
     },
     "docs/datasets/clinc150.md": {
@@ -127,11 +131,11 @@
       "mode": "100644"
     },
     "docs/roadmap.md": {
-      "sha256": "e59fe2da46a4857dab54c9eca172c0b8cd8330f797b3024098d21128bf9de3e7",
+      "sha256": "5cbeb9c710203d8161d915ac900fb217f2e16cbaf5005930d7add7a413b5fe87",
       "mode": "100644"
     },
     "docs/scratch-plan.md": {
-      "sha256": "fbff21b56185fe1fe45e7015e96a1888258c0efae776daea7ffad39f34424d24",
+      "sha256": "13b9fcec4eac0e83d8487804c441ce1c8bcb2aea521d0aabd1b5be9f20dd034c",
       "mode": "100644"
     },
     "docs/scratch.md": {
@@ -159,7 +163,7 @@
       "mode": "100644"
     },
     "pyproject.toml": {
-      "sha256": "f27139f18bbdd8f93567bdaee23e17b50129afa563bc5a6daafe8ce4d0116b51",
+      "sha256": "fe763d03bf9aee9816bdd16a94a4227d273b74c459baa0b52504bc70d0609be1",
       "mode": "100644"
     },
     "requirements.lock": {
@@ -172,6 +176,14 @@
     },
     "requirements.tracking.txt": {
       "sha256": "6b760643deb45b1904bc2d4a3831b486641878d5f89d73eee6f9725ee5d1624b",
+      "mode": "100644"
+    },
+    "results/archive-machine-v1/config.json": {
+      "sha256": "0b6a4282550877a0be7458b33fb30d92a37b04aaf7af6b4ff8ad6d14a675e893",
+      "mode": "100644"
+    },
+    "results/archive-machine-v1/frozen-plan.json": {
+      "sha256": "68bd8575df464f99868583175bfd30dcb6357ca30a50f224db5aa200a0999bcf",
       "mode": "100644"
     },
     "results/artifact-equivalence-4b.json": {
@@ -602,6 +614,10 @@
       "sha256": "1afa760f11c74cfd6ba1968642f5a4aaf49d4aa7af74c72c00756131e068f366",
       "mode": "100644"
     },
+    "results/documentation-v2/archive-judge-tests.txt": {
+      "sha256": "fa6b066fe15acf91d28bc5b8ab8d822315e4b5ac0b14c2f1c47ae217f90a1805",
+      "mode": "100644"
+    },
     "results/documentation-v2/blog-checks.json": {
       "sha256": "eb32dd71606233bb5122de20edf0788b980a31ca33fe991a57fa3cea97182d35",
       "mode": "100644"
@@ -612,6 +628,18 @@
     },
     "results/documentation-v2/extension-email-preview.txt": {
       "sha256": "62d067ed4790f765f4da4c7e9d46a83d9b16e26e369fd6e41507d8d5e35fad14",
+      "mode": "100644"
+    },
+    "results/documentation-v2/full-tests.txt": {
+      "sha256": "e08a40536a5e227ef14d4f1a9efde2746587bde500bbed50242b8d159eb61245",
+      "mode": "100644"
+    },
+    "results/documentation-v2/mit-package-build.log": {
+      "sha256": "0e5836a5e524626f78284f1dea029968bbf214983003872a9bd9787da6751074",
+      "mode": "100644"
+    },
+    "results/documentation-v2/mit-package-check.json": {
+      "sha256": "07b2c2915ead654078bee691594a0a27c7faa053c37c8293635dec6c615ef70a",
       "mode": "100644"
     },
     "results/documentation-v2/public-link-checks.json": {
@@ -840,6 +868,10 @@
     },
     "results/generalization-v1/summary.json": {
       "sha256": "75e1433a0fd9cd3f117515c8d097b58eececdee1db4f9e6a7f057fce0b081614",
+      "mode": "100644"
+    },
+    "results/generalization-v1/temperature-control-plan.json": {
+      "sha256": "4fe4f623803f61c017c34d81c83a133b710577aa8e7191863014ae37580619f9",
       "mode": "100644"
     },
     "results/gpu-telemetry-20261004T205942Z/gpu-activity.png": {
@@ -2955,11 +2987,15 @@
       "mode": "100644"
     },
     "results/release-candidates-v1/inventory.json": {
-      "sha256": "7e85dd1150732e695c7b8b9641805411feec28656eb06b480fbcc97e0f784080",
+      "sha256": "a0dd4c87b701ffeab008d0c6dd01ae0a22f4ff5b861a9194e5bded82ad3b5bc6",
       "mode": "100644"
     },
     "results/release-validation-v1/frozen-plan.json": {
-      "sha256": "d8e26110135b5fec8ca5d3baf85b2dd46f3c0fd19868683c657270ea1a0d6cd8",
+      "sha256": "ffb496605d1c5b25f9e2733f90c48b596fa3956cf68982c0be1986643b68c4bc",
+      "mode": "100644"
+    },
+    "results/release-validation-v1/license-metadata-amendment.json": {
+      "sha256": "399563222186bde2b081a2c4b952fbd675b844df81381e1701bc602e4a62468f",
       "mode": "100644"
     },
     "results/release-validation-v1/status.json": {
@@ -4607,7 +4643,7 @@
       "mode": "100644"
     },
     "scripts/extension_progress.py": {
-      "sha256": "6efdb609b39319f33941a5720b2e1f4fe8a0ed731ded2696e42b484bae76b46b",
+      "sha256": "8db3ff4eaae95a75553ac8f6d95f87b0589e79cd3b5331938e5f242f4acda210",
       "mode": "100644"
     },
     "scripts/gliclass_baseline.py": {
@@ -4616,6 +4652,10 @@
     },
     "scripts/gpu_telemetry.py": {
       "sha256": "4663de1c5bf36a41b83db9d49068068a3882d3af1399090bcf0933fd4794d398",
+      "mode": "100644"
+    },
+    "scripts/local_archive_judge.py": {
+      "sha256": "97ac31104703366c6c0e6adbd527dfe2d659f9f795e4370d68e6263952a0abda",
       "mode": "100644"
     },
     "scripts/make_untouched.py": {
@@ -4663,11 +4703,15 @@
       "mode": "100644"
     },
     "scripts/prepare_release_candidates.py": {
-      "sha256": "02f478307fdd597ce8aa93c425af2bca47bfe6455a2cc1e8c8461f24f13025d0",
+      "sha256": "981f45c48a0e730c497c3ae698a285ba28bbf334dc1e50d3e4cf343865eb1ec0",
       "mode": "100644"
     },
     "scripts/reproduce_readout.py": {
       "sha256": "4d26167ce11d188b171a80c2820ff8bebccbea8215a4c5804e809bbe828b856e",
+      "mode": "100644"
+    },
+    "scripts/run_archive_study.py": {
+      "sha256": "6f383ffbf4725326bac82f7e229eff53c9e842824dd84f0281e1ae2fb9c067ce",
       "mode": "100644"
     },
     "scripts/run_comparison.py": {
@@ -4683,11 +4727,11 @@
       "mode": "100644"
     },
     "scripts/run_precision_study.py": {
-      "sha256": "b057355e2d054b350ab33560d629f466c58d6b445344698bdcabc841f125dc12",
+      "sha256": "39ebf77bb8cc22b843d7254e5acba6511e331df814d2b8f1fe6ea1bc5ebdc215",
       "mode": "100644"
     },
     "scripts/run_release_validation.py": {
-      "sha256": "fe3964631cc6a3a9d200a05e7e15b0af4a9b11aafa3ff9861e65b66780bfa00c",
+      "sha256": "f0cbb20ea5dab64cf1acf1422122ce4e3dd8c314afa95ac999650eb00d5d34b2",
       "mode": "100644"
     },
     "scripts/run_scratch.py": {
@@ -4710,8 +4754,12 @@
       "sha256": "852599dc0cfb999f7393e4e84ad092c0511eab08832318f5b63b1da8942dadc3",
       "mode": "100644"
     },
+    "scripts/summarize_archive_study.py": {
+      "sha256": "372136796c7e411bd004cffded3691b7ed1bfedeea6ca19b41a61c8a61d79fcb",
+      "mode": "100644"
+    },
     "scripts/summarize_generalization.py": {
-      "sha256": "b9b04e0e30ef9404ebb193ed2c393fd558b44667f6e5f20fd17ff90f214345de",
+      "sha256": "3b374582a8d35a22fc21988435237ec01e0f224e2a48431f36c617bff28dd670",
       "mode": "100644"
     },
     "scripts/summarize_longer_study.py": {
@@ -4736,6 +4784,10 @@
     },
     "scripts/sync_wandb_study.py": {
       "sha256": "457d12776b4b95dd3146f304564d3c02773eff2984c4f08aa9f2da65cc122406",
+      "mode": "100644"
+    },
+    "scripts/temperature_transfer_controls.py": {
+      "sha256": "37dffac0e8875285e86fab7a9eec731378f8940f7c85d86e318a4ef433b0c173",
       "mode": "100644"
     },
     "scripts/tfidf_baseline.py": {
@@ -4856,6 +4908,10 @@
     },
     "tests/test_contract.py": {
       "sha256": "94f2980096a1a1690f2fabd7c9f51e5d4a971ed7401af734f5ff5a05b63b2fdf",
+      "mode": "100644"
+    },
+    "tests/test_local_archive_judge.py": {
+      "sha256": "10b23a8a0c32ee95979ae603f462743374fdfc74eb49d6e89c9ec339d2be0e52",
       "mode": "100644"
     },
     "tests/test_objectives.py": {

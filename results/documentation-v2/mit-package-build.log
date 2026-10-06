@@ -1,0 +1,9 @@
+Processing ./.
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: myjev
+  Building wheel for myjev (pyproject.toml): started
+  Building wheel for myjev (pyproject.toml): finished with status 'done'
+  Created wheel for myjev: filename=myjev-0.1.0-py3-none-any.whl size=27931 sha256=16890a7004a4edd978a7eb00d1cee72d75d774581c99a9f9ed026028535dd621
+  Stored in directory: /tmp/pip-ephem-wheel-cache-zc9bx7hv/wheels/70/52/64/1e0065b351113cd33a899b166086b8283920fbc4226c2914b2
+Successfully built myjev

@@ -1,0 +1,13 @@
+{
+  "reason": "Owner selected MIT source-code license; update draft model-card text only. No weights, artifact revisions, requests, candidate choices or benchmark budgets changed.",
+  "previous_inventory_sha256": "7e85dd1150732e695c7b8b9641805411feec28656eb06b480fbcc97e0f784080",
+  "new_inventory_sha256": "a0dd4c87b701ffeab008d0c6dd01ae0a22f4ff5b861a9194e5bded82ad3b5bc6",
+  "cards": [
+    "myjev-0.8b-continued_sft-seed11",
+    "myjev-0.8b-exact-seed11",
+    "myjev-4b-continued_sft-seed11",
+    "myjev-4b-exact-seed11",
+    "myjev-9b-continued_sft-seed11",
+    "myjev-9b-exact-seed11"
+  ]
+}

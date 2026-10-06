@@ -1,5 +1,11 @@
 # Milestone history
 
+## Research and release preparation
+
+- License source code under MIT and expand the teaching outline to four posts.
+- Run the frozen all-size transfer/robustness extension; queue matched precision controls and isolated serving checks.
+- Prepare six local candidate packages, without declaring a default or uploading weights.
+
 ## Qwen lessons and implemented scratch teaching track
 
 - Completed the Qwen reporting gate with paired analysis, public lessons and figures for both private Hugo drafts.

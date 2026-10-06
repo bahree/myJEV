@@ -39,3 +39,9 @@ No myJEV archive fine-tuning, archive transfer benchmark or forgetting compariso
 Review the rubrics and grouping, audit labels, expand annotation and freeze evaluation groups before adaptation. Compare unadapted and adapted artifacts on the same held-out posts and re-evaluate BANKING77/CLINC150 for forgetting. Report machine-label agreement separately from human-audited correctness, with uncertainty grouped by related posts.
 
 The sample is small, subjective and from one author, with historical imbalance and possible pretraining exposure. It cannot establish a low production error rate or broad generalist capability. The author supplied the archive for this study; no broader redistribution license is inferred. Post text, per-post labels and private annotations are not included in this repository. This card publishes the study design and aggregate status only.
+
+## Queued local machine-label extension
+
+A frozen local Qwen3.5-9B NF4 judge will apply the existing rubrics to the exact prepared text, first on the 40 development posts. JSON/schema and exact-quote checks are engineering checks, not correctness checks. If at least 80% of development judgments satisfy those checks, the remaining annotations proceed without prompt retuning. Invalid and uncertain responses remain explicit exclusions.
+
+The queued one-seed 4B adaptation study uses a 100-update fit pilot and 400-update main stage, retaining provisional post groups and testing public-task forgetting. It is exploratory teacher-agreement evaluation: teacher and student share a model family, no human review is implied, and semantic grouping still needs audit. This extension requires no paid API; results are pending. Raw annotation text and judgments remain private.

@@ -1,0 +1,10 @@
+{
+  "wheel": "myjev-0.1.0-py3-none-any.whl",
+  "license_metadata": [
+    "License-Expression: MIT",
+    "License-File: LICENSE"
+  ],
+  "license_files": [
+    "myjev-0.1.0.dist-info/licenses/LICENSE"
+  ]
+}

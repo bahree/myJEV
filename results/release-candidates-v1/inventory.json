@@ -11,7 +11,7 @@
       "metric_source": "results/longer-v1/0.8b/main/seed-11/continued_sft/posthoc/temperature-metrics.json",
       "metric_sha256": "f0ae45cf90805c9a87d6431c2fac6ec7ed835670f639aa507b76a71c9c889e3f",
       "files": {
-        "README.md": "6421b7d46383e1e9505c90d7b3397a3f217424bef0b9655c86937b779baecdae",
+        "README.md": "20aaa1f679f8911becce2cf9fda8767d9e4e2832a33a6d7fbc0b58c48131f946",
         "adapter/README.md": "0d65a27124582040993d718133492c4a10323b7f152c76e4d2999c97c335701e",
         "adapter/adapter_config.json": "a70b7385b6829ab2944a55ef46565ca83757287c92c4e2714f005860bd98ade8",
         "adapter/adapter_model.safetensors": "29bb0fc258ba03216f1f7581a2dd37730fe3afa332588b4e05d86b117a4df6b6",
@@ -29,7 +29,7 @@
       "metric_source": "results/longer-v1/0.8b/main/seed-11/exact/evaluation/metrics.json",
       "metric_sha256": "4dc87f31068395ab5b094160665566b9aee47fa71f1a95c813ba34e6464bcc3c",
       "files": {
-        "README.md": "9312e0de9d7f90f90883ee9b9e451b7d456220b363d93941343e86b2d79c061b",
+        "README.md": "579a1450c925e44405543c2f45dbd11d55ec4d14e3728319764cb6661e62aa62",
         "adapter/README.md": "0d65a27124582040993d718133492c4a10323b7f152c76e4d2999c97c335701e",
         "adapter/adapter_config.json": "9b83585ecf2a10aefc2413f9a32e61975e93f3cde0efd1daef4b3cea1ea0939b",
         "adapter/adapter_model.safetensors": "dd93b4881d872e67978fe60cf54439eb3cd044cd839311e75131641fc0ff4825",
@@ -47,7 +47,7 @@
       "metric_source": "results/longer-v1/4b/main/seed-11/continued_sft/posthoc/temperature-metrics.json",
       "metric_sha256": "6bc5000f3c25d292fc3abe5d6e05897090b02b48088f76c990410e1412a0bf53",
       "files": {
-        "README.md": "2749dfd1ba2f4375c688f4ec59640741fe51b38bbcb46bc6a15333db210ef742",
+        "README.md": "f21739cd2784b53f598c7cf720cd8f7cc75a7595c2269bb5b457dabef6d9a6d9",
         "adapter/README.md": "7716b0151793769140a76026939437398273346aefc3e5f75bb8ab2833b42885",
         "adapter/adapter_config.json": "d1fd4981d7aa14773d0ecce51dc2dbe9ab5e6de2762edc81185789d194ac9629",
         "adapter/adapter_model.safetensors": "c8669c765ef19aa4baf2eb9ec059d27bb28cd076b3aa30ee007360bc8c05b8a7",
@@ -65,7 +65,7 @@
       "metric_source": "results/longer-v1/4b/main/seed-11/exact/evaluation/metrics.json",
       "metric_sha256": "2524a8bb5f06e6f3584980231cbc3fddf226975aeeb9876559fc33d8a4b2051a",
       "files": {
-        "README.md": "d87d1ee44d45fd094d394530a16656cdf8ff9005e70f5c1c0a72281dadf2da03",
+        "README.md": "034c5435772cd525346e6dc6ba21e2c48b6069154e1e9d3b8af4369e0dba0ad0",
         "adapter/README.md": "7716b0151793769140a76026939437398273346aefc3e5f75bb8ab2833b42885",
         "adapter/adapter_config.json": "6656b1564f0d2ce30534f3535f6aacd38973fa696ed2ca7aa109e193ea2bd95c",
         "adapter/adapter_model.safetensors": "dfadcf53c1e576941e908f15f18e6e02e95b63a6b81b450b90caff394d850aa0",
@@ -83,7 +83,7 @@
       "metric_source": "results/longer-v1/9b/main/seed-11/continued_sft/posthoc/temperature-metrics.json",
       "metric_sha256": "8a280989a8d054af8afc9c9c560c616d018d1dbe54e9af2047a62c6d9e2a3f15",
       "files": {
-        "README.md": "f0d82daa4f01bfe0faf8a5784cb3d9ad782de66f7b1e029874366ce93794061c",
+        "README.md": "a20f88966d9b7979ca5a5e76969cfb25fbefbdd60d4293ab1a9309b2c4633651",
         "adapter/README.md": "b24b74667d1eb9c991047b4507c329613ae38707f4450446a94217081af69e96",
         "adapter/adapter_config.json": "54f592590fe9617c09a667400aaa2233c30b98955c1874daae97ca58efeaa52d",
         "adapter/adapter_model.safetensors": "d7d6c63a42ae96e7ee1c929b4fbca2240847fd9024a3f05fb04b054ec609e2fe",
@@ -101,7 +101,7 @@
       "metric_source": "results/longer-v1/9b/main/seed-11/exact/evaluation/metrics.json",
       "metric_sha256": "ed44ca5d01707d10e687e662e2bdd0fdaab8554794341242fafa91f19aca8fab",
       "files": {
-        "README.md": "8f2c83f0e5426b75818e77d852cbd6af14102acab6f787dc7d8076aa4b141be7",
+        "README.md": "dcaab9e08245e32b179a67ad1678a5286a0b12d27496406600b021ee24b6b449",
         "adapter/README.md": "b24b74667d1eb9c991047b4507c329613ae38707f4450446a94217081af69e96",
         "adapter/adapter_config.json": "7c830cf7b13b02e2131db7ffd27e003d391662bcbc2c7ddabf2b17b94a241a84",
         "adapter/adapter_model.safetensors": "57365bf7c905c84fe7941e18dc78c48946d3dd41064626bb3750b6cb3b3e1233",

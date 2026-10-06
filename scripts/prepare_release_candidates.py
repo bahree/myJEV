@@ -77,7 +77,7 @@ This example demonstrates the request shape, not accuracy on a novel support tax
 
 BANKING77 is one intent family. Archive adaptation has not been performed; transfer and robustness evidence must be consulted separately. The 9B configuration uses NF4, while smaller original configurations use BF16, limiting capacity-only conclusions. Request-supplied candidate descriptions are model input and can change behavior.
 
-Source-code licensing and the artifact release terms are pending owner selection/review. Backbone and dataset licenses remain separate and must be preserved. Do not upload this draft as a finalized licensed release. No managed endpoint is running.
+The repository source code is MIT-licensed, copyright Amit Bahree. Artifact release terms remain subject to review. Backbone and dataset licenses remain separate and must be preserved. Do not upload this draft as a finalized licensed release. No managed endpoint is running.
 '''
             (dest/'README.md').write_text(body)
             record=dict(name=label,source=str(source),destination=str(dest),artifact_revision=manifest['artifact_revision'],source_code_revision=revision,

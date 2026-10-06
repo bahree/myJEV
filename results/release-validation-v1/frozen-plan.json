@@ -23,7 +23,7 @@
   ],
   "image_tag": "myjev:scratch-checkpoint",
   "hashes": {
-    "results/release-candidates-v1/inventory.json": "7e85dd1150732e695c7b8b9641805411feec28656eb06b480fbcc97e0f784080",
+    "results/release-candidates-v1/inventory.json": "a0dd4c87b701ffeab008d0c6dd01ae0a22f4ff5b861a9194e5bded82ad3b5bc6",
     "scripts/benchmark_scoring_paths.py": "ab723944200e81e41c8046d3629fef9102027acbf76c7660fb8103bbf51e41aa",
     "scripts/verify_artifact.py": "7866fea9bd39dba79530d8c53b89f7ac3dc3b2def8ca9257a9240cd1fda1b505",
     "scripts/benchmark.py": "99b48635ae4ade10938f743b8c084d48b1289462c2cc8b16dedc4684a045035f"

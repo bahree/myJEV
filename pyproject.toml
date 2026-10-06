@@ -6,6 +6,8 @@ build-backend = "setuptools.build_meta"
 name = "myjev"
 version = "0.1.0"
 description = "Single-pass decision research and inference"
+license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.11"
 dependencies = ["torch", "transformers", "peft", "huggingface-hub", "safetensors", "numpy", "scikit-learn", "fastapi", "uvicorn", "httpx"]
 

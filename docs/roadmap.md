@@ -58,7 +58,8 @@ Foundations: [Deep Sets](https://arxiv.org/abs/1703.06114) for set symmetry, [Se
 ## Milestone 3: New tasks and adaptation
 
 - [x] Publish the [blog-archive study card](datasets/blog-archive.md), with preparation and annotation status.
-- [ ] Review and freeze the archive rubrics, grouping and evaluation protocol.
+- [x] Freeze an exploratory machine-label protocol with existing rubrics/provisional groups and explicit limits.
+- [ ] Human-review archive rubric reliability and semantic grouping.
 - [ ] Audit machine-assisted labels against independent human judgments.
 - [ ] Freeze evaluation groups before adaptation.
 - [ ] Compare unadapted and adapted artifacts and measure forgetting on public tasks.
@@ -72,7 +73,8 @@ This part remains exploratory. Annotation material and draft articles are not di
 - [ ] Publish a versioned container image with verified load and output behavior.
 - [ ] Expand serving benchmarks to isolated-host runs and representative document lengths.
 - [ ] Compare direct scoring, constrained one-token generation, minimal JSON, and answer plus explanation under matched serving conditions. See the [benchmark protocol](hosting.md#planned-scoring-versus-generation-benchmark) and its related-work reference.
-- [ ] Finalize source licensing and release packaging.
+- [x] License the source code under MIT.
+- [ ] Finalize artifact licensing review and release packaging.
 - [ ] Add links to the published blog-series articles.
 
 A paid cloud endpoint is optional and is not a required project deliverable. The documented managed-hosting recipe can be used independently once release artifacts exist.

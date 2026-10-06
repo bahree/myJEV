@@ -1,0 +1,16 @@
+{
+  "purpose": "Supplement native confidence with the original-plan temperature control for continued SFT; analysis only, no transfer tuning.",
+  "sources": {
+    "results/longer-v1/0.8b/main/seed-11/continued_sft/posthoc/temperature-metrics.json": "f0ae45cf90805c9a87d6431c2fac6ec7ed835670f639aa507b76a71c9c889e3f",
+    "results/longer-v1/0.8b/main/seed-22/continued_sft/posthoc/temperature-metrics.json": "e45523429bd8b36f228f32dcb242da3239873af76e73b7b29a68828e177f05b7",
+    "results/longer-v1/0.8b/main/seed-33/continued_sft/posthoc/temperature-metrics.json": "802d1d6db0d7083b4199d3af6d1830d339ffdc9e9ee79b6cef660de7a4244845",
+    "results/longer-v1/4b/main/seed-11/continued_sft/posthoc/temperature-metrics.json": "6bc5000f3c25d292fc3abe5d6e05897090b02b48088f76c990410e1412a0bf53",
+    "results/longer-v1/4b/main/seed-22/continued_sft/posthoc/temperature-metrics.json": "dae82aa789225b79a3794942498d3fd82f27ac7ccebedaadef09d7291530022f",
+    "results/longer-v1/4b/main/seed-33/continued_sft/posthoc/temperature-metrics.json": "b743ca89175256bc6cc14e22c3ae1891901d6b505382ed613fc0036f0549a51b",
+    "results/longer-v1/9b/main/seed-11/continued_sft/posthoc/temperature-metrics.json": "8a280989a8d054af8afc9c9c560c616d018d1dbe54e9af2047a62c6d9e2a3f15",
+    "results/longer-v1/9b/main/seed-22/continued_sft/posthoc/temperature-metrics.json": "396ebd77956b1ddb629753792964584117ab21ac4a07bb4d64b0c2bd13e804e8",
+    "results/longer-v1/9b/main/seed-33/continued_sft/posthoc/temperature-metrics.json": "92489dad1e61381fc884cf68efb926da831301ed65a8ced86e289884c65527ac"
+  },
+  "selection_unchanged": true,
+  "calibration": "Original BANKING77 calibration only; preserve temperature and operating thresholds."
+}
