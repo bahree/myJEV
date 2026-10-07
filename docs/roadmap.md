@@ -50,7 +50,7 @@ See [models](models.md), [inference](inference.md) and [hosting](hosting.md). Pu
 ## Remaining owner decisions and optional extensions
 
 - [ ] Independently human-audit the archive labels and grouping before human-correctness claims.
-- [ ] Choose an image registry destination, then publish the tested image and record its pullable digest.
+- [ ] Publish the tested image to the selected Docker Hub repository `amitbahree/myjev`, verify a pull and record its immutable digest.
 - [ ] Publish the blog articles and replace draft-series placeholders with actual article links. The private authoring tree contains four main articles plus a bonus calibration lab; article Markdown is excluded from this repository.
 - [ ] If pursuing production use, evaluate the actual workload, accepted-error requirements, memory headroom and monitoring with independent data.
 

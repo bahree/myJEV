@@ -57,11 +57,15 @@ The output contract matters just as much. A moderation system can legitimately a
 
 PolicyLM therefore informs our next hypothesis: a pretrained encoder may improve the language foundation missing from the scratch track while keeping a specialized decision interface. It does not establish that this architecture is faster or more accurate on our hardware and tasks. It also does not resolve subjective archive labels or provide evidence citations.
 
-### Aplomb: a specialized decision head on a Qwen backbone
+### Separate the backbone, decision head and training method
 
-EmpirioLabs describes Aplomb 1 as a 5.3B-parameter multimodal decision model built on Qwen3.5-4B, with a Qwen3-Omni audio encoder and a custom decision head. This is another example of a language-model backbone adapted to emit structured decisions. Adding a head and fine-tuning are complementary choices: the head defines how representations become outputs, while training adapts parameters for the task. The announcement does not specify LoRA versus full-backbone fine-tuning or which layers were frozen. Its advertised probability that an answer is absent from the input is a different event from our selected-answer correctness confidence. [Aplomb announcement](https://empiriolabs.ai/blog/introducing-aplomb-1)
+The backbone produces representations of the input. The decision head turns those representations into the outputs the application needs, such as candidate scores or a correctness estimate. Fine-tuning determines which parameters change while learning that task. These are separate design choices: we can train a new head while freezing the backbone, train the head alongside LoRA adapters, or update the backbone more extensively. In myJEV's Qwen track, the vocabulary readout supplies selection scores while adapters and custom confidence heads are trained.
 
-The publisher's roughly three-second million-token result uses its hosted fast long-context mode; the announcement separately reports about 111 seconds for reading the full input. Those figures cannot be treated as the latency of our full-read implementation or reproduced merely by downloading weights. The announced custom license also has commercial restrictions. We have not loaded Aplomb, verified its implementation, or measured it locally. It is related work, not a new row in our experimental results.
+The same separation helps explain multimodal designs. Text, image or audio encoders can supply representations to a decision layer, but each input type needs an appropriate processing path and training signal. Adding a decision head alone does not teach a text-only model to understand an image.
+
+Each output probability also needs a clearly defined event. “Does this document contain a refund date?” differs from “Is the selected support route correct?” A document can omit the date while still providing enough information to route the request. Training a head for one event does not make its output a calibrated estimate of the other. This is why our response contract explicitly names selected-answer correctness.
+
+Performance belongs to the complete serving system. When comparing timings, record the input length, candidate count, hardware, precision and cache state. Establish whether the system processes the full input or uses retrieval, chunking or another shortcut, and evaluate the resulting decisions under that same configuration. The weights, processing strategy and runtime together determine the work being timed. The [inference guide](inference.md) applies these principles to our own measurements.
 
 ### Can an edited policy change the decision?
 
@@ -80,7 +84,7 @@ The small model often ignored the meaningful edit. Its supervised candidate chan
 
 Selection and confidence also told different stories. The 9B exact-RL candidate answered every fixture correctly, yet its confidence Brier was 0.1866, versus 0.0062 for the equally accurate 4B supervised candidate. The former reported expected confidence from its learned grid policy; the latter reported temperature-scaled selected probability. These are the deployed outputs, not a freshly fitted comparison. This result illustrates why correct decisions and useful confidence need separate checks; it does not establish calibration over a population.
 
-The fixtures are deliberately simple and correlated. One seed and six templates cannot establish an RL benefit, a scaling law, or reliable real-world policy compliance. Neither PolicyLM nor Aplomb was run. The learning is methodological: freeze the expected response to a rule edit, include edits that should change nothing, and inspect correctness and confidence separately.
+The fixtures are deliberately simple and correlated. One seed and six templates cannot establish an RL benefit, a scaling law, or reliable real-world policy compliance. This diagnostic evaluated only the six myJEV candidates. The learning is methodological: freeze the expected response to a rule edit, include edits that should change nothing, and inspect correctness and confidence separately.
 
 The [frozen diagnostic report](https://github.com/bahree/myJEV/blob/main/results/policy-edits-v1/report.md) includes all six candidates, reproduction commands, predictions, and limitations.
 

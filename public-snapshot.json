@@ -75,7 +75,7 @@
       "mode": "100644"
     },
     "docs/architecture.md": {
-      "sha256": "1d88b9512aa995c873c59eb1cd6071dfe57e654fdca397759ad57bffce6eac29",
+      "sha256": "238d24dc7cf284221d91f0f7c268d4ead979d758a0c15a20e1420576a2e18213",
       "mode": "100644"
     },
     "docs/attribution.md": {
@@ -111,7 +111,7 @@
       "mode": "100644"
     },
     "docs/hosting.md": {
-      "sha256": "15b86e5281b422985766975009b672ef64de73f6429d66102393190869d30218",
+      "sha256": "0ff623d4aa07e57e985caef36c1e689269d02b7ed2d8552f62908512c1c8aa4d",
       "mode": "100644"
     },
     "docs/inference.md": {
@@ -143,7 +143,7 @@
       "mode": "100644"
     },
     "docs/roadmap.md": {
-      "sha256": "5aebd5f0bce083eec7ab5aca50bb85acd3f68ab9e8fdbc3a0f68483b57b5ec19",
+      "sha256": "003b7df3ddc5eb44393cca5d7b22e11cca36c9f667df365da9c7b70f9329ee87",
       "mode": "100644"
     },
     "docs/scratch-plan.md": {
@@ -4463,7 +4463,7 @@
       "mode": "100644"
     },
     "results/policy-edits-v1/report.md": {
-      "sha256": "65fa2e6aff2dd56abad552a3086e9ca0ecb829a55ba10b7f63ea5d0e273de1ab",
+      "sha256": "a6acf59ad8446eeed25011b332e46f4d313d26c1b2878635a8751303ca0c4831",
       "mode": "100644"
     },
     "results/policy-edits-v1/summary.json": {
@@ -7179,7 +7179,7 @@
       "mode": "100644"
     },
     "scripts/summarize_policy_edits.py": {
-      "sha256": "372b735d953bf6fe688a5e4677bcb639f0b5b9586d9bf9dd39f5054acd5cf007",
+      "sha256": "973389f60484394cafab6e400f5178c7dd09a073aa2cb0f5232d9f7248c95923",
       "mode": "100644"
     },
     "scripts/summarize_precision_study.py": {

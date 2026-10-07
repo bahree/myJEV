@@ -13,7 +13,7 @@ This prospective diagnostic contains 24 original paired fixtures, 48 requests fr
 
 Accuracy counts 48 answers; both-correct counts 24 pairs. Change and invariance rates alone do not establish correctness: a model can change to the wrong answer or remain consistently wrong. Confidence Brier uses the deployed correctness confidence, not the full selection distribution. Continued-SFT release candidates report temperature-scaled selected probability; exact-RL candidates report expected grid confidence. No calibration is fitted on these fixtures.
 
-These are correlated synthetic templates, not 48 independent natural-language tasks. One checkpoint per method/size cannot establish a general model ranking, a scaling law, or the effect of RL. No PolicyLM or Aplomb model was run. Performance here does not establish production policy compliance. All predictions, reported confidence, selection scores, frozen hashes, and raw runtime logs are retained.
+These are correlated synthetic templates, not 48 independent natural-language tasks. One checkpoint per method/size cannot establish a general model ranking, a scaling law, or the effect of RL. Only the six myJEV release candidates were evaluated. Performance here does not establish production policy compliance. All predictions, reported confidence, selection scores, frozen hashes, and raw runtime logs are retained.
 
 ## Reproduce
 

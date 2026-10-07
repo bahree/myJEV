@@ -104,7 +104,7 @@ Regenerate the compact machine-readable summary with `python scripts/summarize_r
 
 ## Publish the prepared packages
 
-The adapter-only `artifacts/hub-ready-v3/` snapshot adds MIT terms for the original adapter/head contributions, the pinned Qwen Apache-2.0 license and attribution, and BANKING77 provenance. Frozen study candidates are preserved separately. `results/release-readiness-v1/publication-manifest-v3.json` records every upload file's checksum. The six Qwen adapter/head releases use public repositories under `bahree`; an image registry is a separate decision.
+The adapter-only `artifacts/hub-ready-v3/` snapshot adds MIT terms for the original adapter/head contributions, the pinned Qwen Apache-2.0 license and attribution, and BANKING77 provenance. Frozen study candidates are preserved separately. `results/release-readiness-v1/publication-manifest-v3.json` records every upload file's checksum. The six Qwen adapter/head releases use public repositories under `bahree`; the chosen image repository is `docker.io/amitbahree/myjev`, with registry publication still pending.
 
 For a new release to your own empty repository, review a package locally (the published `bahree` repositories are already populated):
 
@@ -118,11 +118,11 @@ For a new release to your own empty repository, review a package locally (the pu
 
 This command checks local files only. Add `--apply` to create/upload the selected repository using your configured Hugging Face credentials. The helper refuses altered packages, symlinks, nonempty destinations and visibility mismatches. It downloads the immutable uploaded commit and checks every file hash. Then load that pinned commit using `DecisionModel.load("YOUR_NAMESPACE/myjev-4b", revision="COMMIT")` and compare with the local response. The six `bahree` releases have separate upload receipts; a dry-run report alone is not an upload record.
 
-The latest local image tag is `myjev:0.1.1-hub`. A registry destination is a separate owner choice:
+The latest local image tag is `myjev:0.1.1-hub`. The selected destination is `docker.io/amitbahree/myjev:0.1.1`. The following commands publish that tested image; they do not indicate that the registry tag is available yet:
 
 ```bash
-# Choose and authenticate to your registry first.
-export MYJEV_REGISTRY_IMAGE=YOUR_REGISTRY/YOUR_NAMESPACE/myjev:0.1.1
+# Authenticate to Docker Hub first.
+export MYJEV_REGISTRY_IMAGE=amitbahree/myjev:0.1.1
 # Run these only when ready to publish the tested image.
 docker tag myjev:0.1.1-hub "$MYJEV_REGISTRY_IMAGE"
 docker push "$MYJEV_REGISTRY_IMAGE"
@@ -156,4 +156,4 @@ A separate fresh host virtual environment also installed `requirements.lock` and
 
 The server loaded a pinned public 4B release through the Hub SDK with a read-only populated cache. `/score` and `/generate` exactly matched the host response, and `/health` passed. Cached readiness took about 17.43 seconds in this observation; this is not a cold-download or isolated-host benchmark. See [build provenance](../results/release-container-v2/provenance.json), [HTTP verification](../results/release-container-v2/hub-http.json), and `scripts/verify_hub_container.py`. The latest card-only revisions and receipts are listed in [models](models.md); runtime files are unchanged.
 
-This image exists locally. A registry destination is still required before a pullable image reference can be published; no managed cloud endpoint was launched.
+This image exists locally. Docker Hub repository `amitbahree/myjev` has been selected; upload and verification of the pulled registry digest remain pending. No managed cloud endpoint was launched.
