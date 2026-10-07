@@ -1,0 +1,17 @@
+{
+  "equal": true,
+  "response": {
+    "selected_id": "billing",
+    "selection_scores": {
+      "billing": 0.9329595565795898,
+      "technical": 0.025852398946881294,
+      "other": 0.04118809476494789
+    },
+    "confidence": 0.7592213153839111,
+    "confidence_mode": "scalar",
+    "artifact_revision": "488d774eb9952228f87a607b17b7342e62dbbcaf719f230ffb02f73aeadca660",
+    "calibration_revision": "uncalibrated"
+  },
+  "invalid_request_status": 422,
+  "scope": "actual GPU container HTTP response equals direct Python/CLI/HTTP"
+}

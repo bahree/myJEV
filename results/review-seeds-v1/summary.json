@@ -1,0 +1,659 @@
+{
+  "scope": "Existing paired estimates unchanged; expose seeds 11,22,33. Conditional group intervals hold seeds fixed. Seed SD is descriptive, not a confidence interval for future runs. No multiplicity adjustment.",
+  "source_sha256": {
+    "results/longer-v1/paired-analysis.json": "de12961e612b4ecdfc0c7ef58ce24af3338adfae1b5a7e9f50026e6b9d1dd6d8",
+    "results/extension-analysis-v1/summary.json": "6262a4a57af341e8d4c74b6b9942f334f5428bc7a1791ab5fb9fedfbd1cfa8a0"
+  },
+  "comparisons": [
+    {
+      "size": "0.8b",
+      "reference": "continued_sft/deployed",
+      "candidate": "exact/deployed",
+      "metric": "correct",
+      "mean_delta": -0.015692640692640692,
+      "group_ci95": [
+        -0.021969875353076065,
+        -0.009523732245251234
+      ],
+      "per_seed_deltas": [
+        -0.01753246753246753,
+        -0.02857142857142857,
+        -0.000974025974025974
+      ],
+      "groups": 3079,
+      "n": 3080,
+      "study": "main",
+      "seed_delta_sd": 0.013890388030260038
+    },
+    {
+      "size": "0.8b",
+      "reference": "continued_sft/deployed",
+      "candidate": "sampled/deployed",
+      "metric": "correct",
+      "mean_delta": -0.024025974025974027,
+      "group_ci95": [
+        -0.030392014026423497,
+        -0.017529903381234994
+      ],
+      "per_seed_deltas": [
+        -0.026623376623376622,
+        -0.025324675324675326,
+        -0.02012987012987013
+      ],
+      "groups": 3079,
+      "n": 3080,
+      "study": "main",
+      "seed_delta_sd": 0.003436040663720247
+    },
+    {
+      "size": "0.8b",
+      "reference": "exact/deployed",
+      "candidate": "sampled/deployed",
+      "metric": "correct",
+      "mean_delta": -0.008333333333333333,
+      "group_ci95": [
+        -0.013203570409237834,
+        -0.003572588502760636
+      ],
+      "per_seed_deltas": [
+        -0.00909090909090909,
+        0.003246753246753247,
+        -0.019155844155844155
+      ],
+      "groups": 3079,
+      "n": 3080,
+      "study": "main",
+      "seed_delta_sd": 0.011220496128383354
+    },
+    {
+      "size": "0.8b",
+      "reference": "continued_sft/temperature",
+      "candidate": "exact/deployed",
+      "metric": "brier",
+      "mean_delta": 0.02481006402602523,
+      "group_ci95": [
+        0.020104753222213174,
+        0.02971613264469599
+      ],
+      "per_seed_deltas": [
+        0.020461648537184508,
+        0.03763650600679014,
+        0.016332037534101042
+      ],
+      "groups": 3079,
+      "n": 3080,
+      "study": "main",
+      "seed_delta_sd": 0.011298302181020091
+    },
+    {
+      "size": "0.8b",
+      "reference": "continued_sft/temperature",
+      "candidate": "sampled/deployed",
+      "metric": "brier",
+      "mean_delta": 0.027458077362363432,
+      "group_ci95": [
+        0.02259577009998735,
+        0.03228775967504965
+      ],
+      "per_seed_deltas": [
+        0.028517028558154543,
+        0.035211208803993706,
+        0.018645994724942046
+      ],
+      "groups": 3079,
+      "n": 3080,
+      "study": "main",
+      "seed_delta_sd": 0.008333223421792038
+    },
+    {
+      "size": "4b",
+      "reference": "continued_sft/deployed",
+      "candidate": "exact/deployed",
+      "metric": "correct",
+      "mean_delta": 0.01038961038961039,
+      "group_ci95": [
+        0.005627705627705628,
+        0.014939915556999025
+      ],
+      "per_seed_deltas": [
+        0.006168831168831169,
+        -0.001948051948051948,
+        0.026948051948051947
+      ],
+      "groups": 3079,
+      "n": 3080,
+      "study": "main",
+      "seed_delta_sd": 0.014903269373413637
+    },
+    {
+      "size": "4b",
+      "reference": "continued_sft/deployed",
+      "candidate": "sampled/deployed",
+      "metric": "correct",
+      "mean_delta": -0.010281385281385282,
+      "group_ci95": [
+        -0.015800994096301015,
+        -0.005088232109992421
+      ],
+      "per_seed_deltas": [
+        -0.00551948051948052,
+        -0.005844155844155844,
+        -0.01948051948051948
+      ],
+      "groups": 3079,
+      "n": 3080,
+      "study": "main",
+      "seed_delta_sd": 0.007968337720432886
+    },
+    {
+      "size": "4b",
+      "reference": "exact/deployed",
+      "candidate": "sampled/deployed",
+      "metric": "correct",
+      "mean_delta": -0.02067099567099567,
+      "group_ci95": [
+        -0.025010418424666024,
+        -0.016545259304831025
+      ],
+      "per_seed_deltas": [
+        -0.011688311688311689,
+        -0.003896103896103896,
+        -0.04642857142857143
+      ],
+      "groups": 3079,
+      "n": 3080,
+      "study": "main",
+      "seed_delta_sd": 0.022644406754200402
+    },
+    {
+      "size": "4b",
+      "reference": "continued_sft/temperature",
+      "candidate": "exact/deployed",
+      "metric": "brier",
+      "mean_delta": 0.007798932085382143,
+      "group_ci95": [
+        0.004650771680274155,
+        0.010879503830000008
+      ],
+      "per_seed_deltas": [
+        0.009276946926123528,
+        0.015417306559611967,
+        -0.0012974572295890651
+      ],
+      "groups": 3079,
+      "n": 3080,
+      "study": "main",
+      "seed_delta_sd": 0.00845483459532387
+    },
+    {
+      "size": "4b",
+      "reference": "continued_sft/temperature",
+      "candidate": "sampled/deployed",
+      "metric": "brier",
+      "mean_delta": 0.02667133064547491,
+      "group_ci95": [
+        0.023092461235674776,
+        0.030216335137183806
+      ],
+      "per_seed_deltas": [
+        0.019705572859345905,
+        0.016400308011383737,
+        0.043908111065695095
+      ],
+      "groups": 3079,
+      "n": 3080,
+      "study": "main",
+      "seed_delta_sd": 0.015018693131226765
+    },
+    {
+      "size": "9b",
+      "reference": "continued_sft/deployed",
+      "candidate": "exact/deployed",
+      "metric": "correct",
+      "mean_delta": 0.001948051948051948,
+      "group_ci95": [
+        -0.0035752651321829627,
+        0.007142915139423746
+      ],
+      "per_seed_deltas": [
+        -0.002922077922077922,
+        0.0022727272727272726,
+        0.006493506493506494
+      ],
+      "groups": 3079,
+      "n": 3080,
+      "study": "main",
+      "seed_delta_sd": 0.004716181508549984
+    },
+    {
+      "size": "9b",
+      "reference": "continued_sft/deployed",
+      "candidate": "sampled/deployed",
+      "metric": "correct",
+      "mean_delta": -0.006060606060606061,
+      "group_ci95": [
+        -0.011692107827216629,
+        -0.0006495510045487233
+      ],
+      "per_seed_deltas": [
+        -0.005844155844155844,
+        -0.0035714285714285713,
+        -0.008766233766233766
+      ],
+      "groups": 3079,
+      "n": 3080,
+      "study": "main",
+      "seed_delta_sd": 0.0026041578821463123
+    },
+    {
+      "size": "9b",
+      "reference": "exact/deployed",
+      "candidate": "sampled/deployed",
+      "metric": "correct",
+      "mean_delta": -0.008008658008658008,
+      "group_ci95": [
+        -0.011908628342535454,
+        -0.004005597020171558
+      ],
+      "per_seed_deltas": [
+        -0.002922077922077922,
+        -0.005844155844155844,
+        -0.01525974025974026
+      ],
+      "groups": 3079,
+      "n": 3080,
+      "study": "main",
+      "seed_delta_sd": 0.006447346756972502
+    },
+    {
+      "size": "9b",
+      "reference": "continued_sft/temperature",
+      "candidate": "exact/deployed",
+      "metric": "brier",
+      "mean_delta": 0.020001583298337094,
+      "group_ci95": [
+        0.015160534526668368,
+        0.024825131983296205
+      ],
+      "per_seed_deltas": [
+        0.012531280720602918,
+        0.03743607168573685,
+        0.010037397488671516
+      ],
+      "groups": 3079,
+      "n": 3080,
+      "study": "main",
+      "seed_delta_sd": 0.015150112289729402
+    },
+    {
+      "size": "9b",
+      "reference": "continued_sft/temperature",
+      "candidate": "sampled/deployed",
+      "metric": "brier",
+      "mean_delta": 0.028986009968764652,
+      "group_ci95": [
+        0.024632364649253377,
+        0.03380253772577019
+      ],
+      "per_seed_deltas": [
+        0.010169971279891976,
+        0.04819643096417058,
+        0.02859162766223137
+      ],
+      "groups": 3079,
+      "n": 3080,
+      "study": "main",
+      "seed_delta_sd": 0.019016297275831498
+    },
+    {
+      "study": "precision",
+      "size": "4b",
+      "cohort": "test",
+      "metric": "correct",
+      "reference": "bf16",
+      "candidate": "nf4",
+      "n": 3080,
+      "groups": 3079,
+      "mean_delta": 0.008116883116883116,
+      "per_seed_deltas": [
+        -0.012012987012987014,
+        0.007792207792207792,
+        0.02857142857142857
+      ],
+      "ci95": [
+        0.0028102567263959665,
+        0.013528138528138528
+      ],
+      "group_ci95": [
+        0.0028102567263959665,
+        0.013528138528138528
+      ],
+      "seed_delta_sd": 0.020294155750658325
+    },
+    {
+      "study": "precision",
+      "size": "4b",
+      "cohort": "test",
+      "metric": "brier",
+      "reference": "bf16",
+      "candidate": "nf4",
+      "n": 3080,
+      "groups": 3079,
+      "mean_delta": 0.00015739167058338382,
+      "per_seed_deltas": [
+        0.01622771783566926,
+        -0.005080836873153606,
+        -0.010674705950765497
+      ],
+      "ci95": [
+        -0.004892876246418531,
+        0.005294465460840951
+      ],
+      "group_ci95": [
+        -0.004892876246418531,
+        0.005294465460840951
+      ],
+      "seed_delta_sd": 0.0141955760750858
+    },
+    {
+      "study": "transfer",
+      "size": "0.8b",
+      "cohort": "distant",
+      "metric": "correct",
+      "reference": "continued_sft",
+      "candidate": "exact",
+      "n": 256,
+      "groups": 256,
+      "mean_delta": -0.01171875,
+      "per_seed_deltas": [
+        -0.0234375,
+        -0.01171875,
+        0.0
+      ],
+      "ci95": [
+        -0.037760416666666664,
+        0.014322916666666666
+      ],
+      "group_ci95": [
+        -0.037760416666666664,
+        0.014322916666666666
+      ],
+      "seed_delta_sd": 0.01171875
+    },
+    {
+      "study": "transfer",
+      "size": "0.8b",
+      "cohort": "near",
+      "metric": "correct",
+      "reference": "continued_sft",
+      "candidate": "exact",
+      "n": 256,
+      "groups": 256,
+      "mean_delta": 0.0013020833333333333,
+      "per_seed_deltas": [
+        -0.015625,
+        0.015625,
+        0.00390625
+      ],
+      "ci95": [
+        -0.018229166666666668,
+        0.0234375
+      ],
+      "group_ci95": [
+        -0.018229166666666668,
+        0.0234375
+      ],
+      "seed_delta_sd": 0.01578692142315383
+    },
+    {
+      "study": "transfer",
+      "size": "0.8b",
+      "cohort": "oos-none",
+      "metric": "correct",
+      "reference": "continued_sft",
+      "candidate": "exact",
+      "n": 256,
+      "groups": 256,
+      "mean_delta": 0.03125,
+      "per_seed_deltas": [
+        0.0,
+        0.09375,
+        0.0
+      ],
+      "ci95": [
+        0.018229166666666664,
+        0.044303385416666494
+      ],
+      "group_ci95": [
+        0.018229166666666664,
+        0.044303385416666494
+      ],
+      "seed_delta_sd": 0.05412658773652741
+    },
+    {
+      "study": "transfer",
+      "size": "0.8b",
+      "cohort": "unsupported-near-none",
+      "metric": "correct",
+      "reference": "continued_sft",
+      "candidate": "exact",
+      "n": 150,
+      "groups": 150,
+      "mean_delta": 0.04,
+      "per_seed_deltas": [
+        0.0,
+        0.10666666666666667,
+        0.013333333333333334
+      ],
+      "ci95": [
+        0.02222222222222222,
+        0.062222222222222213
+      ],
+      "group_ci95": [
+        0.02222222222222222,
+        0.062222222222222213
+      ],
+      "seed_delta_sd": 0.058118652580542315
+    },
+    {
+      "study": "transfer",
+      "size": "4b",
+      "cohort": "distant",
+      "metric": "correct",
+      "reference": "continued_sft",
+      "candidate": "exact",
+      "n": 256,
+      "groups": 256,
+      "mean_delta": -0.013020833333333334,
+      "per_seed_deltas": [
+        0.00390625,
+        -0.015625,
+        -0.02734375
+      ],
+      "ci95": [
+        -0.037760416666666664,
+        0.011718749999999998
+      ],
+      "group_ci95": [
+        -0.037760416666666664,
+        0.011718749999999998
+      ],
+      "seed_delta_sd": 0.01578692142315383
+    },
+    {
+      "study": "transfer",
+      "size": "4b",
+      "cohort": "near",
+      "metric": "correct",
+      "reference": "continued_sft",
+      "candidate": "exact",
+      "n": 256,
+      "groups": 256,
+      "mean_delta": -0.0078125,
+      "per_seed_deltas": [
+        -0.03515625,
+        0.0234375,
+        -0.01171875
+      ],
+      "ci95": [
+        -0.024739583333333332,
+        0.0078125
+      ],
+      "group_ci95": [
+        -0.024739583333333332,
+        0.0078125
+      ],
+      "seed_delta_sd": 0.029491540762776366
+    },
+    {
+      "study": "transfer",
+      "size": "4b",
+      "cohort": "oos-none",
+      "metric": "correct",
+      "reference": "continued_sft",
+      "candidate": "exact",
+      "n": 256,
+      "groups": 256,
+      "mean_delta": -0.16927083333333334,
+      "per_seed_deltas": [
+        -0.078125,
+        -0.51171875,
+        0.08203125
+      ],
+      "ci95": [
+        -0.1953125,
+        -0.14192708333333331
+      ],
+      "group_ci95": [
+        -0.1953125,
+        -0.14192708333333331
+      ],
+      "seed_delta_sd": 0.3071895796174096
+    },
+    {
+      "study": "transfer",
+      "size": "4b",
+      "cohort": "unsupported-near-none",
+      "metric": "correct",
+      "reference": "continued_sft",
+      "candidate": "exact",
+      "n": 150,
+      "groups": 150,
+      "mean_delta": -0.051111111111111114,
+      "per_seed_deltas": [
+        -0.04,
+        -0.17333333333333334,
+        0.06
+      ],
+      "ci95": [
+        -0.08888888888888888,
+        -0.015555555555555553
+      ],
+      "group_ci95": [
+        -0.08888888888888888,
+        -0.015555555555555553
+      ],
+      "seed_delta_sd": 0.11706281947614154
+    },
+    {
+      "study": "transfer",
+      "size": "9b",
+      "cohort": "distant",
+      "metric": "correct",
+      "reference": "continued_sft",
+      "candidate": "exact",
+      "n": 256,
+      "groups": 256,
+      "mean_delta": -0.015625,
+      "per_seed_deltas": [
+        -0.0078125,
+        0.0078125,
+        -0.046875
+      ],
+      "ci95": [
+        -0.0390625,
+        0.00390625
+      ],
+      "group_ci95": [
+        -0.0390625,
+        0.00390625
+      ],
+      "seed_delta_sd": 0.028168369339562415
+    },
+    {
+      "study": "transfer",
+      "size": "9b",
+      "cohort": "near",
+      "metric": "correct",
+      "reference": "continued_sft",
+      "candidate": "exact",
+      "n": 256,
+      "groups": 256,
+      "mean_delta": -0.015625,
+      "per_seed_deltas": [
+        -0.015625,
+        -0.03125,
+        0.0
+      ],
+      "ci95": [
+        -0.031249999999999997,
+        -8.565197162636077e-19
+      ],
+      "group_ci95": [
+        -0.031249999999999997,
+        -8.565197162636077e-19
+      ],
+      "seed_delta_sd": 0.015625
+    },
+    {
+      "study": "transfer",
+      "size": "9b",
+      "cohort": "oos-none",
+      "metric": "correct",
+      "reference": "continued_sft",
+      "candidate": "exact",
+      "n": 256,
+      "groups": 256,
+      "mean_delta": -0.020833333333333332,
+      "per_seed_deltas": [
+        0.09765625,
+        -0.22265625,
+        0.0625
+      ],
+      "ci95": [
+        -0.04296875,
+        0.002604166666666668
+      ],
+      "group_ci95": [
+        -0.04296875,
+        0.002604166666666668
+      ],
+      "seed_delta_sd": 0.175665471130202
+    },
+    {
+      "study": "transfer",
+      "size": "9b",
+      "cohort": "unsupported-near-none",
+      "metric": "correct",
+      "reference": "continued_sft",
+      "candidate": "exact",
+      "n": 150,
+      "groups": 150,
+      "mean_delta": 0.013333333333333334,
+      "per_seed_deltas": [
+        0.04,
+        -0.26,
+        0.26
+      ],
+      "ci95": [
+        -0.015555555555555553,
+        0.042222222222222223
+      ],
+      "group_ci95": [
+        -0.015555555555555553,
+        0.042222222222222223
+      ],
+      "seed_delta_sd": 0.26102362600602524
+    }
+  ]
+}

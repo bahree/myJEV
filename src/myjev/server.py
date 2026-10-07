@@ -3,8 +3,42 @@ import os
 from concurrent.futures import ThreadPoolExecutor
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException
+from starlette.responses import JSONResponse
 from .inference import DecisionModel
-from .schema import ScoreRequest
+from .schema import ScoreRequest, MAX_HTTP_BODY_BYTES
+
+
+class BodyTooLarge(HTTPException):
+    def __init__(self):
+        # FastAPI preserves HTTPException while parsing bodies; other exceptions
+        # become a generic 400 before the application handler can see them.
+        super().__init__(status_code=413, detail=f'request body exceeds {MAX_HTTP_BODY_BYTES} bytes')
+
+
+class BodyLimitMiddleware:
+    """Limit actual received bytes, including chunked bodies without Content-Length."""
+    def __init__(self, app, limit=MAX_HTTP_BODY_BYTES):
+        self.app, self.limit = app, limit
+
+    async def __call__(self, scope, receive, send):
+        if scope['type'] != 'http':
+            return await self.app(scope, receive, send)
+        count = 0
+
+        async def limited_receive():
+            nonlocal count
+            message = await receive()
+            if message['type'] == 'http.request':
+                count += len(message.get('body', b''))
+                if count > self.limit:
+                    raise BodyTooLarge()
+            return message
+
+        try:
+            await self.app(scope, limited_receive, send)
+        except BodyTooLarge:
+            response = JSONResponse({'detail': f'request body exceeds {self.limit} bytes'}, status_code=413)
+            await response(scope, receive, send)
 
 WARMUP = {"context": "warmup", "instructions": "Choose a route.", "candidates": [
     {"id": "a", "description": "First route"}, {"id": "b", "description": "Second route"}]}
@@ -32,6 +66,13 @@ def create_app(loader=None, queue_size=8, timeout=30.0):
             app.state.executor.shutdown(wait=True, cancel_futures=True)
 
     app = FastAPI(lifespan=lifespan)
+    # FastAPI turns body-parser errors into 400. Registering this handler keeps
+    # the size-limit exception intact when it is raised while parsing JSON.
+    @app.exception_handler(BodyTooLarge)
+    async def body_too_large(request, exc):
+        return JSONResponse({'detail': f'request body exceeds {MAX_HTTP_BODY_BYTES} bytes'}, status_code=413)
+
+    app.add_middleware(BodyLimitMiddleware)
 
     @app.get("/healthz")
     async def health():

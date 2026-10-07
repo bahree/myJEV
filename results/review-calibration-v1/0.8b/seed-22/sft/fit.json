@@ -1,0 +1,7 @@
+{
+  "selection_temperature": 1.9402107805489477,
+  "learned_temperature": 5.0151672359331805,
+  "learned_source": "scalar",
+  "identity_calibration_nll": 1.344807484655419,
+  "fitted_calibration_nll": 0.49752710265032823
+}

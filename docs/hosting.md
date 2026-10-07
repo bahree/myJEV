@@ -8,6 +8,10 @@ Follow the root README's locked installation. Select one model at process startu
 
 Duplicate IDs, fewer than two candidates, more than the artifact's candidate limit, unexpected fields and overlong inputs are rejected. Token counting includes the entire rendered prompt. No silent truncation occurs. Pilot manifests enforce at most 160 candidates and 4,096 input tokens. The 0.8B, 4B and 9B artifacts passed synthetic 4,096-token requests with both 2 and 160 candidates and rejected 4,097 tokens (see `results/limits-*.json`). These synthetic boundary checks do not establish accuracy across document lengths. Limits are acceptance caps, not calibration guarantees.
 
+The source runtime also caps the combined UTF-8 bytes of context, instructions, candidate IDs and descriptions at **262,144 bytes (256 KiB)**. HTTP rejects a body larger than **1,048,576 bytes (1 MiB)**, including a chunked body, with 413 before parsing; schema-level aggregate excess returns 422 before queue admission. Neither limit replaces the exact 4,096-token check. Byte limits bound input size, not model token count or universal processing latency. These new limits are in the reviewed source; the earlier 0.1.1 image predates them.
+
+On the A30 host, two fixed requests exactly at the aggregate byte cap took 0.121-0.292 seconds each to tokenize and reject in five repetitions, with no model forward. They used 32 candidates and ASCII or mixed Unicode text. The [measurement](../results/review-limits-v1/measurement.json) is a CPU preprocessing observation during independent GPU work, not a worst-case bound over adversarial input. Set the reverse proxy body cap to at most 1 MiB and account for preprocessing separately from the model-worker timeout. Apply request-rate limits as well as the bounded model queue.
+
 `MYJEV_QUEUE_SIZE=8` bounds total running plus waiting jobs. A full queue returns 429 with Retry-After. `MYJEV_TIMEOUT=30` returns 504 on deadline. Timed-out GPU jobs retain capacity until they actually finish, because Python cancellation cannot stop an executing CUDA kernel. The model is serialized on one worker thread. Graceful shutdown stops readiness and drains existing work. Request-body logging is off; Uvicorn access logging is disabled in the supplied commands.
 
 ## Docker
@@ -69,14 +73,14 @@ Related work: Avi Chawla, [Build your own Jev (100% local)](https://blog.dailydo
 **Recipe only; no paid endpoint was created.** [Official custom-container documentation](https://huggingface.co/docs/inference-endpoints/en/engines/custom_container) permits custom inference logic and mounts the selected model repository at `/repository`. [Configuration guidance](https://huggingface.co/docs/inference-endpoints/guides/configuration) describes the container port and health-route settings. Hosting adapter weights on the Hub is not an active endpoint.
 
 1. Prepare an artifact-only Hub repository with adapter files, `heads.safetensors`, `manifest.json`, model card and provenance. The six public `bahree/myJEV-*` releases provide this layout. Pin the selected commit. Verify a clean download produces identical outputs. No optimizer state or training text belongs in this release.
-2. Use the tested public image `amitbahree/myjev@sha256:1c69cbac450ad7e938e2b4379cb65099942bce9b7ebe2f9aa6229733ef5f16ab`, or publish and verify your own build. Configure a custom container with that image, port 8000, health route `/readyz`, and environment `MYJEV_ARTIFACT=/repository`, `MYJEV_DEVICE=cuda:0`, `MYJEV_QUEUE_SIZE=8`, `MYJEV_TIMEOUT=30`. POST to `/score`; `/generate` supports platforms expecting that route.
+2. Use the tested public image `amitbahree/myjev@sha256:1c69cbac450ad7e938e2b4379cb65099942bce9b7ebe2f9aa6229733ef5f16ab`, or publish and verify your own build. Configure a custom container with that image, port 8000, health route `/health` (readiness alias), and environment `MYJEV_ARTIFACT=/repository`, `MYJEV_DEVICE=cuda:0`, `MYJEV_QUEUE_SIZE=8`, `MYJEV_TIMEOUT=30`. Use `/generate` for the managed request handler; locally, `/score` exposes the same scoring contract.
 3. The manifest currently refers to the separately pinned backbone on the Hub. The container must be allowed to download that backbone into its cache during cold start, with access credentials if the backbone requires them. An adapter-only repository is not fully self-contained. For offline deployment, prewarm the same revision in the image/cache and test with `HF_HUB_OFFLINE=1`; do not assume the endpoint automatically bundles referenced backbones.
 4. Choose GPU RAM from **measured serving peaks** plus headroom at the tested maximum prompt length. Training peaks are not an endpoint sizing benchmark. Test QLoRA/NF4 compatibility on the endpoint GPU family. Do not infer 9B requirements from 0.8B. Start with one replica, one worker and authenticated access; avoid autoscaling until cold-start, timeout and concurrency behavior is measured.
 5. Smoke test with an authenticated request (supply URL and token in your own environment):
 
 ```bash
-curl -fsS "$ENDPOINT_URL/readyz" -H "Authorization: Bearer $HF_TOKEN"
-curl -fsS "$ENDPOINT_URL/score" -H "Authorization: Bearer $HF_TOKEN" \
+curl -fsS "$ENDPOINT_URL/health" -H "Authorization: Bearer $HF_TOKEN"
+curl -fsS "$ENDPOINT_URL/generate" -H "Authorization: Bearer $HF_TOKEN" \
   -H 'Content-Type: application/json' --data-binary @examples/request.json
 ```
 

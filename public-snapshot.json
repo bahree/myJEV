@@ -23,7 +23,7 @@
       "mode": "100644"
     },
     "README.md": {
-      "sha256": "2b836cc8b40ec383bf5c31c3bf59772af10c572f66d0e0e86f7e6d658df88a33",
+      "sha256": "58440a47b288f810d8dd2691adaab9d26c30388dab92e34fe13e05645da85068",
       "mode": "100644"
     },
     "configs/0.8b.json": {
@@ -44,6 +44,14 @@
     },
     "configs/confidence-policy-followup-proposed.json": {
       "sha256": "0a269b111a7786d5becebb1a0eccadbc7db1345db0fba4fa0bfdea76e5499872",
+      "mode": "100644"
+    },
+    "configs/review-calibration-v1.json": {
+      "sha256": "b2092ab817ed62461d9e1524e1d341f9d4746a07d7ee4ebf5b44ac404515b9b5",
+      "mode": "100644"
+    },
+    "configs/review-order-v1.json": {
+      "sha256": "51cdc281312f55f6524911d532de7bee07f9aa974fc9b490852e323cfb03704e",
       "mode": "100644"
     },
     "configs/scratch-banking-diagnostic.json": {
@@ -79,7 +87,7 @@
       "mode": "100644"
     },
     "docs/architecture.md": {
-      "sha256": "238d24dc7cf284221d91f0f7c268d4ead979d758a0c15a20e1420576a2e18213",
+      "sha256": "27589f1ae0adf31ac65bbb6620c62fc7278c65b88ac8220a0126f6853489be80",
       "mode": "100644"
     },
     "docs/attribution.md": {
@@ -87,7 +95,7 @@
       "mode": "100644"
     },
     "docs/datasets/banking77.md": {
-      "sha256": "0fc9cc232a80a114b23f3e9003c074f8fea074565b99348a59319a5bdf85a5d1",
+      "sha256": "4f636595e5145fb3983c58fb810a225a7fc1d123ba27121858e796e97c8a18e0",
       "mode": "100644"
     },
     "docs/datasets/blog-archive.md": {
@@ -111,11 +119,11 @@
       "mode": "100644"
     },
     "docs/experiments.md": {
-      "sha256": "0ca4543124d03f05812e53cbef2c03742a9f985292318807ca2090f000f67ebb",
+      "sha256": "416642f8335be9074a90573a0f6c70cb4d05402c20d9168ab13735bcd0cf97a0",
       "mode": "100644"
     },
     "docs/hosting.md": {
-      "sha256": "44299257ad099f5f1810e5351eb4ce4962a7be5d73ad8117ca549b7e926c8289",
+      "sha256": "a2734218f37671e40f2fdb440a0c93ce9bca165c682b60f4efe2f646e325901c",
       "mode": "100644"
     },
     "docs/inference.md": {
@@ -123,11 +131,11 @@
       "mode": "100644"
     },
     "docs/learnings.md": {
-      "sha256": "23c97f1772120e6c3ae880653184164e8d71fd6007cb6f6283769ca31c133fce",
+      "sha256": "c0b9970acbf75e933746ed391d33cc72741ea6068981f6976f03a60945c8f0ba",
       "mode": "100644"
     },
     "docs/models.md": {
-      "sha256": "471b2c5781b548b14e14609c89b64158132414eb8693e245720e83ea6c1571ab",
+      "sha256": "3e86c2338ca8e40835ace09d975e4621a98832365e1bc9bc37ed2f1bf0791753",
       "mode": "100644"
     },
     "docs/openjev.md": {
@@ -135,7 +143,7 @@
       "mode": "100644"
     },
     "docs/protocol.md": {
-      "sha256": "934a9a2f8636c0e51805f9dbec7d8b26f5c00231c19cafedd380e7c27a8a6df8",
+      "sha256": "37fe928050756acef500943e0181b9dd666c9821f7d08389a4f0fb3bcf91d92d",
       "mode": "100644"
     },
     "docs/quickstart.md": {
@@ -143,7 +151,7 @@
       "mode": "100644"
     },
     "docs/qwen-findings.md": {
-      "sha256": "34f0fad4bbb756880ddd2ce5c61e1bdc6873c2060572bf71d36d5a6f503995f1",
+      "sha256": "602d9bbc5e6d0723827501488e621e78e2f92f4b641368679cfcfd315959ab8b",
       "mode": "100644"
     },
     "docs/roadmap.md": {
@@ -163,7 +171,7 @@
       "mode": "100644"
     },
     "docs/system-one-research.md": {
-      "sha256": "09be0c1fde169b18bbf76e171b396d564a2dd9fdc0633cb76152b2e9bb88531c",
+      "sha256": "7ae83e4fbbd80f3604f5817ca48fe2c2453dc81c69f705fc8edfc85752589ef1",
       "mode": "100644"
     },
     "docs/tracking.md": {
@@ -171,7 +179,7 @@
       "mode": "100644"
     },
     "docs/training.md": {
-      "sha256": "31f9c5966c2cb684e010656903f33f140b3a01bd91874c4a85675458d1aed31b",
+      "sha256": "9d29c670d1351ec39539cb2ccc3c6c6082604f0c0311c57cd6c56980d841b0d6",
       "mode": "100644"
     },
     "docs/walkthrough.md": {
@@ -203,7 +211,7 @@
       "mode": "100644"
     },
     "model_cards/README.md": {
-      "sha256": "3ae7f4166051a7653e1013b4529c4c4f1eb55d8c645bd5929169e9f4c72c6524",
+      "sha256": "b44a2a6aba0e43a7e51072ae783cbcdfb815935e79ecb9a8cedf448fa54fa6c6",
       "mode": "100644"
     },
     "model_cards/facts.json": {
@@ -211,27 +219,27 @@
       "mode": "100644"
     },
     "model_cards/myJEV-0.8B-RL.md": {
-      "sha256": "1a5cd022c4febd15761d9e68b698390fd46dfcbc8a341a334093eba3beca8e45",
+      "sha256": "4fc5d0c5c6bbae07c1710572b868caa9b8a916fd5b0a33d7ed87501552d84240",
       "mode": "100644"
     },
     "model_cards/myJEV-0.8B.md": {
-      "sha256": "60d383c763a47c881396098d16bedb8629dc0a48c279a7605764faa0d2d09442",
+      "sha256": "628265431e4c3e21e999c6ae92555d609d60c6336d85235587036a12e3887c04",
       "mode": "100644"
     },
     "model_cards/myJEV-4B-RL.md": {
-      "sha256": "9f69d16e060398098b7b070debe8aed0b016fe0d0efb91425a1dc10b98ab1aaa",
+      "sha256": "2bfaca9899cf869e36f960b9c29308b469a36af126c97e76220a4e65c06d81f1",
       "mode": "100644"
     },
     "model_cards/myJEV-4B.md": {
-      "sha256": "958ea71879e2b4e15ed85c9a8a058a10c64616db9ee31ce6cfe5a832b754c4b7",
+      "sha256": "f7863126f881d0110f2b5632bd2d9e9766a5c7bc8cc55edbfb992cba01479fd5",
       "mode": "100644"
     },
     "model_cards/myJEV-9B-RL.md": {
-      "sha256": "983551dad1fbe909e60ae0d54e746ee8a1a4a1ede6c9f8342c12484386b37b81",
+      "sha256": "56bc97375c6e74011f50fceb2efd21e859932ddb5ffe2d6baa0acb8f1393d23b",
       "mode": "100644"
     },
     "model_cards/myJEV-9B.md": {
-      "sha256": "b611b510a9f9489ebdada93ed629420d7c5c1d0d54345c17ea4c815c68b6b10f",
+      "sha256": "d4bf8e5c12050b5eb01a2cf679d0de45b47a257ebf1a555838cfce89f0c639f2",
       "mode": "100644"
     },
     "pyproject.toml": {
@@ -844,6 +852,10 @@
     },
     "results/demos-v1/verification.log": {
       "sha256": "ce1d60a9a214ae1452d765a5f9f3e3a1a0fb14a472cc9461071102764f80f7eb",
+      "mode": "100644"
+    },
+    "results/docker-equivalence.json": {
+      "sha256": "8a6187780dcc82bc42646b3a79b93a6c28492de00dde6e4f29a0b1a8440108b4",
       "mode": "100644"
     },
     "results/docker-size-validation/0.8b/equivalence.json": {
@@ -2246,6 +2258,10 @@
       "sha256": "4fe4f623803f61c017c34d81c83a133b710577aa8e7191863014ae37580619f9",
       "mode": "100644"
     },
+    "results/gliclass/metrics.json": {
+      "sha256": "424e57fba29bc867ba50d55f0dd682853a5c3b6c4616299f88d85a3f507c4570",
+      "mode": "100644"
+    },
     "results/gpu-telemetry-20261004T205942Z/gpu-activity.png": {
       "sha256": "4e06020a622a61746b6ccd572e112d483fe4ab735e68db003b431940ea074927",
       "mode": "100644"
@@ -3622,6 +3638,10 @@
       "sha256": "3aef0b700b016643b95b55b9d3cd796860dac9e8df4afe89d7662f419c634ecb",
       "mode": "100644"
     },
+    "results/longer-v1/gpu-telemetry-20261004T224916Z/gpu.csv": {
+      "sha256": "e952644263969ddc106490e8ae8ad15ae117eee33f78d7ebb1242a493ff96ad2",
+      "mode": "100644"
+    },
     "results/longer-v1/operational/coverage80.png": {
       "sha256": "2c571e4c8953d228a13fc3b3dda2cdbaf8cf1806057b46155c776c01b33b3da7",
       "mode": "100644"
@@ -4992,6 +5012,942 @@
     },
     "results/reload-9b-with-fixture.json": {
       "sha256": "1ea4d345bd57cc5de61b6a76055476e37fb254ab6923e668d2f9e9953f85455e",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-11/continued_sft/fit.json": {
+      "sha256": "c81c217523c1af8f541e5d07a2b1f8178cc7fe3ac6d5297d0d07e612c7f6354f",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-11/continued_sft/inputs.json.gz": {
+      "sha256": "9367137701cf145c180e6db3767eec10d090703bff32d7a70922d12159c116fd",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-11/continued_sft/learned_temperature-metrics.json": {
+      "sha256": "83f178e80473933b90b040914e27d2a0a5a31bd9e7edbc7462457f859f86f109",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-11/continued_sft/native-metrics.json": {
+      "sha256": "d7d25d7db01bbb0a6d1c8cbdd7b8c4ba69154a244904b1921e7356cf12835809",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-11/continued_sft/selection_raw-metrics.json": {
+      "sha256": "040d4f57bbf4950c09b2a857164d38cd343190fe3d7544a514168ae045cc00ab",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-11/continued_sft/selection_temperature-metrics.json": {
+      "sha256": "844ce3c30f0a681d676ea3375991b9d4fe96075dfe12235655bdc594b8631f5b",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-11/exact/fit.json": {
+      "sha256": "d371c24f8ad68744172ba7f70b869dbaed7f95b037768bc72cc22879baadd712",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-11/exact/inputs.json.gz": {
+      "sha256": "ae63cddfb60c67825f8a1fd145b29a3cd0562f74864d7ced43db025a5347cf62",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-11/exact/learned_temperature-metrics.json": {
+      "sha256": "2e7d1d174c45a3ead92331e5c8e73e6a6e4c19a6980123b522608414dee244f0",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-11/exact/native-metrics.json": {
+      "sha256": "097b1b08dcef3c3ddf9d56bda6c6bdb1a660501154d7f859b285b3ce4f845c39",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-11/exact/selection_raw-metrics.json": {
+      "sha256": "61c431591209699917dba1905db8b4336ba2568483097b2182adb2746abc11a1",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-11/exact/selection_temperature-metrics.json": {
+      "sha256": "e82945ed17ee80cbd6769de9ed16495f8dfa0bb2ebfe1e203b64e24a239158a9",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-11/sampled/fit.json": {
+      "sha256": "a7541a2045ef5174bfc49b25aaddcdc6ad7b3406dfb9d308f57b7baf74369e5e",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-11/sampled/inputs.json.gz": {
+      "sha256": "2679e3d01ba5e54f663e026f9af2b358cf037df217973a7dbae2a7e12dad98a4",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-11/sampled/learned_temperature-metrics.json": {
+      "sha256": "6f9a333ec327d8df7b98cd86b0b8f7e60c471239deacff7c2829eb5d466cf8c0",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-11/sampled/native-metrics.json": {
+      "sha256": "2f15ffcb5151bc638c47fb497518d240a77e6527c486592b980512f444dacd38",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-11/sampled/selection_raw-metrics.json": {
+      "sha256": "6de0b06f4025d7c9f55a1eb40f5cb5ce161a2255813b8fec93408fa7dc7a36d7",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-11/sampled/selection_temperature-metrics.json": {
+      "sha256": "6fa714c44375f60c67b66028054163fcd968239ad0512b0010f38dff718d55ab",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-11/sft/fit.json": {
+      "sha256": "627cded3673fae92a94357ba560efdfca8c9fa1cedaa4586ca8362b8599ee26b",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-11/sft/inputs.json.gz": {
+      "sha256": "9136d106fd0e1a902b4f986aa017f786c65beb52bbe17f50e02b81628441b337",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-11/sft/learned_temperature-metrics.json": {
+      "sha256": "3e848deb415561af3fd232fbef2717659208c69ca85f967b3044d6c06c6ff416",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-11/sft/native-metrics.json": {
+      "sha256": "82c7b6f07a95123c943a1555c3a36987b43b64a0e98c00505583a9fd10f11486",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-11/sft/selection_raw-metrics.json": {
+      "sha256": "730f1af8da429c15dd23ef8c937d6e969bdb38c9e3959f8b0c72593cedf16179",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-11/sft/selection_temperature-metrics.json": {
+      "sha256": "d6895874f2cf7cc26b174601f27881c02d332183853964ad97583c1932c05aec",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-22/continued_sft/fit.json": {
+      "sha256": "abaa76fa6e30b06609d860423ceca58143814b836260f598ef6e5c0373c0ea1b",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-22/continued_sft/inputs.json.gz": {
+      "sha256": "042cb0b31d856bae95d0dac51020d93fa3bd7854799298fc12f19bf87911ff9a",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-22/continued_sft/learned_temperature-metrics.json": {
+      "sha256": "ed8f826b23969ec1f03a8e53b8d507c5a3d24dbf86c43cf66ba1d3f439f7159c",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-22/continued_sft/native-metrics.json": {
+      "sha256": "de11ec908fda3a95d0e2563c7828034cb8d61c15c0f084c5f6e11458b91fbf3c",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-22/continued_sft/selection_raw-metrics.json": {
+      "sha256": "03c5f46deea536729860f55dfe9e539ff7d56722650a4e78558d18c72cdb6198",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-22/continued_sft/selection_temperature-metrics.json": {
+      "sha256": "d5568b281279fe040251b09ae6bdc1f1f3a505c24715e2aa2d1e636caf184393",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-22/exact/fit.json": {
+      "sha256": "cd76c9d90f17558727a8dabef70dc2c1263d299f703c6fa72a270c6f35473e47",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-22/exact/inputs.json.gz": {
+      "sha256": "0a026f29d63fa2c8e63685492632add132c6843f159535d3d0cbbf6f43d66e0b",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-22/exact/learned_temperature-metrics.json": {
+      "sha256": "2c4fcf12d60e63a5a8756a891c06307141641aeeb85457e8aefb9d435dcc94c9",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-22/exact/native-metrics.json": {
+      "sha256": "24bfad04af9a950aff1cabe356d399b7e7cb3d72fe00653b3ea5d344062f806a",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-22/exact/selection_raw-metrics.json": {
+      "sha256": "ca25c6b1bfec33cc229ee7c96a5dad74753bc642d91fcafeca25f139a0386d75",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-22/exact/selection_temperature-metrics.json": {
+      "sha256": "32330ae3363dfedc45e5e735d1375ab249fc69f4e160367de0066a33a13efd49",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-22/sampled/fit.json": {
+      "sha256": "ae65bf248bf71c42bdc92eaaeef0f652877e54e11af9bca13a8a67d13f9f9c4c",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-22/sampled/inputs.json.gz": {
+      "sha256": "55db17b31b5ce80002062dcbc2498862e575a6940953418b83f5ddd8e13e14fc",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-22/sampled/learned_temperature-metrics.json": {
+      "sha256": "c8a560453b32eda04dc7c2d99c6fab8832a693a70aee4b104023f3e49e8ee81a",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-22/sampled/native-metrics.json": {
+      "sha256": "16e630907599c9dae9a93790e8713f050bc099c0a0b4aef5bce7637f8d47e40b",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-22/sampled/selection_raw-metrics.json": {
+      "sha256": "ba0a4ad5c35607318e5ff2981be68da1c6f63edd84e771390313026dfc1f4af9",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-22/sampled/selection_temperature-metrics.json": {
+      "sha256": "c94067ab013c433ad2a9d9d3fef9aac3c7f4fc1710d60f95c4bb47188c403b98",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-22/sft/fit.json": {
+      "sha256": "b22627cd1fbc74a3257a547fea7159d2868476ebf02c0287df5ff3e5c6d2da47",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-22/sft/inputs.json.gz": {
+      "sha256": "e89dcfb4572c7f2c5a316d042143c48aad5bc56c87e36bf21b704dfccf7de6b4",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-22/sft/learned_temperature-metrics.json": {
+      "sha256": "76584bac859185549bec2caa75d8125ada94844c72351b7377a35a83c1939a83",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-22/sft/native-metrics.json": {
+      "sha256": "d2b4dccff23b58d4a042a2f8a8b018d0e66da1dfeed4ac5a70dad8280dc59c67",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-22/sft/selection_raw-metrics.json": {
+      "sha256": "a7925640472ccc5605ba1b00bbe237ee1f6337a29bf14e2256afaca48aee1fc1",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-22/sft/selection_temperature-metrics.json": {
+      "sha256": "68956d5604f5a89056f849c1725ccc1b68988929357a7340048da394a9b36310",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-33/continued_sft/fit.json": {
+      "sha256": "b781dfba19aa0a080c5b0e5e81f6202f25bd30b466535d008d0450920b6fa487",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-33/continued_sft/inputs.json.gz": {
+      "sha256": "7d9ce8f90a7ab620c18c1d544859da6db1f8e5e6030dace9a1ca205af289f846",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-33/continued_sft/learned_temperature-metrics.json": {
+      "sha256": "e6120d957da60591916f8f9035cff34208899a61512db8f8478d71e1df14d3c0",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-33/continued_sft/native-metrics.json": {
+      "sha256": "95e8e7d5fb289f4d6fa6cdc06a3972f9c313f7bfe809deac2c45be622534e90b",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-33/continued_sft/selection_raw-metrics.json": {
+      "sha256": "edc3bf90ac1e6e57b8c745b0be18ee1ddb0bf61b627acbe73d64cfa7d06757f8",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-33/continued_sft/selection_temperature-metrics.json": {
+      "sha256": "8f36d153f219f51bac7339dc9a8b5be2443840f471be8afa12abd35e304bdbc8",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-33/exact/fit.json": {
+      "sha256": "8161671b71606caf91a63f7128a5aeafa1d90c01c82c53658b6fe4a70ca5d447",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-33/exact/inputs.json.gz": {
+      "sha256": "ee5ef3259a9a23172a9f675c7a2b4b1d078e25871b11900b479199bcaed17700",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-33/exact/learned_temperature-metrics.json": {
+      "sha256": "2ef035050af8796a7823a998349c3dbaf25a808674abd538651a35fc1198242d",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-33/exact/native-metrics.json": {
+      "sha256": "9a0816439101bc07db3accf77c6f2826147bc1c3dc73e8d7d77067b91df821ca",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-33/exact/selection_raw-metrics.json": {
+      "sha256": "a99689731d59f433d98dd7f241783f4a00751164c140b84e47c492c5074338ae",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-33/exact/selection_temperature-metrics.json": {
+      "sha256": "1da36d47f4453c738a4705683ff0d6a1da222135915caa49bfe61b51d9ad0edd",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-33/sampled/fit.json": {
+      "sha256": "e3aa80419e4ec3f35537fb8cbc200e7b57797b81b382e5c64871a45956a42aa3",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-33/sampled/inputs.json.gz": {
+      "sha256": "cb7f61bd05c8d25345e6859794d0c837c7a5ca525d820f3f3b30587713342b5f",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-33/sampled/learned_temperature-metrics.json": {
+      "sha256": "f9468c07e3ad34fa50f11f5411623f8909d2625d1e1f0003a3398de9f8e7d26e",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-33/sampled/native-metrics.json": {
+      "sha256": "e2553279d6b0de1820d4d36a2447125fa4c308ad8213f9a5b813d6ad19106d87",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-33/sampled/selection_raw-metrics.json": {
+      "sha256": "5912205502ab7f1f94e986e9ff00b36b88153454016429fd4cf9775e7f287dcb",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-33/sampled/selection_temperature-metrics.json": {
+      "sha256": "9f060aa116d17be28b2e1b4e1d07c43001bd28922ded0e047c20e38cf8b45828",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-33/sft/fit.json": {
+      "sha256": "d30aa63df5a03c50bbb40bd788d68b31062bc047c757e0f6a1a065b3d59422dc",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-33/sft/inputs.json.gz": {
+      "sha256": "8d89b72cb731d239e4a97044099c7e59dbe4bf112db98cd0183acc9c86a2cc59",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-33/sft/learned_temperature-metrics.json": {
+      "sha256": "0e2ebfbc3c295feb20c161c6657a25f31aab8c339e1b2aa0066145599d935533",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-33/sft/native-metrics.json": {
+      "sha256": "bc34be83f7a8aa5b5b1741f4d6c0dae2243a2f369de6f9f8dc0b1fedd4d3c766",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-33/sft/selection_raw-metrics.json": {
+      "sha256": "eea8efbffdad96f78c850c0003484897bea29fb4c73132080c1bd4cbe7380d78",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/0.8b/seed-33/sft/selection_temperature-metrics.json": {
+      "sha256": "9e2358ccd69a6346bd6f36105b1635457b916c6d7ea8a9c6014d7da4fc813efb",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-11/continued_sft/fit.json": {
+      "sha256": "776bf884176f367fbfee248a79f93883413a00f037f01346f4bd13ad14a194ec",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-11/continued_sft/inputs.json.gz": {
+      "sha256": "2a1d758e266730504acd9bea2f51bb01ee1467ff3af74492c623e0c44b20f79a",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-11/continued_sft/learned_temperature-metrics.json": {
+      "sha256": "0c900b4e525a5ef5c1f6c69ca315e62c5fdf1560c10d1f2146bbc3ffd959605d",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-11/continued_sft/native-metrics.json": {
+      "sha256": "549049dcff9160147b07cc5d8a618b5c38500873afad61edfee11f9843c8a419",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-11/continued_sft/selection_raw-metrics.json": {
+      "sha256": "c7790ce6359625e5898ece08510c6b315f9fdc25c1014e2c3b22deb0b3455c8d",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-11/continued_sft/selection_temperature-metrics.json": {
+      "sha256": "104db7df0cffbcd876415c6104abf78a71d47f00a94a3df4108ff33e5690e72c",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-11/exact/fit.json": {
+      "sha256": "18051b5cf833a22188ad3dc605d841894024374dfa3b6055f69e1102942aab9c",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-11/exact/inputs.json.gz": {
+      "sha256": "53ce41d81bdb9ec0ebf0122d8bef2209903c3256480da9bbbbaf83a655803185",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-11/exact/learned_temperature-metrics.json": {
+      "sha256": "78411d16423e39f74bc1f3c979ec841a125ceeaa0676bc9563bfa7e88c34f7c4",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-11/exact/native-metrics.json": {
+      "sha256": "3b85b7242895ebc8d22a119345430974bdc958a8d90ecf8d77d9cac2a197dd63",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-11/exact/selection_raw-metrics.json": {
+      "sha256": "3df31404250ec06babbbeb31ebd2dac09d0e06188a40f513813342d7b5236987",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-11/exact/selection_temperature-metrics.json": {
+      "sha256": "70bc13b00a783f2739082f0fd1a13f7d7f4bf3a41c8d87449cb03fcb738ffe30",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-11/sampled/fit.json": {
+      "sha256": "26c6bd03f3959eb825530053eb2c931b171491913915eddbac6a6ba7bda94629",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-11/sampled/inputs.json.gz": {
+      "sha256": "a86a91171aaed6d9431f03eee8e974e0c32c154dbdf8fef0591e2518ee32ce54",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-11/sampled/learned_temperature-metrics.json": {
+      "sha256": "8f82ba342d3434d648240594b347818cfa0eb5ed59f50396b2550424c02a857f",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-11/sampled/native-metrics.json": {
+      "sha256": "ac278776ffddabca3b064845b31e8e7b2fbc8933cf085dcc260cd034896e0b6e",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-11/sampled/selection_raw-metrics.json": {
+      "sha256": "87b4d9b36b7aa2b5dcecd04f0adef77e940f9b59f23f86035b103306dff8b8d7",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-11/sampled/selection_temperature-metrics.json": {
+      "sha256": "7064eccdb9577e4a7588b60da7119261d1b761135be856ec7bcc375f78442cb7",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-11/sft/fit.json": {
+      "sha256": "79df6d14908d7610645335a8e26388cd02b67684bbda453aedd3893529ec2b83",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-11/sft/inputs.json.gz": {
+      "sha256": "a1537a53e85442678751c66ca72d5797e45c929f13670a991359c351c9aa7387",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-11/sft/learned_temperature-metrics.json": {
+      "sha256": "9e6c3d74ccd759e1e1d5e32b087e604f6f9cdc23c04d87b4e5e30eda62169011",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-11/sft/native-metrics.json": {
+      "sha256": "f1d2917b35d38ffca51dd27388a903ece7df64383312f63486ccb6c515558f44",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-11/sft/selection_raw-metrics.json": {
+      "sha256": "471c70cc74400529822f7dad8584492acf6807ba929e17ee293331677583262e",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-11/sft/selection_temperature-metrics.json": {
+      "sha256": "d0061868207c147eb7822c673b032ad0da19e07db025b4fe531e0304e224ad60",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-22/continued_sft/fit.json": {
+      "sha256": "ee4b0cd6ddf05e386c1e8a4dda8778e3603af209ce3a33b8abd40fdd7b515e17",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-22/continued_sft/inputs.json.gz": {
+      "sha256": "5d2ef576638d9185330c3097a53cac215c0d140d2ad1ea9294c87045c06fb5ef",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-22/continued_sft/learned_temperature-metrics.json": {
+      "sha256": "25fec9daedb91a8543847d0832ef0be7bcd27b76084d9d184b9101462f8e3d13",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-22/continued_sft/native-metrics.json": {
+      "sha256": "7f52ee62c2eaaa93006a2cfe2281a2407afc7dc6cb0ed66ef9e5d220556816f8",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-22/continued_sft/selection_raw-metrics.json": {
+      "sha256": "53d77170d50e1357f362b4ee10a34a6c28ed470c19aaeb43ae31498ec0779564",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-22/continued_sft/selection_temperature-metrics.json": {
+      "sha256": "8839e0adfaab8ef7c658c9f1f3afd7f41b18afb14545ebe4cb33bf0cb91ae857",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-22/exact/fit.json": {
+      "sha256": "e1db3f413ad1b1d60f9ba2d0ddc72c1a926185cc60f58c99bf947d8f1e21ad90",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-22/exact/inputs.json.gz": {
+      "sha256": "aa99a2d3366aee293eee1e34bea3045cf0b72e0d687f522454ac92d85430a9cf",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-22/exact/learned_temperature-metrics.json": {
+      "sha256": "6e3d61cb173dddae3ef704dab92a5d6f0d2fe86ed30507e915ae40d6f68c3901",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-22/exact/native-metrics.json": {
+      "sha256": "afabade64dbb5922d986604abd29381e8e7afcca51f6e99332e272cab19cf623",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-22/exact/selection_raw-metrics.json": {
+      "sha256": "8ab642e6aebf4a3350955b4fac99a7f23dbf63bafd971a9f6abd7d20c5938394",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-22/exact/selection_temperature-metrics.json": {
+      "sha256": "a4f115fdaa05f19020ddffd24176a87c699df1ffe1dabf0958d8a9bbbf0318bb",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-22/sampled/fit.json": {
+      "sha256": "30074a64c2bcc1506af8a3ba327210c3b0d38434754b313821c42dcac2fa60e2",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-22/sampled/inputs.json.gz": {
+      "sha256": "35fefdc9a129c7f961c39a2f18bd36efb9dec5360936a6458cfc3cdc8b1b3d79",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-22/sampled/learned_temperature-metrics.json": {
+      "sha256": "1cf515c021dcba915c8d6e1924dd90da40a709fd053e9e2d5e58c08f16ca9a02",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-22/sampled/native-metrics.json": {
+      "sha256": "ba817eb33fba8180589881975bc4d763ef5af9f76db987c87bcd31af79d63749",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-22/sampled/selection_raw-metrics.json": {
+      "sha256": "799656d8796782ecf40a781be38ba546390ed43241fb7ece8d74a6b531503dbc",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-22/sampled/selection_temperature-metrics.json": {
+      "sha256": "a5b4c005fc0a6d2fb4f0de29eaf1070eba86fef683052ac49cfe02cdf76e7d6d",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-22/sft/fit.json": {
+      "sha256": "726d26ca10e7e7be4ed612dd2a90b6ac793a0a7914f759488efd7ef7eb36243f",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-22/sft/inputs.json.gz": {
+      "sha256": "ae56441e8aaa37d30c4ca537cd787ab5ee1a5009ae4cb965db6fd257d8dc1b3d",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-22/sft/learned_temperature-metrics.json": {
+      "sha256": "6f18b0c0b934ab575d8fd59451398d18c25b6fe519243b4ba712ea0fa31ffb12",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-22/sft/native-metrics.json": {
+      "sha256": "71e3810f43f9b4fd57cf3745672c882a90af3bca32fde47135f8a17f5c95d2a6",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-22/sft/selection_raw-metrics.json": {
+      "sha256": "1da9454f8a5a5e436b28d93bcb2859a3908e8f2f50c8ce32c599976c9a920217",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-22/sft/selection_temperature-metrics.json": {
+      "sha256": "22a60dffc46c9d439f112c02c7357efba5edbb661d3fcdba1cafefa9fc51f620",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-33/continued_sft/fit.json": {
+      "sha256": "890ac8abd01e76da580fe890dd3df6a89d019a8e419481cde6cfc91b212b9a68",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-33/continued_sft/inputs.json.gz": {
+      "sha256": "ec407b5c13d5f60e715697c826da11979355d93684b36570f4e68a5d75fd8c4b",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-33/continued_sft/learned_temperature-metrics.json": {
+      "sha256": "e2db8075037399520740daddfb17c5aebca3b1a81d22b040f5dbfb043aaec824",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-33/continued_sft/native-metrics.json": {
+      "sha256": "1f25768610920315e13ce00e1f1f5a61c84460d6e38db992db668e860c2ebb44",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-33/continued_sft/selection_raw-metrics.json": {
+      "sha256": "06b6ca9bf6e77c6127d7a803e06dfa7574271cd57789f9105bc3bf3080a5edb4",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-33/continued_sft/selection_temperature-metrics.json": {
+      "sha256": "f4b46eb643cbacc792e2c38fc73e404b9b85d9d02c28e28734aaf681a141be88",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-33/exact/fit.json": {
+      "sha256": "5c6f1c5e353d3f0690b64ef6b4e465464b6eafa50669d0a54c7bae7b2dc049c2",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-33/exact/inputs.json.gz": {
+      "sha256": "33d86972c27afc21d68a066b55005d90f50de307fece902480a5eb1dc19dcb19",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-33/exact/learned_temperature-metrics.json": {
+      "sha256": "940852caa4abc22cd693464befe1cc3b7b0bfd03556f8e3aeca13ffffbb30f65",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-33/exact/native-metrics.json": {
+      "sha256": "12ac8868a290812ce45969106b07e57e56696eda4f5b8a3813ad4f3f96aad748",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-33/exact/selection_raw-metrics.json": {
+      "sha256": "c7dd760814dac70c12d0ed5c5cc79222f7847706798c3e0a3b0343a70436f394",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-33/exact/selection_temperature-metrics.json": {
+      "sha256": "a0aa26b73f08455e09ad87fa4af0d5647b5d87c0b95e9f5fc2cac854aa455766",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-33/sampled/fit.json": {
+      "sha256": "fed30b55dce4fefa8ec4920245365c52d2e93d8224b8c491f2b183bd55a34b95",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-33/sampled/inputs.json.gz": {
+      "sha256": "48640e3b025e3c832a04484c7463f32c20552a93b3d161165bdefcd291afd3b5",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-33/sampled/learned_temperature-metrics.json": {
+      "sha256": "3a415747f460db61852c9d9b6febd1d0e94014aa3766a9f074c055d866fa41d2",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-33/sampled/native-metrics.json": {
+      "sha256": "768751c297723dc61fc9a10f9c6268a231812903e5fb5147e3e110860a947760",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-33/sampled/selection_raw-metrics.json": {
+      "sha256": "8433184a313ef7a363e14459ab04b23386db6e80f704a1ee2e20cb8d48cccaaf",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-33/sampled/selection_temperature-metrics.json": {
+      "sha256": "22f3498cad2bd580528ed50fa7c937c408061e4339070ac84fbd79f0c7635353",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-33/sft/fit.json": {
+      "sha256": "30f57f70be56f624c2d60f5940c44ef6843f082d98c67d95bf5d4e834685ec7c",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-33/sft/inputs.json.gz": {
+      "sha256": "05ed8bb400f4bfaf1289067c64d85ebe985abdcf136afabff83f9cd518c81561",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-33/sft/learned_temperature-metrics.json": {
+      "sha256": "4d225af1c3d7ba33abadcc5da7c9bcb374a2e4997543914cbd83b82603b261fa",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-33/sft/native-metrics.json": {
+      "sha256": "e4a912e18bd5c483384385140f2f6e5e83a972ef288fa45f3e833dacd497a4b2",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-33/sft/selection_raw-metrics.json": {
+      "sha256": "63afb812a008a9ec8cdbc1904cf14b29d762bee360a46263f950bc140861a8f4",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/4b/seed-33/sft/selection_temperature-metrics.json": {
+      "sha256": "2c7b1fd6c9fc9ab8d4626eba813e4dc233b48524baeafe44e6d7f95636aca626",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-11/continued_sft/fit.json": {
+      "sha256": "d363ba63532fbd1e7dc8807bd0b11173956f7508f2ff96c8f945603f668aa14b",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-11/continued_sft/inputs.json.gz": {
+      "sha256": "afe3fa80feb3202a3aa63e3da5bb3dabc86cc60ae0415279160aa7dbc183cb57",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-11/continued_sft/learned_temperature-metrics.json": {
+      "sha256": "652073c629cd83dc928fd8203b4004012e38ed663ed2ab55ecbd74bd6b44247e",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-11/continued_sft/native-metrics.json": {
+      "sha256": "646c5c6aaf3256ebfa6d3498a20083e19325279193d9ac8a2150b345caf489d9",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-11/continued_sft/selection_raw-metrics.json": {
+      "sha256": "16247f16ac106f3fde987164ce99065274f30cfd5fd6c076d3fcb6a525a5d3ba",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-11/continued_sft/selection_temperature-metrics.json": {
+      "sha256": "d1c76e2bd2adad564ea6c39821e86c285720e162c64a0223a22df01fda5d5697",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-11/exact/fit.json": {
+      "sha256": "504158c99484e07b11b6a00774ee12e7acbcad52b70ae60da55e2fa43ced09af",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-11/exact/inputs.json.gz": {
+      "sha256": "fa668d6bf8a4e1fcdccaf98c82f5db01afa947198152ab1fb31f89cf3008c2c6",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-11/exact/learned_temperature-metrics.json": {
+      "sha256": "90fb98a16fabc18b1cb1a6c3f4521a5a88cfb25662e61f6f4ea95178e649a361",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-11/exact/native-metrics.json": {
+      "sha256": "3dced7aecf0aab6d97fe0592c910a308690de85ec8465bd63a5a6881bb5b1325",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-11/exact/selection_raw-metrics.json": {
+      "sha256": "037a9b3c226753edc54d48ebac36d9252d0771add215316984f379af93101676",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-11/exact/selection_temperature-metrics.json": {
+      "sha256": "3a1c17ff6b470d478ee897455598fe5595ea5a5cf471c4e49134e9d78b3a5cb8",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-11/sampled/fit.json": {
+      "sha256": "77af3daa29b52768f34d8e4cdccfa1be3c9fe03453bc3344ef7711384538422e",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-11/sampled/inputs.json.gz": {
+      "sha256": "4c2d7d3930d057e65f837ba9e11c8171b095fc9e6a2becf5f09038f29354dbcf",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-11/sampled/learned_temperature-metrics.json": {
+      "sha256": "bff8ead69ba880287031c9592cc62bd7af8f11f2ea385b5c4e205562a3c4ea1a",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-11/sampled/native-metrics.json": {
+      "sha256": "ad3c99c873f5380651e0026e973c589e973e9d1f6d9dab7996a89bc61e1abbe5",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-11/sampled/selection_raw-metrics.json": {
+      "sha256": "f7405724e421910903b030dbaea6348c333f9a4b49d886192a2a3ccdb5ef8b44",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-11/sampled/selection_temperature-metrics.json": {
+      "sha256": "d72615cbacfe8c9eff2e290c00b2f2effc95e3723256f965effcbaefb2e6ffa2",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-11/sft/fit.json": {
+      "sha256": "e9f6e4a74d66dfcffe35944a01e7e72b08cbc5b82eca4743a5e566a357925e5b",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-11/sft/inputs.json.gz": {
+      "sha256": "a1bdd2e9167f1cef13c86ac020e76c40c6f2773eef1b668e279ba78d4d44ac9c",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-11/sft/learned_temperature-metrics.json": {
+      "sha256": "562db4a19f3b07d12a55c58a156777aefb83af140815d8e1c2eb9df292007a13",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-11/sft/native-metrics.json": {
+      "sha256": "b086c95a551fef85f2d1593e79c5812731a964b2f48ec6ceff61dc6aa9e41b99",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-11/sft/selection_raw-metrics.json": {
+      "sha256": "f2d5692490ec98f2f4c1a7a8ab5c03f1a15e2533de981fc3f4e47ca93cd4d89d",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-11/sft/selection_temperature-metrics.json": {
+      "sha256": "5d63c8d9b913af6b52e4a1199cd6a5acfdf452e9f6bbe6915938f9a05fd76bbe",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-22/continued_sft/fit.json": {
+      "sha256": "42e18b63770f8ea949972c98b1a92b9cbde49a65480fb078be7a75bd50ae4811",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-22/continued_sft/inputs.json.gz": {
+      "sha256": "6b7d8a1516a7fa30d0ef581510ee1b569fe56f1eb756aa668f375d888391ddab",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-22/continued_sft/learned_temperature-metrics.json": {
+      "sha256": "0c09e0ffaca287c3e17c8c93755fa327e364703aeb7bdb02d05aa0ca45cc9081",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-22/continued_sft/native-metrics.json": {
+      "sha256": "ea334eff12808922e3cf9357fc53b004ea9f5eff26cf309eccbc5fa6057102a2",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-22/continued_sft/selection_raw-metrics.json": {
+      "sha256": "0c224a1a9934e7e456da3707ab56d8c627e3b1ef812dfa45a18891af46e1563f",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-22/continued_sft/selection_temperature-metrics.json": {
+      "sha256": "5063367e186895364736c3734758248817d605f5369a1f0b4f8fee9a98e61011",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-22/exact/fit.json": {
+      "sha256": "0bbb73072cfef2f6d208d510eb5165feaeef345ac37b2d2be1d7f7c08498fcc1",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-22/exact/inputs.json.gz": {
+      "sha256": "4b82ce59cd75763a9fd217c6dded2decab81b71f0af785b5b5b8c1ac0f27225a",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-22/exact/learned_temperature-metrics.json": {
+      "sha256": "3564cb2eb641db0bf16835a66b7c0d4b12884cca97c2e1286944c090f45220ec",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-22/exact/native-metrics.json": {
+      "sha256": "d7d0d34aee559e2bebebf48cc1662fdd64bcd791cfc42db1e9810dd99d1d73a1",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-22/exact/selection_raw-metrics.json": {
+      "sha256": "f2b6f83cbded1c54f068af81ac45430e8bb2dd595feb51b89e8df4c8c3ded3d5",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-22/exact/selection_temperature-metrics.json": {
+      "sha256": "48dccaeb28ae38df2df979e24bb1b4d97e977ab705f79bc35cd120166afbdd0b",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-22/sampled/fit.json": {
+      "sha256": "4c0068f606e8eb8040e119a6bddb648d0c4da76078b2b7022b39860536b44a90",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-22/sampled/inputs.json.gz": {
+      "sha256": "ec1995e6682eb0aa878be3aafc09fec41cfe19ab2d496a7e60646dc170a3180b",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-22/sampled/learned_temperature-metrics.json": {
+      "sha256": "2e0701faff3fc60523a47c60300878e0a729c7e4a5e17edb037913aa6fcb3329",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-22/sampled/native-metrics.json": {
+      "sha256": "d8196e8a0315368a0ff85a5ed17016090065399e6b565a7876586699f7588d10",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-22/sampled/selection_raw-metrics.json": {
+      "sha256": "3011bb6de40bd4b6107b16f621b5caa6b3b6b76d2039280243c43e902d118dc2",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-22/sampled/selection_temperature-metrics.json": {
+      "sha256": "f9bdc9b2c6835efb21ab9c1c7c1180db3509cdd8e2e4abb972d3701e1eb688ab",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-22/sft/fit.json": {
+      "sha256": "2a4ff0de9a425c9bdcd6ac34a9dea1f39e96b9c9f9b0f9f448f4d48b7b0c9a71",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-22/sft/inputs.json.gz": {
+      "sha256": "24ad927e897fa0396725d90e7dd36daef11237a7bd51dc539e3ddb1fede54f9f",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-22/sft/learned_temperature-metrics.json": {
+      "sha256": "8654482a71be566ab8df5cf3ac254a9a191922effe7ed1e352798d6213c3b41f",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-22/sft/native-metrics.json": {
+      "sha256": "12971ebc53c536a74d1994018d92aad5bf99efe186d7c4e601651a7cbd054dce",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-22/sft/selection_raw-metrics.json": {
+      "sha256": "18b6af16e06d88784c1e1e28e4accf1919e9274994ec2434bbc519c0c91e94bf",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-22/sft/selection_temperature-metrics.json": {
+      "sha256": "fc23410b1f63d0c8a10d31012a6203e9239e725f1e9ab16e6b6e1a2a4a3a400f",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-33/continued_sft/fit.json": {
+      "sha256": "7f86a96eba9a6d1845a68ff41e5e470a0f8a564d9aeecb4a67b5ed546ae91b40",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-33/continued_sft/inputs.json.gz": {
+      "sha256": "82030b57ca2f2d7041b6bb31763f45eb09149d0eecbf93aa77d92c0d7d0db49a",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-33/continued_sft/learned_temperature-metrics.json": {
+      "sha256": "2b9b618ffee5e0d231db24826976dd8b896100d51baeaf4528c6d1f47bf4b8fc",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-33/continued_sft/native-metrics.json": {
+      "sha256": "9f1a6f9b4ff70d34deec18237a5f1d764308e3a15bcacd5231f6e77440b2e91f",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-33/continued_sft/selection_raw-metrics.json": {
+      "sha256": "2f4dec9cef4f5facda8ebd929ef4d94b14da088b8ba22ecc5d9c651831444e60",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-33/continued_sft/selection_temperature-metrics.json": {
+      "sha256": "36ed99e0a3f8e32239d578acbee6175ace4a9dbf114cca138c412ff4fb2824a7",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-33/exact/fit.json": {
+      "sha256": "00a38722003db665ec081bf1669e91aab2638d642e2b3f73b2f7f32f794715a4",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-33/exact/inputs.json.gz": {
+      "sha256": "2f84b1a62135eda4a50a1f6d44af10e232ef97d7779f474d1c0bc84396c3c506",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-33/exact/learned_temperature-metrics.json": {
+      "sha256": "6fa86a28d07659ab5eb94413461365a071a9da5010e369979a7afe97679575f6",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-33/exact/native-metrics.json": {
+      "sha256": "1b84bff08ffad0d3ea6602980f8c9183af97ea946736de3742ea9a894488b15b",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-33/exact/selection_raw-metrics.json": {
+      "sha256": "72901d0f6c294cf5ee0d1c4af4e8160eabc2590e3e2d67a508887bcf65d1b56c",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-33/exact/selection_temperature-metrics.json": {
+      "sha256": "613c36053c46b3af421c93be7e4a7c69b406338a62386f60ae3b0c2aa591c99a",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-33/sampled/fit.json": {
+      "sha256": "f2a6c99a91cee7db993f7138bf32a992d665883471299dc598127626637b133e",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-33/sampled/inputs.json.gz": {
+      "sha256": "675ef3d74dc1dec280ebfe785f6daf3ab069e57b350ecd9ff244b0456dd59a73",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-33/sampled/learned_temperature-metrics.json": {
+      "sha256": "702ec5f1eda6a7f09397045859aab76276146e11a7acbabd3da01e25466d7d94",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-33/sampled/native-metrics.json": {
+      "sha256": "04e5a270b40f5e181b738c50a6476e74281ad8fcf6b521cd511b6bfe4e472c92",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-33/sampled/selection_raw-metrics.json": {
+      "sha256": "55128489cce42e31af14537ede7edfd8c471058bec0f7def4f27e1ad47b8c6db",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-33/sampled/selection_temperature-metrics.json": {
+      "sha256": "7e213cb741759f3991a0ca031776a6613cd107999b5bd27528f8d53a604a0666",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-33/sft/fit.json": {
+      "sha256": "7431a30f779c421ff3b3b1762d5ec7cc2d4c8bbbbda8b44210cd4db3b2274e3c",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-33/sft/inputs.json.gz": {
+      "sha256": "76b032ccec996b9ddf3753bc768d6f19aed9f7823a7a2c3c45decf6f8bdfbcf2",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-33/sft/learned_temperature-metrics.json": {
+      "sha256": "324fd8e1035d18de45e6311aaa8817fa34ad59084f8a0faafa63e8278eff8cbb",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-33/sft/native-metrics.json": {
+      "sha256": "9a52531fbfb1714c9d4e8a67e711a94fe4104731633417c2ae2dcc321bef9735",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-33/sft/selection_raw-metrics.json": {
+      "sha256": "ffa9476efcf3c67aa2f6cfc1909c559db1d1af3a07c2cd94fd320cd69f787e89",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/9b/seed-33/sft/selection_temperature-metrics.json": {
+      "sha256": "e6601ef324416d8a1278c51f0e48168ce8b825efcd66cb187e0311bf4742ba02",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/report.md": {
+      "sha256": "f20282397f1cd9d2fffa67fb5f392bbc01f6d52410c7a7b6ee8aab0f92ab13b6",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/run.log": {
+      "sha256": "6914ed41a9c0e26b6268ab464a88176d5acf734633ce37cec50c5d643f1e5a13",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/summary.json": {
+      "sha256": "7a5f52481929ebc0ba62fe04b1ae9f75e6cc7221332a760ed99e674fd513acf7",
+      "mode": "100644"
+    },
+    "results/review-calibration-v1/verification.json": {
+      "sha256": "b67fa76542fb4185335fb662b12b180ad42b2e913925b620efd7bc33082cc102",
+      "mode": "100644"
+    },
+    "results/review-fixes-v1/analysis-tests.log": {
+      "sha256": "44f2bd91428f83f0d51e47be598399062943198ef35f6e24ba3c5ef9bf07bf79",
+      "mode": "100644"
+    },
+    "results/review-fixes-v1/blog-links.json": {
+      "sha256": "d34c3b2a82c9d50338c61ea43cce24c519afc80f4de481905e92e645885182b1",
+      "mode": "100644"
+    },
+    "results/review-fixes-v1/full-tests.log": {
+      "sha256": "1ec620543a56363970c52cfa4b2d3275e427e8eb4aa8d0d04666c0e651f1920c",
+      "mode": "100644"
+    },
+    "results/review-fixes-v1/targeted-tests.log": {
+      "sha256": "e071dec9777554895fad00203e2e52ef75aee76630b6b1564d0b80470370af7c",
+      "mode": "100644"
+    },
+    "results/review-limits-v1/measurement.json": {
+      "sha256": "49a0e4f24229e1909871a05de02cc5f086cb8cced273e3442b63289060a67266",
+      "mode": "100644"
+    },
+    "results/review-overlap-v1/report.md": {
+      "sha256": "75c4343ea2f74e77a4453b3292cc50b582d7926086f07ea642c107d685464c64",
+      "mode": "100644"
+    },
+    "results/review-overlap-v1/summary.json": {
+      "sha256": "ca35a02232a5f8dde42e348b279ecab312bba69916b3d7fe6f35bb190ae26717",
+      "mode": "100644"
+    },
+    "results/review-seeds-v1/report.md": {
+      "sha256": "2456a18ff576b6956b457dd9b13d559af670261f30e2b639b5dd72086f9801f7",
+      "mode": "100644"
+    },
+    "results/review-seeds-v1/summary.json": {
+      "sha256": "04565ce412e36a0a1911bc961fa4759ab8250893f6ae19ee8ea11576abbd8bd5",
+      "mode": "100644"
+    },
+    "results/review-teaching-v1/longer-gpu-activity.png": {
+      "sha256": "3aec3aded70f903931e15499fc9a624b393ae4d220bd051cb51cedb2e171b623",
+      "mode": "100644"
+    },
+    "results/review-teaching-v1/manifest.json": {
+      "sha256": "72c81e3411a07a4f060a97fbbd6acf5ac6d8a96f5c4d3ce5d4e0f9d9a6b9f775",
+      "mode": "100644"
+    },
+    "results/review-teaching-v1/review-reliability.png": {
+      "sha256": "e3e4dff5014a892a7a4ca9193c0320a6399929ee7d33bb21b6b792350fab3a09",
+      "mode": "100644"
+    },
+    "results/review-teaching-v1/training-trace-excerpts.json": {
+      "sha256": "d22ace0f62378789fcb068cf7f2fd888681a3fd974fc80d38ddda27f6ea0ef3c",
+      "mode": "100644"
+    },
+    "results/review-teaching-v1/training-traces.png": {
+      "sha256": "5ef5fc6ca188a3e1aa0b9dffb1dcf05e8aca1392c8a91fb217d9fbed6c4f5375",
       "mode": "100644"
     },
     "results/scratch-banking-diagnostic/evaluation.log": {
@@ -6946,6 +7902,54 @@
       "sha256": "4b88d0ed5a5e152c17c636d042adf3ff20b6f60ac0cb221fa4b6bfbb182a968e",
       "mode": "100644"
     },
+    "results/untouched-0.8b-v2-evaluation/metrics.json": {
+      "sha256": "0f748d38d331dd9adb01bad56cf38c94b530fcc6e56d6e9756d22da141c11565",
+      "mode": "100644"
+    },
+    "results/untouched-0.8b-v2-evaluation/policy-metrics.json": {
+      "sha256": "d33f3772c4c9833a7a40ce610a240e54660b0702ce5c4a966999137e401042f3",
+      "mode": "100644"
+    },
+    "results/untouched-0.8b-v2-evaluation/scalar-metrics.json": {
+      "sha256": "34775f7d8634d6932083e725f91e5c79576a8d6de2d583061fe1eb59a2aaeaa3",
+      "mode": "100644"
+    },
+    "results/untouched-0.8b-v2-evaluation/selection-metrics.json": {
+      "sha256": "9fc666f237ddd35fd350e1e006ec2b3eee7b7f7be0584f18db6afb1d6c7847d0",
+      "mode": "100644"
+    },
+    "results/untouched-4b-v2-evaluation/metrics.json": {
+      "sha256": "4ef0f4a5a29cd0b0173244c9faf98ac897103398a29a53a84f34e07acea6efc9",
+      "mode": "100644"
+    },
+    "results/untouched-4b-v2-evaluation/policy-metrics.json": {
+      "sha256": "07ee475d382dfe52be94b99a8436c54134f0aca3241672dab6dacb9a2f484d99",
+      "mode": "100644"
+    },
+    "results/untouched-4b-v2-evaluation/scalar-metrics.json": {
+      "sha256": "8e0a7be0f62049bf0a82081faa3f9ba5a8ca23cdc52299d7387f6b39af00327e",
+      "mode": "100644"
+    },
+    "results/untouched-4b-v2-evaluation/selection-metrics.json": {
+      "sha256": "9689824b0394fa5c406c602c0bec87fa06772cc76f4c721e02bf1f287cdcbe22",
+      "mode": "100644"
+    },
+    "results/untouched-9b-v2-evaluation/metrics.json": {
+      "sha256": "5743cdfaf4ec2b97f14d0471615ebb6e379273b6846be955205bcf02539e6b88",
+      "mode": "100644"
+    },
+    "results/untouched-9b-v2-evaluation/policy-metrics.json": {
+      "sha256": "4e9c4ef06528824f0023e9a62b2d44b90045e06dc2a3702e6ca68dfe081fb6ec",
+      "mode": "100644"
+    },
+    "results/untouched-9b-v2-evaluation/scalar-metrics.json": {
+      "sha256": "b98e9f169044471890a4cc666f7c8d950d9572a57f51fff6221c93ab3ea90b4f",
+      "mode": "100644"
+    },
+    "results/untouched-9b-v2-evaluation/selection-metrics.json": {
+      "sha256": "efe1a653009adf15a4c89ebafc540539eb5ece84b81571958c7c7ca896b46b47",
+      "mode": "100644"
+    },
     "scripts/analyze_archive_changes.py": {
       "sha256": "87e89e0427d8c5d6bcb0f0cc4535c78b2f2175b36aaa05494f9f904a7db038c5",
       "mode": "100644"
@@ -6987,7 +7991,7 @@
       "mode": "100644"
     },
     "scripts/build_hub_model_cards.py": {
-      "sha256": "48b7946dec820c024ba406cf4801a511384817c4f9316556f0786d77ca9bfbdc",
+      "sha256": "241b594bb43194d4fe64b78d3e71f94e15eb4a8a18d68659eca5589d3fec6a28",
       "mode": "100644"
     },
     "scripts/calibrate.py": {
@@ -7058,6 +8062,10 @@
       "sha256": "c9ee6dbb12d7197879f3f71b01eff227fd24a06d3ccd3329f1f099d72e90fd66",
       "mode": "100644"
     },
+    "scripts/measure_request_limits.py": {
+      "sha256": "d80f19a2d46cb6b48fec69cf0efc9b904a24e4625641329c4d6b5e761052ecf2",
+      "mode": "100644"
+    },
     "scripts/monitor_longer_study.py": {
       "sha256": "624e62e5f6cf1952bf5439a3bbc003b874a57a3b1531c7ec368aa6ce561d6e7c",
       "mode": "100644"
@@ -7088,6 +8096,10 @@
     },
     "scripts/plot_results.py": {
       "sha256": "d0a448a6718640bb5560bd0cd4106fbb67b0428a47bfcc3225ba30c3fbb51c0e",
+      "mode": "100644"
+    },
+    "scripts/plot_review_evidence.py": {
+      "sha256": "4a8a16c1095a18e65602ff58f2431066b3aecc482403db25e01c5da0f236d9e2",
       "mode": "100644"
     },
     "scripts/plot_study.py": {
@@ -7132,6 +8144,22 @@
     },
     "scripts/reproduce_readout.py": {
       "sha256": "4d26167ce11d188b171a80c2820ff8bebccbea8215a4c5804e809bbe828b856e",
+      "mode": "100644"
+    },
+    "scripts/review_banking_overlap.py": {
+      "sha256": "4414da4c10ab9220c726432c538a2fa6503733d86d1f9bcfd415772b26b83f0c",
+      "mode": "100644"
+    },
+    "scripts/review_calibration.py": {
+      "sha256": "65e431851ffb62b01228e3dde878ec7d65aa483d5164a8206bc64c5c23f51f2b",
+      "mode": "100644"
+    },
+    "scripts/review_candidate_order.py": {
+      "sha256": "a5d28c4c6931b833e5b1ceeef36bb3e2e8d96df11629bfbbacc529556f83fbcd",
+      "mode": "100644"
+    },
+    "scripts/review_seed_statistics.py": {
+      "sha256": "49fdd3273989c093e7534eca7d248450fcf24701e9a3cd27c6caf5801766ec0a",
       "mode": "100644"
     },
     "scripts/run_archive_study.py": {
@@ -7351,7 +8379,7 @@
       "mode": "100644"
     },
     "src/myjev/schema.py": {
-      "sha256": "c950567db916afe148c6be9b36dfce2fdfa89be8853c0dc35bfa4d50c1c6d55f",
+      "sha256": "a84d5592087609156e67dd6719e3a2ce671f1e4f0f01c63f150e46ca1fedd563",
       "mode": "100644"
     },
     "src/myjev/scratch/__init__.py": {
@@ -7367,7 +8395,7 @@
       "mode": "100644"
     },
     "src/myjev/server.py": {
-      "sha256": "6740eaf5d0f50965a4bdbdc5432a33bab3ef3fb96d65c7ab6d368c5e2ae72b63",
+      "sha256": "515bb962ed0a171428e2694f2b65e3be2ed44fbd4a354752b3d58c47f33c9e2f",
       "mode": "100644"
     },
     "src/myjev/tracking.py": {
@@ -7375,7 +8403,7 @@
       "mode": "100644"
     },
     "src/myjev/train.py": {
-      "sha256": "39ba9ad374c2a3574b60a042251d1e8cba064801172ce76b8c1566b65d85f8c2",
+      "sha256": "d59d588b30af9cf01af3aa3cedfd7150446da2fca8c15171207b3665f328ab17",
       "mode": "100644"
     },
     "src/myjev/validation.py": {
@@ -7395,7 +8423,7 @@
       "mode": "100644"
     },
     "tests/test_contract.py": {
-      "sha256": "94f2980096a1a1690f2fabd7c9f51e5d4a971ed7401af734f5ff5a05b63b2fdf",
+      "sha256": "5670c0de23ad06827ab196dfb31ee6a42094b70d6f134b8ad64a8e707b808ac6",
       "mode": "100644"
     },
     "tests/test_encoder_control.py": {
@@ -7428,6 +8456,14 @@
     },
     "tests/test_release_publication.py": {
       "sha256": "b7eae0db19f4556b6a22cd9227c07083face02bb5c3add04542a1964154613ef",
+      "mode": "100644"
+    },
+    "tests/test_review_calibration.py": {
+      "sha256": "5d0de7b56e9950e564267985ddc046cdd08f2a613822b1d84d257bee19e6b9ca",
+      "mode": "100644"
+    },
+    "tests/test_review_order.py": {
+      "sha256": "2422a9000b4e043111f99d8d548cd32a236561c3e4ebe9dac76e2affe63839cf",
       "mode": "100644"
     },
     "tests/test_scoring_benchmark.py": {

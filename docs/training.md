@@ -73,6 +73,12 @@ An optimizer is the rule that adjusts trainable parameters using gradients. Thes
 
 The four approaches are supervised learning, continued supervision, exact RL, and sampled RL. Exact versus sampled describes how the RL objective and gradient are computed. Both still use AdamW to apply parameter updates. Continued supervision is the control that tests whether extra training alone explains a gain attributed to RL.
 
+## Read the actual training traces
+
+![Recorded 4B training loss by method and seed](../results/review-teaching-v1/training-traces.png)
+
+These are trailing 100-update means from the saved 4,000-update stages. Exact RL logs expected-reward loss; REINFORCE logs a baseline-adjusted gradient surrogate. Their numerical levels are not directly comparable, even though their expected gradients target the same objective. The initial supervised loss has another scale. No panel is a validation curve or evidence of convergence. Regenerate with `python scripts/plot_review_evidence.py`; [source hashes and excerpts](../results/review-teaching-v1/manifest.json) connect the chart to the logs.
+
 ## Why 168,000 training steps?
 
 The count covers every planned run at all three sizes; it is not the number of optimizers or the training length of a single model.
@@ -183,3 +189,7 @@ The [hands-on route](walkthrough.md#3-understand-what-the-optimizer-changes) der
 ![Exact finite actions and a sampled realization](../results/training-eval-diagrams-v1/joint-actions-worked.png)
 
 This original arithmetic illustration is not a trained-model result or a Monte Carlo gradient validation. Its [source numbers](../results/training-eval-diagrams-v1/summary.json) and `scripts/draw_training_eval_lessons.py` make the calculation reproducible.
+
+## Defaults retained with the training evidence
+
+The historical runs used AdamW’s default weight decay of 0.01 and eight REINFORCE samples per example. New runs now serialize these values explicitly as `weight_decay` and `reinforce_samples`, along with the initialization artifact revision. This metadata clarification does not rewrite prior manifests or change historical results. The NF4 setup prepares the backbone once before attaching trainable adapters.

@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "classification": "exploratory post-review analysis; test outcomes were already seen in original study",
+  "sizes": [
+    "0.8b",
+    "4b",
+    "9b"
+  ],
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "methods": [
+    "sft",
+    "continued_sft",
+    "exact",
+    "sampled"
+  ],
+  "fit_partition": "saved calibration predictions only",
+  "test_partition": "original 3080 official test rows, unchanged",
+  "views": [
+    "native",
+    "selection_raw",
+    "selection_temperature",
+    "learned_temperature"
+  ],
+  "learned_source": {
+    "sft": "scalar",
+    "continued_sft": "scalar",
+    "exact": "policy",
+    "sampled": "policy"
+  },
+  "selection_temperature": {
+    "objective": "multiclass NLL",
+    "bounds": [
+      0.05,
+      100.0
+    ],
+    "implementation": "existing fit_temperature"
+  },
+  "learned_temperature": {
+    "map": "sigmoid(logit(clip(q,1e-6,1-1e-6))/T)",
+    "parameters": 1,
+    "objective": "binary NLL of selected-answer correctness",
+    "bounds": [
+      0.05,
+      100.0
+    ],
+    "optimizer": "bounded scalar minimization over log(T), with identity fallback using calibration NLL only"
+  },
+  "selection_rule": "none; report all four views for every method and seed",
+  "operating_points": "existing empirical calibration thresholds; no risk guarantee",
+  "artifact_changes": "none; no new default or deployment transform is selected by this analysis"
+}

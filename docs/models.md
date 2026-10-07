@@ -34,7 +34,7 @@ Seed 11 is the fixed packaging convention, not the best test seed. The releases 
 
 ## Why this default within the myJEV family
 
-Choose the pinned `bahree/myJEV-4B` release for the first local deployment. Seed 11 was fixed for packaging, not selected by test performance. The three-seed quality study favors its confidence Brier and explicit unsupported-option transfer over 4B exact RL, while the final seed-11 short-request HTTP p50 is 82.18 ms. Keep 4B exact available for its higher BANKING accuracy. This recommendation is exploratory and should be revisited against your task and calibration data.
+Choose the pinned `bahree/myJEV-4B` release for the first local deployment. Seed 11 was fixed for packaging, not selected by test performance. For the released confidence configurations, the three-seed quality study favors its Brier and explicit unsupported-option transfer over 4B exact RL, while the final seed-11 short-request HTTP p50 is 82.18 ms. Keep 4B exact available for its higher BANKING accuracy. This recommendation is exploratory and should be revisited against your task and calibration data. The [matched post-hoc follow-up](../results/review-calibration-v1/report.md) changes the broader method comparison: selection-temperature exact RL is slightly lower in mean 4B Brier, with mixed seed deltas. Those alternative fits have not replaced the release settings.
 
 | Packaged candidate | Short HTTP p50 / p95 | Maximum direct-path allocated VRAM across three measured workloads |
 |---|---:|---:|
@@ -45,7 +45,7 @@ Choose the pinned `bahree/myJEV-4B` release for the first local deployment. Seed
 | 9B continued SFT | 115.09 / 118.64 ms | 11.24 GiB |
 | 9B exact RL | 117.55 / 123.42 ms | 11.24 GiB |
 
-HTTP figures use 100 warm three-candidate requests at concurrency one. Direct-path memory covers three/32 candidates with short/longer repeated context, not every request up to 4,096 tokens. CUDA allocated VRAM excludes some driver/runtime allocations. All six passed Python/CLI/HTTP equality, single-pass, oversized-rejection and short 160-candidate checks; actual Docker responses also matched their saved fixture. These are local engineering tests, not model-quality guarantees or a public image release.
+HTTP figures use 100 warm three-candidate requests at concurrency one. Direct-path memory covers three/32 candidates with short/longer repeated context, not every request up to 4,096 tokens. CUDA allocated VRAM excludes some driver/runtime allocations. All six passed Python/CLI/HTTP equality, single-pass, oversized-rejection and short 160-candidate checks; actual Docker responses also matched their saved fixture. Those earlier local engineering checks establish behavior, not model-quality guarantees. The subsequent public image release is recorded below.
 
 ## Read and reproduce the release evidence
 

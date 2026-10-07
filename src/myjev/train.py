@@ -6,7 +6,7 @@ import time
 from pathlib import Path
 import numpy as np
 import torch
-from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
+from peft import LoraConfig, get_peft_model
 from transformers import AutoTokenizer
 from .artifacts import save_artifact
 from .data import read_jsonl, request_from_row, training_order
@@ -32,6 +32,8 @@ def main():
     p.add_argument("--device", default="cuda:0")
     args = p.parse_args()
     cfg = json.loads(Path(args.config).read_text())
+    cfg.setdefault("reinforce_samples", 8)
+    cfg.setdefault("weight_decay", 0.01)
     if args.updates is not None:
         cfg["updates"] = args.updates
     if args.method in ("exact", "sampled", "continued_sft") and not args.initial:
@@ -50,8 +52,10 @@ def main():
         p.error("empty training data")
     digest = hashlib.sha256(Path(args.data).read_bytes()).hexdigest()
     reference = None
+    initial_revision = None
     if args.initial:
         initial = DecisionModel.load(args.initial, device=args.device, adapter_trainable=True)
+        initial_revision = initial.manifest["artifact_revision"]
         net, tokenizer, m = initial.network, initial.tokenizer, dict(initial.manifest)
         for key, expected in (("backbone",cfg["backbone"]),("backbone_revision",cfg["revision"]),("precision",cfg["precision"])):
             if m[key] != expected:
@@ -68,8 +72,8 @@ def main():
     else:
         tokenizer = AutoTokenizer.from_pretrained(cfg["backbone"], revision=cfg["revision"])
         backbone = load_backbone(cfg["backbone"], cfg["revision"], cfg["precision"], args.device)
-        if cfg["precision"] == "nf4":
-            backbone = prepare_model_for_kbit_training(backbone)
+        # load_backbone already prepares NF4 weights; checkpointing is enabled
+        # once below after adapter attachment.
         backbone = get_peft_model(backbone, LoraConfig(r=cfg["lora_rank"], lora_alpha=2*cfg["lora_rank"],
             target_modules=cfg["lora_targets"], lora_dropout=0.0, task_type="CAUSAL_LM"))
         net = DecisionNetwork(backbone)
@@ -83,13 +87,16 @@ def main():
     net.backbone.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
     net.backbone.enable_input_require_grads()
     net.train()
-    optimizer = torch.optim.AdamW([v for v in net.parameters() if v.requires_grad], lr=cfg["learning_rate"])
+    optimizer = torch.optim.AdamW([v for v in net.parameters() if v.requires_grad], lr=cfg["learning_rate"], weight_decay=cfg["weight_decay"])
     start = 0
     out = Path(args.output)
     out.mkdir(parents=True, exist_ok=True)
     order, cursor = training_order(rows, rng, cfg.get("data_offset", 0))
     if args.resume:
         state = torch.load(args.resume, map_location=args.device, weights_only=False)
+        # Historical checkpoints omitted these defaults; preserve resume parity.
+        state["config"].setdefault("reinforce_samples", 8)
+        state["config"].setdefault("weight_decay", 0.01)
         if state["data_sha256"] != digest or state["method"] != args.method or state["config"] != cfg or state.get("reward") != args.reward or state.get("initial") != args.initial:
             raise ValueError("resume dataset/method/config mismatch")
         trainable = dict(net.named_parameters())
@@ -136,7 +143,8 @@ def main():
             else:
                 correctness = torch.nn.functional.one_hot(targets, len(ids)).float()
                 fn = exact_loss if args.method == "exact" else sampled_loss
-                loss = fn(answers, policy, correctness, ref, cfg["kl_beta"], args.reward == "confidence")
+                kwargs = {"samples": cfg["reinforce_samples"]} if args.method == "sampled" else {}
+                loss = fn(answers, policy, correctness, ref, cfg["kl_beta"], args.reward == "confidence", **kwargs)
             (loss / cfg["accumulation"]).backward()
             total += loss.item() / cfg["accumulation"]
         torch.nn.utils.clip_grad_norm_(net.parameters(), 1.0)
@@ -156,7 +164,8 @@ def main():
             m.update(confidence_mode="policy" if reference is not None else "scalar",
                      training={"method": args.method, "reward": args.reward, "seed": args.seed,
                                "config": cfg, "data_sha256": digest, "steps": step+1,
-                               "initial": str(args.initial), "examples": (step+1)*cfg["accumulation"]})
+                               "initial": str(args.initial), "initial_artifact_revision": initial_revision,
+                               "examples": (step+1)*cfg["accumulation"]})
             saved_manifest = save_artifact(out / "artifact", net, m)
             from .server import WARMUP
             expected = DecisionModel(net, tokenizer, saved_manifest).score(WARMUP)

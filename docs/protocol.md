@@ -29,3 +29,11 @@ Archive resampling units are original post families, not excerpts. Paired method
 ## Completed gates and remaining evidence limits
 
 Three-seed matched comparisons, same-size precision controls, untouched and GLiClass benchmarks, independent calibration, CLINC transfer, robustness cohorts and local deployment checks have completed. Archive adaptation and forgetting checks use unreviewed machine labels; human reliability and semantic grouping review remain unresolved. The default is an exploratory deployment choice based on measured trade-offs. Fixed-budget endpoint results do not establish convergence or a universally winning method.
+
+## Exploratory post-hoc review controls
+
+[The frozen follow-up](../configs/review-calibration-v1.json) supplies equal post-hoc opportunities to SFT, continued SFT, exact and sampled RL. It evaluates native confidence, raw selection probability, selection-temperature confidence and the same one-parameter binary log-odds temperature for each learned correctness output. The latter transforms the supervised scalar or RL policy expectation, never the stale post-RL scalar head. Fit each transform using calibration only. Report every predefined view; do not choose a winner on test outcomes. The original test results were already known, so these controls are exploratory.
+
+The current error-target threshold is an empirical search rule, not a conservative certified procedure. Reusing calibration for temperature and threshold selection, and searching many thresholds, prevent reading a pointwise interval as a bound on the chosen policy. A stronger future study would separate fitting from certification, predeclare thresholds and a multiple-testing procedure, and certify the relevant group-level risk. Selective accepted-case error need not be monotonic with threshold. No such certification was run here; 32 archive test groups would support only weak precision.
+
+Training-seed spread is reported separately from test-group resampling. The bootstrap holds observed checkpoints fixed. Three seeds cannot establish variability across arbitrary future training runs. [Per-seed contrasts](../results/review-seeds-v1/report.md) preserve the signs and spread instead of interpreting a conditional interval as seed-population evidence.

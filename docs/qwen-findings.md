@@ -4,7 +4,7 @@ The frozen batch completed on October 6 at 02:18 UTC (October 5, 7:18 p.m. Pacif
 
 ## The inexpensive baseline belongs in the decision
 
-TF-IDF/logistic regression achieved **88.28%** BANKING accuracy, compared with **89.23%** for the three-seed supervised 4B mean. The packaged 4B seed reaches 89.94%. These are different comparisons: exposure and tuning differ, and TF-IDF cannot interpret request-supplied new categories. For a stable taxonomy, its small accuracy gap makes it a serious operational alternative. The subsequent [149.7M-parameter ModernBERT control](../results/encoder-control-v1/report.md) reached 90.78% accuracy and 0.0555 correctness Brier after 23,997 example exposures, one seed and validation-selected checkpointing. It used more training exposure than Qwen and a fixed 77-label head. That limits causal comparisons but strengthens the practical case for trying a small adapted encoder first when the taxonomy is stable. The [worked decision guide](decision-lessons.md) and [CPU profile](../results/tfidf-serving-v1/summary.json) explain when that distinction matters.
+TF-IDF/logistic regression achieved **88.28%** BANKING accuracy, compared with **89.23%** for the three-seed continued-supervised 4B mean. The packaged 4B seed reaches 89.94%. These are different comparisons: exposure and tuning differ, and TF-IDF cannot interpret request-supplied new categories. For a stable taxonomy, its small accuracy gap makes it a serious operational alternative. The subsequent [149.7M-parameter ModernBERT control](../results/encoder-control-v1/report.md) reached 90.78% accuracy and 0.0555 correctness Brier after 23,997 example exposures, one seed and validation-selected checkpointing. It used more training exposure than Qwen and a fixed 77-label head. That limits causal comparisons but strengthens the practical case for trying a small adapted encoder first when the taxonomy is stable. The [worked decision guide](decision-lessons.md) and [CPU profile](../results/tfidf-serving-v1/summary.json) explain when that distinction matters.
 
 ## The result depends on the control
 
@@ -20,13 +20,13 @@ These are three-seed mean accuracies. Initial SFT uses 4,000 updates; each conti
 
 The compact [paired evidence](../results/longer-v1/paired-analysis.md) resamples test groups, pairing examples across methods and averaging the three observed seeds:
 
-| Exact RL minus continued SFT | Accuracy difference | 95% paired group interval |
-|---|---:|---:|
-| 0.8B | -1.57 percentage points | [-2.20, -0.95] |
-| 4B | +1.04 percentage points | [+0.56, +1.49] |
-| 9B | +0.19 percentage points | [-0.36, +0.71] |
+| Exact RL minus continued SFT | Seed 11 / 22 / 33 deltas (pp) | Mean (pp) | Seed SD (pp) | Conditional group 95% interval (pp) |
+|---|---|---:|---:|---|
+| 0.8B | -1.75 / -2.86 / -0.10 | -1.57 | 1.39 | [-2.20, -0.95] |
+| 4B | +0.62 / -0.19 / +2.69 | +1.04 | 1.49 | [+0.56, +1.49] |
+| 9B | -0.29 / +0.23 / +0.65 | +0.19 | 0.47 | [-0.36, +0.71] |
 
-These exploratory intervals are conditional on the three seeds and unadjusted for multiple comparisons. They are not uncertainty over every possible initialization. The 4B contrast provides evidence of improvement under this protocol; the 9B interval does not distinguish its small mean gain from zero. More capacity did not establish a monotonic advantage, and 9B's NF4 precision differs from BF16 at the smaller sizes.
+These exploratory intervals are conditional on the three seeds and unadjusted for multiple comparisons. They are not uncertainty over every possible initialization. Exact RL exceeded continued supervision at 4B on two of three seeds and on the mean. Its test-resampling interval excludes zero, while the seed deltas cross zero. At 0.8B continued supervision leads on all three seeds. The 9B interval includes zero. The [seed report](../results/review-seeds-v1/report.md) exposes both sources of variation; three training seeds do not establish the result for future runs. More capacity did not establish a monotonic advantage, and 9B's NF4 precision differs from BF16 at the smaller sizes.
 
 ## Calibration is not settled by accuracy
 
@@ -40,13 +40,35 @@ Mean correctness Brier, lower is better. Temperature scaling fits the selection 
 
 ![Completed confidence comparison](../results/longer-v1/figures/confidence.png)
 
-Temperature-scaled continued supervision has lower Brier at all three sizes. The paired Brier contrasts also favor it within their conditional intervals. Confidence-aware RL therefore has not shown a general advantage over this simple control. Improving an initially weak learned head would have been an insufficient success criterion.
+Temperature-scaled continued supervision has lower Brier than the native RL policy in these released configurations. This compares deployable configurations with different confidence sources and unequal post-hoc treatment. It does not isolate a training-method advantage. The matched follow-up below changes that interpretation.
 
 Operational ranking can differ from Brier. At the calibration-selected 80% coverage target, 4B exact RL achieved mean test coverage of 83.14% with 3.81% accepted-case error; temperature-scaled continued SFT achieved 82.24% with 4.22% error. These achieved coverages differ and this is a descriptive operating-point comparison, not an equal-coverage significance result. The full summary preserves thresholds and per-run uncertainty through its source files. An empirical calibration error target is not a production risk guarantee.
 
+## Give every method the same calibration opportunity
+
+The exploratory follow-up froze four views before fitting: native learned correctness confidence, raw selected probability, selection logits with a fitted temperature, and a one-parameter binary temperature on the learned correctness estimate. All four training methods and all three seeds receive identical calibration procedures on the reserved 1,000 examples. Original test outcomes had already been inspected, so this is a disclosed follow-up, not a preregistered confirmation. No new model training or release selection was performed.
+
+| Size | Continued SFT, selection temperature | Exact RL, selection temperature | Sampled RL, selection temperature | Exact minus continued SFT by seed 11 / 22 / 33 |
+|---|---:|---:|---:|---|
+| 0.8B | 0.1073 | 0.1184 | 0.1207 | +0.0155 / +0.0143 / +0.0035 |
+| 4B | 0.0740 | 0.0733 | 0.0852 | -0.0014 / +0.0091 / -0.0098 |
+| 9B | 0.0742 | 0.0681 | 0.0772 | -0.0065 / -0.0056 / -0.0062 |
+
+These are correctness Brier scores, where lower is better. With equal selection-temperature fitting, exact RL has a slightly lower mean at 4B with mixed seed deltas, and a lower value at 9B on all three seeds. Continued supervision remains ahead at 0.8B. The old broad reading that supervised training plus calibration wins at every size is therefore unsupported.
+
+For the separate learned estimate, the same binary log-odds temperature gives continued-SFT / exact-RL mean Brier of 0.1202 / 0.1425 at 0.8B, 0.0848 / 0.0796 at 4B and 0.0877 / 0.0933 at 9B. That map minimizes calibration negative log likelihood, not test Brier, and sometimes worsens test Brier. Equal fitting opportunities do not guarantee equal suitability for the different confidence sources.
+
+At 4B, exact RL's selection-temperature confidence has lower Brier than its native policy, but lower correctness AUROC (0.7617 versus 0.8685). Its error ranking changes along with its probability quality. A lower Brier alone is insufficient for selecting a deferral policy. The [complete report](../results/review-calibration-v1/report.md) includes initial SFT, all four views, reliability bins, per-seed metrics and empirical operating points. Its 18 supervised selection-temperature controls exactly reproduce the original Brier results within 1e-12. Text-free compact predictions allow reproduction without a model download.
+
+The released adapters and calibration settings remain unchanged. Testing all views does not authorize picking whichever happens to win on the test set. A deployment change needs a declared objective, calibration procedure and fresh workload evaluation.
+
+![Actual released-seed confidence reliability](../results/review-teaching-v1/review-reliability.png)
+
+The figure shows seed 11, all 3,080 test rows and fifteen bins. Low-count bins are noisy; their jagged shape is not a population calibration curve. The table above retains all seeds.
+
 ## Sampling did not help this finite-action experiment
 
-Sampled RL had lower mean accuracy than exact RL at every size, by 0.83, 2.07 and 0.80 percentage points respectively. The paired conditional intervals favor exact optimization. At 4B, sampled accuracy also varied more across seeds: SD 2.21 percentage points versus 0.29 for exact RL.
+Sampled RL had lower mean accuracy than exact RL at every size, by 0.83, 2.07 and 0.80 percentage points respectively. The paired conditional intervals favor exact optimization. Sampled accuracy is lower in eight of nine size/seed pairs; 0.8B seed 22 is the exception, ahead by 0.32 pp. At 4B, sampled accuracy also varied more across seeds: SD 2.21 percentage points versus 0.29 for exact RL.
 
 That pattern is consistent with noisy estimation being a possible contributor, but it does not isolate the cause. Eight samples, confidence-policy initialization, learning-rate selection and the fixed schedule are also part of this experiment. The result does not imply that sampling is unnecessary when actions cannot be enumerated. Here the finite action space lets us compute the expectation directly, which makes exact optimization a particularly important control.
 
@@ -76,7 +98,7 @@ The [paired extension report](../results/extension-analysis-v1/report.md) includ
 
 ## Local default and alternatives
 
-The recommended starting artifact is **4B continued supervision with temperature confidence**, using seed 11 as the fixed packaging convention. It balances 89.23% mean BANKING accuracy, 0.0740 mean correctness Brier, stronger explicit unsupported-option transfer than 4B exact, and approximately 82 ms short-request HTTP p50 on the A30. This is a judgment across observed trade-offs, not a preregistered optimization or a production guarantee. Its confidence is a calibration-only selection-score proxy, not the supervised scalar head.
+The recommended starting artifact is **4B continued supervision with temperature confidence**, using seed 11 as the fixed packaging convention. Among the currently released configurations it balances 89.23% mean BANKING accuracy, 0.0740 mean correctness Brier, stronger explicit unsupported-option transfer than 4B exact, and approximately 82 ms short-request HTTP p50 on the A30. This is a judgment across observed trade-offs, not a preregistered optimization or a production guarantee. Its confidence is a calibration-only selection-score proxy, not the supervised scalar head. The matched calibration follow-up makes the default a configuration-level recommendation; it does not establish that supervision inherently gives better confidence.
 
 Keep 4B exact RL as the higher in-domain-accuracy alternative (90.27% mean), and 0.8B as the lower-resource option. The measured 9B continued model is slower at approximately 115 ms HTTP p50, has essentially equal BANKING accuracy and better distant-CLINC accuracy; workload-specific priorities can therefore change the choice. Final local measurements use packaged seed-11 checkpoints; quality summaries use all three seeds. They are not measurements of an average model.
 

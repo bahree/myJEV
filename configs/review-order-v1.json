@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "classification": "exploratory release robustness check; no retraining or calibration refit",
+  "sizes": ["0.8b", "4b", "9b"],
+  "methods": ["continued_sft", "exact"],
+  "artifact_seed": 11,
+  "permutation_seeds": [101, 202, 303],
+  "permutation": "Python random.Random(int(sha256(str(seed) + ':' + example_id),16)).shuffle over the original candidate list",
+  "dataset": "all 3080 official BANKING77 test examples in frozen data/banking77/test.jsonl",
+  "calibration": "original released temperature and original calibration-derived thresholds remain fixed",
+  "baseline": "original-order saved seed-11 predictions; source hashes recorded",
+  "claims": "order sensitivity of six released checkpoints, not a new training-method comparison"
+}

@@ -1,0 +1,38 @@
+{
+  "rows": [
+    {
+      "pattern": "abc 123 !?",
+      "text_bytes": 262144,
+      "candidate_count": 32,
+      "wire_bytes": 263055,
+      "tokenize_and_reject_seconds": [
+        0.29217532702023163,
+        0.24803141003940254,
+        0.24381321697728708,
+        0.24328745197271928,
+        0.2432554310071282
+      ],
+      "rejection": "input exceeds 4096 tokens; no truncation is performed"
+    },
+    {
+      "pattern": "\u6f22\u5b57\u00e9 ",
+      "text_bytes": 262144,
+      "candidate_count": 32,
+      "wire_bytes": 263055,
+      "tokenize_and_reject_seconds": [
+        0.12171479099197313,
+        0.12384629505686462,
+        0.12291380000533536,
+        0.12114901002496481,
+        0.1250507750082761
+      ],
+      "rejection": "input exceeds 4096 tokens; no truncation is performed"
+    }
+  ],
+  "platform": "Linux-6.8.0-146-generic-x86_64-with-glibc2.39",
+  "processor": "x86_64",
+  "backbone": "Qwen/Qwen3.5-4B",
+  "tokenizer_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "source_manifest_sha256": "56746ec8ae6f287492afbf10a5e21610ea993a840f18fdc85f67bb2bc03a169e",
+  "scope": "CPU tokenization on the A30 host during independent GPU evaluations. Two fixed maximum-aggregate-byte requests, five repetitions each; observed costs, not a worst-case latency bound or GPU inference benchmark."
+}

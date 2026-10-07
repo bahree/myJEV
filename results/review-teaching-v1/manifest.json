@@ -1,0 +1,24 @@
+{
+  "generator": "scripts/plot_review_evidence.py",
+  "generator_sha256": "4a8a16c1095a18e65602ff58f2431066b3aecc482403db25e01c5da0f236d9e2",
+  "scope": "Measured traces and test reliability; no synthetic outcomes or new trained weights.",
+  "sources": {
+    "results/longer-v1/4b/main/seed-11/sft/training.jsonl": "af2aac96cc9e7e81a6d24fe58c6282476997b5a7feb2d8a7c8578f1b47825a41",
+    "results/longer-v1/4b/main/seed-22/sft/training.jsonl": "707aca93b0671a59f8710f934ae228fe98928bb336bfcbeeb58be1d44738b098",
+    "results/longer-v1/4b/main/seed-33/sft/training.jsonl": "ed838fbbf2bee915c7dbb07a8a6f0eecf010b5e0e8c74b24417a1501c820bdd0",
+    "results/longer-v1/4b/main/seed-11/exact/training.jsonl": "2aacd3bb68377691624959a78972f30763e253ab47b559d88da3af07d122b18d",
+    "results/longer-v1/4b/main/seed-22/exact/training.jsonl": "758035ac77387c128fd7fbc22a3f61a7c4dfe9f2f018b3d8635929137ec66065",
+    "results/longer-v1/4b/main/seed-33/exact/training.jsonl": "df8c6b41fe57d4ef241ac03cc08f2ce35d735157b4b7da5baa3fdb5cac3e880b",
+    "results/longer-v1/4b/main/seed-11/sampled/training.jsonl": "75bc3d40fc62cfcfa6cd97e6f0710bb067e789fc0e3cc95bd622292eab563626",
+    "results/longer-v1/4b/main/seed-22/sampled/training.jsonl": "d8405add42d6e4eca1f04002319c30a546db593148f39097444ccfda1bb8b38e",
+    "results/longer-v1/4b/main/seed-33/sampled/training.jsonl": "d7578076ba42f341baaa85a42263dbe21dd60be2576af4eae6cf89ccdc287358",
+    "results/review-calibration-v1/4b/seed-11/continued_sft/selection_temperature-metrics.json": "104db7df0cffbcd876415c6104abf78a71d47f00a94a3df4108ff33e5690e72c",
+    "results/review-calibration-v1/4b/seed-11/exact/native-metrics.json": "3b85b7242895ebc8d22a119345430974bdc958a8d90ecf8d77d9cac2a197dd63",
+    "results/review-calibration-v1/4b/seed-11/exact/selection_temperature-metrics.json": "70bc13b00a783f2739082f0fd1a13f7d7f4bf3a41c8d87449cb03fcb738ffe30"
+  },
+  "outputs": {
+    "training-trace-excerpts.json": "d22ace0f62378789fcb068cf7f2fd888681a3fd974fc80d38ddda27f6ea0ef3c",
+    "training-traces.png": "5ef5fc6ca188a3e1aa0b9dffb1dcf05e8aca1392c8a91fb217d9fbed6c4f5375",
+    "review-reliability.png": "e3e4dff5014a892a7a4ca9193c0320a6399929ee7d33bb21b6b792350fab3a09"
+  }
+}

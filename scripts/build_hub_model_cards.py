@@ -13,7 +13,7 @@ INTRO = {
  'myJEV-4B': ('The recommended starting point within the published myJEV family: choose a route and return confidence.',
    'Choose this version for the best measured starting balance of banking-intent quality, confidence error and local serving cost within the published myJEV family. It uses continued supervised training followed by temperature calibration. The 4B-RL variant scores slightly higher on banking accuracy; this standard release has lower confidence Brier error and stronger explicit unsupported-option transfer in the study.'),
  'myJEV-4B-RL': ('The accuracy-oriented myJEV variant, trained to reward correct decisions and useful confidence.',
-   'Choose this version to explore the strongest mean BANKING77 accuracy in the released family. It improved accuracy over standard 4B in the matched three-seed study, but its confidence Brier error was higher. Use standard myJEV-4B as the initial default when the measured confidence/resource balance matters most.'),
+   'Choose this version to explore the strongest mean BANKING77 accuracy in the released family. It had higher accuracy than standard 4B on two of three seeds and on the mean. Its native-policy Brier was higher than the released standard confidence configuration. Use standard myJEV-4B as the initial default when the measured confidence/resource balance matters most.'),
  'myJEV-9B': ('The larger myJEV model for exploring how capacity changes decisions and transfer.',
    'Choose this version when studying capacity or transfer to unfamiliar intent sets. It reached higher mean accuracy than 4B on the study’s distant CLINC transfer cohort, but did not improve mean BANKING77 accuracy over standard 4B and cost more memory and time. It uses four-bit backbone weights so the measured setup fits one 24 GB A30.'),
  'myJEV-9B-RL': ('The larger confidence-aware myJEV experiment, with one-pass decisions and a learned confidence policy.',
@@ -24,7 +24,7 @@ INTRO = {
 def render(row, facts):
     name=row['public_name'];rl=row['method']=='exact';single=row['metrics'][0]
     tagline,choice=INTRO[name]
-    metadata={'license':'mit','language':['en'],'base_model':row['backbone'],'datasets':['PolyAI/banking77'],
+    metadata={'license':'mit','language':['en'],'base_model':row['backbone'],'base_model_relation':'adapter','datasets':['PolyAI/banking77'],
       'tags':['myjev','intent-classification','single-pass','decision-model','confidence-estimation','custom-inference','qlora' if row['size']=='9b' else 'lora', 'reinforcement-learning' if rl else 'temperature-scaling'],
       'model-index':[{'name':name,'results':[{'task':{'type':'text-classification','name':'Intent classification'},
         'dataset':{'type':'PolyAI/banking77','name':'BANKING77 official test','split':'test'},
@@ -33,7 +33,7 @@ def render(row, facts):
     family='\n'.join(f"| [{m['public_name']}](https://huggingface.co/{m['repo_id']}) | {100*m['accuracy_mean']:.2f}% | {m['brier_mean']:.4f} | {m['latency_ms'][0]:.2f} ms | {m['allocated_vram_gib']:.2f} GiB |" for m in facts['models'])
     if rl:
         training='''After 4,000 supervised updates, this model received 4,000 updates using an exact expected-reward objective. The reward combines whether the answer is correct with squared error in its reported confidence: `correct - (confidence - correct)^2`. A penalty keeps the policy close to the frozen supervised reference. The finite action space lets training calculate the expectation directly rather than estimate it by sampling. This release is the exact-RL arm, not the separate sampled-REINFORCE arm.'''
-        confidence='''**Reported confidence** comes from a separate candidate-conditioned policy over 21 values, from 0.00 through 1.00 in steps of 0.05. Serving first chooses the highest-scoring answer, then reports the policy’s expected confidence for that answer. It does not sample an answer or confidence at inference. This objective did not make confidence better calibrated than temperature-scaled supervised training in the study.'''
+        confidence='''**Reported confidence** comes from a separate candidate-conditioned policy over 21 values, from 0.00 through 1.00 in steps of 0.05. Serving first chooses the highest-scoring answer, then reports the policy’s expected confidence for that answer. It does not sample an answer or confidence at inference. The released native-policy confidence has higher mean Brier than the corresponding temperature-scaled supervised release. That comparison gives the two methods different post-hoc treatment; it does not establish an intrinsic calibration disadvantage of RL.'''
     else:
         training='''This model received 4,000 initial supervised updates and another 4,000 supervised updates. Continuing supervised training is a control for the extra optimization used by the reinforcement-learning variants. A single temperature was then fitted on reserved calibration data to adjust the selected-option probability. Calibration examples were not used to fit the adapter, and the official test partition was not used to choose the temperature.'''
         confidence='''**Reported confidence** is the selected option’s probability after temperature scaling on reserved BANKING77 calibration data. In this standard release it is derived from the selection scores, rather than the separate RL confidence policy. Calibration on banking intents does not establish calibration for arbitrary new tasks or candidate descriptions.'''
@@ -125,6 +125,12 @@ Python, CLI and HTTP return the same response fields. Keep your artifact revisio
 {confidence}
 
 The API also returns `artifact_revision` and `calibration_revision` so callers can identify the exact behavior they used. Set acceptance/deferral thresholds using representative calibration data. An explicit `other` candidate is a classification option; confidence-based deferral is a separate decision by your application.
+
+## What the matched calibration follow-up changed
+
+The [exploratory controls](https://github.com/bahree/myJEV/blob/main/results/review-calibration-v1/report.md) apply identical selection-temperature fitting to every method, and separately apply one binary log-odds temperature to each trained correctness estimate. All fits use calibration only. With selection temperature, exact RL has slightly lower mean 4B Brier (mixed seed directions) and lower 9B Brier on all three seeds; continued supervision leads at 0.8B. This qualifies the earlier released-configuration comparison. Brier and error ranking can move differently, so it does not automatically choose a new deferral policy.
+
+The card tables still describe this released artifact and its unchanged confidence settings. None of the alternative fits was selected for deployment using test results. Three-seed bootstrap intervals hold those trained checkpoints fixed; seed spread is a separate uncertainty source. [Per-seed contrasts](https://github.com/bahree/myJEV/blob/main/results/review-seeds-v1/report.md) show that exact RL beats continued supervision at 4B in two of three seeds, while sampled RL trails exact in eight of nine size/seed pairs.
 
 ## How it was trained
 

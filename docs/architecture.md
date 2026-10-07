@@ -21,6 +21,17 @@ The backbone weights stay frozen. Training updates attention LoRA adapters and t
 
 The supervised implementation includes a scalar correctness head. The RL experiment uses a candidate-conditioned policy over 21 confidence values: 0.00, 0.05, …, 1.00. At inference, an RL artifact reports the expected confidence for its deterministically selected answer. The grid is an experimental parameterization, not a necessary property of decision models.
 
+The loader declares the confidence source explicitly:
+
+| `confidence_mode` | Correctness estimate | Where it is used |
+|---|---|---|
+| `scalar` | Sigmoid of the learned scalar head for the selected answer | Native supervised study outputs |
+| `policy` | Expected value of the selected answer's 21-value confidence policy | Released RL variants |
+| `selection` | Selected candidate probability, with the artifact's fitted temperature | Released standard variants |
+| `constant` | One fixed confidence value for every answer | Base-rate and constant-confidence controls |
+
+An RL artifact still stores its earlier scalar head, but RL does not optimize that head; post-RL scalar diagnostics are not a trained RL confidence estimate. The matched follow-up calibrates the trained policy expectation instead. See [confidence controls](qwen-findings.md#give-every-method-the-same-calibration-opportunity).
+
 Selection scores sum to one over the supplied options. Correctness confidence estimates whether the selected answer is right. Missing the correct option can still produce a high selection score, so unsupported requests need explicit evaluation.
 
 See [four probability meanings and a numerical reward example](decision-lessons.md#four-probabilities-that-are-easy-to-confuse). The spread of the 21-bin policy is not a validated measure of epistemic uncertainty.

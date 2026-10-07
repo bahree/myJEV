@@ -84,3 +84,36 @@ def test_chat_request_cannot_change_candidate_mapping():
     payload=text.split("<|im_start|>user\n")[1].split("<|im_end|>")[0]
     assert json.loads(payload)["candidates"]==[
         {"alias":"A","description":"First route"},{"alias":"B","description":"Second route"}]
+
+
+def test_aggregate_utf8_limit_rejects_before_model_worker():
+    from myjev.schema import MAX_INPUT_BYTES
+    calls=[]
+    class Counted:
+        def score(self,request):
+            calls.append(request)
+            return {'ok':True}
+    request={**WARMUP,'context':'界'*90000}
+    assert len(request['context'])<100000
+    assert len(request['context'].encode())>MAX_INPUT_BYTES
+    with TestClient(create_app(loader=Counted)) as client:
+        assert client.post('/score',json=request).status_code==422
+    assert len(calls)==1  # Warmup only; no oversized request reached the worker.
+
+
+def test_http_body_limit_including_unknown_length_and_no_worker_call():
+    from myjev.schema import MAX_HTTP_BODY_BYTES
+    calls=[]
+    class Counted:
+        def score(self,request):
+            calls.append(request)
+            return {'ok':True}
+    with TestClient(create_app(loader=Counted)) as client:
+        raw=b' '* (MAX_HTTP_BODY_BYTES+1)
+        assert client.post('/score',content=raw,headers={'Content-Type':'application/json'}).status_code==413
+        def chunks():
+            yield b' '*(MAX_HTTP_BODY_BYTES//2)
+            yield b' '*(MAX_HTTP_BODY_BYTES//2+1)
+        assert client.post('/score',content=chunks(),headers={'Content-Type':'application/json'}).status_code==413
+        assert client.get('/readyz').status_code==200
+    assert len(calls)==1

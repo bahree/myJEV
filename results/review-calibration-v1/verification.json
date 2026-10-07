@@ -1,0 +1,6 @@
+{
+  "original_supervised_temperature_controls_matched": 18,
+  "max_brier_tolerance": 1e-12,
+  "accuracy_unchanged": true,
+  "scope": "Recompute all 18 original supervised temperature controls from saved logits; new RL views are exploratory."
+}

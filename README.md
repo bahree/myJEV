@@ -110,7 +110,7 @@ Mean BANKING77 accuracy across three seeds on all 3,080 official test examples:
 | 4B | 86.48% | 89.23% | **90.27%** | 88.20% |
 | 9B | 87.08% | 89.15% | **89.34%** | 88.54% |
 
-Initial supervised training receives 4,000 updates. Each continuation receives 4,000 more from its matched supervised checkpoint. Exact RL improves BANKING accuracy at 4B in the paired analysis; its advantage does not hold across all sizes or transfer tasks. Temperature scaling of continued supervision produces better mean confidence Brier than exact RL at every size. See [paired uncertainty, controls and limitations](docs/qwen-findings.md).
+Initial supervised training receives 4,000 updates. Each continuation receives 4,000 more from its matched supervised checkpoint. Exact RL leads continued supervision at 4B on two of three seeds and in the mean; the conditional test interval excludes zero, but seed deltas cross zero. Sampled RL trails exact RL in eight of nine pairs and in every size mean. The released supervised configurations have lower mean Brier than the native RL policy. Giving all methods identical selection-temperature fitting changes that comparison: exact RL has a slightly lower mean at 4B and is lower on all three 9B seeds. These follow-up controls are exploratory and do not change the released default. See [paired uncertainty, controls and limitations](docs/qwen-findings.md).
 
 Within the six published myJEV variants, our exploratory starting recommendation is **4B continued supervision with temperature scaling**. It combines useful confidence, unsupported-option transfer and a measured 82.18 ms warm HTTP median on an A30 for short three-candidate requests. Exact RL remains available for its higher 4B BANKING accuracy. These are task-dependent trade-offs, not a universal ranking. [Candidate selection and resource measurements](docs/models.md#why-this-default-within-the-myjev-family)
 
@@ -135,7 +135,7 @@ To score with the public default, without retraining:
 
 ```bash
 .venv/bin/myjev score --artifact bahree/myJEV-4B \
-  --revision a1b9e3b1181293220012cfb15587cdba0767ae8e \
+  --revision 38f7cca5a8530483309f576b0c3dd1756bc27c33 \
   --input examples/request.json
 ```
 

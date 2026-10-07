@@ -7,7 +7,7 @@ The first milestone asks whether the implementation works and whether the propos
 
 ## Completed longer comparison
 
-All three sizes completed the 168,000-update schedule, 24 tuning evaluations and 36 main evaluations on all 3,080 official test examples. The [regenerable summary](../results/longer-v1/summary.md) reports three-seed means, seed SD, deployed confidence and temperature controls. Continued supervision leads mean accuracy at 0.8B; exact RL leads at 4B and 9B. Continued supervision with temperature scaling has lower mean correctness Brier than both RL methods at every size. Paired conditional intervals and the local default recommendation are documented in the findings guide; neither establishes a production guarantee.
+All three sizes completed the 168,000-update schedule, 24 tuning evaluations and 36 main evaluations on all 3,080 official test examples. The [regenerable summary](../results/longer-v1/summary.md) reports three-seed means, seed SD, deployed confidence and temperature controls. Continued supervision leads mean accuracy at 0.8B; exact RL leads at 4B and 9B. Among released confidence configurations, continued supervision with temperature scaling has lower mean correctness Brier than native RL policies at every size. The [matched post-hoc follow-up](../results/review-calibration-v1/report.md) gives every method the same transforms and changes that conclusion: exact RL with selection temperature has a slightly lower 4B mean and lower 9B Brier on all three seeds. Paired conditional intervals and the local default recommendation are documented in the findings guide; neither establishes a production guarantee.
 
 The short pilot below remains separate evidence with different exposure and test size.
 
@@ -70,8 +70,13 @@ The initial 0.8B transfer/robustness work is limited. The frozen expanded study 
 
 | Evidence | Location |
 |---|---|
-| Main comparison summary | [final-study-table.json](../results/final-study-table.json) |
-| Paired contrasts against continued supervision | [paired-comparisons.json](../results/paired-comparisons.json) |
+| Full-test longer comparison | [summary.json](../results/longer-v1/summary.json) |
+| Conditional full-test paired contrasts | [paired-analysis.md](../results/longer-v1/paired-analysis.md) |
+| Per-seed deltas beside conditional intervals | [seed report](../results/review-seeds-v1/report.md) |
+| Matched calibration follow-up | [calibration report](../results/review-calibration-v1/report.md) |
+| Punctuation-normalized overlap sensitivity | [overlap report](../results/review-overlap-v1/report.md) |
+| Historical pilot summary | [final-study-table.json](../results/final-study-table.json) |
+| Historical pilot paired contrasts | [paired-comparisons.json](../results/paired-comparisons.json) |
 | Seed-11 metrics and predictions | `results/pilot-{size}-{method}-evaluation/` |
 | Seed-22/33 metrics and predictions | `results/three-seed-{size}/seed-{seed}/{method}/` |
 | Temperature and constant controls | Corresponding `*-posthoc/` directories |

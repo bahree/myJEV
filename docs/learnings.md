@@ -37,7 +37,7 @@ Local logs remain authoritative even when a dashboard is unavailable. An indepen
 
 A successful image build and CUDA tensor operation did not prove that the first model request would work: the pilot container needed a C compiler for runtime kernel startup. A wrapper that resolved a virtualenv Python symlink also lost its environment's dependencies. Both failures were recorded and fixed. Python, CLI, HTTP and Docker checks must exercise the actual artifact and custom confidence head.
 
-The pilot passed these interface checks at all three sizes. Its short latency samples are not final service-level guarantees. Representative inputs, isolated benchmarks, final-checkpoint calibration and artifact/image releases remain pending. See [inference and Docker](inference.md) and [the hosting protocol](hosting.md).
+The pilot passed these interface checks at all three sizes. Its short latency samples are not final service-level guarantees. Representative final-checkpoint inputs, local serving benchmarks, calibration and public artifact/image releases subsequently completed. Empty-model-cache and review follow-ups are recorded separately in the hosting guide. See [inference and Docker](inference.md) and [the hosting protocol](hosting.md).
 
 ## Scratch models exposed two different failure modes
 

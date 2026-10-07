@@ -3,6 +3,7 @@ license: mit
 language:
 - en
 base_model: Qwen/Qwen3.5-4B
+base_model_relation: adapter
 datasets:
 - PolyAI/banking77
 tags:
@@ -40,7 +41,7 @@ By [Amit Bahree](https://huggingface.co/bahree). [Source and study](https://gith
 
 ## Why choose this version?
 
-Choose this version to explore the strongest mean BANKING77 accuracy in the released family. It improved accuracy over standard 4B in the matched three-seed study, but its confidence Brier error was higher. Use standard myJEV-4B as the initial default when the measured confidence/resource balance matters most.
+Choose this version to explore the strongest mean BANKING77 accuracy in the released family. It had higher accuracy than standard 4B on two of three seeds and on the mean. Its native-policy Brier was higher than the released standard confidence configuration. Use standard myJEV-4B as the initial default when the measured confidence/resource balance matters most.
 
 **If your labels are fixed, compare a smaller classifier too.** A separate one-seed ModernBERT-base control reached 90.78% BANKING77 accuracy and 0.0555 correctness Brier after temperature calibration. It saw 23,997 training examples over three epochs, versus 8,000 example presentations in these myJEV runs, so this is a practical control with a different budget, not a matched architecture comparison. Its output head fixes the 77 labels; myJEV accepts candidate descriptions with each request. That flexibility does not establish accuracy on an unfamiliar taxonomy. See [the decision guide](https://github.com/bahree/myJEV/blob/main/docs/decision-lessons.md) and [encoder control](https://github.com/bahree/myJEV/blob/main/results/encoder-control-v1/report.md).
 
@@ -129,9 +130,15 @@ Python, CLI and HTTP return the same response fields. Keep your artifact revisio
 
 **Selection scores** are normalized values used to rank the supplied candidates. The selected ID is the highest-scoring choice.
 
-**Reported confidence** comes from a separate candidate-conditioned policy over 21 values, from 0.00 through 1.00 in steps of 0.05. Serving first chooses the highest-scoring answer, then reports the policy’s expected confidence for that answer. It does not sample an answer or confidence at inference. This objective did not make confidence better calibrated than temperature-scaled supervised training in the study.
+**Reported confidence** comes from a separate candidate-conditioned policy over 21 values, from 0.00 through 1.00 in steps of 0.05. Serving first chooses the highest-scoring answer, then reports the policy’s expected confidence for that answer. It does not sample an answer or confidence at inference. The released native-policy confidence has higher mean Brier than the corresponding temperature-scaled supervised release. That comparison gives the two methods different post-hoc treatment; it does not establish an intrinsic calibration disadvantage of RL.
 
 The API also returns `artifact_revision` and `calibration_revision` so callers can identify the exact behavior they used. Set acceptance/deferral thresholds using representative calibration data. An explicit `other` candidate is a classification option; confidence-based deferral is a separate decision by your application.
+
+## What the matched calibration follow-up changed
+
+The [exploratory controls](https://github.com/bahree/myJEV/blob/main/results/review-calibration-v1/report.md) apply identical selection-temperature fitting to every method, and separately apply one binary log-odds temperature to each trained correctness estimate. All fits use calibration only. With selection temperature, exact RL has slightly lower mean 4B Brier (mixed seed directions) and lower 9B Brier on all three seeds; continued supervision leads at 0.8B. This qualifies the earlier released-configuration comparison. Brier and error ranking can move differently, so it does not automatically choose a new deferral policy.
+
+The card tables still describe this released artifact and its unchanged confidence settings. None of the alternative fits was selected for deployment using test results. Three-seed bootstrap intervals hold those trained checkpoints fixed; seed spread is a separate uncertainty source. [Per-seed contrasts](https://github.com/bahree/myJEV/blob/main/results/review-seeds-v1/report.md) show that exact RL beats continued supervision at 4B in two of three seeds, while sampled RL trails exact in eight of nine size/seed pairs.
 
 ## How it was trained
 
