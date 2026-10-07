@@ -11,7 +11,7 @@
       "mode": "100644"
     },
     "CHANGELOG.md": {
-      "sha256": "865dac575923fb5bc187bdb878f2d25979adcbef6abacf20c974c0127f9ac91c",
+      "sha256": "7f2aab0e39d95aa8a907cf3be29d0e63336503088cdb7199e05a4d492a0b85ea",
       "mode": "100644"
     },
     "Dockerfile": {
@@ -87,7 +87,7 @@
       "mode": "100644"
     },
     "docs/architecture.md": {
-      "sha256": "27589f1ae0adf31ac65bbb6620c62fc7278c65b88ac8220a0126f6853489be80",
+      "sha256": "b3cd19a48a1a7eb90d73c32f6fe76c6d2434a3cf54eaec33c60f4d2ccd5a9d22",
       "mode": "100644"
     },
     "docs/attribution.md": {
@@ -151,11 +151,11 @@
       "mode": "100644"
     },
     "docs/qwen-findings.md": {
-      "sha256": "602d9bbc5e6d0723827501488e621e78e2f92f4b641368679cfcfd315959ab8b",
+      "sha256": "7021d067aacc1977d5217058b132a480cf3105d8e3b8a6faa3ee5114ce80d5ce",
       "mode": "100644"
     },
     "docs/roadmap.md": {
-      "sha256": "c50979763519ca8fae8a508e2a5b36acc98006b3d8c18a04b3cd1e5639c405a7",
+      "sha256": "a91f5352748f208296ec0f09ef1136d639b010bf8e5b2ad511fb9d52ff145131",
       "mode": "100644"
     },
     "docs/scratch-plan.md": {
@@ -6187,7 +6187,7 @@
       "mode": "100644"
     },
     "results/review-order-v1/9b-exact-order303.log": {
-      "sha256": "f964220376062d67dc615138639d7ef409ded9af8fedca8b54b1d3437dfe876a",
+      "sha256": "55d30ffcea5dbcbc55140bff78c04e68eaf7a4203113a1c3a8f580ac09e8a971",
       "mode": "100644"
     },
     "results/review-order-v1/9b.log": {
@@ -6238,12 +6238,40 @@
       "sha256": "09ac7fab8db9f9157c13ea9086e1afc7df913934417c72ccf694aa8951dd2869",
       "mode": "100644"
     },
+    "results/review-order-v1/9b/exact/order-303-metrics.json": {
+      "sha256": "ce1e8bc284a87b3b13bb1a1975c37c2197a68f5470ad67bcc0314d52dc1b4a96",
+      "mode": "100644"
+    },
+    "results/review-order-v1/9b/exact/order-303-predictions.jsonl.gz": {
+      "sha256": "7f0050b697765c2de7871e7d4292b1731a769c4d87a740ea6e0b3c0e1e9cea51",
+      "mode": "100644"
+    },
     "results/review-order-v1/9b/exact/provenance.json": {
       "sha256": "03976235cabee152adeab1ed6b7c061b3995bb7062f0a357d6f34062d8e7ce67",
       "mode": "100644"
     },
+    "results/review-order-v1/figure-manifest.json": {
+      "sha256": "bd7ef4aed51d20fc29dc524de15f6bcae646a770c18625dbdce70d0dce0f42d3",
+      "mode": "100644"
+    },
     "results/review-order-v1/handoff.json": {
-      "sha256": "c0afe1a1271f803b20edd736d5c71a9ece7a29fee6d563ba65c07eb87810be62",
+      "sha256": "161dbf7119bbed04789b61920e9704e1b961131bd80381be494e1f58b5f4ce1e",
+      "mode": "100644"
+    },
+    "results/review-order-v1/order-sensitivity.png": {
+      "sha256": "4badffe8d3f2af60c282abcd6af64b6b086eb67d96e9ec34c8f7e454572a2abb",
+      "mode": "100644"
+    },
+    "results/review-order-v1/report.md": {
+      "sha256": "b6a29ce23b0f5a4f44606d9a1b5cd076b4f2c67b6facd61cd0c8fa7657ac931e",
+      "mode": "100644"
+    },
+    "results/review-order-v1/summary.json": {
+      "sha256": "261003bcb47efb005daa03395c1f4d097d288b5657d405acd09681a858f11903",
+      "mode": "100644"
+    },
+    "results/review-overlap-v1/public-replay-verification.json": {
+      "sha256": "7cbc0c69f49e5295c0960139628095fece35e29bf3a7ce8e0b328e9dba9b7973",
       "mode": "100644"
     },
     "results/review-overlap-v1/report.md": {
@@ -8434,6 +8462,10 @@
       "sha256": "aba76ba0b2f4274ca3610383138f2c9dce931c87147ddad811493655b07a78c5",
       "mode": "100644"
     },
+    "scripts/plot_review_order.py": {
+      "sha256": "0ba6fb966a4b0a0acf07e016661dcbb1f922b6be44210e9164e258f9d256399e",
+      "mode": "100644"
+    },
     "scripts/plot_study.py": {
       "sha256": "14f55805f16d83c6b6915b541f6e412ea3aaec6b05577c5a69f879d477d6ef16",
       "mode": "100644"
@@ -8591,7 +8623,7 @@
       "mode": "100644"
     },
     "scripts/summarize_review_order.py": {
-      "sha256": "32ee1bf391099a37d3d8a7bfeeb8856959f27c18313181e54917329417430eb2",
+      "sha256": "29209cf02501acce6e22acb1bb9d340ef47725b8d647dfb2cefb9d4e710c1adb",
       "mode": "100644"
     },
     "scripts/summarize_scratch_study.py": {

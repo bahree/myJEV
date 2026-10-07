@@ -50,6 +50,7 @@ See [models](models.md), [inference](inference.md) and [hosting](hosting.md). Pu
 
 ## Independent-review follow-up
 
+- [x] Evaluate all six released checkpoints on three frozen candidate permutations, with original calibration thresholds; retain every prediction and operational result.
 - [x] Display seed-level paired deltas and their spread beside conditional test-group intervals.
 - [x] Apply identical post-hoc selection and learned-correctness temperature controls to all 36 runs; reproduce 144 metrics and 36 fits exactly from public inputs.
 - [x] Disclose the punctuation-overlap sensitivity and preserve the official test results as primary.

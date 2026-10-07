@@ -4,6 +4,7 @@
 
 - Added matched post-hoc controls for all 36 runs. Equal selection-temperature fitting changes the earlier broad calibration interpretation; all 144 metrics and 36 fits reproduce exactly from public inputs.
 - Exposed per-seed deltas beside conditional test intervals, corrected confidence-source descriptions and disclosed four punctuation-normalized BANKING overlaps.
+- Completed 18 fixed candidate-order evaluations, exposing changes to individual answers and frozen-threshold deferral even when accuracy barely moves.
 - Added real training traces, reliability figures, a scratch transcript and empty-model-cache serving evidence.
 - Published six revised model cards without changing weights or deployed calibration.
 - Published Docker 0.1.2 from the public root build, with aggregate/body limits, anonymous pull verification and exact GPU output equality. Retained the disk-full build failure and recovery log.

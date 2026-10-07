@@ -9,7 +9,7 @@ myJEV receives context, task instructions, and 2–160 candidate IDs and descrip
 3. Run the backbone once and use its final hidden state for candidate scores and confidence.
 4. Select the highest-scoring candidate and return its original ID, normalized scores, and correctness confidence.
 
-Training randomizes candidate order. That does not guarantee order invariance; order changes require evaluation.
+Training randomizes candidate order. The [full-test permutation check](../results/review-order-v1/report.md) still changes selected answers on about 8-10% of 0.8B requests and 3.6-5.0% at larger sizes. Order also reassigns aliases, so this is combined sensitivity, not an isolated position effect.
 
 The reference implementation is in [model.py](../src/myjev/model.py), [prompt.py](../src/myjev/prompt.py), and [inference.py](../src/myjev/inference.py). Custom heads and adapters require this loader; a generic text-generation server does not automatically reproduce the outputs.
 

@@ -1,0 +1,7 @@
+{
+  "public_source_revision": "068fa5289d49c2606547214ec5e8e4f585e0a0df",
+  "script_sha256": "7e8ca37d547833f51fdd9708bff414e20bbbeb95d600e957e95cce93aba3bab3",
+  "all_36_sensitivity_results_equal": true,
+  "overlap_pairs_equal": true,
+  "scope": "Run in an isolated directory with frozen BANKING data and public compact predictions, with no original full prediction directory available."
+}

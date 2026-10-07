@@ -96,6 +96,23 @@ The replicated 4B NF4 SFT control also completed. NF4-minus-BF16 accuracy differ
 
 The [paired extension report](../results/extension-analysis-v1/report.md) includes compact text-free inputs, source hashes and regeneration commands. Intervals average the observed seeds before resampling shared example groups; they are exploratory and do not include uncertainty over new training seeds or new task families.
 
+## Order randomization did not produce invariant decisions
+
+All 18 frozen permutation checks completed: three orders per released seed-11 checkpoint, 3,080 examples per order, unchanged weights and calibration. Across the three orders, 0.8B changes selected ID on 7.89-9.71% of requests across its two variants. The larger models change on 3.64-4.97%. Aggregate accuracy moves less because correct and incorrect answers can exchange places.
+
+| Size | Release | Original accuracy | Shuffled accuracy range | Requests changing selected ID |
+|---|---|---:|---|---|
+| 0.8B | Continued SFT + temperature | 83.90% | 84.55% to 85.00% | 7.89% to 8.21% |
+| 0.8B | Exact RL | 82.14% | 81.98% to 82.89% | 8.67% to 9.71% |
+| 4B | Continued SFT + temperature | 89.94% | 89.58% to 90.10% | 3.99% to 4.22% |
+| 4B | Exact RL | 90.55% | 90.39% to 90.65% | 3.64% to 3.77% |
+| 9B | Continued SFT + temperature | 89.35% | 89.42% to 89.81% | 3.64% to 4.06% |
+| 9B | Exact RL | 89.06% | 89.03% to 89.64% | 4.74% to 4.97% |
+
+![Accuracy changes versus changed individual decisions](../results/review-order-v1/order-sensitivity.png)
+
+The 4B exact release is illustrative: its original accuracy is 90.55%, versus 90.39-90.65% after permutation. At the fixed 80%-calibration-coverage threshold, however, accepted-case error moves from 3.73% to 4.15-4.33%, while achieved test coverage increases from 82.60% to 83.80-83.93%. This is descriptive, not equal-coverage inference. Order changes position and alias assignment together. Repeated permutations are not extra independent test observations or new training seeds. The [complete report](../results/review-order-v1/report.md) preserves each result and its original threshold; no order was selected using test outcomes.
+
 ## Local default and alternatives
 
 The recommended starting artifact is **4B continued supervision with temperature confidence**, using seed 11 as the fixed packaging convention. Among the currently released configurations it balances 89.23% mean BANKING accuracy, 0.0740 mean correctness Brier, stronger explicit unsupported-option transfer than 4B exact, and approximately 82 ms short-request HTTP p50 on the A30. This is a judgment across observed trade-offs, not a preregistered optimization or a production guarantee. Its confidence is a calibration-only selection-score proxy, not the supervised scalar head. The matched calibration follow-up makes the default a configuration-level recommendation; it does not establish that supervision inherently gives better confidence.

@@ -9,3 +9,9 @@
 {"size": "9b", "method": "exact", "order": 303, "examples": 1500, "total": 3080, "seconds": 473.43923211400397}
 {"size": "9b", "method": "exact", "order": 303, "examples": 1750, "total": 3080, "seconds": 552.5254517929861}
 {"size": "9b", "method": "exact", "order": 303, "examples": 2000, "total": 3080, "seconds": 631.7087029760005}
+{"size": "9b", "method": "exact", "order": 303, "examples": 2250, "total": 3080, "seconds": 710.7158870830317}
+{"size": "9b", "method": "exact", "order": 303, "examples": 2500, "total": 3080, "seconds": 789.6200106350007}
+{"size": "9b", "method": "exact", "order": 303, "examples": 2750, "total": 3080, "seconds": 868.7505762450164}
+{"size": "9b", "method": "exact", "order": 303, "examples": 3000, "total": 3080, "seconds": 947.5358397699893}
+{"completed": "results/review-order-v1/9b/exact/order-303-metrics.json", "accuracy": 0.8964285714285715, "brier": 0.08723591214338275}
+{"size": "9b", "state": "completed"}
