@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "uploaded": true,
+  "namespace": "bahree",
+  "visibility": "public",
+  "source_code_revision": "c0147b69d57fbe541cdc2e1bc85c472938e4dda0",
+  "scope": "Owner-authorized public adapter/head packages; no backbone, training data or optimizer state.",
+  "packages": [
+    {
+      "name": "myjev-0.8b-continued_sft-seed11",
+      "path": "artifacts/hub-public-v2/myJEV-0.8B",
+      "artifact_revision": "3fa50261e3208eb0562a7949afb261d78a088840de3b5d01ab299203924701c6",
+      "local_default": false,
+      "files": {
+        "heads.safetensors": "6cfd52e49a31abff172dc3e45906fdf4e6293480ab9014a9b392567bd3abdff1",
+        "README.md": "a8381cd1a4700ce9660e1b7be8f966917c40d1f34f40f50b290b2e12aab9911a",
+        "BACKBONE_LICENSE": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
+        "manifest.json": "42f84f53a423746623f5d00278b9a33bd389e915f1287eff9419873049a18495",
+        "LICENSE": "db3c3a606627fa722da02b2a96af21bcef474a5e34d18aead7872874148042b4",
+        "NOTICE.md": "3538ed0fbff5ddb68d416f1df1413a882fcff262f5b6655d73b24fa899ffdcb9",
+        "adapter/README.md": "0d65a27124582040993d718133492c4a10323b7f152c76e4d2999c97c335701e",
+        "adapter/adapter_model.safetensors": "29bb0fc258ba03216f1f7581a2dd37730fe3afa332588b4e05d86b117a4df6b6",
+        "adapter/adapter_config.json": "a70b7385b6829ab2944a55ef46565ca83757287c92c4e2714f005860bd98ade8"
+      },
+      "repo_id": "bahree/myJEV-0.8B",
+      "public_name": "myJEV-0.8B",
+      "hub_revision": "01fed6001aa675bbfcddbf2ebb3574b28c6da9b6"
+    },
+    {
+      "name": "myjev-0.8b-exact-seed11",
+      "path": "artifacts/hub-public-v2/myJEV-0.8B-RL",
+      "artifact_revision": "dad832451985b1f3c86fe5d80c66ffa287569f13021abdc338de9359acc95acc",
+      "local_default": false,
+      "files": {
+        "heads.safetensors": "077d73fe0e8fe6f5e159ba639fbf1a2e54987c9a2df3095b6fbce8a780907d90",
+        "README.md": "7a7dab84c94eae898804f8089ade43a82cfdb563c648d61eb33c2a0f23f5c16e",
+        "BACKBONE_LICENSE": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
+        "manifest.json": "6ee8fef5c84570ca6d88f0defe8c6149dcbceba6d4d2c5130157f0d1a36e17bf",
+        "LICENSE": "db3c3a606627fa722da02b2a96af21bcef474a5e34d18aead7872874148042b4",
+        "NOTICE.md": "3538ed0fbff5ddb68d416f1df1413a882fcff262f5b6655d73b24fa899ffdcb9",
+        "adapter/README.md": "0d65a27124582040993d718133492c4a10323b7f152c76e4d2999c97c335701e",
+        "adapter/adapter_model.safetensors": "dd93b4881d872e67978fe60cf54439eb3cd044cd839311e75131641fc0ff4825",
+        "adapter/adapter_config.json": "9b83585ecf2a10aefc2413f9a32e61975e93f3cde0efd1daef4b3cea1ea0939b"
+      },
+      "repo_id": "bahree/myJEV-0.8B-RL",
+      "public_name": "myJEV-0.8B-RL",
+      "hub_revision": "cd6d76797413b74b6bd181102da22f13ff2d865f"
+    },
+    {
+      "name": "myjev-4b-continued_sft-seed11",
+      "path": "artifacts/hub-public-v2/myJEV-4B",
+      "artifact_revision": "3a7979eeff5cfb0bd2cee2fe2ea559c314ad9f5eef2de4ef4cb44759dbd73f02",
+      "local_default": true,
+      "files": {
+        "heads.safetensors": "ed122af12da125edf05fc0d391e15c67363009b3d8725630d4d0b0f89695f2e2",
+        "README.md": "233f9bc7eca8de723ba12ef137a63e6b72df859c561d260f011c42f1b0e24dcc",
+        "BACKBONE_LICENSE": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
+        "manifest.json": "56746ec8ae6f287492afbf10a5e21610ea993a840f18fdc85f67bb2bc03a169e",
+        "LICENSE": "db3c3a606627fa722da02b2a96af21bcef474a5e34d18aead7872874148042b4",
+        "NOTICE.md": "5a2aa6fdc1da058245aee54fc07d22cd6e12b7e95866bb5649c818822d0a0f46",
+        "adapter/README.md": "7716b0151793769140a76026939437398273346aefc3e5f75bb8ab2833b42885",
+        "adapter/adapter_model.safetensors": "c8669c765ef19aa4baf2eb9ec059d27bb28cd076b3aa30ee007360bc8c05b8a7",
+        "adapter/adapter_config.json": "d1fd4981d7aa14773d0ecce51dc2dbe9ab5e6de2762edc81185789d194ac9629"
+      },
+      "repo_id": "bahree/myJEV-4B",
+      "public_name": "myJEV-4B",
+      "hub_revision": "a1b9e3b1181293220012cfb15587cdba0767ae8e"
+    },
+    {
+      "name": "myjev-4b-exact-seed11",
+      "path": "artifacts/hub-public-v2/myJEV-4B-RL",
+      "artifact_revision": "01b4d4925a6c6773b811547cedc1b048b054bbe4ffaab2144f5e0aa48a6b2ebb",
+      "local_default": false,
+      "files": {
+        "heads.safetensors": "95cebda90230198c2144292e7d458111afe41d3e99825b6230ebd11e88fe79c6",
+        "README.md": "3366fbc0e5958e533b8738c4e91bdeb232ffba829d7ed7a025b348c884ca4268",
+        "BACKBONE_LICENSE": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
+        "manifest.json": "da6890db9ea2d7ce1d0eef16e24bc4cb826c4c80610a894dedd412b812d696de",
+        "LICENSE": "db3c3a606627fa722da02b2a96af21bcef474a5e34d18aead7872874148042b4",
+        "NOTICE.md": "5a2aa6fdc1da058245aee54fc07d22cd6e12b7e95866bb5649c818822d0a0f46",
+        "adapter/README.md": "7716b0151793769140a76026939437398273346aefc3e5f75bb8ab2833b42885",
+        "adapter/adapter_model.safetensors": "dfadcf53c1e576941e908f15f18e6e02e95b63a6b81b450b90caff394d850aa0",
+        "adapter/adapter_config.json": "6656b1564f0d2ce30534f3535f6aacd38973fa696ed2ca7aa109e193ea2bd95c"
+      },
+      "repo_id": "bahree/myJEV-4B-RL",
+      "public_name": "myJEV-4B-RL",
+      "hub_revision": "ca1e358ac8c4d7716136ddca24ca9aaea973d1a9"
+    },
+    {
+      "name": "myjev-9b-continued_sft-seed11",
+      "path": "artifacts/hub-public-v2/myJEV-9B",
+      "artifact_revision": "630ca8351085fc495bd01d53eb20706591aebacbf9074acfc5f9a6c760f1ed93",
+      "local_default": false,
+      "files": {
+        "heads.safetensors": "cdb7dafd653e0ebb511746a247976049cd2e69351900d893b82d37c19cfc928e",
+        "README.md": "baf4b9731056418bc5bcba3616fb75611091686fa078eb760eabc3d611e7e120",
+        "BACKBONE_LICENSE": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
+        "manifest.json": "91898d9d07a24768300aa53a0319f640214fd41aa2a154b208c60ae5c973aa06",
+        "LICENSE": "db3c3a606627fa722da02b2a96af21bcef474a5e34d18aead7872874148042b4",
+        "NOTICE.md": "6b47aefdc1929b62f93333e15980564d88a109ac813b51302700a757c256f397",
+        "adapter/README.md": "b24b74667d1eb9c991047b4507c329613ae38707f4450446a94217081af69e96",
+        "adapter/adapter_model.safetensors": "d7d6c63a42ae96e7ee1c929b4fbca2240847fd9024a3f05fb04b054ec609e2fe",
+        "adapter/adapter_config.json": "54f592590fe9617c09a667400aaa2233c30b98955c1874daae97ca58efeaa52d"
+      },
+      "repo_id": "bahree/myJEV-9B",
+      "public_name": "myJEV-9B",
+      "hub_revision": "ad0f257ce808d26f56de537cc41bd164645f154b"
+    },
+    {
+      "name": "myjev-9b-exact-seed11",
+      "path": "artifacts/hub-public-v2/myJEV-9B-RL",
+      "artifact_revision": "93499e5c987b1c4bc5278c3fa28df87dc15a56e1f92452d21db4ff143ef4fe0c",
+      "local_default": false,
+      "files": {
+        "heads.safetensors": "4f7cb1d383fcd675bcf71e8ad1168fb88e09a47f1b26f940fdc726b3ee98ed15",
+        "README.md": "c60bc1320645d2f2a288dc515fe43ecbecb42af6e5d514d97fa35e2506f01c01",
+        "BACKBONE_LICENSE": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
+        "manifest.json": "69aa5ec8614b24b76f7f8adbde5a576c3bcf6228c4956f3e06a1392e96bed4ac",
+        "LICENSE": "db3c3a606627fa722da02b2a96af21bcef474a5e34d18aead7872874148042b4",
+        "NOTICE.md": "6b47aefdc1929b62f93333e15980564d88a109ac813b51302700a757c256f397",
+        "adapter/README.md": "b24b74667d1eb9c991047b4507c329613ae38707f4450446a94217081af69e96",
+        "adapter/adapter_model.safetensors": "57365bf7c905c84fe7941e18dc78c48946d3dd41064626bb3750b6cb3b3e1233",
+        "adapter/adapter_config.json": "7c830cf7b13b02e2131db7ffd27e003d391662bcbc2c7ddabf2b17b94a241a84"
+      },
+      "repo_id": "bahree/myJEV-9B-RL",
+      "public_name": "myJEV-9B-RL",
+      "hub_revision": "d22fdbb4b33e76037178459d523010e9b045a40c"
+    }
+  ],
+  "previous_publication_manifest": "results/release-readiness-v1/publication-manifest-public.json",
+  "amendment": "README source pin only; all runtime files unchanged"
+}

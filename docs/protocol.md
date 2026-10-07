@@ -1,6 +1,6 @@
 # Experimental protocol
 
-The committed configurations describe **100-update feasibility pilots**, not converged models or a completed scaling study. Freeze a main comparison's updates, exposure, learning rates, seeds, candidate descriptions and validation selection rule before examining its test outputs. The orchestration command defaults to 1,000 updates and seeds 11, 22, 33; this is an execution setting, not evidence that 1,000 steps is sufficient.
+This protocol records the design established during feasibility pilots and used by the completed studies. The full three-size comparison, precision control, transfer evaluation and release checks are now complete; see the [current evidence and limitations](https://github.com/bahree/myJEV/blob/main/docs/qwen-findings.md). Historical 100-update pilot configurations and the orchestration default of 1,000 updates remain reproducibility inputs, not descriptions of the final training budget or proof of convergence.
 
 ## Semantics and objectives
 
@@ -26,6 +26,6 @@ Accuracy, macro-F1, selection multiclass Brier, selected-correctness Brier, corr
 
 Archive resampling units are original post families, not excerpts. Paired method differences should use the same sampled groups and be aggregated across seeds. No perfect-reviewer cascade simulation is presented as a measured human workflow.
 
-## Gates still needed for a research release
+## Completed gates and remaining evidence limits
 
-Full three-seed matched comparisons, same-size precision controls, untouched and GLiClass benchmarks, independent calibration, CLINC transfer, human-reviewed archive labels/adaptation/forgetting, all robustness cohorts, and deployment benchmarks at released precision. No default model is selected solely by parameter count. A 100-update pilot is insufficient to name a winning training method or model size.
+Three-seed matched comparisons, same-size precision controls, untouched and GLiClass benchmarks, independent calibration, CLINC transfer, robustness cohorts and local deployment checks have completed. Archive adaptation and forgetting checks use unreviewed machine labels; human reliability and semantic grouping review remain unresolved. The default is an exploratory deployment choice based on measured trade-offs. Fixed-budget endpoint results do not establish convergence or a universally winning method.

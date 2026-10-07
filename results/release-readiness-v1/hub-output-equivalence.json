@@ -1,0 +1,107 @@
+{
+  "scope": "Exact output equality for examples/request.json on the same GPU and runtime; package-wide checksums verified separately.",
+  "results": [
+    {
+      "repo_id": "bahree/myJEV-0.8B",
+      "revision": "a56043bc190b4ab66a704dea771388b28edcb53d",
+      "local_hub_output_equal": true,
+      "response": {
+        "selected_id": "billing",
+        "selection_scores": {
+          "billing": 0.9764319658279419,
+          "technical": 0.019411658868193626,
+          "other": 0.004156407900154591
+        },
+        "confidence": 0.9764319658279419,
+        "confidence_mode": "selection",
+        "artifact_revision": "3fa50261e3208eb0562a7949afb261d78a088840de3b5d01ab299203924701c6",
+        "calibration_revision": "83e112f7145e3f0ee228cc530f65e7c1731b6aa922164e9560211b00a07d7aa4"
+      }
+    },
+    {
+      "repo_id": "bahree/myJEV-0.8B-RL",
+      "revision": "535d20d095dcc3577a9c155703bdf4d417134573",
+      "local_hub_output_equal": true,
+      "response": {
+        "selected_id": "billing",
+        "selection_scores": {
+          "billing": 1.0,
+          "technical": 3.416988292315182e-08,
+          "other": 1.4374695211927246e-08
+        },
+        "confidence": 0.8727455139160156,
+        "confidence_mode": "policy",
+        "artifact_revision": "dad832451985b1f3c86fe5d80c66ffa287569f13021abdc338de9359acc95acc",
+        "calibration_revision": "uncalibrated"
+      }
+    },
+    {
+      "repo_id": "bahree/myJEV-4B",
+      "revision": "ca23134ff8d223927d545a30c594e27d68db4400",
+      "local_hub_output_equal": true,
+      "response": {
+        "selected_id": "billing",
+        "selection_scores": {
+          "billing": 0.9834240078926086,
+          "technical": 0.005727097392082214,
+          "other": 0.01084891613572836
+        },
+        "confidence": 0.9834240078926086,
+        "confidence_mode": "selection",
+        "artifact_revision": "3a7979eeff5cfb0bd2cee2fe2ea559c314ad9f5eef2de4ef4cb44759dbd73f02",
+        "calibration_revision": "f0d2ddcaf6650e1f44415d49b1cf8b303d4d6fef5f73bb6198ee91600560e8d1"
+      }
+    },
+    {
+      "repo_id": "bahree/myJEV-4B-RL",
+      "revision": "40d140f2b29c15b8ba252551aba745e9d546f5dc",
+      "local_hub_output_equal": true,
+      "response": {
+        "selected_id": "billing",
+        "selection_scores": {
+          "billing": 1.0,
+          "technical": 1.9923190874848729e-10,
+          "other": 2.5302177020236627e-10
+        },
+        "confidence": 0.8591256141662598,
+        "confidence_mode": "policy",
+        "artifact_revision": "01b4d4925a6c6773b811547cedc1b048b054bbe4ffaab2144f5e0aa48a6b2ebb",
+        "calibration_revision": "uncalibrated"
+      }
+    },
+    {
+      "repo_id": "bahree/myJEV-9B",
+      "revision": "bd9e54ff1222732209963aeb003c92c54c4260cb",
+      "local_hub_output_equal": true,
+      "response": {
+        "selected_id": "billing",
+        "selection_scores": {
+          "billing": 0.9533368349075317,
+          "technical": 0.005175800062716007,
+          "other": 0.04148741066455841
+        },
+        "confidence": 0.9533368349075317,
+        "confidence_mode": "selection",
+        "artifact_revision": "630ca8351085fc495bd01d53eb20706591aebacbf9074acfc5f9a6c760f1ed93",
+        "calibration_revision": "558be022b546a77e44e006cb4b4410ae263b378ba978e0acfb727eec57e94a33"
+      }
+    },
+    {
+      "repo_id": "bahree/myJEV-9B-RL",
+      "revision": "50cf88fc60d9cb755c1aa62530c6fde03cf47335",
+      "local_hub_output_equal": true,
+      "response": {
+        "selected_id": "billing",
+        "selection_scores": {
+          "billing": 0.9999984502792358,
+          "technical": 3.242466917185993e-08,
+          "other": 1.5625734022250981e-06
+        },
+        "confidence": 0.8766478896141052,
+        "confidence_mode": "policy",
+        "artifact_revision": "93499e5c987b1c4bc5278c3fa28df87dc15a56e1f92452d21db4ff143ef4fe0c",
+        "calibration_revision": "uncalibrated"
+      }
+    }
+  ]
+}

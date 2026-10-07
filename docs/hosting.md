@@ -1,6 +1,6 @@
 # Local and managed hosting
 
-The same `DecisionModel.score()` implementation is used by evaluation, Python, CLI, HTTP and Docker. It loads immutable backbone/tokenizer revisions, an adapter, custom heads and checked artifact files. For a Hub release, call `DecisionModel.load("namespace/repository", revision="<40-character commit>")`; an unpinned Hub branch is rejected. The public default is [myJEV-4B](https://huggingface.co/bahree/myJEV-4B), pinned at `ca23134ff8d223927d545a30c594e27d68db4400`; see the [release list](https://github.com/bahree/myJEV/blob/main/docs/models.md).
+The same `DecisionModel.score()` implementation is used by evaluation, Python, CLI, HTTP and Docker. It loads immutable backbone/tokenizer revisions, an adapter, custom heads and checked artifact files. For a Hub release, call `DecisionModel.load("namespace/repository", revision="<40-character commit>")`; an unpinned Hub branch is rejected. The public default is [myJEV-4B](https://huggingface.co/bahree/myJEV-4B), pinned at `a1b9e3b1181293220012cfb15587cdba0767ae8e`; see the [release list](https://github.com/bahree/myJEV/blob/main/docs/models.md).
 
 ## Local installation
 

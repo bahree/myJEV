@@ -15,7 +15,7 @@
         0.28888888888888886,
         0.5568762218963831
       ],
-      "macro_f1": 0.36113007130401503,
+      "macro_f1": null,
       "correctness_brier": 0.5640159013957284,
       "selection_multiclass_brier": 0.8960941507871044,
       "correctness_auroc": 0.8466599190283401,
@@ -193,7 +193,8 @@
       ],
       "artifact_revision": "8d85198423279655f86c9da8df9a6882da5e78b0d08f2ccf37edc403d27e9ed4",
       "subset_limit": null,
-      "peak_vram_bytes": 9130362368
+      "peak_vram_bytes": 9130362368,
+      "macro_f1_status": "not_applicable: candidate IDs denote different classes across rubrics; use per-rubric macro-F1"
     },
     "adapted": {
       "n": 90,
@@ -202,7 +203,7 @@
         0.5333333333333333,
         0.6915098199672668
       ],
-      "macro_f1": 0.5256868131868132,
+      "macro_f1": null,
       "correctness_brier": 0.25867307002866197,
       "selection_multiclass_brier": 0.5958311822369868,
       "correctness_auroc": 0.7657142857142857,
@@ -386,7 +387,8 @@
       ],
       "artifact_revision": "a98b2d8725b869a71b51b8286325396afc7fc881a6088b33493dee285b0a9bda",
       "subset_limit": null,
-      "peak_vram_bytes": 9130362368
+      "peak_vram_bytes": 9130362368,
+      "macro_f1_status": "not_applicable: candidate IDs denote different classes across rubrics; use per-rubric macro-F1"
     },
     "banking_before": {
       "n": 3080,
@@ -1869,5 +1871,13 @@
       }
     }
   },
-  "banking_accuracy_change": 0.0016233766233766378
+  "banking_accuracy_change": 0.0016233766233766378,
+  "reporting_amendment": {
+    "original_summary_sha256": "485c8fdee01464f164ce5853b4e5b07411c5e901392525392c4c9126b4d6090e",
+    "reason": "Suppress pooled macro-F1 across incompatible archive rubrics. Original experiment outputs preserved; per-rubric results unchanged.",
+    "changed_fields": [
+      "results.unadapted.macro_f1",
+      "results.adapted.macro_f1"
+    ]
+  }
 }

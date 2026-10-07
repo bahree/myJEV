@@ -20,7 +20,7 @@ The tests do not download a backbone. The dependency lock includes a large CUDA-
 
 ```bash
 .venv/bin/myjev score --artifact bahree/myJEV-4B \
-  --revision ca23134ff8d223927d545a30c594e27d68db4400 \
+  --revision a1b9e3b1181293220012cfb15587cdba0767ae8e \
   --input examples/request.json
 ```
 

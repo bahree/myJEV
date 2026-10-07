@@ -4,7 +4,11 @@
   "visibility": "public",
   "files": 9,
   "uploaded": true,
-  "revision": "40d140f2b29c15b8ba252551aba745e9d546f5dc",
+  "revision": "ca1e358ac8c4d7716136ddca24ca9aaea973d1a9",
   "pinned_download_hashes_equal": true,
-  "next_check": "Load this pinned Hub revision and compare outputs with the local package."
+  "next_check": "Runtime files unchanged; initial six-model output equality retained; newest default revision smoke checked separately.",
+  "previous_revision": "40d140f2b29c15b8ba252551aba745e9d546f5dc",
+  "source_code_revision": "c0147b69d57fbe541cdc2e1bc85c472938e4dda0",
+  "amendment": "README source pin only",
+  "runtime_files_unchanged": true
 }

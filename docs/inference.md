@@ -26,7 +26,7 @@ from pathlib import Path
 from myjev import DecisionModel
 
 model = DecisionModel.load("bahree/myJEV-4B",
-                           revision="ca23134ff8d223927d545a30c594e27d68db4400")
+                           revision="a1b9e3b1181293220012cfb15587cdba0767ae8e")
 request = json.loads(Path("examples/request.json").read_text())
 print(model.score(request))
 ```
@@ -37,9 +37,9 @@ CLI with the same public release:
 
 ```bash
 .venv/bin/myjev score --artifact bahree/myJEV-4B \
-  --revision ca23134ff8d223927d545a30c594e27d68db4400 --input examples/request.json
+  --revision a1b9e3b1181293220012cfb15587cdba0767ae8e --input examples/request.json
 .venv/bin/myjev serve --artifact bahree/myJEV-4B \
-  --revision ca23134ff8d223927d545a30c594e27d68db4400
+  --revision a1b9e3b1181293220012cfb15587cdba0767ae8e
 ```
 
 CLI, for a locally trained artifact, one request or a JSONL batch:

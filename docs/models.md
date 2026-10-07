@@ -4,12 +4,12 @@ Six seed-11 adapter/head releases are public on Hugging Face. **Start with [myJE
 
 | Release | Training and confidence | Immutable revision |
 |---|---|---|
-| [bahree/myJEV-0.8B](https://huggingface.co/bahree/myJEV-0.8B) | Continued SFT; temperature calibration | [`a56043bc190b4ab66a704dea771388b28edcb53d`](https://huggingface.co/bahree/myJEV-0.8B/tree/a56043bc190b4ab66a704dea771388b28edcb53d) |
-| [bahree/myJEV-0.8B-RL](https://huggingface.co/bahree/myJEV-0.8B-RL) | Exact RL; expected confidence grid | [`535d20d095dcc3577a9c155703bdf4d417134573`](https://huggingface.co/bahree/myJEV-0.8B-RL/tree/535d20d095dcc3577a9c155703bdf4d417134573) |
-| [bahree/myJEV-4B](https://huggingface.co/bahree/myJEV-4B) | Continued SFT; temperature calibration | [`ca23134ff8d223927d545a30c594e27d68db4400`](https://huggingface.co/bahree/myJEV-4B/tree/ca23134ff8d223927d545a30c594e27d68db4400) |
-| [bahree/myJEV-4B-RL](https://huggingface.co/bahree/myJEV-4B-RL) | Exact RL; expected confidence grid | [`40d140f2b29c15b8ba252551aba745e9d546f5dc`](https://huggingface.co/bahree/myJEV-4B-RL/tree/40d140f2b29c15b8ba252551aba745e9d546f5dc) |
-| [bahree/myJEV-9B](https://huggingface.co/bahree/myJEV-9B) | Continued SFT; temperature calibration | [`bd9e54ff1222732209963aeb003c92c54c4260cb`](https://huggingface.co/bahree/myJEV-9B/tree/bd9e54ff1222732209963aeb003c92c54c4260cb) |
-| [bahree/myJEV-9B-RL](https://huggingface.co/bahree/myJEV-9B-RL) | Exact RL; expected confidence grid | [`50cf88fc60d9cb755c1aa62530c6fde03cf47335`](https://huggingface.co/bahree/myJEV-9B-RL/tree/50cf88fc60d9cb755c1aa62530c6fde03cf47335) |
+| [bahree/myJEV-0.8B](https://huggingface.co/bahree/myJEV-0.8B) | Continued SFT; temperature calibration | [`01fed6001aa675bbfcddbf2ebb3574b28c6da9b6`](https://huggingface.co/bahree/myJEV-0.8B/tree/01fed6001aa675bbfcddbf2ebb3574b28c6da9b6) |
+| [bahree/myJEV-0.8B-RL](https://huggingface.co/bahree/myJEV-0.8B-RL) | Exact RL; expected confidence grid | [`cd6d76797413b74b6bd181102da22f13ff2d865f`](https://huggingface.co/bahree/myJEV-0.8B-RL/tree/cd6d76797413b74b6bd181102da22f13ff2d865f) |
+| [bahree/myJEV-4B](https://huggingface.co/bahree/myJEV-4B) | Continued SFT; temperature calibration | [`a1b9e3b1181293220012cfb15587cdba0767ae8e`](https://huggingface.co/bahree/myJEV-4B/tree/a1b9e3b1181293220012cfb15587cdba0767ae8e) |
+| [bahree/myJEV-4B-RL](https://huggingface.co/bahree/myJEV-4B-RL) | Exact RL; expected confidence grid | [`ca1e358ac8c4d7716136ddca24ca9aaea973d1a9`](https://huggingface.co/bahree/myJEV-4B-RL/tree/ca1e358ac8c4d7716136ddca24ca9aaea973d1a9) |
+| [bahree/myJEV-9B](https://huggingface.co/bahree/myJEV-9B) | Continued SFT; temperature calibration | [`ad0f257ce808d26f56de537cc41bd164645f154b`](https://huggingface.co/bahree/myJEV-9B/tree/ad0f257ce808d26f56de537cc41bd164645f154b) |
+| [bahree/myJEV-9B-RL](https://huggingface.co/bahree/myJEV-9B-RL) | Exact RL; expected confidence grid | [`d22fdbb4b33e76037178459d523010e9b045a40c`](https://huggingface.co/bahree/myJEV-9B-RL/tree/d22fdbb4b33e76037178459d523010e9b045a40c) |
 
 ## What each release contains
 
@@ -22,7 +22,7 @@ from myjev import DecisionModel
 
 model = DecisionModel.load(
     "bahree/myJEV-4B",
-    revision="ca23134ff8d223927d545a30c594e27d68db4400",
+    revision="a1b9e3b1181293220012cfb15587cdba0767ae8e",
 )
 ```
 
