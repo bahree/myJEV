@@ -1,0 +1,39 @@
+{
+  "repository": "docker.io/amitbahree/myjev",
+  "version_tag": "0.1.1",
+  "published": true,
+  "verified_utc": "2026-10-07T14:37:24.058857+00:00",
+  "immutable_reference": "amitbahree/myjev@sha256:1c69cbac450ad7e938e2b4379cb65099942bce9b7ebe2f9aa6229733ef5f16ab",
+  "registry_digest": "sha256:1c69cbac450ad7e938e2b4379cb65099942bce9b7ebe2f9aa6229733ef5f16ab",
+  "registry_media_type": "application/vnd.oci.image.index.v1+json",
+  "platform": "linux/amd64",
+  "platform_manifest_digest": "sha256:9aad93bf07cd2aa3eb15a60c0f6622419eb054a8bff9e1d2ffa4b30bc0fc35b3",
+  "config_digest": "sha256:93e84df6de32de18ac8eab10efec850c87a7674af147d9c45bfd8ecddc99668f",
+  "docker_image_inspect_id": "sha256:1c69cbac450ad7e938e2b4379cb65099942bce9b7ebe2f9aa6229733ef5f16ab",
+  "docker_reported_image_bytes": 10511212218,
+  "compressed_platform_layer_bytes": 3481795511,
+  "anonymous_pull_verified": true,
+  "gpu_http_equal": true,
+  "managed_aliases_equal": true,
+  "model_repo": "bahree/myJEV-4B",
+  "model_revision": "38f7cca5a8530483309f576b0c3dd1756bc27c33",
+  "cached_ready_seconds": 13.374608758982504,
+  "cache_scope": "Pull performed with an empty temporary Docker credential configuration on the build host; previously downloaded image layers were reused. Model files were pre-cached and mounted read-only.",
+  "validation_scope": "One saved request compared exactly with host Python; earlier per-size contract and serving studies are separate evidence. No empty-cache download timing, new calibration study or managed cloud deployment.",
+  "build_provenance": "results/release-container-v2/provenance.json",
+  "runtime_source_revision": "cea5df80f51524dc93f168d1ba4ff11c55969336",
+  "logs": [
+    "push.log",
+    "pull.log",
+    "pulled-http.log"
+  ],
+  "evidence_sha256": {
+    "push.log": "601db7e1fd3c75efc05eaac8b6014ecf2ac94a4861c650dfb92cc860181cb18f",
+    "pull.log": "890bbdb0cbbb9af53203359eb46de9656017b9832660f986843b91e9f27bdb7c",
+    "pull.json": "1222a6534e4fccabab87f2c252ef2edd2513f3b9b26ec19e0e80dd2cd94c6392",
+    "pulled-http.json": "2571d59ca4bceb566e892810e93c6b4515c0b38cb935ff57a6d78152e51bce67",
+    "pulled-http.log": "cd37210591567ea5ba64dce081552cc35a32227fac62a8887acd1473288bf336",
+    "manifest.json": "d3cda80539a07d45e8d51d2deee710988f4ad1318f012b0516d551c505b29f6f",
+    "platform-manifest.json": "7827adefaffaac364d36fe54de92ba1d9fd11b859b10b5e3fc037f6746e0e632"
+  }
+}

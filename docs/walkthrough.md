@@ -64,4 +64,4 @@ Load the manifest-pinned backbone, tokenizer, adapter, confidence head and calib
 
 ![Artifact loading](../results/teaching-diagrams-v1/artifact-loading.png)
 
-The local `myjev:0.1.1-hub` image passed direct Hub loading and exact host/container response comparison. [Hosting](hosting.md) separates this measured local path from the unexecuted managed endpoint recipe. No public registry or always-on service is implied by a Hub weights release.
+The local `myjev:0.1.1-hub` image passed direct Hub loading and exact host/container response comparison. [Hosting](hosting.md) separates this measured local path from the unexecuted managed endpoint recipe. The image is separately published on [Docker Hub](https://hub.docker.com/r/amitbahree/myjev), with a [verified digest and run commands](inference.md#gpu-docker). Neither weights nor image publication creates an always-on service.

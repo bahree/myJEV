@@ -1,5 +1,13 @@
 # Milestone history
 
+## 2026-10-07: Docker Hub release
+
+- Published `amitbahree/myjev:0.1.1`; recorded the immutable manifest digest and verified an anonymous pull followed by GPU response equivalence.
+- Added direct run commands, a Docker Hub overview, publication logs and explicit cached-validation conditions.
+- Replaced vendor-specific decision-head discussion with general backbone, head, training and confidence principles.
+
+Earlier entries below describe their checkpoint at the time; current availability is documented in the model and inference guides.
+
 ## Research and release preparation
 
 - License source code under MIT and expand the teaching outline to four posts.

@@ -1,6 +1,6 @@
 # Run inference locally and in Docker
 
-Six trained seed-11 candidates have passed Python, CLI, HTTP and GPU-container equivalence at 0.8B, 4B and 9B. The default within this published myJEV family is 4B continued supervised training with temperature calibration. Public adapter/head releases are available, starting with [myJEV-4B](https://huggingface.co/bahree/myJEV-4B); a registry image remains separate release work. Use the pinned Hub example below or train a local pilot using [the quick start](quickstart.md).
+Six trained seed-11 candidates have passed Python, CLI, HTTP and GPU-container equivalence at 0.8B, 4B and 9B. The default within this published myJEV family is 4B continued supervised training with temperature calibration. Public adapter/head releases are available, starting with [myJEV-4B](https://huggingface.co/bahree/myJEV-4B); the tested GPU image is available on [Docker Hub](https://hub.docker.com/r/amitbahree/myjev). Use the pinned Hub example below or train a local pilot using [the quick start](quickstart.md).
 
 ## What the adapter saves and what inference still costs
 
@@ -62,29 +62,35 @@ Readiness requires model loading and warmup. Health is available at `/healthz`. 
 
 ## GPU Docker
 
-The host needs a compatible NVIDIA driver and NVIDIA Container Toolkit. Build the pinned Dockerfile and verify GPU access:
+Use the published Linux `amd64` image on a host with a compatible NVIDIA driver and NVIDIA Container Toolkit. A 24 GB A30 is the tested GPU class. No local Python installation or training run is required.
 
 ```bash
-docker build -t myjev:local .
-docker run --rm --gpus all myjev:local \
-  python -c 'import torch; print(torch.cuda.is_available())'
+export MYJEV_IMAGE=amitbahree/myjev@sha256:1c69cbac450ad7e938e2b4379cb65099942bce9b7ebe2f9aa6229733ef5f16ab
+docker pull "$MYJEV_IMAGE"
+mkdir -p .cache/huggingface
+docker run --rm --name myjev --gpus device=0 \
+  -p 127.0.0.1:8000:8000 \
+  -v "$PWD/.cache/huggingface:/cache/huggingface" \
+  -e MYJEV_ARTIFACT=bahree/myJEV-4B \
+  -e MYJEV_REVISION=38f7cca5a8530483309f576b0c3dd1756bc27c33 \
+  "$MYJEV_IMAGE"
 ```
 
-Start the repository's Compose service using the artifact and shared backbone cache:
+Once `/readyz` succeeds, send the HTTP request shown above. Stop from another terminal with `docker stop myjev`. First startup downloads the artifact and its separately pinned backbone; the image itself contains no weights. Keep the cache volume for subsequent starts. The image occupies about 10.5 GB as reported by Docker on this host (compressed registry layers total 3.48 GB), plus the separately downloaded models. Our published-image check reused cached image layers and model files; it is not a fresh-machine download-time measurement.
+
+The [publication receipt](../results/container-registry-v1/publication.json) records the immutable digest, anonymous pull and exact GPU HTTP/host response match. The shorter tag `amitbahree/myjev:0.1.1` refers to this release; use the digest for reproducibility. [Docker Hub overview](../deploy/README.container.md) supplies a self-contained request example and runtime details.
+
+To build from the checked-out source instead, run `docker build -t myjev:local .`. For a locally trained artifact, the Compose path remains:
 
 ```bash
 export MYJEV_ARTIFACT_HOST="$PWD/artifacts/pilot-0.8b/artifact"
 export MYJEV_CACHE_HOST="$PWD/.cache/huggingface"
 docker compose -f deploy/compose.yaml up --build
-```
-
-Compose owns its configured image/build settings; the `myjev:local` tag above is for the standalone GPU smoke check. Once `/readyz` succeeds, use the same HTTP request shown above. Stop the service with:
-
-```bash
+# Stop the Compose service when finished.
 docker compose -f deploy/compose.yaml down
 ```
 
-One process loads one selected model. Preserve the pinned backbone cache and mount a complete artifact. Never assume an adapter directory alone includes its backbone weights. The container's loopback host binding is intended for local access; authenticated remote access needs the proxy setup in the hosting guide.
+One process loads one selected model. Preserve the pinned backbone cache and mount a complete artifact when using Compose. An adapter alone does not include its backbone. Both examples bind to host loopback; authenticated remote access needs the proxy setup in [hosting](hosting.md).
 
 ## Troubleshooting and release checks
 
@@ -100,7 +106,7 @@ One process loads one selected model. Preserve the pinned backbone cache and mou
 
 Before releasing a checkpoint, repeat save/reload and Python/CLI/HTTP/Docker equivalence on that checkpoint and image. Measure warm p50/p95, throughput, peak VRAM, cold start and overload behavior on representative inputs. The completed scoring-versus-generation controls and their format failures are described in [the benchmark results](hosting.md#completed-candidate-validation-and-local-default).
 
-The [Hugging Face custom-container recipe](hosting.md#hugging-face-inference-endpoints-recipe) remains unexecuted. Publishing weights does not create a running endpoint. Replace local build tags with tested immutable image digests when registry releases become available.
+The [Hugging Face custom-container recipe](hosting.md#hugging-face-inference-endpoints-recipe) remains unexecuted. Publishing weights does not create a running endpoint. Use the published immutable image digest above in a managed-container configuration.
 
 ## Try seven original requests
 
@@ -115,6 +121,6 @@ The [saved demonstration](../results/demos-v1/report.md) includes billing, techn
 
 ![Files loaded for one deployed decision](../results/teaching-diagrams-v1/artifact-loading.png)
 
-The latest verified local container is `myjev:0.1.1-hub`; [hosting](hosting.md#hub-loader-container-update) records the incremental build and direct Hub-load check. Build the root Dockerfile for a clean installation on your own machine.
+The published `amitbahree/myjev:0.1.1` container comes from the verified local `myjev:0.1.1-hub` image; [hosting](hosting.md#hub-loader-container-update) records the incremental build and direct Hub-load check. Build the root Dockerfile for a clean installation on your own machine.
 
 ![Bounded request queue and timeout path](../results/teaching-diagrams-v1/request-queue.png)

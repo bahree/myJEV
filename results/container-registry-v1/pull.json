@@ -1,0 +1,13 @@
+{
+  "image": "amitbahree/myjev@sha256:1c69cbac450ad7e938e2b4379cb65099942bce9b7ebe2f9aa6229733ef5f16ab",
+  "registry_digest": "sha256:1c69cbac450ad7e938e2b4379cb65099942bce9b7ebe2f9aa6229733ef5f16ab",
+  "image_id": "sha256:1c69cbac450ad7e938e2b4379cb65099942bce9b7ebe2f9aa6229733ef5f16ab",
+  "repo_digests": [
+    "amitbahree/myjev@sha256:1c69cbac450ad7e938e2b4379cb65099942bce9b7ebe2f9aa6229733ef5f16ab",
+    "myjev@sha256:1c69cbac450ad7e938e2b4379cb65099942bce9b7ebe2f9aa6229733ef5f16ab"
+  ],
+  "os": "linux",
+  "architecture": "amd64",
+  "anonymous_pull_verified": true,
+  "cache_scope": "Pull performed with an empty temporary Docker credential configuration on the build host; previously downloaded image layers were reused."
+}

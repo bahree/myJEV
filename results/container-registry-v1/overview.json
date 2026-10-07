@@ -1,0 +1,11 @@
+{
+  "repository": "amitbahree/myjev",
+  "utc": "2026-10-07T14:37:24.143334+00:00",
+  "readme_sha256": "0e4ae2be00785db6b463d229c81a78ac73aa62525d77047ad26369877151452f",
+  "stage": "verify_public_overview",
+  "update_http_status": 200,
+  "verified_public": true,
+  "description_equal": true,
+  "readme_equal": true,
+  "complete": true
+}

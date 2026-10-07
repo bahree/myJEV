@@ -86,16 +86,20 @@ The limit reproduces the pilot's evaluation scope. Calibration labels select thr
 
 ## Docker
 
-After local training, on a host with Docker and NVIDIA Container Toolkit configured:
+The public [Docker Hub image](https://hub.docker.com/r/amitbahree/myjev) serves the default model without local training or a Python installation. The host needs Docker, an NVIDIA driver and NVIDIA Container Toolkit; the validated GPU class is an A30 with 24 GB VRAM.
 
 ```bash
-export MYJEV_ARTIFACT_HOST="$PWD/artifacts/pilot-0.8b/artifact"
-export MYJEV_CACHE_HOST="$PWD/.cache/huggingface"
-docker compose -f deploy/compose.yaml up --build
+export MYJEV_IMAGE=amitbahree/myjev@sha256:1c69cbac450ad7e938e2b4379cb65099942bce9b7ebe2f9aa6229733ef5f16ab
+docker pull "$MYJEV_IMAGE"
+mkdir -p .cache/huggingface
+docker run --rm --name myjev --gpus device=0 \
+  -p 127.0.0.1:8000:8000 \
+  -v "$PWD/.cache/huggingface:/cache/huggingface" \
+  -e MYJEV_ARTIFACT=bahree/myJEV-4B \
+  -e MYJEV_REVISION=38f7cca5a8530483309f576b0c3dd1756bc27c33 \
+  "$MYJEV_IMAGE"
 ```
 
-Compose publishes the service on host loopback port 8000. Use the same curl request as above. Stop it with `docker compose -f deploy/compose.yaml down`.
-
-The image is built locally; no public container registry release is available yet. [Hosting](hosting.md) documents the measured image, limits, benchmark conditions, and Hugging Face custom-container recipe. The cloud recipe has not been executed.
+Use the same curl request above after `/readyz` succeeds. Stop with `docker stop myjev`. First startup downloads the pinned release and its backbone into the mounted cache. The image contains no model weights. The [inference guide](inference.md#gpu-docker) also covers source builds and Compose for locally trained artifacts. [Hosting](hosting.md) links the registry receipt, GPU equality check, limits and benchmark conditions. Its managed cloud recipe remains unexecuted.
 
 For dashboard setup and a safe environment template, see [W&B tracking](tracking.md). For all inference interfaces, container startup and troubleshooting, see [inference and Docker](inference.md).

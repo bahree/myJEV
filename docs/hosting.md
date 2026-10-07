@@ -1,6 +1,6 @@
 # Local and managed hosting
 
-The same `DecisionModel.score()` implementation is used by evaluation, Python, CLI, HTTP and Docker. It loads immutable backbone/tokenizer revisions, an adapter, custom heads and checked artifact files. For a Hub release, call `DecisionModel.load("namespace/repository", revision="<40-character commit>")`; an unpinned Hub branch is rejected. The public default is [myJEV-4B](https://huggingface.co/bahree/myJEV-4B), pinned at `a1b9e3b1181293220012cfb15587cdba0767ae8e`; see the [release list](https://github.com/bahree/myJEV/blob/main/docs/models.md).
+The same `DecisionModel.score()` implementation is used by evaluation, Python, CLI, HTTP and Docker. It loads immutable backbone/tokenizer revisions, an adapter, custom heads and checked artifact files. For a Hub release, call `DecisionModel.load("namespace/repository", revision="<40-character commit>")`; an unpinned Hub branch is rejected. The public default is [myJEV-4B](https://huggingface.co/bahree/myJEV-4B), pinned at `38f7cca5a8530483309f576b0c3dd1756bc27c33`; see the [release list](https://github.com/bahree/myJEV/blob/main/docs/models.md).
 
 ## Local installation
 
@@ -12,17 +12,32 @@ Duplicate IDs, fewer than two candidates, more than the artifact's candidate lim
 
 ## Docker
 
+The published image is `amitbahree/myjev@sha256:1c69cbac450ad7e938e2b4379cb65099942bce9b7ebe2f9aa6229733ef5f16ab` (tag `amitbahree/myjev:0.1.1`) on [Docker Hub](https://hub.docker.com/r/amitbahree/myjev). It serves the same released models without a host Python installation. Linux `amd64` and a 24 GB NVIDIA A30 are the validated platform and GPU class. The host needs a compatible driver and NVIDIA Container Toolkit.
+
 ```bash
-docker build -t myjev:0.1.0 .
-docker run --rm --gpus all myjev:0.1.0 python -c 'import torch; print(torch.cuda.is_available())'
-export MYJEV_ARTIFACT_HOST="$PWD/artifacts/pilot-0.8b/artifact"
-export MYJEV_CACHE_HOST="$PWD/.cache/huggingface"
-docker compose -f deploy/compose.yaml up --build
-curl -fsS http://127.0.0.1:8000/readyz
-curl -fsS http://127.0.0.1:8000/score -H 'Content-Type: application/json' --data-binary @examples/request.json
+export MYJEV_IMAGE=amitbahree/myjev@sha256:1c69cbac450ad7e938e2b4379cb65099942bce9b7ebe2f9aa6229733ef5f16ab
+docker pull "$MYJEV_IMAGE"
+mkdir -p .cache/huggingface
+docker run --rm --name myjev --gpus device=0 \
+  -p 127.0.0.1:8000:8000 \
+  -v "$PWD/.cache/huggingface:/cache/huggingface" \
+  -e MYJEV_ARTIFACT=bahree/myJEV-4B \
+  -e MYJEV_REVISION=38f7cca5a8530483309f576b0c3dd1756bc27c33 \
+  "$MYJEV_IMAGE"
 ```
 
-Use a tested image digest for releases. The CUDA libraries come from the pinned PyTorch dependencies; the host supplies the GPU driver and NVIDIA container runtime. Containers bind all interfaces internally, but Compose publishes only to host loopback. See raw `results/docker-*` logs for the exact validation status; building an image alone does not prove GPU access or serving equivalence.
+In another terminal:
+
+```bash
+curl -fsS http://127.0.0.1:8000/readyz
+curl -fsS http://127.0.0.1:8000/score -H 'Content-Type: application/json' --data-binary @examples/request.json
+# Stop when finished.
+docker stop myjev
+```
+
+Wait for the first model download and warmup before checking readiness. The image is about 10.5 GB as reported by Docker on this host (compressed registry layers total 3.48 GB) and contains no weights; the selected adapter and separately pinned backbone need additional disk/cache space. Keep the mounted cache. Our anonymous digest pull reused local image layers, then the GPU container loaded a pinned Hub release from a read-only populated model cache. It matched the saved host Python response exactly through `/score` and `/generate`; `/health` also passed. Readiness took 13.37 seconds in this observation, not an empty-cache download or isolated timing benchmark. See the [publication receipt](../results/container-registry-v1/publication.json), [pull log](../results/container-registry-v1/pull.log) and [GPU check](../results/container-registry-v1/pulled-http.json).
+
+For a source build, use `docker build -t myjev:local .`. Compose remains available for a locally trained artifact: set `MYJEV_ARTIFACT_HOST` and `MYJEV_CACHE_HOST`, then run `docker compose -f deploy/compose.yaml up --build`. That path builds the checked-out source rather than pulling the released image. CUDA libraries come from the pinned PyTorch dependencies; the host supplies the GPU driver and NVIDIA container runtime. The standalone command and Compose publish only to host loopback.
 
 The real 0.8B GPU container passed Python/CLI/HTTP fixture equivalence and invalid-request rejection (`results/docker-equivalence.json`). Its initial startup failed because the minimal base image lacked a C compiler required by a runtime kernel; the Dockerfile now installs `gcc` and `libc6-dev`. Both the failed startup and successful validation logs are retained. Existing HTTP concurrency measurements were collected during other training jobs, so they are not isolated deployment benchmarks.
 
@@ -54,7 +69,7 @@ Related work: Avi Chawla, [Build your own Jev (100% local)](https://blog.dailydo
 **Recipe only; no paid endpoint was created.** [Official custom-container documentation](https://huggingface.co/docs/inference-endpoints/en/engines/custom_container) permits custom inference logic and mounts the selected model repository at `/repository`. [Configuration guidance](https://huggingface.co/docs/inference-endpoints/guides/configuration) describes the container port and health-route settings. Hosting adapter weights on the Hub is not an active endpoint.
 
 1. Prepare an artifact-only Hub repository with adapter files, `heads.safetensors`, `manifest.json`, model card and provenance. The six public `bahree/myJEV-*` releases provide this layout. Pin the selected commit. Verify a clean download produces identical outputs. No optimizer state or training text belongs in this release.
-2. Push the tested Docker image to a registry the endpoint can access; record its immutable digest. Configure a custom container with that image, port 8000, health route `/readyz`, and environment `MYJEV_ARTIFACT=/repository`, `MYJEV_DEVICE=cuda:0`, `MYJEV_QUEUE_SIZE=8`, `MYJEV_TIMEOUT=30`. POST to `/score`; `/generate` supports platforms expecting that route.
+2. Use the tested public image `amitbahree/myjev@sha256:1c69cbac450ad7e938e2b4379cb65099942bce9b7ebe2f9aa6229733ef5f16ab`, or publish and verify your own build. Configure a custom container with that image, port 8000, health route `/readyz`, and environment `MYJEV_ARTIFACT=/repository`, `MYJEV_DEVICE=cuda:0`, `MYJEV_QUEUE_SIZE=8`, `MYJEV_TIMEOUT=30`. POST to `/score`; `/generate` supports platforms expecting that route.
 3. The manifest currently refers to the separately pinned backbone on the Hub. The container must be allowed to download that backbone into its cache during cold start, with access credentials if the backbone requires them. An adapter-only repository is not fully self-contained. For offline deployment, prewarm the same revision in the image/cache and test with `HF_HUB_OFFLINE=1`; do not assume the endpoint automatically bundles referenced backbones.
 4. Choose GPU RAM from **measured serving peaks** plus headroom at the tested maximum prompt length. Training peaks are not an endpoint sizing benchmark. Test QLoRA/NF4 compatibility on the endpoint GPU family. Do not infer 9B requirements from 0.8B. Start with one replica, one worker and authenticated access; avoid autoscaling until cold-start, timeout and concurrency behavior is measured.
 5. Smoke test with an authenticated request (supply URL and token in your own environment):
@@ -104,7 +119,7 @@ Regenerate the compact machine-readable summary with `python scripts/summarize_r
 
 ## Publish the prepared packages
 
-The adapter-only `artifacts/hub-ready-v3/` snapshot adds MIT terms for the original adapter/head contributions, the pinned Qwen Apache-2.0 license and attribution, and BANKING77 provenance. Frozen study candidates are preserved separately. `results/release-readiness-v1/publication-manifest-v3.json` records every upload file's checksum. The six Qwen adapter/head releases use public repositories under `bahree`; the chosen image repository is `docker.io/amitbahree/myjev`, with registry publication still pending.
+The adapter-only `artifacts/hub-ready-v3/` snapshot adds MIT terms for the original adapter/head contributions, the pinned Qwen Apache-2.0 license and attribution, and BANKING77 provenance. Frozen study candidates are preserved separately. `results/release-readiness-v1/publication-manifest-v3.json` records every upload file's checksum. The six Qwen adapter/head releases use public repositories under `bahree`; the tested container is published on [Docker Hub](https://hub.docker.com/r/amitbahree/myjev); its [publication receipt](../results/container-registry-v1/publication.json) records the verified immutable digest.
 
 For a new release to your own empty repository, review a package locally (the published `bahree` repositories are already populated):
 
@@ -118,18 +133,7 @@ For a new release to your own empty repository, review a package locally (the pu
 
 This command checks local files only. Add `--apply` to create/upload the selected repository using your configured Hugging Face credentials. The helper refuses altered packages, symlinks, nonempty destinations and visibility mismatches. It downloads the immutable uploaded commit and checks every file hash. Then load that pinned commit using `DecisionModel.load("YOUR_NAMESPACE/myjev-4b", revision="COMMIT")` and compare with the local response. The six `bahree` releases have separate upload receipts; a dry-run report alone is not an upload record.
 
-The latest local image tag is `myjev:0.1.1-hub`. The selected destination is `docker.io/amitbahree/myjev:0.1.1`. The following commands publish that tested image; they do not indicate that the registry tag is available yet:
-
-```bash
-# Authenticate to Docker Hub first.
-export MYJEV_REGISTRY_IMAGE=amitbahree/myjev:0.1.1
-# Run these only when ready to publish the tested image.
-docker tag myjev:0.1.1-hub "$MYJEV_REGISTRY_IMAGE"
-docker push "$MYJEV_REGISTRY_IMAGE"
-docker image inspect "$MYJEV_REGISTRY_IMAGE" --format '{{json .RepoDigests}}'
-```
-
-A local image ID is not a pullable registry digest. Record the registry digest from the push/inspect result and use that immutable reference in the endpoint configuration. The cloud recipe remains unexecuted and requires no paid deployment to reproduce local results.
+The local `myjev:0.1.1-hub` image is published as `amitbahree/myjev:0.1.1`. Its immutable registry reference is `amitbahree/myjev@sha256:1c69cbac450ad7e938e2b4379cb65099942bce9b7ebe2f9aa6229733ef5f16ab`. The registry digest identifies the manifest index that clients pull. On this Docker 29 host it equals the local inspect ID; the platform manifest and image configuration have separate hashes. A local ID alone does not establish that an image is available from a registry. Publication, an anonymous digest pull and GPU response equivalence are recorded in the [publication receipt](../results/container-registry-v1/publication.json). Use that reference in an endpoint configuration. The cloud recipe remains unexecuted and requires no paid deployment to reproduce local results.
 
 The recommended 4B temperature package additionally passed exact 4,096-token requests with 2 and 160 candidates, and rejected 4,097 tokens. Peak allocated VRAM was 9,538,996,736 bytes (8.88 GiB) in both synthetic cases, recorded in `results/release-readiness-v1/default-limits.json`. Other GPUs were active, so those elapsed times are not new isolated latency measurements. Continue using the tested 24 GB GPU class until total-process memory and startup headroom are measured on a smaller target.
 
@@ -156,4 +160,4 @@ A separate fresh host virtual environment also installed `requirements.lock` and
 
 The server loaded a pinned public 4B release through the Hub SDK with a read-only populated cache. `/score` and `/generate` exactly matched the host response, and `/health` passed. Cached readiness took about 17.43 seconds in this observation; this is not a cold-download or isolated-host benchmark. See [build provenance](../results/release-container-v2/provenance.json), [HTTP verification](../results/release-container-v2/hub-http.json), and `scripts/verify_hub_container.py`. The latest card-only revisions and receipts are listed in [models](models.md); runtime files are unchanged.
 
-This image exists locally. Docker Hub repository `amitbahree/myjev` has been selected; upload and verification of the pulled registry digest remain pending. No managed cloud endpoint was launched.
+This exact image is now published as `amitbahree/myjev:0.1.1`, with an anonymous digest pull and GPU equality check recorded in the [publication receipt](../results/container-registry-v1/publication.json). The registry check uses the latest card revision above; runtime files are unchanged. No managed cloud endpoint was launched.

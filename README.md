@@ -225,7 +225,7 @@ The articles will be published on [Desi Geek](https://blog.desigeek.com), with l
 | Building myJEV (Part 3): Evaluation, Confidence, and Transfer | Draft; publication link to follow |
 | Building myJEV (Part 4): Inference, Docker, and Hosting | Draft; publication link to follow |
 
-The [roadmap](docs/roadmap.md) separates completed engineering checks from upcoming experiments. The [model tracker](docs/models.md) links public adapter/head releases, immutable revisions, and reproducible load commands. A public container registry image remains separate work. There is no paid managed endpoint running.
+The [roadmap](docs/roadmap.md) separates completed engineering checks from upcoming experiments. The [model tracker](docs/models.md) links public adapter/head releases, immutable revisions, and reproducible load commands. The tested GPU image is published on [Docker Hub](https://hub.docker.com/r/amitbahree/myjev); [pull and run it](docs/inference.md#gpu-docker) using the recorded immutable digest. There is no paid managed endpoint running.
 
 ## Attribution and licensing
 

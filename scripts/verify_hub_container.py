@@ -40,7 +40,7 @@ def main():
             result={'image':a.image,'image_id':subprocess.check_output(['docker','image','inspect',a.image,'--format','{{.Id}}'],text=True).strip(),
                     'repo_id':a.repo,'revision':a.revision,'direct_hub_load':True,'http_equal_to_host_python':True,
                     'managed_aliases_equal':True,'ready_seconds':ready,'response':response.json(),
-                    'scope':'Pinned Hub reference loaded directly in source-refreshed container from read-only cached Hub storage; no cloud or registry deployment. Readiness observation is not an isolated latency benchmark.'}
+                    'scope':'Pinned Hub reference loaded directly in the specified container from read-only cached Hub storage; no managed cloud deployment. Readiness observation is not an isolated latency benchmark.'}
             a.output.write_text(json.dumps(result,indent=2)+'\n')
     finally:
         with a.output.with_suffix('.log').open('w') as log:subprocess.run(['docker','logs',name],stdout=log,stderr=subprocess.STDOUT)

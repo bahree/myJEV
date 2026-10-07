@@ -42,6 +42,7 @@ The archive study measures agreement with machine-generated references. Independ
 - [x] Select calibrated 4B continued supervision as the default within the published myJEV family. A fixed-taxonomy encoder remains a distinct, useful alternative.
 - [x] Python, CLI, HTTP, local GPU Docker and clean-install checks; six-candidate benchmark evidence and output equivalence.
 - [x] Versioned local `myjev:0.1.1-hub` image with direct pinned Hub load and host/container equality.
+- [x] Published `amitbahree/myjev:0.1.1` on [Docker Hub](https://hub.docker.com/r/amitbahree/myjev), verified an anonymous digest pull and exact GPU HTTP response equality; retained logs and the [publication receipt](../results/container-registry-v1/publication.json).
 - [x] Explicit input limits, overload behavior, managed endpoint custom-container recipe and request-content logging disabled by default.
 - [x] MIT source license, repeatable curated publication, reader documentation and authentic logs.
 
@@ -50,7 +51,6 @@ See [models](models.md), [inference](inference.md) and [hosting](hosting.md). Pu
 ## Remaining owner decisions and optional extensions
 
 - [ ] Independently human-audit the archive labels and grouping before human-correctness claims.
-- [ ] Publish the tested image to the selected Docker Hub repository `amitbahree/myjev`, verify a pull and record its immutable digest.
 - [ ] Publish the blog articles and replace draft-series placeholders with actual article links. The private authoring tree contains four main articles plus a bonus calibration lab; article Markdown is excluded from this repository.
 - [ ] If pursuing production use, evaluate the actual workload, accepted-error requirements, memory headroom and monitoring with independent data.
 
