@@ -1,0 +1,5 @@
+{
+  "original_executed_script": "results/decision-lessons-v1/executed-script.py",
+  "sha256": "5b5b3d5560ebf4f2f7dde0c87ff9a1fe1e2fb2fcb17d7a1d66f66043a6cf3b96",
+  "change": "The current generator writes canonical figures under results and no longer requires or creates private Hugo bundle paths. Numerical calculations and recorded figures are unchanged."
+}

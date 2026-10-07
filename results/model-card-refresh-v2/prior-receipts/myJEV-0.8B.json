@@ -1,0 +1,15 @@
+{
+  "candidate": "myjev-0.8b-continued_sft-seed11",
+  "repo_id": "bahree/myJEV-0.8B",
+  "visibility": "public",
+  "files": 9,
+  "uploaded": true,
+  "revision": "419e69b16264559afe93603c6e3402262d919445",
+  "pinned_download_hashes_equal": true,
+  "next_check": "Runtime bytes match the six-model verified release. Card example pins that verified prior revision; latest default reload checked separately.",
+  "previous_revision": "01fed6001aa675bbfcddbf2ebb3574b28c6da9b6",
+  "source_code_revision": "c0147b69d57fbe541cdc2e1bc85c472938e4dda0",
+  "amendment": "Reader-facing README and metadata; runtime files unchanged",
+  "runtime_files_unchanged": true,
+  "reader_card_sha256": "1b6e4db60e41ac567cffe26ba2ee8706be78ca7091950ddade49418c765f2fe1"
+}

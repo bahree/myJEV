@@ -1,0 +1,438 @@
+{
+  "source_commit": "c0147b69d57fbe541cdc2e1bc85c472938e4dda0",
+  "source_publication_manifest": "results/release-readiness-v1/publication-manifest-public-v2.json",
+  "models": [
+    {
+      "repo_id": "bahree/myJEV-0.8B",
+      "public_name": "myJEV-0.8B",
+      "candidate": "myjev-0.8b-continued_sft-seed11",
+      "size": "0.8b",
+      "method": "continued_sft",
+      "runtime_revision": "01fed6001aa675bbfcddbf2ebb3574b28c6da9b6",
+      "artifact_revision": "3fa50261e3208eb0562a7949afb261d78a088840de3b5d01ab299203924701c6",
+      "backbone": "Qwen/Qwen3.5-0.8B",
+      "backbone_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+      "calibration_revision": "83e112f7145e3f0ee228cc530f65e7c1731b6aa922164e9560211b00a07d7aa4",
+      "precision": "bf16",
+      "metrics": [
+        {
+          "seed": 11,
+          "n": 3080,
+          "accuracy": 0.8389610389610389,
+          "macro_f1": 0.836975604776704,
+          "correctness_brier": 0.10621609782598368
+        },
+        {
+          "seed": 22,
+          "n": 3080,
+          "accuracy": 0.8301948051948052,
+          "macro_f1": 0.8301947927705879,
+          "correctness_brier": 0.10241769188011339
+        },
+        {
+          "seed": 33,
+          "n": 3080,
+          "accuracy": 0.8188311688311688,
+          "macro_f1": 0.8149911064827334,
+          "correctness_brier": 0.11323939451393436
+        }
+      ],
+      "accuracy_mean": 0.8293290043290042,
+      "accuracy_sd": 0.010092825482280736,
+      "f1_mean": 0.8273871680100084,
+      "brier_mean": 0.10729106140667714,
+      "latency_ms": [
+        57.48297199897934,
+        61.15497649007011
+      ],
+      "allocated_vram_gib": 1.5498385429382324,
+      "startup_seconds": 20.491331024008105,
+      "response": {
+        "selected_id": "billing",
+        "selection_scores": {
+          "billing": 0.9764319658279419,
+          "technical": 0.019411658868193626,
+          "other": 0.004156407900154591
+        },
+        "confidence": 0.9764319658279419,
+        "confidence_mode": "selection",
+        "artifact_revision": "3fa50261e3208eb0562a7949afb261d78a088840de3b5d01ab299203924701c6",
+        "calibration_revision": "83e112f7145e3f0ee228cc530f65e7c1731b6aa922164e9560211b00a07d7aa4"
+      },
+      "metric_sources": [
+        {
+          "path": "results/longer-v1/0.8b/main/seed-11/continued_sft/posthoc/temperature-metrics.json",
+          "sha256": "f0ae45cf90805c9a87d6431c2fac6ec7ed835670f639aa507b76a71c9c889e3f"
+        },
+        {
+          "path": "results/longer-v1/0.8b/main/seed-22/continued_sft/posthoc/temperature-metrics.json",
+          "sha256": "e45523429bd8b36f228f32dcb242da3239873af76e73b7b29a68828e177f05b7"
+        },
+        {
+          "path": "results/longer-v1/0.8b/main/seed-33/continued_sft/posthoc/temperature-metrics.json",
+          "sha256": "802d1d6db0d7083b4199d3af6d1830d339ffdc9e9ee79b6cef660de7a4244845"
+        }
+      ]
+    },
+    {
+      "repo_id": "bahree/myJEV-0.8B-RL",
+      "public_name": "myJEV-0.8B-RL",
+      "candidate": "myjev-0.8b-exact-seed11",
+      "size": "0.8b",
+      "method": "exact",
+      "runtime_revision": "cd6d76797413b74b6bd181102da22f13ff2d865f",
+      "artifact_revision": "dad832451985b1f3c86fe5d80c66ffa287569f13021abdc338de9359acc95acc",
+      "backbone": "Qwen/Qwen3.5-0.8B",
+      "backbone_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+      "calibration_revision": "uncalibrated",
+      "precision": "bf16",
+      "metrics": [
+        {
+          "seed": 11,
+          "n": 3080,
+          "accuracy": 0.8214285714285714,
+          "macro_f1": 0.8175363531611817,
+          "correctness_brier": 0.1266777463631682
+        },
+        {
+          "seed": 22,
+          "n": 3080,
+          "accuracy": 0.8016233766233766,
+          "macro_f1": 0.794701219359024,
+          "correctness_brier": 0.14005419788690351
+        },
+        {
+          "seed": 33,
+          "n": 3080,
+          "accuracy": 0.8178571428571428,
+          "macro_f1": 0.8145416196795265,
+          "correctness_brier": 0.12957143204803542
+        }
+      ],
+      "accuracy_mean": 0.8136363636363636,
+      "accuracy_sd": 0.010555693640914857,
+      "f1_mean": 0.8089263973999108,
+      "brier_mean": 0.1321011254327024,
+      "latency_ms": [
+        60.87501950969454,
+        61.906176125921775
+      ],
+      "allocated_vram_gib": 1.5498385429382324,
+      "startup_seconds": 13.420004929997958,
+      "response": {
+        "selected_id": "billing",
+        "selection_scores": {
+          "billing": 1.0,
+          "technical": 3.416988292315182e-08,
+          "other": 1.4374695211927246e-08
+        },
+        "confidence": 0.8727455139160156,
+        "confidence_mode": "policy",
+        "artifact_revision": "dad832451985b1f3c86fe5d80c66ffa287569f13021abdc338de9359acc95acc",
+        "calibration_revision": "uncalibrated"
+      },
+      "metric_sources": [
+        {
+          "path": "results/longer-v1/0.8b/main/seed-11/exact/evaluation/metrics.json",
+          "sha256": "4dc87f31068395ab5b094160665566b9aee47fa71f1a95c813ba34e6464bcc3c"
+        },
+        {
+          "path": "results/longer-v1/0.8b/main/seed-22/exact/evaluation/metrics.json",
+          "sha256": "da42c828c1227fcad931099eb61ea216898a715cf4d0712afbe4039d84b3564c"
+        },
+        {
+          "path": "results/longer-v1/0.8b/main/seed-33/exact/evaluation/metrics.json",
+          "sha256": "7d46078d67f216147c9971ada1537c2f0405b1785720bcd6d33017f17291522b"
+        }
+      ]
+    },
+    {
+      "repo_id": "bahree/myJEV-4B",
+      "public_name": "myJEV-4B",
+      "candidate": "myjev-4b-continued_sft-seed11",
+      "size": "4b",
+      "method": "continued_sft",
+      "runtime_revision": "a1b9e3b1181293220012cfb15587cdba0767ae8e",
+      "artifact_revision": "3a7979eeff5cfb0bd2cee2fe2ea559c314ad9f5eef2de4ef4cb44759dbd73f02",
+      "backbone": "Qwen/Qwen3.5-4B",
+      "backbone_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+      "calibration_revision": "f0d2ddcaf6650e1f44415d49b1cf8b303d4d6fef5f73bb6198ee91600560e8d1",
+      "precision": "bf16",
+      "metrics": [
+        {
+          "seed": 11,
+          "n": 3080,
+          "accuracy": 0.8993506493506493,
+          "macro_f1": 0.8978743287875984,
+          "correctness_brier": 0.0709179781096664
+        },
+        {
+          "seed": 22,
+          "n": 3080,
+          "accuracy": 0.9016233766233767,
+          "macro_f1": 0.9012747223884309,
+          "correctness_brier": 0.06936373047873692
+        },
+        {
+          "seed": 33,
+          "n": 3080,
+          "accuracy": 0.875974025974026,
+          "macro_f1": 0.8721861287851372,
+          "correctness_brier": 0.08169873196255849
+        }
+      ],
+      "accuracy_mean": 0.8923160173160173,
+      "accuracy_sd": 0.014198127801944174,
+      "f1_mean": 0.8904450599870555,
+      "brier_mean": 0.07399348018365394,
+      "latency_ms": [
+        82.18291000230238,
+        87.33447110425914
+      ],
+      "allocated_vram_gib": 8.180150032043457,
+      "startup_seconds": 15.394169336999767,
+      "response": {
+        "selected_id": "billing",
+        "selection_scores": {
+          "billing": 0.9834240078926086,
+          "technical": 0.005727097392082214,
+          "other": 0.01084891613572836
+        },
+        "confidence": 0.9834240078926086,
+        "confidence_mode": "selection",
+        "artifact_revision": "3a7979eeff5cfb0bd2cee2fe2ea559c314ad9f5eef2de4ef4cb44759dbd73f02",
+        "calibration_revision": "f0d2ddcaf6650e1f44415d49b1cf8b303d4d6fef5f73bb6198ee91600560e8d1"
+      },
+      "metric_sources": [
+        {
+          "path": "results/longer-v1/4b/main/seed-11/continued_sft/posthoc/temperature-metrics.json",
+          "sha256": "6bc5000f3c25d292fc3abe5d6e05897090b02b48088f76c990410e1412a0bf53"
+        },
+        {
+          "path": "results/longer-v1/4b/main/seed-22/continued_sft/posthoc/temperature-metrics.json",
+          "sha256": "dae82aa789225b79a3794942498d3fd82f27ac7ccebedaadef09d7291530022f"
+        },
+        {
+          "path": "results/longer-v1/4b/main/seed-33/continued_sft/posthoc/temperature-metrics.json",
+          "sha256": "b743ca89175256bc6cc14e22c3ae1891901d6b505382ed613fc0036f0549a51b"
+        }
+      ]
+    },
+    {
+      "repo_id": "bahree/myJEV-4B-RL",
+      "public_name": "myJEV-4B-RL",
+      "candidate": "myjev-4b-exact-seed11",
+      "size": "4b",
+      "method": "exact",
+      "runtime_revision": "ca1e358ac8c4d7716136ddca24ca9aaea973d1a9",
+      "artifact_revision": "01b4d4925a6c6773b811547cedc1b048b054bbe4ffaab2144f5e0aa48a6b2ebb",
+      "backbone": "Qwen/Qwen3.5-4B",
+      "backbone_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+      "calibration_revision": "uncalibrated",
+      "precision": "bf16",
+      "metrics": [
+        {
+          "seed": 11,
+          "n": 3080,
+          "accuracy": 0.9055194805194805,
+          "macro_f1": 0.9049575918546777,
+          "correctness_brier": 0.08019492503578991
+        },
+        {
+          "seed": 22,
+          "n": 3080,
+          "accuracy": 0.8996753246753246,
+          "macro_f1": 0.8988050368889026,
+          "correctness_brier": 0.08478103703834888
+        },
+        {
+          "seed": 33,
+          "n": 3080,
+          "accuracy": 0.9029220779220779,
+          "macro_f1": 0.9021021414999928,
+          "correctness_brier": 0.08040127473296943
+        }
+      ],
+      "accuracy_mean": 0.9027056277056277,
+      "accuracy_sd": 0.0029280842550798167,
+      "f1_mean": 0.9019549234145243,
+      "brier_mean": 0.08179241226903608,
+      "latency_ms": [
+        81.85046851576772,
+        83.30151059490163
+      ],
+      "allocated_vram_gib": 8.180150032043457,
+      "startup_seconds": 15.402901322988328,
+      "response": {
+        "selected_id": "billing",
+        "selection_scores": {
+          "billing": 1.0,
+          "technical": 1.9923190874848729e-10,
+          "other": 2.5302177020236627e-10
+        },
+        "confidence": 0.8591256141662598,
+        "confidence_mode": "policy",
+        "artifact_revision": "01b4d4925a6c6773b811547cedc1b048b054bbe4ffaab2144f5e0aa48a6b2ebb",
+        "calibration_revision": "uncalibrated"
+      },
+      "metric_sources": [
+        {
+          "path": "results/longer-v1/4b/main/seed-11/exact/evaluation/metrics.json",
+          "sha256": "2524a8bb5f06e6f3584980231cbc3fddf226975aeeb9876559fc33d8a4b2051a"
+        },
+        {
+          "path": "results/longer-v1/4b/main/seed-22/exact/evaluation/metrics.json",
+          "sha256": "bab75d82e6d028df9305c5382e79b1202fa8a74a203888e978b48eca2fbd7980"
+        },
+        {
+          "path": "results/longer-v1/4b/main/seed-33/exact/evaluation/metrics.json",
+          "sha256": "8e9252cf09f2f1c65b171c101a986960b91c9d65c22f2369b6610eac13be4f3f"
+        }
+      ]
+    },
+    {
+      "repo_id": "bahree/myJEV-9B",
+      "public_name": "myJEV-9B",
+      "candidate": "myjev-9b-continued_sft-seed11",
+      "size": "9b",
+      "method": "continued_sft",
+      "runtime_revision": "ad0f257ce808d26f56de537cc41bd164645f154b",
+      "artifact_revision": "630ca8351085fc495bd01d53eb20706591aebacbf9074acfc5f9a6c760f1ed93",
+      "backbone": "Qwen/Qwen3.5-9B",
+      "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "calibration_revision": "558be022b546a77e44e006cb4b4410ae263b378ba978e0acfb727eec57e94a33",
+      "precision": "nf4",
+      "metrics": [
+        {
+          "seed": 11,
+          "n": 3080,
+          "accuracy": 0.8935064935064935,
+          "macro_f1": 0.8915370025683255,
+          "correctness_brier": 0.07462716723117589
+        },
+        {
+          "seed": 22,
+          "n": 3080,
+          "accuracy": 0.8938311688311689,
+          "macro_f1": 0.8918843709207119,
+          "correctness_brier": 0.07142072577342301
+        },
+        {
+          "seed": 33,
+          "n": 3080,
+          "accuracy": 0.887012987012987,
+          "macro_f1": 0.8841866443360505,
+          "correctness_brier": 0.07658366282044131
+        }
+      ],
+      "accuracy_mean": 0.8914502164502165,
+      "accuracy_sd": 0.0038461808753066707,
+      "f1_mean": 0.8892026726083626,
+      "brier_mean": 0.07421051860834674,
+      "latency_ms": [
+        115.0923990062438,
+        118.64323322370183
+      ],
+      "allocated_vram_gib": 11.238691806793213,
+      "startup_seconds": 19.39606015299796,
+      "response": {
+        "selected_id": "billing",
+        "selection_scores": {
+          "billing": 0.9533368349075317,
+          "technical": 0.005175800062716007,
+          "other": 0.04148741066455841
+        },
+        "confidence": 0.9533368349075317,
+        "confidence_mode": "selection",
+        "artifact_revision": "630ca8351085fc495bd01d53eb20706591aebacbf9074acfc5f9a6c760f1ed93",
+        "calibration_revision": "558be022b546a77e44e006cb4b4410ae263b378ba978e0acfb727eec57e94a33"
+      },
+      "metric_sources": [
+        {
+          "path": "results/longer-v1/9b/main/seed-11/continued_sft/posthoc/temperature-metrics.json",
+          "sha256": "8a280989a8d054af8afc9c9c560c616d018d1dbe54e9af2047a62c6d9e2a3f15"
+        },
+        {
+          "path": "results/longer-v1/9b/main/seed-22/continued_sft/posthoc/temperature-metrics.json",
+          "sha256": "396ebd77956b1ddb629753792964584117ab21ac4a07bb4d64b0c2bd13e804e8"
+        },
+        {
+          "path": "results/longer-v1/9b/main/seed-33/continued_sft/posthoc/temperature-metrics.json",
+          "sha256": "92489dad1e61381fc884cf68efb926da831301ed65a8ced86e289884c65527ac"
+        }
+      ]
+    },
+    {
+      "repo_id": "bahree/myJEV-9B-RL",
+      "public_name": "myJEV-9B-RL",
+      "candidate": "myjev-9b-exact-seed11",
+      "size": "9b",
+      "method": "exact",
+      "runtime_revision": "d22fdbb4b33e76037178459d523010e9b045a40c",
+      "artifact_revision": "93499e5c987b1c4bc5278c3fa28df87dc15a56e1f92452d21db4ff143ef4fe0c",
+      "backbone": "Qwen/Qwen3.5-9B",
+      "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "calibration_revision": "uncalibrated",
+      "precision": "nf4",
+      "metrics": [
+        {
+          "seed": 11,
+          "n": 3080,
+          "accuracy": 0.8905844155844156,
+          "macro_f1": 0.888157701372452,
+          "correctness_brier": 0.08715844795177881
+        },
+        {
+          "seed": 22,
+          "n": 3080,
+          "accuracy": 0.8961038961038961,
+          "macro_f1": 0.8944528461232975,
+          "correctness_brier": 0.10885679745915985
+        },
+        {
+          "seed": 33,
+          "n": 3080,
+          "accuracy": 0.8935064935064935,
+          "macro_f1": 0.8907597612023547,
+          "correctness_brier": 0.08662106030911283
+        }
+      ],
+      "accuracy_mean": 0.8933982683982684,
+      "accuracy_sd": 0.0027613313467906883,
+      "f1_mean": 0.8911234362327014,
+      "brier_mean": 0.09421210190668383,
+      "latency_ms": [
+        117.54826550895814,
+        123.41886499343673
+      ],
+      "allocated_vram_gib": 11.238691806793213,
+      "startup_seconds": 18.419655881996732,
+      "response": {
+        "selected_id": "billing",
+        "selection_scores": {
+          "billing": 0.9999984502792358,
+          "technical": 3.242466917185993e-08,
+          "other": 1.5625734022250981e-06
+        },
+        "confidence": 0.8766478896141052,
+        "confidence_mode": "policy",
+        "artifact_revision": "93499e5c987b1c4bc5278c3fa28df87dc15a56e1f92452d21db4ff143ef4fe0c",
+        "calibration_revision": "uncalibrated"
+      },
+      "metric_sources": [
+        {
+          "path": "results/longer-v1/9b/main/seed-11/exact/evaluation/metrics.json",
+          "sha256": "ed44ca5d01707d10e687e662e2bdd0fdaab8554794341242fafa91f19aca8fab"
+        },
+        {
+          "path": "results/longer-v1/9b/main/seed-22/exact/evaluation/metrics.json",
+          "sha256": "65f266d9edd45715ff365c1ad9d90903a4ed1d1a05a09e515b575e5438733df8"
+        },
+        {
+          "path": "results/longer-v1/9b/main/seed-33/exact/evaluation/metrics.json",
+          "sha256": "672c797d6d036443390bed8e9026e64768a19278f3642e8bc32a83f8047110f5"
+        }
+      ]
+    }
+  ]
+}

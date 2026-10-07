@@ -1,0 +1,10 @@
+{
+  "output": "results/calibration-lab-v1/reliability.png",
+  "output_sha256": "049b21b4e73a26252aedc13fc0cebee1bd9a92ff21dfe7d1a87a25bc739f75e4",
+  "source": "results/calibration-lab-v1/summary.json",
+  "source_sha256": "93fd84d07108e00f0dbffc8d381c8dcece1e87dad38b5d7d18d06ebb006ae477",
+  "script_sha256": "89632085ffb76fce06c7beef51b3c0ee4fa14d3e592852fa5f777219d39258a7",
+  "seed": 11,
+  "bins": 10,
+  "scope": "Stored synthetic test bins; illustrative one-seed view; empty bins omitted, no interpolated observations."
+}

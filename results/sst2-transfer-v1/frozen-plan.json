@@ -1,0 +1,78 @@
+{
+  "frozen_at": "2026-10-07T05:32:39.281782+00:00",
+  "source_revision": "cea5df80f51524dc93f168d1ba4ff11c55969336",
+  "gpu": "physical1; CUDA_VISIBLE_DEVICES=1",
+  "dependency_environment": "Existing locked .venv; no package modifications",
+  "dataset": "stanfordnlp/sst2",
+  "dataset_revision": "8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb",
+  "split": "validation",
+  "selection": "ALL872 officialvalidation rows; used solely as myJEV finaltransfer evaluation, not tuning; officialtest labels hidden",
+  "source": "https://nlp.stanford.edu/sentiment/",
+  "card": "https://huggingface.co/datasets/stanfordnlp/sst2",
+  "license": "HFcard unknown; evaluate locally, no rawtext redistribution",
+  "label_provenance": "SST phrases annotated by3humanjudges; binary version discardsneutral. Notmachinejudge labels.",
+  "instructions": "Classify the sentiment expressed in this movie review. Select the appropriate sentiment.",
+  "candidates": [
+    {
+      "id": "negative",
+      "description": "Negative sentiment about the movie"
+    },
+    {
+      "id": "positive",
+      "description": "Positive sentiment about the movie"
+    }
+  ],
+  "candidate_order": "Fixed negative,positive for allmodels; noprompttuning or orderselection",
+  "models": [
+    {
+      "candidate": "myjev-0.8b-continued_sft-seed11",
+      "repo_id": "bahree/myJEV-0.8B",
+      "visibility": "public",
+      "files": 9,
+      "uploaded": true,
+      "revision": "01fed6001aa675bbfcddbf2ebb3574b28c6da9b6",
+      "pinned_download_hashes_equal": true,
+      "next_check": "Runtime files unchanged; initial six-model output equality retained; newest default revision smoke checked separately.",
+      "previous_revision": "a56043bc190b4ab66a704dea771388b28edcb53d",
+      "source_code_revision": "c0147b69d57fbe541cdc2e1bc85c472938e4dda0",
+      "amendment": "README source pin only",
+      "runtime_files_unchanged": true,
+      "size": "0.8B",
+      "threshold_source": "results/longer-v1/0.8b/main/seed-11/continued_sft/posthoc/temperature-metrics.json"
+    },
+    {
+      "candidate": "myjev-4b-continued_sft-seed11",
+      "repo_id": "bahree/myJEV-4B",
+      "visibility": "public",
+      "files": 9,
+      "uploaded": true,
+      "revision": "a1b9e3b1181293220012cfb15587cdba0767ae8e",
+      "pinned_download_hashes_equal": true,
+      "next_check": "Runtime files unchanged; initial six-model output equality retained; newest default revision smoke checked separately.",
+      "previous_revision": "ca23134ff8d223927d545a30c594e27d68db4400",
+      "source_code_revision": "c0147b69d57fbe541cdc2e1bc85c472938e4dda0",
+      "amendment": "README source pin only",
+      "runtime_files_unchanged": true,
+      "size": "4B",
+      "threshold_source": "results/longer-v1/4b/main/seed-11/continued_sft/posthoc/temperature-metrics.json"
+    },
+    {
+      "candidate": "myjev-9b-continued_sft-seed11",
+      "repo_id": "bahree/myJEV-9B",
+      "visibility": "public",
+      "files": 9,
+      "uploaded": true,
+      "revision": "ad0f257ce808d26f56de537cc41bd164645f154b",
+      "pinned_download_hashes_equal": true,
+      "next_check": "Runtime files unchanged; initial six-model output equality retained; newest default revision smoke checked separately.",
+      "previous_revision": "bd9e54ff1222732209963aeb003c92c54c4260cb",
+      "source_code_revision": "c0147b69d57fbe541cdc2e1bc85c472938e4dda0",
+      "amendment": "README source pin only",
+      "runtime_files_unchanged": true,
+      "size": "9B",
+      "threshold_source": "results/longer-v1/9b/main/seed-11/continued_sft/posthoc/temperature-metrics.json"
+    }
+  ],
+  "calibration": "NoSST calibration orfitting; use releasedBANKINGtemperature and originalBANKINGcalibrationthresholds",
+  "limits": "One unrelatedsentimenttask, familiarpublicbenchmark mayoccurpretraining, onesupervisedcheckpoint/size, notmeasureRLtransfer or universalreasoning. Confidence underdomainshift notguaranteed."
+}

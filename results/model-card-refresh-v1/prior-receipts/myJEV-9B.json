@@ -1,0 +1,14 @@
+{
+  "candidate": "myjev-9b-continued_sft-seed11",
+  "repo_id": "bahree/myJEV-9B",
+  "visibility": "public",
+  "files": 9,
+  "uploaded": true,
+  "revision": "ad0f257ce808d26f56de537cc41bd164645f154b",
+  "pinned_download_hashes_equal": true,
+  "next_check": "Runtime files unchanged; initial six-model output equality retained; newest default revision smoke checked separately.",
+  "previous_revision": "bd9e54ff1222732209963aeb003c92c54c4260cb",
+  "source_code_revision": "c0147b69d57fbe541cdc2e1bc85c472938e4dda0",
+  "amendment": "README source pin only",
+  "runtime_files_unchanged": true
+}

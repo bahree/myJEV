@@ -1,0 +1,24 @@
+{"step": 100, "loss": 0.06252942234277725, "examples": 800, "seconds": 3.1359720829932485}
+{"step": 200, "loss": 0.06250626593828201, "examples": 1600, "seconds": 5.360404801002005}
+{"step": 300, "loss": 0.06250220537185669, "examples": 2400, "seconds": 7.478289908991428}
+{"parameters": 201175, "updates": 300, "seconds": 7.484991347009782, "peak_allocated_vram": 26097152, "artifact_revision": "5a07953ca80c2c952cadaca79509262209f9e314097a11062e42061c884e6e4e"}
+{"step": 100, "loss": 0.0775073915719986, "examples": 800, "seconds": 2.076526898978045}
+{"step": 200, "loss": 0.07750120759010315, "examples": 1600, "seconds": 4.3861556819756515}
+{"step": 300, "loss": 0.07749992609024048, "examples": 2400, "seconds": 6.656967778981198}
+{"parameters": 201175, "updates": 300, "seconds": 6.663771561987232, "peak_allocated_vram": 26910720, "artifact_revision": "933277915e61e0cde88dbc64f4d3ef3da51bd0982ad6a471e586808ecaaab3b0"}
+{"step": 100, "loss": 0.016886845231056213, "examples": 800, "seconds": 2.406320912996307}
+{"step": 200, "loss": 0.016879603266716003, "examples": 1600, "seconds": 4.654977901984239}
+{"step": 300, "loss": 0.016877565532922745, "examples": 2400, "seconds": 6.9112091429997236}
+{"parameters": 201175, "updates": 300, "seconds": 6.916142804984702, "peak_allocated_vram": 26910720, "artifact_revision": "df9b5a897dc6dd50cc4f73dda3d8c05b7917f412a629f4436f65f25c7c11568f"}
+{"step": 100, "loss": 0.11313632130622864, "examples": 800, "seconds": 2.2150992210081313}
+{"step": 200, "loss": 0.06633695214986801, "examples": 1600, "seconds": 4.542964546009898}
+{"step": 300, "loss": 0.008125280030071735, "examples": 2400, "seconds": 6.720623376022559}
+{"parameters": 201175, "updates": 300, "seconds": 6.725432883016765, "peak_allocated_vram": 27915264, "artifact_revision": "6f946fb85d37065dc1490e5c79f6cc01e64927c5b13c8d1c0d47d5c1368c7e15"}
+{"step": 100, "loss": 0.013349895365536213, "examples": 800, "seconds": 2.1427915710082743}
+{"step": 200, "loss": 0.011882418766617775, "examples": 1600, "seconds": 4.26370562100783}
+{"step": 300, "loss": 0.011877967044711113, "examples": 2400, "seconds": 7.1244464949995745}
+{"parameters": 201175, "updates": 300, "seconds": 7.131455916009145, "peak_allocated_vram": 27915264, "artifact_revision": "afcbbb1028b6096b7a2c804389f06a559e9e8b31c10cbfcb30e19ea009accab0"}
+{"step": 100, "loss": 0.01689828932285309, "examples": 800, "seconds": 2.0329226149769966}
+{"step": 200, "loss": 0.016879167407751083, "examples": 1600, "seconds": 4.3351194729912095}
+{"step": 300, "loss": 0.01687740720808506, "examples": 2400, "seconds": 6.568772007973166}
+{"parameters": 201175, "updates": 300, "seconds": 6.575360102986451, "peak_allocated_vram": 27915264, "artifact_revision": "f5ceb9fa977d45c0fac989f18032c94951fbb8a6660b39aa39ba6f2aae88916a"}

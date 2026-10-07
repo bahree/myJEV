@@ -1,0 +1,14 @@
+{
+  "load_seconds_warm_filesystem": 1.0044976359931752,
+  "latency_p50_p95_ms": [
+    0.5025459977332503,
+    0.5396704451413825
+  ],
+  "sequential_requests_per_second": 1996.2704511615514,
+  "process_peak_rss_bytes": 449052672,
+  "artifact_bytes": 13387540,
+  "cpu": "x86_64",
+  "platform": "Linux-6.8.0-146-generic-x86_64-with-glibc2.39",
+  "memory_scope": "Whole Python process peak RSS including dependencies; differs from CUDA allocated-memory accounting.",
+  "protocol_sha256": "a3f533ae37c685c34352eed1a06e0b4d4016e60bd5bf2f2c5081e8dfa07552a4"
+}

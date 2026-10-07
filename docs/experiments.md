@@ -112,3 +112,13 @@ Read [hosting](hosting.md) for limits, readiness, queues, precision, and deploym
 ## Completed extension analysis
 
 The [paired extension report](../results/extension-analysis-v1/report.md) analyzes precision and transfer using shared example groups. Reproduce with `python scripts/analyze_extensions.py`; the public compact inputs omit request text. All 36 transfer/robustness jobs and six final local serving candidates completed. [Model selection](models.md) explains the calibrated 4B supervised starting recommendation and alternatives.
+
+## From counts to an operational decision
+
+If a calibration-selected threshold accepts 80 of 100 test requests and four accepted answers are wrong, coverage is 80% and accepted-case error is 5%. The denominator changes when you defer. Counts and uncertainty belong alongside percentages, especially for small accepted sets. [Decision lessons](decision-lessons.md) derives the metrics, paired contrasts and cost calculations; the [CPU lab](../results/calibration-lab-v1/report.md) tests confidence against a known synthetic probability distribution.
+
+Run `python scripts/training_mechanics_demo.py` for reward arithmetic and follow the [worked learning route](walkthrough.md) for the connection to training and deployment. The later [seven demos](../results/demos-v1/report.md) are executable examples, not a test-set accuracy estimate. The [ModernBERT control](../results/encoder-control-v1/report.md), [SST-2 transfer](../results/sst2-transfer-v1/report.md) and [failure casebook](../results/failure-casebook-v1/report.md) disclose their separate interfaces, budgets and selection procedures.
+
+![Counts, coverage and accepted error](../results/training-eval-diagrams-v1/ledger-coverage-worked.png)
+
+The ledger above uses constructed counts for teaching; measured results remain in their separately named reports.

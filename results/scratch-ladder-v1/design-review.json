@@ -1,0 +1,6 @@
+{
+  "finding": "Numeric nuisance record index was cyclically correlated with class in deterministic rung. The 100% seed22 result cannot isolate signal-rule learning.",
+  "tiny_stage": "Eight training/evaluation rows comprise four unique color contexts, each repeated twice; training memorization only.",
+  "action": "Preserve all v1 results and frozen source. Correct nuisance design in separately frozen v2, identical per-run settings, 900 additional updates.",
+  "scope": "Design diagnosis after results, not a mechanistic claim about which shortcut the network used."
+}

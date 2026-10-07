@@ -1,0 +1,7 @@
+# Incremental source refresh of the already validated dependency environment.
+# Supply the local base tag only after verifying its image ID against provenance.
+ARG BASE_IMAGE=myjev:0.1.0-release-candidate
+FROM ${BASE_IMAGE}
+COPY LICENSE pyproject.toml ./
+COPY src ./src
+RUN pip install --no-deps --no-build-isolation .

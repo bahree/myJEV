@@ -1,0 +1,14 @@
+{
+  "candidate": "myjev-4b-continued_sft-seed11",
+  "repo_id": "bahree/myJEV-4B",
+  "visibility": "public",
+  "files": 9,
+  "uploaded": true,
+  "revision": "a1b9e3b1181293220012cfb15587cdba0767ae8e",
+  "pinned_download_hashes_equal": true,
+  "next_check": "Runtime files unchanged; initial six-model output equality retained; newest default revision smoke checked separately.",
+  "previous_revision": "ca23134ff8d223927d545a30c594e27d68db4400",
+  "source_code_revision": "c0147b69d57fbe541cdc2e1bc85c472938e4dda0",
+  "amendment": "README source pin only",
+  "runtime_files_unchanged": true
+}

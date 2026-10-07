@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "source": "Exported public scripts, independent temporary working directory; no private blog folders",
+  "validation_directory": "/tmp/myjev-reader-labs-48hxkgek",
+  "commands": [
+    {
+      "command": [
+        "scripts/training_mechanics_demo.py"
+      ],
+      "exit_code": 0,
+      "log": "/tmp/myjev-reader-labs-48hxkgek/training_mechanics_demo.log",
+      "script_sha256": "6007805a28c11137ad914ebc539a822c97e2aeba59f88b74f400a5f81401c961",
+      "retained_log": "results/final-checks-v1/reader-lab-logs/training_mechanics_demo.log"
+    },
+    {
+      "command": [
+        "scripts/calibration_lab.py",
+        "--output",
+        "results/reader-calibration"
+      ],
+      "exit_code": 0,
+      "log": "/tmp/myjev-reader-labs-48hxkgek/calibration_lab.log",
+      "script_sha256": "f5deee375ad0cff48d9c10a62999e3a99920cf0703d23bfbe06ebbdcb228208d",
+      "retained_log": "results/final-checks-v1/reader-lab-logs/calibration_lab.log"
+    },
+    {
+      "command": [
+        "scripts/plot_calibration_lab.py",
+        "--results",
+        "results/reader-calibration"
+      ],
+      "exit_code": 0,
+      "log": "/tmp/myjev-reader-labs-48hxkgek/plot_calibration_lab.log",
+      "script_sha256": "89632085ffb76fce06c7beef51b3c0ee4fa14d3e592852fa5f777219d39258a7",
+      "retained_log": "results/final-checks-v1/reader-lab-logs/plot_calibration_lab.log"
+    },
+    {
+      "command": [
+        "scripts/draw_decision_diagrams.py"
+      ],
+      "exit_code": 0,
+      "log": "/tmp/myjev-reader-labs-48hxkgek/draw_decision_diagrams.log",
+      "script_sha256": "c181cd71cb6ec9398ed1fe180d508a84738b143e420a8cbfed3777cf019e4c30",
+      "retained_log": "results/final-checks-v1/reader-lab-logs/draw_decision_diagrams.log"
+    },
+    {
+      "command": [
+        "scripts/draw_training_eval_lessons.py"
+      ],
+      "exit_code": 0,
+      "log": "/tmp/myjev-reader-labs-48hxkgek/draw_training_eval_lessons.log",
+      "script_sha256": "2660e6d9944d665b781caa32690d9d0d6b36cf55c6678b2cf6b5b58d03984127",
+      "retained_log": "results/final-checks-v1/reader-lab-logs/draw_training_eval_lessons.log"
+    },
+    {
+      "command": [
+        "scripts/decision_lessons.py"
+      ],
+      "exit_code": 0,
+      "log": "/tmp/myjev-reader-labs-48hxkgek/decision_lessons.log",
+      "script_sha256": "ff49b9ca80e83d6852204d794de36fa0f9a201e4d13ab0062a322250c09376d9",
+      "retained_log": "results/final-checks-v1/reader-lab-logs/decision_lessons.log"
+    }
+  ],
+  "calibration_metrics_match_recorded_results": true,
+  "blog_directory_created": false
+}

@@ -6,16 +6,30 @@ myJEV explores a compact interface for language models: give the model some cont
 
 This is a research and learning project by [Amit Bahree](https://blog.desigeek.com). The repository will grow through reviewable milestone commits. The recorded milestones cover a scratch implementation, matched Qwen training, transfer tests, calibration controls, and local serving measurements.
 
-> **Current milestone: training and local evaluation complete.** All 60 Qwen runs (168,000 updates), 36 main evaluations, 36 transfer/robustness jobs, the three-seed precision control and six local serving candidates are complete. The scratch model is built; its natural-language diagnostic failed. Read [the findings](docs/qwen-findings.md), [scratch lessons](docs/scratch.md) and [remaining work](docs/roadmap.md). Archive annotation/adaptation remains separate work in progress. Public adapter/head releases are available on Hugging Face, starting with [myJEV-4B](https://huggingface.co/bahree/myJEV-4B); no hosted demo is running.
+> **Current milestone: training and local evaluation complete.** All 60 Qwen runs (168,000 updates), 36 main evaluations, 36 transfer/robustness jobs, the three-seed precision control and six local serving candidates are complete. The scratch model is built; its natural-language diagnostic failed. Read [the findings](docs/qwen-findings.md), [scratch lessons](docs/scratch.md) and [remaining work](docs/roadmap.md). The exploratory machine-reference archive adaptation and forgetting study is complete; independent human auditing remains. Public adapter/head releases are available on Hugging Face, starting with [myJEV-4B](https://huggingface.co/bahree/myJEV-4B); no hosted demo is running.
 
 The second track now [builds a small decision model from scratch](docs/scratch.md), with recorded learning failures, a completed synthetic study and local serving checks. Its weak natural-language results remain separate from Qwen.
 
 [Start here](docs/quickstart.md) · [Documentation](docs/README.md) · [Measured results](docs/qwen-findings.md) · [Roadmap](docs/roadmap.md)
 
+## Choose a learning route
+
+| Stage | Read and run | Concrete outcome |
+|---|---|---|
+| Build from scratch | [Scratch walkthrough](docs/scratch.md) | Trace byte tokens through an encoder, then inspect both learned rules and failures |
+| Adapt a pretrained network | [Training](docs/training.md) | Follow LoRA, the update budget, supervised and exact/sampled branches |
+| Evaluate decisions | [Experiments](docs/experiments.md) and [CPU lab](docs/walkthrough.md) | Separate accuracy, confidence, escalation and uncertainty |
+| Use and host it | [Inference](docs/inference.md), [model releases](docs/models.md), [Docker](docs/hosting.md) | Run an actual request and serve the same output contract |
+
+The [worked route](docs/walkthrough.md) connects equations, tensor shapes, commands and observed outputs. No training is needed to try the released model, and no GPU is needed for the arithmetic or calibration labs.
+
 ## Documentation by reader task
 
 | I want to... | Guide |
 |---|---|
+| Work through code, math, outputs and evidence | [Hands-on learning route](docs/walkthrough.md) |
+| Try seven original requests | [Runnable demos and retained failure](results/demos-v1/report.md) |
+| Explore calibration on CPU | [Calibration lab](results/calibration-lab-v1/report.md) and [decision lessons](docs/decision-lessons.md) |
 | Follow the complete documentation | [Documentation index](docs/README.md) |
 | Build the small model and inspect its failures | [Scratch walkthrough](docs/scratch.md) |
 | Understand Qwen results and their limits | [Qwen findings](docs/qwen-findings.md) |
@@ -98,7 +112,9 @@ Mean BANKING77 accuracy across three seeds on all 3,080 official test examples:
 
 Initial supervised training receives 4,000 updates. Each continuation receives 4,000 more from its matched supervised checkpoint. Exact RL improves BANKING accuracy at 4B in the paired analysis; its advantage does not hold across all sizes or transfer tasks. Temperature scaling of continued supervision produces better mean confidence Brier than exact RL at every size. See [paired uncertainty, controls and limitations](docs/qwen-findings.md).
 
-Our exploratory local starting recommendation is **4B continued supervision with temperature scaling**. It combines useful confidence, unsupported-option transfer and a measured 82.18 ms warm HTTP median on an A30 for short three-candidate requests. Exact RL remains available for its higher 4B BANKING accuracy. These are task-dependent trade-offs, not a universal ranking. [Candidate selection and resource measurements](docs/models.md#why-this-local-default)
+Within the six published myJEV variants, our exploratory starting recommendation is **4B continued supervision with temperature scaling**. It combines useful confidence, unsupported-option transfer and a measured 82.18 ms warm HTTP median on an A30 for short three-candidate requests. Exact RL remains available for its higher 4B BANKING accuracy. These are task-dependent trade-offs, not a universal ranking. [Candidate selection and resource measurements](docs/models.md#why-this-default-within-the-myjev-family)
+
+For a fixed banking taxonomy, smaller classifiers are serious alternatives: TF-IDF reached 88.28%, and a separate single-seed 149.7M ModernBERT control reached 90.78% after three epochs. These differ in exposure and interface from myJEV. [Worked probability, cost and baseline lessons](docs/decision-lessons.md) explain the trade-off; [encoder evidence](results/encoder-control-v1/report.md) records the conditions.
 
 The [short pilot](docs/experiments.md) remains recorded as an earlier feasibility milestone. A TF-IDF/logistic-regression control reaches **88.28%** on the official test set, with different training exposure. The [policy-edit diagnostic](results/policy-edits-v1/report.md) separately probes explicit exceptions and changed rules; it is synthetic, uses one seed, and is not a PolicyLM benchmark.
 

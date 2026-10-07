@@ -1,0 +1,69 @@
+{
+  "scope": "Lossless gzip copies of public-task labels/predictions; no input text. Raw files remain private to respect the exporter single-file size cap.",
+  "files": [
+    {
+      "original": "raw-calibration-predictions.jsonl",
+      "compressed": "raw-calibration-predictions.jsonl.gz",
+      "original_bytes": 3935928,
+      "original_sha256": "b884eb7c7d0c06046d8edf64a3a7a9905116351d13f7cedc02f0c56ae4c52850",
+      "compressed_sha256": "8de830cba40d41a07218f568f29159a224d6f585f06bde067f54e84b0d610552",
+      "fields": [
+        "confidence",
+        "confidence_mode",
+        "group",
+        "id",
+        "label",
+        "selected_id",
+        "selection_scores"
+      ]
+    },
+    {
+      "original": "raw-test-predictions.jsonl",
+      "compressed": "raw-test-predictions.jsonl.gz",
+      "original_bytes": 12113262,
+      "original_sha256": "384cfc21f68a88f8f5662e12a4b8517691e00c060aee655ac5ea8b6f57a5ceeb",
+      "compressed_sha256": "ece4632b03b917d3c2de9c982cdbde8737ebcbf9bcefa773e2edbdf7f197c587",
+      "fields": [
+        "confidence",
+        "confidence_mode",
+        "group",
+        "id",
+        "label",
+        "selected_id",
+        "selection_scores"
+      ]
+    },
+    {
+      "original": "temperature-calibration-predictions.jsonl",
+      "compressed": "temperature-calibration-predictions.jsonl.gz",
+      "original_bytes": 3956775,
+      "original_sha256": "573fb34368c78631b6fa144f891342b1d536a4410ce6601d2cdd70c39b07b035",
+      "compressed_sha256": "ad4839b94f902237b7dea8aae3ce878724494c83639dc42ddee7d05e2c6007c4",
+      "fields": [
+        "confidence",
+        "confidence_mode",
+        "group",
+        "id",
+        "label",
+        "selected_id",
+        "selection_scores"
+      ]
+    },
+    {
+      "original": "temperature-test-predictions.jsonl",
+      "compressed": "temperature-test-predictions.jsonl.gz",
+      "original_bytes": 12179035,
+      "original_sha256": "2f43fc7621291de28146fb5ecc78911a77815811a094844c845f6bb65f70d191",
+      "compressed_sha256": "04e713ccb08b3aaac6db83a41fb3404700be52918818d24e6ee5628412061c8f",
+      "fields": [
+        "confidence",
+        "confidence_mode",
+        "group",
+        "id",
+        "label",
+        "selected_id",
+        "selection_scores"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "script": "scripts/evaluate_sst2_transfer.py",
+  "script_sha256": "f6bd5e216547d6ef04880eec9ee363ac938faecb9ae771a6c1df5876dafc84c1",
+  "frozen_at": "2026-10-07T05:35:41.449747+00:00",
+  "pre_execution_amendment": "Before evaluation: posthoc metrics identify calibration SHA rather than artifact_revision. Validate calibration SHA and temperature against release manifest instead.",
+  "prior_script_sha256": "928f90d3fd7f282e08d80881a131c96375feb0face2453e8ee02b199116be3f1"
+}

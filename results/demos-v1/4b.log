@@ -1,0 +1,4 @@
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Fetching 10 files: 100%|██████████| 10/10 [00:00<00:00, 991.68it/s]
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:  65%|██████▌   | 277/426 [00:00<00:00, 2766.82it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 3695.47it/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.

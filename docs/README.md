@@ -3,11 +3,17 @@
 Read the [completed Qwen findings and lessons](qwen-findings.md), including paired uncertainty, confidence controls and what changes next.
 
 
+Follow the [hands-on learning route](walkthrough.md) for worked arithmetic, runnable commands, actual outputs and checks.
+
 Start with the question you want to answer. All commands run from the repository root.
 
 | Question | Guide |
 |---|---|
+| Can I try real requests and see the failures? | [Seven runnable demos](../results/demos-v1/report.md) |
+| Can I explore confidence on a CPU? | [Calibration lab](../results/calibration-lab-v1/report.md) and [decision lessons](decision-lessons.md) |
+| How do related decision systems differ? | [System One research](system-one-research.md) and [source-based peer review](system-one-peer-review.md) |
 | How do I install, train, and run it? | [Quick start](quickstart.md) |
+| How should I interpret confidence, costs and simpler baselines? | [Decision lessons and worked examples](decision-lessons.md) |
 | What happens in one forward pass? | [Architecture and objectives](architecture.md) |
 | What was actually measured? | [Experiments and evidence](experiments.md) |
 | How are methods compared fairly? | [Experimental protocol](protocol.md) |
@@ -24,7 +30,7 @@ Start with the question you want to answer. All commands run from the repository
 
 - [BANKING77](datasets/banking77.md): controlled intent routing, official test split preserved.
 - [CLINC150](datasets/clinc150.md): unfamiliar-task and unsupported-request evaluation, excluded from tuning.
-- [Blog archive](datasets/blog-archive.md): post-format, instructional-completeness and claim-support rubrics; 40-post machine-annotation pilot complete, adaptation/evaluation pending.
+- [Blog archive](datasets/blog-archive.md): post-format, instructional-completeness and claim-support rubrics; completed machine-reference adaptation and forgetting study; human correctness remains unaudited.
 - [Synthetic fixtures](datasets/synthetic.md): objective arithmetic and controlled uncertainty.
 - [Scratch routing](datasets/scratch-routing.md): original rules, known ambiguity, versioned templates and held-out combinations.
 - [Attribution](attribution.md): JevK5, SemIf, and JevForge architecture distinctions.

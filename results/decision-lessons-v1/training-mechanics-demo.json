@@ -1,0 +1,60 @@
+{
+  "scope": "Constructed arithmetic examples, no backbone or dataset; not model performance.",
+  "lora": {
+    "base_parameters": 16,
+    "rank1_parameters": 8,
+    "input": [
+      1.0,
+      2.0,
+      0.0,
+      -1.0
+    ],
+    "output": [
+      1.100000023841858,
+      2.0,
+      -0.10000000149011612,
+      -0.800000011920929
+    ]
+  },
+  "one_sft_update": {
+    "target_index": 1,
+    "before_probabilities": [
+      0.3333333432674408,
+      0.3333333432674408,
+      0.3333333432674408
+    ],
+    "cross_entropy": 1.0986123085021973,
+    "gradient": [
+      0.3333333134651184,
+      -0.6666666865348816,
+      0.3333333134651184
+    ],
+    "after_probabilities": [
+      0.298520028591156,
+      0.4029598832130432,
+      0.298520028591156
+    ]
+  },
+  "reward_examples": [
+    {
+      "correct": 1,
+      "confidence": 0.9,
+      "reward": 0.9900000095367432
+    },
+    {
+      "correct": 1,
+      "confidence": 0.2,
+      "reward": 0.35999995470046997
+    },
+    {
+      "correct": 0,
+      "confidence": 0.9,
+      "reward": -0.809999942779541
+    },
+    {
+      "correct": 0,
+      "confidence": 0.2,
+      "reward": -0.04000000283122063
+    }
+  ]
+}

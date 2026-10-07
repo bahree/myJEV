@@ -1,0 +1,47 @@
+{
+  "scope": "Original authored diagnostic examples, not a benchmark, human audit or calibrated error estimate. Expected IDs are kept outside model-visible requests. No private blog text is included.",
+  "cases": [
+    {
+      "line": 1,
+      "id": "billing",
+      "expected_id": "billing",
+      "reason": "A duplicate charge belongs to billing."
+    },
+    {
+      "line": 2,
+      "id": "technical",
+      "expected_id": "technical",
+      "reason": "The report describes an application error."
+    },
+    {
+      "line": 3,
+      "id": "none-of-these",
+      "expected_id": "other",
+      "reason": "A hiking recommendation is outside both support routes."
+    },
+    {
+      "line": 4,
+      "id": "refund-day-13",
+      "expected_id": "approve",
+      "reason": "Thirteen is fewer than fourteen."
+    },
+    {
+      "line": 5,
+      "id": "refund-day-14",
+      "expected_id": "deny",
+      "reason": "The boundary day is explicitly denied."
+    },
+    {
+      "line": 6,
+      "id": "quoted-instruction",
+      "expected_id": "billing",
+      "reason": "The actual duplicate-charge issue is billing; the quote is untrusted data."
+    },
+    {
+      "line": 7,
+      "id": "synthetic-blog-format",
+      "expected_id": "tutorial",
+      "reason": "The original fixture gives a concrete procedure with numbered steps."
+    }
+  ]
+}

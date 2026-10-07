@@ -1,0 +1,20 @@
+{
+  "scope": "Seven already-disclosed authored examples, descriptive interface probe, not held-out performance evidence",
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "precision": "bf16",
+  "device": "cuda:0",
+  "training": "None; untouched backbone, no adapter or learned confidence head",
+  "comparisons": [
+    "Existing myJEV chat-v2 single-token aliases",
+    "Bracketed numeric suffix sum-log-probability"
+  ],
+  "numeric_scoring": "Full-vocabulary token log-softmax; sum suffix log probabilities including closing bracket; normalize over candidate completions; no length normalization",
+  "compute": "Full continuation teacher forcing, duplicated prompt per candidate, candidate batch per request, use_cache=False. Not cached paper reproduction or comparable latency.",
+  "limits": "4096 tokens; finite candidate lists in context. Numeric IDs do not remove context/memory limits or add vision capability.",
+  "selection": "No prompt search, no tuning, original candidate order; all seven predetermined examples retained",
+  "requests_sha256": "4e03c4dd94feb6cf0ae69298bb16734eb8c63ebdb60c8d1c74e0197abcb1af76",
+  "expectations_sha256": "bd98b1634e7cb9c989b491fe6dcdea67d7c67ca29e9fa454a61654c7e8c682c6",
+  "script_sha256": "0191432484f3d205e326e0fcace6fa48be5b7ea9a259a9f7bae477ea532b3415",
+  "torch_version": "2.14.1+cu130"
+}

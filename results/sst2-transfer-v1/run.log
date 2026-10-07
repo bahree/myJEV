@@ -1,0 +1,33 @@
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 10 files:  30%|███       | 3/10 [00:00<00:00, 13.27it/s]Fetching 10 files: 100%|██████████| 10/10 [00:00<00:00, 31.08it/s]Fetching 10 files: 100%|██████████| 10/10 [00:00<00:00, 27.63it/s]
+Loading weights:   0%|          | 0/320 [00:00<?, ?it/s]Loading weights: 100%|██████████| 320/320 [00:00<00:00, 3724.84it/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+{"size": "0.8B", "completed": 100, "total": 872, "elapsed": 6.2808949570171535}
+{"size": "0.8B", "completed": 200, "total": 872, "elapsed": 11.594183396024164}
+{"size": "0.8B", "completed": 300, "total": 872, "elapsed": 16.919010234007146}
+{"size": "0.8B", "completed": 400, "total": 872, "elapsed": 22.249154951015953}
+{"size": "0.8B", "completed": 500, "total": 872, "elapsed": 27.624033413012512}
+{"size": "0.8B", "completed": 600, "total": 872, "elapsed": 32.97861169700627}
+{"size": "0.8B", "completed": 700, "total": 872, "elapsed": 38.3480191109993}
+{"size": "0.8B", "completed": 800, "total": 872, "elapsed": 43.67271557802451}
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Fetching 10 files: 100%|██████████| 10/10 [00:00<00:00, 2116.73it/s]
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 4645.95it/s]
+{"size": "4B", "completed": 100, "total": 872, "elapsed": 7.173869074002141}
+{"size": "4B", "completed": 200, "total": 872, "elapsed": 14.421378794999328}
+{"size": "4B", "completed": 300, "total": 872, "elapsed": 21.662260359007632}
+{"size": "4B", "completed": 400, "total": 872, "elapsed": 28.911949792993255}
+{"size": "4B", "completed": 500, "total": 872, "elapsed": 36.212279065017356}
+{"size": "4B", "completed": 600, "total": 872, "elapsed": 43.52658415099722}
+{"size": "4B", "completed": 700, "total": 872, "elapsed": 50.77623085101368}
+{"size": "4B", "completed": 800, "total": 872, "elapsed": 57.97731600300176}
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Fetching 10 files:  30%|███       | 3/10 [00:00<00:00, 15.80it/s]Fetching 10 files:  80%|████████  | 8/10 [00:00<00:00, 29.54it/s]Fetching 10 files: 100%|██████████| 10/10 [00:00<00:00, 27.92it/s]
+Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 1/427 [00:00<01:40,  4.22it/s]Loading weights:   0%|          | 2/427 [00:00<01:40,  4.23it/s]Loading weights:   6%|▋         | 27/427 [00:00<00:05, 67.42it/s]Loading weights:  11%|█         | 46/427 [00:00<00:03, 99.71it/s]Loading weights:  16%|█▌        | 68/427 [00:00<00:02, 131.17it/s]Loading weights:  22%|██▏       | 95/427 [00:00<00:01, 167.15it/s]Loading weights:  28%|██▊       | 119/427 [00:00<00:01, 185.22it/s]Loading weights:  34%|███▎      | 144/427 [00:01<00:01, 203.26it/s]Loading weights:  39%|███▉      | 167/427 [00:01<00:01, 210.72it/s]Loading weights:  44%|████▍     | 190/427 [00:01<00:01, 205.18it/s]Loading weights:  50%|████▉     | 212/427 [00:01<00:01, 204.83it/s]Loading weights:  56%|█████▌    | 239/427 [00:01<00:00, 221.72it/s]Loading weights:  61%|██████▏   | 262/427 [00:01<00:00, 208.16it/s]Loading weights:  68%|██████▊   | 292/427 [00:01<00:00, 226.88it/s]Loading weights:  74%|███████▍  | 316/427 [00:01<00:00, 212.27it/s]Loading weights:  81%|████████  | 345/427 [00:02<00:00, 227.98it/s]Loading weights:  86%|████████▋ | 369/427 [00:02<00:00, 214.38it/s]Loading weights:  93%|█████████▎| 398/427 [00:02<00:00, 227.98it/s]Loading weights:  99%|█████████▉| 422/427 [00:02<00:00, 214.80it/s]Loading weights: 100%|██████████| 427/427 [00:02<00:00, 178.75it/s]
+{"size": "9B", "completed": 100, "total": 872, "elapsed": 10.211397092003608}
+{"size": "9B", "completed": 200, "total": 872, "elapsed": 20.490674608008703}
+{"size": "9B", "completed": 300, "total": 872, "elapsed": 30.739261627022643}
+{"size": "9B", "completed": 400, "total": 872, "elapsed": 41.058266884007026}
+{"size": "9B", "completed": 500, "total": 872, "elapsed": 51.30841655001859}
+{"size": "9B", "completed": 600, "total": 872, "elapsed": 61.67918136101798}
+{"size": "9B", "completed": 700, "total": 872, "elapsed": 71.98579647100996}
+{"size": "9B", "completed": 800, "total": 872, "elapsed": 82.35700734402053}

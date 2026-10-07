@@ -1,0 +1,354 @@
+{
+  "protocol": {
+    "scope": "Seven already-disclosed authored examples, descriptive interface probe, not held-out performance evidence",
+    "model": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "precision": "bf16",
+    "device": "cuda:0",
+    "training": "None; untouched backbone, no adapter or learned confidence head",
+    "comparisons": [
+      "Existing myJEV chat-v2 single-token aliases",
+      "Bracketed numeric suffix sum-log-probability"
+    ],
+    "numeric_scoring": "Full-vocabulary token log-softmax; sum suffix log probabilities including closing bracket; normalize over candidate completions; no length normalization",
+    "compute": "Full continuation teacher forcing, duplicated prompt per candidate, candidate batch per request, use_cache=False. Not cached paper reproduction or comparable latency.",
+    "limits": "4096 tokens; finite candidate lists in context. Numeric IDs do not remove context/memory limits or add vision capability.",
+    "selection": "No prompt search, no tuning, original candidate order; all seven predetermined examples retained",
+    "requests_sha256": "4e03c4dd94feb6cf0ae69298bb16734eb8c63ebdb60c8d1c74e0197abcb1af76",
+    "expectations_sha256": "bd98b1634e7cb9c989b491fe6dcdea67d7c67ca29e9fa454a61654c7e8c682c6",
+    "script_sha256": "0191432484f3d205e326e0fcace6fa48be5b7ea9a259a9f7bae477ea532b3415",
+    "torch_version": "2.14.1+cu130"
+  },
+  "load_seconds": 2.4591873479948845,
+  "total_seconds": 4.505197381018661,
+  "n": 7,
+  "correct": {
+    "aliases": 7,
+    "numeric": 7
+  },
+  "rows": [
+    {
+      "line": 1,
+      "case_id": "billing",
+      "expected_id": "billing",
+      "alias_prompt_tokens": 92,
+      "numeric_prompt_tokens": 80,
+      "numeric_suffix_tokens": [
+        [
+          16,
+          60
+        ],
+        [
+          17,
+          60
+        ],
+        [
+          18,
+          60
+        ]
+      ],
+      "numeric_processed_tokens_including_repeated_prefix": 246,
+      "numeric_candidate_log_probabilities": [
+        -0.13169078528881073,
+        -3.6338775157928467,
+        -2.3813602924346924
+      ],
+      "elapsed_seconds_unoptimized": 1.1243151939997915,
+      "aliases": {
+        "selected_id": "billing",
+        "correct": true,
+        "selection_scores": {
+          "billing": 0.8757556080818176,
+          "technical": 0.06711344420909882,
+          "other": 0.057131003588438034
+        },
+        "max_selection_probability": 0.8757556080818176
+      },
+      "numeric": {
+        "selected_id": "billing",
+        "correct": true,
+        "selection_scores": {
+          "billing": 0.8806185126304626,
+          "technical": 0.02653428725898266,
+          "other": 0.09284718334674835
+        },
+        "max_selection_probability": 0.8806185126304626
+      }
+    },
+    {
+      "line": 2,
+      "case_id": "technical",
+      "expected_id": "technical",
+      "alias_prompt_tokens": 99,
+      "numeric_prompt_tokens": 87,
+      "numeric_suffix_tokens": [
+        [
+          16,
+          60
+        ],
+        [
+          17,
+          60
+        ],
+        [
+          18,
+          60
+        ]
+      ],
+      "numeric_processed_tokens_including_repeated_prefix": 267,
+      "numeric_candidate_log_probabilities": [
+        -5.2811737060546875,
+        -0.02070264145731926,
+        -4.397560119628906
+      ],
+      "elapsed_seconds_unoptimized": 0.15073240498895757,
+      "aliases": {
+        "selected_id": "technical",
+        "correct": true,
+        "selection_scores": {
+          "billing": 0.04069235175848007,
+          "technical": 0.9568732976913452,
+          "other": 0.002434275345876813
+        },
+        "max_selection_probability": 0.9568732976913452
+      },
+      "numeric": {
+        "selected_id": "technical",
+        "correct": true,
+        "selection_scores": {
+          "billing": 0.005102254915982485,
+          "technical": 0.982552170753479,
+          "other": 0.012345557101070881
+        },
+        "max_selection_probability": 0.982552170753479
+      }
+    },
+    {
+      "line": 3,
+      "case_id": "none-of-these",
+      "expected_id": "other",
+      "alias_prompt_tokens": 104,
+      "numeric_prompt_tokens": 92,
+      "numeric_suffix_tokens": [
+        [
+          16,
+          60
+        ],
+        [
+          17,
+          60
+        ],
+        [
+          18,
+          60
+        ]
+      ],
+      "numeric_processed_tokens_including_repeated_prefix": 282,
+      "numeric_candidate_log_probabilities": [
+        -6.146032810211182,
+        -4.641752243041992,
+        -0.014008831232786179
+      ],
+      "elapsed_seconds_unoptimized": 0.14542114798678085,
+      "aliases": {
+        "selected_id": "other",
+        "correct": true,
+        "selection_scores": {
+          "billing": 0.07275387644767761,
+          "technical": 0.02468847669661045,
+          "other": 0.9025576114654541
+        },
+        "max_selection_probability": 0.9025576114654541
+      },
+      "numeric": {
+        "selected_id": "other",
+        "correct": true,
+        "selection_scores": {
+          "billing": 0.0021465313620865345,
+          "technical": 0.009661354124546051,
+          "other": 0.9881920218467712
+        },
+        "max_selection_probability": 0.9881920218467712
+      }
+    },
+    {
+      "line": 4,
+      "case_id": "refund-day-13",
+      "expected_id": "approve",
+      "alias_prompt_tokens": 123,
+      "numeric_prompt_tokens": 115,
+      "numeric_suffix_tokens": [
+        [
+          16,
+          60
+        ],
+        [
+          17,
+          60
+        ]
+      ],
+      "numeric_processed_tokens_including_repeated_prefix": 234,
+      "numeric_candidate_log_probabilities": [
+        -0.020512893795967102,
+        -4.021560192108154
+      ],
+      "elapsed_seconds_unoptimized": 0.13408063299721107,
+      "aliases": {
+        "selected_id": "approve",
+        "correct": true,
+        "selection_scores": {
+          "approve": 0.9606062173843384,
+          "deny": 0.03939379006624222
+        },
+        "max_selection_probability": 0.9606062173843384
+      },
+      "numeric": {
+        "selected_id": "approve",
+        "correct": true,
+        "selection_scores": {
+          "approve": 0.9820322394371033,
+          "deny": 0.017967723309993744
+        },
+        "max_selection_probability": 0.9820322394371033
+      }
+    },
+    {
+      "line": 5,
+      "case_id": "refund-day-14",
+      "expected_id": "deny",
+      "alias_prompt_tokens": 123,
+      "numeric_prompt_tokens": 115,
+      "numeric_suffix_tokens": [
+        [
+          16,
+          60
+        ],
+        [
+          17,
+          60
+        ]
+      ],
+      "numeric_processed_tokens_including_repeated_prefix": 234,
+      "numeric_candidate_log_probabilities": [
+        -4.026142120361328,
+        -0.02031034231185913
+      ],
+      "elapsed_seconds_unoptimized": 0.13263211998855695,
+      "aliases": {
+        "selected_id": "deny",
+        "correct": true,
+        "selection_scores": {
+          "approve": 0.06498867273330688,
+          "deny": 0.9350112676620483
+        },
+        "max_selection_probability": 0.9350112676620483
+      },
+      "numeric": {
+        "selected_id": "deny",
+        "correct": true,
+        "selection_scores": {
+          "approve": 0.01788349449634552,
+          "deny": 0.9821165204048157
+        },
+        "max_selection_probability": 0.9821165204048157
+      }
+    },
+    {
+      "line": 6,
+      "case_id": "quoted-instruction",
+      "expected_id": "billing",
+      "alias_prompt_tokens": 126,
+      "numeric_prompt_tokens": 114,
+      "numeric_suffix_tokens": [
+        [
+          16,
+          60
+        ],
+        [
+          17,
+          60
+        ],
+        [
+          18,
+          60
+        ]
+      ],
+      "numeric_processed_tokens_including_repeated_prefix": 348,
+      "numeric_candidate_log_probabilities": [
+        -0.11761615425348282,
+        -3.6185944080352783,
+        -2.4929122924804688
+      ],
+      "elapsed_seconds_unoptimized": 0.1495498449949082,
+      "aliases": {
+        "selected_id": "billing",
+        "correct": true,
+        "selection_scores": {
+          "billing": 0.6663032174110413,
+          "technical": 0.1640022099018097,
+          "other": 0.16969460248947144
+        },
+        "max_selection_probability": 0.6663032174110413
+      },
+      "numeric": {
+        "selected_id": "billing",
+        "correct": true,
+        "selection_scores": {
+          "billing": 0.890349268913269,
+          "technical": 0.026859931647777557,
+          "other": 0.08279085904359818
+        },
+        "max_selection_probability": 0.890349268913269
+      }
+    },
+    {
+      "line": 7,
+      "case_id": "synthetic-blog-format",
+      "expected_id": "tutorial",
+      "alias_prompt_tokens": 167,
+      "numeric_prompt_tokens": 156,
+      "numeric_suffix_tokens": [
+        [
+          16,
+          60
+        ],
+        [
+          17,
+          60
+        ],
+        [
+          18,
+          60
+        ]
+      ],
+      "numeric_processed_tokens_including_repeated_prefix": 474,
+      "numeric_candidate_log_probabilities": [
+        -0.0038129989989101887,
+        -7.640174865722656,
+        -8.760848999023438
+      ],
+      "elapsed_seconds_unoptimized": 0.18783537799026817,
+      "aliases": {
+        "selected_id": "tutorial",
+        "correct": true,
+        "selection_scores": {
+          "tutorial": 0.9981088638305664,
+          "opinion": 0.0016815081471577287,
+          "announcement": 0.00020964127907063812
+        },
+        "max_selection_probability": 0.9981088638305664
+      },
+      "numeric": {
+        "selected_id": "tutorial",
+        "correct": true,
+        "selection_scores": {
+          "tutorial": 0.9993605017662048,
+          "opinion": 0.00048227226943708956,
+          "announcement": 0.000157249640324153
+        },
+        "max_selection_probability": 0.9993605017662048
+      }
+    }
+  ],
+  "interpretation": "Selection probabilities are not an independently calibrated correctness estimate. No generalization, architecture-superiority or speed claim is supported by these seven previously viewed examples."
+}

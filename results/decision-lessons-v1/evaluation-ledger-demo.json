@@ -1,0 +1,7 @@
+{
+  "scope": "Constructed teaching arithmetic, not model measurements",
+  "brier": 0.19125,
+  "threshold_070_coverage": 0.75,
+  "threshold_070_error": 0.33333333333333337,
+  "passed": true
+}

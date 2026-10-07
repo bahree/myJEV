@@ -2,6 +2,10 @@
 
 The frozen batch completed on October 6 at 02:18 UTC (October 5, 7:18 p.m. Pacific). It contains 24 tuning runs, 36 main runs and 168,000 optimizer updates. All main evaluations use the 3,080 official BANKING77 test examples; calibration uses 1,000 reserved examples. This closes the scheduled training batch, not all transfer, adaptation or release work.
 
+## The inexpensive baseline belongs in the decision
+
+TF-IDF/logistic regression achieved **88.28%** BANKING accuracy, compared with **89.23%** for the three-seed supervised 4B mean. The packaged 4B seed reaches 89.94%. These are different comparisons: exposure and tuning differ, and TF-IDF cannot interpret request-supplied new categories. For a stable taxonomy, its small accuracy gap makes it a serious operational alternative. The subsequent [149.7M-parameter ModernBERT control](../results/encoder-control-v1/report.md) reached 90.78% accuracy and 0.0555 correctness Brier after 23,997 example exposures, one seed and validation-selected checkpointing. It used more training exposure than Qwen and a fixed 77-label head. That limits causal comparisons but strengthens the practical case for trying a small adapted encoder first when the taxonomy is stable. The [worked decision guide](decision-lessons.md) and [CPU profile](../results/tfidf-serving-v1/summary.json) explain when that distinction matters.
+
 ## The result depends on the control
 
 | Size | Initial SFT | Continued SFT | Exact RL | Sampled RL |

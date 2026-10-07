@@ -1,0 +1,99 @@
+{
+  "scope": "Original analytical illustrations, no trained model, not benchmarks. Fixed sample indices demonstrate one possible realization; not a Monte Carlo gradient validation.",
+  "joint": {
+    "probability": [
+      0.15,
+      0.45,
+      0.3,
+      0.1
+    ],
+    "confidence": [
+      0.25,
+      0.75,
+      0.25,
+      0.75
+    ],
+    "correctness": [
+      1,
+      1,
+      0,
+      0
+    ],
+    "reward": [
+      0.4375,
+      0.9375,
+      -0.0625,
+      -0.5625
+    ],
+    "reference": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "beta": 0.1,
+    "expected_reward": 0.4125,
+    "kl_nats": 0.15094754949182584,
+    "loss": -0.39740524505081737,
+    "fixed_sample_indices": [
+      1,
+      1,
+      0,
+      2,
+      1,
+      3,
+      2,
+      1
+    ],
+    "sample_reward_mean": 0.4375,
+    "leave_one_out_reward_baselines": [
+      0.36607142857142855,
+      0.36607142857142855,
+      0.4375,
+      0.5089285714285714,
+      0.36607142857142855,
+      0.5803571428571429,
+      0.5089285714285714,
+      0.36607142857142855
+    ]
+  },
+  "ledger": {
+    "confidence": [
+      0.95,
+      0.8,
+      0.75,
+      0.4
+    ],
+    "correctness": [
+      1,
+      1,
+      0,
+      0
+    ],
+    "thresholds": [
+      0.95,
+      0.8,
+      0.7,
+      0.4
+    ],
+    "coverage": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "accepted_error": [
+      0.0,
+      0.0,
+      0.33333333333333337,
+      0.5
+    ],
+    "brier": 0.19125
+  },
+  "source": "scripts/draw_training_eval_lessons.py",
+  "source_sha256": "2660e6d9944d665b781caa32690d9d0d6b36cf55c6678b2cf6b5b58d03984127",
+  "images": {
+    "joint-actions-worked.png": "4eeb9ed781626f905f82fefcc2b3773ca30841b1eba05671af9deaa1fdd81585",
+    "ledger-coverage-worked.png": "e04e1babb48fe2b173cfbf3268fba75550225f4773f0ac191fe97943bc07a2c0"
+  }
+}

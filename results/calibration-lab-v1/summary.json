@@ -1,0 +1,1127 @@
+{
+  "protocol": {
+    "scope": "Synthetic teaching experiment, not a new natural-data finding",
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "data_seed": 20261006,
+    "sizes": {
+      "train": 1024,
+      "validation": 256,
+      "calibration": 512,
+      "test": 2048
+    },
+    "epochs": 60,
+    "batch_size": 128,
+    "optimizer": "Adam",
+    "learning_rate": 0.01,
+    "noise_uniform_replacement": 0.08,
+    "expected_label_change_rate": 0.06,
+    "temperature_range": [
+      0.05,
+      20
+    ],
+    "student": "12 -> 32 ReLU -> 4; fixed nonlinear generating map",
+    "selection": "No checkpoint/hyperparameter selection; validation monitored only. Final epoch for every run.",
+    "temperature_fit": "Held-out calibration NLL only, LBFGS max80; test never used in fitting",
+    "matching": "Within each seed, identical initial state, batches, updates and examples; same Adam hyperparameters without objective-specific tuning",
+    "uncertainty": "Three initialization/order seeds conditional on one fixed synthetic dataset. No population CI.",
+    "code_sha256": "c43f7cf149ff8a82001f7781fd0c3ab003608c2d8329152f334b3e9b7675a4ff",
+    "torch_version": "2.14.1+cu130"
+  },
+  "dataset_sha256": "6e190422737b740f302d7384e64f37a9a654b4dea2122d268d27d6902e519c72",
+  "runs": [
+    {
+      "seed": 11,
+      "method": "ce",
+      "temperature": 1.7172138690948486,
+      "raw": {
+        "n": 2048,
+        "accuracy": 0.5400390625,
+        "nll": 1.1949595212936401,
+        "multiclass_brier_sum": 0.6247749328613281,
+        "selected_correctness_brier": 0.25693660974502563,
+        "oracle_probability_mse_mean_over_classes": 0.02783557027578354,
+        "ece_10_equal_width": 0.14593720906123053,
+        "reliability_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "n": 98,
+            "accuracy": 0.37755101919174194,
+            "confidence": 0.3632594048976898
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "n": 270,
+            "accuracy": 0.3740740716457367,
+            "confidence": 0.4569007456302643
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "n": 367,
+            "accuracy": 0.4359672963619232,
+            "confidence": 0.5490004420280457
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "n": 356,
+            "accuracy": 0.5308988690376282,
+            "confidence": 0.6488082408905029
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "n": 325,
+            "accuracy": 0.5261538624763489,
+            "confidence": 0.7494234442710876
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "n": 328,
+            "accuracy": 0.6829268336296082,
+            "confidence": 0.8511759042739868
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "n": 304,
+            "accuracy": 0.7368420958518982,
+            "confidence": 0.947067141532898
+          }
+        ]
+      },
+      "temperature_scaled": {
+        "n": 2048,
+        "accuracy": 0.5400390625,
+        "nll": 1.080230951309204,
+        "multiclass_brier_sum": 0.591244101524353,
+        "selected_correctness_brier": 0.2329433262348175,
+        "oracle_probability_mse_mean_over_classes": 0.020860612392425537,
+        "ece_10_equal_width": 0.02536359627265483,
+        "reliability_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "n": 13,
+            "accuracy": 0.4615384638309479,
+            "confidence": 0.29071712493896484
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "n": 282,
+            "accuracy": 0.38297873735427856,
+            "confidence": 0.36138519644737244
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "n": 561,
+            "accuracy": 0.4313725531101227,
+            "confidence": 0.450369656085968
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "n": 478,
+            "accuracy": 0.5543932914733887,
+            "confidence": 0.5459809899330139
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "n": 345,
+            "accuracy": 0.626086950302124,
+            "confidence": 0.6471544504165649
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "n": 229,
+            "accuracy": 0.6681222915649414,
+            "confidence": 0.7428262829780579
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "n": 113,
+            "accuracy": 0.8141592741012573,
+            "confidence": 0.8449508547782898
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "n": 27,
+            "accuracy": 0.8888888955116272,
+            "confidence": 0.9296734929084778
+          }
+        ]
+      },
+      "runtime_seconds": 4.129505288001383
+    },
+    {
+      "seed": 11,
+      "method": "brier",
+      "temperature": 2.5680060386657715,
+      "raw": {
+        "n": 2048,
+        "accuracy": 0.5478515625,
+        "nll": 1.4608298540115356,
+        "multiclass_brier_sum": 0.6655561923980713,
+        "selected_correctness_brier": 0.2904583215713501,
+        "oracle_probability_mse_mean_over_classes": 0.03860509395599365,
+        "ece_10_equal_width": 0.22247653774684295,
+        "reliability_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "n": 25,
+            "accuracy": 0.2800000011920929,
+            "confidence": 0.36441195011138916
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "n": 163,
+            "accuracy": 0.3742331266403198,
+            "confidence": 0.4574819505214691
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "n": 260,
+            "accuracy": 0.446153849363327,
+            "confidence": 0.5498703122138977
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "n": 289,
+            "accuracy": 0.5017300844192505,
+            "confidence": 0.6508229374885559
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "n": 280,
+            "accuracy": 0.4714285731315613,
+            "confidence": 0.7495712041854858
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "n": 348,
+            "accuracy": 0.5574712753295898,
+            "confidence": 0.8526145815849304
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "n": 683,
+            "accuracy": 0.683748185634613,
+            "confidence": 0.9609197378158569
+          }
+        ]
+      },
+      "temperature_scaled": {
+        "n": 2048,
+        "accuracy": 0.5478515625,
+        "nll": 1.0758850574493408,
+        "multiclass_brier_sum": 0.5849767923355103,
+        "selected_correctness_brier": 0.2329603135585785,
+        "oracle_probability_mse_mean_over_classes": 0.020102133974432945,
+        "ece_10_equal_width": 0.028938323659531306,
+        "reliability_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "n": 9,
+            "accuracy": 0.2222222238779068,
+            "confidence": 0.2889171540737152
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "n": 281,
+            "accuracy": 0.41992881894111633,
+            "confidence": 0.36446553468704224
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "n": 559,
+            "accuracy": 0.4597495496273041,
+            "confidence": 0.45032820105552673
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "n": 479,
+            "accuracy": 0.5219206809997559,
+            "confidence": 0.5476191639900208
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "n": 355,
+            "accuracy": 0.597183108329773,
+            "confidence": 0.6445083618164062
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "n": 198,
+            "accuracy": 0.7424242496490479,
+            "confidence": 0.7439543008804321
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "n": 126,
+            "accuracy": 0.7857142686843872,
+            "confidence": 0.8419734835624695
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "n": 41,
+            "accuracy": 0.9024389982223511,
+            "confidence": 0.9344406127929688
+          }
+        ]
+      },
+      "runtime_seconds": 0.3021089310059324
+    },
+    {
+      "seed": 22,
+      "method": "ce",
+      "temperature": 1.6963834762573242,
+      "raw": {
+        "n": 2048,
+        "accuracy": 0.548828125,
+        "nll": 1.1917979717254639,
+        "multiclass_brier_sum": 0.6120828986167908,
+        "selected_correctness_brier": 0.25092506408691406,
+        "oracle_probability_mse_mean_over_classes": 0.024920064955949783,
+        "ece_10_equal_width": 0.135578584173345,
+        "reliability_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "n": 2,
+            "accuracy": 0.5,
+            "confidence": 0.29412758350372314
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "n": 89,
+            "accuracy": 0.3258427083492279,
+            "confidence": 0.36705753207206726
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "n": 280,
+            "accuracy": 0.3678571283817291,
+            "confidence": 0.45386549830436707
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "n": 383,
+            "accuracy": 0.47780677676200867,
+            "confidence": 0.5513288378715515
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "n": 331,
+            "accuracy": 0.5075528621673584,
+            "confidence": 0.6493772864341736
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "n": 335,
+            "accuracy": 0.5910447835922241,
+            "confidence": 0.7480090856552124
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "n": 325,
+            "accuracy": 0.6430768966674805,
+            "confidence": 0.8506765365600586
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "n": 303,
+            "accuracy": 0.7689769268035889,
+            "confidence": 0.9483398795127869
+          }
+        ]
+      },
+      "temperature_scaled": {
+        "n": 2048,
+        "accuracy": 0.548828125,
+        "nll": 1.0782312154769897,
+        "multiclass_brier_sum": 0.5834707617759705,
+        "selected_correctness_brier": 0.2297877073287964,
+        "oracle_probability_mse_mean_over_classes": 0.019131718203425407,
+        "ece_10_equal_width": 0.01894048321264563,
+        "reliability_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "n": 9,
+            "accuracy": 0.2222222238779068,
+            "confidence": 0.28674787282943726
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "n": 298,
+            "accuracy": 0.3758389353752136,
+            "confidence": 0.3630650043487549
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "n": 539,
+            "accuracy": 0.43970316648483276,
+            "confidence": 0.4519006013870239
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "n": 483,
+            "accuracy": 0.5631470084190369,
+            "confidence": 0.5474640727043152
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "n": 339,
+            "accuracy": 0.6430678367614746,
+            "confidence": 0.646643877029419
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "n": 222,
+            "accuracy": 0.684684693813324,
+            "confidence": 0.7443762421607971
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "n": 120,
+            "accuracy": 0.8083333373069763,
+            "confidence": 0.8440669178962708
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "n": 38,
+            "accuracy": 0.8947368264198303,
+            "confidence": 0.9342536926269531
+          }
+        ]
+      },
+      "runtime_seconds": 0.2588433789787814
+    },
+    {
+      "seed": 22,
+      "method": "brier",
+      "temperature": 2.6507012844085693,
+      "raw": {
+        "n": 2048,
+        "accuracy": 0.5498046875,
+        "nll": 1.5011996030807495,
+        "multiclass_brier_sum": 0.666613757610321,
+        "selected_correctness_brier": 0.2918429970741272,
+        "oracle_probability_mse_mean_over_classes": 0.038925278931856155,
+        "ece_10_equal_width": 0.23137029916688334,
+        "reliability_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "n": 22,
+            "accuracy": 0.40909090638160706,
+            "confidence": 0.3714234232902527
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "n": 116,
+            "accuracy": 0.4051724076271057,
+            "confidence": 0.45383402705192566
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "n": 284,
+            "accuracy": 0.39788731932640076,
+            "confidence": 0.5451706647872925
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "n": 279,
+            "accuracy": 0.45519712567329407,
+            "confidence": 0.6516955494880676
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "n": 277,
+            "accuracy": 0.5162454843521118,
+            "confidence": 0.7549555897712708
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "n": 348,
+            "accuracy": 0.540229856967926,
+            "confidence": 0.8519994020462036
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "n": 722,
+            "accuracy": 0.6911357045173645,
+            "confidence": 0.9627463817596436
+          }
+        ]
+      },
+      "temperature_scaled": {
+        "n": 2048,
+        "accuracy": 0.5498046875,
+        "nll": 1.0686979293823242,
+        "multiclass_brier_sum": 0.5804368257522583,
+        "selected_correctness_brier": 0.2303314208984375,
+        "oracle_probability_mse_mean_over_classes": 0.019221046939492226,
+        "ece_10_equal_width": 0.019877013291988987,
+        "reliability_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "n": 5,
+            "accuracy": 0.20000000298023224,
+            "confidence": 0.2868143618106842
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "n": 248,
+            "accuracy": 0.3790322542190552,
+            "confidence": 0.36292439699172974
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "n": 562,
+            "accuracy": 0.4483985900878906,
+            "confidence": 0.4526546895503998
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "n": 487,
+            "accuracy": 0.5441478490829468,
+            "confidence": 0.5474109649658203
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "n": 357,
+            "accuracy": 0.6022409200668335,
+            "confidence": 0.6457695364952087
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "n": 222,
+            "accuracy": 0.6891891956329346,
+            "confidence": 0.7498140335083008
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "n": 124,
+            "accuracy": 0.8629032373428345,
+            "confidence": 0.8461820483207703
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "n": 43,
+            "accuracy": 0.9069767594337463,
+            "confidence": 0.9354972243309021
+          }
+        ]
+      },
+      "runtime_seconds": 0.3003234399948269
+    },
+    {
+      "seed": 33,
+      "method": "ce",
+      "temperature": 1.8968456983566284,
+      "raw": {
+        "n": 2048,
+        "accuracy": 0.5478515625,
+        "nll": 1.2153671979904175,
+        "multiclass_brier_sum": 0.6164627075195312,
+        "selected_correctness_brier": 0.25346583127975464,
+        "oracle_probability_mse_mean_over_classes": 0.027692141011357307,
+        "ece_10_equal_width": 0.14967764198081568,
+        "reliability_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "n": 4,
+            "accuracy": 1.0,
+            "confidence": 0.28041696548461914
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "n": 94,
+            "accuracy": 0.3404255211353302,
+            "confidence": 0.3700912296772003
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "n": 275,
+            "accuracy": 0.3563636243343353,
+            "confidence": 0.4565954804420471
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "n": 327,
+            "accuracy": 0.44342508912086487,
+            "confidence": 0.5495265126228333
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "n": 321,
+            "accuracy": 0.5171339511871338,
+            "confidence": 0.6496597528457642
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "n": 361,
+            "accuracy": 0.5789473652839661,
+            "confidence": 0.7505924105644226
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "n": 309,
+            "accuracy": 0.6375404596328735,
+            "confidence": 0.8495814204216003
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "n": 357,
+            "accuracy": 0.7591036558151245,
+            "confidence": 0.9512287974357605
+          }
+        ]
+      },
+      "temperature_scaled": {
+        "n": 2048,
+        "accuracy": 0.5478515625,
+        "nll": 1.0774474143981934,
+        "multiclass_brier_sum": 0.5838495492935181,
+        "selected_correctness_brier": 0.22982878983020782,
+        "oracle_probability_mse_mean_over_classes": 0.02046341449022293,
+        "ece_10_equal_width": 0.019878369363141246,
+        "reliability_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "n": 17,
+            "accuracy": 0.3529411852359772,
+            "confidence": 0.2854204773902893
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "n": 344,
+            "accuracy": 0.3517441749572754,
+            "confidence": 0.35903799533843994
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "n": 559,
+            "accuracy": 0.4776386320590973,
+            "confidence": 0.4528914988040924
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "n": 486,
+            "accuracy": 0.5658436417579651,
+            "confidence": 0.5452775359153748
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "n": 310,
+            "accuracy": 0.64838707447052,
+            "confidence": 0.6442484259605408
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "n": 195,
+            "accuracy": 0.7333333492279053,
+            "confidence": 0.7463943362236023
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "n": 106,
+            "accuracy": 0.7924528121948242,
+            "confidence": 0.8455568552017212
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "n": 31,
+            "accuracy": 0.8064516186714172,
+            "confidence": 0.927945077419281
+          }
+        ]
+      },
+      "runtime_seconds": 0.2598441810114309
+    },
+    {
+      "seed": 33,
+      "method": "brier",
+      "temperature": 2.53017258644104,
+      "raw": {
+        "n": 2048,
+        "accuracy": 0.55419921875,
+        "nll": 1.4356052875518799,
+        "multiclass_brier_sum": 0.654278576374054,
+        "selected_correctness_brier": 0.2822304964065552,
+        "oracle_probability_mse_mean_over_classes": 0.036268141120672226,
+        "ece_10_equal_width": 0.21052385710936505,
+        "reliability_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "n": 1,
+            "accuracy": 1.0,
+            "confidence": 0.29795408248901367
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "n": 31,
+            "accuracy": 0.32258063554763794,
+            "confidence": 0.37271660566329956
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "n": 163,
+            "accuracy": 0.39263802766799927,
+            "confidence": 0.45945343375205994
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "n": 298,
+            "accuracy": 0.48322147130966187,
+            "confidence": 0.5496381521224976
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "n": 285,
+            "accuracy": 0.43157893419265747,
+            "confidence": 0.6476390361785889
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "n": 269,
+            "accuracy": 0.524163544178009,
+            "confidence": 0.7503227591514587
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "n": 318,
+            "accuracy": 0.5094339847564697,
+            "confidence": 0.8537200093269348
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "n": 683,
+            "accuracy": 0.717423141002655,
+            "confidence": 0.9609320759773254
+          }
+        ]
+      },
+      "temperature_scaled": {
+        "n": 2048,
+        "accuracy": 0.55419921875,
+        "nll": 1.0747226476669312,
+        "multiclass_brier_sum": 0.5815821290016174,
+        "selected_correctness_brier": 0.23009003698825836,
+        "oracle_probability_mse_mean_over_classes": 0.0194091834127903,
+        "ece_10_equal_width": 0.023339719307841733,
+        "reliability_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "n": 0,
+            "accuracy": null,
+            "confidence": null
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "n": 12,
+            "accuracy": 0.25,
+            "confidence": 0.2899596393108368
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "n": 293,
+            "accuracy": 0.40614333748817444,
+            "confidence": 0.3657194674015045
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "n": 584,
+            "accuracy": 0.46917808055877686,
+            "confidence": 0.44838839769363403
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "n": 456,
+            "accuracy": 0.5175438523292542,
+            "confidence": 0.5475599765777588
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "n": 329,
+            "accuracy": 0.6382978558540344,
+            "confidence": 0.6459982395172119
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "n": 204,
+            "accuracy": 0.7450980544090271,
+            "confidence": 0.7477619647979736
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "n": 128,
+            "accuracy": 0.8203125,
+            "confidence": 0.8445343971252441
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "n": 42,
+            "accuracy": 0.8571428656578064,
+            "confidence": 0.9397676587104797
+          }
+        ]
+      },
+      "runtime_seconds": 0.30043353798100725
+    }
+  ],
+  "oracle": {
+    "n": 2048,
+    "accuracy": 0.6376953125,
+    "nll": 0.930280327796936,
+    "multiclass_brier_sum": 0.49857157468795776,
+    "selected_correctness_brier": 0.2067302167415619,
+    "oracle_probability_mse_mean_over_classes": 0.0,
+    "ece_10_equal_width": 0.027295624735415913,
+    "reliability_bins": [
+      {
+        "lower": 0.0,
+        "upper": 0.1,
+        "n": 0,
+        "accuracy": null,
+        "confidence": null
+      },
+      {
+        "lower": 0.1,
+        "upper": 0.2,
+        "n": 0,
+        "accuracy": null,
+        "confidence": null
+      },
+      {
+        "lower": 0.2,
+        "upper": 0.3,
+        "n": 7,
+        "accuracy": 0.2857142984867096,
+        "confidence": 0.28903982043266296
+      },
+      {
+        "lower": 0.3,
+        "upper": 0.4,
+        "n": 149,
+        "accuracy": 0.3758389353752136,
+        "confidence": 0.36272481083869934
+      },
+      {
+        "lower": 0.4,
+        "upper": 0.5,
+        "n": 435,
+        "accuracy": 0.4643678069114685,
+        "confidence": 0.4549245834350586
+      },
+      {
+        "lower": 0.5,
+        "upper": 0.6,
+        "n": 383,
+        "accuracy": 0.5796344876289368,
+        "confidence": 0.5455356240272522
+      },
+      {
+        "lower": 0.6,
+        "upper": 0.7,
+        "n": 341,
+        "accuracy": 0.662756621837616,
+        "confidence": 0.6525706648826599
+      },
+      {
+        "lower": 0.7,
+        "upper": 0.8,
+        "n": 317,
+        "accuracy": 0.801261842250824,
+        "confidence": 0.7507265210151672
+      },
+      {
+        "lower": 0.8,
+        "upper": 0.9,
+        "n": 310,
+        "accuracy": 0.8032258152961731,
+        "confidence": 0.852001965045929
+      },
+      {
+        "lower": 0.9,
+        "upper": 1.0,
+        "n": 106,
+        "accuracy": 0.8962264060974121,
+        "confidence": 0.9164412617683411
+      }
+    ]
+  },
+  "runtime_seconds": 5.567933649988845
+}

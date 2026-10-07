@@ -1,0 +1,31 @@
+{
+  "frozen_utc": "2026-10-07T05:32:05.377840+00:00",
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "updates_per_run": 300,
+  "batch_size": 8,
+  "learning_rate": 0.001,
+  "architecture": "Original scratch width64/layers2, maxcontext256/maxcandidate64",
+  "method": "sft: original selection + scalar BCE + policy Brier",
+  "total_updates_cap": 1800,
+  "device": "cuda:0",
+  "thresholds": {
+    "tiny-overfit": 1.0,
+    "deterministic-rule": 0.95
+  },
+  "scope": "Diagnostic, not an optimization comparison. Tiny stage evaluates its training examples intentionally. Deterministic stage uses new record IDs but same template and colors, so it tests elementary rule recovery, not unfamiliar-language transfer. No uncertainty/noise, missing options, or test-selected hyperparameters. All three seeds reported; no additional tuning on failure.",
+  "source_sha256": {
+    "/home/amit/jev-pvt/scripts/run_scratch_ladder.py": "734c2a2078c291c9e9519c1c75b81a42bd1c3be8d141f827ddc361b733e06b3d",
+    "scripts/run_scratch.py": "c26e2b331f29a15bf47c18915418106381f7f3ec385b8a0857d182d1fd894565",
+    "src/myjev/scratch/model.py": "d58cddc9b1aa520ec5b6afaf72fcbb55ee764818bba9e6b67a79137ebb9b1665"
+  },
+  "data_sha256": {
+    "data/scratch-ladder-v1/tiny-overfit/evaluation.jsonl": "0ab40d445542de0fe198dd2cfc833d009f9a483ed9f7a06e4d83cd6f6c7cad5f",
+    "data/scratch-ladder-v1/tiny-overfit/train.jsonl": "0ab40d445542de0fe198dd2cfc833d009f9a483ed9f7a06e4d83cd6f6c7cad5f",
+    "data/scratch-ladder-v1/deterministic-rule/evaluation.jsonl": "79b72c111c392e37b4ddac91fd4f838622090c3180a3f4388782c0372a61b760",
+    "data/scratch-ladder-v1/deterministic-rule/train.jsonl": "37e45016808f901f1f74d886107cbe4d4c1addc4dbaafd53241f84ff1039777a"
+  }
+}

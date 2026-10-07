@@ -1,0 +1,32 @@
+{
+  "scope": "Synthetic teaching experiment, not a new natural-data finding",
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "data_seed": 20261006,
+  "sizes": {
+    "train": 1024,
+    "validation": 256,
+    "calibration": 512,
+    "test": 2048
+  },
+  "epochs": 60,
+  "batch_size": 128,
+  "optimizer": "Adam",
+  "learning_rate": 0.01,
+  "noise_uniform_replacement": 0.08,
+  "expected_label_change_rate": 0.06,
+  "temperature_range": [
+    0.05,
+    20
+  ],
+  "student": "12 -> 32 ReLU -> 4; fixed nonlinear generating map",
+  "selection": "No checkpoint/hyperparameter selection; validation monitored only. Final epoch for every run.",
+  "temperature_fit": "Held-out calibration NLL only, LBFGS max80; test never used in fitting",
+  "matching": "Within each seed, identical initial state, batches, updates and examples; same Adam hyperparameters without objective-specific tuning",
+  "uncertainty": "Three initialization/order seeds conditional on one fixed synthetic dataset. No population CI.",
+  "code_sha256": "c43f7cf149ff8a82001f7781fd0c3ab003608c2d8329152f334b3e9b7675a4ff",
+  "torch_version": "2.14.1+cu130"
+}

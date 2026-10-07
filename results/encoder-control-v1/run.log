@@ -1,0 +1,49 @@
+Loading weights:   0%|          | 0/136 [00:00<?, ?it/s]Loading weights: 100%|██████████| 136/136 [00:00<00:00, 3948.15it/s]
+[transformers] [1mModernBertForSequenceClassification LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     | 
+------------------+------------+-
+decoder.bias      | UNEXPECTED | 
+classifier.bias   | MISSING    | 
+classifier.weight | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+{"step": 25, "epoch": 1, "examples": 800, "loss": 4.5068359375, "learning_rate": 6.666666666666667e-06, "seconds": 3.642634925985476, "peak_allocated_bytes": 3523320320}
+{"step": 50, "epoch": 1, "examples": 1600, "loss": 4.2724609375, "learning_rate": 1.3333333333333333e-05, "seconds": 5.537181199993938, "peak_allocated_bytes": 3918566912}
+{"step": 75, "epoch": 1, "examples": 2400, "loss": 4.09912109375, "learning_rate": 2e-05, "seconds": 7.37338391400408, "peak_allocated_bytes": 3918566912}
+{"step": 100, "epoch": 1, "examples": 3200, "loss": 3.4501953125, "learning_rate": 1.925925925925926e-05, "seconds": 9.280388658982702, "peak_allocated_bytes": 3918566912}
+{"step": 125, "epoch": 1, "examples": 4000, "loss": 2.655517578125, "learning_rate": 1.851851851851852e-05, "seconds": 11.165433373011183, "peak_allocated_bytes": 3918566912}
+{"step": 150, "epoch": 1, "examples": 4800, "loss": 1.630401611328125, "learning_rate": 1.7777777777777777e-05, "seconds": 12.94754127098713, "peak_allocated_bytes": 3918566912}
+{"step": 175, "epoch": 1, "examples": 5600, "loss": 1.2224907875061035, "learning_rate": 1.7037037037037038e-05, "seconds": 14.745263504009927, "peak_allocated_bytes": 3918566912}
+{"step": 200, "epoch": 1, "examples": 6400, "loss": 1.1903514862060547, "learning_rate": 1.6296296296296297e-05, "seconds": 16.587577822007006, "peak_allocated_bytes": 3918566912}
+{"step": 225, "epoch": 1, "examples": 7200, "loss": 0.9141387939453125, "learning_rate": 1.555555555555556e-05, "seconds": 18.44480474499869, "peak_allocated_bytes": 4001354240}
+{"step": 250, "epoch": 1, "examples": 7999, "loss": 0.8284469246864319, "learning_rate": 1.4814814814814815e-05, "seconds": 20.255192309996346, "peak_allocated_bytes": 4001354240}
+{"epoch": 1, "step": 250, "validation_nll": 0.705767035484314, "validation_accuracy": 0.8184553384780884}
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.24s/it]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.24s/it]
+{"step": 275, "epoch": 2, "examples": 8799, "loss": 0.570673942565918, "learning_rate": 1.4074074074074075e-05, "seconds": 23.8891682579997, "peak_allocated_bytes": 4001354240}
+{"step": 300, "epoch": 2, "examples": 9599, "loss": 0.239471435546875, "learning_rate": 1.3333333333333333e-05, "seconds": 25.540121642989106, "peak_allocated_bytes": 4001354240}
+{"step": 325, "epoch": 2, "examples": 10399, "loss": 0.6937170028686523, "learning_rate": 1.2592592592592593e-05, "seconds": 27.30736662101117, "peak_allocated_bytes": 4001354240}
+{"step": 350, "epoch": 2, "examples": 11199, "loss": 0.17867565155029297, "learning_rate": 1.1851851851851852e-05, "seconds": 29.127971963986056, "peak_allocated_bytes": 4001354240}
+{"step": 375, "epoch": 2, "examples": 11999, "loss": 0.31141042709350586, "learning_rate": 1.1111111111111113e-05, "seconds": 31.039304415986408, "peak_allocated_bytes": 4001354240}
+{"step": 400, "epoch": 2, "examples": 12799, "loss": 0.29671478271484375, "learning_rate": 1.037037037037037e-05, "seconds": 32.94597332799458, "peak_allocated_bytes": 4001354240}
+{"step": 425, "epoch": 2, "examples": 13599, "loss": 0.19568920135498047, "learning_rate": 9.62962962962963e-06, "seconds": 34.82679510000162, "peak_allocated_bytes": 4001354240}
+{"step": 450, "epoch": 2, "examples": 14399, "loss": 0.37050342559814453, "learning_rate": 8.888888888888888e-06, "seconds": 36.64660460798768, "peak_allocated_bytes": 4001354240}
+{"step": 475, "epoch": 2, "examples": 15199, "loss": 0.3824954628944397, "learning_rate": 8.148148148148148e-06, "seconds": 38.40115304698702, "peak_allocated_bytes": 4001354240}
+{"step": 500, "epoch": 2, "examples": 15998, "loss": 0.12075411528348923, "learning_rate": 7.4074074074074075e-06, "seconds": 40.3068847550021, "peak_allocated_bytes": 4001354240}
+{"epoch": 2, "step": 500, "validation_nll": 0.43434080481529236, "validation_accuracy": 0.8886659741401672}
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.51s/it]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.51s/it]
+{"step": 525, "epoch": 3, "examples": 16798, "loss": 0.06458139419555664, "learning_rate": 6.666666666666667e-06, "seconds": 44.19784285200876, "peak_allocated_bytes": 4001354240}
+{"step": 550, "epoch": 3, "examples": 17598, "loss": 0.07993245124816895, "learning_rate": 5.925925925925926e-06, "seconds": 45.93301907199202, "peak_allocated_bytes": 4001354240}
+{"step": 575, "epoch": 3, "examples": 18398, "loss": 0.07532143592834473, "learning_rate": 5.185185185185185e-06, "seconds": 47.80858209799044, "peak_allocated_bytes": 4001354240}
+{"step": 600, "epoch": 3, "examples": 19198, "loss": 0.04912447929382324, "learning_rate": 4.444444444444444e-06, "seconds": 49.64460090000648, "peak_allocated_bytes": 4001354240}
+{"step": 625, "epoch": 3, "examples": 19998, "loss": 0.09361922740936279, "learning_rate": 3.7037037037037037e-06, "seconds": 51.42884980599047, "peak_allocated_bytes": 4001354240}
+{"step": 650, "epoch": 3, "examples": 20798, "loss": 0.09227186441421509, "learning_rate": 2.962962962962963e-06, "seconds": 53.30597608399694, "peak_allocated_bytes": 4001354240}
+{"step": 675, "epoch": 3, "examples": 21598, "loss": 0.2355959415435791, "learning_rate": 2.222222222222222e-06, "seconds": 55.09427581098862, "peak_allocated_bytes": 4001354240}
+{"step": 700, "epoch": 3, "examples": 22398, "loss": 0.09934735298156738, "learning_rate": 1.4814814814814815e-06, "seconds": 56.91459462599596, "peak_allocated_bytes": 4001354240}
+{"step": 725, "epoch": 3, "examples": 23198, "loss": 0.12465381622314453, "learning_rate": 7.407407407407407e-07, "seconds": 58.76803208098863, "peak_allocated_bytes": 4001354240}
+{"step": 750, "epoch": 3, "examples": 23997, "loss": 0.08626335114240646, "learning_rate": 0.0, "seconds": 60.61107768799411, "peak_allocated_bytes": 4001354240}
+{"epoch": 3, "step": 750, "validation_nll": 0.38207703828811646, "validation_accuracy": 0.8996990919113159}
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.47s/it]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.47s/it]
+Loading weights:   0%|          | 0/138 [00:00<?, ?it/s]Loading weights: 100%|██████████| 138/138 [00:00<00:00, 4516.94it/s]
+{"complete": true, "selected_epoch": 3, "accuracy": 0.9077922077922078, "brier": 0.05554803455887352}

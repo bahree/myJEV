@@ -1,0 +1,15 @@
+{
+  "candidate": "myjev-4b-exact-seed11",
+  "repo_id": "bahree/myJEV-4B-RL",
+  "visibility": "public",
+  "files": 9,
+  "uploaded": true,
+  "revision": "ba84ba017ac1ca650a9bc08b04f4ae647ec36798",
+  "pinned_download_hashes_equal": true,
+  "next_check": "Runtime bytes match the six-model verified release. Card example pins that verified prior revision; latest default reload checked separately.",
+  "previous_revision": "ca1e358ac8c4d7716136ddca24ca9aaea973d1a9",
+  "source_code_revision": "c0147b69d57fbe541cdc2e1bc85c472938e4dda0",
+  "amendment": "Reader-facing README and metadata; runtime files unchanged",
+  "runtime_files_unchanged": true,
+  "reader_card_sha256": "2b11ab980531aaf94302cc060e65eda29c3da6d7a19be712becbeee361cf1eae"
+}

@@ -1,0 +1,6 @@
+{
+  "original_source": "results/longer-v1/4b/main/seed-11/continued_sft/posthoc/temperature-predictions.jsonl",
+  "original_sha256": "718f788f9ebcf42e7746a0f557c040520fd5f357893c1b348b111ac061680f18",
+  "compact_sha256": "38b7a32201714682f0af78e4da84c03cc9b8527f7ab2f107a1e2dac139325fa7",
+  "fields": "ID, correctness and reported confidence only; no text"
+}

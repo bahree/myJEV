@@ -1,0 +1,12 @@
+{
+  "completed": 3,
+  "planned": 3,
+  "last": {
+    "seed": 33,
+    "n": 64,
+    "nonce_groups": 16,
+    "accuracy": 1.0,
+    "criterion": 0.95,
+    "passed": true
+  }
+}

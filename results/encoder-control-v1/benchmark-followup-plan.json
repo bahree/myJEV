@@ -1,0 +1,5 @@
+{
+  "reason": "The initial benchmark shared a process with training. Old loss/autograd references can retain the original model and gradients, inflating inference allocated memory. Preserve those measurements and independently measure the saved checkpoint in a fresh process.",
+  "workload": "Same first official-test row, same SDPA/BF16 computation, ten warmups and 100 timed forwards. No retraining, calibration or task-selection change.",
+  "verification": "Recompute the first32 test rows with the original batch size, require matching selected IDs and maximum raw probability difference below1e-6."
+}

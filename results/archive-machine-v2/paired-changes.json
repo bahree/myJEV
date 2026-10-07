@@ -1,0 +1,185 @@
+{
+  "scope": "Post-hoc paired group bootstrap, 5,000 draws, RNG42, after minus before. Resamples original post groups for archive and recorded example groups for public tasks. Conditional on this one trained seed and available sample; no multiplicity adjustment or uncertainty over teacher correctness. Archive agreement is with unreviewed machine labels. Brier uses each deployed scalar correctness head. Deferral accuracy is zero by construction and not a performance measure.",
+  "results": {
+    "archive": {
+      "n": 90,
+      "groups": 32,
+      "metrics": {
+        "agreement": {
+          "after_minus_before": 0.18888888888888888,
+          "paired_group_ci95": [
+            0.055540293040293044,
+            0.322648659152739
+          ]
+        },
+        "correctness_brier": {
+          "after_minus_before": -0.30534283136706647,
+          "paired_group_ci95": [
+            -0.433606575036254,
+            -0.18039273342366427
+          ]
+        }
+      }
+    },
+    "banking": {
+      "n": 3080,
+      "groups": 3079,
+      "metrics": {
+        "agreement": {
+          "after_minus_before": 0.0016233766233766235,
+          "paired_group_ci95": [
+            -0.0038961355305947706,
+            0.0071451770055212735
+          ]
+        },
+        "correctness_brier": {
+          "after_minus_before": -0.009621863486830848,
+          "paired_group_ci95": [
+            -0.01528787663227897,
+            -0.004009421608673022
+          ]
+        }
+      }
+    },
+    "clinc/near": {
+      "n": 256,
+      "groups": 256,
+      "metrics": {
+        "agreement": {
+          "after_minus_before": 0.01171875,
+          "paired_group_ci95": [
+            -0.01171875,
+            0.03515625
+          ]
+        },
+        "correctness_brier": {
+          "after_minus_before": -0.0033246277670685026,
+          "paired_group_ci95": [
+            -0.02445713785202991,
+            0.01798080609876865
+          ]
+        }
+      }
+    },
+    "clinc/distant": {
+      "n": 256,
+      "groups": 256,
+      "metrics": {
+        "agreement": {
+          "after_minus_before": 0.01953125,
+          "paired_group_ci95": [
+            -0.01171875,
+            0.05078125
+          ]
+        },
+        "correctness_brier": {
+          "after_minus_before": -0.040142106102640754,
+          "paired_group_ci95": [
+            -0.0731912454477559,
+            -0.005275530342597697
+          ]
+        }
+      }
+    },
+    "clinc/oos-none": {
+      "n": 256,
+      "groups": 256,
+      "metrics": {
+        "agreement": {
+          "after_minus_before": -0.109375,
+          "paired_group_ci95": [
+            -0.1484375,
+            -0.0703125
+          ]
+        },
+        "correctness_brier": {
+          "after_minus_before": 0.06200686299771942,
+          "paired_group_ci95": [
+            0.02798383896792069,
+            0.09680369721997545
+          ]
+        }
+      }
+    },
+    "clinc/unsupported-near-none": {
+      "n": 150,
+      "groups": 150,
+      "metrics": {
+        "agreement": {
+          "after_minus_before": -0.12666666666666668,
+          "paired_group_ci95": [
+            -0.18,
+            -0.07333333333333333
+          ]
+        },
+        "correctness_brier": {
+          "after_minus_before": -0.0793421645853929,
+          "paired_group_ci95": [
+            -0.13639751081988613,
+            -0.02503135109769166
+          ]
+        }
+      }
+    },
+    "clinc/oos-deferral": {
+      "n": 256,
+      "groups": 256,
+      "metrics": {
+        "agreement": {
+          "after_minus_before": 0.0,
+          "paired_group_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "correctness_brier": {
+          "after_minus_before": -0.5185668301610662,
+          "paired_group_ci95": [
+            -0.5599064051303775,
+            -0.47475483475872005
+          ]
+        }
+      }
+    },
+    "clinc/unsupported-near-deferral": {
+      "n": 150,
+      "groups": 150,
+      "metrics": {
+        "agreement": {
+          "after_minus_before": 0.0,
+          "paired_group_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "correctness_brier": {
+          "after_minus_before": -0.42792212797001306,
+          "paired_group_ci95": [
+            -0.4808302835808938,
+            -0.37527135128314715
+          ]
+        }
+      }
+    }
+  },
+  "source_sha256": {
+    "results/archive-machine-v2/unadapted/predictions.jsonl": "2c67def95ec26087cdbd45e32fb9c2c36851c844c54f87d8b3935c2bf6abcb89",
+    "results/archive-machine-v2/adapted/evaluation/predictions.jsonl": "adb7d0a15dcef5654792a3aabf3dd0fc2eff665c171b8081c41b846973d61cb7",
+    "results/longer-v1/4b/main/seed-11/continued_sft/evaluation/predictions.jsonl": "e1696426d203ef819c84f7aed55263828c0c60804e4fd70c16fff9046e1af065",
+    "results/archive-machine-v2/forgetting/predictions.jsonl": "778cc92fed3663eca0727c01022a031564a8e7568608c633f45e48cb4313bdfc",
+    "results/generalization-v1/4b/seed-11/continued_sft/transfer/near-predictions.jsonl": "b9fa319cbb0272a74f7eb2ce2897b2b0f0401263d970ef18cd31be66827ce7da",
+    "results/archive-machine-v2/clinc-forgetting/near-predictions.jsonl": "0c83cdddfabffd6559ccddc1d730a6a7ff29fb5b902279032302445c01dcc53d",
+    "results/generalization-v1/4b/seed-11/continued_sft/transfer/distant-predictions.jsonl": "9e3a103e799d167303b8a7eeafeb871da5f1cc621a1a35156efe7a6e4d011a81",
+    "results/archive-machine-v2/clinc-forgetting/distant-predictions.jsonl": "cb726aa0d1c6e6f646f1663671a691b3a3459840d1ae156286afd86c93a79f96",
+    "results/generalization-v1/4b/seed-11/continued_sft/transfer/oos-none-predictions.jsonl": "794b1a696cc0614fae907de57da6f793481fe64550ab9d9b20989e7a0301b1e0",
+    "results/archive-machine-v2/clinc-forgetting/oos-none-predictions.jsonl": "2a6415366f014555ae2d8137cd33d5dbb5037997e962ffc8e432353969fc8ceb",
+    "results/generalization-v1/4b/seed-11/continued_sft/transfer/unsupported-near-none-predictions.jsonl": "3eb0229dc0c6261b587e07cd6752cd480e14a6807b27a154c09bebc51ba2288c",
+    "results/archive-machine-v2/clinc-forgetting/unsupported-near-none-predictions.jsonl": "7bad4be840ea230076a2638fcd536381498cfb60a4236dad879374e74b435a2f",
+    "results/generalization-v1/4b/seed-11/continued_sft/transfer/oos-deferral-predictions.jsonl": "2d1370702aab6a87eb2210e207f913618bb5dc3a0485ddfb85044e42ee81c77e",
+    "results/archive-machine-v2/clinc-forgetting/oos-deferral-predictions.jsonl": "661809702eebd259e0fb7f0adf095f6c381425a7009b6857b6f1520d79231019",
+    "results/generalization-v1/4b/seed-11/continued_sft/transfer/unsupported-near-deferral-predictions.jsonl": "0919c738feabcbf2724bbb944bf87770e62d0a778c247beb95e845b860c4eb58",
+    "results/archive-machine-v2/clinc-forgetting/unsupported-near-deferral-predictions.jsonl": "5e8dcaf19935ab91f1030efab002e588e9120aa52e5559eec61810b4779d17a9"
+  },
+  "compact_input_sha256": "554c091cd48a01de7f622505cc4147775d0f068c32ccd036b86e21d970a49a61",
+  "script_sha256": "87e89e0427d8c5d6bcb0f0cc4535c78b2f2175b36aaa05494f9f904a7db038c5"
+}

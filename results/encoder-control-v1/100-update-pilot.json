@@ -1,0 +1,9 @@
+{
+  "step": 100,
+  "epoch": 1,
+  "examples": 3200,
+  "loss": 3.4501953125,
+  "learning_rate": 1.925925925925926e-05,
+  "seconds": 9.280388658982702,
+  "peak_allocated_bytes": 3918566912
+}

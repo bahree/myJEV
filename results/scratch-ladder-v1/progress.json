@@ -1,0 +1,12 @@
+{
+  "completed": 6,
+  "planned": 6,
+  "last": {
+    "stage": "deterministic-rule",
+    "seed": 33,
+    "n": 64,
+    "accuracy": 0.6875,
+    "criterion": 0.95,
+    "passed": false
+  }
+}

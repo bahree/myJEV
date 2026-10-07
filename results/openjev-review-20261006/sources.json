@@ -1,0 +1,28 @@
+{
+  "review_date": "2026-10-06",
+  "paper": "https://arxiv.org/html/2610.02076v1",
+  "dataset_revision": "c67699e13d0ae25e35b77165a4b6b079bedc8aba",
+  "v11_dataset_revision": "10ad6888333fa97f8c948192797bad3de3040802",
+  "github_revision": "bd4118882f733574a3250a4b65fe4d884130c08b",
+  "export_snapshot_revision": "0f66d5786b127b14a25041858007219572ce6d82",
+  "retrieved_source_sha256": {
+    "REPRODUCTION.md": "f0c1412446f2ed528dc6eecc95a68aa19362e775d1d609f982ea91510e4eb215",
+    "case_customer.py": "917151a0f0b764f7261a2495dd22d757113328fb3e30edc06be166c5e71fce6f",
+    "current-README.md": "4300ebdadd2b59d774355442edce1904f958615d1d788cecf6fcc7c294f705fc",
+    "current-model-provenance.md": "b878b1e2a622b0ebd264d26f7f6a75fe932f8e799c641cef9597648bec88dac7",
+    "current-model.py": "333bed84cf2801ba33b053891e9ff9563d082f3da87ad6ad1681a2b1bcb4c6aa",
+    "current-train.py": "18755ae1cb03cc8b5592693f4c8294dcbf8a4b96d3b3b5cbd3c6a59aeaedbb9f",
+    "dataset-api": "ef3209e1bf83fdaaf6d2fcfbf41aee581361679fa1b96ce908807307e74a65c2",
+    "dataset-card": "8f7d66430c63881d042a88165f4ad669e6b7c6783b69f6735b8dfedf6d58f683",
+    "manifest": "141f26d8ef8f0d8df559293b216155dc5f437551ec0e1915aedb2f2f09dcace0",
+    "model.py": "500cedc059878de5070e8589aabe12d13d2df1065b703ab803f8b0928f64d7cc",
+    "notices": "36350b78946d29f443cb03e276eed3934aca01079de769ed4655b93ad5031c4a",
+    "paper": "011b8322403bca8fde64ca158290ebd41305b8e11169a140a3530284bca60644",
+    "release-v2.json": "56105dc9fc89ef74919f5beb60bb6ae8c6e17bb95699dab59205f67d8b338d97",
+    "system-distilled": "ce05d912982b284d0dc2a12b3b32b77deebfb635c37e4eb0cb973451cda130a0",
+    "train.py": "f94d444e77a79c0bf1f20ca7587a036ff0a28a7112c72dc3b6a1edea2c9f8eef",
+    "v11-api": "98866e64c0f3cf657c3859b9d9865b006086001c65962e3846ed328016308976",
+    "v11-card": "a03da2ebe94cf27f135b08e77399a2899a554c4fcddd8ee7ffb30940047c423b"
+  },
+  "scope": "Primary cards, complete paper HTML and selected implementation/manifests. No complete dataset row-level cross-corpus overlap audit or external model execution."
+}

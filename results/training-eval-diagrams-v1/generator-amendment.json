@@ -1,0 +1,5 @@
+{
+  "original_executed_script": "results/training-eval-diagrams-v1/executed-script.py",
+  "sha256": "679034b795e73ac24192c76baed942e7207f059c1c50cd05415591a49ef1ceba",
+  "change": "The current generator writes canonical figures under results and no longer requires or creates private Hugo bundle paths. Numerical calculations and recorded figures are unchanged."
+}

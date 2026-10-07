@@ -1,6 +1,6 @@
 # Run inference locally and in Docker
 
-Six trained seed-11 candidates have passed Python, CLI, HTTP and GPU-container equivalence at 0.8B, 4B and 9B. The local default is 4B continued supervised training with temperature calibration. Public adapter/head releases are available, starting with [myJEV-4B](https://huggingface.co/bahree/myJEV-4B); a registry image remains separate release work. Use the pinned Hub example below or train a local pilot using [the quick start](quickstart.md).
+Six trained seed-11 candidates have passed Python, CLI, HTTP and GPU-container equivalence at 0.8B, 4B and 9B. The default within this published myJEV family is 4B continued supervised training with temperature calibration. Public adapter/head releases are available, starting with [myJEV-4B](https://huggingface.co/bahree/myJEV-4B); a registry image remains separate release work. Use the pinned Hub example below or train a local pilot using [the quick start](quickstart.md).
 
 ## What the adapter saves and what inference still costs
 
@@ -26,7 +26,7 @@ from pathlib import Path
 from myjev import DecisionModel
 
 model = DecisionModel.load("bahree/myJEV-4B",
-                           revision="a1b9e3b1181293220012cfb15587cdba0767ae8e")
+                           revision="38f7cca5a8530483309f576b0c3dd1756bc27c33")
 request = json.loads(Path("examples/request.json").read_text())
 print(model.score(request))
 ```
@@ -37,9 +37,9 @@ CLI with the same public release:
 
 ```bash
 .venv/bin/myjev score --artifact bahree/myJEV-4B \
-  --revision a1b9e3b1181293220012cfb15587cdba0767ae8e --input examples/request.json
+  --revision 38f7cca5a8530483309f576b0c3dd1756bc27c33 --input examples/request.json
 .venv/bin/myjev serve --artifact bahree/myJEV-4B \
-  --revision a1b9e3b1181293220012cfb15587cdba0767ae8e
+  --revision 38f7cca5a8530483309f576b0c3dd1756bc27c33
 ```
 
 CLI, for a locally trained artifact, one request or a JSONL batch:
@@ -101,3 +101,20 @@ One process loads one selected model. Preserve the pinned backbone cache and mou
 Before releasing a checkpoint, repeat save/reload and Python/CLI/HTTP/Docker equivalence on that checkpoint and image. Measure warm p50/p95, throughput, peak VRAM, cold start and overload behavior on representative inputs. The completed scoring-versus-generation controls and their format failures are described in [the benchmark results](hosting.md#completed-candidate-validation-and-local-default).
 
 The [Hugging Face custom-container recipe](hosting.md#hugging-face-inference-endpoints-recipe) remains unexecuted. Publishing weights does not create a running endpoint. Replace local build tags with tested immutable image digests when registry releases become available.
+
+## Try seven original requests
+
+```bash
+.venv/bin/python scripts/run_demos.py > responses.jsonl
+.venv/bin/myjev score --artifact bahree/myJEV-4B \
+  --revision 38f7cca5a8530483309f576b0c3dd1756bc27c33 \
+  --input examples/demo-requests.jsonl --jsonl > cli-responses.jsonl
+```
+
+The [saved demonstration](../results/demos-v1/report.md) includes billing, technical support, an unsupported request, a refund boundary, quoted instructions and synthetic post format. All seven default Python and CLI responses matched exactly. The 0.8B model confidently approved a day-14 refund when the supplied rule allowed fewer than 14 days; this observed failure remains in the report. Seven fixtures are a walkthrough, not a quality estimate. Expected labels are separate from model-visible requests.
+
+![Files loaded for one deployed decision](../results/teaching-diagrams-v1/artifact-loading.png)
+
+The latest verified local container is `myjev:0.1.1-hub`; [hosting](hosting.md#hub-loader-container-update) records the incremental build and direct Hub-load check. Build the root Dockerfile for a clean installation on your own machine.
+
+![Bounded request queue and timeout path](../results/teaching-diagrams-v1/request-queue.png)

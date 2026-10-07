@@ -1,0 +1,39 @@
+{
+  "frozen_at": "2026-10-07T05:32:39.281782+00:00",
+  "source_revision": "cea5df80f51524dc93f168d1ba4ff11c55969336",
+  "gpu": "physical1; CUDA_VISIBLE_DEVICES=1",
+  "dependency_environment": "Existing locked .venv; no package modifications",
+  "model": "answerdotai/ModernBERT-base",
+  "model_revision": "8949b909ec900327062f0ebf497f51aef5e6f0c8",
+  "license": "Apache-2.0 per official modelcard",
+  "source": "https://huggingface.co/answerdotai/ModernBERT-base",
+  "seed": 11,
+  "epochs": 3,
+  "batch_size": 32,
+  "learning_rate": 2e-05,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.1,
+  "max_tokens": 512,
+  "precision": "FP32 parameters and AdamW states; BF16 autocast; SDPA attention",
+  "selection": "lowest validation cross-entropy at completed epoch, ties earliest",
+  "calibration": "scalar temperature NLL fit on reserved1000 calibration only, bounds.05to10; thresholds from same reservedcal",
+  "splits": {
+    "train": {
+      "path": "data/banking77/train.jsonl",
+      "sha256": "3b37308dfb4e6be7dbfdbfdba6a3d9b2ce24fa0691ec9387b5353e28a995f360"
+    },
+    "validation": {
+      "path": "data/banking77/validation.jsonl",
+      "sha256": "557fbd135aaf844a535f48017de2e808d4e9e5ebf4b540af17f4ee19422586ca"
+    },
+    "calibration": {
+      "path": "data/banking77/calibration.jsonl",
+      "sha256": "2e095c9b0712cf2ed78f67979cecf5ed023c349aa4be344981780a7063210475"
+    },
+    "test": {
+      "path": "data/banking77/test.jsonl",
+      "sha256": "7d4fb64775dc350e37a99c6bc317edecea1639d54be336ab6b05028622b93f31"
+    }
+  },
+  "limits": "Single seed, fixed77-way taxonomy, cannot accept newlabels/descriptions or dozeroshottransfer. Dataexposure differsQwen. Practicalencodercontrol, notmatchedarchitecturecausalcomparison. Reject lengths>512, no silenttruncation. No hyperparamsearch or testselection."
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "Visual inspection of original generated diagrams in this revision; source models and toy arithmetic separately checked. Scientific figures are scoped in their own manifests.",
+  "images": [
+    "generation-and-readout",
+    "scratch-tensor-path",
+    "lora-branches",
+    "data-roles-and-actions",
+    "artifact-loading",
+    "request-queue"
+  ],
+  "checked": [
+    "Text visible within canvas",
+    "Arrow endpoints and branch labels",
+    "Shapes match source model",
+    "Illustrative timings clearly distinguished from measured timings"
+  ],
+  "passed": true
+}

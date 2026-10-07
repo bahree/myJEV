@@ -1,0 +1,20 @@
+{
+  "created_before_scoring": "2026-10-07T05:44:03.153375+00:00",
+  "source_revision": "cea5df80f51524dc93f168d1ba4ff11c55969336",
+  "source_hashes": {
+    "examples/demo-requests.jsonl": "4e03c4dd94feb6cf0ae69298bb16734eb8c63ebdb60c8d1c74e0197abcb1af76",
+    "examples/demo-expectations.json": "bd98b1634e7cb9c989b491fe6dcdea67d7c67ca29e9fa454a61654c7e8c682c6",
+    "scripts/run_demos.py": "288a2d7f94fe40cf5bd95f5825045ff6cd570fb19eaba93ffed9e73870cfe67a"
+  },
+  "models": [
+    {
+      "repo_id": "bahree/myJEV-4B",
+      "revision": "38f7cca5a8530483309f576b0c3dd1756bc27c33"
+    },
+    {
+      "repo_id": "bahree/myJEV-0.8B",
+      "revision": "1c956c89d21c0ab136e98ffe66a16752fa37d823"
+    }
+  ],
+  "scope": "Seven fixed original diagnostic cases, no tuning or selection based on these outcomes. All outputs retained. Expected IDs are authored expectations outside model requests; not natural-task accuracy or calibration evidence."
+}

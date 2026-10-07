@@ -1,0 +1,15 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Traceback (most recent call last):
+  File "/home/amit/jev-pvt/scripts/run_encoder_control.py", line 123, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/amit/jev-pvt/scripts/run_encoder_control.py", line 64, in main
+    model=AutoModelForSequenceClassification.from_pretrained(plan['model'],revision=plan['model_revision'],num_labels=len(classes),id2label=dict(enumerate(classes)),label2id=label_ids,attn_implementation='sdpa',reference_compile=False).to('cuda:0')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 409, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/transformers/modeling_utils.py", line 4292, in from_pretrained
+    model = cls(config, *model_args, **model_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ModernBertForSequenceClassification.__init__() got an unexpected keyword argument 'reference_compile'

@@ -1,0 +1,583 @@
+{
+  "model": "answerdotai/ModernBERT-base",
+  "revision": "8949b909ec900327062f0ebf497f51aef5e6f0c8",
+  "classes": [
+    "card_arrival",
+    "card_linking",
+    "exchange_rate",
+    "card_payment_wrong_exchange_rate",
+    "extra_charge_on_statement",
+    "pending_cash_withdrawal",
+    "fiat_currency_support",
+    "card_delivery_estimate",
+    "automatic_top_up",
+    "card_not_working",
+    "exchange_via_app",
+    "lost_or_stolen_card",
+    "age_limit",
+    "pin_blocked",
+    "contactless_not_working",
+    "top_up_by_bank_transfer_charge",
+    "pending_top_up",
+    "cancel_transfer",
+    "top_up_limits",
+    "wrong_amount_of_cash_received",
+    "card_payment_fee_charged",
+    "transfer_not_received_by_recipient",
+    "supported_cards_and_currencies",
+    "getting_virtual_card",
+    "card_acceptance",
+    "top_up_reverted",
+    "balance_not_updated_after_cheque_or_cash_deposit",
+    "card_payment_not_recognised",
+    "edit_personal_details",
+    "why_verify_identity",
+    "unable_to_verify_identity",
+    "get_physical_card",
+    "visa_or_mastercard",
+    "topping_up_by_card",
+    "disposable_card_limits",
+    "compromised_card",
+    "atm_support",
+    "direct_debit_payment_not_recognised",
+    "passcode_forgotten",
+    "declined_cash_withdrawal",
+    "pending_card_payment",
+    "lost_or_stolen_phone",
+    "request_refund",
+    "declined_transfer",
+    "Refund_not_showing_up",
+    "declined_card_payment",
+    "pending_transfer",
+    "terminate_account",
+    "card_swallowed",
+    "transaction_charged_twice",
+    "verify_source_of_funds",
+    "transfer_timing",
+    "reverted_card_payment?",
+    "change_pin",
+    "beneficiary_not_allowed",
+    "transfer_fee_charged",
+    "receiving_money",
+    "failed_transfer",
+    "transfer_into_account",
+    "verify_top_up",
+    "getting_spare_card",
+    "top_up_by_cash_or_cheque",
+    "order_physical_card",
+    "virtual_card_not_working",
+    "wrong_exchange_rate_for_cash_withdrawal",
+    "get_disposable_virtual_card",
+    "top_up_failed",
+    "balance_not_updated_after_bank_transfer",
+    "cash_withdrawal_not_recognised",
+    "exchange_charge",
+    "top_up_by_card_charge",
+    "activate_my_card",
+    "cash_withdrawal_charge",
+    "card_about_to_expire",
+    "apple_pay_or_google_pay",
+    "verify_my_identity",
+    "country_support"
+  ],
+  "parameters": 149664077,
+  "updates": 750,
+  "examples": 23997,
+  "selected_epoch": 3,
+  "validation_history": [
+    {
+      "epoch": 1,
+      "step": 250,
+      "validation_nll": 0.705767035484314,
+      "validation_accuracy": 0.8184553384780884
+    },
+    {
+      "epoch": 2,
+      "step": 500,
+      "validation_nll": 0.43434080481529236,
+      "validation_accuracy": 0.8886659741401672
+    },
+    {
+      "epoch": 3,
+      "step": 750,
+      "validation_nll": 0.38207703828811646,
+      "validation_accuracy": 0.8996990919113159
+    }
+  ],
+  "temperature": 0.9214872724021593,
+  "training_seconds_including_validation_and_checkpoints": 62.78340039899922,
+  "total_seconds": 75.77774765298818,
+  "training_peak_allocated_bytes": 4001354240,
+  "artifact_bytes": 602261392,
+  "model_latency": {
+    "test_row_id": "banking77-test-0",
+    "tokens": 9,
+    "warmup": 10,
+    "repeats": 100,
+    "seconds": [
+      0.014418070000829175,
+      0.014313701976789162,
+      0.014317490014946088,
+      0.014378363994183019,
+      0.014365189999807626,
+      0.014309333986602724,
+      0.014346744021167979,
+      0.01470079499995336,
+      0.014303503994597122,
+      0.014082754991250113,
+      0.014088135008933023,
+      0.015267178998328745,
+      0.014254520006943494,
+      0.014640450972365215,
+      0.014534169982653111,
+      0.014432436000788584,
+      0.0143031119951047,
+      0.01439809100702405,
+      0.014566872006980702,
+      0.014511496003251523,
+      0.01454644399927929,
+      0.014329510973766446,
+      0.014471050992142409,
+      0.014405414985958487,
+      0.01449700997909531,
+      0.014503100974252447,
+      0.014352904981933534,
+      0.014483603998087347,
+      0.01445177401183173,
+      0.014480147016001865,
+      0.014406397996935993,
+      0.014328068995382637,
+      0.014537506009219214,
+      0.014521866978611797,
+      0.01473604200873524,
+      0.014375137980096042,
+      0.014442184998188168,
+      0.014469757996266708,
+      0.014293054002337158,
+      0.014575295994291082,
+      0.014424271997995675,
+      0.01445537101244554,
+      0.014340091991471127,
+      0.014579997019609436,
+      0.014402048982447013,
+      0.014395406993571669,
+      0.014782388985622674,
+      0.01482422900153324,
+      0.014386130002094433,
+      0.014216497977031395,
+      0.014297149988124147,
+      0.014278767019277439,
+      0.014355509978486225,
+      0.014761721016839147,
+      0.015004540997324511,
+      0.014523178979288787,
+      0.01443975101574324,
+      0.014514653012156487,
+      0.014365048991749063,
+      0.014349309989484027,
+      0.014504703984130174,
+      0.01436114200623706,
+      0.01441802000044845,
+      0.014392240991583094,
+      0.01490548299625516,
+      0.01450468398979865,
+      0.014417269005207345,
+      0.01459840199095197,
+      0.014533719018800184,
+      0.014626274991314858,
+      0.01441899998462759,
+      0.014522798999678344,
+      0.014450450980802998,
+      0.01446402698638849,
+      0.014647193980636075,
+      0.014403502020286396,
+      0.014546342979883775,
+      0.014524922997225076,
+      0.014520693977829069,
+      0.014471280999714509,
+      0.014379416010342538,
+      0.014756310993107036,
+      0.014560771000105888,
+      0.014542285003699362,
+      0.014474176015937701,
+      0.014490275993011892,
+      0.014480518002528697,
+      0.014486419007880613,
+      0.014538527000695467,
+      0.014494856004603207,
+      0.014706165005918592,
+      0.014546132006216794,
+      0.014544709003530443,
+      0.014476219977950677,
+      0.014518140000291169,
+      0.014741742983460426,
+      0.014490998000837862,
+      0.014541664015268907,
+      0.014500347024295479,
+      0.014546694001182914
+    ],
+    "p50_seconds": 0.014478183496976271,
+    "p95_seconds": 0.014762754415278323,
+    "peak_allocated_bytes": 1871364608,
+    "scope": "One short BANKING request; model-only, excludes tokenization/HTTP; fixed77 outputs, not request-suppliedcandidate scoring."
+  },
+  "metrics": {
+    "raw": {
+      "n": 3080,
+      "accuracy": 0.9077922077922078,
+      "accuracy_cluster_ci95": [
+        0.8967532467532467,
+        0.9175399174550685
+      ],
+      "macro_f1": 0.9074162444084449,
+      "correctness_brier": 0.0574473652405382,
+      "selection_multiclass_brier": 0.13892771020851508,
+      "correctness_auroc": 0.9179549759213363,
+      "ece": 0.036522152480164514,
+      "ece_bins": "15 equal-width bins, final bin inclusive",
+      "reliability": [
+        {
+          "lo": 0.0,
+          "hi": 0.06666666666666667,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lo": 0.06666666666666667,
+          "hi": 0.13333333333333333,
+          "n": 2,
+          "confidence": 0.12037466386562211,
+          "accuracy": 0.0
+        },
+        {
+          "lo": 0.13333333333333333,
+          "hi": 0.2,
+          "n": 10,
+          "confidence": 0.17389576724726985,
+          "accuracy": 0.0
+        },
+        {
+          "lo": 0.2,
+          "hi": 0.26666666666666666,
+          "n": 31,
+          "confidence": 0.23441690249402514,
+          "accuracy": 0.22580645161290322
+        },
+        {
+          "lo": 0.26666666666666666,
+          "hi": 0.3333333333333333,
+          "n": 47,
+          "confidence": 0.30224436924006104,
+          "accuracy": 0.3617021276595745
+        },
+        {
+          "lo": 0.3333333333333333,
+          "hi": 0.4,
+          "n": 61,
+          "confidence": 0.3644452360094807,
+          "accuracy": 0.45901639344262296
+        },
+        {
+          "lo": 0.4,
+          "hi": 0.4666666666666667,
+          "n": 64,
+          "confidence": 0.43245285692721747,
+          "accuracy": 0.484375
+        },
+        {
+          "lo": 0.4666666666666667,
+          "hi": 0.5333333333333333,
+          "n": 77,
+          "confidence": 0.5060655364184294,
+          "accuracy": 0.5974025974025974
+        },
+        {
+          "lo": 0.5333333333333333,
+          "hi": 0.6,
+          "n": 71,
+          "confidence": 0.5683534359205588,
+          "accuracy": 0.7323943661971831
+        },
+        {
+          "lo": 0.6,
+          "hi": 0.6666666666666666,
+          "n": 94,
+          "confidence": 0.6350000617892276,
+          "accuracy": 0.7340425531914894
+        },
+        {
+          "lo": 0.6666666666666666,
+          "hi": 0.7333333333333333,
+          "n": 98,
+          "confidence": 0.69978435928084,
+          "accuracy": 0.7959183673469388
+        },
+        {
+          "lo": 0.7333333333333333,
+          "hi": 0.8,
+          "n": 129,
+          "confidence": 0.7673594030180682,
+          "accuracy": 0.8527131782945736
+        },
+        {
+          "lo": 0.8,
+          "hi": 0.8666666666666667,
+          "n": 170,
+          "confidence": 0.8355259528619124,
+          "accuracy": 0.9352941176470588
+        },
+        {
+          "lo": 0.8666666666666667,
+          "hi": 0.9333333333333333,
+          "n": 274,
+          "confidence": 0.903996059117282,
+          "accuracy": 0.9598540145985401
+        },
+        {
+          "lo": 0.9333333333333333,
+          "hi": 1.0,
+          "n": 1952,
+          "confidence": 0.9827520826322383,
+          "accuracy": 0.9918032786885246
+        }
+      ],
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.9689475297546407,
+          "coverage": 0.5045454545454545,
+          "accepted": 1554,
+          "error": 0.005791505791505791,
+          "error_upper_95": 0.010084516340185583,
+          "error_cluster_ci95": [
+            0.002572347266881029,
+            0.009652509652509652
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.7712247220174469,
+          "coverage": 0.7987012987012987,
+          "accepted": 2460,
+          "error": 0.020731707317073172,
+          "error_upper_95": 0.026108119041020127,
+          "error_cluster_ci95": [
+            0.015046766978446523,
+            0.026433509556730378
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.5543931635712223,
+          "coverage": 0.8983766233766234,
+          "accepted": 2767,
+          "error": 0.04156125767979761,
+          "error_upper_95": 0.04835365049549201,
+          "error_cluster_ci95": [
+            0.03432448485808233,
+            0.04880694143167028
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.91757611576805,
+          "coverage": 0.6590909090909091,
+          "accepted": 2030,
+          "error": 0.00935960591133005,
+          "error_upper_95": 0.013703558719466815,
+          "error_cluster_ci95": [
+            0.0054133858267716535,
+            0.013799901429275506
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.5646511251189601,
+          "coverage": 0.8957792207792208,
+          "accepted": 2759,
+          "error": 0.04095686843059079,
+          "error_upper_95": 0.04771692102398672,
+          "error_cluster_ci95": [
+            0.03330133942519398,
+            0.048223350253807105
+          ]
+        }
+      }
+    },
+    "temperature": {
+      "n": 3080,
+      "accuracy": 0.9077922077922078,
+      "accuracy_cluster_ci95": [
+        0.8967532467532467,
+        0.9175399174550685
+      ],
+      "macro_f1": 0.9074162444084449,
+      "correctness_brier": 0.05554803455887352,
+      "selection_multiclass_brier": 0.13673308191583466,
+      "correctness_auroc": 0.9185896854661589,
+      "ece": 0.019844907926685775,
+      "ece_bins": "15 equal-width bins, final bin inclusive",
+      "reliability": [
+        {
+          "lo": 0.0,
+          "hi": 0.06666666666666667,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lo": 0.06666666666666667,
+          "hi": 0.13333333333333333,
+          "n": 1,
+          "confidence": 0.13071366184239383,
+          "accuracy": 0.0
+        },
+        {
+          "lo": 0.13333333333333333,
+          "hi": 0.2,
+          "n": 6,
+          "confidence": 0.16877206244427037,
+          "accuracy": 0.0
+        },
+        {
+          "lo": 0.2,
+          "hi": 0.26666666666666666,
+          "n": 25,
+          "confidence": 0.24102596981983865,
+          "accuracy": 0.2
+        },
+        {
+          "lo": 0.26666666666666666,
+          "hi": 0.3333333333333333,
+          "n": 37,
+          "confidence": 0.3024325310345513,
+          "accuracy": 0.35135135135135137
+        },
+        {
+          "lo": 0.3333333333333333,
+          "hi": 0.4,
+          "n": 56,
+          "confidence": 0.37101581659666527,
+          "accuracy": 0.42857142857142855
+        },
+        {
+          "lo": 0.4,
+          "hi": 0.4666666666666667,
+          "n": 61,
+          "confidence": 0.433922083526755,
+          "accuracy": 0.47540983606557374
+        },
+        {
+          "lo": 0.4666666666666667,
+          "hi": 0.5333333333333333,
+          "n": 52,
+          "confidence": 0.49979120513939707,
+          "accuracy": 0.5
+        },
+        {
+          "lo": 0.5333333333333333,
+          "hi": 0.6,
+          "n": 82,
+          "confidence": 0.5634744340883682,
+          "accuracy": 0.6341463414634146
+        },
+        {
+          "lo": 0.6,
+          "hi": 0.6666666666666666,
+          "n": 80,
+          "confidence": 0.6363467192267469,
+          "accuracy": 0.7125
+        },
+        {
+          "lo": 0.6666666666666666,
+          "hi": 0.7333333333333333,
+          "n": 89,
+          "confidence": 0.7024717881511054,
+          "accuracy": 0.7865168539325843
+        },
+        {
+          "lo": 0.7333333333333333,
+          "hi": 0.8,
+          "n": 116,
+          "confidence": 0.7691881472138759,
+          "accuracy": 0.8362068965517241
+        },
+        {
+          "lo": 0.8,
+          "hi": 0.8666666666666667,
+          "n": 155,
+          "confidence": 0.8384381740797168,
+          "accuracy": 0.864516129032258
+        },
+        {
+          "lo": 0.8666666666666667,
+          "hi": 0.9333333333333333,
+          "n": 237,
+          "confidence": 0.9048194028697029,
+          "accuracy": 0.9535864978902954
+        },
+        {
+          "lo": 0.9333333333333333,
+          "hi": 1.0,
+          "n": 2083,
+          "confidence": 0.986251958189928,
+          "accuracy": 0.9903984637542007
+        }
+      ],
+      "operating_points": {
+        "coverage_0.5": {
+          "threshold": 0.9807794985019049,
+          "coverage": 0.5003246753246753,
+          "accepted": 1541,
+          "error": 0.005191434133679429,
+          "error_upper_95": 0.00934751438135848,
+          "error_cluster_ci95": [
+            0.001946787800129786,
+            0.009727626459143969
+          ]
+        },
+        "coverage_0.8": {
+          "threshold": 0.8120406079183732,
+          "coverage": 0.7974025974025974,
+          "accepted": 2456,
+          "error": 0.019543973941368076,
+          "error_upper_95": 0.02479281099559033,
+          "error_cluster_ci95": [
+            0.014652014652014652,
+            0.02525458248472505
+          ]
+        },
+        "coverage_0.9": {
+          "threshold": 0.5893494697224557,
+          "coverage": 0.8983766233766234,
+          "accepted": 2767,
+          "error": 0.04119985543910372,
+          "error_upper_95": 0.04796661293437422,
+          "error_cluster_ci95": [
+            0.033578004542075296,
+            0.04881553551423775
+          ]
+        },
+        "empirical_error_0.01": {
+          "threshold": 0.9402613432162091,
+          "coverage": 0.6610389610389611,
+          "accepted": 2036,
+          "error": 0.009332023575638507,
+          "error_upper_95": 0.013663263329481763,
+          "error_cluster_ci95": [
+            0.005405405405405406,
+            0.013267813267813268
+          ]
+        },
+        "empirical_error_0.05": {
+          "threshold": 0.6156959724425194,
+          "coverage": 0.8909090909090909,
+          "accepted": 2744,
+          "error": 0.04008746355685131,
+          "error_upper_95": 0.046804860217301965,
+          "error_cluster_ci95": [
+            0.03317505319663411,
+            0.04772356776434227
+          ]
+        }
+      }
+    }
+  },
+  "limits": "Single seed, fixed77-way taxonomy, cannot accept newlabels/descriptions or dozeroshottransfer. Dataexposure differsQwen. Practicalencodercontrol, notmatchedarchitecturecausalcomparison. Reject lengths>512, no silenttruncation. No hyperparamsearch or testselection."
+}

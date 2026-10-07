@@ -1,0 +1,11 @@
+{
+  "rows": 872,
+  "class_counts": {
+    "negative": 428,
+    "positive": 444
+  },
+  "request_file_sha256": "36b4dd02d1263f413f45ebc79c26c7e75cd71f14ecf990eb7ff7e0112a9a98fa",
+  "selection_sha256": "64cdb7e59f1a04c1b4e4b674c0d715d1d72e3f4b8495f58c9af8c45a44b3080f",
+  "dataset_revision": "8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb",
+  "text_redistributed": false
+}

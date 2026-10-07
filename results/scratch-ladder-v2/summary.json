@@ -1,0 +1,30 @@
+{
+  "scope": "Post-v1 structural correction, not an independent untouched scientific test. Every random nuisance nonce appears with each of four colors; train/test nonces disjoint. Only color cue distinguishes labels within nonce. Same-template deterministic recovery; no general-language/noisy-task claim. All results retained, no retuning.",
+  "frozen_plan_sha256": "e76ecc0da00b0739d7840f32cd3fa842658fd1a15ea518e6855132307eb2c025",
+  "results": [
+    {
+      "seed": 11,
+      "n": 64,
+      "nonce_groups": 16,
+      "accuracy": 1.0,
+      "criterion": 0.95,
+      "passed": true
+    },
+    {
+      "seed": 22,
+      "n": 64,
+      "nonce_groups": 16,
+      "accuracy": 1.0,
+      "criterion": 0.95,
+      "passed": true
+    },
+    {
+      "seed": 33,
+      "n": 64,
+      "nonce_groups": 16,
+      "accuracy": 1.0,
+      "criterion": 0.95,
+      "passed": true
+    }
+  ]
+}

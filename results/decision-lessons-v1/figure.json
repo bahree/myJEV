@@ -1,0 +1,7 @@
+{
+  "output": "07_blog/myjev-part2-qwen-training-and-lessons/images/confidence-variance.png",
+  "sha256": "7247dde7ac29a6c6d003d75a09fd687ddfe38df23d3a1c0dea724b08e750c0cd",
+  "source": "results/decision-lessons-v1/summary.json",
+  "source_sha256": "733a5e804614c45dd7b6b8e794fc36f68fd3e79e3cf9895d1049ee916179d69f",
+  "script_sha256": "5b5b3d5560ebf4f2f7dde0c87ff9a1fe1e2fb2fcb17d7a1d66f66043a6cf3b96"
+}

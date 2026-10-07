@@ -1,0 +1,7 @@
+{
+  "script": "scripts/run_encoder_control.py",
+  "script_sha256": "69aca44db551febe548c5f475873e5ba8967754c005f921d8728d489bc31672d",
+  "frozen_at": "2026-10-07T05:35:41.449304+00:00",
+  "pre_execution_amendment": "Startup failed before training: installed Transformers no longer accepts reference_compile constructor kwarg; removed unsupported execution option, no scientific plan changes.",
+  "prior_script_sha256": "4fe4597a83f4ff48b2bceee436f8ac4c6c9b55e53950a23143b966f375ba0158"
+}

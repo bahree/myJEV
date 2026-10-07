@@ -1,0 +1,54 @@
+{
+  "scope": "Diagnostic, not an optimization comparison. Tiny stage evaluates its training examples intentionally. Deterministic stage uses new record IDs but same template and colors, so it tests elementary rule recovery, not unfamiliar-language transfer. No uncertainty/noise, missing options, or test-selected hyperparameters. All three seeds reported; no additional tuning on failure.",
+  "frozen_plan_sha256": "b1d37a94cd8eefa4f9913e3a231466b3af990a1f7adb834b94619574673f7503",
+  "results": [
+    {
+      "stage": "tiny-overfit",
+      "seed": 11,
+      "n": 8,
+      "accuracy": 1.0,
+      "criterion": 1.0,
+      "passed": true
+    },
+    {
+      "stage": "tiny-overfit",
+      "seed": 22,
+      "n": 8,
+      "accuracy": 1.0,
+      "criterion": 1.0,
+      "passed": true
+    },
+    {
+      "stage": "tiny-overfit",
+      "seed": 33,
+      "n": 8,
+      "accuracy": 1.0,
+      "criterion": 1.0,
+      "passed": true
+    },
+    {
+      "stage": "deterministic-rule",
+      "seed": 11,
+      "n": 64,
+      "accuracy": 0.75,
+      "criterion": 0.95,
+      "passed": false
+    },
+    {
+      "stage": "deterministic-rule",
+      "seed": 22,
+      "n": 64,
+      "accuracy": 1.0,
+      "criterion": 0.95,
+      "passed": true
+    },
+    {
+      "stage": "deterministic-rule",
+      "seed": 33,
+      "n": 64,
+      "accuracy": 0.6875,
+      "criterion": 0.95,
+      "passed": false
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.hub-update
+#1 transferring dockerfile: 369B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/myjev:0.1.0-release-candidate
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 111B done
+#3 DONE 0.0s
+
+#4 [1/4] FROM docker.io/library/myjev:0.1.0-release-candidate@sha256:238c4bb857950fcca869c4d8d6eb87ee179b4592d91ca2a082dbe5618de31643
+#4 resolve docker.io/library/myjev:0.1.0-release-candidate@sha256:238c4bb857950fcca869c4d8d6eb87ee179b4592d91ca2a082dbe5618de31643 0.0s done
+#4 ...
+
+#5 [internal] load build context
+#5 transferring context: 180.03kB done
+#5 DONE 0.0s
+
+#4 [1/4] FROM docker.io/library/myjev:0.1.0-release-candidate@sha256:238c4bb857950fcca869c4d8d6eb87ee179b4592d91ca2a082dbe5618de31643
+#4 extracting sha256:2f7c4af70cc007a08d7057a2cc1ae80cad28be90db3eb5e9fcc09ef681ec8e88 0.0s done
+#4 extracting sha256:1f50b7881936190a6f96b39da44806c09dbad8b421621c24ca06af2f456ebd6a
+#4 extracting sha256:1f50b7881936190a6f96b39da44806c09dbad8b421621c24ca06af2f456ebd6a 26.6s done
+#4 DONE 26.7s
+
+#4 [1/4] FROM docker.io/library/myjev:0.1.0-release-candidate@sha256:238c4bb857950fcca869c4d8d6eb87ee179b4592d91ca2a082dbe5618de31643
+#4 extracting sha256:2b0ebf594ef581e85a3dd6bf7c1253ed591c7ca0c40835e38192476453303b05
+#4 extracting sha256:2b0ebf594ef581e85a3dd6bf7c1253ed591c7ca0c40835e38192476453303b05 1.0s done
+#4 DONE 27.7s
+
+#4 [1/4] FROM docker.io/library/myjev:0.1.0-release-candidate@sha256:238c4bb857950fcca869c4d8d6eb87ee179b4592d91ca2a082dbe5618de31643
+#4 extracting sha256:9953c6ada59514bcb60fa6ac2aa50dabce723fcc6e9b7ee33da9ac8366d96884 0.0s done
+#4 extracting sha256:d095a6a0a81f736797fbacee2d0e1fde35f21a95379d6b0347fbc286638979bd 0.0s done
+#4 DONE 27.7s
+
+#6 [2/4] COPY LICENSE pyproject.toml ./
+#6 DONE 3.6s
+
+#7 [3/4] COPY src ./src
+#7 DONE 0.0s
+
+#8 [4/4] RUN pip install --no-deps --no-build-isolation .
+#8 0.640 Processing /app
+#8 0.642   Preparing metadata (pyproject.toml): started
+#8 0.924   Preparing metadata (pyproject.toml): finished with status 'done'
+#8 0.927 Building wheels for collected packages: myjev
+#8 0.928   Building wheel for myjev (pyproject.toml): started
+#8 1.242   Building wheel for myjev (pyproject.toml): finished with status 'done'
+#8 1.243   Created wheel for myjev: filename=myjev-0.1.0-py3-none-any.whl size=28935 sha256=f50bc4fbdda12ec5a022c6f3390c65bcee48c99cda495d6130f2cb0bef0082a5
+#8 1.244   Stored in directory: /tmp/pip-ephem-wheel-cache-y6fdbcdn/wheels/54/1b/b7/aa63e25c8f14f4f2ae7b04e6097bdecb770e455c5c1ee0a600
+#8 1.247 Successfully built myjev
+#8 1.247 Installing collected packages: myjev
+#8 1.247   Attempting uninstall: myjev
+#8 1.250     Found existing installation: myjev 0.1.0
+#8 1.254     Uninstalling myjev-0.1.0:
+#8 1.275       Successfully uninstalled myjev-0.1.0
+#8 1.311 Successfully installed myjev-0.1.0
+#8 1.311 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#8 1.696 
+#8 1.696 [notice] A new release of pip is available: 24.0 -> 26.2.1
+#8 1.696 [notice] To update, run: pip install --upgrade pip
+#8 DONE 1.8s
+
+#9 exporting to image
+#9 exporting layers 0.1s done
+#9 exporting manifest sha256:9aad93bf07cd2aa3eb15a60c0f6622419eb054a8bff9e1d2ffa4b30bc0fc35b3 done
+#9 exporting config sha256:93e84df6de32de18ac8eab10efec850c87a7674af147d9c45bfd8ecddc99668f done
+#9 exporting attestation manifest sha256:aa16eeeef0632c043c96ff3105eafcb00427367da11935d96e27818fb7ee016d done
+#9 exporting manifest list sha256:1c69cbac450ad7e938e2b4379cb65099942bce9b7ebe2f9aa6229733ef5f16ab done
+#9 naming to docker.io/library/myjev:0.1.1-hub done
+#9 unpacking to docker.io/library/myjev:0.1.1-hub 0.1s done
+#9 DONE 0.2s

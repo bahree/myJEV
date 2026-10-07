@@ -131,3 +131,11 @@ Controlled synthetic behavior does not establish useful BANKING77 quality, unfam
 The separate local `artifacts/scratch-teaching-release-v1/` package contains the seed-11 initial supervised network's full weights, manifest, MIT license, dataset provenance and [model card](../results/scratch-teaching-release-v1/model-card.md). Seed 11 follows the packaging convention; its relatively strong individual synthetic score does not replace the unstable three-seed results above. This is not the failed BANKING77 diagnostic checkpoint and is not included in the six Qwen adapter releases.
 
 The [release manifest](../results/scratch-teaching-release-v1/manifest.json) records every package-file checksum. [CPU verification](../results/scratch-teaching-release-v1/verification.json) confirms byte-identical weights/manifest, exact reload response equality with the original artifact, acceptance at 256 context bytes / 64 description bytes / 32 candidates, and rejection of each limit plus one. Those shape checks do not establish accuracy at the bounds. The package remains local; no downloadable scratch model is claimed.
+
+## Diagnostic ladder after the original failure
+
+A bounded follow-up separates implementation checks from broad language learning. The tiny training-set overfit check reached 100% in all three seeds. An initial deterministic fixture accidentally correlated numeric record indices with labels; its successes cannot establish rule recovery, and both that fixture and the failed seeds remain recorded.
+
+The [corrected protocol](../results/scratch-ladder-v2/report.md) pairs each nuisance nonce with all four color labels and keeps test nonces out of training. With the same architecture, learning rate and per-run budget, seeds 11/22/33 each recovered the explicit color rule on all 64 held-out decisions across 16 nonce groups. This is a same-template sanity check. It does not repair the original noisy/layout-shift task or the 1.30% BANKING result.
+
+The extension used 2,700 total updates including the preserved confounded attempt. Its lesson is narrower and more useful than declaring success or failure of scratch models generally: the network can memorize a small set and recover a simple signal, while broader generalization remains unproven.

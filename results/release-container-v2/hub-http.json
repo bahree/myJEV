@@ -1,0 +1,23 @@
+{
+  "image": "myjev:0.1.1-hub",
+  "image_id": "sha256:1c69cbac450ad7e938e2b4379cb65099942bce9b7ebe2f9aa6229733ef5f16ab",
+  "repo_id": "bahree/myJEV-4B",
+  "revision": "a1b9e3b1181293220012cfb15587cdba0767ae8e",
+  "direct_hub_load": true,
+  "http_equal_to_host_python": true,
+  "managed_aliases_equal": true,
+  "ready_seconds": 17.431061735987896,
+  "response": {
+    "selected_id": "billing",
+    "selection_scores": {
+      "billing": 0.9834240078926086,
+      "technical": 0.005727097392082214,
+      "other": 0.01084891613572836
+    },
+    "confidence": 0.9834240078926086,
+    "confidence_mode": "selection",
+    "artifact_revision": "3a7979eeff5cfb0bd2cee2fe2ea559c314ad9f5eef2de4ef4cb44759dbd73f02",
+    "calibration_revision": "f0d2ddcaf6650e1f44415d49b1cf8b303d4d6fef5f73bb6198ee91600560e8d1"
+  },
+  "scope": "Pinned Hub reference loaded directly in source-refreshed container from read-only cached Hub storage; no cloud or registry deployment. Readiness observation is not an isolated latency benchmark."
+}

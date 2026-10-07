@@ -1,0 +1,38 @@
+[
+  {
+    "reviewer_error_assumption": 0.0,
+    "error_cost_units": 100.0,
+    "review_cost_units": 2.0,
+    "threshold_from_cost_assumptions": 0.98,
+    "test_coverage": 0.056818181818181816,
+    "accepted_count": 175,
+    "observed_accepted_error": 0.017142857142857144,
+    "simulated_cost_per_request": 1.9837662337662338,
+    "always_accept_cost_per_request": 10.064935064935066,
+    "always_review_simulated_cost_per_request": 2.0
+  },
+  {
+    "reviewer_error_assumption": 0.02,
+    "error_cost_units": 100.0,
+    "review_cost_units": 2.0,
+    "threshold_from_cost_assumptions": 0.96,
+    "test_coverage": 0.38376623376623376,
+    "accepted_count": 1182,
+    "observed_accepted_error": 0.010998307952622674,
+    "simulated_cost_per_request": 2.8870129870129873,
+    "always_accept_cost_per_request": 10.064935064935066,
+    "always_review_simulated_cost_per_request": 4.0
+  },
+  {
+    "reviewer_error_assumption": 0.05,
+    "error_cost_units": 100.0,
+    "review_cost_units": 2.0,
+    "threshold_from_cost_assumptions": 0.9299999999999999,
+    "test_coverage": 0.7090909090909091,
+    "accepted_count": 2184,
+    "observed_accepted_error": 0.02564102564102564,
+    "simulated_cost_per_request": 3.8545454545454545,
+    "always_accept_cost_per_request": 10.064935064935066,
+    "always_review_simulated_cost_per_request": 7.0
+  }
+]

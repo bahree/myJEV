@@ -118,13 +118,13 @@ For a new release to your own empty repository, review a package locally (the pu
 
 This command checks local files only. Add `--apply` to create/upload the selected repository using your configured Hugging Face credentials. The helper refuses altered packages, symlinks, nonempty destinations and visibility mismatches. It downloads the immutable uploaded commit and checks every file hash. Then load that pinned commit using `DecisionModel.load("YOUR_NAMESPACE/myjev-4b", revision="COMMIT")` and compare with the local response. The six `bahree` releases have separate upload receipts; a dry-run report alone is not an upload record.
 
-The local image tag is `myjev:0.1.0-release-candidate`. A registry destination is a separate owner choice:
+The latest local image tag is `myjev:0.1.1-hub`. A registry destination is a separate owner choice:
 
 ```bash
 # Choose and authenticate to your registry first.
-export MYJEV_REGISTRY_IMAGE=YOUR_REGISTRY/YOUR_NAMESPACE/myjev:0.1.0
+export MYJEV_REGISTRY_IMAGE=YOUR_REGISTRY/YOUR_NAMESPACE/myjev:0.1.1
 # Run these only when ready to publish the tested image.
-docker tag myjev:0.1.0-release-candidate "$MYJEV_REGISTRY_IMAGE"
+docker tag myjev:0.1.1-hub "$MYJEV_REGISTRY_IMAGE"
 docker push "$MYJEV_REGISTRY_IMAGE"
 docker image inspect "$MYJEV_REGISTRY_IMAGE" --format '{{json .RepoDigests}}'
 ```
@@ -148,4 +148,12 @@ The evidence is under `results/release-readiness-v1/`, including the image build
 
 The `hub-ready-v3` cards pin public source commit `048afa79f43d6f0e84fc203cf43f5602372320c0`. The earlier packaging snapshots are retained for provenance. Version 1 predated the public source pin; version 2 predated the clarification that these individual artifacts have no archive adaptation. Adapter weights and inference manifests are unchanged between those packaging snapshots.
 
-A separate fresh host virtual environment also installed `requirements.lock` and the built package successfully, passed `pip check`, and reproduced the previous Python/CLI/HTTP response exactly. Its response matched the clean Docker installation as well. Installation logs, the full package freeze and `clean-host-equivalence.json` are retained; the disposable verification environment was removed afterward to return disk space to training. This completes local direct-install and container checks for the selected checkpoint. It does not replace the remaining pinned Hub-download check after publication.
+A separate fresh host virtual environment also installed `requirements.lock` and the built package successfully, passed `pip check`, and reproduced the previous Python/CLI/HTTP response exactly. Its response matched the clean Docker installation as well. Installation logs, the full package freeze and `clean-host-equivalence.json` are retained; the disposable verification environment was removed afterward to return disk space to training. This completes local direct-install and container checks for the selected checkpoint. Subsequent pinned Hub-download and container checks are recorded below.
+
+## Hub loader container update
+
+`myjev:0.1.1-hub` includes the cache-path compatibility fix required by real Hugging Face snapshots. Its local image ID is `sha256:1c69cbac450ad7e938e2b4379cb65099942bce9b7ebe2f9aa6229733ef5f16ab`. `deploy/Dockerfile.hub-update` updates only the installed project over the clean-tested image above; pinned dependencies are unchanged. The root Dockerfile remains the full clean-build recipe.
+
+The server loaded a pinned public 4B release through the Hub SDK with a read-only populated cache. `/score` and `/generate` exactly matched the host response, and `/health` passed. Cached readiness took about 17.43 seconds in this observation; this is not a cold-download or isolated-host benchmark. See [build provenance](../results/release-container-v2/provenance.json), [HTTP verification](../results/release-container-v2/hub-http.json), and `scripts/verify_hub_container.py`. The latest card-only revisions and receipts are listed in [models](models.md); runtime files are unchanged.
+
+This image exists locally. A registry destination is still required before a pullable image reference can be published; no managed cloud endpoint was launched.

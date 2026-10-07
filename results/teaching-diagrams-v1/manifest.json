@@ -1,0 +1,61 @@
+{
+  "scope": "Original explanatory schematics based on myJEV code. No measured timing encoded.",
+  "script_sha256": "c181cd71cb6ec9398ed1fe180d508a84738b143e420a8cbfed3777cf019e4c30",
+  "sources": [
+    "src/myjev/model.py",
+    "src/myjev/scratch/model.py",
+    "configs/4b.json",
+    "src/myjev/inference.py",
+    "docs/protocol.md"
+  ],
+  "files": [
+    {
+      "file": "generation-and-readout.png",
+      "sha256": "a9cc2d11d10812978e5eb12b63e22ee06680d95dc6281e07e5956d954f069e6b"
+    },
+    {
+      "file": "generation-and-readout.svg",
+      "sha256": "86a2bd9e36a860592275a6e21282f25974eaeb5a66df02b36ff7a1bb4935caa7"
+    },
+    {
+      "file": "scratch-tensor-path.png",
+      "sha256": "65c692bdeea47457b20c0eb1093e7d259755a37a628698379e5f1fa2d3fc10dd"
+    },
+    {
+      "file": "scratch-tensor-path.svg",
+      "sha256": "602f3957a72932e209da6df87286b5bf4c0156eb964d0e9ca610f80fa87a19c1"
+    },
+    {
+      "file": "lora-branches.png",
+      "sha256": "9a65f5b9b918dc485ef8cad3f915ca423f8a36b7a28b22fd9df8cb5d655e730b"
+    },
+    {
+      "file": "lora-branches.svg",
+      "sha256": "9707809236a8b4575ebfa5e632746b7de644492be3f707f49434c80cfe8e9a26"
+    },
+    {
+      "file": "data-roles-and-actions.png",
+      "sha256": "d328b561d67cd4289a7ec3a90eaa493b721460dd71a7bfb4c64436f60e246599"
+    },
+    {
+      "file": "data-roles-and-actions.svg",
+      "sha256": "708b4bf895a4e10890ebf2eb0a28adc91716a6b9347ca5b73e1941a3a4fcc2bf"
+    },
+    {
+      "file": "artifact-loading.png",
+      "sha256": "12399bf82794a4974e6418e67682e74372e450ebf4438f4a1f979370834eb359"
+    },
+    {
+      "file": "artifact-loading.svg",
+      "sha256": "716a6c13f4e06de6852c0943e7fd6664a31fe5279a910b75528d4c791763a345"
+    },
+    {
+      "file": "request-queue.png",
+      "sha256": "eb5f188a32ca51759957efb1ccfa4181b44cf03358f27b604db707468ae7a128"
+    },
+    {
+      "file": "request-queue.svg",
+      "sha256": "894c89292d9b915efdcba41fffc3aae9d8475685572a03733d9168f45f255636"
+    }
+  ]
+}

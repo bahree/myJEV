@@ -1,0 +1,21 @@
+{
+  "status": "proposed_unexecuted",
+  "purpose": "Diagnose confidence-policy initialization sensitivity and record validation learning curves without changing completed studies.",
+  "size": "0.8b",
+  "seeds": [11, 22, 33],
+  "initial_artifacts": "Existing seed-matched initial SFT artifacts, pinned manifest hashes required before execution",
+  "initialization_conditions": ["trained policy head", "zero final policy projection and bias, uniform 21-bin policy"],
+  "methods": ["exact", "sampled"],
+  "reference": "Same frozen original supervised joint policy for both initializations. Reset only final policy layer; preserve shared projections, scalar head and answer scores.",
+  "primary_updates_per_run": 500,
+  "runs": 12,
+  "primary_update_cap": 6000,
+  "validation_every_updates": 50,
+  "validation": "Fixed validation-only subset and source hashes must be frozen before execution; never use calibration or test for stopping or selection.",
+  "learning_rate": "Existing validation-selected per-method rate, identical across initialization conditions; no new LR sweep",
+  "other_hyperparameters": "Use original 0.8B configuration, eight samples and original KL beta, fixed matched exposure and candidate RNG",
+  "diagnostics": ["validation accuracy", "validation selection NLL", "correctness Brier", "policy entropy", "joint reference KL", "gradient norms", "exact training reward", "policy expected confidence by candidate correctness"],
+  "required_preflight": ["Freeze source/data/artifact hashes", "Confirm same answer and scalar outputs immediately after final-policy reset", "Confirm original frozen reference unchanged", "Verify exact/sample gradient matching on synthetic cases", "Measure 100-update fit pilot within the declared budget"],
+  "stopping": "Primary comparison uses fixed 500 updates for matched exposure. Validation curves diagnose progress but do not prove convergence. Any patience-based extension needs a separate freeze and is secondary, since unequal stopping changes data exposure.",
+  "limitations": "Proposed after completed findings. One backbone size and fixed LR cannot isolate every cause of sampled weakness. Changing initialization also changes initial distance from reference; report this explicitly. No execution authorized by this file itself and no results are claimed."
+}

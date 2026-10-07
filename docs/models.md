@@ -4,12 +4,12 @@ Six seed-11 adapter/head releases are public on Hugging Face. **Start with [myJE
 
 | Release | Training and confidence | Immutable revision |
 |---|---|---|
-| [bahree/myJEV-0.8B](https://huggingface.co/bahree/myJEV-0.8B) | Continued SFT; temperature calibration | [`01fed6001aa675bbfcddbf2ebb3574b28c6da9b6`](https://huggingface.co/bahree/myJEV-0.8B/tree/01fed6001aa675bbfcddbf2ebb3574b28c6da9b6) |
-| [bahree/myJEV-0.8B-RL](https://huggingface.co/bahree/myJEV-0.8B-RL) | Exact RL; expected confidence grid | [`cd6d76797413b74b6bd181102da22f13ff2d865f`](https://huggingface.co/bahree/myJEV-0.8B-RL/tree/cd6d76797413b74b6bd181102da22f13ff2d865f) |
-| [bahree/myJEV-4B](https://huggingface.co/bahree/myJEV-4B) | Continued SFT; temperature calibration | [`a1b9e3b1181293220012cfb15587cdba0767ae8e`](https://huggingface.co/bahree/myJEV-4B/tree/a1b9e3b1181293220012cfb15587cdba0767ae8e) |
-| [bahree/myJEV-4B-RL](https://huggingface.co/bahree/myJEV-4B-RL) | Exact RL; expected confidence grid | [`ca1e358ac8c4d7716136ddca24ca9aaea973d1a9`](https://huggingface.co/bahree/myJEV-4B-RL/tree/ca1e358ac8c4d7716136ddca24ca9aaea973d1a9) |
-| [bahree/myJEV-9B](https://huggingface.co/bahree/myJEV-9B) | Continued SFT; temperature calibration | [`ad0f257ce808d26f56de537cc41bd164645f154b`](https://huggingface.co/bahree/myJEV-9B/tree/ad0f257ce808d26f56de537cc41bd164645f154b) |
-| [bahree/myJEV-9B-RL](https://huggingface.co/bahree/myJEV-9B-RL) | Exact RL; expected confidence grid | [`d22fdbb4b33e76037178459d523010e9b045a40c`](https://huggingface.co/bahree/myJEV-9B-RL/tree/d22fdbb4b33e76037178459d523010e9b045a40c) |
+| [bahree/myJEV-0.8B](https://huggingface.co/bahree/myJEV-0.8B) | Continued SFT; temperature calibration | [`1c956c89d21c0ab136e98ffe66a16752fa37d823`](https://huggingface.co/bahree/myJEV-0.8B/tree/1c956c89d21c0ab136e98ffe66a16752fa37d823) |
+| [bahree/myJEV-0.8B-RL](https://huggingface.co/bahree/myJEV-0.8B-RL) | Exact RL; expected confidence grid | [`44b2ab8e78cb176ed01a63c6fee2146b2d91cc95`](https://huggingface.co/bahree/myJEV-0.8B-RL/tree/44b2ab8e78cb176ed01a63c6fee2146b2d91cc95) |
+| [bahree/myJEV-4B](https://huggingface.co/bahree/myJEV-4B) | Continued SFT; temperature calibration | [`38f7cca5a8530483309f576b0c3dd1756bc27c33`](https://huggingface.co/bahree/myJEV-4B/tree/38f7cca5a8530483309f576b0c3dd1756bc27c33) |
+| [bahree/myJEV-4B-RL](https://huggingface.co/bahree/myJEV-4B-RL) | Exact RL; expected confidence grid | [`0a9413105fc84cb500850059b641755890c4201b`](https://huggingface.co/bahree/myJEV-4B-RL/tree/0a9413105fc84cb500850059b641755890c4201b) |
+| [bahree/myJEV-9B](https://huggingface.co/bahree/myJEV-9B) | Continued SFT; temperature calibration | [`31de42741a9388d07c32465ae8704bafe272b3ae`](https://huggingface.co/bahree/myJEV-9B/tree/31de42741a9388d07c32465ae8704bafe272b3ae) |
+| [bahree/myJEV-9B-RL](https://huggingface.co/bahree/myJEV-9B-RL) | Exact RL; expected confidence grid | [`08dc92307b02fad8c333d41b6f4e1ccfacf16c39`](https://huggingface.co/bahree/myJEV-9B-RL/tree/08dc92307b02fad8c333d41b6f4e1ccfacf16c39) |
 
 ## What each release contains
 
@@ -22,7 +22,7 @@ from myjev import DecisionModel
 
 model = DecisionModel.load(
     "bahree/myJEV-4B",
-    revision="a1b9e3b1181293220012cfb15587cdba0767ae8e",
+    revision="38f7cca5a8530483309f576b0c3dd1756bc27c33",
 )
 ```
 
@@ -32,9 +32,9 @@ See the [inference guide](inference.md) for complete requests, CLI, HTTP and Doc
 
 Seed 11 is the fixed packaging convention, not the best test seed. The releases contain no training text, optimizer state or backbone weights. The earlier [candidate inventory](../results/release-candidates-v1/inventory.json) preserves the frozen experiment artifacts. The final publication package separately adds license and provenance files. Six local candidates passed representative benchmark and output-equivalence checks before upload.
 
-## Why this local default
+## Why this default within the myJEV family
 
-Choose `artifacts/release-candidates-v1/myjev-4b-continued_sft-seed11` for the first local deployment. Seed 11 was fixed for packaging, not selected by test performance. The three-seed quality study favors its confidence Brier and explicit unsupported-option transfer over 4B exact RL, while the final seed-11 short-request HTTP p50 is 82.18 ms. Keep 4B exact available for its higher BANKING accuracy. This recommendation is exploratory and should be revisited against your task and calibration data.
+Choose the pinned `bahree/myJEV-4B` release for the first local deployment. Seed 11 was fixed for packaging, not selected by test performance. The three-seed quality study favors its confidence Brier and explicit unsupported-option transfer over 4B exact RL, while the final seed-11 short-request HTTP p50 is 82.18 ms. Keep 4B exact available for its higher BANKING accuracy. This recommendation is exploratory and should be revisited against your task and calibration data.
 
 | Packaged candidate | Short HTTP p50 / p95 | Maximum direct-path allocated VRAM across three measured workloads |
 |---|---:|---:|
@@ -46,3 +46,11 @@ Choose `artifacts/release-candidates-v1/myjev-4b-continued_sft-seed11` for the f
 | 9B exact RL | 117.55 / 123.42 ms | 11.24 GiB |
 
 HTTP figures use 100 warm three-candidate requests at concurrency one. Direct-path memory covers three/32 candidates with short/longer repeated context, not every request up to 4,096 tokens. CUDA allocated VRAM excludes some driver/runtime allocations. All six passed Python/CLI/HTTP equality, single-pass, oversized-rejection and short 160-candidate checks; actual Docker responses also matched their saved fixture. These are local engineering tests, not model-quality guarantees or a public image release.
+
+## Read and reproduce the release evidence
+
+The [reader model cards](../model_cards/README.md) explain each variant, installation and per-artifact versus three-seed results. The [card publication manifest](../results/model-card-refresh-v2/publication-manifest.json) records the revisions above; card improvements did not change runtime weights.
+
+This recommendation is limited to the published candidate-description interface. The separate [ModernBERT fixed-taxonomy control](../results/encoder-control-v1/report.md) reached 90.78% BANKING77 accuracy with a smaller encoder, but used one seed and 23,997 training examples versus Qwen's 8,000. It is a useful operational alternative when the 77 labels are fixed, not a matched architecture experiment. See [decision lessons](decision-lessons.md) before choosing a larger model.
+
+The rebuilt local image `myjev:0.1.1-hub` passed a pinned Hub load and exact host/container response comparison. Its [provenance](../results/release-container-v2/provenance.json) and [HTTP evidence](../results/release-container-v2/hub-http.json) document the source-only update over the clean-tested dependency image. No registry image is published.

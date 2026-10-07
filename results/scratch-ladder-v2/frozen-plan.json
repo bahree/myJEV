@@ -1,0 +1,25 @@
+{
+  "frozen_utc": "2026-10-07T05:35:40.444261+00:00",
+  "purpose": "Correct v1 nuisance-index/label correlation without changing architecture, learning rate, objective or per-run budget.",
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "updates": 300,
+  "batch_size": 8,
+  "learning_rate": 0.001,
+  "total_updates_cap": 900,
+  "criterion": 0.95,
+  "device": "cuda:0",
+  "scope": "Post-v1 structural correction, not an independent untouched scientific test. Every random nuisance nonce appears with each of four colors; train/test nonces disjoint. Only color cue distinguishes labels within nonce. Same-template deterministic recovery; no general-language/noisy-task claim. All results retained, no retuning.",
+  "source_sha256": {
+    "/home/amit/jev-pvt/scripts/run_scratch_ladder_v2.py": "64db80e53bff4851dd366272282ddc14d8fe93f609ac13b68289e821ca97be7d",
+    "scripts/run_scratch.py": "c26e2b331f29a15bf47c18915418106381f7f3ec385b8a0857d182d1fd894565",
+    "src/myjev/scratch/model.py": "d58cddc9b1aa520ec5b6afaf72fcbb55ee764818bba9e6b67a79137ebb9b1665"
+  },
+  "data_sha256": {
+    "data/scratch-ladder-v2/test.jsonl": "a2ada78ea8548de8e8fafb3ddb7c311fc242a771fc6cb62c32e689f1317788b3",
+    "data/scratch-ladder-v2/train.jsonl": "60925c44c6aaacf7ef0c590e265d7204e80d1101aaf1ac003582fe0054a6e238"
+  }
+}

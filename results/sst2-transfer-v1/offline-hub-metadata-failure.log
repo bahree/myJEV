@@ -1,0 +1,41 @@
+Traceback (most recent call last):
+  File "/home/amit/jev-pvt/scripts/evaluate_sst2_transfer.py", line 62, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/amit/jev-pvt/scripts/evaluate_sst2_transfer.py", line 45, in main
+    model=DecisionModel.load(spec['repo_id'],revision=spec['revision'],device='cuda:0')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amit/jev-pvt/src/myjev/inference.py", line 61, in load
+    path = Path(snapshot_download(artifact, revision=revision))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 266, in _inner
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/huggingface_hub/_snapshot_download.py", line 395, in snapshot_download
+    tree_entries = {
+                   ^
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/huggingface_hub/hf_api.py", line 4103, in list_repo_tree
+    for path_info in paginate(path=tree_url, headers=headers, params={"recursive": recursive, "expand": expand}):
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_pagination.py", line 36, in paginate
+    r = session.get(path, params=params, headers=headers, timeout=timeout)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1053, in get
+    return self.request(
+           ^^^^^^^^^^^^^
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/httpx/_client.py", line 977, in _send_handling_redirects
+    hook(request)
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 284, in hf_request_event_hook
+    raise OfflineModeIsEnabled(
+huggingface_hub.errors.OfflineModeIsEnabled: Cannot reach https://huggingface.co/api/models/bahree/myJEV-0.8B/tree/01fed6001aa675bbfcddbf2ebb3574b28c6da9b6?recursive=true&expand=false: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.

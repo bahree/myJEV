@@ -1,6 +1,6 @@
 # Longer matched training comparison
 
-**Status: complete.** All 24 tuning runs and 36 main evaluations finished. See the [descriptive results](../results/longer-v1/summary.md); paired inference and broader release gates remain pending. The initial feasibility study remains available in [the results guide](experiments.md). This next comparison uses longer exposure, validation-only learning-rate selection, and the complete official BANKING77 test set.
+**Status: complete.** All 24 tuning runs and 36 main evaluations finished. See the [descriptive results](../results/longer-v1/summary.md); paired inference and the broader local release checks are also complete. The initial feasibility study remains available in [the results guide](experiments.md). This next comparison uses longer exposure, validation-only learning-rate selection, and the complete official BANKING77 test set.
 
 ## Why fine-tune an already pretrained model?
 
@@ -34,7 +34,7 @@ The reference machine has three A30s, each with 24 GiB of device memory. We use 
 
 These are 100-update supervised pilot measurements for the tested inputs, not worst-case VRAM reservations or inference requirements. PyTorch allocated peaks also differ from total process memory reported by `nvidia-smi`. Longer inputs, larger batches and different objectives can change memory use. Quantization reduces weight storage but does not guarantee lower latency.
 
-For deployment, select the smallest model that meets measured accepted-case error, coverage, latency and memory requirements. A smaller encoder or distilled student is a follow-up experiment, not a completed comparison. A fixed-label TF-IDF classifier remains a serious low-cost control for BANKING77; request-supplied unfamiliar candidate descriptions motivate studying a language backbone. See [deployment costs](inference.md#what-the-adapter-saves-and-what-inference-still-costs).
+For deployment, select the smallest model that meets measured accepted-case error, coverage, latency and memory requirements. A bounded ModernBERT fixed-taxonomy control is now complete; a distilled student remains prospective. A fixed-label TF-IDF classifier remains a serious low-cost control for BANKING77; request-supplied unfamiliar candidate descriptions motivate studying a language backbone. See [deployment costs](inference.md#what-the-adapter-saves-and-what-inference-still-costs).
 
 ### Would an older Microsoft model be a better fit?
 
@@ -137,7 +137,7 @@ Per-size logs and state live under `results/longer-v1/`; adapters and resumable 
 
 ## What this batch does not cover
 
-This batch focuses on the four main methods. It does not complete the remaining correctness-only/Brier ablations at longer exposure, replicated precision controls, broad transfer, archive adaptation, or final release selection. Those remain on the [roadmap](roadmap.md). New results should be reported with the actual completed seeds, data exposure, precision, and evaluation scope.
+This batch focuses on the four main methods; correctness-only/Brier ablations were not repeated at longer exposure. Replicated precision controls, broader transfer, exploratory machine-reference archive adaptation and final release selection were completed in separate follow-ups. Keep their actual seeds, data exposure, precision and evaluation scope distinct; see the [roadmap](roadmap.md).
 
 ## Which files serve a model, and which resume training?
 
@@ -167,3 +167,19 @@ flowchart LR
 ```
 
 The arrows describe a dependency order, not permission to tune again after observing test performance. A new exploratory recipe needs its own declared protocol and honest disclosure of previously inspected tests.
+
+## Follow the training branches and data roles
+
+![Frozen backbone and adaptation branches](../results/teaching-diagrams-v1/lora-branches.png)
+
+![Partitions and decisions allowed at each stage](../results/teaching-diagrams-v1/data-roles-and-actions.png)
+
+These diagrams separate trainable updates from the deployed backbone and distinguish training, validation, calibration and test decisions. See the [diagram provenance](../results/teaching-diagrams-v1/manifest.json) and `scripts/draw_decision_diagrams.py`.
+
+## Work through one update
+
+The [hands-on route](walkthrough.md#3-understand-what-the-optimizer-changes) derives a cross-entropy gradient, the LoRA matrix shapes and four confidence rewards. Run `python scripts/training_mechanics_demo.py` on CPU to inspect actual numbers before launching a GPU study. [Objective tests](../tests/test_objectives.py) check the exact and sampled mathematics.
+
+![Exact finite actions and a sampled realization](../results/training-eval-diagrams-v1/joint-actions-worked.png)
+
+This original arithmetic illustration is not a trained-model result or a Monte Carlo gradient validation. Its [source numbers](../results/training-eval-diagrams-v1/summary.json) and `scripts/draw_training_eval_lessons.py` make the calculation reproducible.
