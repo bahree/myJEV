@@ -65,7 +65,7 @@ Readiness requires model loading and warmup. Health is available at `/healthz`. 
 Use the published Linux `amd64` image on a host with a compatible NVIDIA driver and NVIDIA Container Toolkit. A 24 GB A30 is the tested GPU class. No local Python installation or training run is required.
 
 ```bash
-export MYJEV_IMAGE=amitbahree/myjev@sha256:1c69cbac450ad7e938e2b4379cb65099942bce9b7ebe2f9aa6229733ef5f16ab
+export MYJEV_IMAGE=amitbahree/myjev@sha256:3693ed39364bb3a96ee675da1a750d09cb2762a50211886eca8addd776d585cb
 docker pull "$MYJEV_IMAGE"
 mkdir -p .cache/huggingface
 docker run --rm --name myjev --gpus device=0 \
@@ -78,7 +78,7 @@ docker run --rm --name myjev --gpus device=0 \
 
 Once `/readyz` succeeds, send the HTTP request shown above. Stop from another terminal with `docker stop myjev`. First startup downloads the artifact and its separately pinned backbone; the image itself contains no weights. Keep the cache volume for subsequent starts. The image occupies about 10.5 GB as reported by Docker on this host (compressed registry layers total 3.48 GB), plus the separately downloaded models. Our published-image check reused cached image layers and model files; it is not a fresh-machine download-time measurement.
 
-The [publication receipt](../results/container-registry-v1/publication.json) records the immutable digest, anonymous pull and exact GPU HTTP/host response match. The shorter tag `amitbahree/myjev:0.1.1` refers to this release; use the digest for reproducibility. [Docker Hub overview](../deploy/README.container.md) supplies a self-contained request example and runtime details.
+The [publication receipt](../results/container-registry-v2/publication.json) records the immutable digest, anonymous pull and exact GPU HTTP/host response match. The shorter tag `amitbahree/myjev:0.1.2` refers to this release; use the digest for reproducibility. [Docker Hub overview](../deploy/README.container.md) supplies a self-contained request example and runtime details.
 
 To build from the checked-out source instead, run `docker build -t myjev:local .`. For a locally trained artifact, the Compose path remains:
 
@@ -121,6 +121,6 @@ The [saved demonstration](../results/demos-v1/report.md) includes billing, techn
 
 ![Files loaded for one deployed decision](../results/teaching-diagrams-v1/artifact-loading.png)
 
-The published `amitbahree/myjev:0.1.1` container comes from the verified local `myjev:0.1.1-hub` image; [hosting](hosting.md#hub-loader-container-update) records the incremental build and direct Hub-load check. Build the root Dockerfile for a clean installation on your own machine.
+The published `amitbahree/myjev:0.1.2` container comes from the verified local `myjev:0.1.2-hub` image; [hosting](hosting.md#hub-loader-container-update) records the incremental build and direct Hub-load check. Build the root Dockerfile for a clean installation on your own machine.
 
 ![Bounded request queue and timeout path](../results/teaching-diagrams-v1/request-queue.png)

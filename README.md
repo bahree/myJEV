@@ -56,9 +56,10 @@ flowchart LR
     A[Context and candidate descriptions] --> B[Verified token aliases]
     B --> C[One backbone forward pass]
     C --> D[Candidate selection scores]
-    C --> E[Candidate-conditioned confidence]
+    C --> E[Trained confidence heads]
     D --> F[Selected answer]
-    E --> G[Reported correctness confidence]
+    E -->|scalar or policy mode| G[Reported correctness confidence]
+    D -->|selection mode| G
     F --> H[Application decision or review]
     G --> H
 ```

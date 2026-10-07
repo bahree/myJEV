@@ -1,0 +1,83 @@
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 4808.44it/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+{"size": "4b", "method": "continued_sft", "order": 101, "examples": 250, "total": 3080, "seconds": 52.830632317985874}
+{"size": "4b", "method": "continued_sft", "order": 101, "examples": 500, "total": 3080, "seconds": 105.10762084496673}
+{"size": "4b", "method": "continued_sft", "order": 101, "examples": 750, "total": 3080, "seconds": 157.73273233295185}
+{"size": "4b", "method": "continued_sft", "order": 101, "examples": 1000, "total": 3080, "seconds": 211.02048775699222}
+{"size": "4b", "method": "continued_sft", "order": 101, "examples": 1250, "total": 3080, "seconds": 263.77687438600697}
+{"size": "4b", "method": "continued_sft", "order": 101, "examples": 1500, "total": 3080, "seconds": 316.59877285396215}
+{"size": "4b", "method": "continued_sft", "order": 101, "examples": 1750, "total": 3080, "seconds": 369.5209439419559}
+{"size": "4b", "method": "continued_sft", "order": 101, "examples": 2000, "total": 3080, "seconds": 422.5734176209662}
+{"size": "4b", "method": "continued_sft", "order": 101, "examples": 2250, "total": 3080, "seconds": 475.51832097698934}
+{"size": "4b", "method": "continued_sft", "order": 101, "examples": 2500, "total": 3080, "seconds": 528.3125456270063}
+{"size": "4b", "method": "continued_sft", "order": 101, "examples": 2750, "total": 3080, "seconds": 581.2397920099902}
+{"size": "4b", "method": "continued_sft", "order": 101, "examples": 3000, "total": 3080, "seconds": 634.07901927497}
+{"completed": "results/review-order-v1/4b/continued_sft/order-101-metrics.json", "accuracy": 0.8996753246753246, "brier": 0.0711229265241201}
+{"size": "4b", "method": "continued_sft", "order": 202, "examples": 250, "total": 3080, "seconds": 52.92864301096415}
+{"size": "4b", "method": "continued_sft", "order": 202, "examples": 500, "total": 3080, "seconds": 105.71844966098433}
+{"size": "4b", "method": "continued_sft", "order": 202, "examples": 750, "total": 3080, "seconds": 158.65040804696037}
+{"size": "4b", "method": "continued_sft", "order": 202, "examples": 1000, "total": 3080, "seconds": 211.7545056049712}
+{"size": "4b", "method": "continued_sft", "order": 202, "examples": 1250, "total": 3080, "seconds": 264.7712419159943}
+{"size": "4b", "method": "continued_sft", "order": 202, "examples": 1500, "total": 3080, "seconds": 317.7552654200117}
+{"size": "4b", "method": "continued_sft", "order": 202, "examples": 1750, "total": 3080, "seconds": 370.8800257779658}
+{"size": "4b", "method": "continued_sft", "order": 202, "examples": 2000, "total": 3080, "seconds": 423.8887839060044}
+{"size": "4b", "method": "continued_sft", "order": 202, "examples": 2250, "total": 3080, "seconds": 476.81254445796367}
+{"size": "4b", "method": "continued_sft", "order": 202, "examples": 2500, "total": 3080, "seconds": 529.6715725300019}
+{"size": "4b", "method": "continued_sft", "order": 202, "examples": 2750, "total": 3080, "seconds": 582.8915299229557}
+{"size": "4b", "method": "continued_sft", "order": 202, "examples": 3000, "total": 3080, "seconds": 635.9674972199718}
+{"completed": "results/review-order-v1/4b/continued_sft/order-202-metrics.json", "accuracy": 0.8957792207792208, "brier": 0.07316886123439405}
+{"size": "4b", "method": "continued_sft", "order": 303, "examples": 250, "total": 3080, "seconds": 53.05884602398146}
+{"size": "4b", "method": "continued_sft", "order": 303, "examples": 500, "total": 3080, "seconds": 105.96526207297575}
+{"size": "4b", "method": "continued_sft", "order": 303, "examples": 750, "total": 3080, "seconds": 158.9058846749831}
+{"size": "4b", "method": "continued_sft", "order": 303, "examples": 1000, "total": 3080, "seconds": 211.83134873298695}
+{"size": "4b", "method": "continued_sft", "order": 303, "examples": 1250, "total": 3080, "seconds": 264.72046177095035}
+{"size": "4b", "method": "continued_sft", "order": 303, "examples": 1500, "total": 3080, "seconds": 317.6052716129925}
+{"size": "4b", "method": "continued_sft", "order": 303, "examples": 1750, "total": 3080, "seconds": 370.5310694439686}
+{"size": "4b", "method": "continued_sft", "order": 303, "examples": 2000, "total": 3080, "seconds": 423.5162899779971}
+{"size": "4b", "method": "continued_sft", "order": 303, "examples": 2250, "total": 3080, "seconds": 476.41923781100195}
+{"size": "4b", "method": "continued_sft", "order": 303, "examples": 2500, "total": 3080, "seconds": 529.2237754189991}
+{"size": "4b", "method": "continued_sft", "order": 303, "examples": 2750, "total": 3080, "seconds": 582.1503397809574}
+{"size": "4b", "method": "continued_sft", "order": 303, "examples": 3000, "total": 3080, "seconds": 635.1986515639583}
+{"completed": "results/review-order-v1/4b/continued_sft/order-303-metrics.json", "accuracy": 0.900974025974026, "brier": 0.07113454096356618}
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:  85%|████████▍ | 361/426 [00:00<00:00, 3580.79it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 3694.99it/s]
+{"size": "4b", "method": "exact", "order": 101, "examples": 250, "total": 3080, "seconds": 53.28074481600197}
+{"size": "4b", "method": "exact", "order": 101, "examples": 500, "total": 3080, "seconds": 106.54369364201557}
+{"size": "4b", "method": "exact", "order": 101, "examples": 750, "total": 3080, "seconds": 159.87991389201488}
+{"size": "4b", "method": "exact", "order": 101, "examples": 1000, "total": 3080, "seconds": 213.31831812503515}
+{"size": "4b", "method": "exact", "order": 101, "examples": 1250, "total": 3080, "seconds": 266.72086649003904}
+{"size": "4b", "method": "exact", "order": 101, "examples": 1500, "total": 3080, "seconds": 320.44987084902823}
+{"size": "4b", "method": "exact", "order": 101, "examples": 1750, "total": 3080, "seconds": 374.4808913890156}
+{"size": "4b", "method": "exact", "order": 101, "examples": 2000, "total": 3080, "seconds": 428.20830513502005}
+{"size": "4b", "method": "exact", "order": 101, "examples": 2250, "total": 3080, "seconds": 481.9233943300205}
+{"size": "4b", "method": "exact", "order": 101, "examples": 2500, "total": 3080, "seconds": 535.382179510023}
+{"size": "4b", "method": "exact", "order": 101, "examples": 2750, "total": 3080, "seconds": 588.9579563910374}
+{"size": "4b", "method": "exact", "order": 101, "examples": 3000, "total": 3080, "seconds": 642.4728684970178}
+{"completed": "results/review-order-v1/4b/exact/order-101-metrics.json", "accuracy": 0.9061688311688312, "brier": 0.08361435801361988}
+{"size": "4b", "method": "exact", "order": 202, "examples": 250, "total": 3080, "seconds": 53.68213706999086}
+{"size": "4b", "method": "exact", "order": 202, "examples": 500, "total": 3080, "seconds": 107.11472991097253}
+{"size": "4b", "method": "exact", "order": 202, "examples": 750, "total": 3080, "seconds": 160.46642408298794}
+{"size": "4b", "method": "exact", "order": 202, "examples": 1000, "total": 3080, "seconds": 213.87365444097668}
+{"size": "4b", "method": "exact", "order": 202, "examples": 1250, "total": 3080, "seconds": 267.2068130929838}
+{"size": "4b", "method": "exact", "order": 202, "examples": 1500, "total": 3080, "seconds": 320.53789385495475}
+{"size": "4b", "method": "exact", "order": 202, "examples": 1750, "total": 3080, "seconds": 373.98026470298646}
+{"size": "4b", "method": "exact", "order": 202, "examples": 2000, "total": 3080, "seconds": 427.4799610969494}
+{"size": "4b", "method": "exact", "order": 202, "examples": 2250, "total": 3080, "seconds": 480.83244674198795}
+{"size": "4b", "method": "exact", "order": 202, "examples": 2500, "total": 3080, "seconds": 534.0569242319907}
+{"size": "4b", "method": "exact", "order": 202, "examples": 2750, "total": 3080, "seconds": 587.5303479039576}
+{"size": "4b", "method": "exact", "order": 202, "examples": 3000, "total": 3080, "seconds": 640.941113896959}
+{"completed": "results/review-order-v1/4b/exact/order-202-metrics.json", "accuracy": 0.9038961038961039, "brier": 0.08191782390676773}
+{"size": "4b", "method": "exact", "order": 303, "examples": 250, "total": 3080, "seconds": 53.46920993202366}
+{"size": "4b", "method": "exact", "order": 303, "examples": 500, "total": 3080, "seconds": 106.67421027098317}
+{"size": "4b", "method": "exact", "order": 303, "examples": 750, "total": 3080, "seconds": 160.02621218602872}
+{"size": "4b", "method": "exact", "order": 303, "examples": 1000, "total": 3080, "seconds": 213.396202679025}
+{"size": "4b", "method": "exact", "order": 303, "examples": 1250, "total": 3080, "seconds": 266.6620046570315}
+{"size": "4b", "method": "exact", "order": 303, "examples": 1500, "total": 3080, "seconds": 319.9575102130184}
+{"size": "4b", "method": "exact", "order": 303, "examples": 1750, "total": 3080, "seconds": 373.31858691200614}
+{"size": "4b", "method": "exact", "order": 303, "examples": 2000, "total": 3080, "seconds": 426.809503817989}
+{"size": "4b", "method": "exact", "order": 303, "examples": 2250, "total": 3080, "seconds": 480.137758271012}
+{"size": "4b", "method": "exact", "order": 303, "examples": 2500, "total": 3080, "seconds": 533.3776262269821}
+{"size": "4b", "method": "exact", "order": 303, "examples": 2750, "total": 3080, "seconds": 586.7169524219935}
+{"size": "4b", "method": "exact", "order": 303, "examples": 3000, "total": 3080, "seconds": 640.0118604290183}
+{"completed": "results/review-order-v1/4b/exact/order-303-metrics.json", "accuracy": 0.9064935064935065, "brier": 0.07986936049092791}
+{"size": "4b", "state": "completed"}

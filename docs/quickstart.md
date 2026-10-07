@@ -89,7 +89,7 @@ The limit reproduces the pilot's evaluation scope. Calibration labels select thr
 The public [Docker Hub image](https://hub.docker.com/r/amitbahree/myjev) serves the default model without local training or a Python installation. The host needs Docker, an NVIDIA driver and NVIDIA Container Toolkit; the validated GPU class is an A30 with 24 GB VRAM.
 
 ```bash
-export MYJEV_IMAGE=amitbahree/myjev@sha256:1c69cbac450ad7e938e2b4379cb65099942bce9b7ebe2f9aa6229733ef5f16ab
+export MYJEV_IMAGE=amitbahree/myjev@sha256:3693ed39364bb3a96ee675da1a750d09cb2762a50211886eca8addd776d585cb
 docker pull "$MYJEV_IMAGE"
 mkdir -p .cache/huggingface
 docker run --rm --name myjev --gpus device=0 \

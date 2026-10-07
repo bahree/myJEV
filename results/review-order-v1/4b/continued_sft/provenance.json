@@ -1,0 +1,17 @@
+{
+  "protocol_sha256": "51cdc281312f55f6524911d532de7bee07f9aa974fc9b490852e323cfb03704e",
+  "data_sha256": "7d4fb64775dc350e37a99c6bc317edecea1639d54be336ab6b05028622b93f31",
+  "artifact_revision": "3a7979eeff5cfb0bd2cee2fe2ea559c314ad9f5eef2de4ef4cb44759dbd73f02",
+  "artifact_manifest_sha256": "56746ec8ae6f287492afbf10a5e21610ea993a840f18fdc85f67bb2bc03a169e",
+  "baseline_prediction_sha256": "718f788f9ebcf42e7746a0f557c040520fd5f357893c1b348b111ac061680f18",
+  "baseline_metrics_sha256": "6bc5000f3c25d292fc3abe5d6e05897090b02b48088f76c990410e1412a0bf53",
+  "fixed_thresholds": {
+    "coverage_0.5": 0.9511293000088981,
+    "coverage_0.8": 0.9000833387185285,
+    "coverage_0.9": 0.7943811250275027,
+    "empirical_error_0.01": 0.9617664291688391,
+    "empirical_error_0.05": 0.8801672771724965
+  },
+  "model_size": "4b",
+  "method": "continued_sft"
+}

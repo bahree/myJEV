@@ -1,0 +1,62 @@
+{
+  "started_utc": "2026-10-07T19:50:23.491075+00:00",
+  "command": [
+    "docker",
+    "run",
+    "-d",
+    "--name",
+    "myjev-first-use-1791402623491063993",
+    "--gpus",
+    "device=0",
+    "-p",
+    "127.0.0.1:18092:8000",
+    "-e",
+    "HF_HOME=/cache/huggingface",
+    "-e",
+    "HF_HUB_DISABLE_XET=1",
+    "-e",
+    "MYJEV_ARTIFACT=bahree/myJEV-4B",
+    "-e",
+    "MYJEV_REVISION=38f7cca5a8530483309f576b0c3dd1756bc27c33",
+    "-e",
+    "OMP_NUM_THREADS=2",
+    "-e",
+    "MKL_NUM_THREADS=2",
+    "--tmpfs",
+    "/cache/huggingface:rw,size=12g",
+    "myjev:0.1.2-review"
+  ],
+  "cache_initially_empty": true,
+  "cache_medium": "tmpfs",
+  "existing_caches_mounted": false,
+  "docker_layers_cached": true,
+  "source_image": "myjev:0.1.2-review",
+  "seconds_to_readiness": 203.56515797501197,
+  "cache_bytes_regular_files": 9341722221,
+  "image_id": "sha256:3693ed39364bb3a96ee675da1a750d09cb2762a50211886eca8addd776d585cb",
+  "source_revision": "ac51018d8e679f0cc444e559bb7a5c12709ae8c2",
+  "response": {
+    "selected_id": "billing",
+    "selection_scores": {
+      "billing": 0.9834240078926086,
+      "technical": 0.005727097392082214,
+      "other": 0.01084891613572836
+    },
+    "confidence": 0.9834240078926086,
+    "confidence_mode": "selection",
+    "artifact_revision": "3a7979eeff5cfb0bd2cee2fe2ea559c314ad9f5eef2de4ef4cb44759dbd73f02",
+    "calibration_revision": "f0d2ddcaf6650e1f44415d49b1cf8b303d4d6fef5f73bb6198ee91600560e8d1"
+  },
+  "http_equal_to_saved_python": true,
+  "managed_aliases_equal": true,
+  "http_statuses": {
+    "body": 413,
+    "chunked_body": 413,
+    "aggregate": 422,
+    "duplicate_ids": 422
+  },
+  "cli_equal_to_http": true,
+  "passed": true,
+  "scope": "One empty model-cache download and warmup on an A30, followed by exact fixture equality and HTTP limit checks. Image layers were already present. Other GPUs were evaluating. Tmpfs, when selected, is RAM-backed and is not a cold-disk performance measurement. No paid managed deployment.",
+  "finished_utc": "2026-10-07T19:54:01.662731+00:00"
+}

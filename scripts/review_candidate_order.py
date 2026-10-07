@@ -23,12 +23,14 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--size',required=True,choices=['0.8b','4b','9b'])
     p.add_argument('--device',default='cuda:0')
+    p.add_argument('--method',choices=['continued_sft','exact'],help='Run one frozen method on a separate GPU')
+    p.add_argument('--order-seed',type=int,choices=[101,202,303],help='Run one frozen permutation on a separate GPU')
     p.add_argument('--hub',action='store_true',help='Load published immutable releases instead of author-local artifacts')
     p.add_argument('--output',type=Path,default=Path('results/review-order-v1'))
     a=p.parse_args();protocol_path=Path('configs/review-order-v1.json');protocol=json.loads(protocol_path.read_text())
     rows=read_jsonl('data/banking77/test.jsonl');assert len(rows)==3080
     dest=a.output/a.size;dest.mkdir(parents=True,exist_ok=True)
-    for method in protocol['methods']:
+    for method in ([a.method] if a.method else protocol['methods']):
         source=Path('results/longer-v1')/a.size/'main'/'seed-11'/method
         if method=='continued_sft':
             source_metrics=source/'posthoc/temperature-metrics.json';source_predictions=source/'posthoc/temperature-predictions.jsonl'
@@ -60,8 +62,9 @@ def main():
         else:
             model=DecisionModel.load(artifact,device=a.device)
         metadata={'protocol_sha256':hashlib.sha256(protocol_path.read_bytes()).hexdigest(),'data_sha256':hashlib.sha256(Path('data/banking77/test.jsonl').read_bytes()).hexdigest(),'artifact_revision':model.manifest['artifact_revision'],'canonical_manifest_sha256':hashlib.sha256(json.dumps(model.manifest,sort_keys=True).encode()).hexdigest(),'baseline_source':str(baseline_source),'baseline_prediction_sha256':hashlib.sha256(baseline_source.read_bytes()).hexdigest(),'baseline_metrics_sha256':hashlib.sha256(source_metrics.read_bytes()).hexdigest(),'fixed_thresholds':thresholds,'model_size':a.size,'method':method}
-        (output/'provenance.json').write_text(json.dumps(metadata,indent=2)+'\n')
-        for seed in protocol['permutation_seeds']:
+        provenance_path=output/'provenance.json'
+        if not provenance_path.exists():provenance_path.write_text(json.dumps(metadata,indent=2)+'\n')
+        for seed in ([a.order_seed] if a.order_seed else protocol['permutation_seeds']):
             metric_path=output/f'order-{seed}-metrics.json'
             if metric_path.exists():continue
             predictions=[];start=time.perf_counter()

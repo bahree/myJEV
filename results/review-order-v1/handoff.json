@@ -1,0 +1,9 @@
+{
+  "reason": "Redistribute the already-frozen remaining 9B permutations across free GPUs; no protocol, weights or calibration change. Original worker is stopped only after its order-101 metrics are durable. Order 202 runs on GPU 0; order 303 takes GPU 2.",
+  "original_pid": 330188,
+  "original_process_start": "26241189",
+  "started_utc": "2026-10-07T20:00:02.804196+00:00",
+  "new_worker_sha256": "881a57873b92ee2178083121bc02a3d0434e31f244ced2ef3df3ee1d6822be5f",
+  "original_order101_complete": true,
+  "planned_handoff_utc": "2026-10-07T20:08:42.841992+00:00"
+}

@@ -1,0 +1,51 @@
+Traceback (most recent call last):
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 836, in hf_raise_for_status
+    response.raise_for_status()
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://huggingface.co/api/models/bahree/myJEV-0.8B/preupload/main'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/amit/jev-pvt/scripts/publish_hub_model_cards.py", line 76, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/amit/jev-pvt/scripts/publish_hub_model_cards.py", line 58, in main
+    commit=api.upload_file(repo_id=row['repo_id'],path_in_repo='README.md',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/huggingface_hub/hf_api.py", line 2140, in _inner
+    return fn(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/huggingface_hub/hf_api.py", line 5824, in upload_file
+    return self.create_commit(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/huggingface_hub/hf_api.py", line 2140, in _inner
+    return fn(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/huggingface_hub/hf_api.py", line 5274, in create_commit
+    self.preupload_lfs_files(
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/huggingface_hub/hf_api.py", line 5491, in preupload_lfs_files
+    _fetch_upload_modes(
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/huggingface_hub/_commit_api.py", line 769, in _fetch_upload_modes
+    hf_raise_for_status(resp)
+  File "/home/amit/jev-pvt/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 923, in hf_raise_for_status
+    raise _format(RepositoryNotFoundError, message, response, repo_type=repo_type, repo_id=repo_id) from e
+huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-6ac6a364-7067c4571ba7198a65d2b3b5;a6703589-6eb1-4eec-a67a-19902bfc4cb8)
+
+Repository Not Found for url: https://huggingface.co/api/models/bahree/myJEV-0.8B/preupload/main.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated and your token has the required permissions.
+For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+Invalid username or password.
+Note: Creating a commit assumes that the repo already exists on the Huggingface Hub. Please use `create_repo` if it's not the case.

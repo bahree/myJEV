@@ -48,6 +48,17 @@ The archive study measures agreement with machine-generated references. Independ
 
 See [models](models.md), [inference](inference.md) and [hosting](hosting.md). Publishing weights does not create a running endpoint. The managed recipe is documented but unexecuted; paid cloud deployment is not a required deliverable.
 
+## Independent-review follow-up
+
+- [x] Display seed-level paired deltas and their spread beside conditional test-group intervals.
+- [x] Apply identical post-hoc selection and learned-correctness temperature controls to all 36 runs; reproduce 144 metrics and 36 fits exactly from public inputs.
+- [x] Disclose the punctuation-overlap sensitivity and preserve the official test results as primary.
+- [x] Add aggregate UTF-8 and HTTP body limits while retaining exact token checks; measure representative maximal-byte rejection.
+- [x] Rebuild through the public root Dockerfile, verify an empty model-cache startup, publish 0.1.2 and check anonymous pull plus exact GPU outputs.
+- [x] Refresh six model cards, measured training/reliability figures, scratch and serving transcripts, all-seed CPU results, and actual-theme rendering.
+
+These are bounded post-review checks. [Matched calibration results](../results/review-calibration-v1/report.md) qualify the earlier training-method interpretation; released weights and confidence settings remain unchanged. The [current container receipt](../results/container-registry-v2/publication.json) records the new input caps and its distinct cached and empty-cache conditions.
+
 ## Remaining owner decisions and optional extensions
 
 - [ ] Independently human-audit the archive labels and grouping before human-correctness claims.
@@ -55,3 +66,5 @@ See [models](models.md), [inference](inference.md) and [hosting](hosting.md). Pu
 - [ ] If pursuing production use, evaluate the actual workload, accepted-error requirements, memory headroom and monitoring with independent data.
 
 Phi, SmolLM and MAI fine-tuning remain deferred. The bounded ModernBERT control does not imply these alternatives were evaluated. Additional backbone studies, scratch capacity/layout experiments, distillation, optimized serving backends and broader policy tasks should begin with a new frozen protocol and resource pilot. No matched TypeSafe Jev latency comparison or reconstruction of its proprietary network is claimed.
+
+Additional training seeds and longer Brier/correctness-only ablations remain optional research extensions. Certified selective-risk procedures, a non-root container and workload-specific authenticated deployment hardening are separate production work, not guarantees supplied by this research release.

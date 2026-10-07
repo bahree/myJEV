@@ -3,6 +3,7 @@ import argparse
 import copy
 import hashlib
 import json
+import re
 from pathlib import Path
 import shutil
 from huggingface_hub import HfApi, ModelCard, snapshot_download
@@ -19,10 +20,14 @@ def main():
     p.add_argument('--packages',type=Path,default=Path('artifacts/hub-reader-v1'))
     p.add_argument('--output',type=Path,default=Path('results/model-card-refresh-v1/publication-manifest.json'))
     p.add_argument('--receipts',type=Path,default=Path('results/release-readiness-v1/hub'))
+    p.add_argument('--source-code-revision',help='Public loader commit shown by this card edition')
     p.add_argument('--apply',action='store_true')
     a=p.parse_args()
     initial=json.loads(a.manifest.read_text());updated=copy.deepcopy(initial)
     updated.update(uploaded=False,previous_publication_manifest=str(a.manifest),amendment='Reader-facing README and model metadata only; runtime files unchanged')
+    if a.source_code_revision:
+        if not re.fullmatch('[0-9a-f]{40}',a.source_code_revision):raise ValueError('Immutable public source commit required')
+        updated['reader_source_code_revision']=a.source_code_revision
     a.output.parent.mkdir(parents=True,exist_ok=True)
     backup=a.output.parent/'prior-receipts';backup.mkdir(exist_ok=True)
     prepared=[]

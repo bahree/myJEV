@@ -1,0 +1,56 @@
+Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 1/427 [00:00<01:55,  3.68it/s]Loading weights:   0%|          | 2/427 [00:00<01:50,  3.85it/s]Loading weights:   3%|▎         | 14/427 [00:00<00:13, 31.49it/s]Loading weights:  10%|▉         | 41/427 [00:00<00:04, 89.83it/s]Loading weights:  15%|█▍        | 63/427 [00:00<00:02, 122.70it/s]Loading weights:  19%|█▉        | 82/427 [00:00<00:02, 136.87it/s]Loading weights:  24%|██▎       | 101/427 [00:01<00:02, 149.13it/s]Loading weights:  31%|███       | 132/427 [00:01<00:01, 192.12it/s]Loading weights:  36%|███▌      | 154/427 [00:01<00:01, 178.40it/s]Loading weights:  44%|████▎     | 186/427 [00:01<00:01, 208.33it/s]Loading weights:  49%|████▉     | 209/427 [00:01<00:01, 196.21it/s]Loading weights:  56%|█████▌    | 238/427 [00:01<00:00, 219.71it/s]Loading weights:  61%|██████    | 261/427 [00:01<00:00, 198.87it/s]Loading weights:  68%|██████▊   | 291/427 [00:01<00:00, 224.15it/s]Loading weights:  74%|███████▍  | 315/427 [00:02<00:00, 176.67it/s]Loading weights:  81%|████████  | 344/427 [00:02<00:00, 202.28it/s]Loading weights:  86%|████████▌ | 367/427 [00:02<00:00, 187.58it/s]Loading weights:  93%|█████████▎| 397/427 [00:02<00:00, 213.48it/s]Loading weights:  99%|█████████▊| 421/427 [00:02<00:00, 196.27it/s]Loading weights: 100%|██████████| 427/427 [00:02<00:00, 162.49it/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+{"size": "9b", "method": "continued_sft", "order": 101, "examples": 250, "total": 3080, "seconds": 78.62747581204167}
+{"size": "9b", "method": "continued_sft", "order": 101, "examples": 500, "total": 3080, "seconds": 157.08858760702424}
+{"size": "9b", "method": "continued_sft", "order": 101, "examples": 750, "total": 3080, "seconds": 236.01830825203797}
+{"size": "9b", "method": "continued_sft", "order": 101, "examples": 1000, "total": 3080, "seconds": 314.92210506199626}
+{"size": "9b", "method": "continued_sft", "order": 101, "examples": 1250, "total": 3080, "seconds": 393.74432130000787}
+{"size": "9b", "method": "continued_sft", "order": 101, "examples": 1500, "total": 3080, "seconds": 472.60317666700576}
+{"size": "9b", "method": "continued_sft", "order": 101, "examples": 1750, "total": 3080, "seconds": 551.6156746670022}
+{"size": "9b", "method": "continued_sft", "order": 101, "examples": 2000, "total": 3080, "seconds": 630.7516342609888}
+{"size": "9b", "method": "continued_sft", "order": 101, "examples": 2250, "total": 3080, "seconds": 709.8464896710357}
+{"size": "9b", "method": "continued_sft", "order": 101, "examples": 2500, "total": 3080, "seconds": 788.6839144010446}
+{"size": "9b", "method": "continued_sft", "order": 101, "examples": 2750, "total": 3080, "seconds": 867.7207123049884}
+{"size": "9b", "method": "continued_sft", "order": 101, "examples": 3000, "total": 3080, "seconds": 946.6279749250389}
+{"completed": "results/review-order-v1/9b/continued_sft/order-101-metrics.json", "accuracy": 0.8941558441558441, "brier": 0.0774091886570555}
+{"size": "9b", "method": "continued_sft", "order": 202, "examples": 250, "total": 3080, "seconds": 79.05297091801185}
+{"size": "9b", "method": "continued_sft", "order": 202, "examples": 500, "total": 3080, "seconds": 157.86373804602772}
+{"size": "9b", "method": "continued_sft", "order": 202, "examples": 750, "total": 3080, "seconds": 236.9124453869881}
+{"size": "9b", "method": "continued_sft", "order": 202, "examples": 1000, "total": 3080, "seconds": 315.99061249999795}
+{"size": "9b", "method": "continued_sft", "order": 202, "examples": 1250, "total": 3080, "seconds": 394.90135978901526}
+{"size": "9b", "method": "continued_sft", "order": 202, "examples": 1500, "total": 3080, "seconds": 473.79876643401803}
+{"size": "9b", "method": "continued_sft", "order": 202, "examples": 1750, "total": 3080, "seconds": 552.8306649649749}
+{"size": "9b", "method": "continued_sft", "order": 202, "examples": 2000, "total": 3080, "seconds": 632.2589034659904}
+{"size": "9b", "method": "continued_sft", "order": 202, "examples": 2250, "total": 3080, "seconds": 711.51282588701}
+{"size": "9b", "method": "continued_sft", "order": 202, "examples": 2500, "total": 3080, "seconds": 790.5717561690253}
+{"size": "9b", "method": "continued_sft", "order": 202, "examples": 2750, "total": 3080, "seconds": 869.8633095580153}
+{"size": "9b", "method": "continued_sft", "order": 202, "examples": 3000, "total": 3080, "seconds": 948.9879496539943}
+{"completed": "results/review-order-v1/9b/continued_sft/order-202-metrics.json", "accuracy": 0.8944805194805194, "brier": 0.07751862339847443}
+{"size": "9b", "method": "continued_sft", "order": 303, "examples": 250, "total": 3080, "seconds": 79.28018697100924}
+{"size": "9b", "method": "continued_sft", "order": 303, "examples": 500, "total": 3080, "seconds": 158.1481830640114}
+{"size": "9b", "method": "continued_sft", "order": 303, "examples": 750, "total": 3080, "seconds": 237.30005399003858}
+{"size": "9b", "method": "continued_sft", "order": 303, "examples": 1000, "total": 3080, "seconds": 316.4645348810009}
+{"size": "9b", "method": "continued_sft", "order": 303, "examples": 1250, "total": 3080, "seconds": 395.62194363604067}
+{"size": "9b", "method": "continued_sft", "order": 303, "examples": 1500, "total": 3080, "seconds": 474.6170974080451}
+{"size": "9b", "method": "continued_sft", "order": 303, "examples": 1750, "total": 3080, "seconds": 553.8304332109983}
+{"size": "9b", "method": "continued_sft", "order": 303, "examples": 2000, "total": 3080, "seconds": 633.2154294200009}
+{"size": "9b", "method": "continued_sft", "order": 303, "examples": 2250, "total": 3080, "seconds": 712.3694416470244}
+{"size": "9b", "method": "continued_sft", "order": 303, "examples": 2500, "total": 3080, "seconds": 791.3815555360052}
+{"size": "9b", "method": "continued_sft", "order": 303, "examples": 2750, "total": 3080, "seconds": 870.5059700700222}
+{"size": "9b", "method": "continued_sft", "order": 303, "examples": 3000, "total": 3080, "seconds": 949.537994651997}
+{"completed": "results/review-order-v1/9b/continued_sft/order-303-metrics.json", "accuracy": 0.8980519480519481, "brier": 0.07673798618535227}
+Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 1/427 [00:00<03:14,  2.19it/s]Loading weights:   0%|          | 2/427 [00:00<02:46,  2.55it/s]Loading weights:   4%|▎         | 15/427 [00:00<00:16, 24.46it/s]Loading weights:   7%|▋         | 29/427 [00:01<00:08, 46.53it/s]Loading weights:  11%|█         | 46/427 [00:01<00:05, 69.83it/s]Loading weights:  15%|█▌        | 65/427 [00:01<00:03, 97.13it/s]Loading weights:  19%|█▊        | 80/427 [00:01<00:03, 104.22it/s]Loading weights:  22%|██▏       | 95/427 [00:01<00:02, 112.30it/s]Loading weights:  26%|██▌       | 111/427 [00:01<00:02, 124.52it/s]Loading weights:  30%|███       | 129/427 [00:01<00:02, 138.21it/s]Loading weights:  34%|███▍      | 145/427 [00:01<00:02, 134.21it/s]Loading weights:  37%|███▋      | 160/427 [00:02<00:02, 109.59it/s]Loading weights:  41%|████      | 174/427 [00:02<00:02, 114.08it/s]Loading weights:  46%|████▌     | 196/427 [00:02<00:01, 138.82it/s]Loading weights:  50%|████▉     | 212/427 [00:02<00:01, 115.83it/s]Loading weights:  53%|█████▎    | 227/427 [00:02<00:01, 122.75it/s]Loading weights:  56%|█████▋    | 241/427 [00:02<00:01, 122.98it/s]Loading weights:  60%|█████▉    | 255/427 [00:02<00:01, 125.13it/s]Loading weights:  64%|██████▍   | 274/427 [00:02<00:01, 141.59it/s]Loading weights:  68%|██████▊   | 289/427 [00:02<00:01, 133.88it/s]Loading weights:  71%|███████   | 303/427 [00:03<00:00, 127.91it/s]Loading weights:  74%|███████▍  | 317/427 [00:03<00:01, 106.45it/s]Loading weights:  78%|███████▊  | 332/427 [00:03<00:00, 113.30it/s]Loading weights:  81%|████████▏ | 347/427 [00:03<00:00, 120.70it/s]Loading weights:  85%|████████▍ | 361/427 [00:03<00:00, 119.83it/s]Loading weights:  88%|████████▊ | 374/427 [00:03<00:00, 117.12it/s]Loading weights:  90%|█████████ | 386/427 [00:03<00:00, 112.64it/s]Loading weights:  94%|█████████▎| 400/427 [00:03<00:00, 114.36it/s]Loading weights:  97%|█████████▋| 414/427 [00:04<00:00, 115.40it/s]Loading weights: 100%|█████████▉| 426/427 [00:04<00:00, 112.91it/s]Loading weights: 100%|██████████| 427/427 [00:04<00:00, 101.52it/s]
+{"size": "9b", "method": "exact", "order": 101, "examples": 250, "total": 3080, "seconds": 79.35840696899686}
+{"size": "9b", "method": "exact", "order": 101, "examples": 500, "total": 3080, "seconds": 158.25047593098134}
+{"size": "9b", "method": "exact", "order": 101, "examples": 750, "total": 3080, "seconds": 237.40715258795535}
+{"size": "9b", "method": "exact", "order": 101, "examples": 1000, "total": 3080, "seconds": 316.55637309595477}
+{"size": "9b", "method": "exact", "order": 101, "examples": 1250, "total": 3080, "seconds": 395.69140608696034}
+{"size": "9b", "method": "exact", "order": 101, "examples": 1500, "total": 3080, "seconds": 474.81709554896224}
+{"size": "9b", "method": "exact", "order": 101, "examples": 1750, "total": 3080, "seconds": 554.1101300979499}
+{"size": "9b", "method": "exact", "order": 101, "examples": 2000, "total": 3080, "seconds": 633.5659811309888}
+{"size": "9b", "method": "exact", "order": 101, "examples": 2250, "total": 3080, "seconds": 712.8370500609744}
+{"size": "9b", "method": "exact", "order": 101, "examples": 2500, "total": 3080, "seconds": 791.8266259369557}
+{"size": "9b", "method": "exact", "order": 101, "examples": 2750, "total": 3080, "seconds": 870.9655340689933}
+{"size": "9b", "method": "exact", "order": 101, "examples": 3000, "total": 3080, "seconds": 949.9005574850016}
+{"completed": "results/review-order-v1/9b/exact/order-101-metrics.json", "accuracy": 0.8902597402597403, "brier": 0.0788023082006201}

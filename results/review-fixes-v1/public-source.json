@@ -1,0 +1,7 @@
+{
+  "public_source_revision": "ac51018d8e679f0cc444e559bb7a5c12709ae8c2",
+  "public_tests": 76,
+  "test_log_sha256": "5529e8dc236616b02780c42bae9e4cdd34aa032d2941ec5ae451aafce536c721",
+  "pythonpath": "/home/amit/myJEV/src",
+  "scope": "Tests executed against exported public source, using the installed locked dependencies; this is not another clean-environment installation."
+}

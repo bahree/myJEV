@@ -1,6 +1,8 @@
 """Render measured training/reliability evidence without loading a model."""
 import hashlib
 import json
+import subprocess
+import sys
 from pathlib import Path
 
 import matplotlib
@@ -58,6 +60,9 @@ def main():
         fig.supxlabel('3,080 official test examples; 15 equal-width bins; all fits use calibration only.\nConnecting occupied bins does not supply evidence about empty intervals. Seed 11 is the fixed release seed.',fontsize=9)
         fig.savefig(OUTPUT/'review-reliability.png',dpi=180)
         plt.close(fig)
+    telemetry=ROOT/'results/longer-v1/gpu-telemetry-20261004T224916Z/gpu.csv'
+    sources.append(telemetry)
+    subprocess.run([sys.executable,str(ROOT/'scripts/plot_gpu_telemetry.py'),'--input',str(telemetry),'--output',str(OUTPUT/'longer-gpu-activity.png')],check=True)
     (OUTPUT/'training-trace-excerpts.json').write_text(json.dumps(trace,indent=2)+'\n')
     (OUTPUT/'manifest.json').write_text(json.dumps({
         'generator':'scripts/plot_review_evidence.py',

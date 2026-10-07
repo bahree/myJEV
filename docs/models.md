@@ -2,7 +2,7 @@
 
 Six seed-11 adapter/head releases are public on Hugging Face. **Start with [myJEV-4B](https://huggingface.co/bahree/myJEV-4B)**, continued supervised training with temperature calibration. The `-RL` repositories retain the exact expected-reward comparison. None is a hosted inference endpoint.
 
-| Release | Training and confidence | Immutable revision |
+| Release | Training and confidence | Verified runtime revision |
 |---|---|---|
 | [bahree/myJEV-0.8B](https://huggingface.co/bahree/myJEV-0.8B) | Continued SFT; temperature calibration | [`1c956c89d21c0ab136e98ffe66a16752fa37d823`](https://huggingface.co/bahree/myJEV-0.8B/tree/1c956c89d21c0ab136e98ffe66a16752fa37d823) |
 | [bahree/myJEV-0.8B-RL](https://huggingface.co/bahree/myJEV-0.8B-RL) | Exact RL; expected confidence grid | [`44b2ab8e78cb176ed01a63c6fee2146b2d91cc95`](https://huggingface.co/bahree/myJEV-0.8B-RL/tree/44b2ab8e78cb176ed01a63c6fee2146b2d91cc95) |
@@ -26,7 +26,7 @@ model = DecisionModel.load(
 )
 ```
 
-See the [inference guide](inference.md) for complete requests, CLI, HTTP and Docker commands. All six immutable downloads were checked against the uploaded package hashes. [Upload receipts](../results/release-readiness-v1/hub/) distinguish publication evidence from the earlier local candidate checks. The tested GPU container is published on [Docker Hub](https://hub.docker.com/r/amitbahree/myjev); the [publication receipt](../results/container-registry-v1/publication.json) records its digest and GPU equality check. No paid managed endpoint is running. [Hosting](hosting.md) includes the unexecuted managed-endpoint recipe.
+See the [inference guide](inference.md) for complete requests, CLI, HTTP and Docker commands. All six immutable downloads were checked against the uploaded package hashes. [Upload receipts](../results/release-readiness-v1/hub/) distinguish publication evidence from the earlier local candidate checks. The tested GPU container is published on [Docker Hub](https://hub.docker.com/r/amitbahree/myjev); the [publication receipt](../results/container-registry-v2/publication.json) records its digest and GPU equality check. No paid managed endpoint is running. [Hosting](hosting.md) includes the unexecuted managed-endpoint recipe.
 
 ## Packaging provenance
 
@@ -49,8 +49,10 @@ HTTP figures use 100 warm three-candidate requests at concurrency one. Direct-pa
 
 ## Read and reproduce the release evidence
 
-The [reader model cards](../model_cards/README.md) explain each variant, installation and per-artifact versus three-seed results. The [card publication manifest](../results/model-card-refresh-v2/publication-manifest.json) records the revisions above; card improvements did not change runtime weights.
+The [reader model cards](../model_cards/README.md) explain each variant, installation and per-artifact versus three-seed results. The [latest card publication manifest](../results/model-card-refresh-v3/publication-manifest.json) records the reviewed explanations and new card commits. The runtime pins above remain valid with identical model files; card-only updates do not require changing a reproducible inference pin. All six updated cards explicitly identify these packages as adapters and link the matched calibration follow-up.
 
 This recommendation is limited to the published candidate-description interface. The separate [ModernBERT fixed-taxonomy control](../results/encoder-control-v1/report.md) reached 90.78% BANKING77 accuracy with a smaller encoder, but used one seed and 23,997 training examples versus Qwen's 8,000. It is a useful operational alternative when the 77 labels are fixed, not a matched architecture experiment. See [decision lessons](decision-lessons.md) before choosing a larger model.
 
 The rebuilt local image `myjev:0.1.1-hub` passed a pinned Hub load and exact host/container response comparison. Its [provenance](../results/release-container-v2/provenance.json) and [HTTP evidence](../results/release-container-v2/hub-http.json) document the source-only update over the clean-tested dependency image. This exact image is now published as `amitbahree/myjev:0.1.1`; see the [publication receipt](../results/container-registry-v1/publication.json) for its immutable reference and pull verification.
+
+The current container release is **0.1.2**, rebuilt using the public root Dockerfile. It adds the 256 KiB aggregate UTF-8 and 1 MiB HTTP body caps. An empty model-cache start, installed CLI, real HTTP limit checks, and anonymous digest pull passed. [Current receipt](../results/container-registry-v2/publication.json) and [first-use transcript](../results/review-container-v1/first-use.http.txt) disclose cache conditions and source revision. The 0.1.1 records above describe its earlier release and remain intact.

@@ -67,7 +67,7 @@ The reference environment is Linux, Python 3.12 and an NVIDIA GPU. The pinned re
 ```bash
 git clone https://github.com/bahree/myJEV.git
 cd myJEV
-git checkout c0147b69d57fbe541cdc2e1bc85c472938e4dda0
+git checkout ac51018d8e679f0cc444e559bb7a5c12709ae8c2
 python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.lock

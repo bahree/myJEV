@@ -1,0 +1,127 @@
+{
+  "scope": "Only eight disposable build-cache records created by this clean-build attempt. Existing images, unrelated caches, model weights and artifacts untouched.",
+  "records": [
+    {
+      "CreatedAt": "2026-10-07 19:39:20.907198922 +0000 UTC",
+      "Description": "local source for dockerfile",
+      "ID": "ez3umjaix9dv55t7dbobfirif",
+      "LastUsedAt": "31 seconds ago",
+      "Mutable": true,
+      "Parents": null,
+      "Reclaimable": true,
+      "Shared": false,
+      "Size": "8.192kB",
+      "Type": "source.local",
+      "UsageCount": 1
+    },
+    {
+      "CreatedAt": "2026-10-07 19:39:21.874083305 +0000 UTC",
+      "Description": "local source for context",
+      "ID": "qbdgjxaqzkqfz7l7760qci18k",
+      "LastUsedAt": "31 seconds ago",
+      "Mutable": true,
+      "Parents": null,
+      "Reclaimable": true,
+      "Shared": false,
+      "Size": "8.192kB",
+      "Type": "source.local",
+      "UsageCount": 1
+    },
+    {
+      "CreatedAt": "2026-10-07 19:39:22.107968452 +0000 UTC",
+      "Description": "[3/7] COPY requirements.lock pyproject.toml LICENSE ./",
+      "ID": "vqp5zx4fcy7x2k2a9pc0jsyfk",
+      "LastUsedAt": "31 seconds ago",
+      "Mutable": false,
+      "Parents": [
+        "e8347k34cux73o5ikuj6pyzl5"
+      ],
+      "Reclaimable": true,
+      "Shared": false,
+      "Size": "22.7kB",
+      "Type": "regular",
+      "UsageCount": 1
+    },
+    {
+      "CreatedAt": "2026-10-07 19:39:21.939076838 +0000 UTC",
+      "Description": "local source for context",
+      "ID": "pr106jxo13vtwyiw5wbtrh2s8",
+      "LastUsedAt": "31 seconds ago",
+      "Mutable": true,
+      "Parents": null,
+      "Reclaimable": true,
+      "Shared": false,
+      "Size": "274.4kB",
+      "Type": "source.local",
+      "UsageCount": 1
+    },
+    {
+      "CreatedAt": "2026-10-07 19:42:11.230134758 +0000 UTC",
+      "Description": "[6/7] COPY src ./src",
+      "ID": "siuihiofkwsrxbpfonbxw31x9",
+      "LastUsedAt": "31 seconds ago",
+      "Mutable": false,
+      "Parents": [
+        "zqku59isi55a2lq2jqvw7hnaa"
+      ],
+      "Reclaimable": true,
+      "Shared": false,
+      "Size": "331.1kB",
+      "Type": "regular",
+      "UsageCount": 1
+    },
+    {
+      "CreatedAt": "2026-10-07 19:42:16.193839311 +0000 UTC",
+      "Description": "mount / from exec /bin/sh -c pip install --no-deps .",
+      "ID": "2o3l0ugnwd5s815yyblk3aqml",
+      "LastUsedAt": "31 seconds ago",
+      "Mutable": false,
+      "Parents": [
+        "siuihiofkwsrxbpfonbxw31x9"
+      ],
+      "Reclaimable": true,
+      "Shared": false,
+      "Size": "1.052MB",
+      "Type": "regular",
+      "UsageCount": 1
+    },
+    {
+      "CreatedAt": "2026-10-07 19:42:11.174202526 +0000 UTC",
+      "Description": "mount / from exec /bin/sh -c apt-get update && apt-get install --no-install-recommends -y gcc libc6-dev && rm -rf /var/lib/apt/lists/*",
+      "ID": "zqku59isi55a2lq2jqvw7hnaa",
+      "LastUsedAt": "31 seconds ago",
+      "Mutable": false,
+      "Parents": [
+        "rc0agl5lvtjtokguu2xshrlq8"
+      ],
+      "Reclaimable": true,
+      "Shared": false,
+      "Size": "282.4MB",
+      "Type": "regular",
+      "UsageCount": 1
+    },
+    {
+      "CreatedAt": "2026-10-07 19:41:56.201915733 +0000 UTC",
+      "Description": "mount / from exec /bin/sh -c pip install --no-cache-dir -r requirements.lock",
+      "ID": "rc0agl5lvtjtokguu2xshrlq8",
+      "LastUsedAt": "31 seconds ago",
+      "Mutable": false,
+      "Parents": [
+        "vqp5zx4fcy7x2k2a9pc0jsyfk"
+      ],
+      "Reclaimable": true,
+      "Shared": false,
+      "Size": "10.03GB",
+      "Type": "regular",
+      "UsageCount": 1
+    }
+  ],
+  "command": [
+    "docker",
+    "buildx",
+    "prune",
+    "--force",
+    "--filter",
+    "id~=^(ez3umjaix9dv55t7dbobfirif|qbdgjxaqzkqfz7l7760qci18k|vqp5zx4fcy7x2k2a9pc0jsyfk|pr106jxo13vtwyiw5wbtrh2s8|siuihiofkwsrxbpfonbxw31x9|2o3l0ugnwd5s815yyblk3aqml|zqku59isi55a2lq2jqvw7hnaa|rc0agl5lvtjtokguu2xshrlq8)$"
+  ]
+}

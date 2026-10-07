@@ -45,4 +45,4 @@ Post-review punctuation-only overlap check and descriptive test-row exclusion. O
 
 The official score remains primary. Excluding four evaluated rows is a sensitivity check, not a correction to the trained weights or proof of a maximum causal contamination effect. Any retraining with different exclusions would be a new experiment.
 
-Reproduce after preparing the pinned data and retaining original study predictions: `python scripts/review_banking_overlap.py`.
+Reproduce after preparing the pinned data; uses original predictions when present, otherwise the exported text-free calibration inputs: `python scripts/review_banking_overlap.py`.

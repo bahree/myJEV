@@ -1,0 +1,45 @@
+GET /readyz
+200
+{"status":"ready"}
+
+POST /score
+{
+  "context": "I was charged twice.",
+  "instructions": "Select the appropriate support route.",
+  "candidates": [
+    {
+      "id": "billing",
+      "description": "Charges, invoices, and refunds"
+    },
+    {
+      "id": "technical",
+      "description": "Errors and configuration"
+    },
+    {
+      "id": "other",
+      "description": "Neither listed route applies"
+    }
+  ]
+}
+
+200
+{
+  "selected_id": "billing",
+  "selection_scores": {
+    "billing": 0.9834240078926086,
+    "technical": 0.005727097392082214,
+    "other": 0.01084891613572836
+  },
+  "confidence": 0.9834240078926086,
+  "confidence_mode": "selection",
+  "artifact_revision": "3a7979eeff5cfb0bd2cee2fe2ea559c314ad9f5eef2de4ef4cb44759dbd73f02",
+  "calibration_revision": "f0d2ddcaf6650e1f44415d49b1cf8b303d4d6fef5f73bb6198ee91600560e8d1"
+}
+
+Rejection status checks
+{
+  "body": 413,
+  "chunked_body": 413,
+  "aggregate": 422,
+  "duplicate_ids": 422
+}

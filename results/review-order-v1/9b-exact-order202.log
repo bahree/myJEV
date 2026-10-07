@@ -1,0 +1,17 @@
+Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 1/427 [00:00<01:38,  4.31it/s]Loading weights:   0%|          | 2/427 [00:00<01:39,  4.27it/s]Loading weights:   3%|▎         | 14/427 [00:00<00:12, 34.41it/s]Loading weights:  10%|▉         | 41/427 [00:00<00:04, 96.04it/s]Loading weights:  15%|█▍        | 63/427 [00:00<00:02, 129.79it/s]Loading weights:  19%|█▉        | 82/427 [00:00<00:02, 143.88it/s]Loading weights:  24%|██▎       | 101/427 [00:00<00:02, 155.79it/s]Loading weights:  31%|███       | 132/427 [00:01<00:01, 199.03it/s]Loading weights:  36%|███▌      | 154/427 [00:01<00:01, 183.75it/s]Loading weights:  44%|████▎     | 186/427 [00:01<00:01, 214.21it/s]Loading weights:  49%|████▉     | 209/427 [00:01<00:01, 202.05it/s]Loading weights:  56%|█████▌    | 239/427 [00:01<00:00, 220.52it/s]Loading weights:  61%|██████▏   | 262/427 [00:01<00:00, 208.22it/s]Loading weights:  68%|██████▊   | 292/427 [00:01<00:00, 225.86it/s]Loading weights:  74%|███████▍  | 316/427 [00:01<00:00, 211.31it/s]Loading weights:  81%|████████  | 345/427 [00:02<00:00, 226.31it/s]Loading weights:  86%|████████▋ | 369/427 [00:02<00:00, 212.99it/s]Loading weights:  93%|█████████▎| 398/427 [00:02<00:00, 227.18it/s]Loading weights:  99%|█████████▉| 422/427 [00:02<00:00, 212.80it/s]Loading weights: 100%|██████████| 427/427 [00:02<00:00, 174.05it/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+{"size": "9b", "method": "exact", "order": 202, "examples": 250, "total": 3080, "seconds": 80.30550682998728}
+{"size": "9b", "method": "exact", "order": 202, "examples": 500, "total": 3080, "seconds": 161.06815978500526}
+{"size": "9b", "method": "exact", "order": 202, "examples": 750, "total": 3080, "seconds": 242.15055456903065}
+{"size": "9b", "method": "exact", "order": 202, "examples": 1000, "total": 3080, "seconds": 323.33497997303493}
+{"size": "9b", "method": "exact", "order": 202, "examples": 1250, "total": 3080, "seconds": 404.34376773703843}
+{"size": "9b", "method": "exact", "order": 202, "examples": 1500, "total": 3080, "seconds": 485.4461440719897}
+{"size": "9b", "method": "exact", "order": 202, "examples": 1750, "total": 3080, "seconds": 566.7301662370446}
+{"size": "9b", "method": "exact", "order": 202, "examples": 2000, "total": 3080, "seconds": 648.1012992990436}
+{"size": "9b", "method": "exact", "order": 202, "examples": 2250, "total": 3080, "seconds": 729.3007568900357}
+{"size": "9b", "method": "exact", "order": 202, "examples": 2500, "total": 3080, "seconds": 810.2887248570332}
+{"size": "9b", "method": "exact", "order": 202, "examples": 2750, "total": 3080, "seconds": 891.5727781429887}
+{"size": "9b", "method": "exact", "order": 202, "examples": 3000, "total": 3080, "seconds": 972.6153159849928}
+{"completed": "results/review-order-v1/9b/exact/order-202-metrics.json", "accuracy": 0.8918831168831168, "brier": 0.08248243781695871}
+{"size": "9b", "state": "completed"}

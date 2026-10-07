@@ -1,0 +1,10 @@
+{
+  "root_image": "myjev:0.1.2-review",
+  "published_image": "amitbahree/myjev:0.1.2",
+  "image_digest": "sha256:3693ed39364bb3a96ee675da1a750d09cb2762a50211886eca8addd776d585cb",
+  "root_image_locally_verified": true,
+  "full_upload_completed_before_proposed_strategy_switch": true,
+  "no_upload_was_cancelled": true,
+  "no_alternate_image_was_built_or_published": true,
+  "note": "The upload finished between an initial not-found check and an attempted process lookup. No signal was sent. The initially prepared strategy note was corrected after reading the successful push log; the root-built image remains the release."
+}

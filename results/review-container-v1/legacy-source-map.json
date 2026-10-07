@@ -1,0 +1,29 @@
+{
+  "image_tag": "amitbahree/myjev:0.1.1",
+  "private_receipt_revision": "cea5df80f51524dc93f168d1ba4ff11c55969336",
+  "accessible_source_repository": "https://github.com/bahree/myJEV",
+  "public_commit": "a7d9b8bec8df0958b589688e0f1abcd15863e638",
+  "runtime_files_match": {
+    "src/myjev/__init__.py": true,
+    "src/myjev/artifacts.py": true,
+    "src/myjev/calibration.py": true,
+    "src/myjev/cli.py": true,
+    "src/myjev/data.py": true,
+    "src/myjev/evaluate.py": true,
+    "src/myjev/inference.py": true,
+    "src/myjev/judging.py": true,
+    "src/myjev/metrics.py": true,
+    "src/myjev/model.py": true,
+    "src/myjev/objectives.py": true,
+    "src/myjev/prompt.py": true,
+    "src/myjev/schema.py": true,
+    "src/myjev/scratch/__init__.py": true,
+    "src/myjev/scratch/data.py": true,
+    "src/myjev/scratch/model.py": true,
+    "src/myjev/server.py": true,
+    "src/myjev/tracking.py": true,
+    "src/myjev/train.py": true,
+    "src/myjev/validation.py": true
+  },
+  "reproduction_path": "Root Dockerfile at that public commit. The historical incremental recipe referenced an unpublished local base; no byte-identical rebuild claim is made."
+}

@@ -1,0 +1,11 @@
+
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]
+Fetching 10 files: 100%|██████████| 10/10 [00:00<00:00, 735.86it/s]
+
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]
+Loading weights:  75%|███████▌  | 321/426 [00:00<00:00, 3207.45it/s]
+Loading weights: 100%|██████████| 426/426 [00:00<00:00, 3293.01it/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+
+{"selected_id": "billing", "selection_scores": {"billing": 0.9834240078926086, "technical": 0.005727097392082214, "other": 0.01084891613572836}, "confidence": 0.9834240078926086, "confidence_mode": "selection", "artifact_revision": "3a7979eeff5cfb0bd2cee2fe2ea559c314ad9f5eef2de4ef4cb44759dbd73f02", "calibration_revision": "f0d2ddcaf6650e1f44415d49b1cf8b303d4d6fef5f73bb6198ee91600560e8d1"}

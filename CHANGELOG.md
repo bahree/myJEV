@@ -1,5 +1,14 @@
 # Milestone history
 
+## 2026-10-07: independent review follow-up
+
+- Added matched post-hoc controls for all 36 runs. Equal selection-temperature fitting changes the earlier broad calibration interpretation; all 144 metrics and 36 fits reproduce exactly from public inputs.
+- Exposed per-seed deltas beside conditional test intervals, corrected confidence-source descriptions and disclosed four punctuation-normalized BANKING overlaps.
+- Added real training traces, reliability figures, a scratch transcript and empty-model-cache serving evidence.
+- Published six revised model cards without changing weights or deployed calibration.
+- Published Docker 0.1.2 from the public root build, with aggregate/body limits, anonymous pull verification and exact GPU output equality. Retained the disk-full build failure and recovery log.
+
+
 ## 2026-10-07: Docker Hub release
 
 - Published `amitbahree/myjev:0.1.1`; recorded the immutable manifest digest and verified an anonymous pull followed by GPU response equivalence.

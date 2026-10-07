@@ -1,0 +1,60 @@
+The push refers to repository [docker.io/amitbahree/myjev]
+276709cbedc1: Waiting
+8e92746c211f: Waiting
+44136fa355b3: Waiting
+09f376ebb190: Waiting
+8e92746c211f: Waiting
+44136fa355b3: Waiting
+09f376ebb190: Waiting
+276709cbedc1: Waiting
+09f376ebb190: Waiting
+276709cbedc1: Waiting
+8e92746c211f: Waiting
+44136fa355b3: Waiting
+276709cbedc1: Waiting
+8e92746c211f: Waiting
+44136fa355b3: Waiting
+09f376ebb190: Waiting
+8e92746c211f: Waiting
+44136fa355b3: Waiting
+09f376ebb190: Waiting
+276709cbedc1: Waiting
+8e92746c211f: Waiting
+44136fa355b3: Waiting
+09f376ebb190: Waiting
+276709cbedc1: Waiting
+09f376ebb190: Layer already exists
+2e133733af76: Waiting
+ded8879d9a79: Waiting
+3cf9507408dc: Waiting
+276709cbedc1: Layer already exists
+8e92746c211f: Waiting
+44136fa355b3: Already exists
+2e133733af76: Layer already exists
+ded8879d9a79: Layer already exists
+3cf9507408dc: Layer already exists
+e4146ed55162: Waiting
+c1f28c1c9546: Layer already exists
+8e92746c211f: Waiting
+76f50cb5331f: Waiting
+a23c868d8612: Waiting
+e4146ed55162: Waiting
+76f50cb5331f: Waiting
+a23c868d8612: Waiting
+e4146ed55162: Waiting
+76f50cb5331f: Waiting
+a23c868d8612: Waiting
+e4146ed55162: Waiting
+04e4400ee602: Waiting
+8e92746c211f: Pushed
+a65f655bf582: Waiting
+a65f655bf582: Waiting
+04e4400ee602: Waiting
+76f50cb5331f: Pushed
+a65f655bf582: Waiting
+04e4400ee602: Waiting
+04e4400ee602: Pushed
+a65f655bf582: Pushed
+e4146ed55162: Pushed
+a23c868d8612: Pushed
+0.1.2: digest: sha256:3693ed39364bb3a96ee675da1a750d09cb2762a50211886eca8addd776d585cb size: 856
