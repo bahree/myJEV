@@ -1,32 +1,36 @@
 # Model and container releases
 
-**Release tracker: placeholders, not download links.** The six final candidate checkpoints exist on the training machine, but no trained myJEV artifact or container image is publicly released yet. You can train a local artifact with the [quick start](quickstart.md).
+Six seed-11 adapter/head releases are public on Hugging Face. **Start with [myJEV-4B](https://huggingface.co/bahree/myJEV-4B)**, continued supervised training with temperature calibration. The `-RL` repositories retain the exact expected-reward comparison. None is a hosted inference endpoint.
 
-| Planned artifact | Current state | Public model card / download |
+| Release | Training and confidence | Immutable revision |
 |---|---|---|
-| myJEV 0.8B | Final local candidate checks completed | Pending selection and release |
-| myJEV 4B | Final local candidate checks completed | Pending selection and release |
-| myJEV 9B | NF4 final local candidate checks completed | Pending selection and release |
-| Reference GPU container | Built and tested locally | Registry image and digest pending |
-| Default local starting artifact | 4B continued SFT, temperature confidence, seed 11 | Public upload pending |
+| [bahree/myJEV-0.8B](https://huggingface.co/bahree/myJEV-0.8B) | Continued SFT; temperature calibration | [`a56043bc190b4ab66a704dea771388b28edcb53d`](https://huggingface.co/bahree/myJEV-0.8B/tree/a56043bc190b4ab66a704dea771388b28edcb53d) |
+| [bahree/myJEV-0.8B-RL](https://huggingface.co/bahree/myJEV-0.8B-RL) | Exact RL; expected confidence grid | [`535d20d095dcc3577a9c155703bdf4d417134573`](https://huggingface.co/bahree/myJEV-0.8B-RL/tree/535d20d095dcc3577a9c155703bdf4d417134573) |
+| [bahree/myJEV-4B](https://huggingface.co/bahree/myJEV-4B) | Continued SFT; temperature calibration | [`ca23134ff8d223927d545a30c594e27d68db4400`](https://huggingface.co/bahree/myJEV-4B/tree/ca23134ff8d223927d545a30c594e27d68db4400) |
+| [bahree/myJEV-4B-RL](https://huggingface.co/bahree/myJEV-4B-RL) | Exact RL; expected confidence grid | [`40d140f2b29c15b8ba252551aba745e9d546f5dc`](https://huggingface.co/bahree/myJEV-4B-RL/tree/40d140f2b29c15b8ba252551aba745e9d546f5dc) |
+| [bahree/myJEV-9B](https://huggingface.co/bahree/myJEV-9B) | Continued SFT; temperature calibration | [`bd9e54ff1222732209963aeb003c92c54c4260cb`](https://huggingface.co/bahree/myJEV-9B/tree/bd9e54ff1222732209963aeb003c92c54c4260cb) |
+| [bahree/myJEV-9B-RL](https://huggingface.co/bahree/myJEV-9B-RL) | Exact RL; expected confidence grid | [`50cf88fc60d9cb755c1aa62530c6fde03cf47335`](https://huggingface.co/bahree/myJEV-9B-RL/tree/50cf88fc60d9cb755c1aa62530c6fde03cf47335) |
 
-## What a release will contain
+## What each release contains
 
-Each model release should include a pinned backbone/tokenizer revision, LoRA adapters, confidence-head weights, prompt and alias semantics, precision settings, calibration parameters, and a checksummed manifest. Its model card should state training exposure, data provenance, evaluation scope, tested input limits, limitations, and license requirements.
+These are **adapter/head packages**, not merged or self-contained backbone weights. They include LoRA adapters, custom confidence heads, calibration settings, prompt/token-alias semantics, precision settings, license notices and a checksummed manifest. The manifest pins the separately downloaded Qwen backbone and tokenizer. The 0.8B/4B releases use BF16 LoRA; 9B uses NF4 QLoRA.
 
-Weights alone do not reproduce this interface: the custom confidence logic requires the shared myJEV loader. Merged weights will only be offered after save/reload and output-equivalence checks. Quantization or backend changes require fresh calibration evaluation.
+Use the shared **myJEV custom loader**. Ordinary text generation, a generic model widget or loading only the LoRA adapter does not reproduce the selection/confidence interface. Merged weights are not offered. Backend or quantization changes need new equivalence and calibration checks. Original adapter/head contributions carry MIT terms; the Qwen backbone's Apache-2.0 terms remain separate.
 
-## When this page changes
+```python
+from myjev import DecisionModel
 
-A release entry becomes usable only when its immutable revision, load command, and evaluation evidence are populated. Until then, there is no hosted demo, no published Hub identifier to copy, and no production recommendation. The 9B model is not automatically the default.
+model = DecisionModel.load(
+    "bahree/myJEV-4B",
+    revision="ca23134ff8d223927d545a30c594e27d68db4400",
+)
+```
 
-The [hosting guide](hosting.md) already describes local execution and the unexecuted managed-endpoint recipe. Publishing a model on the Hub will not itself create a running endpoint.
+See the [inference guide](inference.md) for complete requests, CLI, HTTP and Docker commands. All six immutable downloads were checked against the uploaded package hashes. [Upload receipts](../results/release-readiness-v1/hub/) distinguish publication evidence from the earlier local candidate checks. The tested GPU container is built locally; no public registry image or paid managed endpoint is claimed. [Hosting](hosting.md) includes the unexecuted managed-endpoint recipe.
 
-## Local candidate packaging checkpoint
+## Packaging provenance
 
-Six seed-11 candidates are now packaged locally: continued supervision with calibration-only temperature scaling, and exact RL, at 0.8B, 4B and 9B. Seed 11 is a fixed packaging convention, not the best test seed. Each directory contains copied, checksummed adapters/heads/manifest plus a draft model card; no backbone, training text or optimizer state is included. The local starting recommendation is the 4B calibrated supervised candidate; nothing has been uploaded.
-
-The [inventory](../results/release-candidates-v1/inventory.json) records source artifacts, evaluation hashes and file checksums. `scripts/prepare_release_candidates.py` reproduces this packaging from completed local runs. Final representative benchmark/equivalence checks passed for all six candidates. Namespace/visibility can be supplied when uploading is ready; it does not block these local checks.
+Seed 11 is the fixed packaging convention, not the best test seed. The releases contain no training text, optimizer state or backbone weights. The earlier [candidate inventory](../results/release-candidates-v1/inventory.json) preserves the frozen experiment artifacts. The final publication package separately adds license and provenance files. Six local candidates passed representative benchmark and output-equivalence checks before upload.
 
 ## Why this local default
 

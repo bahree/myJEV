@@ -1,6 +1,6 @@
 # Run inference locally and in Docker
 
-Six trained seed-11 candidates have passed Python, CLI, HTTP and GPU-container equivalence at 0.8B, 4B and 9B. The local default is 4B continued supervised training with temperature calibration. Hub artifacts and a registry image are still pending. There are no downloadable myJEV weights yet: train a pilot using [the quick start](quickstart.md), then substitute your artifact path below.
+Six trained seed-11 candidates have passed Python, CLI, HTTP and GPU-container equivalence at 0.8B, 4B and 9B. The local default is 4B continued supervised training with temperature calibration. Public adapter/head releases are available, starting with [myJEV-4B](https://huggingface.co/bahree/myJEV-4B); a registry image remains separate release work. Use the pinned Hub example below or train a local pilot using [the quick start](quickstart.md).
 
 ## What the adapter saves and what inference still costs
 
@@ -25,12 +25,24 @@ import json
 from pathlib import Path
 from myjev import DecisionModel
 
-model = DecisionModel.load("artifacts/pilot-0.8b/artifact")
+model = DecisionModel.load("bahree/myJEV-4B",
+                           revision="ca23134ff8d223927d545a30c594e27d68db4400")
 request = json.loads(Path("examples/request.json").read_text())
 print(model.score(request))
 ```
 
-CLI, for one request or a JSONL batch:
+The first load downloads the release files and the separately pinned backbone/tokenizer. These repositories are not self-contained merged models and require the custom loader. Local artifact directories remain supported.
+
+CLI with the same public release:
+
+```bash
+.venv/bin/myjev score --artifact bahree/myJEV-4B \
+  --revision ca23134ff8d223927d545a30c594e27d68db4400 --input examples/request.json
+.venv/bin/myjev serve --artifact bahree/myJEV-4B \
+  --revision ca23134ff8d223927d545a30c594e27d68db4400
+```
+
+CLI, for a locally trained artifact, one request or a JSONL batch:
 
 ```bash
 .venv/bin/myjev score --artifact artifacts/pilot-0.8b/artifact --input examples/request.json

@@ -1,0 +1,59 @@
+{
+  "calibration/format": {
+    "requested": 16,
+    "retained": 16
+  },
+  "calibration/instructional_completeness": {
+    "requested": 16,
+    "retained": 15,
+    "uncertain": 1
+  },
+  "calibration/claim_support": {
+    "requested": 16,
+    "not_applicable": 3,
+    "retained": 13
+  },
+  "test/format": {
+    "requested": 32,
+    "retained": 32
+  },
+  "test/instructional_completeness": {
+    "requested": 32,
+    "retained": 31,
+    "uncertain": 1
+  },
+  "test/claim_support": {
+    "requested": 32,
+    "retained": 27,
+    "not_applicable": 5
+  },
+  "train/format": {
+    "requested": 96,
+    "retained": 96
+  },
+  "train/instructional_completeness": {
+    "requested": 96,
+    "retained": 92,
+    "uncertain": 3,
+    "invalid": 1
+  },
+  "train/claim_support": {
+    "requested": 96,
+    "retained": 83,
+    "not_applicable": 8,
+    "invalid": 5
+  },
+  "validation/format": {
+    "requested": 16,
+    "retained": 16
+  },
+  "validation/instructional_completeness": {
+    "requested": 16,
+    "retained": 16
+  },
+  "validation/claim_support": {
+    "requested": 16,
+    "retained": 14,
+    "not_applicable": 2
+  }
+}

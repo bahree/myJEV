@@ -6,7 +6,7 @@ myJEV explores a compact interface for language models: give the model some cont
 
 This is a research and learning project by [Amit Bahree](https://blog.desigeek.com). The repository will grow through reviewable milestone commits. The recorded milestones cover a scratch implementation, matched Qwen training, transfer tests, calibration controls, and local serving measurements.
 
-> **Current milestone: training and local evaluation complete.** All 60 Qwen runs (168,000 updates), 36 main evaluations, 36 transfer/robustness jobs, the three-seed precision control and six local serving candidates are complete. The scratch model is built; its natural-language diagnostic failed. Read [the findings](docs/qwen-findings.md), [scratch lessons](docs/scratch.md) and [remaining work](docs/roadmap.md). Archive annotation/adaptation remains separate work in progress. Downloadable trained adapters and a hosted demo are **not released yet**.
+> **Current milestone: training and local evaluation complete.** All 60 Qwen runs (168,000 updates), 36 main evaluations, 36 transfer/robustness jobs, the three-seed precision control and six local serving candidates are complete. The scratch model is built; its natural-language diagnostic failed. Read [the findings](docs/qwen-findings.md), [scratch lessons](docs/scratch.md) and [remaining work](docs/roadmap.md). Archive annotation/adaptation remains separate work in progress. Public adapter/head releases are available on Hugging Face, starting with [myJEV-4B](https://huggingface.co/bahree/myJEV-4B); no hosted demo is running.
 
 The second track now [builds a small decision model from scratch](docs/scratch.md), with recorded learning failures, a completed synthetic study and local serving checks. Its weak natural-language results remain separate from Qwen.
 
@@ -70,7 +70,7 @@ See [architecture and objectives](docs/architecture.md) for the confidence head 
 | Train a first decision model | [Train the 0.8B pilot](docs/quickstart.md#train-the-08b-pilot) | Compatible NVIDIA GPU and backbone download |
 | Score or serve your trained artifact | [Python, CLI, and HTTP](docs/quickstart.md#score-and-serve) | A local artifact from training |
 | Run a GPU container | [Docker quick start](docs/quickstart.md#docker) | Docker with NVIDIA GPU access |
-| Download a trained release | [Model release tracker](docs/models.md) | Planned; no download available yet |
+| Download a trained release | [Model release tracker](docs/models.md) | Public adapters/heads; custom loader and separate backbone |
 
 The longer study uses one optimizer, AdamW, across several training approaches. Its completed 168,000 training steps were spread over 60 runs. See [the training-budget breakdown](docs/training.md#why-168000-training-steps) for the controls, costs, and progress definitions.
 
@@ -114,6 +114,16 @@ python3 -m venv .venv
 .venv/bin/pip install --no-deps -e .
 .venv/bin/python -m pytest -q
 ```
+
+To score with the public default, without retraining:
+
+```bash
+.venv/bin/myjev score --artifact bahree/myJEV-4B \
+  --revision ca23134ff8d223927d545a30c594e27d68db4400 \
+  --input examples/request.json
+```
+
+The default [myJEV-4B](https://huggingface.co/bahree/myJEV-4B) is available on Hugging Face. These releases contain adapters, custom heads, calibration and manifests, not merged backbones. Use the myJEV loader, which separately loads the manifest-pinned Qwen backbone and tokenizer. Publishing these files does not create a hosted endpoint.
 
 For a local model, follow the [data preparation and training commands](docs/quickstart.md). Once training creates `artifacts/pilot-0.8b/artifact`:
 
@@ -186,7 +196,7 @@ myJEV/
 └── CHANGELOG.md     Reader-facing milestone history
 ```
 
-Training creates local `data/`, `artifacts/`, and `.cache/` directories, which are excluded from Git. Large weights are intended for a separately versioned model release.
+Training creates local `data/`, `artifacts/`, and `.cache/` directories, which are excluded from Git. Adapters and heads are separately versioned on Hugging Face; their manifest-pinned backbone weights are downloaded separately.
 
 ## Blog series and upcoming releases
 
@@ -199,7 +209,7 @@ The articles will be published on [Desi Geek](https://blog.desigeek.com), with l
 | Building myJEV (Part 3): Evaluation, Confidence, and Transfer | Draft; publication link to follow |
 | Building myJEV (Part 4): Inference, Docker, and Hosting | Draft; publication link to follow |
 
-The [roadmap](docs/roadmap.md) separates completed engineering checks from upcoming experiments. The [model tracker](docs/models.md) reserves a place for adapters, model cards, image digests, and reproducible load commands as releases become available. There is no paid managed endpoint running.
+The [roadmap](docs/roadmap.md) separates completed engineering checks from upcoming experiments. The [model tracker](docs/models.md) links public adapter/head releases, immutable revisions, and reproducible load commands. A public container registry image remains separate work. There is no paid managed endpoint running.
 
 ## Attribution and licensing
 

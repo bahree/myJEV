@@ -1,0 +1,25 @@
+{
+  "original_and_packaged_cpu_response_equal": true,
+  "source_manifest_and_weights_byte_identical": true,
+  "parameters": 201175,
+  "response": {
+    "selected_id": "red",
+    "selection_scores": {
+      "red": 0.9934955835342407,
+      "blue": 1.3589195077656768e-05,
+      "green": 0.0002976343675982207,
+      "other": 0.006193189881742001
+    },
+    "confidence": 0.9899999499320984,
+    "confidence_mode": "scalar",
+    "artifact_revision": "3bc6e8b6b8f654752af80b5679de080fca38264e30cabb1e4aaa6384f31f5a12",
+    "calibration_revision": "none"
+  },
+  "boundary_checks": {
+    "context_bytes": 256,
+    "candidate_description_bytes": 64,
+    "candidates": 32,
+    "each_bound_plus_one_rejected": true
+  },
+  "scope": "CPU reload and shape-boundary checks. Existing four-candidate quality/serving evidence is separate."
+}

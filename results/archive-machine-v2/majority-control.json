@@ -1,0 +1,76 @@
+{
+  "scope": "Post-hoc exploratory control, not preregistered. Select each rubric majority using training labels only; lexical label-ID order resolves training ties. Confidence is selected-class correctness frequency on calibration labels only. Test labels are used only for the final metrics, not selection, confidence or thresholds. Agreement is against unreviewed machine annotations, not human ground truth. Multiple rubric decisions from one post are correlated; no IID or population intervals are claimed. This control tests whether label imbalance is a plausible explanation of adaptation performance, not a causal decomposition of any gain.",
+  "human_reviewed": false,
+  "created_utc": "2026-10-06T23:50:04.505173+00:00",
+  "source_sha256": {
+    "data/archive-machine-v2/train.jsonl": "874b9ca7656c07ff434907d8ab66d627fcc4cb025d76b746796de08d44a23e44",
+    "data/archive-machine-v2/calibration.jsonl": "32085ea6780c055bf6425f60f31e76f0251dfde6e67d0dce40c724faceeddb1e",
+    "data/archive-machine-v2/test.jsonl": "70731dee57f9405a41a04082caeb31ab8bbe7e8ee8c34d6e7857305264ae115a"
+  },
+  "script_sha256": "0e1a25afc01543e2c0ec856de0cdb775f4b244ed4092a026ca8193c072fa231d",
+  "controls": {
+    "claim_support": {
+      "selected_label": "0",
+      "confidence": 0.38461538461538464,
+      "training_n": 83,
+      "training_label_counts": {
+        "0": 36,
+        "1": 28,
+        "2": 2,
+        "3": 17
+      },
+      "calibration_n": 13,
+      "calibration_selected_correct": 5
+    },
+    "format": {
+      "selected_label": "0",
+      "confidence": 0.1875,
+      "training_n": 96,
+      "training_label_counts": {
+        "0": 27,
+        "1": 6,
+        "2": 21,
+        "3": 14,
+        "4": 22,
+        "5": 6
+      },
+      "calibration_n": 16,
+      "calibration_selected_correct": 3
+    },
+    "instructional_completeness": {
+      "selected_label": "0",
+      "confidence": 0.4666666666666667,
+      "training_n": 92,
+      "training_label_counts": {
+        "0": 55,
+        "1": 7,
+        "2": 18,
+        "3": 12
+      },
+      "calibration_n": 15,
+      "calibration_selected_correct": 7
+    }
+  },
+  "overall": {
+    "n": 90,
+    "reference_agreement": 0.32222222222222224,
+    "correctness_brier": 0.21211896413178463
+  },
+  "per_rubric": {
+    "claim_support": {
+      "n": 27,
+      "reference_agreement": 0.18518518518518517,
+      "correctness_brier": 0.19066403681788296
+    },
+    "format": {
+      "n": 32,
+      "reference_agreement": 0.25,
+      "correctness_brier": 0.19140625
+    },
+    "instructional_completeness": {
+      "n": 31,
+      "reference_agreement": 0.5161290322580645,
+      "correctness_brier": 0.2521863799283154
+    }
+  }
+}

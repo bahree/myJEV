@@ -1,0 +1,10 @@
+{
+  "candidate": "myjev-9b-exact-seed11",
+  "repo_id": "bahree/myJEV-9B-RL",
+  "visibility": "public",
+  "files": 9,
+  "uploaded": true,
+  "revision": "50cf88fc60d9cb755c1aa62530c6fde03cf47335",
+  "pinned_download_hashes_equal": true,
+  "next_check": "Load this pinned Hub revision and compare outputs with the local package."
+}

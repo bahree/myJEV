@@ -12,6 +12,39 @@ from .prompt import PROMPT_VERSION, encode
 from .schema import ScoreRequest
 
 
+def _artifact_file(directory, filename, *, hub_revision=None):
+    """Resolve a manifest member without allowing traversal or arbitrary links.
+
+    Only SDK-downloaded, pinned Hub snapshots may link to their repository's
+    sibling blobs directory or the SDK's shared sharded blob store. Local
+    artifacts retain the within-directory rule.
+    """
+    if (not isinstance(filename, str) or not filename or "\\" in filename
+            or ":" in filename or any(part in ("", ".", "..") for part in filename.split("/"))):
+        raise ValueError(f"unsafe artifact path: {filename}")
+    root = directory.resolve()
+    target = (root / filename).resolve()
+    if target.is_relative_to(root):
+        return target
+    if hub_revision and root.name == hub_revision and root.parent.name == "snapshots":
+        # Do not resolve this allowed directory: a redirected blobs directory
+        # must not grant access outside the SDK repository cache.
+        blobs = root.parent.parent / "blobs"
+        if target.parent == blobs:
+            return target
+        # Newer Hub SDKs deduplicate large files in cache/blobs/aa/<64hex>.
+        # These are storage object addresses, not necessarily file SHA-256s;
+        # the artifact manifest still verifies the actual file content below.
+        shared_blobs = root.parent.parent.parent / "blobs"
+        if target.is_relative_to(shared_blobs):
+            relative = target.relative_to(shared_blobs)
+            if (len(relative.parts) == 2
+                    and re.fullmatch(r"[0-9a-f]{64}", relative.name)
+                    and relative.parts[0] == relative.name[:2]):
+                return target
+    raise ValueError(f"unsafe artifact path: {filename}")
+
+
 class DecisionModel:
     def __init__(self, network, tokenizer, manifest):
         self.network = network.eval()
@@ -21,11 +54,13 @@ class DecisionModel:
     @classmethod
     def load(cls, artifact, revision=None, device="cuda:0", adapter_trainable=False):
         path = Path(artifact)
+        hub_revision = None
         if not path.is_dir():
             if not revision or not re.fullmatch(r"[0-9a-f]{40}", revision):
                 raise ValueError("Hub artifacts require an immutable 40-character commit revision")
             path = Path(snapshot_download(artifact, revision=revision))
-        m = json.loads((path / "manifest.json").read_text())
+            hub_revision = revision
+        m = json.loads(_artifact_file(path, "manifest.json", hub_revision=hub_revision).read_text())
         if m.get("format") == "myjev-scratch-v1":
             if adapter_trainable:
                 raise ValueError("scratch artifacts do not contain LoRA adapters")
@@ -36,8 +71,8 @@ class DecisionModel:
         if not re.fullmatch(r"[0-9a-f]{40}", m["backbone_revision"]):
             raise ValueError("backbone revision must be pinned")
         for filename, digest in m["checksums"].items():
-            p = (path / filename).resolve()
-            if not p.is_relative_to(path.resolve()) or hashlib.sha256(p.read_bytes()).hexdigest() != digest:
+            p = _artifact_file(path, filename, hub_revision=hub_revision)
+            if hashlib.sha256(p.read_bytes()).hexdigest() != digest:
                 raise ValueError(f"artifact checksum mismatch: {filename}")
         tokenizer = AutoTokenizer.from_pretrained(m["backbone"], revision=m["tokenizer_revision"])
         if len(set(m["alias_ids"])) != len(m["aliases"]):

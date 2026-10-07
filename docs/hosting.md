@@ -1,6 +1,6 @@
 # Local and managed hosting
 
-The same `DecisionModel.score()` implementation is used by evaluation, Python, CLI, HTTP and Docker. It loads immutable backbone/tokenizer revisions, an adapter, custom heads and checked artifact files. For a Hub release, call `DecisionModel.load("namespace/repository", revision="<40-character commit>")`; an unpinned Hub branch is rejected. There is no published myJEV Hub release yet.
+The same `DecisionModel.score()` implementation is used by evaluation, Python, CLI, HTTP and Docker. It loads immutable backbone/tokenizer revisions, an adapter, custom heads and checked artifact files. For a Hub release, call `DecisionModel.load("namespace/repository", revision="<40-character commit>")`; an unpinned Hub branch is rejected. The public default is [myJEV-4B](https://huggingface.co/bahree/myJEV-4B), pinned at `ca23134ff8d223927d545a30c594e27d68db4400`; see the [release list](https://github.com/bahree/myJEV/blob/main/docs/models.md).
 
 ## Local installation
 
@@ -53,7 +53,7 @@ Related work: Avi Chawla, [Build your own Jev (100% local)](https://blog.dailydo
 
 **Recipe only; no paid endpoint was created.** [Official custom-container documentation](https://huggingface.co/docs/inference-endpoints/en/engines/custom_container) permits custom inference logic and mounts the selected model repository at `/repository`. [Configuration guidance](https://huggingface.co/docs/inference-endpoints/guides/configuration) describes the container port and health-route settings. Hosting adapter weights on the Hub is not an active endpoint.
 
-1. Prepare an artifact-only Hub repository with adapter files, `heads.safetensors`, `manifest.json`, model card and provenance. Upload only after deciding the repository name and visibility. Pin the resulting commit. Verify a clean download produces identical outputs. No optimizer state or training text belongs in this release.
+1. Prepare an artifact-only Hub repository with adapter files, `heads.safetensors`, `manifest.json`, model card and provenance. The six public `bahree/myJEV-*` releases provide this layout. Pin the selected commit. Verify a clean download produces identical outputs. No optimizer state or training text belongs in this release.
 2. Push the tested Docker image to a registry the endpoint can access; record its immutable digest. Configure a custom container with that image, port 8000, health route `/readyz`, and environment `MYJEV_ARTIFACT=/repository`, `MYJEV_DEVICE=cuda:0`, `MYJEV_QUEUE_SIZE=8`, `MYJEV_TIMEOUT=30`. POST to `/score`; `/generate` supports platforms expecting that route.
 3. The manifest currently refers to the separately pinned backbone on the Hub. The container must be allowed to download that backbone into its cache during cold start, with access credentials if the backbone requires them. An adapter-only repository is not fully self-contained. For offline deployment, prewarm the same revision in the image/cache and test with `HF_HUB_OFFLINE=1`; do not assume the endpoint automatically bundles referenced backbones.
 4. Choose GPU RAM from **measured serving peaks** plus headroom at the tested maximum prompt length. Training peaks are not an endpoint sizing benchmark. Test QLoRA/NF4 compatibility on the endpoint GPU family. Do not infer 9B requirements from 0.8B. Start with one replica, one worker and authenticated access; avoid autoscaling until cold-start, timeout and concurrency behavior is measured.
@@ -104,9 +104,9 @@ Regenerate the compact machine-readable summary with `python scripts/summarize_r
 
 ## Publish the prepared packages
 
-The adapter-only `artifacts/hub-ready-v3/` snapshot adds MIT terms for the original adapter/head contributions, the pinned Qwen Apache-2.0 license and attribution, and BANKING77 provenance. Frozen study candidates are preserved separately. `results/release-readiness-v1/publication-manifest-v3.json` records every upload file's checksum. No Hub namespace, visibility or image registry is assumed.
+The adapter-only `artifacts/hub-ready-v3/` snapshot adds MIT terms for the original adapter/head contributions, the pinned Qwen Apache-2.0 license and attribution, and BANKING77 provenance. Frozen study candidates are preserved separately. `results/release-readiness-v1/publication-manifest-v3.json` records every upload file's checksum. The six Qwen adapter/head releases use public repositories under `bahree`; an image registry is a separate decision.
 
-After selecting a destination, review one package locally:
+For a new release to your own empty repository, review a package locally (the published `bahree` repositories are already populated):
 
 ```bash
 .venv/bin/python scripts/publish_hub_artifact.py \
@@ -116,7 +116,7 @@ After selecting a destination, review one package locally:
   --visibility private
 ```
 
-This command checks local files only. Add `--apply` to create/upload the selected repository using your configured Hugging Face credentials. The helper refuses altered packages, symlinks, nonempty destinations and visibility mismatches. It downloads the immutable uploaded commit and checks every file hash. Then load that pinned commit using `DecisionModel.load("YOUR_NAMESPACE/myjev-4b", revision="COMMIT")` and compare with the local response. Hub publication is still pending; the dry-run report is not an upload record.
+This command checks local files only. Add `--apply` to create/upload the selected repository using your configured Hugging Face credentials. The helper refuses altered packages, symlinks, nonempty destinations and visibility mismatches. It downloads the immutable uploaded commit and checks every file hash. Then load that pinned commit using `DecisionModel.load("YOUR_NAMESPACE/myjev-4b", revision="COMMIT")` and compare with the local response. The six `bahree` releases have separate upload receipts; a dry-run report alone is not an upload record.
 
 The local image tag is `myjev:0.1.0-release-candidate`. A registry destination is a separate owner choice:
 

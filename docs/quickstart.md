@@ -1,6 +1,6 @@
 # Quick start
 
-The current milestone provides code and recorded evidence. Trained adapters are not yet downloadable; train a local pilot before using inference. Linux with Python 3.12 is the tested setup. GPU commands require compatible CUDA hardware; 9B also requires the locked quantization dependencies.
+The current milestone provides code and recorded evidence. The public [myJEV-4B](https://huggingface.co/bahree/myJEV-4B) adapter/head release is the default starting point; training a local pilot is optional. Linux with Python 3.12 is the tested setup. GPU commands require compatible CUDA hardware; 9B also requires the locked quantization dependencies.
 
 ## Install and test
 
@@ -15,6 +15,16 @@ export HF_HOME="$PWD/.cache/huggingface"
 ```
 
 The tests do not download a backbone. The dependency lock includes a large CUDA-enabled PyTorch installation. For reading results only, browse [the experiment guide](experiments.md) without installing anything.
+
+## Download and score the default
+
+```bash
+.venv/bin/myjev score --artifact bahree/myJEV-4B \
+  --revision ca23134ff8d223927d545a30c594e27d68db4400 \
+  --input examples/request.json
+```
+
+The default [myJEV-4B](https://huggingface.co/bahree/myJEV-4B) is available on Hugging Face. These releases contain adapters, custom heads, calibration and manifests, not merged backbones. Use the myJEV loader, which separately loads the manifest-pinned Qwen backbone and tokenizer. Publishing these files does not create a hosted endpoint. See [all six model releases](models.md).
 
 ## Train the 0.8B pilot
 

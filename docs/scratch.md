@@ -125,3 +125,9 @@ The [raw deployment evidence](../results/scratch-deployment/equivalence-and-mode
 ## What remains separate
 
 Controlled synthetic behavior does not establish useful BANKING77 quality, unfamiliar natural-language competence or Jev-equivalent speed. The [implementation plan](scratch-plan.md) retains the natural-language diagnostic, additional candidate-count/length benchmarks and release gates. Compare complete scratch weights with the entire Qwen deployment, including its backbone, and keep synthetic results outside the BANKING77 accuracy table.
+
+## Packaged teaching checkpoint
+
+The separate local `artifacts/scratch-teaching-release-v1/` package contains the seed-11 initial supervised network's full weights, manifest, MIT license, dataset provenance and [model card](../results/scratch-teaching-release-v1/model-card.md). Seed 11 follows the packaging convention; its relatively strong individual synthetic score does not replace the unstable three-seed results above. This is not the failed BANKING77 diagnostic checkpoint and is not included in the six Qwen adapter releases.
+
+The [release manifest](../results/scratch-teaching-release-v1/manifest.json) records every package-file checksum. [CPU verification](../results/scratch-teaching-release-v1/verification.json) confirms byte-identical weights/manifest, exact reload response equality with the original artifact, acceptance at 256 context bytes / 64 description bytes / 32 candidates, and rejection of each limit plus one. Those shape checks do not establish accuracy at the bounds. The package remains local; no downloadable scratch model is claimed.

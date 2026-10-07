@@ -33,6 +33,20 @@ def snapshot():
     release=read(ROOT/'results/release-validation-v1/status.json',{'state':'not-started'})
     archive=read(ROOT/'results/archive-machine-v1/status.json',{'state':'not-started'})
     judge=read(ROOT/'annotation/local-judge-v1/progress.json',{})
+    if (ROOT/'results/archive-machine-v2/status.json').exists():
+        archive=read(ROOT/'results/archive-machine-v2/status.json',{'state':'not-started'})
+        main=ROOT/'annotation/local-judge-v2-expanded'
+        judge=read(main/'progress.json',{})
+        execution=read(main/'parallel/execution-plan.json',{})
+        if execution and not (main/'complete.json').exists():
+            complete=execution.get('initial_records',0)
+            for gpu in execution.get('gpus',[]):
+                complete+=read(main/f'parallel/worker-{gpu}-progress.json',{}).get('records',0)
+            judge={**judge,'records':complete,'total':480,'phase':'parallel main annotation'}
+        judge={**judge,'records':120+judge.get('records',0),'total':600,'includes_development':True}
+        followup=read(ROOT/'results/archive-machine-v2/followup-status.json',{})
+        if archive.get('state')=='completed' and followup.get('state')!='completed':
+            archive={**archive,'state':followup.get('state','waiting'),'current':'CLINC forgetting follow-up'}
     return {'archive':archive,'judge':judge,'utc_seconds':time.time(),'generalization':jobs,'precision':precision,'precision_updates':updates,'precision_updates_total':12100,'release':release}
 
 
@@ -46,11 +60,11 @@ def message(s):
         elif eta<3600:estimate=f"estimated {max(1,eta*.8/60):.0f}-{max(1,eta*1.5/60):.0f} minutes remaining"
         else:estimate=f"estimated {eta*.8/3600:.1f}-{eta*1.5/3600:.1f} hours remaining"
         lines.append(f"  {j['size']}: {j['state']}, {j['complete']}/12; {j['current']}; {estimate}.")
-    lines += [f"Precision control: {s['precision']['state']}; {s['precision_updates']:,}/12,100 new training updates. It also needs full-test evaluation and calibration controls.",
-              f"Release verification: {s['release']['state']}; {len(s['release'].get('completed',[]))}/6 candidates verified and benchmarked. It waits for all other GPU jobs to finish.",
+    lines += [f"Precision control: {s['precision']['state']}; {s['precision_updates']:,}/12,100 new training updates. Full-test evaluation and calibration controls are complete when this stage is marked completed.",
+              f"Release verification: {s['release']['state']}; {len(s['release'].get('completed',[]))}/6 candidates verified and benchmarked. These checks completed before the new archive retry.",
               f"Archive machine-label study: {s['archive']['state']}; {s['judge'].get('records',0)}/600 judge records, then bounded adaptation and forgetting. Human review remains separate.", '', 'Already done: Qwen main training and paired findings; scratch teaching study; four draft blog bundles; operational uncertainty report; local candidate packaging.',
-              'Still left after these jobs: interpret and write new findings, human archive audit and interpretation of the machine-label adaptation study, final release choice/weight-license review/uploads, clean-release environment and Hugo-theme checks.',
-              'No whole-project percentage or total finish time is claimed. Queued stages have not yet supplied their own throughput measurements.']
+              'Completed locally: default model selection, paired extension analysis, policy-edit diagnostic, six licensed artifact packages, clean host/Docker verification and four-draft actual-theme rendering. Still left: archive results integration, independent human archive audit, owner-selected Hub/registry publication and owner blog publication.',
+              'Counts describe each experimental batch, not a whole-project percentage. Human review and publication inputs have no reliable automatic finish-time estimate.']
     return '\n'.join(lines)
 
 if __name__=='__main__':print(message(snapshot()))

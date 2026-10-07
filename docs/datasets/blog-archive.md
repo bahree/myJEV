@@ -21,27 +21,41 @@ The owner supplied the [RSS feed](https://blog.desigeek.com/index.xml). The Octo
 | Partition | Posts | Status |
 |---|---:|---|
 | Rubric development | 40 | First machine-annotation pilot complete; human review pending |
-| Training | 96 | Provisional, unused for adaptation |
+| Training | 96 | Frozen provisional groups; adaptation completed |
 | Validation | 16 | Provisional |
 | Calibration | 16 | Provisional |
-| Test | 32 | Provisional; evaluation not run |
+| Test | 32 | Frozen provisional groups; 90 usable rubric decisions evaluated |
 
-Preparation extracted model-visible text. Six posts use explicitly materialized 2,048-token prefix excerpts; the others use the extracted full text. Labels refer to that supplied text, not unseen images, linked pages or omitted content. Related posts, excerpts and variants must remain grouped; the grouping and rubric need review before final evaluation groups are frozen.
+Preparation extracted model-visible text. Six posts use explicitly materialized 2,048-token prefix excerpts; the others use the extracted full text. Labels refer to that supplied text, not unseen images, linked pages or omitted content. Related posts, excerpts and variants must remain grouped; the provisional groups were frozen for the exploratory experiment, but semantic grouping and rubric reliability still need human review.
 
-## What has actually been completed
+## Completed exploratory machine-reference study
 
-The 40 development posts received 120 LLM-generated judgments across the three rubrics. Of these, 95 have a proposed label without an uncertainty flag and 25 are flagged uncertain. These are unreviewed machine annotations, not human ground truth or measured myJEV accuracy. A blinded audit subset has been prepared; a human audit and independent judge cross-check remain pending.
+The earlier development annotation pilot produced 120 session judgments, 95 without uncertainty flags and 25 uncertain. A separate local Qwen3.5-9B NF4 judge initially passed only 50/120 strict output checks, primarily because quote normalization failed exact-substring validation. Returning IDs for lossless source spans repaired that interface: 118/120 development outputs passed, above the unchanged 80% engineering gate. Structural validity does not establish correct labels. Agreement with the earlier judge was only 50/92 comparable labelled decisions (54.35%), including 33.33% on claim support.
 
-No myJEV archive fine-tuning, archive transfer benchmark or forgetting comparison has been completed. The current 0.8B/4B/9B training batch uses BANKING77, not these blog posts. The blog archive is a prepared example and annotation pilot for the later study.
+The frozen source-span protocol then processed the remaining 480 requests. Excluding 29 invalid, uncertain or inapplicable annotations left 271 training, 46 validation, 44 calibration and 90 test decisions. These are rubric decisions, not independent posts. Existing provisional groups were held fixed across adaptation; human semantic grouping review remains outstanding.
 
-## Next evaluation and limitations
+One 4B continued-supervision checkpoint completed a 100-update fit pilot and a separate 400-update adaptation stage. Its native scalar-confidence evaluation changed as follows:
 
-Review the rubrics and grouping, audit labels, expand annotation and freeze evaluation groups before adaptation. Compare unadapted and adapted artifacts on the same held-out posts and re-evaluate BANKING77/CLINC150 for forgetting. Report machine-label agreement separately from human-audited correctness, with uncertainty grouped by related posts.
+| Condition | Test N | Machine-reference agreement | Correctness Brier |
+|---|---:|---:|---:|
+| Unadapted | 90 | 42.22% | 0.5640 |
+| Adapted | 90 | 61.11% | 0.2587 |
+| Majority per rubric | 90 | 32.22% | 0.2121 |
 
-The sample is small, subjective and from one author, with historical imbalance and possible pretraining exposure. It cannot establish a low production error rate or broad generalist capability. The author supplied the archive for this study; no broader redistribution license is inferred. Post text, per-post labels and private annotations are not included in this repository. This card publishes the study design and aggregate status only.
+The majority control selects labels from training counts and sets confidence from calibration-only correctness frequency. It is a post-hoc exploratory control. Its lower Brier despite weaker selection demonstrates why Brier alone cannot establish a useful classifier or an adaptation benefit in confidence.
 
-## Queued local machine-label extension
+Per-rubric agreement changed from 43.75% to 56.25% for format (32 decisions), 29.03% to 67.74% for instructional completeness (31), and 55.56% to 59.26% for claim support (27). Numeric label IDs have different meanings across rubrics, so overall macro-F1 is not interpreted as a combined classification metric. Reference agreement and correctness Brier remain valid aggregate outcome summaries.
 
-A frozen local Qwen3.5-9B NF4 judge will apply the existing rubrics to the exact prepared text, first on the 40 development posts. JSON/schema and exact-quote checks are engineering checks, not correctness checks. If at least 80% of development judgments satisfy those checks, the remaining annotations proceed without prompt retuning. Invalid and uncertain responses remain explicit exclusions.
+## Forgetting and release implications
 
-The queued one-seed 4B adaptation study uses a 100-update fit pilot and 400-update main stage, retaining provisional post groups and testing public-task forgetting. It is exploratory teacher-agreement evaluation: teacher and student share a model family, no human review is implied, and semantic grouping still needs audit. This extension requires no paid API; results are pending. Raw annotation text and judgments remain private.
+BANKING77 official-test accuracy changed from 89.94% to 90.10% (3,080 examples). On frozen CLINC subsets, nearby/distant intent accuracy changed from 89.45%/81.25% to 90.62%/83.20%, but explicit none-option accuracy fell from 82.42% to 71.48% for OOS and from 47.33% to 34.67% for nearby unsupported intents. These are descriptive one-seed findings, not a general claim that adaptation preserves capability.
+
+Deferral-only cohorts omit a correct candidate and therefore have zero selection accuracy by construction. Their saved acceptance metrics use original thresholds and separately BANKING-recalibrated thresholds; no CLINC tuning occurs. Published Qwen releases remain BANKING-trained, not archive-adapted.
+
+Evidence: [adaptation report](../../results/archive-machine-v2/report.md), [majority control](../../results/archive-machine-v2/majority-control.md), and [CLINC forgetting](../../results/archive-machine-v2/clinc-forgetting-report.md). Source hashes, exclusion counts and group-aware metric intervals accompany the reports. The experiment does not claim convergence or human-audited correctness.
+
+## Remaining limitations and rights
+
+Teacher and student share the Qwen family, so increased agreement can reflect shared errors. A blinded human audit and semantic grouping review remain separate work. This small subjective sample from one author, with historical imbalance and possible pretraining exposure, cannot establish generalist capability or a low production error rate.
+
+The owner supplied the archive for this study; no broader redistribution license is inferred. Post text, individual labels and private annotations remain outside the public repository. This card and the public reports contain design, aggregate results and provenance only.

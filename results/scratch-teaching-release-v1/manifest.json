@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "package": "artifacts/scratch-teaching-release-v1",
+  "source_artifact": "artifacts/scratch-study-v1/main/seed-11/sft/artifact",
+  "artifact_revision": "3bc6e8b6b8f654752af80b5679de080fca38264e30cabb1e4aaa6384f31f5a12",
+  "public_source_revision": "048afa79f43d6f0e84fc203cf43f5602372320c0",
+  "selection": "Seed 11 initial SFT by packaging convention; not test-selected.",
+  "license": "MIT",
+  "training_data_license": "CC0-1.0 original synthetic fixtures",
+  "uploaded": false,
+  "files": {
+    "LICENSE": "db3c3a606627fa722da02b2a96af21bcef474a5e34d18aead7872874148042b4",
+    "README.md": "61da2d3085177196545b18dde062347b20356904cb883faaf088339895ab8d7a",
+    "manifest.json": "fdf179339bda037561ffe78e12cc5640ed518e60f397de8e6802fc28689ce443",
+    "model.safetensors": "abea0e212c4e6794ccb5a64408a711a4c8a7009f2fc907491a6b837e0f7f13ad",
+    "training-data-provenance.json": "22af004fd776cfaadcc642f78a0fa53ffe93412c232275f59244c1cc8d36fb52"
+  },
+  "verification": "verification.json",
+  "scope": "Separate optional teaching artifact; not part of the six Qwen Hub candidates."
+}

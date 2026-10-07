@@ -1,0 +1,10 @@
+{
+  "candidate": "myjev-0.8b-continued_sft-seed11",
+  "repo_id": "bahree/myJEV-0.8B",
+  "visibility": "public",
+  "files": 9,
+  "uploaded": true,
+  "revision": "a56043bc190b4ab66a704dea771388b28edcb53d",
+  "pinned_download_hashes_equal": true,
+  "next_check": "Load this pinned Hub revision and compare outputs with the local package."
+}

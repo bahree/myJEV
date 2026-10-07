@@ -17,7 +17,7 @@ Start with the question you want to answer. All commands run from the repository
 | What have we learned about budgets and convergence? | [Engineering lessons](learnings.md) |
 | How do I run Python, CLI, HTTP and Docker inference? | [Inference walkthrough](inference.md) |
 | How do I host it? | [Local and managed hosting](hosting.md) |
-| Where are released weights? | [Model release tracker](models.md): releases pending |
+| Where are released weights? | [Six public Qwen adapter/head releases](models.md), including the 4B default |
 | What is complete, and what comes next? | [Roadmap](roadmap.md) |
 
 ## Data and provenance

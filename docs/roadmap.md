@@ -74,7 +74,7 @@ This part remains exploratory. Annotation material and draft articles are not di
 - [x] Expand serving benchmarks to isolated-host runs and representative document lengths.
 - [x] Compare direct scoring, constrained one-token generation, minimal JSON, and answer plus explanation under matched serving conditions. See the [benchmark protocol](hosting.md#planned-scoring-versus-generation-benchmark) and its related-work reference.
 - [x] License the source code under MIT.
-- [ ] Finalize artifact licensing review and release packaging.
+- [x] Finalize artifact licensing review and publish six adapter/head releases under [bahree on Hugging Face](https://huggingface.co/bahree), with separate backbone attribution.
 - [ ] Add links to the published blog-series articles.
 
 A paid cloud endpoint is optional and is not a required project deliverable. The documented managed-hosting recipe can be used independently once release artifacts exist.
