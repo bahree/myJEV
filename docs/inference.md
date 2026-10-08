@@ -1,6 +1,8 @@
 # Run inference locally and in Docker
 
-Six trained seed-11 candidates have passed Python, CLI, HTTP and GPU-container equivalence at 0.8B, 4B and 9B. The default within this published myJEV family is 4B continued supervised training with temperature calibration. Public adapter/head releases are available, starting with [myJEV-4B](https://huggingface.co/bahree/myJEV-4B); the tested GPU image is available on [Docker Hub](https://hub.docker.com/r/amitbahree/myjev). Use the pinned Hub example below or train a local pilot using [the quick start](quickstart.md).
+Start with [myJEV-4B on Hugging Face](https://huggingface.co/bahree/myJEV-4B) to score a request without training a model. This guide shows the same call through Python, the command line, HTTP and the published [Docker image](https://hub.docker.com/r/amitbahree/myjev). Use the [quick start](quickstart.md#install-and-test) to install the Python environment, or go straight to the Docker section below.
+
+There are six trained releases: 0.8B, 4B and 9B, each with a supervised and an RL variant. The sizes refer to the approximate billions of parameters in the Qwen backbone. The loader downloads that backbone as well as the smaller adapter and confidence-head files from Hugging Face. All six releases passed output-equivalence checks across Python, CLI, HTTP and the GPU container. The default is the supervised 4B release with temperature calibration; the [findings](qwen-findings.md) explain that choice.
 
 ## What the adapter saves and what inference still costs
 
@@ -110,6 +112,8 @@ The [Hugging Face custom-container recipe](hosting.md#hugging-face-inference-end
 
 ## Try seven original requests
 
+The first request above routes a duplicate charge to billing. The demo file builds on it with an app crash, an unrelated hiking question, two refund requests on either side of a rule's boundary, a misleading quoted instruction, and a short how-to post. These are seven inputs to the same model; each supplies the instructions and choices for its task.
+
 ```bash
 .venv/bin/python scripts/run_demos.py > responses.jsonl
 .venv/bin/myjev score --artifact bahree/myJEV-4B \
@@ -117,7 +121,9 @@ The [Hugging Face custom-container recipe](hosting.md#hugging-face-inference-end
   --input examples/demo-requests.jsonl --jsonl > cli-responses.jsonl
 ```
 
-The [saved demonstration](../results/demos-v1/report.md) includes billing, technical support, an unsupported request, a refund boundary, quoted instructions and synthetic post format. All seven default Python and CLI responses matched exactly. The 0.8B model confidently approved a day-14 refund when the supplied rule allowed fewer than 14 days; this observed failure remains in the report. Seven fixtures are a walkthrough, not a quality estimate. Expected labels are separate from model-visible requests.
+The runner loads the pinned 4B model once and writes one response per input line, in the same order. The file is JSONL, meaning one JSON object per line. Run `head -n 1 responses.jsonl | .venv/bin/python -m json.tool` to inspect the first answer. The [demo walkthrough](../results/demos-v1/report.md#what-each-request-asks) explains every request, its expected answer, and the recorded outputs for both sizes. You can read it without a GPU or download.
+
+All seven default Python and CLI responses matched exactly. The 0.8B model confidently approved a day-14 refund when the supplied rule allowed fewer than 14 days; that mistake remains in the report. These examples help explain the interface, but do not estimate general accuracy. Expected answers are kept separately and are never sent to the model.
 
 ```mermaid
 flowchart TB

@@ -19,7 +19,7 @@ Use a new output folder for the calibration lab. It refuses to overwrite existin
 
 ## 2. Follow one decision
 
-The billing demonstration produces this abbreviated response from the released 4B model:
+Start with a customer saying, “I was charged twice.” In [the request file](../examples/request.json), `context` contains that text, `instructions` asks for the appropriate support route, and `candidates` supplies billing, technical support and other. Each candidate includes a description of what belongs there. The released 4B model returns:
 
 ```json
 {
@@ -34,7 +34,9 @@ The billing demonstration produces this abbreviated response from the released 4
 }
 ```
 
-The [complete saved response](../results/demos-v1/4b-responses.jsonl) also records artifact and calibration identities. Here confidence equals the selected temperature-scaled selection score because this release uses that calibration method. Other artifacts use the separate scalar or confidence-policy head. Equal numbers in this example do not make these concepts interchangeable.
+The selected route is `billing`. The selection scores rank the three supplied choices and sum to one. Confidence estimates whether the chosen answer is correct, here about 98.34%. The [complete saved response](../results/demos-v1/4b-responses.jsonl) also identifies the model files and calibration used to compute it.
+
+This release uses the selected option's score as its confidence after **temperature calibration**, an adjustment fitted on separate examples. That is why the two numbers match here. Other releases calculate confidence with a separate learned head. The fields describe different things even when their values happen to be equal.
 
 For candidate logits `z` and positive temperature `T`, selection probabilities are `softmax(z/T)`. The largest value selects a candidate. Changing a positive scalar temperature preserves the winner but changes probability sharpness. The RL artifact instead has a conditional distribution over 21 confidence actions for each candidate, and reports the selected candidate's expected confidence.
 
@@ -49,7 +51,9 @@ flowchart TB
   S --> A[Selected ID and confidence]
 ```
 
-See [architecture](architecture.md) for the implemented network and [contract tests](../tests/test_contract.py) for the observable behavior. The original seven demos include an honest failure: the 0.8B model approves a day-14 refund with confidence 0.9892 when the rule requires fewer than 14 days. A confident answer can be wrong even in a small, clear example.
+To see what changes with the input, follow the [seven-request walkthrough](../results/demos-v1/report.md#what-each-request-asks). It starts with this billing request and an app crash, adds an outside request, tests a refund rule at days 13 and 14, then tries a quoted instruction and a short post. Each example explains the expected answer before showing the recorded output. The smaller 0.8B model approves the day-14 refund with confidence 0.9892 even though the rule requires fewer than 14 days. A confident answer can be wrong in a small, clear example.
+
+See [architecture](architecture.md) for the network computation and [contract tests](../tests/test_contract.py) for the checks on request and response structure.
 
 ## 3. Understand what the optimizer changes
 

@@ -130,7 +130,7 @@
       "mode": "100644"
     },
     "docs/inference.md": {
-      "sha256": "80b29219ee2baabe77c4fec274c5bc5acdd316d21cd538fc99fff9e89c026a57",
+      "sha256": "dfc888bc829f35856a7b43fed49c11366e0ea935a3fa08ed1a1742d5a1e34db8",
       "mode": "100644"
     },
     "docs/learnings.md": {
@@ -186,7 +186,7 @@
       "mode": "100644"
     },
     "docs/walkthrough.md": {
-      "sha256": "9a8ec30630567f20941406ec14b3a607b8eb6d8e65c4475ec1c693f0ad39e09b",
+      "sha256": "459be8a8fa6267b57db3efac5bd5005f35afeaeee8e640ccfaeb7897e8036d9b",
       "mode": "100644"
     },
     "examples/client.py": {
@@ -942,7 +942,7 @@
       "mode": "100644"
     },
     "results/demos-v1/report.md": {
-      "sha256": "ee6737489cf557fd5cf485edb77bd299a3d5ce5563b4fe52ce9ca935f74eb978",
+      "sha256": "a26177da1273e32200f6516b801ecd35ab0fdd146301e8d40de23d77cc273d30",
       "mode": "100644"
     },
     "results/demos-v1/requests.jsonl": {
@@ -8830,7 +8830,7 @@
       "mode": "100644"
     },
     "scripts/summarize_demos.py": {
-      "sha256": "4fbbb5cffc2530cf731af763cad508798f75aadcb0a8018d1f0c80e0e874010b",
+      "sha256": "6fca3b6a0b06be569ece0239178ec02bd42d481f0f92335be663bda3c31ba709",
       "mode": "100644"
     },
     "scripts/summarize_generalization.py": {
