@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "public_recipe_pins": {
+    "docs/quickstart.md": [
+      "amitbahree/myjev@sha256:55c78ef13329ab35712e27c9815eff94c17ba1f5fc145bd58eb705d0f16e1f6d"
+    ],
+    "docs/inference.md": [
+      "amitbahree/myjev@sha256:55c78ef13329ab35712e27c9815eff94c17ba1f5fc145bd58eb705d0f16e1f6d"
+    ],
+    "docs/hosting.md": [
+      "amitbahree/myjev@sha256:55c78ef13329ab35712e27c9815eff94c17ba1f5fc145bd58eb705d0f16e1f6d"
+    ]
+  },
+  "blog_recipe_matches": true,
+  "immutable_reference": "amitbahree/myjev@sha256:55c78ef13329ab35712e27c9815eff94c17ba1f5fc145bd58eb705d0f16e1f6d",
+  "milestone_language_absent_from_reader_guides": true,
+  "model_or_calibration_changes": false
+}

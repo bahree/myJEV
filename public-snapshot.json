@@ -1221,12 +1221,20 @@
       "sha256": "e1aabb83ef27f77c35e77f31928ca9e51d6059e7ea6723b524c9563df2c5b57e",
       "mode": "100644"
     },
+    "results/followup-fixes-v1/completion.json": {
+      "sha256": "5962516914dee5183d0d9095042fa8b310115c7798a8aba22ed09567070fccf0",
+      "mode": "100644"
+    },
     "results/followup-fixes-v1/contract-tests.log": {
       "sha256": "1c243f3eb314cbc69568e0b73282b7969f887218f5179a539df9a684a25515d6",
       "mode": "100644"
     },
     "results/followup-fixes-v1/extensions-analysis.log": {
       "sha256": "8245ae18fd7febdc724e79428ceba6f4d7678757f41ff115db7592628f9ce1bc",
+      "mode": "100644"
+    },
+    "results/followup-fixes-v1/final-public-links.json": {
+      "sha256": "7342cf64ea747e96af42b5f294bf01d7935a086c9c6b830e6ec9e661c5ba73ad",
       "mode": "100644"
     },
     "results/followup-fixes-v1/longer-summary.log": {
@@ -1259,6 +1267,10 @@
     },
     "results/followup-fixes-v1/public-tests.log": {
       "sha256": "037f803a3899f114fae3826b1c1c61790d302e4860255a3dba7841bf1407c918",
+      "mode": "100644"
+    },
+    "results/followup-fixes-v1/reader-release-check.json": {
+      "sha256": "1054d5619478516f1abef2a8c6fc16955f7575271346c3322a268b55957899b2",
       "mode": "100644"
     },
     "results/followup-fixes-v1/request-limits.json": {
