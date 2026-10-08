@@ -20,4 +20,6 @@ Paired group bootstrap, 2000 draws, RNG 42; averages the three observed seeds. C
 | 9b | exact/deployed minus continued_sft/temperature | brier | 0.0200 | [0.0152, 0.0248] |
 | 9b | sampled/deployed minus continued_sft/temperature | brier | 0.0290 | [0.0246, 0.0338] |
 
+Read the [paired seed deltas and seed spread](../review-seeds-v1/report.md) beside these conditional test-resampling intervals. A positive conditional interval is not evidence that every training seed improves.
+
 Reproduce: `python3 scripts/analyze_longer_study.py`. Compact paired inputs retain example/group IDs, gold label IDs, correctness and squared confidence error. They omit request text. Source prediction hashes are recorded separately; original full predictions are retained in the private evidence archive.

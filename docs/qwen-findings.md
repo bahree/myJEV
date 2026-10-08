@@ -56,7 +56,17 @@ The exploratory follow-up froze four views before fitting: native learned correc
 
 These are correctness Brier scores, where lower is better. With equal selection-temperature fitting, exact RL has a slightly lower mean at 4B with mixed seed deltas, and a lower value at 9B on all three seeds. Continued supervision remains ahead at 0.8B. The old broad reading that supervised training plus calibration wins at every size is therefore unsupported.
 
-For the separate learned estimate, the same binary log-odds temperature gives continued-SFT / exact-RL mean Brier of 0.1202 / 0.1425 at 0.8B, 0.0848 / 0.0796 at 4B and 0.0877 / 0.0933 at 9B. That map minimizes calibration negative log likelihood, not test Brier, and sometimes worsens test Brier. Equal fitting opportunities do not guarantee equal suitability for the different confidence sources.
+These selection-temperature means also differ in ECE and error ranking. ECE uses fifteen equal-width bins; AUROC measures how well confidence separates correct from incorrect decisions.
+
+| Size | ECE: continued / exact / sampled | AUROC: continued / exact / sampled |
+|---|---|---|
+| 0.8B | 0.0454 / 0.0424 / 0.0415 | 0.8424 / 0.7797 / 0.7940 |
+| 4B | 0.0370 / 0.0183 / 0.0247 | 0.8698 / 0.7617 / 0.7820 |
+| 9B | 0.0420 / 0.0250 / 0.0181 | 0.8834 / 0.8747 / 0.8263 |
+
+Lower Brier or ECE does not necessarily give better error ranking or lower accepted-case error. All three metrics describe the same fixed exploratory view; none was used to pick a new release.
+
+For the separate learned estimate, the same binary log-odds temperature gives continued-SFT / exact-RL mean Brier of 0.1202 / 0.1425 at 0.8B, 0.0848 / 0.0796 at 4B and 0.0877 / 0.0933 at 9B. The 4B exact-minus-continued deltas are +0.0018 / +0.0004 / -0.0179 for seeds 11 / 22 / 33: only seed 33 drives the lower exact-RL mean. That map minimizes calibration negative log likelihood, not test Brier, and sometimes worsens test Brier. Equal fitting opportunities do not guarantee equal suitability for the different confidence sources.
 
 At 4B, exact RL's selection-temperature confidence has lower Brier than its native policy, but lower correctness AUROC (0.7617 versus 0.8685). Its error ranking changes along with its probability quality. A lower Brier alone is insufficient for selecting a deferral policy. The [complete report](../results/review-calibration-v1/report.md) includes initial SFT, all four views, reliability bins, per-seed metrics and empirical operating points. Its 18 supervised selection-temperature controls exactly reproduce the original Brier results within 1e-12. Text-free compact predictions allow reproduction without a model download.
 
@@ -133,3 +143,5 @@ The second command requires NumPy and Matplotlib from the research environment. 
 ## Operational uncertainty, not just point estimates
 
 The [per-seed operating-point report](../results/longer-v1/operational/report.md) retains 135 fixed-threshold measurements from 27 model/confidence combinations. For 4B exact RL, the calibration 1% empirical-error target gave test coverage of 16.75-34.42%, error of 0.39-1.32%, and one-sided 95% binomial upper bounds of 1.22-2.06%. This does not establish a 1% production guarantee. Seeds share test examples and are not pooled as independent observations. Group intervals and the independence assumptions of binomial bounds are explicit in the report.
+
+Candidate-order change rates are per permutation, each compared with the original order. They are not the fraction of requests that could change under any possible ordering.

@@ -1,0 +1,54 @@
+The push refers to repository [docker.io/amitbahree/myjev]
+ded8879d9a79: Waiting
+09f376ebb190: Waiting
+276709cbedc1: Waiting
+2e133733af76: Waiting
+ded8879d9a79: Waiting
+09f376ebb190: Waiting
+276709cbedc1: Waiting
+2e133733af76: Waiting
+09f376ebb190: Waiting
+276709cbedc1: Waiting
+2e133733af76: Waiting
+ded8879d9a79: Waiting
+2e133733af76: Waiting
+ded8879d9a79: Waiting
+09f376ebb190: Waiting
+276709cbedc1: Waiting
+ded8879d9a79: Waiting
+09f376ebb190: Waiting
+276709cbedc1: Waiting
+2e133733af76: Waiting
+ded8879d9a79: Layer already exists
+09f376ebb190: Waiting
+276709cbedc1: Layer already exists
+2e133733af76: Waiting
+3cf9507408dc: Waiting
+c1f28c1c9546: Waiting
+76f50cb5331f: Waiting
+09f376ebb190: Layer already exists
+2e133733af76: Waiting
+3cf9507408dc: Waiting
+c1f28c1c9546: Waiting
+a65f655bf582: Waiting
+04e4400ee602: Waiting
+76f50cb5331f: Layer already exists
+a23c868d8612: Waiting
+e4146ed55162: Waiting
+2e133733af76: Layer already exists
+3cf9507408dc: Layer already exists
+c1f28c1c9546: Layer already exists
+a65f655bf582: Layer already exists
+04e4400ee602: Waiting
+578ed85cc70d: Waiting
+a23c868d8612: Layer already exists
+e4146ed55162: Layer already exists
+9568a1a00457: Waiting
+04e4400ee602: Layer already exists
+578ed85cc70d: Waiting
+9568a1a00457: Waiting
+578ed85cc70d: Waiting
+9568a1a00457: Waiting
+578ed85cc70d: Pushed
+9568a1a00457: Pushed
+0.1.3: digest: sha256:55c78ef13329ab35712e27c9815eff94c17ba1f5fc145bd58eb705d0f16e1f6d size: 3140

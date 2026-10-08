@@ -38,4 +38,4 @@ Start with the question you want to answer. All commands run from the repository
 
 ## Follow the project
 
-[Milestone history](../CHANGELOG.md) records the research and engineering state represented by each snapshot. The [blog](https://blog.desigeek.com) will explain the experiments; article links remain placeholders until published. The roadmap and model tracker are living reader documents, not promises that unfinished work has passed evaluation.
+[Release history](../CHANGELOG.md) records versioned changes. The [blog](https://blog.desigeek.com) accompanies these guides; [scope and extensions](roadmap.md) explains the limits of the evidence and questions for further study.

@@ -1,6 +1,6 @@
 # What the experiments teach about decisions
 
-The main result is a trade-off: exact reward optimization improved 4B BANKING77 selection accuracy, while supervised training followed by temperature scaling remained the preferred released starting point. Architecture, training objective, confidence semantics and operating costs are separate choices.
+The main result is a trade-off: exact reward optimization exceeded continued supervision in 4B BANKING77 selection accuracy on two of three seeds and in the mean, while supervised training followed by temperature scaling remained the preferred released starting point. Architecture, training objective, confidence semantics and operating costs are separate choices.
 
 ## Four probabilities that are easy to confuse
 

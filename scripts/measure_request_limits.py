@@ -29,17 +29,17 @@ def main():
     p.add_argument('--output',type=Path,default=Path('results/review-limits-v1/measurement.json'))
     a=p.parse_args();m=json.loads(a.manifest.read_text())
     tokenizer=AutoTokenizer.from_pretrained(m['backbone'],revision=m['tokenizer_revision'],local_files_only=True)
-    rows=[]
-    for pattern in ['abc 123 !?', '漢字é ']:
+    rows=[]; max_tokens=m['max_tokens']
+    for pattern in ['abc 123 !?', '漢字é ', '0123456789']:
         request=fixture(pattern);times=[]
         for _ in range(5):
             start=time.perf_counter()
-            try: encode(tokenizer,request,m['aliases'],4096)
-            except ValueError as e: assert str(e)=='input exceeds 4096 tokens; no truncation is performed'
+            try: encode(tokenizer,request,m['aliases'],max_tokens)
+            except ValueError as e: assert str(e)==f'input exceeds {max_tokens} tokens; no truncation is performed'
             else: raise AssertionError('oversize fixture unexpectedly accepted')
             times.append(time.perf_counter()-start)
-        rows.append({'pattern':pattern,'text_bytes':MAX_INPUT_BYTES,'candidate_count':32,'wire_bytes':len(request.model_dump_json().encode()),'tokenize_and_reject_seconds':times,'rejection':'input exceeds 4096 tokens; no truncation is performed'})
+        rows.append({'pattern':pattern,'text_bytes':MAX_INPUT_BYTES,'candidate_count':32,'wire_bytes':len(request.model_dump_json().encode()),'tokenize_and_reject_seconds':times,'rejection':f'input exceeds {max_tokens} tokens; no truncation is performed'})
     a.output.parent.mkdir(parents=True,exist_ok=True)
-    a.output.write_text(json.dumps({'rows':rows,'platform':platform.platform(),'processor':platform.processor(),'backbone':m['backbone'],'tokenizer_revision':m['tokenizer_revision'],'source_manifest_sha256':hashlib.sha256(a.manifest.read_bytes()).hexdigest(),'scope':'CPU tokenization on the A30 host during independent GPU evaluations. Two fixed maximum-aggregate-byte requests, five repetitions each; observed costs, not a worst-case latency bound or GPU inference benchmark.'},indent=2)+'\n')
+    a.output.write_text(json.dumps({'rows':rows,'platform':platform.platform(),'processor':platform.processor(),'backbone':m['backbone'],'tokenizer_revision':m['tokenizer_revision'],'source_manifest_sha256':hashlib.sha256(a.manifest.read_bytes()).hexdigest(),'scope':'CPU tokenization on the A30 host. Three fixed maximum-aggregate-byte requests, five repetitions each; observed costs, not a worst-case latency bound or GPU inference benchmark.'},indent=2)+'\n')
 
 if __name__=='__main__': main()

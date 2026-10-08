@@ -3,7 +3,7 @@
 Read the [completed Qwen findings and lessons](qwen-findings.md), including paired uncertainty, confidence controls and what changes next.
 
 
-The first milestone asks whether the implementation works and whether the proposed comparisons are worth scaling. It does not establish that confidence-aware RL is better than supervision or post-hoc calibration.
+The short pilot tests implementation behavior and motivates the longer controlled comparison. It does not establish that confidence-aware RL is better than supervision or post-hoc calibration.
 
 ## Completed longer comparison
 
@@ -42,7 +42,7 @@ Seed SD measures variation across three runs; it is not a confidence interval. L
 
 Continued supervision has the highest observed mean accuracy at every size. Exact RL is closer than sampled RL to that supervised control. These observations are conditional on short exposure, three seeds, and a small fixed subset.
 
-RL improves the weak supervised confidence policy. However, temperature-scaled supervised selection logits achieve lower mean correctness Brier than either RL policy in this pilot. Improving only the weak policy baseline would be an incomplete argument for RL.
+RL improves the weak supervised confidence policy. However, temperature-scaled supervised selection logits achieve lower mean correctness Brier than either RL policy in this pilot. The pilot did not fit the same post-hoc transform to RL. Improving only the weak policy baseline would be an incomplete argument for RL.
 
 ![Continued-supervision confidence controls](../results/figures/confidence-controls.png)
 
@@ -77,8 +77,8 @@ The initial 0.8B transfer/robustness work is limited. The frozen expanded study 
 | Punctuation-normalized overlap sensitivity | [overlap report](../results/review-overlap-v1/report.md) |
 | Historical pilot summary | [final-study-table.json](../results/final-study-table.json) |
 | Historical pilot paired contrasts | [paired-comparisons.json](../results/paired-comparisons.json) |
-| Seed-11 metrics and predictions | `results/pilot-{size}-{method}-evaluation/` |
-| Seed-22/33 metrics and predictions | `results/three-seed-{size}/seed-{seed}/{method}/` |
+| Historical pilot seed-11 metrics and predictions | `results/pilot-{size}-{method}-evaluation/` |
+| Historical pilot seed-22/33 metrics and predictions | `results/three-seed-{size}/seed-{seed}/{method}/` |
 | Temperature and constant controls | Corresponding `*-posthoc/` directories |
 | Training manifests and update records | [artifact-manifests](../results/artifact-manifests/) |
 | HTTP benchmark measurements | [docker-size-validation](../results/docker-size-validation/) |
@@ -127,3 +127,17 @@ Run `python scripts/training_mechanics_demo.py` for reward arithmetic and follow
 ![Counts, coverage and accepted error](../results/training-eval-diagrams-v1/ledger-coverage-worked.png)
 
 The ledger above uses constructed counts for teaching; measured results remain in their separately named reports.
+
+## Replay the matched calibration views
+
+The compact inputs contain labels, scores and IDs, not request text. No model download is required. To preserve the published files, use a disposable checkout:
+
+```bash
+git clone --local . /tmp/myjev-calibration-replay
+cd /tmp/myjev-calibration-replay
+# Use the locked environment created from the original checkout.
+OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 python scripts/review_calibration.py --from-compact
+git diff --exit-code -- results/review-calibration-v1
+```
+
+The final command checks byte identity against the committed reports. Select a fresh destination if that example directory already exists. The [evidence guide](../results/longer-v1/README.md) explains why RL scalar diagnostic files are not trained RL confidence estimates.

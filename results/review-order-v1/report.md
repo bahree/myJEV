@@ -1,10 +1,12 @@
 # Candidate-order sensitivity of the released models
 
-Six released seed-11 checkpoints, three fixed permutations of the same 3080 examples. No calibration refit, retraining, or test-driven order selection. Repeated permutations are not independent test examples.
+Six released seed-11 checkpoints, three per-request seeded permutations for each of the same 3080 examples. No calibration refit, retraining, or test-driven order selection. Repeated permutations are not independent test examples.
+
+The protocol was fixed in-session and committed seven minutes after the first run started; it was not preregistered in Git. Evaluations loaded local copies of the released artifacts, with matching artifact revisions and manifest hashes. The --hub command below is the public reproduction route, not the original loading path. Change rates are per permutation, not the fraction that can ever change under arbitrary orders.
 
 Training randomizes candidates, but the Qwen readout binds their current positions to token aliases. Order changes both placement and alias assignment. This diagnostic measures their combined sensitivity; it does not isolate position from token identity.
 
-| Size | Release | Original accuracy | Shuffled accuracy, seeds 101 / 202 / 303 | Changed selected ID, same order seeds | Brier range |
+| Size | Release | Original accuracy | Shuffled accuracy, seeds 101 / 202 / 303 | Changed selected ID per permutation, same order seeds | Brier range |
 |---|---|---:|---|---|---|
 | 0.8b | continued_sft | 83.90% | 84.81% / 84.55% / 85.00% | 7.89% / 8.05% / 8.21% | 0.0996-0.1026 |
 | 0.8b | exact | 82.14% | 82.89% / 82.24% / 81.98% | 8.67% / 9.19% / 9.71% | 0.1203-0.1337 |

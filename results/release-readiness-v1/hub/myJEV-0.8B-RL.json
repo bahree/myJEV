@@ -4,12 +4,12 @@
   "visibility": "public",
   "files": 9,
   "uploaded": true,
-  "revision": "f96dee85ba08f133a39da8be728ef281c1b40147",
+  "revision": "c1254abdf3d24a643d614ae0b6a63dceaa13f1e3",
   "pinned_download_hashes_equal": true,
   "next_check": "Runtime bytes match the six-model verified release. Card example pins that verified prior revision; latest default reload checked separately.",
-  "previous_revision": "44b2ab8e78cb176ed01a63c6fee2146b2d91cc95",
+  "previous_revision": "f96dee85ba08f133a39da8be728ef281c1b40147",
   "source_code_revision": "c0147b69d57fbe541cdc2e1bc85c472938e4dda0",
   "amendment": "Reader-facing README and metadata; runtime files unchanged",
   "runtime_files_unchanged": true,
-  "reader_card_sha256": "e7f55bbfbf5870e14b3c0fc3d32242323a057c628f2649344a3b56da6d2d4aee"
+  "reader_card_sha256": "5ab151e1a4e29cd54cc447523eb07f02a0bf76d4241a0b921dbd1152ccd7d5fe"
 }

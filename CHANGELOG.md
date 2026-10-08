@@ -1,4 +1,13 @@
-# Milestone history
+# Release history
+
+
+## Runtime 0.1.3 and reporting corrections
+
+- Reject non-finite request numbers with 422 without reflecting input; retain exact GPU, CLI and HTTP output equality.
+- Extend first-use health grace to 15 minutes and disclose root execution and the public-base patch build.
+- Qualify generated calibration claims, display seed reversals and zero-acceptance cases, and explain diagnostic confidence files.
+- Clarify per-request candidate permutations, immutable model pins and public versus private evidence.
+- Use Mermaid for explanatory diagrams and measured plots for results; organize reader guides around use, findings and limitations.
 
 ## 2026-10-07: independent review follow-up
 
@@ -32,22 +41,22 @@ Earlier entries below describe their checkpoint at the time; current availabilit
 - Verified shared Python/CLI/HTTP loading and GPU Docker behavior; recorded CPU/A30 and HTTP timings without implying matched Jev performance.
 - Preserved local logs and imported twelve completed scratch histories into W&B as historical runs.
 
-## Longer comparison completed; scratch track planned
+## Matched Qwen comparison and scratch design
 
 - Retained all 60 completed training artifacts locally and recorded 168,000 updates across the frozen schedule.
 - Published full-test descriptive results for 36 main evaluations, source metric hashes, manifests and training histories, with a summary script.
-- Added the scratch model implementation plan, milestone gates, synthetic-data controls and two-track teaching scope. Alternative pretrained backbones remain deferred.
-- Kept statistical significance, transfer and final release selection explicitly pending.
+- Added the scratch model implementation plan, validation gates, synthetic-data controls and two-track teaching scope. Alternative pretrained backbones remain deferred.
+- Separated descriptive results from significance claims, transfer evidence and release selection.
 
 ## Tracking and reader guides
 
 - Added reusable W&B live monitoring, historical imports, evidence snapshots and a credential-free environment template.
 - Explained the 168,000-step budget, epoch counters, convergence limitations and retained local logs.
-- Added a Python/CLI/HTTP/Docker walkthrough and troubleshooting, separating pilot checks from pending release validation.
+- Added a Python/CLI/HTTP/Docker walkthrough and troubleshooting, distinguishing pilot checks from release validation.
 
-This history describes what each reader-facing snapshot contains. It records the state of the project at publication; upcoming work is tracked separately in the [roadmap](docs/roadmap.md).
+This history describes what each reader-facing snapshot contains. It records the state of the project at publication; evidence limits and research questions are described in [scope and extensions](docs/roadmap.md).
 
-## Longer comparison started: 2026-10-04
+## Matched training and tracking
 
 - Documented AdamW versus training steps, the 168,000-step budget, and batch progress/ETA semantics.
 - Added validation-only learning-rate selection with equal trial budgets.
@@ -57,9 +66,9 @@ This history describes what each reader-facing snapshot contains. It records the
 - Added resume-safe orchestration, frozen data/configuration checks, and progress monitoring.
 - Removed em dashes from project prose and GPU figure titles.
 
-Results from this batch are pending; no new quality claim is made.
+The reporting scripts preserve the experiment schedule and the results associated with each configuration.
 
-## Inference pilot: prepared 2026-10-04
+## Inference pilot
 
 ### Available
 
@@ -68,12 +77,12 @@ Results from this batch are pending; no new quality claim is made.
 - BANKING77 preparation, classical and generalist controls, and calibration/evaluation tools.
 - Python, CLI, HTTP, Docker, and a managed-hosting recipe.
 - Saved pilot predictions, numerical metrics, manifests, and regenerable charts.
-- Reader guides covering architecture, training, evaluation, hosting, and planned releases.
+- Reader guides covering architecture, training, evaluation, hosting, and release artifacts.
 
 ### Findings and scope
 
 Continued supervision has the highest observed mean accuracy at each size in this short pilot. Temperature scaling is a stronger confidence control than the RL policies in the mean Brier comparison. Neural evaluations use a fixed 256-example test subset; the training schedule does not establish convergence.
 
-### Still planned
+### Historical scope
 
-Longer matched training, broader transfer/adaptation studies, released adapters, a registry image, source-license selection, and published blog articles. These entries will be filled in as work is completed; this milestone does not imply their availability.
+This historical entry described the pilot scope. Consult the release entries above and the reader guides for the measured studies and available artifacts.

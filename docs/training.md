@@ -160,7 +160,7 @@ This batch focuses on the four main methods; correctness-only/Brier ablations we
 Training retention stores selected deployable artifacts and resumable state. It does not promise that every historical update has a permanently saved checkpoint. The scratch teaching runner currently saves completed stage artifacts and does not resume partially completed optimizer state.
 
 ```mermaid
-flowchart LR
+flowchart TB
     A[Freeze data and configuration] --> B[Fit pilot and train]
     B --> C[Select with validation]
     C --> D[Fit calibration thresholds]
@@ -176,9 +176,32 @@ The arrows describe a dependency order, not permission to tune again after obser
 
 ## Follow the training branches and data roles
 
-![Frozen backbone and adaptation branches](../results/teaching-diagrams-v1/lora-branches.png)
+```mermaid
+flowchart TB
+  X[Input x] --> W[Frozen W]
+  X --> A[Trainable A]
+  A --> B[Trainable B]
+  B --> S[Scale s]
+  W --> P[Add outputs]
+  S --> P
+  P --> Y[Output y]
+```
 
-![Partitions and decisions allowed at each stage](../results/teaching-diagrams-v1/data-roles-and-actions.png)
+```mermaid
+flowchart TB
+  D[BANKING77 training partition] --> TR[Grouped training]
+  D --> V[Grouped validation]
+  D --> C[Grouped calibration]
+  TR --> W[Learn adapters and heads]
+  V --> H[Choose training settings]
+  W --> F[Freeze model]
+  H --> F
+  F --> CT[Fit confidence and thresholds]
+  C --> CT
+  CT --> E[Report frozen behavior]
+  T[Official test] --> E
+  X[Transfer tasks] --> E
+```
 
 These diagrams separate trainable updates from the deployed backbone and distinguish training, validation, calibration and test decisions. See the [diagram provenance](../results/teaching-diagrams-v1/manifest.json) and `scripts/draw_decision_diagrams.py`.
 
@@ -193,3 +216,7 @@ This original arithmetic illustration is not a trained-model result or a Monte C
 ## Defaults retained with the training evidence
 
 The historical runs used AdamW’s default weight decay of 0.01 and eight REINFORCE samples per example. New runs now serialize these values explicitly as `weight_decay` and `reinforce_samples`, along with the initialization artifact revision. This metadata clarification does not rewrite prior manifests or change historical results. The NF4 setup prepares the backbone once before attaching trainable adapters.
+
+## Interpreting the selected learning rates
+
+The validation-selected learning rate was `1e-4` for initial and continued supervision, and `3e-5` for exact and sampled RL, at all three sizes. A learning rate scales the optimizer's parameter update; it is not a confidence threshold. Equal tuning opportunity means the same number of validation trials per method, not forcing objectives with different gradient scales to share a rate. Every main artifact manifest records the selected value.

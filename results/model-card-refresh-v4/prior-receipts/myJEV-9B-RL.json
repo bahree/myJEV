@@ -1,0 +1,15 @@
+{
+  "candidate": "myjev-9b-exact-seed11",
+  "repo_id": "bahree/myJEV-9B-RL",
+  "visibility": "public",
+  "files": 9,
+  "uploaded": true,
+  "revision": "92064e3bebb8d2a937e2103b6852cfc0b441ff52",
+  "pinned_download_hashes_equal": true,
+  "next_check": "Runtime bytes match the six-model verified release. Card example pins that verified prior revision; latest default reload checked separately.",
+  "previous_revision": "08dc92307b02fad8c333d41b6f4e1ccfacf16c39",
+  "source_code_revision": "c0147b69d57fbe541cdc2e1bc85c472938e4dda0",
+  "amendment": "Reader-facing README and metadata; runtime files unchanged",
+  "runtime_files_unchanged": true,
+  "reader_card_sha256": "04f481d7f444f5adc5feb849c3a194a83331999d1f28e69a825286fc581cec49"
+}

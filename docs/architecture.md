@@ -101,9 +101,28 @@ The [frozen diagnostic report](https://github.com/bahree/myJEV/blob/main/results
 
 ## Trace the computation
 
-![Generation compared with single-pass readout](../results/teaching-diagrams-v1/generation-and-readout.png)
+```mermaid
+flowchart TB
+  I[Input tokens] --> G[Backbone pass]
+  G --> T[Output token]
+  T --> R[Append token and repeat]
+  R --> G
+  I --> D[Single backbone pass]
+  D --> S[Candidate scores]
+  S --> A[Selected ID and confidence]
+```
 
-![Scratch tensor path](../results/teaching-diagrams-v1/scratch-tensor-path.png)
+```mermaid
+flowchart TB
+  I[Context and instruction bytes] --> E[Learned byte embeddings]
+  E --> C["Shared encoder:<br/>context tokens"]
+  O[Candidate description bytes] --> E2[Shared learned embeddings]
+  E2 --> K["Shared encoder:<br/>pooled candidates"]
+  C --> J["Cross-attention<br/>residual and normalization"]
+  K --> J
+  J --> S[One score per candidate]
+  J --> H[Correctness and confidence heads]
+```
 
 Regenerate these original diagrams with `python scripts/draw_decision_diagrams.py`; [source provenance](../results/teaching-diagrams-v1/manifest.json) records the rendered assets.
 
@@ -112,3 +131,5 @@ Regenerate these original diagrams with `python scripts/draw_decision_diagrams.p
 A [seven-case untouched-backbone probe](../results/numeric-readout-v1/report.md) compares existing single-token aliases with complete numeric suffix probabilities on the same pinned BF16 4B backbone. Both answered all seven original demos correctly. The prompt and readout both change, the examples were previously viewed, and there is no confidence calibration, so this is a method-inspired implementation demonstration rather than a paper reproduction or broader accuracy result.
 
 `scripts/numeric_readout_probe.py` teacher-forces full candidate continuations, including their closing bracket, and sums suffix log probabilities. It repeats the prompt instead of implementing cached prefill branches; its timings must not be read as a speed comparison. [Numeric readout tests](../tests/test_numeric_readout.py) check suffix arithmetic and token-boundary failures. See the [source review](system-one-research.md) for the external method's distinct training and inference semantics.
+
+Candidate-order change rates are per permutation, each compared with the original order. They are not the fraction of requests that could change under any possible ordering.

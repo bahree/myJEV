@@ -92,7 +92,7 @@ def analyze():
         unit = ' pp' if scale == 100 else ''
         lo, hi = r['group_ci95']
         lines.append(f"| {r['size']} | {r['candidate']} minus {r['reference']} | {r['metric']} | {r['mean_delta']*scale:.4f}{unit} | [{lo*scale:.4f}, {hi*scale:.4f}]{unit} |")
-    lines += ['', 'Reproduce: `python3 scripts/analyze_longer_study.py`. Compact paired inputs retain example/group IDs, gold label IDs, correctness and squared confidence error. They omit request text. Source prediction hashes are recorded separately; original full predictions are retained in the private evidence archive.', '']
+    lines += ['', 'Read the [paired seed deltas and seed spread](../review-seeds-v1/report.md) beside these conditional test-resampling intervals. A positive conditional interval is not evidence that every training seed improves.', '', 'Reproduce: `python3 scripts/analyze_longer_study.py`. Compact paired inputs retain example/group IDs, gold label IDs, correctness and squared confidence error. They omit request text. Source prediction hashes are recorded separately; original full predictions are retained in the private evidence archive.', '']
     (ROOT/'paired-analysis.md').write_text('\n'.join(lines))
     print('\n'.join(lines))
 

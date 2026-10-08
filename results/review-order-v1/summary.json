@@ -23,7 +23,7 @@
     "baseline": "original-order saved seed-11 predictions; source hashes recorded",
     "claims": "order sensitivity of six released checkpoints, not a new training-method comparison"
   },
-  "scope": "Six released seed-11 checkpoints, three fixed permutations of the same 3080 examples. No calibration refit, retraining, or test-driven order selection. Repeated permutations are not independent test examples.",
+  "scope": "Six released seed-11 checkpoints, three per-request seeded permutations for each of the same 3080 examples. No calibration refit, retraining, or test-driven order selection. Repeated permutations are not independent test examples.",
   "groups": [
     {
       "size": "0.8b",

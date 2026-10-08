@@ -65,7 +65,7 @@ Readiness requires model loading and warmup. Health is available at `/healthz`. 
 Use the published Linux `amd64` image on a host with a compatible NVIDIA driver and NVIDIA Container Toolkit. A 24 GB A30 is the tested GPU class. No local Python installation or training run is required.
 
 ```bash
-export MYJEV_IMAGE=amitbahree/myjev@sha256:3693ed39364bb3a96ee675da1a750d09cb2762a50211886eca8addd776d585cb
+export MYJEV_IMAGE=amitbahree/myjev@sha256:55c78ef13329ab35712e27c9815eff94c17ba1f5fc145bd58eb705d0f16e1f6d
 docker pull "$MYJEV_IMAGE"
 mkdir -p .cache/huggingface
 docker run --rm --name myjev --gpus device=0 \
@@ -78,7 +78,7 @@ docker run --rm --name myjev --gpus device=0 \
 
 Once `/readyz` succeeds, send the HTTP request shown above. Stop from another terminal with `docker stop myjev`. First startup downloads the artifact and its separately pinned backbone; the image itself contains no weights. Keep the cache volume for subsequent starts. The image occupies about 10.5 GB as reported by Docker on this host (compressed registry layers total 3.48 GB), plus the separately downloaded models. Our published-image check reused cached image layers and model files; it is not a fresh-machine download-time measurement.
 
-The [publication receipt](../results/container-registry-v2/publication.json) records the immutable digest, anonymous pull and exact GPU HTTP/host response match. The shorter tag `amitbahree/myjev:0.1.2` refers to this release; use the digest for reproducibility. [Docker Hub overview](../deploy/README.container.md) supplies a self-contained request example and runtime details.
+The [publication receipt](../results/container-registry-v3/publication.json) records the immutable digest, anonymous pull and exact GPU HTTP/host response match. The shorter tag `amitbahree/myjev:0.1.3` refers to this release; use the digest for reproducibility. [Docker Hub overview](../deploy/README.container.md) supplies a self-contained request example and runtime details.
 
 To build from the checked-out source instead, run `docker build -t myjev:local .`. For a locally trained artifact, the Compose path remains:
 
@@ -119,8 +119,36 @@ The [Hugging Face custom-container recipe](hosting.md#hugging-face-inference-end
 
 The [saved demonstration](../results/demos-v1/report.md) includes billing, technical support, an unsupported request, a refund boundary, quoted instructions and synthetic post format. All seven default Python and CLI responses matched exactly. The 0.8B model confidently approved a day-14 refund when the supplied rule allowed fewer than 14 days; this observed failure remains in the report. Seven fixtures are a walkthrough, not a quality estimate. Expected labels are separate from model-visible requests.
 
-![Files loaded for one deployed decision](../results/teaching-diagrams-v1/artifact-loading.png)
+```mermaid
+flowchart TB
+  M["Manifest: revisions<br/>and checksums"] --> L[Shared loader]
+  B["Pinned backbone<br/>and tokenizer"] --> L
+  A["Adapter and heads<br/>prompt and calibration"] --> L
+  L --> P[Python score]
+  P --> CLI[CLI]
+  P --> HTTP[HTTP and Docker]
+```
 
-The published `amitbahree/myjev:0.1.2` container comes from the verified local `myjev:0.1.2-hub` image; [hosting](hosting.md#hub-loader-container-update) records the incremental build and direct Hub-load check. Build the root Dockerfile for a clean installation on your own machine.
+The 0.1.2 container was built through the public root Dockerfile as `myjev:0.1.2-review`; [hosting](hosting.md#public-source-rebuild-and-empty-model-cache-follow-up) records that build and its recovery from a disk-full unpack. The validation patch release uses the same published dependency layers through `deploy/Dockerfile.patch`. Build the root Dockerfile for a complete installation from the pinned Python base.
 
-![Bounded request queue and timeout path](../results/teaching-diagrams-v1/request-queue.png)
+```mermaid
+sequenceDiagram
+  participant C as Clients
+  participant Q as Queue
+  participant M as One worker
+  C->>Q: A, B, C arrive at 0 ms
+  Q->>M: Score A
+  M-->>C: A done at 80 ms
+  Q->>M: Score B
+  M-->>C: B done at 160 ms
+  Q->>M: Score C
+  M-->>C: C done at 240 ms
+```
+
+## Validation patch release
+
+Image **0.1.3** rejects non-finite request numbers (`NaN`, `Infinity`, `-Infinity`) with HTTP 422, including the `/generate` alias. Versions through 0.1.2 could return 500 while serializing their validation errors; invalid requests still never reached the model worker. The patch returns only error type, location and message, without reflecting request content.
+
+`deploy/Dockerfile.patch` applies the reviewed source to the immutable public 0.1.2 dependency image. The root Dockerfile remains the full-build path. BuildKit attempted an additional base unpack and ran out of disk; Docker's legacy builder reused the installed layers successfully. The [build provenance](../results/container-registry-v3/provenance.json) preserves both attempts. This is a documented source patch, not a new dependency rebuild. The service has a 15-minute health-start grace period, and the research container runs as root.
+
+The [GPU check](../results/container-registry-v3/gpu-check.json) verifies installed Python-file hashes, CLI/HTTP/host equality, managed routes, non-finite 422 responses and the 413 body limits. Its populated-cache readiness time is one observation, not a first-download or latency guarantee. The 203.6-second empty-cache measurement belongs to 0.1.2 and remains labelled with that version.

@@ -72,7 +72,7 @@ def analyze():
         unit = ' pp' if scale==100 else ''
         lo,hi = r['ci95']
         lines.append(f"| {r['study']} | {r['size']} | {r['cohort']} | {r['candidate']} minus {r['reference']} | {r['metric']} | {scale*r['mean_delta']:+.4f}{unit} | [{scale*lo:+.4f}, {scale*hi:+.4f}]{unit} |")
-    lines += ['', 'Reproduce: `python scripts/analyze_extensions.py`. Use `--extract` only where private original predictions are present. Compact inputs contain IDs, groups, labels and numeric outcomes, never request text. The intervals do not establish a precision effect for 9B or RL, and transfer uncertainty does not represent all unfamiliar tasks.']
+    lines += ['', 'Read the [paired seed deltas and seed spread](../review-seeds-v1/report.md) beside these conditional test-resampling intervals. A positive conditional interval is not evidence that every training seed improves.', '', 'Reproduce: `python scripts/analyze_extensions.py`. Use `--extract` only where private original predictions are present. Compact inputs contain IDs, groups, labels and numeric outcomes, never request text. The intervals do not establish a precision effect for 9B or RL, and transfer uncertainty does not represent all unfamiliar tasks.']
     (ROOT/'report.md').write_text('\n'.join(lines)+'\n')
     print('\n'.join(lines))
 

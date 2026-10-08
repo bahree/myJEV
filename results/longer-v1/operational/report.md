@@ -6,6 +6,8 @@ error_upper_95 is the one-sided 95% Clopper-Pearson bound conditional on a fixed
 
 Zero observed errors or a degenerate bootstrap interval do not establish zero risk. A calibration empirical-error target is not a test guarantee.
 
+Calibration uses 1,000 examples per run. Searching the distinct confidence values considers 448-1,000 thresholds in these runs; fitting temperature and searching thresholds reuse calibration labels. A threshold of 1.000001 is a reject-all sentinel when no threshold meets the empirical target. These choices do not certify the selected threshold.
+
 Each cell below spans the three observed seeds. Coverage is the fraction accepted, error is among accepted examples, and the upper bound is a per-seed bound, not an interval for a pooled three-seed estimator. Threshold targets were set on calibration only.
 
 | Size | Method/confidence | Calibration target | Test coverage range | Accepted-error range | One-sided upper bound range |
@@ -17,7 +19,7 @@ Each cell below spans the three observed seeds. Coverage is the fraction accepte
 | 0.8b | exact/policy | empirical_error_0.01 | 2.53-28.31% | 1.28-1.72% | 2.50-5.94% |
 | 0.8b | exact/policy | empirical_error_0.05 | 63.25-66.04% | 5.27-6.59% | 6.17-7.56% |
 | 0.8b | sampled/policy | coverage_0.8 | 81.17-82.89% | 10.56-11.40% | 11.63-12.49% |
-| 0.8b | sampled/policy | empirical_error_0.01 | 0.00-2.53% | 0.00-8.89% | 3.77-19.20% |
+| 0.8b | sampled/policy | empirical_error_0.01 | 0.00-2.53% | 0.00-8.89%; no accepted cases: seed 33 | 3.77-19.20%; no accepted cases: seed 33 |
 | 0.8b | sampled/policy | empirical_error_0.05 | 1.46-63.96% | 4.20-8.89% | 5.23-19.20% |
 | 4b | continued_sft/temperature | coverage_0.8 | 81.40-83.21% | 3.68-5.27% | 4.35-6.05% |
 | 4b | continued_sft/temperature | empirical_error_0.01 | 18.47-47.21% | 0.96-1.41% | 1.50-2.52% |

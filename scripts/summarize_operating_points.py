@@ -25,6 +25,7 @@ report={'scope':'Full official BANKING77 test, thresholds fixed using each run c
         'sources':sources,'rows':rows}
 (OUT/'operating-points.json').write_text(json.dumps(report,indent=2)+'\n')
 lines=['# Operational confidence after longer training','',report['scope'],'',report['uncertainty'],'',report['warning'],'',
+       'Calibration uses 1,000 examples per run. Searching the distinct confidence values considers 448-1,000 thresholds in these runs; fitting temperature and searching thresholds reuse calibration labels. A threshold of 1.000001 is a reject-all sentinel when no threshold meets the empirical target. These choices do not certify the selected threshold.', '',
        'Each cell below spans the three observed seeds. Coverage is the fraction accepted, error is among accepted examples, and the upper bound is a per-seed bound, not an interval for a pooled three-seed estimator. Threshold targets were set on calibration only.','',
        '| Size | Method/confidence | Calibration target | Test coverage range | Accepted-error range | One-sided upper bound range |',
        '|---|---|---|---:|---:|---:|']
@@ -34,7 +35,9 @@ for size in ('0.8b','4b','9b'):
             selected=[r for r in rows if r['size']==size and r['method']==method and r['target']==target]
             def span(key):
                 vals=[r[key]*100 for r in selected if r[key] is not None]
-                return f'{min(vals):.2f}-{max(vals):.2f}%' if vals else 'No accepted cases'
+                missing = [str(r['seed']) for r in selected if r[key] is None]
+                value = f'{min(vals):.2f}-{max(vals):.2f}%' if vals else 'No accepted cases'
+                return value + (f'; no accepted cases: seed {", ".join(missing)}' if missing and vals else '')
             lines.append(f"| {size} | {method}/{selected[0]['confidence']} | {target} | {span('coverage')} | {span('error')} | {span('error_upper_95')} |")
 lines+=['','Inspect `operating-points.json` for exact accepted counts, thresholds, seed identities and group intervals. No default release artifact is selected by this report.','',
         '![Observed error and upper bound at the calibration 80% coverage target](coverage80.png)','',

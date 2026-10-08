@@ -1,0 +1,52 @@
+{
+  "rows": [
+    {
+      "pattern": "abc 123 !?",
+      "text_bytes": 262144,
+      "candidate_count": 32,
+      "wire_bytes": 263055,
+      "tokenize_and_reject_seconds": [
+        0.2905328119522892,
+        0.2508784329984337,
+        0.24780584801919758,
+        0.24633238004753366,
+        0.2493381989770569
+      ],
+      "rejection": "input exceeds 4096 tokens; no truncation is performed"
+    },
+    {
+      "pattern": "\u6f22\u5b57\u00e9 ",
+      "text_bytes": 262144,
+      "candidate_count": 32,
+      "wire_bytes": 263055,
+      "tokenize_and_reject_seconds": [
+        0.12521216698223725,
+        0.12433611997403204,
+        0.12447450996842235,
+        0.12549908994697034,
+        0.12542224500793964
+      ],
+      "rejection": "input exceeds 4096 tokens; no truncation is performed"
+    },
+    {
+      "pattern": "0123456789",
+      "text_bytes": 262144,
+      "candidate_count": 32,
+      "wire_bytes": 263055,
+      "tokenize_and_reject_seconds": [
+        0.4321835479931906,
+        0.42874420201405883,
+        0.4257251780363731,
+        0.4317595469765365,
+        0.43271243100753054
+      ],
+      "rejection": "input exceeds 4096 tokens; no truncation is performed"
+    }
+  ],
+  "platform": "Linux-6.8.0-146-generic-x86_64-with-glibc2.39",
+  "processor": "x86_64",
+  "backbone": "Qwen/Qwen3.5-4B",
+  "tokenizer_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "source_manifest_sha256": "56746ec8ae6f287492afbf10a5e21610ea993a840f18fdc85f67bb2bc03a169e",
+  "scope": "CPU tokenization on the A30 host. Three fixed maximum-aggregate-byte requests, five repetitions each; observed costs, not a worst-case latency bound or GPU inference benchmark."
+}

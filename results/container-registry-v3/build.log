@@ -1,0 +1,55 @@
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            BuildKit is currently disabled; enable it by removing the DOCKER_BUILDKIT=0
+            environment-variable.
+
+Sending build context to Docker daemon    194kB
+Step 1/8 : FROM amitbahree/myjev@sha256:3693ed39364bb3a96ee675da1a750d09cb2762a50211886eca8addd776d585cb
+ ---> 3693ed39364b
+Step 2/8 : WORKDIR /app
+ ---> Running in 374973e61e8e
+ ---> Removed intermediate container 374973e61e8e
+ ---> 88b6eaa1efb3
+Step 3/8 : COPY src ./src
+ ---> 1daa3ee2ba67
+Step 4/8 : RUN pip install --no-deps --no-build-isolation .
+ ---> Running in 8973234d361e
+Processing /app
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: myjev
+  Building wheel for myjev (pyproject.toml): started
+  Building wheel for myjev (pyproject.toml): finished with status 'done'
+  Created wheel for myjev: filename=myjev-0.1.0-py3-none-any.whl size=30116 sha256=117a51cb5ae710ed07d155e3140ce3170fbb7a56703ccc5384b1b56553cfc890
+  Stored in directory: /tmp/pip-ephem-wheel-cache-9l7yxz12/wheels/54/1b/b7/aa63e25c8f14f4f2ae7b04e6097bdecb770e455c5c1ee0a600
+Successfully built myjev
+Installing collected packages: myjev
+  Attempting uninstall: myjev
+    Found existing installation: myjev 0.1.0
+    Uninstalling myjev-0.1.0:
+      Successfully uninstalled myjev-0.1.0
+Successfully installed myjev-0.1.0
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0m[91m
+[notice] A new release of pip is available: 24.0 -> 26.2.1
+[notice] To update, run: pip install --upgrade pip
+[0m ---> Removed intermediate container 8973234d361e
+ ---> db5fa0db31fd
+Step 5/8 : HEALTHCHECK --interval=30s --start-period=900s CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/readyz')"
+Note: overriding previous HEALTHCHECK: [CMD-SHELL python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/readyz')"]
+ ---> Running in b917162ce421
+ ---> Removed intermediate container b917162ce421
+ ---> 46f5820f1e15
+Step 6/8 : LABEL org.opencontainers.image.revision=9cb0e764dc0bb1836b784c9b321a766a8e29874c
+ ---> Running in d599a56ef45f
+ ---> Removed intermediate container d599a56ef45f
+ ---> 8031d639f1fa
+Step 7/8 : LABEL org.opencontainers.image.source=https://github.com/bahree/myJEV
+ ---> Running in 609822aeaf3f
+ ---> Removed intermediate container 609822aeaf3f
+ ---> 238c5a4c3f90
+Step 8/8 : LABEL org.opencontainers.image.version=0.1.3
+ ---> Running in ba7ff1b8e759
+ ---> Removed intermediate container ba7ff1b8e759
+ ---> 55c78ef13329
+Successfully built 55c78ef13329
+Successfully tagged myjev:0.1.3-patch

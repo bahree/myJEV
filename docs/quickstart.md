@@ -1,6 +1,6 @@
 # Quick start
 
-The current milestone provides code and recorded evidence. The public [myJEV-4B](https://huggingface.co/bahree/myJEV-4B) adapter/head release is the default starting point; training a local pilot is optional. Linux with Python 3.12 is the tested setup. GPU commands require compatible CUDA hardware; 9B also requires the locked quantization dependencies.
+Use the reference implementation and inspect its recorded evidence. The public [myJEV-4B](https://huggingface.co/bahree/myJEV-4B) adapter/head release is the default starting point; training a local pilot is optional. Linux with Python 3.12 is the tested setup. GPU commands require compatible CUDA hardware; 9B also requires the locked quantization dependencies.
 
 ## Install and test
 
@@ -89,7 +89,7 @@ The limit reproduces the pilot's evaluation scope. Calibration labels select thr
 The public [Docker Hub image](https://hub.docker.com/r/amitbahree/myjev) serves the default model without local training or a Python installation. The host needs Docker, an NVIDIA driver and NVIDIA Container Toolkit; the validated GPU class is an A30 with 24 GB VRAM.
 
 ```bash
-export MYJEV_IMAGE=amitbahree/myjev@sha256:3693ed39364bb3a96ee675da1a750d09cb2762a50211886eca8addd776d585cb
+export MYJEV_IMAGE=amitbahree/myjev@sha256:55c78ef13329ab35712e27c9815eff94c17ba1f5fc145bd58eb705d0f16e1f6d
 docker pull "$MYJEV_IMAGE"
 mkdir -p .cache/huggingface
 docker run --rm --name myjev --gpus device=0 \

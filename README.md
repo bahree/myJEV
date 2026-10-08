@@ -4,9 +4,9 @@
 
 myJEV explores a compact interface for language models: give the model some context and a set of candidate answers, then receive a structured decision in one backbone forward pass. There is no autoregressive answer generation. The project covers data, training objectives, calibration, evaluation, and a local GPU service across **0.8B, 4B, and 9B** models.
 
-This is a research and learning project by [Amit Bahree](https://blog.desigeek.com). The repository will grow through reviewable milestone commits. The recorded milestones cover a scratch implementation, matched Qwen training, transfer tests, calibration controls, and local serving measurements.
+This is a research and learning project by [Amit Bahree](https://blog.desigeek.com). It combines a small model built from scratch with controlled Qwen fine-tuning experiments, confidence calibration, transfer evaluation, and local inference.
 
-> **Current milestone: training and local evaluation complete.** All 60 Qwen runs (168,000 updates), 36 main evaluations, 36 transfer/robustness jobs, the three-seed precision control and six local serving candidates are complete. The scratch model is built; its natural-language diagnostic failed. Read [the findings](docs/qwen-findings.md), [scratch lessons](docs/scratch.md) and [remaining work](docs/roadmap.md). The exploratory machine-reference archive adaptation and forgetting study is complete; independent human auditing remains. Public adapter/head releases are available on Hugging Face, starting with [myJEV-4B](https://huggingface.co/bahree/myJEV-4B); no hosted demo is running.
+Start with the downloadable [myJEV-4B](https://huggingface.co/bahree/myJEV-4B) adapter/head package and the [quick start](docs/quickstart.md), or explore [the findings](docs/qwen-findings.md) and [scratch lessons](docs/scratch.md). The scratch model's natural-language diagnostic failed; the archive study uses machine-generated references and does not establish human accuracy. These limitations are part of the study. No hosted demo is included.
 
 The second track now [builds a small decision model from scratch](docs/scratch.md), with recorded learning failures, a completed synthetic study and local serving checks. Its weak natural-language results remain separate from Qwen.
 
@@ -71,7 +71,7 @@ flowchart LR
 - Test calibration against temperature scaling and constant-confidence controls.
 - Measure accepted-case error and coverage, alongside accuracy, Brier error, and resource use.
 - Use the same inference implementation from Python, a CLI, HTTP, or Docker.
-- Inspect saved predictions, reproduce charts, and follow what changes at each milestone.
+- Inspect saved predictions, reproduce charts, and inspect the evidence behind each conclusion.
 
 See [architecture and objectives](docs/architecture.md) for the confidence head and reward, and [attribution](docs/attribution.md) for how this implementation relates to JevK5, JevForge, and OpenJev.
 
@@ -117,7 +117,7 @@ Within the six published myJEV variants, our exploratory starting recommendation
 
 For a fixed banking taxonomy, smaller classifiers are serious alternatives: TF-IDF reached 88.28%, and a separate single-seed 149.7M ModernBERT control reached 90.78% after three epochs. These differ in exposure and interface from myJEV. [Worked probability, cost and baseline lessons](docs/decision-lessons.md) explain the trade-off; [encoder evidence](results/encoder-control-v1/report.md) records the conditions.
 
-The [short pilot](docs/experiments.md) remains recorded as an earlier feasibility milestone. A TF-IDF/logistic-regression control reaches **88.28%** on the official test set, with different training exposure. The [policy-edit diagnostic](results/policy-edits-v1/report.md) separately probes explicit exceptions and changed rules; it is synthetic, uses one seed, and is not a PolicyLM benchmark.
+The [short pilot](docs/experiments.md) remains recorded as an feasibility experiment. A TF-IDF/logistic-regression control reaches **88.28%** on the official test set, with different training exposure. The [policy-edit diagnostic](results/policy-edits-v1/report.md) separately probes explicit exceptions and changed rules; it is synthetic, uses one seed, and is not a PolicyLM benchmark.
 
 ## Quick start
 
@@ -210,23 +210,24 @@ myJEV/
 ├── docs/            Reader guides, protocol, dataset cards, and roadmap
 ├── results/         Recorded metrics, predictions, manifests, and figures
 ├── Dockerfile       Reference inference container
-└── CHANGELOG.md     Reader-facing milestone history
+└── CHANGELOG.md     Versioned release history
 ```
 
 Training creates local `data/`, `artifacts/`, and `.cache/` directories, which are excluded from Git. Adapters and heads are separately versioned on Hugging Face; their manifest-pinned backbone weights are downloaded separately.
 
-## Blog series and upcoming releases
+## Learning series
 
-The articles will be published on [Desi Geek](https://blog.desigeek.com), with links back to this repository. Article links will be added after publication; their Markdown sources are not part of this repository.
+The [Desi Geek blog](https://blog.desigeek.com) accompanies this repository. The same learning route is available here:
 
-| Article | Publication status |
+| Topic | Hands-on guide |
 |---|---|
-| Building myJEV (Part 1): Decision Models and a Build from Scratch | Draft; publication link to follow |
-| Building myJEV (Part 2): Fine-Tuning Qwen and Learning from Training | Draft; publication link to follow |
-| Building myJEV (Part 3): Evaluation, Confidence, and Transfer | Draft; publication link to follow |
-| Building myJEV (Part 4): Inference, Docker, and Hosting | Draft; publication link to follow |
+| Decision models and building from scratch | [Architecture](docs/architecture.md) and [scratch walkthrough](docs/scratch.md) |
+| Fine-tuning Qwen | [Training](docs/training.md) and [findings](docs/qwen-findings.md) |
+| Confidence, evaluation and transfer | [Decision lessons](docs/decision-lessons.md) and [experiments](docs/experiments.md) |
+| Running and hosting the model | [Inference](docs/inference.md) and [hosting](docs/hosting.md) |
+| Calibration on CPU | [Calibration lab](docs/decision-lessons.md#run-a-small-calibration-lab-on-cpu) |
 
-The [roadmap](docs/roadmap.md) separates completed engineering checks from upcoming experiments. The [model tracker](docs/models.md) links public adapter/head releases, immutable revisions, and reproducible load commands. The tested GPU image is published on [Docker Hub](https://hub.docker.com/r/amitbahree/myjev); [pull and run it](docs/inference.md#gpu-docker) using the recorded immutable digest. There is no paid managed endpoint running.
+[Scope and extensions](docs/roadmap.md) explains the limits of the evidence. [Models](docs/models.md) lists immutable releases; [Docker instructions](docs/inference.md#gpu-docker) use the tested image. No paid managed endpoint is included.
 
 ## Attribution and licensing
 

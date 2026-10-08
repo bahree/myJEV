@@ -38,7 +38,16 @@ The [complete saved response](../results/demos-v1/4b-responses.jsonl) also recor
 
 For candidate logits `z` and positive temperature `T`, selection probabilities are `softmax(z/T)`. The largest value selects a candidate. Changing a positive scalar temperature preserves the winner but changes probability sharpness. The RL artifact instead has a conditional distribution over 21 confidence actions for each candidate, and reports the selected candidate's expected confidence.
 
-![Read a prompt once or decode successive tokens](../results/teaching-diagrams-v1/generation-and-readout.png)
+```mermaid
+flowchart TB
+  I[Input tokens] --> G[Backbone pass]
+  G --> T[Output token]
+  T --> R[Append token and repeat]
+  R --> G
+  I --> D[Single backbone pass]
+  D --> S[Candidate scores]
+  S --> A[Selected ID and confidence]
+```
 
 See [architecture](architecture.md) for the implemented network and [contract tests](../tests/test_contract.py) for the observable behavior. The original seven demos include an honest failure: the 0.8B model approves a day-14 refund with confidence 0.9892 when the rule requires fewer than 14 days. A confident answer can be wrong even in a small, clear example.
 
@@ -62,6 +71,14 @@ The [decision lessons](decision-lessons.md) work through these quantities, costs
 
 Load the manifest-pinned backbone, tokenizer, adapter, confidence head and calibration together. A resumable training state additionally contains optimizer and random-number state; it is not required for inference. The [model cards](../model_cards/README.md) explain each released variant.
 
-![Artifact loading](../results/teaching-diagrams-v1/artifact-loading.png)
+```mermaid
+flowchart TB
+  M["Manifest: revisions<br/>and checksums"] --> L[Shared loader]
+  B["Pinned backbone<br/>and tokenizer"] --> L
+  A["Adapter and heads<br/>prompt and calibration"] --> L
+  L --> P[Python score]
+  P --> CLI[CLI]
+  P --> HTTP[HTTP and Docker]
+```
 
-The local `myjev:0.1.1-hub` image passed direct Hub loading and exact host/container response comparison. [Hosting](hosting.md) separates this measured local path from the unexecuted managed endpoint recipe. The image is separately published on [Docker Hub](https://hub.docker.com/r/amitbahree/myjev), with a [verified digest and run commands](inference.md#gpu-docker). Neither weights nor image publication creates an always-on service.
+The published `amitbahree/myjev:0.1.3` image passed direct Hub loading and exact host/container response comparison. [Hosting](hosting.md) separates this measured local path from the unexecuted managed endpoint recipe. The image is separately published on [Docker Hub](https://hub.docker.com/r/amitbahree/myjev), with a [verified digest and run commands](inference.md#gpu-docker). Neither weights nor image publication creates an always-on service.

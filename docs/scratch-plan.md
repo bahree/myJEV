@@ -1,12 +1,12 @@
-# Build a decision model from scratch: implementation plan
+# Scratch-model design and validation
 
-Status: Qwen reporting gate complete. The scratch scorer, synthetic generator, training/evaluation runner and shared loader are implemented; the controlled study, one-seed BANKING77 diagnostic and pilot deployment checks are complete, with weak quality clearly reported. See the [scratch walkthrough](scratch.md). The companion Qwen longer study has completed; its [descriptive results](../results/longer-v1/summary.md) are a separate evidence track. Phi, SmolLM and MAI are parked.
+The scratch scorer combines a byte encoder, candidate attention and confidence heads. Read the [walkthrough](scratch.md) for runnable commands and measured results. The [Qwen study](qwen-findings.md) provides a separate pretrained-backbone comparison.
 
 ## Purpose and boundaries
 
 Build a small, inspectable decision network from random initialization, then explain what pretrained Qwen adaptation adds. Both tracks accept context, instructions and request-supplied candidate descriptions, select a candidate and estimate its correctness. This is an original teaching model, not a reproduction of TypeSafe Jev's undisclosed architecture. Broad language competence and Jev-equivalent speed are not promised.
 
-Synthetic tasks teach mechanisms; BANKING77 tests limited natural-language learning. Shared-task results can favor one model, but unequal pretraining exposure prevents attributing differences solely to architecture. A decoder-family sweep and large-scale language pretraining are outside this phase.
+Synthetic tasks teach mechanisms; BANKING77 tests limited natural-language learning. Shared-task results can favor one model, but unequal pretraining exposure prevents attributing differences solely to architecture. A decoder-family sweep and large-scale language pretraining are outside this study.
 
 ## Initial design and implemented prototype
 
@@ -18,19 +18,17 @@ Begin with selection only. Add a candidate-conditioned scalar correctness head u
 
 There is no vocabulary projection for answer aliases and no generation loop. The computation includes multiple encoder operations and candidate attention; calling it non-autoregressive does not make work independent of candidate count. Exact candidate permutation equivariance is a testable design goal in evaluation mode, not an assumed result in every stochastic training step.
 
-## Milestones and acceptance gates
+## Validation requirements
 
-| Stage | Implementation and evidence | Gate before moving on |
-|---|---|---|
-| S0: close and teach the Qwen batch | Validate manifests/counts, paired analysis, findings guide, both blog narratives, regenerable figures, source hashes and public evidence snapshot | Findings and limitations are written, checked and pushed before scratch implementation starts |
-| S1: minimal scorer | Add `src/myjev/scratch/` encoder/scorer/config and tiny deterministic fixtures; use random weights and a CPU training smoke run | Overfit a small unambiguous fixture; candidate padding has no effect; reordering maps scores correctly; save/reload agrees |
-| S2: controlled learning | Add versioned synthetic generator and dataset card; train-only tokenizer; grouped train/validation/calibration/test split | Disjoint templates/compositions, exact labels and known uncertainty verified; baselines run on identical groups |
-| S3: confidence | Scalar confidence and temperature/constant controls; then 21-bin policy and exact/eight-sample leave-one-out RL with KL | Reward/gradient checks, same initialization/exposure, deterministic deployment evaluated separately; thresholds fit on calibration only |
-| S4: language diagnostic | Train on existing BANKING77 partitions with descriptions and random candidate order; reuse TF-IDF and Qwen evidence with exposure disclosed | Official test untouched during tuning; validate configuration before test; report failures and candidate-length constraints |
-| S5: deployment | Versioned scratch manifest, dedicated loader behind shared score contract, Python/CLI/HTTP then Docker | Artifact type cannot be mistaken for Qwen; one result contract, proper masking/input errors, equivalence and CPU/A30 benchmarks |
-| S6: teaching release | Worked tensor-shape example, training curves, calibration and resource figures, runnable commands and checkpoint card | Every plotted result has provenance and a regeneration command; proposed features clearly separate from measured ones |
+| Component | Evidence to inspect |
+|---|---|
+| Minimal scorer | Tiny-fixture overfit, padding/order behavior, save/reload equality |
+| Controlled data | Disjoint groups, exact labels, known uncertainty and matched baselines |
+| Confidence | Scalar/temperature/constant controls, reward arithmetic and gradients, frozen reference |
+| Language diagnostic | Preserved official test, disclosed exposure, reported failures |
+| Deployment | Dedicated artifact type, shared response contract, Python/CLI/HTTP/Docker equality |
 
-The Qwen reporting gate must finish before scratch implementation begins, including lessons and outputs in both blog drafts and the repository. That ordering was followed for this checkpoint. Use one idle A30 only after the CPU gates pass. Do not rerun the 168,000-update schedule for the scratch model by default.
+These checks distinguish an implementation that works from a model that is useful on natural language. Neither synthetic success nor a successful HTTP response supplies the missing natural-language quality evidence.
 
 ## Synthetic data and leakage controls
 
@@ -56,21 +54,8 @@ Ablate candidate interaction to test whether it adds value. Verify candidate reo
 
 Measure total scratch weights against Qwen backbone plus adapters and heads. Report CPU and A30 model latency separately from HTTP, cold start, warm p50/p95, concurrency, peak memory and batch/candidate sizes. A small parameter count is not itself measured speed. A Jev comparison requires equivalent tasks and disclosure of service/hardware differences.
 
-## Blog integration and completion
+## What the prototype teaches
 
-The expanded four-post series separates the scratch build, Qwen adaptation/training, evaluation/transfer, and inference/hosting. Each post keeps a focused reader outcome while preserving runnable explanations and measured failures.
+The implemented scorer has 201,175 randomly initialized parameters. Synthetic diagnostics establish controlled-rule learning, padding/order behavior and inference equivalence. Its one-seed BANKING77 diagnostic collapsed to one class at 1.30% accuracy. That quality failure remains part of the evidence.
 
-The scratch track will be complete when a fresh checkout can train the small controlled example, reproduce the reported evaluation, load its saved artifact and make the same decision through supported interfaces. Competitive broad-language accuracy is a research outcome, not a prerequisite for an honest teaching release.
-
-Foundations: [Deep Sets](https://arxiv.org/abs/1703.06114), [Set Transformer](https://arxiv.org/abs/1810.00825), and [On Calibration of Modern Neural Networks](https://arxiv.org/abs/1706.04599). See [attribution](attribution.md) for the separate architectures of public Jev-inspired implementations.
-
-## Execution checkpoint
-
-- S0 complete: Qwen audit, paired evidence, lessons in both blog drafts and public guide, figures and pushed snapshot preceded scratch implementation.
-- S1 implemented and tested: random-init scorer, byte tokenizer, permutation/padding checks, fixture overfit and reloads.
-- S2/S3 initial teaching study complete: versioned generator, failed layout pilot retained, revised data, three-seed supervised/exact/sampled comparison, temperature and constant controls. Seed instability remains unresolved.
-- S4 one-seed diagnostic complete: BANKING77 selection collapsed to one class at 1.30% accuracy. This is an explicit failure, not a passed quality gate.
-- S5 pilot engineering checks complete: Python/CLI/HTTP/GPU Docker equivalence, rejection behavior and short CPU/A30/HTTP benchmarks. Wider workloads and production release remain open.
-- S6 initial teaching material and regenerable figures written into both tracks. Final Hugo-theme rendering, publication, optional model release and broader original-plan evaluation remain pending.
-
-The implementation is usable for learning and reproducing failures. No scratch artifact is recommended for production. The initial 201K prototype deliberately precedes any larger 5-20M exploration.
+No scratch artifact is recommended for production. A larger encoder, a trained tokenizer, broader language data or a different rule layout would be a new experiment, with its own frozen protocol. The current prototype does not establish how a 5-20M-parameter model would perform.

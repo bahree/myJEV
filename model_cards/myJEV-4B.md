@@ -41,7 +41,7 @@ By [Amit Bahree](https://huggingface.co/bahree). [Source and study](https://gith
 
 ## Why choose this version?
 
-Choose this version for the best measured starting balance of banking-intent quality, confidence error and local serving cost within the published myJEV family. It uses continued supervised training followed by temperature calibration. The 4B-RL variant scores slightly higher on banking accuracy; this standard release has lower confidence Brier error and stronger explicit unsupported-option transfer in the study.
+Choose this version for the best measured starting balance of banking-intent quality, confidence error and local serving cost within the published myJEV family. It uses continued supervised training followed by temperature calibration. The 4B-RL variant has higher banking accuracy on two of three seeds and in the mean; this standard release has lower confidence Brier error and stronger explicit unsupported-option transfer in the study.
 
 **If your labels are fixed, compare a smaller classifier too.** A separate one-seed ModernBERT-base control reached 90.78% BANKING77 accuracy and 0.0555 correctness Brier after temperature calibration. It saw 23,997 training examples over three epochs, versus 8,000 example presentations in these myJEV runs, so this is a practical control with a different budget, not a matched architecture comparison. Its output head fixes the 77 labels; myJEV accepts candidate descriptions with each request. That flexibility does not establish accuracy on an unfamiliar taxonomy. See [the decision guide](https://github.com/bahree/myJEV/blob/main/docs/decision-lessons.md) and [encoder control](https://github.com/bahree/myJEV/blob/main/results/encoder-control-v1/report.md).
 
@@ -67,7 +67,7 @@ The reference environment is Linux, Python 3.12 and an NVIDIA GPU. The pinned re
 ```bash
 git clone https://github.com/bahree/myJEV.git
 cd myJEV
-git checkout ac51018d8e679f0cc444e559bb7a5c12709ae8c2
+git checkout 9cb0e764dc0bb1836b784c9b321a766a8e29874c
 python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.lock
@@ -132,11 +132,11 @@ Python, CLI and HTTP return the same response fields. Keep your artifact revisio
 
 **Reported confidence** is the selected option’s probability after temperature scaling on reserved BANKING77 calibration data. In this standard release it is derived from the selection scores, rather than the separate RL confidence policy. Calibration on banking intents does not establish calibration for arbitrary new tasks or candidate descriptions.
 
-The API also returns `artifact_revision` and `calibration_revision` so callers can identify the exact behavior they used. Set acceptance/deferral thresholds using representative calibration data. An explicit `other` candidate is a classification option; confidence-based deferral is a separate decision by your application.
+The API also returns `artifact_revision` and `calibration_revision` so callers can identify the exact behavior they used. Set acceptance/deferral thresholds using representative calibration data. The [threshold protocol](https://github.com/bahree/myJEV/blob/main/docs/protocol.md) explains why the searched empirical operating points are not certified risk guarantees. An explicit `other` candidate is a classification option; confidence-based deferral is a separate decision by your application.
 
 ## What the matched calibration follow-up changed
 
-The [exploratory controls](https://github.com/bahree/myJEV/blob/main/results/review-calibration-v1/report.md) apply identical selection-temperature fitting to every method, and separately apply one binary log-odds temperature to each trained correctness estimate. All fits use calibration only. With selection temperature, exact RL has slightly lower mean 4B Brier (mixed seed directions) and lower 9B Brier on all three seeds; continued supervision leads at 0.8B. This qualifies the earlier released-configuration comparison. Brier and error ranking can move differently, so it does not automatically choose a new deferral policy.
+The [exploratory controls](https://github.com/bahree/myJEV/blob/main/results/review-calibration-v1/report.md) apply identical selection-temperature fitting to every method, and separately apply one binary log-odds temperature to each trained correctness estimate. All fits use calibration only. With selection temperature, exact RL has slightly lower mean 4B Brier (mixed seed directions) and lower 9B Brier on all three seeds; continued supervision leads at 0.8B. For the separate binary-temperature correctness estimate, the lower 4B exact-RL mean is driven by seed 33: exact-minus-continued Brier deltas are +0.0018 / +0.0004 / -0.0179. This qualifies the earlier released-configuration comparison. Brier and error ranking can move differently, so it does not automatically choose a new deferral policy.
 
 The card tables still describe this released artifact and its unchanged confidence settings. None of the alternative fits was selected for deployment using test results. Three-seed bootstrap intervals hold those trained checkpoints fixed; seed spread is a separate uncertainty source. [Per-seed contrasts](https://github.com/bahree/myJEV/blob/main/results/review-seeds-v1/report.md) show that exact RL beats continued supervision at 4B in two of three seeds, while sampled RL trails exact in eight of nine size/seed pairs.
 
@@ -165,7 +165,7 @@ The standard releases use continued supervised training and temperature scaling.
 
 ## Tested scope and limits
 
-The manifest accepts 2 to 160 candidates and up to 4,096 tokenizer tokens for the entire rendered prompt. Duplicate IDs and oversized requests are rejected instead of silently truncated. Short 160-candidate smoke checks passed for every release; that is not evidence of equally good accuracy or latency at 160 choices. Candidate wording, order, missing correct options and quoted instructions can change decisions. Check the transfer and robustness results before choosing this model for a new workflow.
+The manifest accepts 2 to 160 candidates and up to 4,096 tokenizer tokens for the entire rendered prompt. Duplicate IDs and oversized requests are rejected instead of silently truncated. Short 160-candidate smoke checks passed for every release; that is not evidence of equally good accuracy or latency at 160 choices. Candidate wording, order, missing correct options and quoted instructions can change decisions. In the [frozen order study](https://github.com/bahree/myJEV/blob/main/results/review-order-v1/report.md), changed selected IDs ranged from 7.89-9.71% per permutation at 0.8B and 3.64-4.97% at larger sizes. Each request received its own seeded shuffle; aggregate accuracy can mask these changes. Check the transfer and robustness results before choosing this model for a new workflow.
 
 The reference backend has been checked for artifact reloads and Python/CLI/HTTP/Docker consistency, including pinned Hub download checks. New quantization, merged weights or optimized backends need their own equivalence and calibration measurements. No matched speed comparison with the proprietary Jev service has been performed.
 

@@ -1,0 +1,50 @@
+{
+  "all_byte_identical": true,
+  "outputs_checked": 13,
+  "scope": "Isolated copy of exported public files; regenerated outputs were unlinked before writing, preserving the original public evidence. No model or dataset download.",
+  "scripts": [
+    [
+      "/home/amit/jev-pvt/.venv/bin/python",
+      "scripts/summarize_longer_study.py"
+    ],
+    [
+      "/home/amit/jev-pvt/.venv/bin/python",
+      "scripts/analyze_longer_study.py"
+    ],
+    [
+      "/home/amit/jev-pvt/.venv/bin/python",
+      "scripts/analyze_extensions.py"
+    ],
+    [
+      "/home/amit/jev-pvt/.venv/bin/python",
+      "scripts/summarize_operating_points.py"
+    ],
+    [
+      "/home/amit/jev-pvt/.venv/bin/python",
+      "scripts/summarize_review_order.py"
+    ]
+  ],
+  "output_sha256": {
+    "results/longer-v1/summary.json": "f14b02901fb1925ee778bc8d4922abe796b5dd44c68fcfec7773856382c551a6",
+    "results/longer-v1/summary.md": "52e622bf3d126ad8212020ed6911b89c40bf67cd2e757f28d3655126074ca811",
+    "results/longer-v1/paired-analysis.json": "de12961e612b4ecdfc0c7ef58ce24af3338adfae1b5a7e9f50026e6b9d1dd6d8",
+    "results/longer-v1/paired-analysis.md": "24b4e00cf52978a66390a369300e10f696da8855dc4adb05f3e263e8876ed7e3",
+    "results/longer-v1/figures/accuracy.png": "03f81f7ae374c5a2f258f5e522751f399d4e17d5b9dae1e56c3ae33105498947",
+    "results/longer-v1/figures/confidence.png": "3aef0b700b016643b95b55b9d3cd796860dac9e8df4afe89d7662f419c634ecb",
+    "results/extension-analysis-v1/summary.json": "6262a4a57af341e8d4c74b6b9942f334f5428bc7a1791ab5fb9fedfbd1cfa8a0",
+    "results/extension-analysis-v1/report.md": "8245ae18fd7febdc724e79428ceba6f4d7678757f41ff115db7592628f9ce1bc",
+    "results/longer-v1/operational/operating-points.json": "320935a8e5f44c48ff5ac083bcf9a6be012d5f7bdb6754b4cc830f5203190f89",
+    "results/longer-v1/operational/report.md": "e0b91d73ea49152b00bfbd49e0b41ad392808bbfff681252cac102989d66d9ff",
+    "results/longer-v1/operational/coverage80.png": "2c571e4c8953d228a13fc3b3dda2cdbaf8cf1806057b46155c776c01b33b3da7",
+    "results/review-order-v1/summary.json": "1f1d82f8d1f4dd5ce1e03ab6182283ffc8edc3f6c0893dff835eadf9f42c4549",
+    "results/review-order-v1/report.md": "4065ecc2ee747985ae77249c79b743ba24d6261484eb082a771c457cef7615f4"
+  },
+  "source_script_sha256": {
+    "scripts/summarize_longer_study.py": "ca69c6c68caa3e61dc69e8d8ee0c749be5b72345f65ed6b444333f37733606e0",
+    "scripts/analyze_longer_study.py": "b570fc08c3020c728f382aa7893db01344984648b0737fdf8cc1d2daaabaf9cb",
+    "scripts/analyze_extensions.py": "05cd0415ea82eaac3e54a0eb5e52810ef3f45ecc05c76cca065072c93e1824e7",
+    "scripts/summarize_operating_points.py": "f641b7a7b15a02b027ecf844931a1ce4822bb71b425c62acdf919237135362fd",
+    "scripts/summarize_review_order.py": "930ab2190dc096480154a9c0a820d0e80d92bb2040de622514f4c2fade2be653"
+  },
+  "public_snapshot_sha256": "9f733a405c2bb42d7c14372e2f583c171a41ab5b33231a200f22cb362c1225c1"
+}
