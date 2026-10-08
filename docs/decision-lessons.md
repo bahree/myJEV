@@ -51,7 +51,7 @@ TF-IDF has a fixed trained taxonomy. It does not interpret a new set of candidat
 
 The saved classifier is 12.8 MiB. The measured CPU p50/p95 was 0.503/0.540 ms per request; process peak RSS was 428 MiB including the Python stack. The [CPU baseline profile](../results/tfidf-serving-v1/summary.json) records vectorization plus classification on 512 frozen BANKING inputs, two CPU threads and concurrency one. Do not divide its time by Qwen's three-candidate HTTP benchmark to claim a speedup: inputs, candidate count and measurement boundaries differ. Whole-process CPU RSS and PyTorch allocated GPU memory are different accounting scopes.
 
-GLiClass already provides an untouched pretrained-encoder control. Its pinned small checkpoint's 10.81% accuracy does not establish that pretrained encoders are inherently weak. The new [ModernBERT control](../results/encoder-control-v1/report.md) does that: a 149.7M-parameter fixed-taxonomy model reached 90.78% accuracy and 0.0555 temperature-calibrated Brier. It used one seed and 23,997 example exposures versus Qwen's 8,000, so this is an operational counterexample to needing a larger model for fixed labels, not a causal architecture comparison. Its weights are a separate local experimental artifact, not one of the six published myJEV releases.
+GLiClass already provides an untouched pretrained-encoder control. Its pinned small checkpoint's 10.81% accuracy does not establish that pretrained encoders are inherently weak. The [ModernBERT control](../results/encoder-control-v1/report.md) shows why that broader conclusion would be wrong: a 149.7M-parameter fixed-taxonomy model reached 90.78% accuracy and 0.0555 temperature-calibrated Brier. It used one seed and 23,997 example exposures versus Qwen's 8,000, so this is an operational counterexample to needing a larger model for fixed labels, not a causal architecture comparison. Its weights are a separate local experimental artifact, not one of the six published myJEV releases.
 
 ## Broader decision systems and recent work
 
@@ -68,6 +68,8 @@ Periodic validation is needed to study saturation or early stopping. Saved endpo
 The companion [experiments guide](experiments.md), [scratch guide](scratch.md) and [archive card](datasets/blog-archive.md) distinguish completed follow-ups, prospective protocols and unresolved evidence. Distillation, more backbone families and a full Jev-compatible multimodal API are separate extensions.
 
 ## Run a small calibration lab on CPU
+
+This lab separates two choices that can be confused in a large model: the loss used to train the classifier and the calibration fitted afterward. Cross-entropy is the ordinary supervised baseline; Brier uses squared probability error, the idea also used in our confidence reward. A synthetic problem lets us inspect the true probabilities as well as sampled labels. We can then test whether choosing a proper scoring rule is enough to produce calibrated predictions under a fixed training budget.
 
 The [calibration lab](../scripts/calibration_lab.py) compares cross-entropy and class-summed Brier training on one fixed, four-class synthetic problem. Three seeds share initialization and minibatch order within each pair, with equal training exposure. Training, validation, calibration and test are separate. Temperature is fitted only on calibration NLL; validation is monitored without selecting checkpoints, and test never selects settings.
 

@@ -2,6 +2,8 @@
 
 This guide maps the experiment results to the data and training conditions that produced them. For an explanation of what the results mean, start with the [Qwen findings](qwen-findings.md). The [training guide](training.md) defines the supervised and reward-based methods; [decision lessons](decision-lessons.md) works through confidence and error metrics.
 
+Read the evidence in three steps. First check whether the selected answers are correct. Then ask whether confidence separates mistakes from correct decisions and supports useful deferral. Finally inspect what changes on unfamiliar tasks. Accuracy, calibration and coverage answer different questions, so one attractive column cannot establish the best deployment choice. The two release families also report confidence differently: calibrated selection probability for ordinary releases, and expected confidence from a separate policy for `-RL`. The matched-calibration follow-up gives the training methods the same post-hoc opportunity.
+
 There are two main sets of results. The short pilot used 100-update stages and a small test subset to check implementation behavior. The longer comparison used 4,000-update stages and the full official test set. Keep those conditions separate when reading the tables. The pilot alone does not establish that confidence-aware RL is better than supervision or calibration fitted after training.
 
 ## Completed longer comparison

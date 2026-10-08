@@ -2,7 +2,13 @@
 
 **Start with [myJEV-4B](https://huggingface.co/bahree/myJEV-4B)** to try the trained model. This page explains the six downloadable releases, what their files contain, and why that version is the starting recommendation. The [quick start](quickstart.md) supplies the first scoring command.
 
-There are three sizes, each with two training variants. Names without `-RL` use continued supervised fine-tuning (SFT), learning from labelled answers, with a fitted temperature to adjust the selection probabilities. The `-RL` versions use exact reinforcement learning, rewarding answer/confidence decisions. All six use training seed 11 for packaging; the study's other seeds remain part of the evaluation. Hugging Face hosts the files for download, not a running myJEV service.
+There are three sizes, each with two training variants. Names without `-RL` use continued supervised fine-tuning (SFT), learning from labelled answers, with a fitted temperature to adjust the selection probabilities. The `-RL` versions use exact reinforcement learning, rewarding answer/confidence decisions. Hugging Face hosts the files for download, not a running myJEV service.
+
+Why publish both? Supervised learning is the natural baseline when the dataset already supplies correct answers. RL tests whether explicitly rewarding correct decisions and penalizing misplaced confidence adds value. Both continuations start from the same supervised checkpoint and receive the same additional examples, so extra training alone is not mistaken for an RL benefit. Our reward is calculated from those labels; this is a single-decision experiment, not training from human preference feedback. Supervised training also teaches confidence, and calibration after training provides a simpler alternative to changing the learning objective.
+
+The results support keeping both choices visible. At 4B, exact RL has higher mean banking accuracy, with gains on two of three seeds, while the ordinary release has stronger measured confidence and unsupported-option handling under the released settings. Neither wins every measure. The [training guide](training.md#why-fine-tune-an-already-pretrained-model) explains the controls; [matched calibration results](../results/review-calibration-v1/report.md) show why this is not a general claim that supervised training calibrates better. For background, read [Reinforcement Learning - An Introduction](https://blog.desigeek.com/post/2021/07/reinforcement-learning-an-introduction/).
+
+All six use training seed 11 for packaging; the study's other seeds remain part of the evaluation. The sampled-RL comparison stays in the experiment results. The `-RL` downloads use exact expected-reward training, which sums over the finite answer/confidence actions rather than estimating the objective from samples.
 
 | Release | Training and confidence | Verified documentation pin (runtime files unchanged) |
 |---|---|---|

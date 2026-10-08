@@ -4,6 +4,10 @@ Start with [myJEV-4B on Hugging Face](https://huggingface.co/bahree/myJEV-4B) to
 
 There are six trained releases: 0.8B, 4B and 9B, each with a supervised and an RL variant. The sizes refer to the approximate billions of parameters in the Qwen backbone. The loader downloads that backbone as well as the smaller adapter and confidence-head files from Hugging Face. All six releases passed output-equivalence checks across Python, CLI, HTTP and the GPU container. The default is the supervised 4B release with temperature calibration; the [findings](qwen-findings.md) explain that choice.
 
+The [model guide](models.md) explains why both training variants are available and how to choose between them. Both use the same request interface; an `-RL` suffix describes how the model was trained, not a different way to call it.
+
+GitHub supplies the code and examples, the Hugging Face Hub supplies the trained files, and Docker Hub supplies the packaged software environment. The Docker image contains no model weights. Its loader obtains the selected release and backbone at startup and can reuse them from a cache. Keeping one inference implementation behind all four entry points lets us check that serving preserves the decisions and confidence we evaluated.
+
 ## What the adapter saves and what inference still costs
 
 The deployable computation is **backbone + adapter + confidence heads + calibration**, not the adapter alone. LoRA stores a learned low-rank weight update while keeping the pretrained weights frozen during training. It reduces trainable parameters and optimizer-state storage. The pretrained layers still execute at inference. See the [PEFT explanation](https://huggingface.co/docs/peft/main/en/conceptual_guides/lora).

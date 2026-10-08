@@ -118,11 +118,11 @@
       "mode": "100644"
     },
     "docs/decision-lessons.md": {
-      "sha256": "feda56d192449d8a3f355b5af38cf58d2932b6883788082e2e8015d8b8ed105e",
+      "sha256": "10f535a91d0d9e36884d9c32ead6080caa5d5a7d62a7974e51d78ded55dd730b",
       "mode": "100644"
     },
     "docs/experiments.md": {
-      "sha256": "6cc94efcb31d7a8bf67c7769697a7007631b082011c960d9f3f4e33590feefd4",
+      "sha256": "82c5eefac9dcfc42dbe2c7fe0efde8f4f071b8e616d39e8dc5ccb1600adaae0b",
       "mode": "100644"
     },
     "docs/hosting.md": {
@@ -130,7 +130,7 @@
       "mode": "100644"
     },
     "docs/inference.md": {
-      "sha256": "dfc888bc829f35856a7b43fed49c11366e0ea935a3fa08ed1a1742d5a1e34db8",
+      "sha256": "e4309f09cca98afc797dc7faefbeb21d93d88cc1af59ad2d90c69e2f60e3fd13",
       "mode": "100644"
     },
     "docs/learnings.md": {
@@ -138,7 +138,7 @@
       "mode": "100644"
     },
     "docs/models.md": {
-      "sha256": "ee500c493196c9f4ba360d3ca24236ee37cf2af7aa922048e3d06f0a1d9fadbb",
+      "sha256": "312c5796b89d8c4f8084b9f51d92a148a6e013cf25dde201f3a99267e62df830",
       "mode": "100644"
     },
     "docs/openjev.md": {
@@ -182,7 +182,7 @@
       "mode": "100644"
     },
     "docs/training.md": {
-      "sha256": "dd22d4e7564fdfb4500dd874e67f423bb19e39c32216a8b8a5a200a4acefef29",
+      "sha256": "001e81ae3d48bdc4a60f0cb89f9dee57782bd9ad352594b34dc6025cf72e6c59",
       "mode": "100644"
     },
     "docs/walkthrough.md": {
