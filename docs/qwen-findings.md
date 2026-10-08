@@ -56,7 +56,7 @@ The exploratory follow-up froze four views before fitting: native learned correc
 | 4B | 0.0740 | 0.0733 | 0.0852 | -0.0014 / +0.0091 / -0.0098 |
 | 9B | 0.0742 | 0.0681 | 0.0772 | -0.0065 / -0.0056 / -0.0062 |
 
-These are correctness Brier scores, where lower is better. With equal selection-temperature fitting, exact RL has a slightly lower mean at 4B with mixed seed deltas, and a lower value at 9B on all three seeds. Continued supervision remains ahead at 0.8B. The old broad reading that supervised training plus calibration wins at every size is therefore unsupported.
+These are correctness Brier scores, where lower is better. With equal selection-temperature fitting, exact RL has a slightly lower mean at 4B with mixed seed deltas, and a lower value at 9B on all three seeds. Continued supervision remains ahead at 0.8B. The conclusion changes when the fitting opportunity is matched: supervised training plus calibration no longer leads at every size.
 
 These selection-temperature means also differ in ECE and error ranking. ECE uses fifteen equal-width bins; AUROC measures how well confidence separates correct from incorrect decisions.
 
@@ -72,7 +72,7 @@ For the separate learned estimate, the same binary log-odds temperature gives co
 
 At 4B, exact RL's selection-temperature confidence has lower Brier than its native policy, but lower correctness AUROC (0.7617 versus 0.8685). Its error ranking changes along with its probability quality. A lower Brier alone is insufficient for selecting a deferral policy. The [complete report](../results/review-calibration-v1/report.md) includes initial SFT, all four views, reliability bins, per-seed metrics and empirical operating points. Its 18 supervised selection-temperature controls exactly reproduce the original Brier results within 1e-12. Text-free compact predictions allow reproduction without a model download.
 
-The released adapters and calibration settings remain unchanged. Testing all views does not authorize picking whichever happens to win on the test set. A deployment change needs a declared objective, calibration procedure and fresh workload evaluation.
+The releases keep their original calibration settings. Choosing a replacement from whichever test column looks best would make the test part of the selection procedure. A deployment change needs a declared objective and an independent workload evaluation.
 
 ![Actual released-seed confidence reliability](../results/review-teaching-v1/review-reliability.png)
 
@@ -82,7 +82,7 @@ The figure shows seed 11, all 3,080 test rows and fifteen bins. Low-count bins a
 
 Sampled RL had lower mean accuracy than exact RL at every size, by 0.83, 2.07 and 0.80 percentage points respectively. The paired conditional intervals favor exact optimization. Sampled accuracy is lower in eight of nine size/seed pairs; 0.8B seed 22 is the exception, ahead by 0.32 pp. At 4B, sampled accuracy also varied more across seeds: SD 2.21 percentage points versus 0.29 for exact RL.
 
-That pattern is consistent with noisy estimation being a possible contributor, but it does not isolate the cause. Eight samples, confidence-policy initialization, learning-rate selection and the fixed schedule are also part of this experiment. The result does not imply that sampling is unnecessary when actions cannot be enumerated. Here the finite action space lets us compute the expectation directly, which makes exact optimization a particularly important control.
+Sampling noise could contribute to that gap, but the study does not isolate it from confidence-policy initialization, learning-rate selection or the fixed schedule. We can compute every action’s reward here, so exact optimization is available as a control. In a task with too many actions to enumerate, sampling would still be necessary.
 
 ## What we learned about scale, data and resources
 
@@ -133,7 +133,7 @@ The recommended starting artifact is **4B continued supervision with temperature
 
 Keep 4B exact RL as the higher in-domain-accuracy alternative (90.27% mean), and 0.8B as the lower-resource option. The measured 9B continued model is slower at approximately 115 ms HTTP p50, has essentially equal BANKING accuracy and better distant-CLINC accuracy; workload-specific priorities can therefore change the choice. Final local measurements use packaged seed-11 checkpoints; quality summaries use all three seeds. They are not measurements of an average model.
 
-The scratch model's unstable synthetic study and 1.30% BANKING diagnostic establish useful failure cases, not a useful natural-language replacement. The archive adaptation study measures agreement with machine labels and still needs independent human auditing for stronger correctness claims. The six Qwen adapter/head releases are public. See the [release tracker](models.md) and [scratch study](scratch-plan.md).
+The scratch model remains an exercise in building and debugging the network. Its unstable synthetic results and 1.30% BANKING accuracy make it unsuitable as a natural-language router in this setup. Archive adaptation improved agreement with machine labels, but those labels still need independent human review. Use the [model guide](models.md) for the six published Qwen releases and the [scratch study](scratch-plan.md) for the small model’s experiments.
 
 ## Reproduce and inspect
 

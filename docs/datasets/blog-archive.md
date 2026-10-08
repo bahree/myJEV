@@ -2,7 +2,7 @@
 
 ## Why this dataset
 
-Amit Bahree's [blog archive](https://blog.desigeek.com/) provides a practical example of classifying documents under new rubrics, beyond banking intent routing. The intended study asks whether a decision model can identify a post's format and assess properties of the supplied text, then whether domain adaptation improves those decisions without degrading public-task performance.
+Amit Bahree’s [blog archive](https://blog.desigeek.com/) gives us a document-classification task beyond banking intents. The study asks whether the model can identify a post’s format and assess properties of the supplied text, then whether adaptation improves those decisions without losing performance on the public tasks.
 
 ## Tasks
 

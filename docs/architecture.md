@@ -53,7 +53,7 @@ The backbone weights stay frozen. Training updates attention LoRA adapters and t
 
 ## Confidence has its own meaning
 
-Selection answers “which option wins?” Confidence answers “how likely is that selection to be right?” The supervised implementation learns a **scalar** head, meaning it outputs one correctness estimate per candidate. The reinforcement-learning (RL) experiment instead assigns probabilities to 21 possible confidence values for each candidate: 0.00, 0.05, …, 1.00. We call this a candidate-conditioned confidence policy. At inference it returns their probability-weighted average for the selected answer. The grid is an experimental choice, not a requirement for decision models.
+Selection scores choose the answer; confidence estimates whether that answer is right. The supervised stage trains both a **scalar** head, which produces one correctness estimate per candidate, and a confidence policy over 21 values: 0.00, 0.05, …, 1.00. The RL continuation optimizes the latter. Its released confidence is the probability-weighted average of those values for the selected answer. The ordinary supervised releases instead use the selected probability after temperature calibration. These are different sources for the same reported quantity, as the table shows.
 
 The loader declares the confidence source explicitly:
 
@@ -86,7 +86,7 @@ The scoring component alone does not guarantee calibration of the combined, regu
 
 PolicyLM is relevant related work, not a measured myJEV baseline. It specializes in moderation, reads policy and content together, and emits category scores without generating explanations. Its pretrained BidirLM encoder derives from Qwen3. This illustrates why backbone ancestry and deployment behavior are separate choices: pretrained language representations can support a non-generative decision interface. See the [announcement](https://www.musubilabs.ai/blog/introducing-policylm-1-7b).
 
-The untouched GLiClass baseline already measures one pretrained encoder: its pinned small checkpoint reached 10.81% BANKING accuracy. That narrow result is not an architecture verdict. We also tested a fixed-label ModernBERT control, reported in the [findings](qwen-findings.md). A policy-conditioned encoder accepting new candidate descriptions would be a separate experiment; the fixed-label result does not establish how well that interface would work.
+We tested two pretrained encoders locally. The untouched GLiClass small checkpoint reached 10.81% BANKING accuracy; the adapted, fixed-label ModernBERT control performed much better, as the [findings](qwen-findings.md) show. Their task interfaces and training differ, so neither result predicts how a new policy-conditioned encoder would perform.
 
 PolicyLM supports up to 16 categories per policy and a shared 2,048-token context, with windowing for long messages. Its published 35 ms L4 median concerns short messages; it is not comparable to our A30 HTTP measurements. Category scores are not automatically calibrated selected-answer correctness confidence. Its card discloses that all evaluation sets except OR-Bench were also used in development. See the [model card](https://huggingface.co/musubilabs/policylm-1.7b).
 
@@ -98,9 +98,9 @@ Our adapted Qwen network retains its causal sequence computation. We read decisi
 
 A bidirectional encoder lets token representations use context on both sides. That can suit classification because the entire policy and document are available before a decision is made. Pretraining supplies language features; the specialized head supplies task outputs. Our scratch encoder has the same broad opportunity to use both directions, but it starts with random weights and a tiny training corpus. Architecture alone does not supply the knowledge and representations learned during large-scale pretraining.
 
-The output contract matters just as much. A moderation system can legitimately assign high scores to several categories at once. Our interface instead chooses one candidate and estimates whether that selected answer is correct. Neither normalized candidate scores nor independent category scores automatically provide that latter probability. This is why a PolicyLM-inspired encoder experiment would need a declared task mapping, matched inputs, and its own calibration evaluation before becoming a comparable baseline.
+Moderation can assign high scores to several categories at once. myJEV chooses one candidate and reports confidence in that selection. A comparison therefore needs a common task and an explicit meaning for each probability before fitting calibration or comparing error rates.
 
-PolicyLM therefore informs our next hypothesis: a pretrained encoder may improve the language foundation missing from the scratch track while keeping a specialized decision interface. It does not establish that this architecture is faster or more accurate on our hardware and tasks. It also does not resolve subjective archive labels or provide evidence citations.
+A policy-conditioned pretrained encoder is a possible extension: it could supply the language knowledge missing from the scratch model while accepting new candidate descriptions. We would still need to train and evaluate that interface on our tasks. Archive label reliability would remain a separate problem.
 
 ### Separate the backbone, decision head and training method
 
@@ -108,13 +108,13 @@ The backbone produces representations of the input. The decision head turns thos
 
 The same separation helps explain multimodal designs. Text, image or audio encoders can supply representations to a decision layer, but each input type needs an appropriate processing path and training signal. Adding a decision head alone does not teach a text-only model to understand an image.
 
-Each output probability also needs a clearly defined event. “Does this document contain a refund date?” differs from “Is the selected support route correct?” A document can omit the date while still providing enough information to route the request. Training a head for one event does not make its output a calibrated estimate of the other. This is why our response contract explicitly names selected-answer correctness.
+Consider two questions: “Does this document contain a refund date?” and “Is the selected support route correct?” A document might omit the date and still give us enough information to route the request. A head trained to answer the first question would estimate the wrong quantity for the second. myJEV’s confidence is intended to describe selected-answer correctness, and that is what we evaluate.
 
 Performance belongs to the complete serving system. When comparing timings, record the input length, candidate count, hardware, precision and cache state. Establish whether the system processes the full input or uses retrieval, chunking or another shortcut, and evaluate the resulting decisions under that same configuration. The weights, processing strategy and runtime together determine the work being timed. The [inference guide](inference.md) applies these principles to our own measurements.
 
 ### Can an edited policy change the decision?
 
-The PolicyLM discussion led to a bounded test rather than another training matrix. Before inference, we froze 24 original pairs from six templates: refund windows, numeric boundaries, explicit exceptions, exception removal, irrelevant exceptions, and quoted instructions. Sixteen pairs require an answer change; eight require the answer to stay the same. Each pair keeps the input and candidates fixed and changes only the policy. The six existing seed-11 release candidates then scored all 48 requests, without fitting new calibration parameters.
+The PolicyLM discussion prompted a test of rule edits on the existing checkpoints. Before inference, we froze 24 original pairs from six templates: refund windows, numeric boundaries, explicit exceptions, exception removal, irrelevant exceptions, and quoted instructions. Sixteen pairs require an answer change; eight require the answer to stay the same. Each pair keeps the input and candidates fixed and changes only the policy. The six existing seed-11 release candidates then scored all 48 requests, without fitting new calibration parameters.
 
 | Size | Method | Answer accuracy | Both answers in pair correct | Confidence Brier |
 |---|---|---:|---:|---:|
@@ -125,11 +125,11 @@ The PolicyLM discussion led to a bounded test rather than another training matri
 | 9b | Continued SFT + temperature | 93.8% | 87.5% | 0.0499 |
 | 9b | Exact RL | 100.0% | 100.0% | 0.1866 |
 
-The small model often ignored the meaningful edit. Its supervised candidate changed on only 5 of the 16 pairs that required a change. A perfect invariance score did not rescue it: it sometimes kept the same wrong answer. This is why we report both-answer correctness alongside change rates.
+The small supervised model changed its answer on only 5 of the 16 pairs that required a change. It also kept some wrong answers unchanged. Checking both answers in each pair catches that failure; a score for consistency alone would miss it.
 
 Selection and confidence also told different stories. The 9B exact-RL candidate answered every fixture correctly, yet its confidence Brier was 0.1866, versus 0.0062 for the equally accurate 4B supervised candidate. The former reported expected confidence from its learned grid policy; the latter reported temperature-scaled selected probability. These are the deployed outputs, not a freshly fitted comparison. This result illustrates why correct decisions and useful confidence need separate checks; it does not establish calibration over a population.
 
-The fixtures are deliberately simple and correlated. One seed and six templates cannot establish an RL benefit, a scaling law, or reliable real-world policy compliance. This diagnostic evaluated only the six myJEV candidates. The learning is methodological: freeze the expected response to a rule edit, include edits that should change nothing, and inspect correctness and confidence separately.
+The diagnostic covers one seed and six simple templates. It checks whether meaningful rule edits change the answer and irrelevant edits leave it alone. These correlated examples are too narrow to settle the RL comparison, measure scaling or establish reliable real-world policy compliance.
 
 The [frozen diagnostic report](https://github.com/bahree/myJEV/blob/main/results/policy-edits-v1/report.md) includes all six candidates, reproduction commands, predictions, and limitations.
 

@@ -1,6 +1,6 @@
 # A hands-on route through myJEV
 
-Start with the output, then inspect the arithmetic and trainable components, then decide what evidence would justify using the model. This follows the practical learning sequence of [helloLondon](https://github.com/bahree/helloLondon), adapted to classification and confidence rather than generated text.
+Run a request, inspect the response, then follow the arithmetic that produced it. This walkthrough takes the same hands-on approach as [helloLondon](https://github.com/bahree/helloLondon). Here the model chooses an answer from a supplied list, and we also need to check whether its confidence helps us catch mistakes.
 
 ## 1. Install once, choose the amount of compute
 
@@ -69,7 +69,7 @@ Use training data for gradients, validation for permitted configuration selectio
 
 Suppose a fixed threshold accepts 80 of 100 requests and four accepted decisions are wrong. Coverage is 80%, and accepted-case error is 4/80 = 5%, not 4/100. Those counts still need uncertainty and the threshold must have been chosen on calibration data. A perfect reviewer for the other 20 is a simulation unless reviewer performance was measured.
 
-The [decision lessons](decision-lessons.md) work through these quantities, costs, base-rate confidence and known uncertainty. The [experiments](experiments.md) separate the short pilot, full Qwen comparison and later bounded controls. ModernBERT and TF-IDF are operational alternatives for fixed labels; their interfaces and training budgets differ from request-supplied candidate descriptions.
+The [decision lessons](decision-lessons.md) work through the error counts, costs and confidence estimates. For the actual runs, use [experiments](experiments.md). ModernBERT and TF-IDF are worth comparing when the labels are fixed, although their interfaces and training budgets differ from myJEV’s request-supplied choices.
 
 ## 5. Package what the reader actually needs
 

@@ -27,4 +27,4 @@ For a stable taxonomy, the encoder and TF-IDF controls challenge the need for a 
 
 For three candidates with probabilities `[0.6, 0.3, 0.1]`, the maximum probability is 0.6, while TypeSafe's published Choice statistic is 0.4. Neither number becomes a separately trained probability of correctness merely by being returned under `confidence`. myJEV's native head could return a third number. Evaluate the exact deployed quantity, its calibration population and its decision threshold; do not substitute one formula for another without revalidation.
 
-The useful follow-up is clearer semantics and evidence, not an unbounded model sweep. See [architecture](architecture.md), [decision lessons](decision-lessons.md) and [experiments](experiments.md) for the implemented study.
+When comparing another decision model, first identify what its probabilities mean and which data it has seen. Then choose a task on which both systems can be evaluated. The [architecture](architecture.md), [decision lessons](decision-lessons.md) and [experiments](experiments.md) document those choices for myJEV.

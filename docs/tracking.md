@@ -1,6 +1,6 @@
 # W&B tracking and saved evidence
 
-W&B is an optional dashboard. Local JSONL logs, evaluation outputs and artifact manifests remain the primary record. Uploading never deletes those files. The integration does not upload model weights, optimizer state, credentials or archive annotations.
+Use Weights & Biases (W&B) to compare training curves and watch a run in progress. The local JSONL logs, evaluation outputs and manifests remain available if the dashboard is down. Uploads copy those records; they exclude model weights, optimizer state, credentials and archive annotations.
 
 ## Set up your own project
 

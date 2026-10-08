@@ -1,9 +1,8 @@
 # Engineering and experimental lessons
 
-Read the [completed Qwen findings and lessons](qwen-findings.md), including paired uncertainty, confidence controls and research limits.
+Several things went wrong before the model could be trained and served reliably. These notes explain what those failures changed in the implementation and how to read the resulting measurements. The [Qwen findings](qwen-findings.md) cover model quality; the [experiment guide](experiments.md) links the runs and their settings.
 
-
-These notes distinguish measured observations from choices and unresolved questions. The [experiment guide](experiments.md) distinguishes historical pilot observations from the longer comparison and its [descriptive results](../results/longer-v1/summary.md).
+The short pilot and longer comparison used different training budgets and test sizes. Use the [longer-study results](../results/longer-v1/summary.md) for the main method comparison.
 
 ## Count work across experiments, not as one model
 
@@ -17,15 +16,15 @@ The budget supports a matched comparison under equal exposure and tuning opportu
 
 Improvement should be assessed using held-out accuracy/F1, correctness Brier, calibration and accepted-case error at fixed coverage. A future convergence study needs predefined periodic validation, a meaningful improvement threshold and patience across several checks. Its stopping decisions must not use the test set. Current endpoint-only evaluations cannot establish a reliable plateau.
 
-Numerical failure is a different question: NaN/infinite loss, fatal process errors and disk exhaustion warrant stopping an affected job. A health check must not interpret a negative RL loss or ordinary fluctuations as failure. Our unattended monitoring does not claim autonomous scientific judgment between observations.
+The unattended monitor checks for NaN or infinite loss, fatal process errors and exhausted disk space. Those are reasons to stop a job and inspect its logs. A negative RL loss can be valid, and ordinary fluctuations do not tell the monitor whether a model has stopped improving.
 
 ## Hardware is only part of elapsed time
 
-The reference host has three 24 GB A30 GPUs, one independent size per GPU. The schedule uses one example per update, reference-policy computation for RL, frequent checkpointing and full evaluation passes. These choices also contribute to duration. Device utilization is not a measure of kernel efficiency, and no measured newer-GPU speedup is claimed. Batch-size or backend improvements should be benchmarked separately before changing a frozen comparison.
+Each of the three 24 GB A30 GPUs ran an independent model size. The schedule processes one example per update, computes a reference policy for RL, saves checkpoints frequently and runs full evaluation passes. That work contributes to elapsed time alongside the hardware. GPU utilization tells us how often a device was busy; finding a faster batch size or backend would need a separate benchmark.
 
 ## Small adapters do not imply a small serving model
 
-LoRA reduces the learned update and training state, while inference still needs the backbone. The size study controls the model family to investigate capacity, not to establish an optimal architecture. One-pass scoring avoids the output decoding loop, but still processes the full input. Fitting a training pilot on one 24 GiB A30 does not establish maximum-context serving capacity or Jev-equivalent latency.
+LoRA saves a compact weight update and reduces training state. Serving still loads the Qwen backbone and processes the full input. The one-pass readout saves answer decoding, but neither adapter size nor a successful short training pilot tells us maximum-context memory use or how we compare with Jev’s service.
 
 The [hardware and model-size rationale](training.md#choosing-model-size-around-the-hardware) distinguishes per-device fit from aggregate GPU memory. The [inference cost explanation](inference.md#what-the-adapter-saves-and-what-inference-still-costs) separates adapter files, backbone requirements, measured HTTP latency and untested optimizations. Final model selection must weigh quality against these costs; 9B is not automatically the default.
 
@@ -35,12 +34,12 @@ Local logs remain authoritative even when a dashboard is unavailable. An indepen
 
 ## Test inference through the real deployment path
 
-A successful image build and CUDA tensor operation did not prove that the first model request would work: the pilot container needed a C compiler for runtime kernel startup. A wrapper that resolved a virtualenv Python symlink also lost its environment's dependencies. Both failures were recorded and fixed. Python, CLI, HTTP and Docker checks must exercise the actual artifact and custom confidence head.
+The pilot container built successfully and could run a CUDA tensor operation, then failed on its first real model request: a runtime kernel needed a C compiler. Another wrapper resolved the virtualenv Python symlink to system Python and lost the environment’s dependencies. Both failures are in the logs. The deployment checks now load the actual artifact and exercise its confidence output through Python, CLI, HTTP and Docker.
 
-The pilot passed these interface checks at all three sizes. Its short latency samples are not final service-level guarantees. Representative final-checkpoint inputs, local serving benchmarks, calibration and public artifact/image releases subsequently completed. Empty-model-cache and review follow-ups are recorded separately in the hosting guide. See [inference and Docker](inference.md) and [the hosting protocol](hosting.md).
+All three pilot sizes passed after those fixes. Final-checkpoint serving checks and the empty-model-cache startup test followed as separate runs. Their request counts, cache conditions and timings are in [inference and Docker](inference.md) and [hosting](hosting.md).
 
 ## Scratch models exposed two different failure modes
 
 A small encoder fit the initial routing template but failed a reordered layout. Restoring that layout recovered some accuracy; varied training layouts and more exposure improved validation, but the final three-seed study remained unstable. See the [scratch evidence](scratch.md) rather than a single successful example.
 
-The BANKING77 scratch diagnostic collapsed to one class at 1.30% accuracy. Its low correctness Brier was a consequence of low confidence in usually wrong predictions, not useful classification. A fast model and a low calibration loss can coexist with an unusable system. This is why the teaching tracks retain quality, uncertainty, data exposure and serving costs together.
+The BANKING77 scratch model chose one class for every request and reached only 1.30% accuracy. Its confidence was low, so its correctness Brier score also looked low. That is why accuracy and the accepted-request counts have to sit beside the probability metrics: the model was correctly warning us about answers we could not use.

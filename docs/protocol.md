@@ -1,6 +1,6 @@
 # Experimental protocol
 
-This protocol records the design established during feasibility pilots and used by the completed studies. The full three-size comparison, precision control, transfer evaluation and release checks are now complete; see the [current evidence and limitations](https://github.com/bahree/myJEV/blob/main/docs/qwen-findings.md). Historical 100-update pilot configurations and the orchestration default of 1,000 updates remain reproducibility inputs, not descriptions of the final training budget or proof of convergence.
+This protocol records the experimental design and controls. The [Qwen findings](https://github.com/bahree/myJEV/blob/main/docs/qwen-findings.md) report the three-size comparison, precision control, transfer evaluation and release checks. The historical 100-update pilots and orchestration default of 1,000 updates are kept so those runs can be reproduced; the main study uses the longer schedule described in the training guide.
 
 ## Semantics and objectives
 

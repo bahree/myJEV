@@ -10,7 +10,7 @@ GitHub supplies the code and examples, the Hugging Face Hub supplies the trained
 
 ## What the adapter saves and what inference still costs
 
-The deployable computation is **backbone + adapter + confidence heads + calibration**, not the adapter alone. LoRA stores a learned low-rank weight update while keeping the pretrained weights frozen during training. It reduces trainable parameters and optimizer-state storage. The pretrained layers still execute at inference. See the [PEFT explanation](https://huggingface.co/docs/peft/main/en/conceptual_guides/lora).
+Loading the model requires the **backbone, adapter, confidence heads and calibration**. LoRA stores a small weight update while keeping the pretrained weights frozen during training. That reduces the trainable parameters and optimizer state, but the pretrained layers still run for every request. The [PEFT explanation](https://huggingface.co/docs/peft/main/en/conceptual_guides/lora) shows how the update is combined with the original layer.
 
 A local completed 9B supervised artifact (`longer-v1/9b/main/seed-11/sft`) occupied about 7.6 MiB for the adapter directory and 4.1 MiB for `heads.safetensors`, measured with `du -h`. These are approximate on-disk sizes for that artifact, not total download size, parameter counts or VRAM. The separately pinned backbone is still required. Sharing its cache avoids downloading a new full backbone for every adapter.
 

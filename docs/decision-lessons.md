@@ -47,7 +47,7 @@ This is not a measured human or LLM cascade, a dollar estimate, or a deployment 
 
 TF-IDF/logistic regression achieved 88.28% on the same official BANKING test split. Continued-supervised 4B averaged 89.23% across three seeds; its packaged seed reached 89.94%. The methods differ in tuning and exposure, so this is an operational comparison rather than a controlled estimate of one training method's benefit.
 
-TF-IDF has a fixed trained taxonomy. It does not interpret a new set of candidate descriptions at request time. For a stable label set this can be an advantage: inexpensive CPU operation, smaller artifacts and fewer serving dependencies. The candidate-description interface earns its added cost only when that flexibility is useful and its transfer quality is measured.
+TF-IDF learns a fixed set of labels. When those labels are stable, it offers cheap CPU inference, a small saved model and fewer serving dependencies. It cannot reinterpret the task from new candidate descriptions. Use myJEV’s more expensive interface only if that flexibility is needed and works on the requests you care about.
 
 The saved classifier is 12.8 MiB. The measured CPU p50/p95 was 0.503/0.540 ms per request; process peak RSS was 428 MiB including the Python stack. The [CPU baseline profile](../results/tfidf-serving-v1/summary.json) records vectorization plus classification on 512 frozen BANKING inputs, two CPU threads and concurrency one. Do not divide its time by Qwen's three-candidate HTTP benchmark to claim a speedup: inputs, candidate count and measurement boundaries differ. Whole-process CPU RSS and PyTorch allocated GPU memory are different accounting scopes.
 

@@ -22,7 +22,7 @@
       "mode": "100644"
     },
     "README.md": {
-      "sha256": "e375d30b15068bed32026fcd29cc7d12b31049c045890c3866549cf2abb8da92",
+      "sha256": "6ee4374164840360e3636153bb33d53fdace4eefef138ffcd97768752a727d7d",
       "mode": "100644"
     },
     "configs/0.8b.json": {
@@ -90,11 +90,11 @@
       "mode": "100644"
     },
     "docs/architecture.md": {
-      "sha256": "5789becd5638c59627c8aee951b072997b6ff01717b2c54b04beb4de9706b1f6",
+      "sha256": "ae7c74fee2741d0ee5b74149673e280306c381fe26db14927661898353e604b4",
       "mode": "100644"
     },
     "docs/attribution.md": {
-      "sha256": "888d15abb877b1a3a61cd8f7fc57a593aba4b62240256c1cadf3c912ec0c6b45",
+      "sha256": "db9e0f777dc92cc2126f6551b05677a2a89d1a604d187cd5ec0e922193862d08",
       "mode": "100644"
     },
     "docs/datasets/banking77.md": {
@@ -102,7 +102,7 @@
       "mode": "100644"
     },
     "docs/datasets/blog-archive.md": {
-      "sha256": "d005f9ebe8339c7c765b0cd09328894673a1288ad2b9e0382d4ee9ab836a3cb8",
+      "sha256": "d63f8b76f67c06c91d837cfba2d7a37ddaf2b8acd2cecfc0927faf0bd49d40e8",
       "mode": "100644"
     },
     "docs/datasets/clinc150.md": {
@@ -118,11 +118,11 @@
       "mode": "100644"
     },
     "docs/decision-lessons.md": {
-      "sha256": "10f535a91d0d9e36884d9c32ead6080caa5d5a7d62a7974e51d78ded55dd730b",
+      "sha256": "b52339605f0a9a32b822f0c47e047d60172d7845678d12a4d07dfac5e5d31828",
       "mode": "100644"
     },
     "docs/experiments.md": {
-      "sha256": "82c5eefac9dcfc42dbe2c7fe0efde8f4f071b8e616d39e8dc5ccb1600adaae0b",
+      "sha256": "64263b3ef48127127eeaae0660783bb2ee0139e8565ab49e0dcbfc6089b099e5",
       "mode": "100644"
     },
     "docs/hosting.md": {
@@ -130,15 +130,15 @@
       "mode": "100644"
     },
     "docs/inference.md": {
-      "sha256": "e4309f09cca98afc797dc7faefbeb21d93d88cc1af59ad2d90c69e2f60e3fd13",
+      "sha256": "d7ceaa9b8cfdd9cf31498116c1991369de7fa9ddc4f57a7730060cf575cb896d",
       "mode": "100644"
     },
     "docs/learnings.md": {
-      "sha256": "91ed1233ed6d34740bd70233f30a3dc456f7cac8ab6cd79aa8546af068f35e5a",
+      "sha256": "3a5152f94168fff9c2c699247e1151c35932af3f27f1405dd07250ef1af08931",
       "mode": "100644"
     },
     "docs/models.md": {
-      "sha256": "312c5796b89d8c4f8084b9f51d92a148a6e013cf25dde201f3a99267e62df830",
+      "sha256": "bbb75855e07990d37405f824db9461c734644b6ceb5ced507419b00985337f69",
       "mode": "100644"
     },
     "docs/openjev.md": {
@@ -146,7 +146,7 @@
       "mode": "100644"
     },
     "docs/protocol.md": {
-      "sha256": "37fe928050756acef500943e0181b9dd666c9821f7d08389a4f0fb3bcf91d92d",
+      "sha256": "2b2e1dc41ef4e6ef53a173d62dc665e17154521cce71492a3eff4edca00ee42b",
       "mode": "100644"
     },
     "docs/quickstart.md": {
@@ -154,7 +154,7 @@
       "mode": "100644"
     },
     "docs/qwen-findings.md": {
-      "sha256": "0979f56cafbf2664d5bcebdbcd51d3207e949d3fa1fce35f7582f81d8837f3b4",
+      "sha256": "930fac933a54d2585b09491ef10d2e3440212fddc1b0853d69e28c8c486432bc",
       "mode": "100644"
     },
     "docs/roadmap.md": {
@@ -166,11 +166,11 @@
       "mode": "100644"
     },
     "docs/scratch.md": {
-      "sha256": "06c31db118200a2fc2de0e12b863302905d8576b1011cb46813abc46b4b23e20",
+      "sha256": "0f4036719fe4f7bdf3f3bc98cae90442f00c9483b768938d605e385e4df4c735",
       "mode": "100644"
     },
     "docs/system-one-peer-review.md": {
-      "sha256": "ff3591a183fd5c3339ea4bcb7dd1b57803906c7ca2b57d7885f5a639c026cc0f",
+      "sha256": "91e26938ea61cba987ca8128e6397110467d71f711787982a2be47cc80a31c56",
       "mode": "100644"
     },
     "docs/system-one-research.md": {
@@ -178,15 +178,15 @@
       "mode": "100644"
     },
     "docs/tracking.md": {
-      "sha256": "0503dada3c68e8382c613abd236e94adef9406aca77d4f98a8475f143ccc9cb3",
+      "sha256": "bf1889c78a8a4476b65143def1f740ec4a57e5dc6474092e0c59c54a9cd4706f",
       "mode": "100644"
     },
     "docs/training.md": {
-      "sha256": "001e81ae3d48bdc4a60f0cb89f9dee57782bd9ad352594b34dc6025cf72e6c59",
+      "sha256": "6bc3b194dc072f2d9529dd08c3c4e2d42d22f29f0ccaf8b46c3d5789f7133583",
       "mode": "100644"
     },
     "docs/walkthrough.md": {
-      "sha256": "459be8a8fa6267b57db3efac5bd5005f35afeaeee8e640ccfaeb7897e8036d9b",
+      "sha256": "d1718b18cca9a6ab4e32c7f07b4fe4af8664d7d4e8e4965a52f98d3c38ff6026",
       "mode": "100644"
     },
     "examples/client.py": {

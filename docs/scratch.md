@@ -99,7 +99,7 @@ The frozen 13,000-update study is complete. Main runs used three seeds, with 1,0
 | Exact RL | 51.43% | 22.13 percentage points |
 | Sampled RL | 40.62% | 11.45 percentage points |
 
-Those large seed differences are a central result, not noise to hide. Continued SFT's individual accuracies were 85.16%, 27.54% and 86.33%. The architecture can learn useful behavior on this toy task, but this training recipe is unreliable across initializations and held-out layouts. RL did not improve the mean. Changes to data coverage, optimizer settings, objective weighting or architecture would require a new declared experiment; no test-driven retraining was performed here.
+Continued SFT scored 85.16%, 27.54% and 86.33% across its three seeds. One successful run would give a misleading picture of how reliable this recipe is. RL did not improve the mean. Data coverage, optimizer settings and objective weighting are candidates for another experiment; none was retuned using these test outcomes.
 
 The [complete synthetic report](../results/scratch-study-v1/summary.md) includes scalar, temperature and constant controls, and confidence error against known conditional probabilities. Temperature scaling was helpful in the Qwen study but did not beat the scalar head on this shifted synthetic test. That difference reinforces the need to measure each deployment distribution. Twelve completed training histories were imported into W&B as historical runs, with original step/time axes and no invented system telemetry; URLs are in the evidence folder.
 
@@ -109,7 +109,7 @@ The separate [BANKING77 diagnostic](../results/scratch-banking-diagnostic/report
 
 Its scalar correctness Brier was only **0.0128**. A low score here is misleading if viewed without accuracy: the model was almost always wrong and reported low confidence. A model that rarely succeeds has a different correctness outcome distribution from a competent model. Brier alone cannot rank deployment utility across them. Calibration also cannot repair wrong answer selection.
 
-This diagnostic does not prove that encoders or scratch training cannot learn banking intents. Tokenization, model capacity, data exposure, initialization, objective weighting and optimization all differ from pretrained Qwen. It shows what this specific small random-initialized experiment failed to learn, and why toy-rule success must not be generalized into a language-model claim.
+The failure belongs to this configuration and training budget. Tokenization, capacity, initialization and optimization are all possible contributors, while Qwen also brings language pretraining. The synthetic rule results did not tell us whether this model could learn banking intents; the language test exposed that gap.
 
 ## Measured deployment check
 
@@ -138,7 +138,7 @@ The [release manifest](../results/scratch-teaching-release-v1/manifest.json) rec
 
 ## Diagnostic ladder after the original failure
 
-A bounded follow-up separates implementation checks from broad language learning. The tiny training-set overfit check reached 100% in all three seeds. An initial deterministic fixture accidentally correlated numeric record indices with labels; its successes cannot establish rule recovery, and both that fixture and the failed seeds remain recorded.
+I tested whether the model could at least memorize a tiny training set before changing the architecture. It reached 100% in all three seeds. An initial deterministic fixture then exposed a data mistake: numeric record indices correlated with labels. A successful run could exploit that shortcut, so the original fixture and failed seeds remain in the records, followed by the corrected test.
 
 The [corrected protocol](../results/scratch-ladder-v2/report.md) pairs each nuisance nonce with all four color labels and keeps test nonces out of training. With the same architecture, learning rate and per-run budget, seeds 11/22/33 each recovered the explicit color rule on all 64 held-out decisions across 16 nonce groups. This is a same-template sanity check. It does not repair the original noisy/layout-shift task or the 1.30% BANKING result.
 

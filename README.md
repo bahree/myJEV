@@ -1,12 +1,12 @@
 # myJEV: Build a Model That Chooses an Answer
 
-**Give it a request and a set of choices. Inspect the answer and its confidence.**
+Supply a request and a set of choices. myJEV returns the selected answer and its confidence.
 
-myJEV is a learning project about models that make decisions inside software. We supply context, an instruction and possible answers; the model returns a choice, scores and confidence. The goal is to understand how to build that interface and when an application can trust its output.
+I built myJEV to understand how a model can make decisions inside an application. The request contains context, an instruction and possible answers. The model scores those answers in one pass, then the application decides whether to accept the result or send it for review.
 
 The inspiration is [Jev from TypeSafe AI](https://typesafe.ai/blog/introducing-system-one-models-and-jev). TypeSafe calls it a System One model: its interface accepts typed questions and returns decisions and probability information directly. What interested me was using language understanding to choose among request-supplied options without generating a written answer. Classification is familiar; making the task and choice descriptions part of each request gives us more to investigate. See the [TypeSafe API introduction](https://docs.typesafe.ai/introduction) for its interface and [our attribution notes](docs/attribution.md) for related implementations.
 
-I built two versions to study that idea: a small network trained from random weights, and adaptations of pretrained Qwen language models. We compare what they learn, whether confidence helps identify mistakes, and what model size costs in memory and serving time. The repository includes the code, trained Qwen releases, saved outputs and failures. This is a research and teaching project by [Amit Bahree](https://blog.desigeek.com); its measurements describe myJEV, rather than reproducing TypeSafe's unpublished architecture.
+There are two implementations: a small network trained from random weights and adaptations of pretrained Qwen language models. The experiments compare what they learn, how well confidence identifies mistakes, and what each model costs to serve. You can download the trained Qwen versions, inspect the saved outputs or rerun the code. This is a learning project by [Amit Bahree](https://blog.desigeek.com); TypeSafe’s underlying architecture remains undisclosed.
 
 **Try it:** start with the downloadable [myJEV-4B](https://huggingface.co/bahree/myJEV-4B) and the commands below. Training is optional. A compatible NVIDIA GPU is required for the tested Qwen setup. If you prefer Docker, use the [container instructions](docs/quickstart.md#docker). Without a GPU, you can read the [recorded demos](results/demos-v1/report.md) or run the [CPU calibration lab](docs/decision-lessons.md#run-a-small-calibration-lab-on-cpu).
 
@@ -85,7 +85,7 @@ A high confidence value can still accompany a wrong answer. Run `python scripts/
 
 ## Choose a learning route
 
-The guides follow the same sequence as the accompanying [blog](https://blog.desigeek.com): try a decision, understand its computation, train it, evaluate it, then serve it. You can follow the entire [hands-on walkthrough](docs/walkthrough.md) or start with the question that interests you.
+Start by scoring a request, then follow it through the network. From there you can train a model, evaluate its decisions or run a service. The [hands-on walkthrough](docs/walkthrough.md) connects those steps; the table lets you jump to a particular task. The accompanying [blog](https://blog.desigeek.com) explains the experiments in more detail.
 
 | I want to... | Read and run | What I will learn |
 |---|---|---|
@@ -145,7 +145,7 @@ Initial supervised training receives 4,000 updates. Each continuation receives 4
 
 Confidence needs a separate comparison. **Correctness Brier** measures squared error between reported confidence and whether the answer was right; lower is better. The released supervised configurations have lower mean Brier than the native RL confidence policy. Giving every method the same temperature-fitting opportunity changes that result: exact RL has a slightly lower mean at 4B and is lower on all three 9B seeds. This exploratory follow-up did not change the released default. The [findings guide](docs/qwen-findings.md) gives the per-seed results, uncertainty calculations and limitations.
 
-Within the six published myJEV variants, our exploratory starting recommendation is **4B continued supervision with temperature scaling**. It combines useful confidence, unsupported-option transfer and a measured 82.18 ms warm HTTP median on an A30 for short three-candidate requests. Exact RL remains available for its higher 4B BANKING accuracy. These are task-dependent trade-offs, not a universal ranking. [Candidate selection and resource measurements](docs/models.md#why-this-default-within-the-myjev-family)
+I recommend **4B continued supervision with temperature scaling** as a starting point among the six releases. Its confidence and unsupported-option results were stronger than the released 4B RL configuration, and short three-candidate requests took a median 82.18 ms over HTTP on an A30. Exact RL had higher average 4B BANKING accuracy. Choose between them using the errors and costs that matter to your task; this recommendation combines observed results and remains exploratory. [Model comparison and serving measurements](docs/models.md#why-this-default-within-the-myjev-family)
 
 For a fixed banking taxonomy, smaller classifiers are serious alternatives: TF-IDF reached 88.28%, and a separate single-seed 149.7M ModernBERT control reached 90.78% after three epochs. These differ in exposure and interface from myJEV. [Worked probability, cost and baseline lessons](docs/decision-lessons.md) explain the trade-off; [encoder evidence](results/encoder-control-v1/report.md) records the conditions.
 
