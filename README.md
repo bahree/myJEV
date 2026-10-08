@@ -1,123 +1,16 @@
-# myJEV: Decision Models, Confidence, and Reinforcement Learning
+# myJEV: Build a Model That Chooses an Answer
 
-**Choose an answer. Estimate whether it is right. Know when to ask for review.**
+**Give it a request and a set of choices. Inspect the answer and its confidence.**
 
-myJEV explores a compact interface for language models: give the model some context and a set of candidate answers, then receive a structured decision in one backbone forward pass. There is no autoregressive answer generation. The project covers data, training objectives, calibration, evaluation, and a local GPU service across **0.8B, 4B, and 9B** models.
+myJEV is a learning project about models that make decisions inside software. We supply context, an instruction and possible answers; the model returns a choice, scores and confidence. The goal is to understand how to build that interface and when an application can trust its output.
 
-This is a research and learning project by [Amit Bahree](https://blog.desigeek.com). It combines a small model built from scratch with controlled Qwen fine-tuning experiments, confidence calibration, transfer evaluation, and local inference.
+The inspiration is [Jev from TypeSafe AI](https://typesafe.ai/blog/introducing-system-one-models-and-jev). TypeSafe calls it a System One model: its interface accepts typed questions and returns decisions and probability information directly. What interested me was using language understanding to choose among request-supplied options without generating a written answer. Classification is familiar; making the task and choice descriptions part of each request gives us more to investigate. See the [TypeSafe API introduction](https://docs.typesafe.ai/introduction) for its interface and [our attribution notes](docs/attribution.md) for related implementations.
 
-Start with the downloadable [myJEV-4B](https://huggingface.co/bahree/myJEV-4B) adapter/head package and the [quick start](docs/quickstart.md), or explore [the findings](docs/qwen-findings.md) and [scratch lessons](docs/scratch.md). The scratch model's natural-language diagnostic failed; the archive study uses machine-generated references and does not establish human accuracy. These limitations are part of the study. No hosted demo is included.
+I built two versions to study that idea: a small network trained from random weights, and adaptations of pretrained Qwen language models. We compare what they learn, whether confidence helps identify mistakes, and what model size costs in memory and serving time. The repository includes the code, trained Qwen releases, saved outputs and failures. This is a research and teaching project by [Amit Bahree](https://blog.desigeek.com); its measurements describe myJEV, rather than reproducing TypeSafe's unpublished architecture.
 
-The scratch track [builds a small decision model from scratch](docs/scratch.md), with recorded learning failures, a completed synthetic study and local serving checks. Its weak natural-language results remain separate from Qwen.
+**Try it:** start with the downloadable [myJEV-4B](https://huggingface.co/bahree/myJEV-4B) and the commands below. Training is optional. A compatible NVIDIA GPU is required for the tested Qwen setup. If you prefer Docker, use the [container instructions](docs/quickstart.md#docker). Without a GPU, you can read the [recorded demos](results/demos-v1/report.md) or run the [CPU calibration lab](docs/decision-lessons.md#run-a-small-calibration-lab-on-cpu).
 
-[Start here](docs/quickstart.md) · [Documentation](docs/README.md) · [Measured results](docs/qwen-findings.md) · [Roadmap](docs/roadmap.md)
-
-## Choose a learning route
-
-| Stage | Read and run | Concrete outcome |
-|---|---|---|
-| Build from scratch | [Scratch walkthrough](docs/scratch.md) | Trace byte tokens through an encoder, then inspect both learned rules and failures |
-| Adapt a pretrained network | [Training](docs/training.md) | Follow LoRA, the update budget, supervised and exact/sampled branches |
-| Evaluate decisions | [Experiments](docs/experiments.md) and [CPU lab](docs/walkthrough.md) | Separate accuracy, confidence, escalation and uncertainty |
-| Use and host it | [Inference](docs/inference.md), [model releases](docs/models.md), [Docker](docs/hosting.md) | Run an actual request and serve the same output contract |
-
-The [worked route](docs/walkthrough.md) connects equations, tensor shapes, commands and observed outputs. No training is needed to try the released model, and no GPU is needed for the arithmetic or calibration labs.
-
-## Documentation by reader task
-
-| I want to... | Guide |
-|---|---|
-| Work through code, math, outputs and evidence | [Hands-on learning route](docs/walkthrough.md) |
-| Try seven original requests | [Runnable demos and retained failure](results/demos-v1/report.md) |
-| Explore calibration on CPU | [Calibration lab](results/calibration-lab-v1/report.md) and [decision lessons](docs/decision-lessons.md) |
-| Follow the complete documentation | [Documentation index](docs/README.md) |
-| Build the small model and inspect its failures | [Scratch walkthrough](docs/scratch.md) |
-| Understand Qwen results and their limits | [Qwen findings](docs/qwen-findings.md) |
-| Reproduce training and understand the update budget | [Training](docs/training.md) |
-| Track runs, epochs and GPU evidence | [W&B and local tracking](docs/tracking.md) |
-| Check data provenance and evaluation rules | [Dataset cards](docs/README.md#data-and-provenance) and [protocol](docs/protocol.md) |
-| Load, score and serve a local artifact | [Inference](docs/inference.md) |
-| Run Docker or prepare managed hosting | [Hosting](docs/hosting.md) |
-| Understand lessons, failures and research extensions | [Learnings](docs/learnings.md) and [roadmap](docs/roadmap.md) |
-
-## What is a decision model?
-
-Take a support request: **“I was charged twice.”** An application supplies choices such as billing, technical support, and other. myJEV selects one of those choices and returns two different quantities:
-
-| Output | Meaning | How to use it |
-|---|---|---|
-| Selection scores | Normalized scores over the candidates supplied in this request | Select the highest-scoring candidate |
-| Correctness confidence | An estimate that the selected answer is right | Evaluate a threshold for accepting or deferring a decision |
-
-A high selection score is not automatically a reliable probability of correctness. Improving the confidence estimate does not automatically calibrate the entire selection distribution. That distinction is the reason for this project.
-
-```mermaid
-flowchart LR
-    A[Context and candidate descriptions] --> B[Verified token aliases]
-    B --> C[One backbone forward pass]
-    C --> D[Candidate selection scores]
-    C --> E[Trained confidence heads]
-    D --> F[Selected answer]
-    E -->|scalar or policy mode| G[Reported correctness confidence]
-    D -->|selection mode| G
-    F --> H[Application decision or review]
-    G --> H
-```
-
-## What you can learn and run
-
-- Build a candidate-selection interface using pinned Qwen3.5 backbones and LoRA adapters.
-- Compare supervised training, continued supervision, exact expected-reward optimization, and eight-sample REINFORCE.
-- Test calibration against temperature scaling and constant-confidence controls.
-- Measure accepted-case error and coverage, alongside accuracy, Brier error, and resource use.
-- Use the same inference implementation from Python, a CLI, HTTP, or Docker.
-- Inspect saved predictions, reproduce charts, and inspect the evidence behind each conclusion.
-
-See [architecture and objectives](docs/architecture.md) for the confidence head and reward, and [attribution](docs/attribution.md) for how this implementation relates to JevK5, JevForge, and OpenJev.
-
-## Choose your starting point
-
-| Goal | Start here | Requires |
-|---|---|---|
-| Understand the design | [Architecture](docs/architecture.md) | No installation |
-| Inspect the actual findings | [Experiments and evidence](docs/experiments.md) | No GPU |
-| Run the implementation tests | [Install and test](docs/quickstart.md#install-and-test) | Python; no model download |
-| Train a first decision model | [Train the 0.8B pilot](docs/quickstart.md#train-the-08b-pilot) | Compatible NVIDIA GPU and backbone download |
-| Score or serve your trained artifact | [Python, CLI, and HTTP](docs/quickstart.md#score-and-serve) | A local artifact from training |
-| Run a GPU container | [Docker quick start](docs/quickstart.md#docker) | Docker with NVIDIA GPU access |
-| Download a trained release | [Model release tracker](docs/models.md) | Public adapters/heads; custom loader and separate backbone |
-
-The longer study uses one optimizer, AdamW, across several training approaches. Its completed 168,000 training steps were spread over 60 runs. See [the training-budget breakdown](docs/training.md#why-168000-training-steps) for the controls, costs, and progress definitions.
-
-## Three sizes, one experimental interface
-
-Fine-tuning tests whether task-specific adaptation and learned correctness confidence improve on an untouched pretrained model. We use LoRA/QLoRA to fit the existing hardware and retain compact adapters. Training is not required for single-pass scoring itself, and its benefit remains an empirical question. Read [why we fine-tune and why these adapter methods](docs/training.md#why-fine-tune-an-already-pretrained-model).
-
-| Backbone | Pilot precision | Adaptation | Observed training peak* |
-|---|---|---|---:|
-| Qwen3.5 0.8B | BF16 | LoRA | 1.7 GiB |
-| Qwen3.5 4B | BF16 | LoRA | 8.5 GiB |
-| Qwen3.5 9B | NF4 | QLoRA | 12.0 GiB |
-
-\*PyTorch allocated-memory peaks in the initial supervised pilots on 24 GB A30 GPUs. These are not maximum-context serving requirements or minimum GPU recommendations. The 9B precision change also limits conclusions about capacity alone. Configurations pin the backbone revisions; see [hosting measurements](docs/hosting.md).
-
-## What the completed comparison found
-
-Mean BANKING77 accuracy across three seeds on all 3,080 official test examples:
-
-| Size | Supervised | Continued supervision | Exact RL | Sampled RL |
-|---|---:|---:|---:|---:|
-| 0.8B | 79.06% | **82.93%** | 81.36% | 80.53% |
-| 4B | 86.48% | 89.23% | **90.27%** | 88.20% |
-| 9B | 87.08% | 89.15% | **89.34%** | 88.54% |
-
-Initial supervised training receives 4,000 updates. Each continuation receives 4,000 more from its matched supervised checkpoint. Exact RL leads continued supervision at 4B on two of three seeds and in the mean; the conditional test interval excludes zero, but seed deltas cross zero. Sampled RL trails exact RL in eight of nine pairs and in every size mean. The released supervised configurations have lower mean Brier than the native RL policy. Giving all methods identical selection-temperature fitting changes that comparison: exact RL has a slightly lower mean at 4B and is lower on all three 9B seeds. These follow-up controls are exploratory and do not change the released default. See [paired uncertainty, controls and limitations](docs/qwen-findings.md).
-
-Within the six published myJEV variants, our exploratory starting recommendation is **4B continued supervision with temperature scaling**. It combines useful confidence, unsupported-option transfer and a measured 82.18 ms warm HTTP median on an A30 for short three-candidate requests. Exact RL remains available for its higher 4B BANKING accuracy. These are task-dependent trade-offs, not a universal ranking. [Candidate selection and resource measurements](docs/models.md#why-this-default-within-the-myjev-family)
-
-For a fixed banking taxonomy, smaller classifiers are serious alternatives: TF-IDF reached 88.28%, and a separate single-seed 149.7M ModernBERT control reached 90.78% after three epochs. These differ in exposure and interface from myJEV. [Worked probability, cost and baseline lessons](docs/decision-lessons.md) explain the trade-off; [encoder evidence](results/encoder-control-v1/report.md) records the conditions.
-
-The [short pilot](docs/experiments.md) remains recorded as an feasibility experiment. A TF-IDF/logistic-regression control reaches **88.28%** on the official test set, with different training exposure. The [policy-edit diagnostic](results/policy-edits-v1/report.md) separately probes explicit exceptions and changed rules; it is synthetic, uses one seed, and is not a PolicyLM benchmark.
+[Quick start](#quick-start) · [Learning route](#choose-a-learning-route) · [Documentation](docs/README.md) · [Measured results](#what-the-completed-comparison-found)
 
 ## Quick start
 
@@ -126,10 +19,10 @@ Tested environment: Linux, Python 3.12, and an NVIDIA A30 for GPU execution. The
 ```bash
 git clone https://github.com/bahree/myJEV.git
 cd myJEV
-python3 -m venv .venv
+python3.12 -m venv .venv
+source .venv/bin/activate
 .venv/bin/pip install -r requirements.lock
 .venv/bin/pip install --no-deps -e .
-.venv/bin/python -m pytest -q
 ```
 
 To score with the public default, without retraining:
@@ -140,20 +33,11 @@ To score with the public default, without retraining:
   --input examples/request.json
 ```
 
-The default [myJEV-4B](https://huggingface.co/bahree/myJEV-4B) is available on Hugging Face. These releases contain adapters, custom heads, calibration and manifests, not merged backbones. Use the myJEV loader, which separately loads the manifest-pinned Qwen backbone and tokenizer. Publishing these files does not create a hosted endpoint.
-
-For a local model, follow the [data preparation and training commands](docs/quickstart.md). Once training creates `artifacts/pilot-0.8b/artifact`:
-
-```bash
-.venv/bin/myjev score --artifact artifacts/pilot-0.8b/artifact --input examples/request.json
-.venv/bin/myjev serve --artifact artifacts/pilot-0.8b/artifact
-```
-
-The HTTP service provides `/score`, `/healthz`, and `/readyz`. It binds locally by default and rejects oversized requests. Python/CLI/HTTP/Docker equivalence has been checked for all six final local candidates. See [the complete quick start](docs/quickstart.md) for Python, curl, and Docker examples.
+The code lives on GitHub; the trained files live on the **Hugging Face Hub**, a service for sharing models. The first call downloads the myJEV training updates and the original Qwen network they require. That original network is the **backbone**. Keep the `--revision` value to use the same model files as this example. The [installation guide](docs/quickstart.md#install-and-test) covers the host compiler needed by the GPU runtime and optional tests.
 
 ## An actual local request and response
 
-This recorded response comes from `myjev-4b-continued_sft-seed11`, the temperature-calibrated local starting candidate. It is an observed fixture result, not a made-up output or a public endpoint. [Validation evidence](results/release-validation-v1/myjev-4b-continued_sft-seed11/equivalence.json)
+For our first example, a customer says, “I was charged twice.” The application needs to route the issue to billing, technical support or another queue. The command reads `examples/request.json`: `context` is the customer message, `instructions` describes the task, and `candidates` lists the permitted answers with their meanings. This is the actual request and saved response for the released 4B model. [Validation evidence](results/release-validation-v1/myjev-4b-continued_sft-seed11/equivalence.json)
 
 Request:
 
@@ -195,7 +79,79 @@ Response:
 }
 ```
 
-Here `confidence_mode: "selection"` means the artifact reports the temperature-scaled selected score as its correctness estimate. The RL artifacts instead use the expectation of their separate learned confidence policy. A confidence of 0.9834 for this fixture is not a guarantee of correctness or calibration on a new application.
+The model selected `billing` and reported about 98.34% confidence. The selection scores rank the supplied choices. Confidence estimates whether the chosen answer is correct. Here those numbers match because this release uses the selected score after **temperature calibration**, an adjustment fitted on separate examples. Other releases use a separate learned confidence calculation. The [hands-on guide](docs/walkthrough.md#2-follow-one-decision) works through that distinction.
+
+A high confidence value can still accompany a wrong answer. Run `python scripts/run_demos.py > demo-results.jsonl` in the activated environment to try seven requests: duplicate charges, an app crash, a hiking question, two refund dates, a misleading quote and a short post. The [demo walkthrough](results/demos-v1/report.md) explains each expected answer and retains the smaller model's confident refund mistake. It also lets you inspect the saved outputs without a GPU.
+
+## Choose a learning route
+
+The guides follow the same sequence as the accompanying [blog](https://blog.desigeek.com): try a decision, understand its computation, train it, evaluate it, then serve it. You can follow the entire [hands-on walkthrough](docs/walkthrough.md) or start with the question that interests you.
+
+| I want to... | Read and run | What I will learn |
+|---|---|---|
+| Try the model | [Quick start](docs/quickstart.md) and [seven requests](results/demos-v1/report.md) | What goes into a request and how to read the result |
+| Build a small model | [Architecture](docs/architecture.md) and [scratch walkthrough](docs/scratch.md) | How text becomes candidate scores, and where a tiny model fails |
+| Adapt Qwen | [Training](docs/training.md) and [W&B tracking](docs/tracking.md) | What adapters learn, why the experiment has several methods, and how to inspect a run |
+| Decide when to trust an answer | [Decision lessons](docs/decision-lessons.md), [CPU lab](results/calibration-lab-v1/report.md), and [findings](docs/qwen-findings.md) | How to check confidence and measure the cost of accepting mistakes |
+| Call it from an application | [Inference](docs/inference.md) and [hosting](docs/hosting.md) | Python, CLI, HTTP, Docker, and the measured startup and serving costs |
+| Check or reproduce the study | [Experiments](docs/experiments.md), [protocol](docs/protocol.md), and [data cards](docs/README.md#data-and-provenance) | Which data each experiment used and what supports its conclusions |
+
+The [documentation index](docs/README.md) groups all guides by task, including model releases, troubleshooting, attribution and further experiments. The [engineering lessons](docs/learnings.md) explain decisions made along the way.
+
+## Three sizes, one experimental interface
+
+I used three sizes of the Qwen3.5 family to test what extra capacity adds. The names 0.8B, 4B and 9B refer to approximate billions of learned parameters. **LoRA** trains small weight updates, called adapters, while keeping the original weights fixed. The 9B configuration stores those original weights at lower precision to fit the GPU; this combination is called **QLoRA**. The [training guide](docs/training.md#why-lora-and-qlora) explains these choices and the BF16 and NF4 formats below.
+
+| Backbone | Pilot precision | Adaptation | Observed training peak* |
+|---|---|---|---:|
+| Qwen3.5 0.8B | BF16 | LoRA | 1.7 GiB |
+| Qwen3.5 4B | BF16 | LoRA | 8.5 GiB |
+| Qwen3.5 9B | NF4 | QLoRA | 12.0 GiB |
+
+\*PyTorch allocated-memory peaks in the initial supervised pilots on 24 GB A30 GPUs. These are not maximum-context serving requirements or minimum GPU recommendations. The 9B precision change also limits conclusions about capacity alone. Configurations pin the backbone revisions; see [hosting measurements](docs/hosting.md).
+
+The pretrained backbone does most of the language processing. An adapter changes some of that computation; a **head** turns internal model features into a confidence estimate. The prompt gives each candidate a short token label, called an **alias**, which is mapped back to the application's original ID after scoring. This diagram shows where the answer and confidence come from:
+
+```mermaid
+flowchart LR
+    A[Context and candidate descriptions] --> B[Verified token aliases]
+    B --> C[One backbone forward pass]
+    C --> D[Candidate selection scores]
+    C --> E[Trained confidence heads]
+    D --> F[Selected answer]
+    E -->|scalar or policy mode| G[Reported correctness confidence]
+    D -->|selection mode| G
+    F --> H[Application decision or review]
+    G --> H
+```
+
+The [architecture guide](docs/architecture.md) follows those steps. The scratch model uses a different scoring design and starts without pretrained language knowledge. It learned some controlled rules but chose the same class for every request in its banking test. The [scratch results](docs/scratch.md) retain that failure and the debugging steps.
+
+## What the completed comparison found
+
+BANKING77 contains customer messages labelled with 77 banking intents, such as the reason someone contacts support. The table reports the percentage of correct answers on all 3,080 official test examples, averaged across three random seeds. A seed controls the random initialization of new components and the training order.
+
+**Supervised** training learns from labelled examples. **Continued supervision** gives that model more of the same training. **Reinforcement learning (RL)** instead uses a reward for correct answers and useful confidence. The exact method sums the reward over every possible answer/confidence action; the sampled method estimates that same objective from eight draws. The [training walkthrough](docs/training.md) explains why we compare all four.
+
+Mean BANKING77 accuracy:
+
+| Size | Supervised | Continued supervision | Exact RL | Sampled RL |
+|---|---:|---:|---:|---:|
+| 0.8B | 79.06% | **82.93%** | 81.36% | 80.53% |
+| 4B | 86.48% | 89.23% | **90.27%** | 88.20% |
+| 9B | 87.08% | 89.15% | **89.34%** | 88.54% |
+
+Initial supervised training receives 4,000 updates. Each continuation receives 4,000 more from the same starting checkpoint for its seed. At 4B, exact RL beats continued supervision on two seeds and on the average, but loses on the third. An interval that resamples test examples excludes zero; variation between training seeds still includes gains and losses. Sampled RL trails exact RL in eight of nine size/seed pairs and in every size average.
+
+Confidence needs a separate comparison. **Correctness Brier** measures squared error between reported confidence and whether the answer was right; lower is better. The released supervised configurations have lower mean Brier than the native RL confidence policy. Giving every method the same temperature-fitting opportunity changes that result: exact RL has a slightly lower mean at 4B and is lower on all three 9B seeds. This exploratory follow-up did not change the released default. The [findings guide](docs/qwen-findings.md) gives the per-seed results, uncertainty calculations and limitations.
+
+Within the six published myJEV variants, our exploratory starting recommendation is **4B continued supervision with temperature scaling**. It combines useful confidence, unsupported-option transfer and a measured 82.18 ms warm HTTP median on an A30 for short three-candidate requests. Exact RL remains available for its higher 4B BANKING accuracy. These are task-dependent trade-offs, not a universal ranking. [Candidate selection and resource measurements](docs/models.md#why-this-default-within-the-myjev-family)
+
+For a fixed banking taxonomy, smaller classifiers are serious alternatives: TF-IDF reached 88.28%, and a separate single-seed 149.7M ModernBERT control reached 90.78% after three epochs. These differ in exposure and interface from myJEV. [Worked probability, cost and baseline lessons](docs/decision-lessons.md) explain the trade-off; [encoder evidence](results/encoder-control-v1/report.md) records the conditions.
+
+The [short pilot](docs/experiments.md) tested whether the implementation worked before the longer study. The [policy-edit diagnostic](results/policy-edits-v1/report.md) separately checks explicit exceptions and changed rules using authored examples and one seed. Its results describe those myJEV examples, not PolicyLM performance.
+
+The archive study asks a different question: can the model learn to classify posts from my blog? Its reference labels came from a separate model. Adaptation improved agreement with those labels, but that does not establish agreement with human readers. See the [archive data card](docs/datasets/blog-archive.md) and [adaptation results](docs/qwen-findings.md).
 
 ## Repository map
 
@@ -215,19 +171,11 @@ myJEV/
 
 Training creates local `data/`, `artifacts/`, and `.cache/` directories, which are excluded from Git. Adapters and heads are separately versioned on Hugging Face; their manifest-pinned backbone weights are downloaded separately.
 
-## Learning series
+## Models, containers and further work
 
-The [Desi Geek blog](https://blog.desigeek.com) accompanies this repository. The same learning route is available here:
+The [model guide](docs/models.md) lists six releases on Hugging Face: three sizes, each with a supervised and an RL version. The myJEV loader combines their adapters and confidence heads with the required Qwen backbone. [Docker Hub](https://hub.docker.com/r/amitbahree/myjev) hosts the container that runs this same inference code. Downloadable files and a container image do not provide an always-on endpoint; the commands in this repository run the service on your machine.
 
-| Topic | Hands-on guide |
-|---|---|
-| Decision models and building from scratch | [Architecture](docs/architecture.md) and [scratch walkthrough](docs/scratch.md) |
-| Fine-tuning Qwen | [Training](docs/training.md) and [findings](docs/qwen-findings.md) |
-| Confidence, evaluation and transfer | [Decision lessons](docs/decision-lessons.md) and [experiments](docs/experiments.md) |
-| Running and hosting the model | [Inference](docs/inference.md) and [hosting](docs/hosting.md) |
-| Calibration on CPU | [Calibration lab](docs/decision-lessons.md#run-a-small-calibration-lab-on-cpu) |
-
-[Scope and extensions](docs/roadmap.md) explains the limits of the evidence. [Models](docs/models.md) lists immutable releases; [Docker instructions](docs/inference.md#gpu-docker) use the tested image. No paid managed endpoint is included.
+The [scope and extensions](docs/roadmap.md) explains the limits of the experiments and questions worth exploring. The [release history](CHANGELOG.md) records changes to the implementation and published artifacts.
 
 ## Attribution and licensing
 

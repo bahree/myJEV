@@ -1,6 +1,8 @@
 # What the completed Qwen study taught us
 
-The frozen batch completed on October 6 at 02:18 UTC (October 5, 7:18 p.m. Pacific). It contains 24 tuning runs, 36 main runs and 168,000 optimizer updates. All main evaluations use the 3,080 official BANKING77 test examples; calibration uses 1,000 reserved examples. This closes the scheduled training batch, not all transfer, adaptation or release work.
+Does training with a reward produce better decisions than learning from labelled answers? This guide reads the Qwen results with that comparison in mind, then checks confidence, task changes and model size. Start with [decision lessons](decision-lessons.md) for worked definitions of the metrics, or [training](training.md) for the experiment setup.
+
+The study contains 24 tuning runs, 36 main runs and 168,000 optimizer updates. All main evaluations use the 3,080 official BANKING77 test examples; calibration uses 1,000 separate examples to fit confidence adjustments and thresholds. BANKING77 is a collection of customer messages labelled with 77 banking intents. **SFT** means supervised fine-tuning from labelled answers; **RL** means reinforcement learning from a reward. Three random seeds repeat the main comparisons so we can inspect variation between training runs.
 
 ## The inexpensive baseline belongs in the decision
 

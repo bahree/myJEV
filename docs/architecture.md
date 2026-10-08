@@ -1,17 +1,51 @@
 # Architecture and objectives
 
-myJEV receives context, task instructions, and 2-160 candidate IDs and descriptions. Candidate IDs belong to the calling application; they are not a fixed global label vocabulary.
+The [first request](../examples/request.json) asks whether a duplicate charge belongs to billing, technical support or another route. This guide follows how the model turns that input into an answer. Start with the [walkthrough](walkthrough.md#2-follow-one-decision) if you want to inspect the response fields first.
+
+The released Qwen implementation receives context, instructions, and 2-160 candidate IDs and descriptions. The caller supplies those choices with each request. A **backbone** is the pretrained network that reads the text; an **adapter** stores learned changes to its computation; a **head** maps internal features to an output such as confidence. The [scratch model](scratch.md) uses the same kind of request but learns its text features from random weights.
 
 ## One forward pass
 
-1. Map candidates to verified single-token aliases and render the pinned prompt template.
-2. Tokenize the complete input. Reject inputs beyond the artifact's configured limit rather than silently truncating.
-3. Run the backbone once and use its final hidden state for candidate scores and confidence.
-4. Select the highest-scoring candidate and return its original ID, normalized scores, and correctness confidence.
+1. Give each candidate a short **alias**, a label verified to occupy one tokenizer unit, or token. Put those aliases, the candidate descriptions and the context into the saved prompt template.
+2. Convert the prompt into token IDs. Reject inputs beyond the model package's configured limit rather than silently cutting away text.
+3. Run the Qwen backbone once. Its internal features at the final input position provide the alias scores and the confidence-head input. No answer tokens are generated.
+4. Normalize the candidate scores to sum to one, select the largest, and map its alias back to the caller's ID, such as `billing`. Return the scores and the configured correctness estimate too.
 
-Training randomizes candidate order. The [full-test permutation check](../results/review-order-v1/report.md) still changes selected answers on about 8-10% of 0.8B requests and 3.6-5.0% at larger sizes. Order also reassigns aliases, so this is combined sensitivity, not an isolated position effect.
+Training randomizes candidate order. The [full-test permutation check](../results/review-order-v1/report.md) still changes selected answers on about 8-10% of 0.8B requests and 3.6-5.0% at larger sizes per tested permutation. Each request has its own seeded shuffle. Order also reassigns aliases, so this is combined sensitivity, not an isolated position effect.
 
 The reference implementation is in [model.py](../src/myjev/model.py), [prompt.py](../src/myjev/prompt.py), and [inference.py](../src/myjev/inference.py). Custom heads and adapters require this loader; a generic text-generation server does not automatically reproduce the outputs.
+
+## Trace the computation
+
+The first diagram contrasts repeated answer-token generation with the Qwen scoring path above. The network still reads the input; the saving is that we stop after computing candidate scores instead of generating an answer.
+
+```mermaid
+flowchart TB
+  I[Input tokens] --> G[Backbone pass]
+  G --> T[Output token]
+  T --> R[Append token and repeat]
+  R --> G
+  I --> D[Single backbone pass]
+  D --> S[Candidate scores]
+  S --> A[Selected ID and confidence]
+```
+
+The scratch model follows a different path. It encodes the context and candidate descriptions separately using shared weights, then lets each candidate attend to the context. Those are two calls to the same encoder inside one decision computation. The [scratch guide](scratch.md) explains the arrays and attention operations.
+
+
+```mermaid
+flowchart TB
+  I[Context and instruction bytes] --> E[Learned byte embeddings]
+  E --> C["Shared encoder:<br/>context tokens"]
+  O[Candidate description bytes] --> E2[Shared learned embeddings]
+  E2 --> K["Shared encoder:<br/>pooled candidates"]
+  C --> J["Cross-attention<br/>residual and normalization"]
+  K --> J
+  J --> S[One score per candidate]
+  J --> H[Correctness and confidence heads]
+```
+
+Regenerate these original diagrams with `python scripts/draw_decision_diagrams.py`; [source provenance](../results/teaching-diagrams-v1/manifest.json) records the rendered assets.
 
 ## What fine-tuning changes
 
@@ -19,7 +53,7 @@ The backbone weights stay frozen. Training updates attention LoRA adapters and t
 
 ## Confidence has its own meaning
 
-The supervised implementation includes a scalar correctness head. The RL experiment uses a candidate-conditioned policy over 21 confidence values: 0.00, 0.05, …, 1.00. At inference, an RL artifact reports the expected confidence for its deterministically selected answer. The grid is an experimental parameterization, not a necessary property of decision models.
+Selection answers “which option wins?” Confidence answers “how likely is that selection to be right?” The supervised implementation learns a **scalar** head, meaning it outputs one correctness estimate per candidate. The reinforcement-learning (RL) experiment instead assigns probabilities to 21 possible confidence values for each candidate: 0.00, 0.05, …, 1.00. We call this a candidate-conditioned confidence policy. At inference it returns their probability-weighted average for the selected answer. The grid is an experimental choice, not a requirement for decision models.
 
 The loader declares the confidence source explicitly:
 
@@ -52,11 +86,11 @@ The scoring component alone does not guarantee calibration of the combined, regu
 
 PolicyLM is relevant related work, not a measured myJEV baseline. It specializes in moderation, reads policy and content together, and emits category scores without generating explanations. Its pretrained BidirLM encoder derives from Qwen3. This illustrates why backbone ancestry and deployment behavior are separate choices: pretrained language representations can support a non-generative decision interface. See the [announcement](https://www.musubilabs.ai/blog/introducing-policylm-1-7b).
 
-The untouched GLiClass baseline already measures one pretrained encoder: its pinned small checkpoint reached 10.81% BANKING accuracy. That narrow result is not an architecture verdict. Our two implemented build tracks explore random initialization and Qwen adaptation. A pretrained bidirectional encoder is a useful next experiment between them. It could supply language representations missing from our tiny scratch model while using a specialized readout. That is a hypothesis, not evidence that it will outperform either track.
+The untouched GLiClass baseline already measures one pretrained encoder: its pinned small checkpoint reached 10.81% BANKING accuracy. That narrow result is not an architecture verdict. We also tested a fixed-label ModernBERT control, reported in the [findings](qwen-findings.md). A policy-conditioned encoder accepting new candidate descriptions would be a separate experiment; the fixed-label result does not establish how well that interface would work.
 
 PolicyLM supports up to 16 categories per policy and a shared 2,048-token context, with windowing for long messages. Its published 35 ms L4 median concerns short messages; it is not comparable to our A30 HTTP measurements. Category scores are not automatically calibrated selected-answer correctness confidence. Its card discloses that all evaluation sets except OR-Bench were also used in development. See the [model card](https://huggingface.co/musubilabs/policylm-1.7b).
 
-We added a prospective diagnostic of explicit exceptions and minimal policy edits, with expected decisions fixed before inference. It is separate from the completed training comparison. A moderation classifier does not supply verified archive labels or evidence quotations. No PolicyLM benchmark has been run here.
+The policy-edit diagnostic below tests explicit exceptions and small rule changes, with expected decisions fixed before inference. It is separate from the training comparison. A moderation classifier does not supply verified archive labels or evidence quotations. No PolicyLM benchmark has been run here.
 
 ### What changes when the backbone becomes an encoder?
 
@@ -98,33 +132,6 @@ Selection and confidence also told different stories. The 9B exact-RL candidate 
 The fixtures are deliberately simple and correlated. One seed and six templates cannot establish an RL benefit, a scaling law, or reliable real-world policy compliance. This diagnostic evaluated only the six myJEV candidates. The learning is methodological: freeze the expected response to a rule edit, include edits that should change nothing, and inspect correctness and confidence separately.
 
 The [frozen diagnostic report](https://github.com/bahree/myJEV/blob/main/results/policy-edits-v1/report.md) includes all six candidates, reproduction commands, predictions, and limitations.
-
-## Trace the computation
-
-```mermaid
-flowchart TB
-  I[Input tokens] --> G[Backbone pass]
-  G --> T[Output token]
-  T --> R[Append token and repeat]
-  R --> G
-  I --> D[Single backbone pass]
-  D --> S[Candidate scores]
-  S --> A[Selected ID and confidence]
-```
-
-```mermaid
-flowchart TB
-  I[Context and instruction bytes] --> E[Learned byte embeddings]
-  E --> C["Shared encoder:<br/>context tokens"]
-  O[Candidate description bytes] --> E2[Shared learned embeddings]
-  E2 --> K["Shared encoder:<br/>pooled candidates"]
-  C --> J["Cross-attention<br/>residual and normalization"]
-  K --> J
-  J --> S[One score per candidate]
-  J --> H[Correctness and confidence heads]
-```
-
-Regenerate these original diagrams with `python scripts/draw_decision_diagrams.py`; [source provenance](../results/teaching-diagrams-v1/manifest.json) records the rendered assets.
 
 ## Try a numeric suffix readout
 

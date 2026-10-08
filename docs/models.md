@@ -1,6 +1,8 @@
 # Model and container releases
 
-Six seed-11 adapter/head releases are public on Hugging Face. **Start with [myJEV-4B](https://huggingface.co/bahree/myJEV-4B)**, continued supervised training with temperature calibration. The `-RL` repositories retain the exact expected-reward comparison. None is a hosted inference endpoint.
+**Start with [myJEV-4B](https://huggingface.co/bahree/myJEV-4B)** to try the trained model. This page explains the six downloadable releases, what their files contain, and why that version is the starting recommendation. The [quick start](quickstart.md) supplies the first scoring command.
+
+There are three sizes, each with two training variants. Names without `-RL` use continued supervised fine-tuning (SFT), learning from labelled answers, with a fitted temperature to adjust the selection probabilities. The `-RL` versions use exact reinforcement learning, rewarding answer/confidence decisions. All six use training seed 11 for packaging; the study's other seeds remain part of the evaluation. Hugging Face hosts the files for download, not a running myJEV service.
 
 | Release | Training and confidence | Verified documentation pin (runtime files unchanged) |
 |---|---|---|

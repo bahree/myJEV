@@ -1,12 +1,16 @@
 # Build and run the scratch decision model
 
-This is the second learning track alongside [Qwen adaptation](qwen-findings.md). All network weights start randomly. The prototype uses a deterministic UTF-8 byte vocabulary; it has no pretrained embeddings, LoRA adapter, answer-letter aliases or text-generation loop.
+What does the pretrained model contribute? To explore that question, I built a much smaller network whose weights start at random. It receives a context and candidate descriptions, learns to score each choice, and returns a decision. This guide follows its computation and the failures we found when training it. The [Qwen study](qwen-findings.md) explores the other route, starting with language knowledge learned during pretraining.
+
+You can [generate data and train this model on CPU](#generate-and-train-locally) without downloading pretrained weights. First install and activate the environment in the [quick start](quickstart.md#install-and-test). If you only want to inspect a saved result, the [recorded scratch response](../results/scratch-deployment/equivalence-and-model-timings.json) is available without installation.
+
+The model converts text to UTF-8 bytes, assigns each byte an integer ID, and learns a vector of numbers for each ID. Its **encoder** combines those vectors into features that can be compared with the candidate descriptions. Unlike Qwen's alias readout, this model scores the candidate features directly. The table below follows those arrays through the network.
 
 ## Trace one decision through the network
 
 The implemented fixture configuration has two encoder blocks, width 64, four attention heads and a feed-forward width of 256. With candidate interaction enabled it has **201,175 parameters**, smaller than the original 5-20M exploratory design target. Starting smaller makes masking, optimization and generalization failures easier to inspect before spending on scale. A learned subword tokenizer and a larger encoder remain optional extensions.
 
-For a batch of B requests, K candidates, context length L and candidate length D:
+A **tensor** is an array with several axes. Here B counts requests in a batch, K counts candidates, L is the context length and D is the candidate-description length. The final 64 in a shape is the number of learned features per token or candidate. For example, `B x K x 64` stores one 64-number feature vector for every candidate in every request:
 
 | Operation | Tensor shape | What is shared |
 |---|---|---|

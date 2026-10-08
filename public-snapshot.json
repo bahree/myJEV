@@ -22,7 +22,7 @@
       "mode": "100644"
     },
     "README.md": {
-      "sha256": "166c67da81dd63611f1cafa7c4986eec57dcd22fecd80f90e348b2641bd31ceb",
+      "sha256": "e375d30b15068bed32026fcd29cc7d12b31049c045890c3866549cf2abb8da92",
       "mode": "100644"
     },
     "configs/0.8b.json": {
@@ -86,11 +86,11 @@
       "mode": "100644"
     },
     "docs/README.md": {
-      "sha256": "ce4cb33bf6677ec13b71117f85da412832b286df5adf7120aab800a3f5ce0fd7",
+      "sha256": "bcc3a12d5b358ccf4218c180540a78ce7787d976927bc5d2449b810a409d684d",
       "mode": "100644"
     },
     "docs/architecture.md": {
-      "sha256": "c7494d688319da318111f6cb71a10f767ffd6bc9b9ecd161293db5550cb55f8e",
+      "sha256": "5789becd5638c59627c8aee951b072997b6ff01717b2c54b04beb4de9706b1f6",
       "mode": "100644"
     },
     "docs/attribution.md": {
@@ -122,7 +122,7 @@
       "mode": "100644"
     },
     "docs/experiments.md": {
-      "sha256": "c830f2ef08bd85e45c029d358dbf5055c5c53c490eeba88e461eed9589bc1474",
+      "sha256": "6cc94efcb31d7a8bf67c7769697a7007631b082011c960d9f3f4e33590feefd4",
       "mode": "100644"
     },
     "docs/hosting.md": {
@@ -138,7 +138,7 @@
       "mode": "100644"
     },
     "docs/models.md": {
-      "sha256": "68cc5ad7a0725bcc491fa2513f9e2b84bf4888e3f2bcaccfa9a1e2afd3a225a0",
+      "sha256": "ee500c493196c9f4ba360d3ca24236ee37cf2af7aa922048e3d06f0a1d9fadbb",
       "mode": "100644"
     },
     "docs/openjev.md": {
@@ -150,11 +150,11 @@
       "mode": "100644"
     },
     "docs/quickstart.md": {
-      "sha256": "8227d9bc562a7401d1de9dde86b3db5e61d8b9524cb6c5c47288c4472909d1e2",
+      "sha256": "c8895108312ac98a8505d93d863ee35dfc492849195bfaac7c28355857ebd8bd",
       "mode": "100644"
     },
     "docs/qwen-findings.md": {
-      "sha256": "0584f428e142482fc4e055d22827fe3b9a63c755475c96a54be665bcfdae5b2a",
+      "sha256": "0979f56cafbf2664d5bcebdbcd51d3207e949d3fa1fce35f7582f81d8837f3b4",
       "mode": "100644"
     },
     "docs/roadmap.md": {
@@ -166,7 +166,7 @@
       "mode": "100644"
     },
     "docs/scratch.md": {
-      "sha256": "34be5617f3e0fe3d0062de14de9bf49a814db22bbadc0e279c7fceeb3772451e",
+      "sha256": "06c31db118200a2fc2de0e12b863302905d8576b1011cb46813abc46b4b23e20",
       "mode": "100644"
     },
     "docs/system-one-peer-review.md": {
@@ -182,7 +182,7 @@
       "mode": "100644"
     },
     "docs/training.md": {
-      "sha256": "2d83755caeac6705ee927109289e3432fc4a1828b67d18cecd44bb3163a93ddc",
+      "sha256": "dd22d4e7564fdfb4500dd874e67f423bb19e39c32216a8b8a5a200a4acefef29",
       "mode": "100644"
     },
     "docs/walkthrough.md": {

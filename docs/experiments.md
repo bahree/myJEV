@@ -1,9 +1,8 @@
 # Experiments and evidence
 
-Read the [completed Qwen findings and lessons](qwen-findings.md), including paired uncertainty, confidence controls and research limits.
+This guide maps the experiment results to the data and training conditions that produced them. For an explanation of what the results mean, start with the [Qwen findings](qwen-findings.md). The [training guide](training.md) defines the supervised and reward-based methods; [decision lessons](decision-lessons.md) works through confidence and error metrics.
 
-
-The short pilot tests implementation behavior and motivates the longer controlled comparison. It does not establish that confidence-aware RL is better than supervision or post-hoc calibration.
+There are two main sets of results. The short pilot used 100-update stages and a small test subset to check implementation behavior. The longer comparison used 4,000-update stages and the full official test set. Keep those conditions separate when reading the tables. The pilot alone does not establish that confidence-aware RL is better than supervision or calibration fitted after training.
 
 ## Completed longer comparison
 

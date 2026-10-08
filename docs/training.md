@@ -1,8 +1,10 @@
-# Longer matched training comparison
+# Train and compare the Qwen models
 
-The matched Qwen study used 24 tuning runs, 36 main evaluations, validation-only learning-rate selection and the full official BANKING77 test split. Read the [results](../results/longer-v1/summary.md) alongside the [historical pilot](experiments.md) and [paired findings](qwen-findings.md). This guide explains the training choices and how to reproduce the frozen schedule.
+The published model can already score a request. This guide asks what further training teaches it, then shows how to reproduce the Qwen comparison. Try the [first request and demos](quickstart.md#download-and-score-the-default) before starting a training run. For the forward computation, read [architecture](architecture.md); to build without pretrained weights, use the [scratch guide](scratch.md).
 
 ## Why fine-tune an already pretrained model?
+
+**Supervised fine-tuning (SFT)** learns from requests with labelled answers. **Reinforcement learning (RL)** uses a reward assigned to the model's answer and confidence. Continued SFT gives the supervised model more training examples; it is our control for whether more training alone explains a gain. The exact and sampled RL methods compute the same reward objective in different ways, explained below.
 
 A pretrained model can already score candidate tokens in one forward pass. Fine-tuning is not required to create that inference interface, and it is not what removes autoregressive decoding. Our untouched-backbone control measures how well the same prompt and readout work before adaptation.
 
@@ -12,7 +14,9 @@ The supervised stage establishes the adapted decision model and its confidence e
 
 ### Why LoRA and QLoRA?
 
-We freeze the pretrained backbone weights and train rank-8 LoRA adapters on the attention query, key, value and output projections, alongside the custom confidence heads. BF16 LoRA is used at 0.8B and 4B. The 9B backbone uses four-bit NF4 with LoRA, commonly called QLoRA, to reduce backbone storage on the available 24 GB GPUs. Configuration files record the exact precision and adapter setup.
+**LoRA**, or low-rank adaptation, represents a weight update using two small trainable matrices. We keep the original backbone weights fixed and train rank-8 LoRA adapters on the attention query, key, value and output projections, alongside the confidence heads. The [worked update](walkthrough.md#3-understand-what-the-optimizer-changes) shows the matrix calculation.
+
+The 0.8B and 4B backbones use **BF16**, a 16-bit floating-point format. The 9B backbone uses **NF4**, a four-bit representation for the stored weights, alongside LoRA. This combination is commonly called **QLoRA** and reduces backbone storage on the available 24 GB GPUs. Configuration files record the precision and adapter settings; four-bit storage does not mean every operation or temporary tensor uses four bits.
 
 This keeps trainable parameter and optimizer-state storage smaller than updating the full backbone, and permits small adapter/head artifacts to share a pinned backbone cache. Backpropagation through the backbone still costs compute; LoRA does not make training free. We have not established that these adapters match or outperform full-parameter fine-tuning, and full-parameter training is not a control in this study.
 
