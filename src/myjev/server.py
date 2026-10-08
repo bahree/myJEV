@@ -3,6 +3,7 @@ import os
 from concurrent.futures import ThreadPoolExecutor
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException
+from fastapi.exceptions import RequestValidationError
 from starlette.responses import JSONResponse
 from .inference import DecisionModel
 from .schema import ScoreRequest, MAX_HTTP_BODY_BYTES
@@ -66,6 +67,15 @@ def create_app(loader=None, queue_size=8, timeout=30.0):
             app.state.executor.shutdown(wait=True, cancel_futures=True)
 
     app = FastAPI(lifespan=lifespan)
+    @app.exception_handler(RequestValidationError)
+    async def invalid_request(request, exc):
+        # The default handler echoes input, including non-finite JSON numbers
+        # that JSONResponse cannot serialize. Return only stable, safe fields;
+        # this also avoids reflecting request text in validation responses.
+        errors = [{'type': error['type'], 'loc': error['loc'], 'msg': error['msg']}
+                  for error in exc.errors()]
+        return JSONResponse({'detail': errors}, status_code=422)
+
     # FastAPI turns body-parser errors into 400. Registering this handler keeps
     # the size-limit exception intact when it is raised while parsing JSON.
     @app.exception_handler(BodyTooLarge)

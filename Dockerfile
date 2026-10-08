@@ -8,5 +8,5 @@ RUN apt-get update && apt-get install --no-install-recommends -y gcc libc6-dev &
 COPY src ./src
 RUN pip install --no-deps .
 EXPOSE 8000
-HEALTHCHECK --interval=30s --start-period=180s CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/readyz')"
+HEALTHCHECK --interval=30s --start-period=900s CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/readyz')"
 CMD ["uvicorn", "myjev.server:app_factory", "--factory", "--host", "0.0.0.0", "--port", "8000", "--no-access-log", "--workers", "1"]

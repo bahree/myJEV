@@ -1,7 +1,7 @@
 services:
   myjev:
     build: ..
-    image: myjev:0.1.0
+    image: myjev:local
     ports: ["127.0.0.1:8000:8000"]
     environment:
       MYJEV_ARTIFACT: /artifact

@@ -1,0 +1,8 @@
+# Reuse the public, root-Dockerfile-built 0.1.2 dependency layers. Build from
+# the repository root: docker build -f deploy/Dockerfile.patch -t myjev:local .
+# The root Dockerfile remains the complete installation path.
+FROM amitbahree/myjev@sha256:3693ed39364bb3a96ee675da1a750d09cb2762a50211886eca8addd776d585cb
+WORKDIR /app
+COPY src ./src
+RUN pip install --no-deps --no-build-isolation .
+HEALTHCHECK --interval=30s --start-period=900s CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/readyz')"

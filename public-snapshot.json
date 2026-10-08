@@ -15,7 +15,7 @@
       "mode": "100644"
     },
     "Dockerfile": {
-      "sha256": "9c67d093c86869d5cb8378ef23ba063b92593bd2bc8dd0fcd14fdf4d6e18ded2",
+      "sha256": "80be4d4588077421ff6ef3b29c8769599553c2351fb8c418483c11bf42322d10",
       "mode": "100644"
     },
     "LICENSE": {
@@ -74,12 +74,16 @@
       "sha256": "07817a11f6995bd9a80971e6505ab7ad3967d7c77f09f1e57b9bc0ea5e3c6670",
       "mode": "100644"
     },
+    "deploy/Dockerfile.patch": {
+      "sha256": "5bda92911543a0e27d95ac020b1b1566353382100768515288d040f639af43f9",
+      "mode": "100644"
+    },
     "deploy/README.container.md": {
       "sha256": "698444602abfe32e77a7450f802b425dd791ac73108e100aea0734030b85a404",
       "mode": "100644"
     },
     "deploy/compose.yaml": {
-      "sha256": "1c1d7265fafdb005c2d0c356d4477c29a7fb49f2efe5f862d61373373f1696e7",
+      "sha256": "55ec3bac98c9e2387458a86d15c786a324b6177dd60244b4895f5bdc73164b89",
       "mode": "100644"
     },
     "docs/README.md": {
@@ -1152,6 +1156,10 @@
     },
     "results/final-study-table.json": {
       "sha256": "9a6259b1ed3e2eee31ff76c81b2183afcbadff0e4ba29c520d4bc7759c155913",
+      "mode": "100644"
+    },
+    "results/followup-fixes-v1/contract-tests.log": {
+      "sha256": "1c243f3eb314cbc69568e0b73282b7969f887218f5179a539df9a684a25515d6",
       "mode": "100644"
     },
     "results/generalization-v1/0.8b-status.json": {
@@ -8706,6 +8714,10 @@
       "sha256": "a14387697a79a1166819548d4a81c5f3e1e0e09cdf6cda76e1b70565f1148358",
       "mode": "100644"
     },
+    "scripts/verify_patch_container.py": {
+      "sha256": "da588882188f4df6dc28d85398e5aae18ea74e1a5aa0e6f2c6f3af574142e693",
+      "mode": "100644"
+    },
     "scripts/verify_release_container.py": {
       "sha256": "0d01a86bbec6df481164545d906c5c106c5d5d2712df686c9f15cdfd8cf0dfb6",
       "mode": "100644"
@@ -8783,7 +8795,7 @@
       "mode": "100644"
     },
     "src/myjev/server.py": {
-      "sha256": "515bb962ed0a171428e2694f2b65e3be2ed44fbd4a354752b3d58c47f33c9e2f",
+      "sha256": "84ada60b0cfeec3a6cf9aecb432dab744d4ab87f4d4a68c9abb7e22c1a109d6c",
       "mode": "100644"
     },
     "src/myjev/tracking.py": {
@@ -8811,7 +8823,7 @@
       "mode": "100644"
     },
     "tests/test_contract.py": {
-      "sha256": "5670c0de23ad06827ab196dfb31ee6a42094b70d6f134b8ad64a8e707b808ac6",
+      "sha256": "ca26674d4b93f1353393ad49351f94d634c6ded39b489a21f4f171bf7ef0d80a",
       "mode": "100644"
     },
     "tests/test_encoder_control.py": {

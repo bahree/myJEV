@@ -50,6 +50,42 @@ def test_http_contract():
         assert client.post("/score", json={}).status_code == 422
 
 
+@pytest.mark.parametrize('literal', ['NaN', 'Infinity', '-Infinity'])
+@pytest.mark.parametrize('route', ['/score', '/generate'])
+def test_nonfinite_input_is_rejected_without_worker_or_reflection(literal, route):
+    class Counting(Fake):
+        calls = 0
+        def score(self, request):
+            self.calls += 1
+            return super().score(request)
+    model = Counting()
+    with TestClient(create_app(loader=lambda: model), raise_server_exceptions=False) as client:
+        warmup_calls = model.calls
+        for payload in (
+            json.dumps(WARMUP).replace('"warmup"', literal),
+            json.dumps({**WARMUP, 'extra': {'private_text': 'do not reflect', 'value': 0}}).replace('"value": 0', '"value": '+literal),
+        ):
+            response = client.post(route, content=payload, headers={'Content-Type': 'application/json'})
+            assert response.status_code == 422
+            assert response.json()['detail']
+            assert all(set(error) == {'type', 'loc', 'msg'} for error in response.json()['detail'])
+            assert 'do not reflect' not in response.text
+            assert model.calls == warmup_calls
+        assert client.get('/readyz').status_code == 200
+        assert client.post(route, json=WARMUP).status_code == 200
+
+
+def test_validation_errors_are_serializable_for_malformed_json_and_validator_context():
+    with TestClient(create_app(loader=Fake), raise_server_exceptions=False) as client:
+        response = client.post('/score', content='{', headers={'Content-Type': 'application/json'})
+        assert response.status_code == 422
+        duplicate = {**WARMUP, 'candidates': [WARMUP['candidates'][0]] * 2}
+        response = client.post('/score', json=duplicate)
+        assert response.status_code == 422
+        assert 'candidate IDs must be unique' in response.text
+        assert all(set(error) == {'type', 'loc', 'msg'} for error in response.json()['detail'])
+
+
 def test_timeout_keeps_capacity_until_worker_finishes():
     class Slow:
         def score(self, request):
