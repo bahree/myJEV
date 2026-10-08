@@ -1041,6 +1041,10 @@
       "sha256": "10a11f3f440f564623a0e8a3e9733e890e18c9084c3cc1ddf8a1019ba43eace9",
       "mode": "100644"
     },
+    "results/editorial-verification-v1/completion.json": {
+      "sha256": "22f2be8bb28b70d5b39bc47306994df9a61e67b914eb45f77fb8a481f0db19e1",
+      "mode": "100644"
+    },
     "results/editorial-verification-v1/docker-overview.json": {
       "sha256": "6513013f11358ce73f4f6c9fa6646ee4ddb16d52bc8939bb61cffb492d71e051",
       "mode": "100644"
