@@ -1,9 +1,9 @@
 # Engineering and experimental lessons
 
-Read the [completed Qwen findings and lessons](qwen-findings.md), including paired uncertainty, confidence controls and what changes next.
+Read the [completed Qwen findings and lessons](qwen-findings.md), including paired uncertainty, confidence controls and research limits.
 
 
-These notes distinguish measured observations from choices and unresolved questions. The [experiment guide](experiments.md) contains the current pilot results; the longer study is complete with [descriptive results](../results/longer-v1/summary.md).
+These notes distinguish measured observations from choices and unresolved questions. The [experiment guide](experiments.md) distinguishes historical pilot observations from the longer comparison and its [descriptive results](../results/longer-v1/summary.md).
 
 ## Count work across experiments, not as one model
 

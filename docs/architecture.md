@@ -1,6 +1,6 @@
 # Architecture and objectives
 
-myJEV receives context, task instructions, and 2–160 candidate IDs and descriptions. Candidate IDs belong to the calling application; they are not a fixed global label vocabulary.
+myJEV receives context, task instructions, and 2-160 candidate IDs and descriptions. Candidate IDs belong to the calling application; they are not a fixed global label vocabulary.
 
 ## One forward pass
 

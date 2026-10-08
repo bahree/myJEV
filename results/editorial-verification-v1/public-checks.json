@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "union_outputs_byte_identical": 2,
+  "union_counts_checked_against_18_original_metrics": true,
+  "blog_and_private_reviews_excluded": true,
+  "ignore_file_contains_no_agent_entries": true,
+  "reader_guides_have_no_milestone_language": true,
+  "scope": "Checks of the applied public export, before adding these final verification receipts. The union generator and public inputs reproduce both outputs without model downloads. Final public revision is recorded separately after the source commit."
+}

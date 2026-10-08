@@ -8,7 +8,7 @@ This is a research and learning project by [Amit Bahree](https://blog.desigeek.c
 
 Start with the downloadable [myJEV-4B](https://huggingface.co/bahree/myJEV-4B) adapter/head package and the [quick start](docs/quickstart.md), or explore [the findings](docs/qwen-findings.md) and [scratch lessons](docs/scratch.md). The scratch model's natural-language diagnostic failed; the archive study uses machine-generated references and does not establish human accuracy. These limitations are part of the study. No hosted demo is included.
 
-The second track now [builds a small decision model from scratch](docs/scratch.md), with recorded learning failures, a completed synthetic study and local serving checks. Its weak natural-language results remain separate from Qwen.
+The scratch track [builds a small decision model from scratch](docs/scratch.md), with recorded learning failures, a completed synthetic study and local serving checks. Its weak natural-language results remain separate from Qwen.
 
 [Start here](docs/quickstart.md) · [Documentation](docs/README.md) · [Measured results](docs/qwen-findings.md) · [Roadmap](docs/roadmap.md)
 
@@ -38,7 +38,7 @@ The [worked route](docs/walkthrough.md) connects equations, tensor shapes, comma
 | Check data provenance and evaluation rules | [Dataset cards](docs/README.md#data-and-provenance) and [protocol](docs/protocol.md) |
 | Load, score and serve a local artifact | [Inference](docs/inference.md) |
 | Run Docker or prepare managed hosting | [Hosting](docs/hosting.md) |
-| Understand lessons, failures and remaining work | [Learnings](docs/learnings.md) and [roadmap](docs/roadmap.md) |
+| Understand lessons, failures and research extensions | [Learnings](docs/learnings.md) and [roadmap](docs/roadmap.md) |
 
 ## What is a decision model?
 
@@ -233,4 +233,4 @@ The [Desi Geek blog](https://blog.desigeek.com) accompanies this repository. The
 
 This project studies ideas from several decision-model implementations; it does not reproduce all of their architectures or published scores. See [attribution](docs/attribution.md), [OpenJev notes](docs/openjev.md), and the [dataset cards](docs/README.md#data-and-provenance).
 
-The source code and accompanying repository documentation are licensed under [MIT](LICENSE), copyright Amit Bahree. Dataset, pretrained-backbone and other third-party licenses remain separate; this license does not replace them. Release model cards will document the applicable weight terms.
+The source code and accompanying repository documentation are licensed under [MIT](LICENSE), copyright Amit Bahree. Dataset, pretrained-backbone and other third-party licenses remain separate; this license does not replace them. Release model cards document the applicable weight terms.

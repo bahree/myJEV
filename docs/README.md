@@ -1,6 +1,6 @@
 # Documentation
 
-Read the [completed Qwen findings and lessons](qwen-findings.md), including paired uncertainty, confidence controls and what changes next.
+Read the [completed Qwen findings and lessons](qwen-findings.md), including paired uncertainty, confidence controls and research limits.
 
 
 Follow the [hands-on learning route](walkthrough.md) for worked arithmetic, runnable commands, actual outputs and checks.
@@ -18,13 +18,13 @@ Start with the question you want to answer. All commands run from the repository
 | What was actually measured? | [Experiments and evidence](experiments.md) |
 | How are methods compared fairly? | [Experimental protocol](protocol.md) |
 | What did the longer training batch find? | [Completed comparison](../results/longer-v1/summary.md) |
-| How do I build and run the scratch model? | [Scratch walkthrough and findings](scratch.md), [implementation gates](scratch-plan.md) |
+| How do I build and run the scratch model? | [Scratch walkthrough and findings](scratch.md), [design and validation](scratch-plan.md) |
 | How do I watch training and read epochs? | [W&B integration](tracking.md) |
 | What have we learned about budgets and convergence? | [Engineering lessons](learnings.md) |
 | How do I run Python, CLI, HTTP and Docker inference? | [Inference walkthrough](inference.md) |
 | How do I host it? | [Local and managed hosting](hosting.md) |
 | Where are released weights? | [Six public Qwen adapter/head releases](models.md), including the 4B default |
-| What is complete, and what comes next? | [Roadmap](roadmap.md) |
+| What are the scope, limits and research extensions? | [Roadmap](roadmap.md) |
 
 ## Data and provenance
 

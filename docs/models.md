@@ -26,7 +26,7 @@ model = DecisionModel.load(
 )
 ```
 
-See the [inference guide](inference.md) for complete requests, CLI, HTTP and Docker commands. All six immutable downloads were checked against the uploaded package hashes. [Upload receipts](../results/release-readiness-v1/hub/) distinguish publication evidence from the earlier local candidate checks. The tested GPU container is published on [Docker Hub](https://hub.docker.com/r/amitbahree/myjev); the [publication receipt](../results/container-registry-v2/publication.json) records its digest and GPU equality check. No paid managed endpoint is running. [Hosting](hosting.md) includes the unexecuted managed-endpoint recipe.
+See the [inference guide](inference.md) for complete requests, CLI, HTTP and Docker commands. All six immutable downloads were checked against the uploaded package hashes. [Upload receipts](../results/release-readiness-v1/hub/) distinguish publication evidence from the earlier local candidate checks. The tested GPU container is published on [Docker Hub](https://hub.docker.com/r/amitbahree/myjev); the [0.1.3 publication receipt](../results/container-registry-v3/publication.json) records its digest and GPU equality check. No paid managed endpoint is running. [Hosting](hosting.md) includes the unexecuted managed-endpoint recipe.
 
 ## Packaging provenance
 
@@ -53,7 +53,7 @@ The [reader model cards](../model_cards/README.md) explain each variant, install
 
 This recommendation is limited to the published candidate-description interface. The separate [ModernBERT fixed-taxonomy control](../results/encoder-control-v1/report.md) reached 90.78% BANKING77 accuracy with a smaller encoder, but used one seed and 23,997 training examples versus Qwen's 8,000. It is a useful operational alternative when the 77 labels are fixed, not a matched architecture experiment. See [decision lessons](decision-lessons.md) before choosing a larger model.
 
-The rebuilt local image `myjev:0.1.1-hub` passed a pinned Hub load and exact host/container response comparison. Its [provenance](../results/release-container-v2/provenance.json) and [HTTP evidence](../results/release-container-v2/hub-http.json) document the source-only update over the clean-tested dependency image. This exact image is now published as `amitbahree/myjev:0.1.1`; see the [publication receipt](../results/container-registry-v1/publication.json) for its immutable reference and pull verification.
+The rebuilt local image `myjev:0.1.1-hub` passed a pinned Hub load and exact host/container response comparison. Its [provenance](../results/release-container-v2/provenance.json) and [HTTP evidence](../results/release-container-v2/hub-http.json) document the source-only update over the clean-tested dependency image. This historical image was published as `amitbahree/myjev:0.1.1` and is superseded by 0.1.3; see the [publication receipt](../results/container-registry-v1/publication.json) for its immutable reference and pull verification.
 
 The **0.1.2** container was rebuilt using the public root Dockerfile. It adds the 256 KiB aggregate UTF-8 and 1 MiB HTTP body caps. An empty model-cache start, installed CLI, real HTTP limit checks, and anonymous digest pull passed. [0.1.2 receipt](../results/container-registry-v2/publication.json) and [first-use transcript](../results/review-container-v1/first-use.http.txt) disclose cache conditions and source revision. The 0.1.1 records above describe its earlier release and remain intact.
 

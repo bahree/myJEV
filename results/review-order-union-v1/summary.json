@@ -1,0 +1,152 @@
+{
+  "scope": "Exploratory descriptive union over the three recorded per-request permutations, relative to the original order. Each of 3080 requests is counted once per released seed-11 model. No new inference, training, calibration fit, uncertainty interval, or claim about arbitrary orders.",
+  "rows": [
+    {
+      "size": "0.8b",
+      "method": "continued_sft",
+      "n": 3080,
+      "permutation_seeds": [
+        101,
+        202,
+        303
+      ],
+      "per_permutation_changed": [
+        243,
+        248,
+        253
+      ],
+      "any_of_three_changed": 413,
+      "any_of_three_fraction": 0.1340909090909091
+    },
+    {
+      "size": "0.8b",
+      "method": "exact",
+      "n": 3080,
+      "permutation_seeds": [
+        101,
+        202,
+        303
+      ],
+      "per_permutation_changed": [
+        267,
+        283,
+        299
+      ],
+      "any_of_three_changed": 478,
+      "any_of_three_fraction": 0.1551948051948052
+    },
+    {
+      "size": "4b",
+      "method": "continued_sft",
+      "n": 3080,
+      "permutation_seeds": [
+        101,
+        202,
+        303
+      ],
+      "per_permutation_changed": [
+        123,
+        130,
+        123
+      ],
+      "any_of_three_changed": 217,
+      "any_of_three_fraction": 0.07045454545454545
+    },
+    {
+      "size": "4b",
+      "method": "exact",
+      "n": 3080,
+      "permutation_seeds": [
+        101,
+        202,
+        303
+      ],
+      "per_permutation_changed": [
+        112,
+        113,
+        116
+      ],
+      "any_of_three_changed": 199,
+      "any_of_three_fraction": 0.0646103896103896
+    },
+    {
+      "size": "9b",
+      "method": "continued_sft",
+      "n": 3080,
+      "permutation_seeds": [
+        101,
+        202,
+        303
+      ],
+      "per_permutation_changed": [
+        115,
+        112,
+        125
+      ],
+      "any_of_three_changed": 204,
+      "any_of_three_fraction": 0.06623376623376623
+    },
+    {
+      "size": "9b",
+      "method": "exact",
+      "n": 3080,
+      "permutation_seeds": [
+        101,
+        202,
+        303
+      ],
+      "per_permutation_changed": [
+        152,
+        153,
+        146
+      ],
+      "any_of_three_changed": 240,
+      "any_of_three_fraction": 0.07792207792207792
+    }
+  ],
+  "source_sha256": {
+    "configs/review-order-v1.json": "51cdc281312f55f6524911d532de7bee07f9aa974fc9b490852e323cfb03704e",
+    "results/review-calibration-v1/0.8b/seed-11/continued_sft/inputs.json.gz": "9367137701cf145c180e6db3767eec10d090703bff32d7a70922d12159c116fd",
+    "results/review-order-v1/0.8b/continued_sft/order-101-predictions.jsonl.gz": "eebcc5dd91f8aade80e5b6518efe812e0147249c0f01c62dd5071d340a0f23a1",
+    "results/review-order-v1/0.8b/continued_sft/order-101-metrics.json": "358e8f495cbab23002c7cec9e6558c1fe1678a3470db106bedf61395ff7cf79b",
+    "results/review-order-v1/0.8b/continued_sft/order-202-predictions.jsonl.gz": "a5cd7453b37bb19a22877dc8f517b485c6c92ed2b2be549ae3f8db775ea73e1d",
+    "results/review-order-v1/0.8b/continued_sft/order-202-metrics.json": "6c8400a065df01364588e3418898138aa8f434ebde2ef1ea01d917689a48e94c",
+    "results/review-order-v1/0.8b/continued_sft/order-303-predictions.jsonl.gz": "126718bed9593a9aa50f51711cd6d195840ab28200ab95de4d251076d8bce9d1",
+    "results/review-order-v1/0.8b/continued_sft/order-303-metrics.json": "89fb8f109c2f1dff12480572e5b908a751736ceeb834cc142b25dc325609b735",
+    "results/review-calibration-v1/0.8b/seed-11/exact/inputs.json.gz": "ae63cddfb60c67825f8a1fd145b29a3cd0562f74864d7ced43db025a5347cf62",
+    "results/review-order-v1/0.8b/exact/order-101-predictions.jsonl.gz": "6317aa6c4173a03b5fcc5cd2488736d2d8658b707ed277ecc2588c8198920fb5",
+    "results/review-order-v1/0.8b/exact/order-101-metrics.json": "dfd967fb576e7006a8d953d1715713a621203bb685dca200a76d19f2cc3509b7",
+    "results/review-order-v1/0.8b/exact/order-202-predictions.jsonl.gz": "f33ae0671c605452760cf49377ceb94cf2c5f5e8db5879633d61825a90ce0744",
+    "results/review-order-v1/0.8b/exact/order-202-metrics.json": "cbeec68545dce11319726f5a1c66b5b9b54bc5f6cc86dc0356885e9bf1b7fff6",
+    "results/review-order-v1/0.8b/exact/order-303-predictions.jsonl.gz": "255f4a222d1dda759676bcf812be544651ad9d7b945e3ee13a7576d4dc0616a2",
+    "results/review-order-v1/0.8b/exact/order-303-metrics.json": "867469be99373e3912928a9ece3d8e6cd5fdd7e4170d52313659e346e88b386c",
+    "results/review-calibration-v1/4b/seed-11/continued_sft/inputs.json.gz": "2a1d758e266730504acd9bea2f51bb01ee1467ff3af74492c623e0c44b20f79a",
+    "results/review-order-v1/4b/continued_sft/order-101-predictions.jsonl.gz": "9952e2806108959ba2d3c74a217ef3df250a9b7a977f99b82d604e210048b5f0",
+    "results/review-order-v1/4b/continued_sft/order-101-metrics.json": "7c41cae3a52b88e3c54dcd3825f690adb77f6a582a340eafcaff0ca912cea300",
+    "results/review-order-v1/4b/continued_sft/order-202-predictions.jsonl.gz": "f38e6ec7ec4cbeda52cf5e0eef0365b75b966424d93514578317f30fbcae9d34",
+    "results/review-order-v1/4b/continued_sft/order-202-metrics.json": "7e43bb437d25b7edc7468da68094a1716a4b575a6b4154a980ab6b1fde894b1c",
+    "results/review-order-v1/4b/continued_sft/order-303-predictions.jsonl.gz": "bcbb96cb343f84a2928cd61ce195cb437bd0e9d8c5efd4415070cca1aeb2fb4e",
+    "results/review-order-v1/4b/continued_sft/order-303-metrics.json": "e5ca418fc0b52c2530155b0bc9a41da6a1e6c2f0c1750ef82c484fb2305d8138",
+    "results/review-calibration-v1/4b/seed-11/exact/inputs.json.gz": "53ce41d81bdb9ec0ebf0122d8bef2209903c3256480da9bbbbaf83a655803185",
+    "results/review-order-v1/4b/exact/order-101-predictions.jsonl.gz": "b82bb2be81459aed6ef49d1cc2cdbddf4afd6a8f4bb8be3803353726f477c3c4",
+    "results/review-order-v1/4b/exact/order-101-metrics.json": "eda2583572ad708117527803c94cb35c724d5cd6a1d5bfc1c524a6534723662b",
+    "results/review-order-v1/4b/exact/order-202-predictions.jsonl.gz": "9e6b74ee152c925bd4f8ee4d9d610342635c4fd2f7d932e3da01b994f3789c7e",
+    "results/review-order-v1/4b/exact/order-202-metrics.json": "7e9b3017ff1b1048b0dedac7d71fc347cf1b2be477f8e029a68b504a6de1af77",
+    "results/review-order-v1/4b/exact/order-303-predictions.jsonl.gz": "4c9c877ed198e9d4b4955aa402c543a93ff4c2228ceb9eaf11f92f919521e618",
+    "results/review-order-v1/4b/exact/order-303-metrics.json": "e179128917cd2d73f7c13ab1f90d26ac3de70b477e8c84870e0eed10cfb265a0",
+    "results/review-calibration-v1/9b/seed-11/continued_sft/inputs.json.gz": "afe3fa80feb3202a3aa63e3da5bb3dabc86cc60ae0415279160aa7dbc183cb57",
+    "results/review-order-v1/9b/continued_sft/order-101-predictions.jsonl.gz": "337468e91f92bd17763f73ce692fd65575c05513a07c19cfc955191285ce3b9f",
+    "results/review-order-v1/9b/continued_sft/order-101-metrics.json": "333c0322d4fa98bc699a4c21a3583cbad101d42057677b526e4aaa6f13574f2b",
+    "results/review-order-v1/9b/continued_sft/order-202-predictions.jsonl.gz": "234ad4af4f2bc40c6da1511e0154aa765f27e0a16cc1ac2f1e441a179363d7a6",
+    "results/review-order-v1/9b/continued_sft/order-202-metrics.json": "6e9406175c35cb9441413a3f3d8200513e633eeac372dcea53e4cc7638358df7",
+    "results/review-order-v1/9b/continued_sft/order-303-predictions.jsonl.gz": "a8af4f873be58d216da0696fb25bbb7f39c4e355a174b8b372fba79d4d5164e0",
+    "results/review-order-v1/9b/continued_sft/order-303-metrics.json": "5a96c34b6e752b4b04181d42c50a99eecaee470a8c23cd6222744605c3add3a3",
+    "results/review-calibration-v1/9b/seed-11/exact/inputs.json.gz": "fa668d6bf8a4e1fcdccaf98c82f5db01afa947198152ab1fb31f89cf3008c2c6",
+    "results/review-order-v1/9b/exact/order-101-predictions.jsonl.gz": "db44edf91b5465e2ec6ff8ef1a0adee6d39c9aee6af47e85ff73c6394b1ef987",
+    "results/review-order-v1/9b/exact/order-101-metrics.json": "c46d7441a5f32aaeffbecb51a7339831da0b4e0dd93c75829d5f6837c41d94b9",
+    "results/review-order-v1/9b/exact/order-202-predictions.jsonl.gz": "09ac7fab8db9f9157c13ea9086e1afc7df913934417c72ccf694aa8951dd2869",
+    "results/review-order-v1/9b/exact/order-202-metrics.json": "5541619f10161e81653cdf8c1cc0c6e37fb3e05c60b5f626489114247672b174",
+    "results/review-order-v1/9b/exact/order-303-predictions.jsonl.gz": "7f0050b697765c2de7871e7d4292b1731a769c4d87a740ea6e0b3c0e1e9cea51",
+    "results/review-order-v1/9b/exact/order-303-metrics.json": "ce1e8bc284a87b3b13bb1a1975c37c2197a68f5470ad67bcc0314d52dc1b4a96"
+  }
+}

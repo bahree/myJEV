@@ -1,6 +1,6 @@
 # Longer matched training comparison
 
-**Status: complete.** All 24 tuning runs and 36 main evaluations finished. See the [descriptive results](../results/longer-v1/summary.md); paired inference and the broader local release checks are also complete. The initial feasibility study remains available in [the results guide](experiments.md). This next comparison uses longer exposure, validation-only learning-rate selection, and the complete official BANKING77 test set.
+The matched Qwen study used 24 tuning runs, 36 main evaluations, validation-only learning-rate selection and the full official BANKING77 test split. Read the [results](../results/longer-v1/summary.md) alongside the [historical pilot](experiments.md) and [paired findings](qwen-findings.md). This guide explains the training choices and how to reproduce the frozen schedule.
 
 ## Why fine-tune an already pretrained model?
 
@@ -34,7 +34,7 @@ The reference machine has three A30s, each with 24 GiB of device memory. We use 
 
 These are 100-update supervised pilot measurements for the tested inputs, not worst-case VRAM reservations or inference requirements. PyTorch allocated peaks also differ from total process memory reported by `nvidia-smi`. Longer inputs, larger batches and different objectives can change memory use. Quantization reduces weight storage but does not guarantee lower latency.
 
-For deployment, select the smallest model that meets measured accepted-case error, coverage, latency and memory requirements. A bounded ModernBERT fixed-taxonomy control is now complete; a distilled student remains prospective. A fixed-label TF-IDF classifier remains a serious low-cost control for BANKING77; request-supplied unfamiliar candidate descriptions motivate studying a language backbone. See [deployment costs](inference.md#what-the-adapter-saves-and-what-inference-still-costs).
+For deployment, select the smallest model that meets measured accepted-case error, coverage, latency and memory requirements. A bounded ModernBERT fixed-taxonomy control provides a smaller-model comparison; a distilled student remains prospective. A fixed-label TF-IDF classifier remains a serious low-cost control for BANKING77; request-supplied unfamiliar candidate descriptions motivate studying a language backbone. See [deployment costs](inference.md#what-the-adapter-saves-and-what-inference-still-costs).
 
 ### Would an older Microsoft model be a better fit?
 
@@ -44,7 +44,7 @@ A more distinct comparison would use an encoder such as [DeBERTa-v3-small](https
 
 Using pretrained representations is a defensible transfer-learning choice. The token-alias readout is a pragmatic reuse of the vocabulary head, with real limitations: alias choice, order sensitivity and prompt length need testing. A candidate-conditioned scoring head can remove the dependence on vocabulary aliases, but must be trained and evaluated. The present study tests objectives and scale within one implementation; it does not establish that this is the smallest or fastest architecture for the task.
 
-Alternative pretrained backbones, including Phi, are deferred. The active study now has two complementary tracks: building a small decision network from random initialization and adapting pretrained Qwen. A future backbone comparison could reuse the frozen partitions and tuning controls, but it is not scheduled or required for this release.
+Alternative pretrained backbones, including Phi, are deferred. The study has two complementary tracks: building a small decision network from random initialization and adapting pretrained Qwen. A future backbone comparison could reuse the frozen partitions and tuning controls, but it is not scheduled or required for this release.
 
 ## Frozen schedule
 
@@ -94,15 +94,11 @@ Two learning-rate trials give each approach an equal tuning opportunity. Three m
 
 This budget is a declared experimental choice, not evidence that this amount of training is optimal or sufficient for convergence. Larger tuning grids or more seeds could improve the study at additional cost. The present schedule keeps those costs fixed and visible.
 
-## What progress and completion time mean
+## Reading a training counter
 
-The exact training percentage is completed optimizer steps divided by 168,000. It excludes validation, test evaluation, and post-hoc calibration work. A training counter reaching its end therefore does not mean the entire batch is finished.
+The recorded step counter covers optimizer updates. Validation, calibration and test inference also consume time, so the last training update did not mark the end of the experiment. Keep stage exposure, elapsed time and evaluation status separate when inspecting a run.
 
-An approximate batch percentage can weight the remaining training and evaluation tasks by measured time. We use observed update and inference speeds where available. Until an RL timing is observed, the estimate assumes an RL update takes 1.3 times the supervised update time. A broad allowance around that estimate accounts for uncertainty; it is a planning range, not a statistical confidence interval. Estimates can change as more tasks finish.
-
-The three GPUs run independently. The overall finish estimate is the longest remaining per-GPU duration, not the sum of all three durations. A failed or stopped job makes its completion estimate unavailable until the problem is resolved.
-
-Batch completion means its scheduled training, validation selection, full-test evaluations, and calibration controls are finished. Analysis, broader transfer studies, archive adaptation, artifact releases, and blog publication remain separate project work. The [roadmap](roadmap.md) keeps those boundaries explicit; there is no invented whole-project completion percentage.
+The three size studies ran on separate GPUs. Their wall-clock durations overlap; adding those durations measures accumulated work, not how long someone waited for all three. The local logs and W&B fields retain those distinctions. No whole-project percentage or finish estimate is needed to interpret the results.
 
 ## Improvement, epochs and stopping
 
@@ -110,7 +106,7 @@ Each main stage processes 4,000 examples, or about 0.5001 epochs on the 7,999 tr
 
 Training loss is a diagnostic. Compare held-out accuracy/F1, correctness Brier and accepted-case error at fixed coverage to judge improvement. Supervised and RL losses have different meanings. Falling training loss with worsening validation performance suggests overfitting.
 
-Current tuning and main evaluations occur at stage endpoints. They cannot reliably identify a plateau. A future convergence study needs predefined periodic validation, meaningful improvement thresholds and a patience rule; test results must not influence stopping. Numerical failures and resource exhaustion are health conditions, not convergence evidence. Healthy runs in this batch finish their frozen budgets.
+Tuning and main evaluations occurred at stage endpoints. They cannot reliably identify a plateau. A future convergence study needs predefined periodic validation, meaningful improvement thresholds and a patience rule; test results must not influence stopping. Numerical failures and resource exhaustion are health conditions, not convergence evidence. The healthy runs completed their frozen budgets.
 
 The [W&B guide](tracking.md) explains live epoch counters, individual historical curves, GPU telemetry and retained evidence. The [lessons](learnings.md) describe why hardware, batch size and evaluation work all affect elapsed time.
 
@@ -215,7 +211,7 @@ This original arithmetic illustration is not a trained-model result or a Monte C
 
 ## Defaults retained with the training evidence
 
-The historical runs used AdamW’s default weight decay of 0.01 and eight REINFORCE samples per example. New runs now serialize these values explicitly as `weight_decay` and `reinforce_samples`, along with the initialization artifact revision. This metadata clarification does not rewrite prior manifests or change historical results. The NF4 setup prepares the backbone once before attaching trainable adapters.
+The historical runs used AdamW’s default weight decay of 0.01 and eight REINFORCE samples per example. The runner serializes these values explicitly as `weight_decay` and `reinforce_samples`, along with the initialization artifact revision. This metadata clarification does not rewrite prior manifests or change historical results. The NF4 setup prepares the backbone once before attaching trainable adapters.
 
 ## Interpreting the selected learning rates
 

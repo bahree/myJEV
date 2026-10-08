@@ -12,7 +12,7 @@ No upstream model code is vendored. `scripts/reproduce_readout.py` imports a pin
 
 Reference models: [Qwen3.5 0.8B](https://huggingface.co/Qwen/Qwen3.5-0.8B), [4B](https://huggingface.co/Qwen/Qwen3.5-4B), [9B](https://huggingface.co/Qwen/Qwen3.5-9B). Immutable revisions are in `configs/`. Backbone licensing and upstream notices continue to apply to adapters and any future merged release.
 
-OpenJev was subsequently inspected as an external comparison at the user's request. See [the inclusion decision](openjev.md) for its distinct backbone, confidence formula, candidate limit and execution status.
+OpenJev was inspected as related work. See [the inclusion decision](openjev.md) for its distinct backbone, confidence formula, candidate limit and execution status. No local OpenJev inference result is included in this study.
 
 ## Related inference tutorial
 

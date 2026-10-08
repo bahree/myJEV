@@ -124,7 +124,7 @@ The [raw deployment evidence](../results/scratch-deployment/equivalence-and-mode
 
 ## What remains separate
 
-Controlled synthetic behavior does not establish useful BANKING77 quality, unfamiliar natural-language competence or Jev-equivalent speed. The [implementation plan](scratch-plan.md) retains the natural-language diagnostic, additional candidate-count/length benchmarks and release gates. Compare complete scratch weights with the entire Qwen deployment, including its backbone, and keep synthetic results outside the BANKING77 accuracy table.
+Controlled synthetic behavior does not establish useful BANKING77 quality, unfamiliar natural-language competence or Jev-equivalent speed. The [design and validation guide](scratch-plan.md) distinguishes the natural-language diagnostic from additional candidate-count/length checks and release requirements. Compare complete scratch weights with the entire Qwen deployment, including its backbone, and keep synthetic results outside the BANKING77 accuracy table.
 
 ## Packaged teaching checkpoint
 

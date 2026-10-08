@@ -152,3 +152,7 @@ Image **0.1.3** rejects non-finite request numbers (`NaN`, `Infinity`, `-Infinit
 `deploy/Dockerfile.patch` applies the reviewed source to the immutable public 0.1.2 dependency image. The root Dockerfile remains the full-build path. BuildKit attempted an additional base unpack and ran out of disk; Docker's legacy builder reused the installed layers successfully. The [build provenance](../results/container-registry-v3/provenance.json) preserves both attempts. This is a documented source patch, not a new dependency rebuild. The service has a 15-minute health-start grace period, and the research container runs as root.
 
 The [GPU check](../results/container-registry-v3/gpu-check.json) verifies installed Python-file hashes, CLI/HTTP/host equality, managed routes, non-finite 422 responses and the 413 body limits. Its populated-cache readiness time is one observation, not a first-download or latency guarantee. The 203.6-second empty-cache measurement belongs to 0.1.2 and remains labelled with that version.
+
+### Cache conditions in the validation receipts
+
+The populated-cache GPU checks mounted the model cache read-only with `HF_HUB_OFFLINE=1`. Reader startup examples allow writes and downloads so missing pinned files can be fetched. Enable offline mode only after those files are present. Queue-size and timeout environment variables are optional overrides; the examples without them use the server defaults. The historical 0.1.2 empty-model-cache run is a separate measurement.

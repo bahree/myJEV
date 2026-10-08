@@ -88,7 +88,7 @@ That pattern is consistent with noisy estimation being a possible contributor, b
 - The best observed mean accuracy, 90.27%, belongs to 4B exact RL. That is a candidate for further evaluation, not an automatically selected production default. We did not perform a paired cross-size superiority test here, and precision complicates the 9B comparison.
 - TF-IDF/logistic regression reached 88.28% on the same official test split using the full training partition. Exposure and tuning differ, so it is not a matched neural training control, but this inexpensive fixed-taxonomy baseline remains operationally relevant.
 - The approximately one-epoch initial-plus-continuation budget supports a matched study; it does not prove convergence. Endpoint evaluations cannot reconstruct a validation learning curve or a principled early-stop decision.
-- LoRA adapters are compact updates, not self-contained inference engines. Final comparisons must include the pinned backbone, heads, precision, input lengths and HTTP overhead. Final-checkpoint measurements now exist for six packaged candidates; they still do not establish Jev-equivalent performance.
+- LoRA adapters are compact updates, not self-contained inference engines. Final comparisons must include the pinned backbone, heads, precision, input lengths and HTTP overhead. Final-checkpoint measurements cover six packaged candidates; they still do not establish Jev-equivalent performance.
 
 ## Completed transfer and precision follow-ups
 
@@ -108,7 +108,7 @@ The [paired extension report](../results/extension-analysis-v1/report.md) includ
 
 ## Order randomization did not produce invariant decisions
 
-All 18 frozen permutation checks completed: three orders per released seed-11 checkpoint, 3,080 examples per order, unchanged weights and calibration. Across the three orders, 0.8B changes selected ID on 7.89-9.71% of requests across its two variants. The larger models change on 3.64-4.97%. Aggregate accuracy moves less because correct and incorrect answers can exchange places.
+All 18 frozen permutation checks completed: three orders per released seed-11 checkpoint, 3,080 examples per order, unchanged weights and calibration. Across the three per-request seeded permutations, 0.8B changes selected ID on 7.89-9.71% of requests per permutation across its two variants. The larger models change on 3.64-4.97% per permutation. Aggregate accuracy moves less because correct and incorrect answers can exchange places.
 
 | Size | Release | Original accuracy | Shuffled accuracy range | Requests changing selected ID |
 |---|---|---:|---|---|
@@ -123,13 +123,15 @@ All 18 frozen permutation checks completed: three orders per released seed-11 ch
 
 The 4B exact release is illustrative: its original accuracy is 90.55%, versus 90.39-90.65% after permutation. At the fixed 80%-calibration-coverage threshold, however, accepted-case error moves from 3.73% to 4.15-4.33%, while achieved test coverage increases from 82.60% to 83.80-83.93%. This is descriptive, not equal-coverage inference. Order changes position and alias assignment together. Repeated permutations are not extra independent test observations or new training seeds. The [complete report](../results/review-order-v1/report.md) preserves each result and its original threshold; no order was selected using test outcomes.
 
+There is also a different question: how many requests changed under **at least one** of the three tested permutations? Counting each request only once gives 13.41% and 15.52% for the 0.8B supervised and exact releases, 7.05% and 6.46% at 4B, and 6.62% and 7.79% at 9B. These are descriptive unions over three observed shuffles, not a probability of changing under every possible order. The [union report](../results/review-order-union-v1/report.md) regenerates the counts from the saved predictions without new inference.
+
 ## Local default and alternatives
 
 The recommended starting artifact is **4B continued supervision with temperature confidence**, using seed 11 as the fixed packaging convention. Among the currently released configurations it balances 89.23% mean BANKING accuracy, 0.0740 mean correctness Brier, stronger explicit unsupported-option transfer than 4B exact, and approximately 82 ms short-request HTTP p50 on the A30. This is a judgment across observed trade-offs, not a preregistered optimization or a production guarantee. Its confidence is a calibration-only selection-score proxy, not the supervised scalar head. The matched calibration follow-up makes the default a configuration-level recommendation; it does not establish that supervision inherently gives better confidence.
 
 Keep 4B exact RL as the higher in-domain-accuracy alternative (90.27% mean), and 0.8B as the lower-resource option. The measured 9B continued model is slower at approximately 115 ms HTTP p50, has essentially equal BANKING accuracy and better distant-CLINC accuracy; workload-specific priorities can therefore change the choice. Final local measurements use packaged seed-11 checkpoints; quality summaries use all three seeds. They are not measurements of an average model.
 
-The scratch model is already implemented and evaluated. Its unstable synthetic study and 1.30% BANKING diagnostic establish useful failure cases, not a useful natural-language replacement. Archive annotation/adaptation and external publication remain separate gates. See the [release tracker](models.md) and [scratch study](scratch-plan.md).
+The scratch model's unstable synthetic study and 1.30% BANKING diagnostic establish useful failure cases, not a useful natural-language replacement. The archive adaptation study measures agreement with machine labels and still needs independent human auditing for stronger correctness claims. The six Qwen adapter/head releases are public. See the [release tracker](models.md) and [scratch study](scratch-plan.md).
 
 ## Reproduce and inspect
 

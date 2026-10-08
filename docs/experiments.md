@@ -1,6 +1,6 @@
 # Experiments and evidence
 
-Read the [completed Qwen findings and lessons](qwen-findings.md), including paired uncertainty, confidence controls and what changes next.
+Read the [completed Qwen findings and lessons](qwen-findings.md), including paired uncertainty, confidence controls and research limits.
 
 
 The short pilot tests implementation behavior and motivates the longer controlled comparison. It does not establish that confidence-aware RL is better than supervision or post-hoc calibration.
@@ -42,7 +42,7 @@ Seed SD measures variation across three runs; it is not a confidence interval. L
 
 Continued supervision has the highest observed mean accuracy at every size. Exact RL is closer than sampled RL to that supervised control. These observations are conditional on short exposure, three seeds, and a small fixed subset.
 
-RL improves the weak supervised confidence policy. However, temperature-scaled supervised selection logits achieve lower mean correctness Brier than either RL policy in this pilot. The pilot did not fit the same post-hoc transform to RL. Improving only the weak policy baseline would be an incomplete argument for RL.
+In the pilot, without a matched post-hoc control, RL improved the weak supervised confidence policy. However, temperature-scaled supervised selection logits achieve lower mean correctness Brier than either RL policy in this pilot. The pilot did not fit the same post-hoc transform to RL. Improving only the weak policy baseline would be an incomplete argument for RL.
 
 ![Continued-supervision confidence controls](../results/figures/confidence-controls.png)
 
@@ -63,7 +63,7 @@ The completed baseline records include the following results. These are separate
 
 GLiClass uses revision `21edefaf7951f68c68c505f9139ba536d3b448f7` with supplied label descriptions and no task-specific training here. Its weak result is specific to this checkpoint and interface, not a claim about all generalist classifiers. Low Brier from low confidence is not evidence of a useful selector. The untouched measurements belong to the pilot subset; they do not establish the full-test fine-tuning effect. Source records live under `results/untouched-*-v2-evaluation/` and `results/gliclass/`.
 
-The initial 0.8B transfer/robustness work is limited. The frozen expanded study now covers all three sizes and seeds for continued supervision and exact RL. The three-seed 4B NF4 SFT control completed at the same 4,000-example exposure as the BF16 controls, after a 100-update fit pilot. It isolates a training configuration difference, including nonquantized dtype, rather than proving that every scale effect is caused by capacity alone.
+The initial 0.8B transfer/robustness work is limited. The frozen expanded study covers all three sizes and seeds for continued supervision and exact RL. The three-seed 4B NF4 SFT control completed at the same 4,000-example exposure as the BF16 controls, after a 100-update fit pilot. It isolates a training configuration difference, including nonquantized dtype, rather than proving that every scale effect is caused by capacity alone.
 
 
 ## Find the underlying evidence
@@ -112,7 +112,7 @@ These runners skip completed artifacts/evaluations. An existing published `resul
 
 Local GPU container checks passed at all three sizes. Warm concurrency-one HTTP p50/p95 were 60.1/63.7 ms (0.8B), 78.6/81.0 ms (4B), and 101.2/103.7 ms (9B). Each check used 40 short three-candidate requests, cached backbones, and an idle target GPU while another GPU was still training. These are implementation measurements, not an isolated-host service-level guarantee.
 
-Read [hosting](hosting.md) for limits, readiness, queues, precision, and deployment details. Replicated precision controls and representative serving workloads are complete; remaining publication and archive work is tracked on the [roadmap](roadmap.md).
+Read [hosting](hosting.md) for limits, readiness, queues, precision, and deployment details. The replicated precision controls and representative serving measurements have their own recorded protocols; the [scope guide](roadmap.md) separates their findings from untested research extensions.
 
 ## Completed extension analysis
 

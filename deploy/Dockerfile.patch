@@ -1,6 +1,10 @@
 # Reuse the public, root-Dockerfile-built 0.1.2 dependency layers. Build from
 # the repository root: docker build -f deploy/Dockerfile.patch -t myjev:local .
 # The root Dockerfile remains the complete installation path.
+# This source-only patch inherits pyproject.toml and installed dependencies from
+# 0.1.2. Verify that package metadata and dependency requirements are unchanged
+# before reusing it. A metadata/dependency change needs the root Dockerfile build.
+# Python package 0.1.0 and container 0.1.3 are separate version identifiers.
 FROM amitbahree/myjev@sha256:3693ed39364bb3a96ee675da1a750d09cb2762a50211886eca8addd776d585cb
 WORKDIR /app
 COPY src ./src

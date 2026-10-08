@@ -43,7 +43,7 @@ Wait for the first model download and warmup before checking readiness. The imag
 
 For a source build, use `docker build -t myjev:local .`. Compose remains available for a locally trained artifact: set `MYJEV_ARTIFACT_HOST` and `MYJEV_CACHE_HOST`, then run `docker compose -f deploy/compose.yaml up --build`. That path builds the checked-out source rather than pulling the released image. CUDA libraries come from the pinned PyTorch dependencies; the host supplies the GPU driver and NVIDIA container runtime. The standalone command and Compose publish only to host loopback.
 
-The real 0.8B GPU container passed Python/CLI/HTTP fixture equivalence and invalid-request rejection (`results/docker-equivalence.json`). Its initial startup failed because the minimal base image lacked a C compiler required by a runtime kernel; the Dockerfile now installs `gcc` and `libc6-dev`. Both the failed startup and successful validation logs are retained. Existing HTTP concurrency measurements were collected during other training jobs, so they are not isolated deployment benchmarks.
+The real 0.8B GPU container passed Python/CLI/HTTP fixture equivalence and invalid-request rejection (`results/docker-equivalence.json`). Its initial startup failed because the minimal base image lacked a C compiler required by a runtime kernel; the Dockerfile installs `gcc` and `libc6-dev`. Both the failed startup and successful validation logs are retained. Existing HTTP concurrency measurements were collected during other training jobs, so they are not isolated deployment benchmarks.
 
 For remote use, place an authenticated HTTPS reverse proxy in front of the loopback service. Terminate TLS there, enforce bearer authentication or an identity provider, limit body size and request rate, and keep request-content logs disabled. Do not expose the unauthenticated backend directly. One process per GPU avoids duplicating model memory unexpectedly.
 
@@ -53,7 +53,7 @@ Benchmark with `scripts/benchmark.py --output results/http-c1.json --concurrency
 
 ## Scoring-versus-generation benchmark
 
-Status: completed for six seed-11 release candidates in `results/release-validation-v1/`. All preceding GPU studies had terminated and no GPU compute processes were present at the start. The image and backbone caches were warm. This addition did not change training configurations.
+Recorded checks cover six seed-11 release candidates in `results/release-validation-v1/`. All preceding GPU studies had terminated and no GPU compute processes were present at the start. The image and backbone caches were warm. This addition did not change training configurations.
 
 Compare four paths on the same pinned checkpoint, tokenizer, precision, candidate aliases and decision cases:
 
@@ -123,7 +123,7 @@ Regenerate the compact machine-readable summary with `python scripts/summarize_r
 
 ## Publish the prepared packages
 
-The adapter-only `artifacts/hub-ready-v3/` snapshot adds MIT terms for the original adapter/head contributions, the pinned Qwen Apache-2.0 license and attribution, and BANKING77 provenance. Frozen study candidates are preserved separately. `results/release-readiness-v1/publication-manifest-v3.json` records every upload file's checksum. The six Qwen adapter/head releases use public repositories under `bahree`; the tested container is published on [Docker Hub](https://hub.docker.com/r/amitbahree/myjev); its [publication receipt](../results/container-registry-v1/publication.json) records the verified immutable digest.
+The adapter-only `artifacts/hub-ready-v3/` snapshot adds MIT terms for the original adapter/head contributions, the pinned Qwen Apache-2.0 license and attribution, and BANKING77 provenance. Frozen study candidates are preserved separately. `results/release-readiness-v1/publication-manifest-v3.json` records every upload file's checksum. The six Qwen adapter/head releases use public repositories under `bahree`; the tested container is published on [Docker Hub](https://hub.docker.com/r/amitbahree/myjev); the [0.1.3 publication receipt](../results/container-registry-v3/publication.json) records the verified immutable digest.
 
 For a new release to your own empty repository, review a package locally (the published `bahree` repositories are already populated):
 
@@ -143,7 +143,7 @@ The recommended 4B temperature package additionally passed exact 4,096-token req
 
 ## Clean release image verification
 
-The rebuilt local `myjev:0.1.0-release-candidate` image installs the pinned dependencies into the base image and now includes the MIT license file in the installed wheel. Its local image ID is `sha256:238c4bb857950fcca869c4d8d6eb87ee179b4592d91ca2a082dbe5618de31643`; this is a local image reference that was never published. GPU access, Python/CLI/HTTP equivalence, the single-forward contract, 160-candidate smoke input, oversize rejection, real HTTP response equality and duplicate-ID rejection passed for the selected 4B temperature package. The managed `/health` and `/generate` aliases also passed. These checks used a read-only pre-cached backbone; they do not measure cold downloading or cloud deployment.
+The rebuilt local `myjev:0.1.0-release-candidate` image installs the pinned dependencies into the base image and included the MIT license file in the installed wheel. Its local image ID is `sha256:238c4bb857950fcca869c4d8d6eb87ee179b4592d91ca2a082dbe5618de31643`; this is a local image reference that was never published. GPU access, Python/CLI/HTTP equivalence, the single-forward contract, 160-candidate smoke input, oversize rejection, real HTTP response equality and duplicate-ID rejection passed for the selected 4B temperature package. The managed `/health` and `/generate` aliases also passed. These checks used a read-only pre-cached backbone; they do not measure cold downloading or cloud deployment.
 
 The evidence is under `results/release-readiness-v1/`, including the image build log, source checksums, package metadata, contract checks and container log. Reproduce the live-container check with:
 
@@ -164,7 +164,7 @@ A separate fresh host virtual environment also installed `requirements.lock` and
 
 The server loaded a pinned public 4B release through the Hub SDK with a read-only populated cache. `/score` and `/generate` exactly matched the host response, and `/health` passed. Cached readiness took about 17.43 seconds in this observation; this is not a cold-download or isolated-host benchmark. See [build provenance](../results/release-container-v2/provenance.json), [HTTP verification](../results/release-container-v2/hub-http.json), and `scripts/verify_hub_container.py`. The latest card-only revisions and receipts are listed in [models](models.md); runtime files are unchanged.
 
-This exact image is now published as `amitbahree/myjev:0.1.1`, with an anonymous digest pull and GPU equality check recorded in the [publication receipt](../results/container-registry-v1/publication.json). The registry check uses the latest card revision above; runtime files are unchanged. No managed cloud endpoint was launched.
+This historical image was published as `amitbahree/myjev:0.1.1` and is superseded by 0.1.3. Its anonymous digest pull and GPU equality check remain in the [0.1.1 publication receipt](../results/container-registry-v1/publication.json). That check used the card revision recorded in that receipt; runtime files were unchanged. No managed cloud endpoint was launched.
 
 ## Public-source rebuild and empty-model-cache follow-up
 
@@ -185,3 +185,7 @@ Image **0.1.3** rejects non-finite request numbers (`NaN`, `Infinity`, `-Infinit
 The [GPU check](../results/container-registry-v3/gpu-check.json) verifies installed Python-file hashes, CLI/HTTP/host equality, managed routes, non-finite 422 responses and the 413 body limits. Its populated-cache readiness time is one observation, not a first-download or latency guarantee. The 203.6-second empty-cache measurement belongs to 0.1.2 and remains labelled with that version.
 
 A follow-up maximal-byte fixture made only of digits took 0.426-0.433 seconds to tokenize and reject on this host, versus 0.124-0.291 seconds for the two earlier pattern types. These three fixed fixtures are observations, not worst-case bounds. The [measurement](../results/followup-fixes-v1/request-limits.json) and `scripts/measure_request_limits.py` read the exact limit from the artifact manifest.
+
+### Cache conditions in the validation receipts
+
+The populated-cache GPU checks mounted the model cache read-only with `HF_HUB_OFFLINE=1`. Reader startup examples allow writes and downloads so missing pinned files can be fetched. Enable offline mode only after those files are present. Queue-size and timeout environment variables are optional overrides; the examples without them use the server defaults. The historical 0.1.2 empty-model-cache run is a separate measurement.
