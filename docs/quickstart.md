@@ -7,7 +7,7 @@ The tested setup is Linux, Python 3.12 and an NVIDIA A30 with 24 GB of GPU memor
 ## Install and test
 
 ```bash
-git clone https://github.com/bahree/myJEV.git
+git clone --depth 1 https://github.com/bahree/myJEV.git
 cd myJEV
 python3.12 -m venv .venv
 source .venv/bin/activate

@@ -69,6 +69,8 @@ The initial 0.8B transfer/robustness work is limited. The frozen expanded study 
 
 ## Find the underlying evidence
 
+The [results index](../results/README.md) separates browsable reports from optional evidence downloads. Restore the relevant bundle before replaying an analysis that reads individual predictions. Inference does not use these files.
+
 | Evidence | Location |
 |---|---|
 | Full-test longer comparison | [summary.json](../results/longer-v1/summary.json) |
@@ -78,8 +80,8 @@ The initial 0.8B transfer/robustness work is limited. The frozen expanded study 
 | Punctuation-normalized overlap sensitivity | [overlap report](../results/review-overlap-v1/report.md) |
 | Historical pilot summary | [final-study-table.json](../results/final-study-table.json) |
 | Historical pilot paired contrasts | [paired-comparisons.json](../results/paired-comparisons.json) |
-| Historical pilot seed-11 metrics and predictions | `results/pilot-{size}-{method}-evaluation/` |
-| Historical pilot seed-22/33 metrics and predictions | `results/three-seed-{size}/seed-{seed}/{method}/` |
+| Historical pilot seed-11 metrics and predictions (download `pilot`) | `results/pilot-{size}-{method}-evaluation/` |
+| Historical pilot seed-22/33 metrics and predictions (download `pilot`) | `results/three-seed-{size}/seed-{seed}/{method}/` |
 | Temperature and constant controls | Corresponding `*-posthoc/` directories |
 | Training manifests and update records | [artifact-manifests](../results/artifact-manifests/) |
 | HTTP benchmark measurements | [docker-size-validation](../results/docker-size-validation/) |
@@ -92,12 +94,13 @@ Per-run reports contain macro-F1, correctness/selection Brier metrics, confidenc
 From the repository root after installing the locked environment:
 
 ```bash
+python3 scripts/fetch_evidence.py --bundle pilot
 .venv/bin/python scripts/plot_study.py
 .venv/bin/python scripts/summarize_study.py
 .venv/bin/python scripts/paired_comparisons.py
 ```
 
-These commands use the included evaluation evidence and require no model download. Run them in a writable checkout; they regenerate output files.
+These commands use the restored evaluation evidence and require no model download. Run them in a writable checkout; they regenerate output files.
 
 For new training, begin with the supervised 0.8B artifact in the [quick start](quickstart.md). Then, in a separate experiment checkout if you want to preserve the published results unchanged:
 
@@ -117,7 +120,7 @@ Read [hosting](hosting.md) for limits, readiness, queues, precision, and deploym
 
 ## Completed extension analysis
 
-The [paired extension report](../results/extension-analysis-v1/report.md) analyzes precision and transfer using shared example groups. Reproduce with `python scripts/analyze_extensions.py`; the public compact inputs omit request text. All 36 transfer/robustness jobs and six final local serving candidates completed. [Model selection](models.md) explains the calibrated 4B supervised starting recommendation and alternatives.
+The [paired extension report](../results/extension-analysis-v1/report.md) analyzes precision and transfer using shared example groups. Restore `python scripts/fetch_evidence.py --bundle controls`, then reproduce with `python scripts/analyze_extensions.py`; the public compact inputs omit request text. All 36 transfer/robustness jobs and six final local serving candidates completed. [Model selection](models.md) explains the calibrated 4B supervised starting recommendation and alternatives.
 
 ## From counts to an operational decision
 
@@ -136,6 +139,7 @@ The compact inputs contain labels, scores and IDs, not request text. No model do
 ```bash
 git clone --local . /tmp/myjev-calibration-replay
 cd /tmp/myjev-calibration-replay
+python3 scripts/fetch_evidence.py --bundle calibration
 # Use the locked environment created from the original checkout.
 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 python scripts/review_calibration.py --from-compact
 git diff --exit-code -- results/review-calibration-v1

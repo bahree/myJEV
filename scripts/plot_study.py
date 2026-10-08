@@ -1,6 +1,9 @@
 """Regenerate three-seed accuracy and confidence figures from saved evaluations."""
 import json
 from pathlib import Path
+from fetch_evidence import require_evidence
+
+require_evidence("pilot")
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt

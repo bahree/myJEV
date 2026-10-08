@@ -184,7 +184,7 @@ Image **0.1.3** rejects non-finite request numbers (`NaN`, `Infinity`, `-Infinit
 
 The [GPU check](../results/container-registry-v3/gpu-check.json) verifies installed Python-file hashes, CLI/HTTP/host equality, managed routes, non-finite 422 responses and the 413 body limits. Its populated-cache readiness time is one observation, not a first-download or latency guarantee. The 203.6-second empty-cache measurement belongs to 0.1.2 and remains labelled with that version.
 
-A follow-up maximal-byte fixture made only of digits took 0.426-0.433 seconds to tokenize and reject on this host, versus 0.124-0.291 seconds for the two earlier pattern types. These three fixed fixtures are observations, not worst-case bounds. The [measurement](../results/followup-fixes-v1/request-limits.json) and `scripts/measure_request_limits.py` read the exact limit from the artifact manifest.
+A follow-up maximal-byte fixture made only of digits took 0.426-0.433 seconds to tokenize and reject on this host, versus 0.124-0.291 seconds for the two earlier pattern types. These three fixed fixtures are observations, not worst-case bounds. The [measurement](../results/review-limits-v1/digits-request-limits.json) and `scripts/measure_request_limits.py` read the exact limit from the artifact manifest.
 
 ### Cache conditions in the validation receipts
 

@@ -1,5 +1,8 @@
 import json
 from pathlib import Path
+from fetch_evidence import require_evidence
+
+require_evidence("pilot")
 import numpy as np
 rows=[]
 for size in ('0.8b','4b','9b'):

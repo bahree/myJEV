@@ -139,10 +139,11 @@ The scratch model remains an exercise in building and debugging the network. Its
 
 ```bash
 python3 scripts/summarize_longer_study.py
+python3 scripts/fetch_evidence.py --bundle controls
 python3 scripts/analyze_longer_study.py
 ```
 
-The second command requires NumPy and Matplotlib from the research environment. Its public compressed inputs contain only IDs, groups, label IDs, correctness and squared confidence error. Full original predictions remain in the private evidence archive, with hashes linking the compact extract to its sources. `--extract` rebuilds that extract where the original files are available. The summary, paired intervals and plots are locally regenerated rather than copied from an external dashboard.
+The second command requires NumPy and Matplotlib from the research environment. The optional `controls` download restores its compressed inputs, which contain only IDs, groups, label IDs, correctness and squared confidence error. The [results index](../results/README.md) explains the bundles and checksum checks. Full original predictions remain in the private evidence archive, with hashes linking the compact extract to its sources. `--extract` rebuilds that extract where the original files are available. The summary, paired intervals and plots are locally regenerated rather than copied from an external dashboard.
 
 ## Operational uncertainty, not just point estimates
 

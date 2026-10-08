@@ -1,5 +1,12 @@
 # Release history
 
+## Evidence downloads and results navigation
+
+- Add a results index linking findings, measurements, training records and release checks.
+- Package large prediction inputs and detailed short-pilot records as checksum-pinned optional downloads; keep reports, plots and training logs browsable.
+- Provide a standard-library restore command that verifies each file and protects local experiment changes.
+- Keep editorial checks, email previews and export bookkeeping private. Preserve public Git history and all scientific results.
+
 
 ## Runtime 0.1.3 and reporting corrections
 

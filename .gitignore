@@ -27,3 +27,8 @@ checkpoints/
 *.joblib
 wandb/
 results/wandb-sync*/
+# Optional study evidence restored by scripts/fetch_evidence.py
+results/pilot-*/
+results/three-seed-*/
+results/**/*predictions.jsonl*
+results/**/*inputs.json*.gz

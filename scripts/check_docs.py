@@ -7,7 +7,7 @@ from urllib.parse import unquote,urlsplit
 
 
 def check(root,blog=False):
-    paths=sorted(root.glob('*/index.md')) if blog else [p for p in [root/'README.md',root/'CHANGELOG.md'] if p.exists()]+sorted((root/'docs').rglob('*.md'))
+    paths=sorted(root.glob('*/index.md')) if blog else [p for p in [root/'README.md',root/'CHANGELOG.md',root/'results/README.md'] if p.exists()]+sorted((root/'docs').rglob('*.md'))
     failures=[]
     for path in paths:
         raw=path.read_text()

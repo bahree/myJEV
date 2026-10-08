@@ -37,6 +37,7 @@ Start with the worked examples if confidence and calibration are unfamiliar. The
 | [Decision lessons](decision-lessons.md) | Accuracy, confidence, asking for review and the cost of mistakes |
 | [CPU calibration lab](../results/calibration-lab-v1/report.md) | Train small classifiers where the true probabilities are known |
 | [Qwen findings](qwen-findings.md) | Compare methods and sizes while keeping seed variation visible |
+| [Results index](../results/README.md) | Find reports, training logs and optional prediction downloads |
 | [Experiments and evidence](experiments.md) | Separate the short pilot, longer comparison and other controls |
 | [Experimental protocol](protocol.md) | Keep training, validation, calibration and test data separate |
 | [Generated comparison](../results/longer-v1/summary.md) | Inspect the numerical summary and its source files |

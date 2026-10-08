@@ -17,7 +17,7 @@ There are two implementations: a small network trained from random weights and a
 Tested environment: Linux, Python 3.12, and an NVIDIA A30 for GPU execution. The lock file includes CUDA-enabled PyTorch; install size is substantial even when only running CPU tests.
 
 ```bash
-git clone https://github.com/bahree/myJEV.git
+git clone --depth 1 https://github.com/bahree/myJEV.git
 cd myJEV
 python3.12 -m venv .venv
 source .venv/bin/activate
@@ -164,10 +164,12 @@ myJEV/
 ├── examples/        Request fixtures and client examples
 ├── deploy/          Local Docker Compose and managed-hosting configuration
 ├── docs/            Reader guides, protocol, dataset cards, and roadmap
-├── results/         Recorded metrics, predictions, manifests, and figures
+├── results/         Study reports, metrics, training logs, and figures
 ├── Dockerfile       Reference inference container
 └── CHANGELOG.md     Versioned release history
 ```
+
+The [results index](results/README.md) explains which evidence supports each finding. Large analysis inputs and the detailed short pilot are optional downloads; inference does not need them. A shallow clone avoids downloading historical Git objects.
 
 Training creates local `data/`, `artifacts/`, and `.cache/` directories, which are excluded from Git. Adapters and heads are separately versioned on Hugging Face; their manifest-pinned backbone weights are downloaded separately.
 

@@ -1,6 +1,9 @@
 """Paired group-bootstrap comparisons, conditional on the three observed seeds."""
 import json
 from pathlib import Path
+from fetch_evidence import require_evidence
+
+require_evidence("pilot")
 import numpy as np
 
 

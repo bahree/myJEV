@@ -1,6 +1,0 @@
-{
-  "scope": "Local inline Markdown links and heading anchors; external URLs, generated Hugo rendering and reference-style links are not checked.",
-  "files": 24,
-  "failures": [],
-  "passed": true
-}
