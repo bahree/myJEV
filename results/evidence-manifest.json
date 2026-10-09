@@ -1,8 +1,6 @@
 {
   "schema_version": 1,
   "source_repository": "https://github.com/bahree/myJEV",
-  "source_revision": "dc3d423999a802cfd775476d18a2682af4ad0199",
-  "release": "https://github.com/bahree/myJEV/releases/tag/evidence-v1",
   "bundles": {
     "pilot": {
       "url": "https://github.com/bahree/myJEV/releases/download/evidence-v1/myjev-evidence-v1-pilot.tar.gz",
@@ -1546,7 +1544,9 @@
           "sha256": "8f8e5bbbe61d301c53b85a8683d0bf1e408b041a6a37b85334e0c7f8cfc91ec7",
           "bytes": 4407
         }
-      }
+      },
+      "source_revision": "dc3d423999a802cfd775476d18a2682af4ad0199",
+      "release": "https://github.com/bahree/myJEV/releases/tag/evidence-v1"
     },
     "calibration": {
       "url": "https://github.com/bahree/myJEV/releases/download/evidence-v1/myjev-evidence-v1-calibration.tar.gz",
@@ -1698,7 +1698,9 @@
           "sha256": "76b032ccec996b9ddf3753bc768d6f19aed9f7823a7a2c3c45decf6f8bdfbcf2",
           "bytes": 6898057
         }
-      }
+      },
+      "source_revision": "dc3d423999a802cfd775476d18a2682af4ad0199",
+      "release": "https://github.com/bahree/myJEV/releases/tag/evidence-v1"
     },
     "order": {
       "url": "https://github.com/bahree/myJEV/releases/download/evidence-v1/myjev-evidence-v1-order.tar.gz",
@@ -1778,7 +1780,9 @@
           "sha256": "7f0050b697765c2de7871e7d4292b1731a769c4d87a740ea6e0b3c0e1e9cea51",
           "bytes": 3250494
         }
-      }
+      },
+      "source_revision": "dc3d423999a802cfd775476d18a2682af4ad0199",
+      "release": "https://github.com/bahree/myJEV/releases/tag/evidence-v1"
     },
     "controls": {
       "url": "https://github.com/bahree/myJEV/releases/download/evidence-v1/myjev-evidence-v1-controls.tar.gz",
@@ -1969,6 +1973,82 @@
         "results/sst2-transfer-v1/9B/predictions.jsonl": {
           "sha256": "526fa91c227818d5831b548bec7e046a88528ef0611d22143a94751551a91a63",
           "bytes": 448506
+        }
+      },
+      "source_revision": "dc3d423999a802cfd775476d18a2682af4ad0199",
+      "release": "https://github.com/bahree/myJEV/releases/tag/evidence-v1"
+    },
+    "readout": {
+      "archive": "myjev-readout-evidence-v2.tar.gz",
+      "url": "https://github.com/bahree/myJEV/releases/download/evidence-v2/myjev-readout-evidence-v2.tar.gz",
+      "release": "https://github.com/bahree/myJEV/releases/tag/evidence-v2",
+      "source_revision": "496f51a79aed9212e76b1361fda18e838fb41a0f",
+      "source_semantics": "Public implementation and tracked metric records. Raw, text-free logits are distributed in this archive, outside Git.",
+      "sha256": "4234aeeab80c2e29e3670d91df5d5079e02b54290452240d219ab18858ddcd17",
+      "bytes": 23570308,
+      "files": {
+        "results/unsloth-head-v1/main/seed-11/alias/inputs.json.gz": {
+          "sha256": "de16d68ce2b0f17d634337b9c14550a679cb2ae7e707c4219f07270c7c240108",
+          "bytes": 794720
+        },
+        "results/unsloth-head-v1/main/seed-11/alias/order-101-inputs.json.gz": {
+          "sha256": "a49678fc10a2e502cc8db45e5def83cc1361f5863403358fac80246866cb6ff5",
+          "bytes": 1126308
+        },
+        "results/unsloth-head-v1/main/seed-11/alias/order-202-inputs.json.gz": {
+          "sha256": "b34c36448e55b435607b50e75c19207d9f4296e1c1626177fc277306f7b03966",
+          "bytes": 1126252
+        },
+        "results/unsloth-head-v1/main/seed-11/alias/order-303-inputs.json.gz": {
+          "sha256": "70667d00e049f53b7356838a30d282490b9753efff619552d948d62757c50536",
+          "bytes": 1127876
+        },
+        "results/unsloth-head-v1/main/seed-11/clef/inputs.json.gz": {
+          "sha256": "65dc02823a0a69e70b17348d8da83b7b93f5f2ab90bcf334cdf5886b59be12f2",
+          "bytes": 3056508
+        },
+        "results/unsloth-head-v1/main/seed-11/clef/order-101-inputs.json.gz": {
+          "sha256": "ed4695a203940a395eeb3f40defb4c62d12205fbf5e1ab0513ad0c524b550f90",
+          "bytes": 2883615
+        },
+        "results/unsloth-head-v1/main/seed-11/clef/order-202-inputs.json.gz": {
+          "sha256": "f1586beb68697bcd5be9ef0011123ed422d63a5ea6ca38cc38182ed745f52232",
+          "bytes": 2885338
+        },
+        "results/unsloth-head-v1/main/seed-11/clef/order-303-inputs.json.gz": {
+          "sha256": "4f2c217e44ed4f6e3645fbd249624e6a7ef2ea0abf01999c9ab65d09e2fbe3bd",
+          "bytes": 2884866
+        },
+        "results/unsloth-head-v1/main/seed-22/alias/inputs.json.gz": {
+          "sha256": "108bb30cb152e6528bb18b224b16760bebccfc2b59099728a48ac0803193d868",
+          "bytes": 763944
+        },
+        "results/unsloth-head-v1/main/seed-22/clef/inputs.json.gz": {
+          "sha256": "7b4bb438af25ee41c9a2993734a66c261f06e610cdc753e5742adc70b5c3a5a5",
+          "bytes": 3263845
+        },
+        "results/unsloth-head-v1/main/seed-33/alias/inputs.json.gz": {
+          "sha256": "6f7487e5e6f82d7f9d3d749f98c97c10beef9df7730c425d8e8a679c77dd6697",
+          "bytes": 775132
+        },
+        "results/unsloth-head-v1/main/seed-33/clef/inputs.json.gz": {
+          "sha256": "e323f79cff0357832b25e6e28664ea1ca13465cb83850527687ba1e9dc0cddb0",
+          "bytes": 3026135
+        }
+      }
+    },
+    "candidate": {
+      "archive": "myjev-candidate-evidence-v2.tar.gz",
+      "url": "https://github.com/bahree/myJEV/releases/download/evidence-v2/myjev-candidate-evidence-v2.tar.gz",
+      "release": "https://github.com/bahree/myJEV/releases/tag/evidence-v2",
+      "source_revision": "496f51a79aed9212e76b1361fda18e838fb41a0f",
+      "source_semantics": "Public implementation and tracked metric records. Raw, text-free logits are distributed in this archive, outside Git.",
+      "sha256": "9a1737c0f75616dab957b5f1d86a85449aca7f9b30d0fab00a53416feb10ccc4",
+      "bytes": 3804386,
+      "files": {
+        "results/candidate-head-v1/main/inputs.json.gz": {
+          "sha256": "361ff303af3a0a3fe30aad8aa5e5d444b7c0c950d77ef892d00cbe0a09f4460c",
+          "bytes": 3810491
         }
       }
     }

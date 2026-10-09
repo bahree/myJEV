@@ -46,6 +46,8 @@ The command restores original `results/` paths, so analysis scripts keep their i
 | `calibration` | 240.3 MiB | 36 compact calibration/test inputs for the matched comparison | `python scripts/review_calibration.py --from-compact` |
 | `order` | 53.8 MiB | 18 sets of recorded candidate-order predictions | `python scripts/summarize_order_union.py` (also needs `calibration`) |
 | `controls` | 17.1 MiB | 46 larger inputs for paired contrasts, archive changes, scratch and encoder controls | `python scripts/analyze_extensions.py` |
+| `readout` | 22.5 MiB | 12 text-free input files for alias/Clef calibration, test and order replay | `python scripts/replay_head_evaluation.py --study readout --output /tmp/readout-replay.json` |
+| `candidate` | 3.6 MiB | One text-free calibration/test input for the frozen-backbone head | `python scripts/replay_head_evaluation.py --study candidate --output /tmp/candidate-replay.json` |
 
 The [manifest](evidence-manifest.json) lists every file, size and checksum, with the public source revision. The four `evidence-v1` bundles restore files published at their recorded revision. The `evidence-v2` head-study bundles add text-free logits outside Git; their source revisions identify the public implementation and metric records. Small demonstration fixtures stay in Git. Archive inputs retain their existing privacy boundary: compact correctness/confidence records, without the private post text or raw annotations.
 

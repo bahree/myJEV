@@ -282,7 +282,7 @@
       "mode": "100644"
     },
     "results/README.md": {
-      "sha256": "5783090fc12da10c7a4b2548e7f44fff7fed8f6a8920cb3093c5af919375bb0d",
+      "sha256": "0ee3992ccbe552b61cb4d5a1e96e9cda5da13843e6ed673b0517ad8da3904fb5",
       "mode": "100644"
     },
     "results/archive-machine-v1/config.json": {
@@ -1190,7 +1190,7 @@
       "mode": "100644"
     },
     "results/evidence-manifest.json": {
-      "sha256": "e8fc76afdb067d4fe45ca8e1109d4c19dd1ab00889f1e001e01f167e85a5ceef",
+      "sha256": "001d9981107d309fe11a4431c6ab97331c243ea981e0190dc55fbeffa3c07275",
       "mode": "100644"
     },
     "results/extension-analysis-v1/report.md": {
