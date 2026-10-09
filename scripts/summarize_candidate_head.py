@@ -33,7 +33,7 @@ def main():
         f"The {pilot['updates']}-update pilot used {pilot['peak_vram_bytes']/2**30:.3f} GiB peak PyTorch allocation and took {pilot['session_seconds']:.1f} seconds. Its saved/reloaded fixture was identical. The backbone remained frozen.",'',
         '## Main run and held-out decisions','',
         f"Seed {plan['seed']} trained for {done['updates']:,} updates and {done['examples']:,} example exposures. AdamW learning rate was {plan['learning_rate']}, without tuning or validation-selected checkpoints. The head has {init['head_parameters']:,} trainable parameters and the backbone has {init['backbone_parameters']:,} frozen parameters. Mean rendered training length was {init['mean_tokens']:.1f} tokens.",'',
-        f"Training session time was {done['session_seconds']:.1f} seconds, with {done['peak_vram_bytes']/2**30:.3f} GiB peak allocated memory. These measurements exclude later evaluation. Descriptive validation accuracy was {100*validation['accuracy']:.2f}% on {validation['n']} examples.",'',
+        f"The training session, including checkpoint writes, logging shutdown and its saved fixture check, took {done['session_seconds']:.1f} seconds, with {done['peak_vram_bytes']/2**30:.3f} GiB peak allocated memory. These measurements exclude later evaluation. Descriptive validation accuracy was {100*validation['accuracy']:.2f}% on {validation['n']} examples.",'',
         '| Confidence | Test accuracy | Macro-F1 | Correctness Brier | Multiclass Brier | ECE | Correctness AUROC |',
         '|---|---:|---:|---:|---:|---:|---:|']
     for name,m in [('Raw selected probability',raw),('Temperature-scaled selected probability',cal)]:

@@ -15,7 +15,7 @@ def compressed(path): return json.loads(gzip.decompress(Path(path).read_bytes())
 
 def probe_report(root,plan,sources):
     lines=['','## Training time and memory','',
-        'Each main run received 1,000 updates and 8,000 examples. Session time includes training and checkpoint work; it is elapsed time on its assigned GPU rather than a kernel-only measurement. The three seed workers ran on separate A30s.','',
+        'Each main run received 1,000 updates and 8,000 examples. Session time includes training, checkpoint work, logging shutdown and the saved fixture check; it is elapsed time on its assigned GPU rather than a kernel-only measurement. The three seed workers ran on separate A30s.','',
         '| Seed | Readout | Training seconds | Peak allocated GiB | Mean training tokens |',
         '|---|---|---:|---:|---:|']
     def record(path):
@@ -66,7 +66,7 @@ def probe_report(root,plan,sources):
             '| Question | Expected | Selected | Raw selected score |','|---|---|---|---:|']
     for key,value in demo['answers'].items():
         selected=value['selected_id'];lines.append(f"| {key} | {demo['expected'][key]} | {selected} | {value['selection_scores'][selected]:.4f} |")
-    lines+=['','The probe made one backbone call. All three questions use the Choice type; this does not test other field types, images or general multi-question accuracy.','']
+    lines+=['','The probe made one backbone call. All three questions use the Choice type. Other field types, images and general multi-question accuracy remain outside this probe.','']
     return lines,probes
 
 
@@ -84,7 +84,7 @@ def main():
                 path=base/name
                 sources[path.as_posix()]=hashlib.sha256(path.read_bytes()).hexdigest()
     lines=['# Alias readout and Clef head on the same Qwen backbone','',
-        'This is a separate answer-only supervised experiment on Qwen3.5-0.8B. Both arms use the same BF16 backbone revision and rank-8 adapters, but their prompts and answer readouts differ. The completed supervision/RL study and released default are unchanged.','',
+        'The separate answer-only supervised experiment uses Qwen3.5-0.8B. Both arms use the same BF16 backbone revision and rank-8 adapters, but their prompts and answer readouts differ. The completed supervision/RL study and released default are unchanged.','',
         '## Feasibility pilot','',
         'Each pilot completed 100 updates with eight examples per update. Memory is the PyTorch peak allocated on an A30; it excludes CUDA context memory. Time includes first-step kernel preparation and optimizer checkpointing.','',
         '| Readout | Trainable parameters | Peak allocated GiB | Training seconds | Mean input tokens |',
@@ -92,7 +92,7 @@ def main():
     for arm in plan['arms']:
         base=root/'pilot'/arm; c=read(base/'complete.json'); i=read(base/'initialization.json'); e=read(base/'encoding.json')
         lines.append(f"| {arm} | {i['trainable_parameters']:,} | {c['peak_vram_bytes']/2**30:.3f} | {c['session_seconds']:.1f} | {e['mean_tokens']:.1f} |")
-    lines+=['','These are runtime feasibility observations, not accuracy results. Initial adapter hashes and example/order hashes agree across the paired pilots. A prior compiled attempt failed on its first backward pass. Both reported pilots use eager execution, with no silent input truncation.','']
+    lines+=['','The pilots establish runtime feasibility. Initial adapter hashes and example/order hashes agree across the paired pilots. A prior compiled attempt failed on its first backward pass. Both reported pilots use eager execution, with no silent input truncation.','']
     if (root/'selection.json').exists():
         choice=read(root/'selection.json')
         lines+=['## Validation-only learning-rate selection','',
@@ -140,7 +140,7 @@ def main():
                 'Clef minus alias, in percentage points, for seeds 11 / 22 / 33: '+ ' / '.join(f'{100*d:+.2f}' for d in deltas)+'.', '',
                 f"The mean difference is {100*deltas.mean():+.2f} points. The conditional test-group interval is [{100*ci[0]:+.2f}, {100*ci[1]:+.2f}] points; the sample seed standard deviation is {100*deltas.std(ddof=1):.2f} points. The interval holds these three trained seed pairs fixed and does not include training variance.", '',
                 '## Accepting decisions or asking for review','',
-                'Thresholds are selected on calibration, then applied unchanged to test. These are empirical operating points, not certified error guarantees. Zero accepted cases have undefined error.','',
+                'Thresholds are selected on calibration, then applied unchanged to test. The operating points describe observed errors and coverage without certifying deployment risk. Zero accepted cases have undefined error.','',
                 '| Seed | Readout | Test coverage at calibration 80% threshold | Accepted-case error | Accepted cases | Group-bootstrap error interval |',
                 '|---|---|---:|---:|---:|---|']
         for r in results:

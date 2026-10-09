@@ -1,0 +1,25 @@
+{
+  "public_repository": "https://github.com/bahree/myJEV",
+  "public_revision": "7438e559500c0e2e97ea18624f327b2a0d7ec97a",
+  "all_files_identical": true,
+  "scope": "The recorded GPU jobs ran from the private working checkout. These public files are byte-identical to the model, runner, metric, protocol and dependency files used by the head studies. Historical training receipts retain their original checkout revisions. This maps the runnable implementation to an accessible public commit; it does not assert that this commit contains later results.",
+  "file_sha256": {
+    "scripts/run_head_comparison.py": "186d677b85e4eab4d32dc6f4b36173ea34018cd4db29c9e584e50f5ae6e299d0",
+    "scripts/run_candidate_head.py": "47e4c089c37bafa72d9482fcbf267943d71b7012380015199c0af4868445b1fc",
+    "src/myjev/candidate_head.py": "dcc8198aae1edb83193cb2ab70cf440c73f18bbf627fbbbee28cd585540baa1d",
+    "src/myjev/head_comparison.py": "99502a022c049528f9c6e0f18de7d4c92744d676e92b52fc45638b709056ee15",
+    "src/myjev/calibration.py": "6959d6d88adcb67efe942a2b7554cc9c6b8cf3aa2de7162fb93c9e6eb396a290",
+    "src/myjev/metrics.py": "f81e4bb20629544c2545ebdfce88b025f92b7f4243c9f9652c79c28017343d43",
+    "src/myjev/data.py": "8e31a46a06578e66d7aff9aa302931b0558279e3afd6c4f726858e604ba79d66",
+    "src/myjev/model.py": "e668b74b1760a620ef5db5b01e1bc1b5b5daa4056b638caa6d7064a9b3e314a6",
+    "configs/head-comparison-v1.json": "9705751a258dfdaab4fbceefd936138df442de0247fde3421d4c26cffefe1501",
+    "configs/candidate-head-v1.json": "f607c55e433455f641d9d6cce4fe8138216a0e19b88af16d3d5563fb01312213",
+    "requirements.lock": "45e898b72a73dd62410cb593784a8e6b52118659eab437bf6bef4f59507d1e69",
+    "requirements.unsloth.lock": "0e510025e379fc59916a6058c4e708dfaf987360dd33d1edd839086077c5ffe7",
+    "src/myjev/prompt.py": "71e4c8ffb0289c5b13e8a5a67276488e4524ea8e105ed35757e7273a70a54e67",
+    "src/myjev/schema.py": "a84d5592087609156e67dd6719e3a2ce671f1e4f0f01c63f150e46ca1fedd563",
+    "src/myjev/tracking.py": "4900b0e7c472c09938d36768a8d2459d3ee1320d9b1009c4e81536c48e17117d",
+    "scripts/orchestrate_head_comparison.py": "2ad35e7314276f080a45494d8b71eb51e717587473f144fbc7c60ab966495dc7",
+    "scripts/orchestrate_candidate_head.py": "798b68f46aea79de92cda2f2a961880e313b36092b316ead3f7d594efd4bd3a6"
+  }
+}
