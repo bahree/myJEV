@@ -22,7 +22,7 @@
       "mode": "100644"
     },
     "README.md": {
-      "sha256": "fe225464f5ba5e363aab4c699e6601611d389827d82ebc6a4adaa044d9ddf1df",
+      "sha256": "050e54188399fbbd364eca82d8f7a259f37d26d076ead87f809ed6bb08b526a6",
       "mode": "100644"
     },
     "configs/0.8b.json": {
@@ -98,7 +98,7 @@
       "mode": "100644"
     },
     "docs/architecture.md": {
-      "sha256": "dd8698743d0592d0a7885cf7df72c82e823638c949d2698c8b45815efb2c10aa",
+      "sha256": "0adc903a3cf7bdbfc48496fed2b7e49f70976a11cfd25cb185fe5e6ca6c70238",
       "mode": "100644"
     },
     "docs/attribution.md": {
@@ -130,11 +130,11 @@
       "mode": "100644"
     },
     "docs/decision-lessons.md": {
-      "sha256": "6337e2197e15032666a21b261c046ec49ca4fbb51fa056007f91f3c3927a046c",
+      "sha256": "b1cf8fecd44866860b6fb79928c300687e997fe093d895fab083bc73046f7a2c",
       "mode": "100644"
     },
     "docs/experiments.md": {
-      "sha256": "c7d3c3a6494eb25f83dbb5c2cd7001f60b91adc4c5c16d8e7b8e71a4214deff4",
+      "sha256": "954571290a8332f2012cb3c4d7a7a14593d55d8d7b31a568815cb4e069ec2a7c",
       "mode": "100644"
     },
     "docs/hosting.md": {
@@ -142,15 +142,15 @@
       "mode": "100644"
     },
     "docs/inference.md": {
-      "sha256": "9465cff51144cf776a0c4261ad117c9c47f5810e7c68e8b00b50a733c2ab0c5a",
+      "sha256": "cdf30412058bf06f0b5b61b8ba0fccde70c3ad2156e0dba55114c41e8d86c7d8",
       "mode": "100644"
     },
     "docs/learnings.md": {
-      "sha256": "3a5152f94168fff9c2c699247e1151c35932af3f27f1405dd07250ef1af08931",
+      "sha256": "86ba979ac1905e883c507a8f685b7727337a66410ea0cfeea74909cd7a22dc3f",
       "mode": "100644"
     },
     "docs/models.md": {
-      "sha256": "bbb75855e07990d37405f824db9461c734644b6ceb5ced507419b00985337f69",
+      "sha256": "716f73c6b7adbddc9ddab56a06fd08f599a7bf5a95a9937d50b12c406dca2865",
       "mode": "100644"
     },
     "docs/openjev.md": {
@@ -166,7 +166,7 @@
       "mode": "100644"
     },
     "docs/qwen-findings.md": {
-      "sha256": "2cf2a07ef6ebeedef6586e808d7bc41ceb9476c584f17915c7d56ae457ba7a03",
+      "sha256": "e83b13cc922677711cf5ed8f034dbf2d6faae01c4464ab92b208c2e4de0ade81",
       "mode": "100644"
     },
     "docs/roadmap.md": {
@@ -174,11 +174,11 @@
       "mode": "100644"
     },
     "docs/scratch-plan.md": {
-      "sha256": "3aec9613987cf62b7b60f9a668ef67f79fc432bc8d74ef3caa0d5be2d6288f60",
+      "sha256": "b9e27b1bad11101bd6be709d81787bc02a218a3eafbe99f6fd566b3c62fa4abc",
       "mode": "100644"
     },
     "docs/scratch.md": {
-      "sha256": "c4d4d130913e6e1150ad22a571875aea3705164c12a8e05fc751d922ecbc1a77",
+      "sha256": "21a7ac8957d615f35e4497b44b9c6713fb08ee8cc1d5936c79a028f94c6794c4",
       "mode": "100644"
     },
     "docs/system-one-peer-review.md": {
@@ -190,19 +190,19 @@
       "mode": "100644"
     },
     "docs/tracking.md": {
-      "sha256": "bf1889c78a8a4476b65143def1f740ec4a57e5dc6474092e0c59c54a9cd4706f",
+      "sha256": "777924aa677e33bd42e4cb79d247e99980752bf2df5d210c672824c8f767a29e",
       "mode": "100644"
     },
     "docs/training.md": {
-      "sha256": "d3cf5c07e1ad2d04218a1d19ec9873eef5346c1787e66ac2fc3e48020ae62d4e",
+      "sha256": "d0b662930552ae1d1d88f661c733df7a86b9e246e0f0f96ae4d587113323f4a4",
       "mode": "100644"
     },
     "docs/unsloth.md": {
-      "sha256": "21356aa380fee0d63134674a0f922296cd5cf2dd4724129e86523aa59fa81ca2",
+      "sha256": "da69b1b44553ad49b35a1568f200fd84088528e176b060649ac539f3a988e110",
       "mode": "100644"
     },
     "docs/walkthrough.md": {
-      "sha256": "109a4f5a211d723b064974f31475c4a525d8db6e07d47afbe33320b7dcc2581c",
+      "sha256": "f17ac7679ab1cb32ded0c94e61069b9b3ec8316a149c442d5d574af7dd96019c",
       "mode": "100644"
     },
     "examples/client.py": {
@@ -747,6 +747,10 @@
     },
     "results/calibration-lab-v1/training.jsonl": {
       "sha256": "7d018b755dfdb6522c7624821382f12a42da609b138cd6490fbc1caaa4232075",
+      "mode": "100644"
+    },
+    "results/candidate-head-v1/environment.json": {
+      "sha256": "bf113c21060ce8df9841a6dc6e81592ca0f09a8c2d1ea23bf3b185f6c412173e",
       "mode": "100644"
     },
     "results/container-registry-v1/manifest.json": {
@@ -2299,6 +2303,10 @@
     },
     "results/gpu-telemetry-20261004T205942Z/processes.jsonl": {
       "sha256": "eb134edfedaf315f479e0030f1f3c87a0b3cf05fdb095f06cc40d9ef2a04a24d",
+      "mode": "100644"
+    },
+    "results/head-replay-v1/public-source.json": {
+      "sha256": "8e6a6e13dd8d5ead8e21620e62474cb56c57b3afc6013ced8830e633ddd8b312",
       "mode": "100644"
     },
     "results/limits-0.8b.json": {
@@ -6301,6 +6309,10 @@
       "sha256": "9b0c23f3ef77d53d2eaa928bf1e4817ec6716fb52876654cb2d9acdd24067a52",
       "mode": "100644"
     },
+    "results/unsloth-head-v1/main/seed-11/clef/complete.json": {
+      "sha256": "9b82652856bbc6c100c97eba30fbd580263f9f06c50675199e47eff9389083a7",
+      "mode": "100644"
+    },
     "results/unsloth-head-v1/main/seed-11/clef/encoding.json": {
       "sha256": "8161294bcb2d4b1a7d1a2f6d81471f247fd0d6af5c87b230f7a3ef431bef18cd",
       "mode": "100644"
@@ -6314,7 +6326,7 @@
       "mode": "100644"
     },
     "results/unsloth-head-v1/main/seed-11/clef/training.jsonl": {
-      "sha256": "f113b06985318657266e680569f3bdaf389981f84cc15ce9e55e765a0a16c3bb",
+      "sha256": "a8c487aec6651949d4d3cd028626ac140c79df37643816d2c77f145462f7911b",
       "mode": "100644"
     },
     "results/unsloth-head-v1/main/seed-22/alias/calibration.json": {
@@ -6353,6 +6365,14 @@
       "sha256": "8ffcbb117e06a836478e2c3f8d206414b054bbaf28a1df88637c86fbf923a3d8",
       "mode": "100644"
     },
+    "results/unsloth-head-v1/main/seed-22/clef/calibration.json": {
+      "sha256": "4a199b2806f502941a9be9529a1c6375d316212216ad11fa3d430bfc056ed831",
+      "mode": "100644"
+    },
+    "results/unsloth-head-v1/main/seed-22/clef/complete.json": {
+      "sha256": "d92d6831c7ea811a84b5c3dc3e4d146464dd6c2715e3fc804e55b022a95a16cc",
+      "mode": "100644"
+    },
     "results/unsloth-head-v1/main/seed-22/clef/encoding.json": {
       "sha256": "9c201dfdf376fafd802597f98109a316ef4158206de03c587136a9b032c8ad86",
       "mode": "100644"
@@ -6361,12 +6381,24 @@
       "sha256": "4ba36ab9177eac1df201fdd78676c988b53256ef7b851e303f9a67af2082f7e2",
       "mode": "100644"
     },
+    "results/unsloth-head-v1/main/seed-22/clef/probe.json": {
+      "sha256": "17322e95a7a4fb678205ed1807ee309d034a3fe3fa4ddefacc022be4f2ee2a2f",
+      "mode": "100644"
+    },
+    "results/unsloth-head-v1/main/seed-22/clef/raw-metrics.json": {
+      "sha256": "2a28a7e358e38c0fd616e1db07cb390a3b1c6a597ff42c2d1df5b9fa7785685a",
+      "mode": "100644"
+    },
     "results/unsloth-head-v1/main/seed-22/clef/run.json": {
       "sha256": "0a5f875f071fc0221bd071dee492c7a89e01063e88c2a7b8da173db0de20842f",
       "mode": "100644"
     },
+    "results/unsloth-head-v1/main/seed-22/clef/temperature-metrics.json": {
+      "sha256": "e960a23e7a8d91fafc35268d1dd6d1338e65c59a69923d21c3be82e6a9bbeb89",
+      "mode": "100644"
+    },
     "results/unsloth-head-v1/main/seed-22/clef/training.jsonl": {
-      "sha256": "57f88b72eabc66c64c265e457a2252c5a3b449befa91506b0d9948eb5cd38f94",
+      "sha256": "6e480505a67ecb9f5a8a8d4d358c15dd929da9e56750cd93cebdcee9409b3ad5",
       "mode": "100644"
     },
     "results/unsloth-head-v1/main/seed-33/alias/calibration.json": {
@@ -6405,6 +6437,14 @@
       "sha256": "43cd1fa6d304825ed63c3f37f7d41dec7c7f822e4ca7d478451f9bd02128bd6d",
       "mode": "100644"
     },
+    "results/unsloth-head-v1/main/seed-33/clef/calibration.json": {
+      "sha256": "084c2276ea686f6999b36d93827e75cd59953fbcaca58fefb21e9569d16a9f3c",
+      "mode": "100644"
+    },
+    "results/unsloth-head-v1/main/seed-33/clef/complete.json": {
+      "sha256": "2ab5fcadef9e5b0452ef8b8e95f3964b1f1cdeb270b4d9ef2da6562551b13f49",
+      "mode": "100644"
+    },
     "results/unsloth-head-v1/main/seed-33/clef/encoding.json": {
       "sha256": "2c4067cab461962790d2a1f8e0154d431dbce68ba11b17b13913b0431bde56a8",
       "mode": "100644"
@@ -6413,12 +6453,24 @@
       "sha256": "bee6b5ce1d5eb3bb290f98c5c38c1877895d4d7ec886be09e12258618e5f5002",
       "mode": "100644"
     },
+    "results/unsloth-head-v1/main/seed-33/clef/probe.json": {
+      "sha256": "af41bd98fd21e1d45305dd7d9fc15c651c86d0c9b46d25e56521a3bfce025ee0",
+      "mode": "100644"
+    },
+    "results/unsloth-head-v1/main/seed-33/clef/raw-metrics.json": {
+      "sha256": "d1af5404c9d61abd5dd082d2922357866a4d5347f834a6d46557243a338a0bb5",
+      "mode": "100644"
+    },
     "results/unsloth-head-v1/main/seed-33/clef/run.json": {
       "sha256": "fe9a49319fea80cf43365757d97e8eebcd943d96424972d9c4e4758d0a17426a",
       "mode": "100644"
     },
+    "results/unsloth-head-v1/main/seed-33/clef/temperature-metrics.json": {
+      "sha256": "71fcde312a7bc01bc48541db394141254633879635daea22b0ad3c980d9b2129",
+      "mode": "100644"
+    },
     "results/unsloth-head-v1/main/seed-33/clef/training.jsonl": {
-      "sha256": "e0cb7f9fac5da768b439dc4248bb641a093fdf957cf59874d2ff375dae9f57bf",
+      "sha256": "eb42efe131ca45b9a22c1d60beff662f65b9cf7dcba4693cc0dc8c5ed3d19e37",
       "mode": "100644"
     },
     "results/unsloth-head-v1/pilot/alias/complete.json": {
@@ -6477,8 +6529,28 @@
       "sha256": "dfc22cbfe79f31bbf3eb288639a5971cfbc114496f85d5f1136222779f3b9da8",
       "mode": "100644"
     },
+    "results/unsloth-head-v1/runtime-notes.md": {
+      "sha256": "1b0b981c425a4621f90b550ce89b5e92173dd18440c6e53d8190a82f772081d6",
+      "mode": "100644"
+    },
     "results/unsloth-head-v1/selection.json": {
       "sha256": "c3a1679fb5e69b31588c053090bd5c61bc02ce9796a475e2b6931e5cdcbfa437",
+      "mode": "100644"
+    },
+    "results/unsloth-head-v1/telemetry/gpu.csv": {
+      "sha256": "e2c83914ccb9adb1b920c82a7bbcbb57a8b965cc915076bee18d64e0bca11952",
+      "mode": "100644"
+    },
+    "results/unsloth-head-v1/telemetry/metadata.json": {
+      "sha256": "84ec583ce31fa3fc47b2cc184f34427441d2dfe581b4014d06f23deb135e5e27",
+      "mode": "100644"
+    },
+    "results/unsloth-head-v1/telemetry/nvidia-smi-start.txt": {
+      "sha256": "58ec43aa47e3358cfa7f7be261089a10f8cb6e1087c259aff27b3b879185a6f9",
+      "mode": "100644"
+    },
+    "results/unsloth-head-v1/telemetry/processes.jsonl": {
+      "sha256": "abb9f68a0cb72da83817e46a74227518c1a05c3aacc275e9a4e4058a35941d8f",
       "mode": "100644"
     },
     "results/unsloth-head-v1/tuning/alias/lr-0.0001/training.jsonl": {
@@ -6654,7 +6726,7 @@
       "mode": "100644"
     },
     "scripts/fetch_evidence.py": {
-      "sha256": "e05727f94bc8703b623b5ea1a3308a1f4b0ef6dac04b57887a0a7c76df3d43b8",
+      "sha256": "293675a94483a801731b521436daecacbe78292d41dc7f87dff81f02ca1ec6c5",
       "mode": "100644"
     },
     "scripts/finalize_machine_annotations.py": {
@@ -6874,7 +6946,7 @@
       "mode": "100644"
     },
     "scripts/summarize_candidate_head.py": {
-      "sha256": "8491be5ededead1dbe6ff0be415a96f788319c31e76465d93cebfefa1ec6ad9d",
+      "sha256": "ae3a107f46c506b570a1bcdff839d25fdbb9f45034bb5e8b714e804cc9e00dfc",
       "mode": "100644"
     },
     "scripts/summarize_demos.py": {
@@ -6886,7 +6958,7 @@
       "mode": "100644"
     },
     "scripts/summarize_head_comparison.py": {
-      "sha256": "9de48d28a395cfbbf71218c6ae67a1d7f53e530e3c5c24acd59472b22cc59cbf",
+      "sha256": "9c2a2adf447b28edf068badedff145e3ef84583ba0dd121f2a9c375c60d03a98",
       "mode": "100644"
     },
     "scripts/summarize_longer_study.py": {
