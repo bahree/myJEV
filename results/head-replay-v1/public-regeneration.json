@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "public_revision": "1f527018e3e6d17b7c32a25e6db8a0209f27d797",
+  "scope": "Fresh public Git archive, anonymous GitHub evidence downloads, reference environment; ten reports, summaries, source manifests and figures regenerate byte for byte. No GPU or model download.",
+  "checks": {
+    "results/unsloth-head-v1/report.md": {
+      "sha256": "d41410cfc9cc68e71af939532d3685262a2a3e340d939017666ef8b4bca2135b",
+      "equal": true
+    },
+    "results/unsloth-head-v1/summary.json": {
+      "sha256": "5a0c79e3b068091a83ec78be44d387b76b06190f6a8d802bf76db0b385743455",
+      "equal": true
+    },
+    "results/unsloth-head-v1/report-sources.json": {
+      "sha256": "ea3347eb0ffd9790737f54adb56b6f7323e49c51408a7dce61df1be3ac24aeb9",
+      "equal": true
+    },
+    "results/unsloth-head-v1/figure-sources.json": {
+      "sha256": "210a74497c053a895cf2014a8677fed01ed42a6de1b3eab36e4aa8b68e767ab0",
+      "equal": true
+    },
+    "results/unsloth-head-v1/training-curves.png": {
+      "sha256": "27fdf1269ee53d85a3bddedab1681622cae3eddb424d83378a2492baf4182f9e",
+      "equal": true
+    },
+    "results/unsloth-head-v1/accuracy-reliability.png": {
+      "sha256": "bd80e545c67ea814f5236ee1aa27c86e49c8280f6fcc6a6f41c44b02843e2ec5",
+      "equal": true
+    },
+    "results/candidate-head-v1/report.md": {
+      "sha256": "1be80e3fcfefc3d0ba06badde938897f58678137d51255990fd5abe930a405b0",
+      "equal": true
+    },
+    "results/candidate-head-v1/summary.json": {
+      "sha256": "1edfd27bc80306351365652a2d5a20b9ce461140f00ebf43e59ef3d3cb44db7d",
+      "equal": true
+    },
+    "results/candidate-head-v1/training-curve.png": {
+      "sha256": "37e9691637b654f47347d3dff4d2aef025adb6ceb087d8c907699e3ea0e9d04d",
+      "equal": true
+    },
+    "results/candidate-head-v1/reliability.png": {
+      "sha256": "cf0a86752c3ec3951b0549448b30d98465d81b55d46e86d2c38517441142360d",
+      "equal": true
+    }
+  }
+}

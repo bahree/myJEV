@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "study": "candidate",
+  "tolerance": {
+    "absolute": 1e-12,
+    "relative": 1e-12
+  },
+  "scope": "Fits use calibration logits only. Test metrics and fixed-calibration order checks are recomputed without a model or GPU. No new setting or winner is selected.",
+  "checks": [
+    {
+      "path": "results/candidate-head-v1/main/raw",
+      "n": 3080,
+      "metrics_recomputed": true
+    },
+    {
+      "path": "results/candidate-head-v1/main/temperature",
+      "n": 3080,
+      "metrics_recomputed": true
+    }
+  ],
+  "source_sha256": {
+    "results/candidate-head-v1/main/inputs.json.gz": "361ff303af3a0a3fe30aad8aa5e5d444b7c0c950d77ef892d00cbe0a09f4460c",
+    "results/candidate-head-v1/main/raw-metrics.json": "977e555ae116de6573bdf13915fd2290b78f4f6b0fe58fb0b232809a2232e9b5",
+    "results/candidate-head-v1/main/temperature-metrics.json": "1f3f36d78c853d35f6ac9926a4a869d6496b574bd8fdaec3175d60b2ca21d93d"
+  }
+}

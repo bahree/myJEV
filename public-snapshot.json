@@ -2409,6 +2409,22 @@
       "sha256": "2f872f7aa2dca82ffd688405fcbbe86d471f3cd61f9ea759f611deb4f455cea2",
       "mode": "100644"
     },
+    "results/head-replay-v1/public-candidate.json": {
+      "sha256": "2f872f7aa2dca82ffd688405fcbbe86d471f3cd61f9ea759f611deb4f455cea2",
+      "mode": "100644"
+    },
+    "results/head-replay-v1/public-download.json": {
+      "sha256": "4e22515105ccbae87c7111e686b357b5d67114828aac1ee895b4fed4f8f77096",
+      "mode": "100644"
+    },
+    "results/head-replay-v1/public-readout.json": {
+      "sha256": "eb3f98a2bbbe6a72cf0dca0ee0f9996d34fb96b8ff8d4fe54e890e6f4e43a595",
+      "mode": "100644"
+    },
+    "results/head-replay-v1/public-regeneration.json": {
+      "sha256": "0b9bbb3674f25af50acb1f33bea08dcb5a4b0e4fec50a90418f19da6d908483b",
+      "mode": "100644"
+    },
     "results/head-replay-v1/public-source.json": {
       "sha256": "8e6a6e13dd8d5ead8e21620e62474cb56c57b3afc6013ced8830e633ddd8b312",
       "mode": "100644"

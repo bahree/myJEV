@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "scope": "Anonymous network download from the public GitHub release into a fresh public archive. Archive hashes and every restored file verified by fetch_evidence.py.",
+  "public_revision": "1f527018e3e6d17b7c32a25e6db8a0209f27d797",
+  "bundles": {
+    "readout": {
+      "url": "https://github.com/bahree/myJEV/releases/download/evidence-v2/myjev-readout-evidence-v2.tar.gz",
+      "archive_sha256": "4234aeeab80c2e29e3670d91df5d5079e02b54290452240d219ab18858ddcd17",
+      "verified_files": 12,
+      "bytes": 23570308
+    },
+    "candidate": {
+      "url": "https://github.com/bahree/myJEV/releases/download/evidence-v2/myjev-candidate-evidence-v2.tar.gz",
+      "archive_sha256": "9a1737c0f75616dab957b5f1d86a85449aca7f9b30d0fab00a53416feb10ccc4",
+      "verified_files": 1,
+      "bytes": 3804386
+    }
+  }
+}
