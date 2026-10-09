@@ -1,0 +1,15 @@
+{
+  "scripts/plot_head_comparison.py": "4f66602be31937c15fcaa2c1a8b5fd4ed384fc57b885a67a58ba61ac1ba8def7",
+  "results/unsloth-head-v1/main/seed-11/alias/training.jsonl": "9b0c23f3ef77d53d2eaa928bf1e4817ec6716fb52876654cb2d9acdd24067a52",
+  "results/unsloth-head-v1/main/seed-11/clef/training.jsonl": "a8c487aec6651949d4d3cd028626ac140c79df37643816d2c77f145462f7911b",
+  "results/unsloth-head-v1/main/seed-22/alias/training.jsonl": "8ffcbb117e06a836478e2c3f8d206414b054bbaf28a1df88637c86fbf923a3d8",
+  "results/unsloth-head-v1/main/seed-22/clef/training.jsonl": "6e480505a67ecb9f5a8a8d4d358c15dd929da9e56750cd93cebdcee9409b3ad5",
+  "results/unsloth-head-v1/main/seed-33/alias/training.jsonl": "43cd1fa6d304825ed63c3f37f7d41dec7c7f822e4ca7d478451f9bd02128bd6d",
+  "results/unsloth-head-v1/main/seed-33/clef/training.jsonl": "eb42efe131ca45b9a22c1d60beff662f65b9cf7dcba4693cc0dc8c5ed3d19e37",
+  "results/unsloth-head-v1/main/seed-11/alias/temperature-metrics.json": "feba0afe8c5689586c699008809633d889a50d233dbc3dadbf322eedcbff582f",
+  "results/unsloth-head-v1/main/seed-22/alias/temperature-metrics.json": "0cb889bf408220b7d2f884e86ee55ca074404ea4c8cf4fb9781fe662dee578f2",
+  "results/unsloth-head-v1/main/seed-33/alias/temperature-metrics.json": "b3416813ce5021517c6bda822592a2d85feb03e5ae1025097d4b14303930a237",
+  "results/unsloth-head-v1/main/seed-11/clef/temperature-metrics.json": "ac2b6b68a5e2a029e98e86a800b82cbee653c286804002f619d6ded41e4da2f6",
+  "results/unsloth-head-v1/main/seed-22/clef/temperature-metrics.json": "e960a23e7a8d91fafc35268d1dd6d1338e65c59a69923d21c3be82e6a9bbeb89",
+  "results/unsloth-head-v1/main/seed-33/clef/temperature-metrics.json": "71fcde312a7bc01bc48541db394141254633879635daea22b0ad3c980d9b2129"
+}

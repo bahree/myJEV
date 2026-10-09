@@ -86,6 +86,19 @@ To record device-wide telemetry for the live dashboard:
 
 Use a fresh output directory. GPU utilization does not measure model quality or FLOP efficiency. Label a figure regenerated from CSV as a telemetry chart. If publishing an actual W&B or NVIDIA terminal screenshot, retain its source run/time and hide credentials.
 
+## Track the head experiments
+
+The alias/Clef and frozen-backbone head runners log directly through `myjev.tracking`. After configuring the environment template above, set `MYJEV_TRACKING_MODE=online` before launching a runner. Each training run records `step`, `examples`, `epoch_fraction`, `total_updates`, `progress_percent`, `loss` and allocated GPU memory. Their run names identify the readout, seed and update budget. The original three-size bridge is unnecessary for these runners.
+
+After both studies finish and their summary scripts pass, inspect and upload the separate evidence snapshot:
+
+```bash
+python scripts/sync_head_evidence.py           # Print file sizes and hashes; no upload
+python scripts/sync_head_evidence.py --upload  # Use the account in .env.wandb
+```
+
+The upload creates `myjev-head-evidence` and an evaluation run named `Head studies: measured results`. Its panels contain a six-row matched-readout table, the separate prototype's metrics and the measured reliability figures. The artifact retains training logs, calibration/test scores and GPU telemetry. Setup consoles, tracking directories, model weights and credentials are excluded. Local files remain available after upload. The prototype has one seed and a different training setup, so its panel is separate from the matched comparison.
+
 ## References
 
 - [W&B offline recording and later sync](https://docs.wandb.ai/support/models/articles/how-do-i-deal-with-network-issues)

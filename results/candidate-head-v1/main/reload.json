@@ -1,0 +1,17 @@
+{
+  "equal": true,
+  "single_backbone_pass": true,
+  "prediction": {
+    "keys": [
+      "billing",
+      "technical",
+      "other"
+    ],
+    "logits": [
+      -6.95358419418335,
+      -7.12842321395874,
+      0.25394973158836365
+    ],
+    "tokens": 86
+  }
+}

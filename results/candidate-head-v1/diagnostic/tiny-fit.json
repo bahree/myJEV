@@ -1,0 +1,11 @@
+{
+  "rows": 16,
+  "unique_labels": 14,
+  "training_accuracy": 1.0,
+  "training_loss": 0.04115697741508484,
+  "updates": 27,
+  "passed": true,
+  "exposure_sha256": "948925a287186f0a67552a08468702688c5d09c6d742ad09c090d240348e930c",
+  "feature_backbone_calls": 1,
+  "scope": "Memorization check on 16 training rows with fixed candidate permutations. Features cached from a frozen backbone. No held-out quality claim; this head is discarded."
+}

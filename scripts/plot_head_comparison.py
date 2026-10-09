@@ -9,6 +9,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 COLORS={'alias':'#226c9a','clef':'#bd652e'}
+STYLES={11:'-',22:'--',33:':'}
 
 
 def main():
@@ -18,12 +19,12 @@ def main():
     paths=sorted(root.glob('main/seed-*/*/training.jsonl'))
     if len(paths)!=6 or any(len(p.read_text().splitlines())!=1000 for p in paths):
         raise SystemExit('All six 1,000-update traces are required; no partial figure is written.')
-    fig,ax=plt.subplots(figsize=(10,4.8)); sources={}
+    fig,ax=plt.subplots(figsize=(10,4.8)); sources={Path(__file__).resolve().relative_to(Path.cwd()).as_posix():hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
     for path in paths:
         rows=[json.loads(line) for line in path.read_text().splitlines()]
         arm=path.parent.name; seed=path.parent.parent.name
         y=np.array([r['loss'] for r in rows]); x=np.array([r['examples'] for r in rows])
-        ax.plot(x[24:],np.convolve(y,np.ones(25)/25,'valid'),color=COLORS[arm],alpha=.6,lw=1.2,label=f'{arm}, {seed}')
+        ax.plot(x[24:],np.convolve(y,np.ones(25)/25,'valid'),color=COLORS[arm],linestyle=STYLES[int(seed.split('-')[-1])],alpha=.8,lw=1.2,label=f'{arm}, {seed}')
         sources[path.as_posix()]=hashlib.sha256(path.read_bytes()).hexdigest()
     ax.set(xlabel='Training example exposures',ylabel='Answer cross-entropy (25-update mean)',
            title='Two readouts, the same answer-only training budget')
@@ -38,15 +39,15 @@ def main():
             x=0 if arm=='alias' else 1
             offset={11:-.08,22:0,33:.08}[seed]
             axes[0].scatter(x+offset,100*data['accuracy'],color=COLORS[arm],s=40)
-            axes[0].annotate(str(seed),(x+offset,100*data['accuracy']),xytext=(3,4),textcoords='offset points',fontsize=8)
+            axes[0].annotate(str(seed),(x+offset,100*data['accuracy']),xytext=(3,-12 if seed==33 and arm=='clef' else 4),textcoords='offset points',fontsize=8)
             bins=[b for b in data['reliability'] if b['n']]
             axes[1].plot([b['confidence'] for b in bins],[b['accuracy'] for b in bins],
-                         color=COLORS[arm],alpha=.6,lw=1,label=arm if seed==11 else None)
+                         color=COLORS[arm],linestyle=STYLES[seed],alpha=.75,lw=1,label=f'{arm}, {seed}')
     axes[0].set(xticks=[0,1],xticklabels=['Alias','Clef'],ylabel='Test accuracy (%)',title='Keep seed differences visible')
     axes[0].margins(x=.5)
     axes[1].plot([0,1],[0,1],color='#777777',ls='--',lw=1)
     axes[1].set(xlim=(0,1),ylim=(0,1),xlabel='Mean selected-option probability',ylabel='Fraction correct',title='After calibration-only temperature fitting')
-    axes[1].legend()
+    axes[1].legend(fontsize=8,ncol=2,loc='upper left')
     for ax in axes:ax.spines[['right','top']].set_visible(False);ax.grid(alpha=.18)
     fig.text(.1,.01,'BANKING77 official test, 3,080 examples per run. Reliability: 15 equal-width bins; empty bins omitted.',fontsize=9)
     fig.tight_layout(rect=(0,.05,1,1));fig.savefig(root/'accuracy-reliability.png',dpi=160);plt.close(fig)

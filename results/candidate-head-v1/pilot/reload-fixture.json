@@ -1,0 +1,33 @@
+{
+  "request": {
+    "context": "I was charged twice.",
+    "instructions": "Select the appropriate support route.",
+    "candidates": [
+      {
+        "id": "billing",
+        "description": "Charges, invoices, and refunds"
+      },
+      {
+        "id": "technical",
+        "description": "Errors and configuration"
+      },
+      {
+        "id": "other",
+        "description": "Neither listed route applies"
+      }
+    ]
+  },
+  "prediction": {
+    "keys": [
+      "billing",
+      "technical",
+      "other"
+    ],
+    "logits": [
+      -7.484511375427246,
+      -7.732528209686279,
+      -5.839419841766357
+    ],
+    "tokens": 86
+  }
+}

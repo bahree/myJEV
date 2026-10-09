@@ -1,0 +1,12 @@
+{
+  "head_parameters": 216193,
+  "backbone_parameters": 752393024,
+  "backbone_trainable_parameters": 0,
+  "min_tokens": 999,
+  "max_tokens": 1067,
+  "mean_tokens": 1009.485,
+  "code_sha256": {
+    "scripts/run_candidate_head.py": "47e4c089c37bafa72d9482fcbf267943d71b7012380015199c0af4868445b1fc",
+    "src/myjev/candidate_head.py": "dcc8198aae1edb83193cb2ab70cf440c73f18bbf627fbbbee28cd585540baa1d"
+  }
+}

@@ -2,7 +2,7 @@
 
 These files record what the experiments measured. You do not need them to run inference: the [quick start](../docs/quickstart.md) downloads model artifacts from Hugging Face separately.
 
-Start with a report, then inspect its measurements if you want to check a claim. Large prediction files and the detailed short-pilot records are optional [evidence downloads](https://github.com/bahree/myJEV/releases/tag/evidence-v1). Reports, plots, training logs and release checks remain in this repository.
+Start with a report, then inspect its measurements if you want to check a claim. Large prediction files and the detailed short-pilot records are optional [evidence downloads](https://github.com/bahree/myJEV/releases). Reports, plots, training logs and release checks remain in this repository.
 
 ## Read the findings
 
@@ -16,7 +16,8 @@ Start with a report, then inspect its measurements if you want to check a claim.
 | Did the scratch model learn useful rules? | [Scratch study](scratch-study-v1/summary.md), [BANKING failure](scratch-banking-diagnostic/report.md) | Controlled synthetic learning and the failed natural-language diagnostic |
 | What did archive adaptation change? | [Archive report](archive-machine-v2/report.md), [paired changes](archive-machine-v2/paired-changes.md) | Agreement with machine labels and forgetting; independent human auditing remains absent |
 | Could a simpler classifier do the job? | [TF-IDF](tfidf/), [ModernBERT](encoder-control-v1/report.md) | Fixed-taxonomy controls with different interfaces and training budgets |
-| Does a different decision head help? | [Unsloth comparison](../docs/unsloth.md), [recorded results](unsloth-head-v1/report.md) | Matched 0.8B prompt/readout study; pilot measurements separated from quality results |
+| Does a different decision head help? | [Unsloth comparison](../docs/unsloth.md), [recorded results](unsloth-head-v1/report.md) | Three seeds, equal tuning/exposure/calibration, order probes and warm timings |
+| Can a small new head use frozen language features? | [Candidate-head walkthrough](../docs/candidate-head.md), [saved report](candidate-head-v1/report.md) | One seed, 1,000 updates, full BANKING test and seven unselected demos |
 | What does a real response look like? | [Seven demos](demos-v1/report.md) | Saved requests and responses, including a confident mistake |
 | What does serving cost? | [Model and serving comparison](../docs/models.md), [container evidence](container-registry-v3/README.md) | Measured hardware, precision, startup and latency conditions |
 
@@ -27,7 +28,7 @@ For the short pilot, read the [experiment guide](../docs/experiments.md), [summa
 No model download, API key or GPU is needed to retrieve the evidence. From the repository root, using Python 3.12:
 
 ```bash
-# All four bundles; verifies archive and individual-file SHA-256 hashes.
+# All six bundles; verifies archive and individual-file SHA-256 hashes.
 python3 scripts/fetch_evidence.py
 
 # Or just the inputs needed for matched calibration.
@@ -46,11 +47,11 @@ The command restores original `results/` paths, so analysis scripts keep their i
 | `order` | 53.8 MiB | 18 sets of recorded candidate-order predictions | `python scripts/summarize_order_union.py` (also needs `calibration`) |
 | `controls` | 17.1 MiB | 46 larger inputs for paired contrasts, archive changes, scratch and encoder controls | `python scripts/analyze_extensions.py` |
 
-The [manifest](evidence-manifest.json) lists every file, size and checksum, with the public source revision. The bundles contain only files already published at that revision. Small demonstration fixtures stay in Git. Archive inputs retain their existing privacy boundary: compact correctness/confidence records, without the private post text or raw annotations.
+The [manifest](evidence-manifest.json) lists every file, size and checksum, with the public source revision. The four `evidence-v1` bundles restore files published at their recorded revision. The `evidence-v2` head-study bundles add text-free logits outside Git; their source revisions identify the public implementation and metric records. Small demonstration fixtures stay in Git. Archive inputs retain their existing privacy boundary: compact correctness/confidence records, without the private post text or raw annotations.
 
 Analysis commands need the installed project environment described in the [experiment guide](../docs/experiments.md). Reading the saved reports and fetching their inputs do not require installing PyTorch.
 
-For offline use, download the `.tar.gz` assets from the [evidence release](https://github.com/bahree/myJEV/releases/tag/evidence-v1), copy them to a local folder, then run:
+For offline use, download the `.tar.gz` assets from the [evidence releases](https://github.com/bahree/myJEV/releases), copy them to a local folder, then run:
 
 ```bash
 python3 scripts/fetch_evidence.py --archive-dir /path/to/downloads

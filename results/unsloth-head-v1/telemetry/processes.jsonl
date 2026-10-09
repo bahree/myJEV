@@ -549,3 +549,140 @@
 {"utc": "2026-10-09T06:25:08.560271+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 1958", "492840, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2048"]}
 {"utc": "2026-10-09T06:25:18.672138+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2050"]}
 {"utc": "2026-10-09T06:25:28.785635+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2050"]}
+{"utc": "2026-10-09T06:25:38.932188+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2624"]}
+{"utc": "2026-10-09T06:25:49.055472+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2624"]}
+{"utc": "2026-10-09T06:25:59.172298+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2624", "493268, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 10"]}
+{"utc": "2026-10-09T06:26:09.356674+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "493268, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2370"]}
+{"utc": "2026-10-09T06:26:19.445246+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "493268, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2694"]}
+{"utc": "2026-10-09T06:26:29.554641+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "493268, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2694"]}
+{"utc": "2026-10-09T06:26:39.650254+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "493268, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2694"]}
+{"utc": "2026-10-09T06:26:49.749188+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "493268, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2850"]}
+{"utc": "2026-10-09T06:26:59.850079+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "493268, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2850"]}
+{"utc": "2026-10-09T06:27:09.945657+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "493268, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2850"]}
+{"utc": "2026-10-09T06:27:20.048117+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "493268, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2864"]}
+{"utc": "2026-10-09T06:27:30.170568+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644"]}
+{"utc": "2026-10-09T06:27:40.282940+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644"]}
+{"utc": "2026-10-09T06:27:50.402606+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 1756"]}
+{"utc": "2026-10-09T06:28:00.511110+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 1756"]}
+{"utc": "2026-10-09T06:28:10.626853+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 1756"]}
+{"utc": "2026-10-09T06:28:20.745119+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 1756"]}
+{"utc": "2026-10-09T06:28:30.857201+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 1756"]}
+{"utc": "2026-10-09T06:28:40.983976+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2408"]}
+{"utc": "2026-10-09T06:28:51.075341+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2410"]}
+{"utc": "2026-10-09T06:29:01.175255+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2410"]}
+{"utc": "2026-10-09T06:29:11.275727+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2410"]}
+{"utc": "2026-10-09T06:29:21.375628+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2410"]}
+{"utc": "2026-10-09T06:29:31.478647+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2410"]}
+{"utc": "2026-10-09T06:29:41.567311+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2410"]}
+{"utc": "2026-10-09T06:29:51.662381+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2410"]}
+{"utc": "2026-10-09T06:30:01.762015+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2410"]}
+{"utc": "2026-10-09T06:30:11.860861+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2410"]}
+{"utc": "2026-10-09T06:30:21.961373+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2410"]}
+{"utc": "2026-10-09T06:30:32.064041+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2410"]}
+{"utc": "2026-10-09T06:30:42.171623+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2410"]}
+{"utc": "2026-10-09T06:30:52.261297+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2410"]}
+{"utc": "2026-10-09T06:31:02.357794+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2410"]}
+{"utc": "2026-10-09T06:31:12.455275+00:00", "compute_processes": ["492862, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2644", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2410"]}
+{"utc": "2026-10-09T06:31:22.555264+00:00", "compute_processes": ["497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2410"]}
+{"utc": "2026-10-09T06:31:32.640615+00:00", "compute_processes": ["497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:31:42.742704+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 324", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:31:52.836660+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 324", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:32:02.948516+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 1958", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:32:13.034928+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2050", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:32:23.128655+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2088", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:32:33.230011+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2088", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:32:43.332238+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2088", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:32:53.433274+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2628", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:33:03.539070+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2628", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:33:13.642816+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2628", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:33:23.743699+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2628", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:33:33.846277+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2628", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:33:43.944788+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2628", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:33:54.047759+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2628", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:34:04.145979+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2628", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:34:14.249547+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2628", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:34:24.350918+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2628", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:34:34.452028+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2628", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:34:44.549947+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2628", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:34:54.639037+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2628", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:35:04.746174+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2628", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:35:14.849463+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2628", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:35:24.950973+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2628", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:35:35.038900+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:35:45.128007+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:35:55.207323+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:36:05.297543+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:36:15.387945+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:36:25.487381+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:36:35.572888+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:36:45.658222+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:36:55.757487+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:37:05.847945+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:37:15.943539+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:37:26.025289+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:37:36.117776+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:37:46.203546+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:37:56.290374+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:38:06.378294+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:38:16.465861+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:38:26.557990+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:38:36.644746+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:38:46.743885+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:38:56.828287+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:39:06.916833+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:39:17.002542+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:39:27.094717+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:39:37.182627+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:39:47.282764+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "497106, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2566"]}
+{"utc": "2026-10-09T06:39:57.367742+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648"]}
+{"utc": "2026-10-09T06:40:07.481771+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 1822"]}
+{"utc": "2026-10-09T06:40:17.598519+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2398"]}
+{"utc": "2026-10-09T06:40:27.725925+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2824"]}
+{"utc": "2026-10-09T06:40:37.843516+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2824"]}
+{"utc": "2026-10-09T06:40:47.971191+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2824"]}
+{"utc": "2026-10-09T06:40:58.097538+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2824"]}
+{"utc": "2026-10-09T06:41:08.216536+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2824"]}
+{"utc": "2026-10-09T06:41:18.335888+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2824"]}
+{"utc": "2026-10-09T06:41:28.455892+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2824"]}
+{"utc": "2026-10-09T06:41:38.582933+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2824"]}
+{"utc": "2026-10-09T06:41:48.687911+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2824"]}
+{"utc": "2026-10-09T06:41:58.810713+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2824"]}
+{"utc": "2026-10-09T06:42:08.936441+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2824"]}
+{"utc": "2026-10-09T06:42:19.062331+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:42:29.182820+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:42:39.310028+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:42:49.430772+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:42:59.566030+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:43:09.686581+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:43:19.799842+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:43:29.914529+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:43:40.033360+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:43:50.154313+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:44:00.280723+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:44:10.410230+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:44:20.541979+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:44:30.652948+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:44:40.780991+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:44:50.915642+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:45:01.023113+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:45:11.132160+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:45:21.247366+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:45:31.373510+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:45:41.476353+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2648", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:45:51.586347+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2208", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:46:01.687328+00:00", "compute_processes": ["497369, GPU-459c992a-cb19-fec9-a6ff-f14309e0e86a, 2204", "498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:46:11.787608+00:00", "compute_processes": ["498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:46:21.894801+00:00", "compute_processes": ["498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:46:32.002003+00:00", "compute_processes": ["498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:46:42.112441+00:00", "compute_processes": ["498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:46:52.221039+00:00", "compute_processes": ["498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:47:02.349282+00:00", "compute_processes": ["498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:47:12.486522+00:00", "compute_processes": ["498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:47:22.621083+00:00", "compute_processes": ["498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:47:32.736477+00:00", "compute_processes": ["498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:47:42.844311+00:00", "compute_processes": ["498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 2896"]}
+{"utc": "2026-10-09T06:47:52.949844+00:00", "compute_processes": ["498155, GPU-e3de7dc8-620f-0d1f-8bd9-d047dad41fe1, 1844"]}
+{"utc": "2026-10-09T06:48:03.058464+00:00", "compute_processes": []}
+{"utc": "2026-10-09T06:48:19.038476+00:00", "compute_processes": []}
+{"utc": "2026-10-09T06:48:36.063007+00:00", "compute_processes": []}
+{"utc": "2026-10-09T06:48:52.634632+00:00", "compute_processes": []}

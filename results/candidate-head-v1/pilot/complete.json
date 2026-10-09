@@ -1,0 +1,9 @@
+{
+  "updates": 100,
+  "examples": 800,
+  "resumed_from_step": 0,
+  "session_seconds": 70.31696835398907,
+  "peak_vram_bytes": 2077553152,
+  "backbone_frozen": true,
+  "head_parameters": 216193
+}

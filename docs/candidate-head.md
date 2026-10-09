@@ -27,6 +27,18 @@ flowchart TB
   S --> O[Mask padding and normalize]
 ```
 
+The parameter count comes from the layers we construct:
+
+| Component | Trainable parameters | What those parameters do |
+|---|---:|---|
+| Layer normalization and 1024-to-128 projection | 133,248 | Rescale each token vector and reduce its width |
+| Four-head attention layer | 66,048 | Learn query, key, value and output projections |
+| Residual layer normalization | 256 | Learn a scale and offset for each of 128 features |
+| Shared two-layer scorer | 16,641 | Map each candidate's 128 features to one logit |
+| Total | 216,193 | The complete trainable head |
+
+For example, the first projection has $1024\times128+128=131,200$ weights and biases. Its preceding layer normalization adds $2\times1024=2,048$. The four attention heads divide a width-128 representation into four width-32 views; they do not each receive a separate copy of the Qwen backbone.
+
 ## Keep field boundaries through tokenization
 
 The request still contains `context`, `instructions` and a candidate list. The renderer writes a JSON-escaped string for each field and records its character span. Caller IDs remain outside the prompt. The options receive positional labels such as `OPTION 0`, with their descriptions following them.
@@ -129,6 +141,73 @@ request = json.loads(Path("examples/request.json").read_text())
 print(json.dumps(model.score(request), indent=2))
 ```
 
-This local research format has its own loader. The six published Hugging Face artifacts and Docker image continue to use `DecisionModel`. Publishing another served format would require its own HTTP, Docker and calibration checks. A small saved head still needs the full frozen backbone at inference.
+This local research format has its own loader. The six published Hugging Face artifacts and Docker image continue to use `DecisionModel`. Publishing another served format would require its own HTTP, Docker and calibration checks.
 
-The evaluation also scores all seven pre-existing authored demos, checks identical responses after reloading the calibrated artifact, and measures 100 warm calls after ten warmups. It verifies one backbone invocation for each scoring batch. Timing includes tokenization and response conversion, excludes HTTP, and uses one loaded model on the measured GPU. BANKING calibration does not establish calibration on the refund or blog-format tasks.
+The scorer verifies one backbone invocation for each scoring batch.
+
+## What the head learned
+
+The disposable head memorized its 16 training rows in 27 updates, reaching 100% training accuracy and loss 0.04116. I discarded it, ran the 100-update pilot, and checked that saving and reloading preserved the pilot's response. The pilot took 70.3 seconds and peaked at 1.935 GiB of PyTorch allocation.
+
+The fresh main head trained for 1,000 updates in 674.3 seconds, about 11.2 minutes. Peak allocation was 1.938 GiB, and the average training request contained 1,009.2 tokens. Its 752,393,024 backbone parameters stayed frozen throughout. Session time includes checkpoint writes, logging shutdown and the saved fixture check; evaluation followed separately.
+
+![Raw training loss and its 25-update mean for the frozen-backbone candidate head](../results/candidate-head-v1/training-curve.png)
+
+*The trace contains all 1,000 updates. Each update accumulated eight examples; the darker curve averages 25 updates.*
+
+Validation accuracy was 56.97% on 997 examples. No checkpoint or learning rate was selected from that result. On the 3,080 official test examples, the head reached 58.02% accuracy and macro-F1 0.5856.
+
+| Confidence calculation | Correctness Brier | Multiclass Brier | ECE | Correctness AUROC |
+|---|---:|---:|---:|---:|
+| Raw selected probability | 0.1741 | 0.5599 | 0.0549 | 0.8203 |
+| Temperature-scaled selected probability | 0.1713 | 0.5571 | 0.0387 | 0.8217 |
+
+The fitted temperature was 0.919910. Dividing logits by a positive scalar preserves their ordering, so accuracy stayed at 58.02%. The conditional test-group interval was [56.45%, 59.82%]; it describes resampling these test groups for this checkpoint and excludes variation from repeating training.
+
+![Reliability and confidence-bin counts before and after temperature fitting](../results/candidate-head-v1/reliability.png)
+
+*The left panel compares average confidence with the fraction correct in each occupied bin. The right panel shows how many test requests support each of the 15 bins.*
+
+At the threshold chosen for 80% calibration coverage, the head accepted 2,463 test requests, or 79.97%, with 33.01% accepted-case error. Choosing the calibration threshold for 50% coverage reduced test error to 18.66% while accepting 50.97%. The [full report](../results/candidate-head-v1/report.md) includes the remaining thresholds and their uncertainty. Temperature changed the probabilities without repairing the wrong selections.
+
+## Inspect the failures as well as the answers
+
+Our duplicate-charge request selected `other`. The following is the recorded response from the scoring command above:
+
+```json
+{
+  "selected_id": "other",
+  "selection_scores": {
+    "billing": 0.00039533997187390924,
+    "technical": 0.0003269098815508187,
+    "other": 0.9992777705192566
+  },
+  "confidence": 0.9992777705192566,
+  "confidence_mode": "selection",
+  "artifact_revision": "9bd9dd908ebd961a666391bfeedc4c70cb57564275067c352b753271951ca354",
+  "calibration_revision": "c59a3f02f69dcade9160c5209f1df85d2c6faec5d8b11d07a628f89c4c00376c"
+}
+```
+
+The request uses three broad support routes. Training used 77 banking intents with their own descriptions. Even a familiar phrase such as “charged twice” can appear under a different candidate scheme, and this model assigned the wrong route a probability of 0.9993. The example shows why a BANKING calibration fit cannot establish confidence quality for another schema.
+
+I ran all seven examples introduced in Part 1, retaining the expected answers only for evaluation:
+
+| Request | Expected | Selected | Reported confidence |
+|---|---|---|---:|
+| Duplicate charge | billing | other | 0.9993 |
+| Application crash | technical | other | 0.9961 |
+| Hiking request | other | other | 0.9998 |
+| Refund after 13 days | approve | approve | 0.5684 |
+| Refund after 14 days | deny | deny | 0.5693 |
+| Duplicate charge with an untrusted instruction | billing | other | 0.9972 |
+| Supplied how-to text | tutorial | tutorial | 0.9811 |
+
+Four answers matched the authored expectations. The two refund-boundary answers were correct, while the support examples exposed confident errors. Seven requests are useful for inspection but too few to estimate performance on any of those tasks. Every response, including each failure, matched after a fresh calibrated-artifact reload.
+
+## The small head still runs Qwen
+
+On one A30, the three-candidate request took 49.65 ms at p50 and 50.04 ms at p95 over 100 calls after ten warmups. Peak PyTorch allocation was 1.452 GiB. These timings include tokenization and response conversion, exclude HTTP, and use one loaded model on the measured GPU. The reference runtime used its PyTorch fallbacks for causal convolution and the gated delta rule; optimized kernels could change these measurements.
+
+The saved head is small because it contains only the new parameters. Scoring still loads Qwen's text backbone and runs it once over the request. Training fewer parameters reduces optimizer work and storage, but it does not remove the backbone's inference computation.
+

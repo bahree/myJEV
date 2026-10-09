@@ -1,8 +1,10 @@
 # Release history
 
-## Optional decision-head experiment
+## Decision-head experiments and walkthroughs
 
-Added a matched 0.8B alias/Clef comparison, isolated dependency lock, parameter and exposure checks, and a reader guide. Both 100-update BF16 pilots completed on an A30. The new experiment keeps answer-only supervised training and calibration opportunities matched; it does not change the released models.
+Completed the three-seed 0.8B alias/Clef comparison with equal tuning, training exposure and calibration opportunities. Clef gained 2.15 accuracy points on average, with longer prompts and higher measured runtime. Saved order probes, warm timings and the one-pass multi-question example retain their measured limits.
+
+Added an original 216,193-parameter attention head on frozen Qwen, with a separate training script and loader. Its one-seed BANKING77 result was 58.02%; all seven demo responses are saved, including confident mistakes. Reader guides explain the tensor shapes, masks, training and calibration. Reports, plots and CPU replays accompany both studies. The six served releases remain unchanged.
 
 ## Evidence downloads and results navigation
 

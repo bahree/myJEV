@@ -10,6 +10,8 @@ The scratch scorer recovers controlled synthetic rules but fails its BANKING77 n
 
 The archive adaptation study measures agreement with machine-generated labels. It does not establish human correctness. Adaptation increases that agreement while weakening explicit unsupported-option behavior. Independent label and grouping audits are necessary for stronger archive claims. See the [archive data card](datasets/blog-archive.md).
 
+The matched alias/Clef extension holds tuning, example exposure and calibration opportunities equal across three seeds. Clef gained 2.15 accuracy points on average, with higher training and scoring cost in the measured eager runtime. Different prompts prevent attributing the difference to the head alone. The original frozen-backbone candidate head is a separate one-seed teaching experiment; it reached 58.02% on BANKING77 and failed three of seven authored demos. See [the comparison](unsloth.md) and [the head walkthrough](candidate-head.md).
+
 ## Using the released implementation
 
 Six adapter/head packages have immutable Hub revisions. Python, CLI, HTTP and GPU Docker share the reference inference implementation. [Models](models.md), [inference](inference.md), and [hosting](hosting.md) document installation, actual response checks and measured resource use. Publishing weights does not provide a hosted endpoint. The managed-container recipe is unexecuted.

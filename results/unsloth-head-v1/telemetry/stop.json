@@ -1,0 +1,5 @@
+{
+  "stopped_utc": "2026-10-09T06:49:05.727172+00:00",
+  "reason": "All matched-readout and candidate-head GPU training, evaluation, reload and latency probes completed.",
+  "method": "SIGTERM after each sample had been flushed; final NVIDIA snapshot recorded separately."
+}

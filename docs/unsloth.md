@@ -61,6 +61,54 @@ The [configuration](../configs/head-comparison-v1.json) records hashes and all s
 
 Both 100-update pilots completed and fit comfortably on one A30. Peak allocated memory was 2.24 GiB for aliases and 3.01 GiB for Clef. The same requests averaged 876 alias-prompt tokens and 1,908 Clef-prompt tokens, so differences in work reflect the prompt as well as the head. The [saved report](../results/unsloth-head-v1/report.md) distinguishes these feasibility checks from final quality measurements.
 
+## What the alias and Clef comparison measured
+
+Clef reached 83.50% mean BANKING77 accuracy, compared with 81.34% for the alias readout. Both selected learning rate 0.0001 from their two validation trials. Each main run then received the frozen 1,000 updates and 8,000 examples. The table uses all 3,080 official test requests per run and the calibration procedure described above.
+
+| Seed | Alias accuracy | Clef accuracy | Alias calibrated correctness Brier | Clef calibrated correctness Brier |
+|---|---:|---:|---:|---:|
+| 11 | 81.88% | 83.73% | 0.1042 | 0.0989 |
+| 22 | 80.42% | 83.41% | 0.1182 | 0.0967 |
+| 33 | 81.72% | 83.34% | 0.1131 | 0.1021 |
+
+The paired accuracy gains are +1.85, +2.99 and +1.62 percentage points. Their mean is +2.15 points, with a conditional test-group bootstrap interval of [+1.40, +2.84] and a sample seed standard deviation of 0.73 points. That interval holds the three trained pairs fixed. Repeating training with other seeds could add variation beyond test resampling.
+
+![Answer cross-entropy across the six matched readout runs](../results/unsloth-head-v1/training-curves.png)
+
+*Training loss across the three alias and three Clef runs. Each line averages 25 updates; its horizontal axis counts examples seen.*
+
+Clef finishes with lower loss in each pair: the final 25-update means are 0.55, 0.74 and 0.60, compared with 0.75, 1.03 and 0.92 for aliases. Both arms use answer cross-entropy, so these curves measure the same training objective.
+
+![Per-seed accuracy and calibrated reliability for the alias and Clef readouts](../results/unsloth-head-v1/accuracy-reliability.png)
+
+*Each accuracy point is one trained checkpoint. The reliability curves use 15 equal-width bins; lines connect occupied bins and do not establish behavior between them.*
+
+The confidence result depends on the fitting procedure. Before temperature scaling, Clef had worse correctness Brier than aliases on seeds 11 and 33. After giving both methods the same fitting procedure, Clef's Brier was lower on all three seeds. Temperature itself slightly worsened Clef's seed-22 test Brier, from 0.09665 to 0.09674.
+
+At the seed-11 threshold selected for 80% calibration coverage, Clef accepted 83.90% of test requests with 9.29% accepted-case error. Aliases accepted 83.70% with 10.32% error. These are the observed operating points under frozen thresholds; their coverage differs. The report retains accepted counts, uncertainty intervals and the other seeds.
+
+Extra quality came with extra work in this configuration. The main runs averaged about 875 prompt tokens for aliases and 1,908 for Clef. Recorded training sessions averaged 16.9 and 40.2 minutes respectively; peak allocated memory was 2.09 and 3.02 GiB. Those sessions include checkpoint writes, logging shutdown and the saved fixture check. Each run used its assigned A30 while other seeds used the other GPUs.
+
+
+Candidate order also changed answers. With the seed-11 checkpoint and calibration held fixed, three per-request shuffles changed 10.23%, 10.42% and 11.10% of alias selections. The Clef figures were 7.56%, 8.25% and 8.15%. Each permutation scored the same 3,080 requests; the report keeps them separate instead of treating repeated requests as new evidence.
+
+For warm scoring on the seed-11 models, I used ten warmups and 100 calls per condition on an otherwise idle target A30:
+
+| Readout | Candidates | Input tokens | p50 | p95 |
+|---|---:|---:|---:|---:|
+| Alias | 3 | 92 | 44.05 ms | 47.76 ms |
+| Alias | 77 | 869 | 44.96 ms | 46.76 ms |
+| Clef | 3 | 169 | 50.25 ms | 50.90 ms |
+| Clef | 77 | 1,901 | 85.57 ms | 86.15 ms |
+
+Timing includes tokenization and conversion back to caller IDs, and excludes HTTP. Other GPUs could be working. The longer Clef prompt and different head both contribute to the work; this experiment does not separate their costs.
+
+The multi-question probe asked for a route, whether a refund was requested, and urgency. Clef returned `billing`, `yes` and `routine`, matching the authored expectations in one backbone call. All three used the `Choice` type. Their raw selected scores were 0.9996, 0.7778 and 0.9617. The saved example demonstrates shared computation; BANKING-only training and one request cannot establish performance on unfamiliar questions or on other field types.
+
+![Recorded GPU activity during the readout comparison and subsequent custom-head experiment](../results/unsloth-head-v1/telemetry/gpu-activity.png)
+
+*Device-wide samples cover the concurrent alias/Clef jobs and the later frozen-backbone head run. Overlapping training and evaluation contribute to these traces; they are not isolated runtime measurements.*
+
 ## Build your own decision head
 
 The [candidate-head walkthrough](candidate-head.md) implements a smaller original design: one four-head attention layer and a shared scorer on frozen Qwen representations. It explains token spans, masks, the 216,193 trainable parameters and the head-only training procedure. That one-seed experiment is separate from this matched alias/Clef study. Both retain their own settings and results.

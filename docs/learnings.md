@@ -43,3 +43,10 @@ All three pilot sizes passed after those fixes. Final-checkpoint serving checks 
 A small encoder fit the initial routing template but failed a reordered layout. Restoring that layout recovered some accuracy; varied training layouts and more exposure improved validation, but the final three-seed study remained unstable. See the [scratch evidence](scratch.md) rather than a single successful example.
 
 The BANKING77 scratch model chose one class for every request and reached only 1.30% accuracy. Its confidence was low, so its correctness Brier score also looked low. That is why accuracy and the accepted-request counts have to sit beside the probability metrics: the model was correctly warning us about answers we could not use.
+## A new readout changes more than the output layer
+
+The alias/Clef study used equal tuning, example exposure and calibration across three seeds. Clef's mean accuracy was 83.50%, versus 81.34% for aliases. Its main training prompt averaged 1,908 tokens, compared with 875, and the training sessions averaged 40.2 rather than 16.9 minutes. Both the head and the prompt contribute to that cost. Compilation failed before any completed update, so the reported comparison used eager execution for both arms.
+
+Clef had worse raw correctness Brier on two seeds, then lower Brier on all three after both arms received the same calibration-only temperature fit. The [full comparison](unsloth.md) shows the per-seed values and a case where temperature slightly worsened test Brier.
+
+The [original candidate-attention head](candidate-head.md) trained 216,193 parameters while leaving Qwen frozen. It passed the tiny-set fit and artifact checks, then reached 58.02% on BANKING77. The duplicate-charge demo selected `other` with 0.9993 confidence. A small trainable head can learn part of a labelled task while failing a new candidate scheme, and its inference still requires the backbone.

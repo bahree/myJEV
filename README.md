@@ -97,7 +97,7 @@ Start by scoring a request, then follow it through the network. From there you c
 | Call it from an application | [Inference](docs/inference.md) and [hosting](docs/hosting.md) | Python, CLI, HTTP, Docker, and the measured startup and serving costs |
 | Check or reproduce the study | [Experiments](docs/experiments.md), [protocol](docs/protocol.md), and [data cards](docs/README.md#data-and-provenance) | Which data each experiment used and what supports its conclusions |
 
-The optional [Unsloth comparison](docs/unsloth.md) studies another way to read a decision from the same 0.8B backbone: a joint schema head that scores request-supplied questions and choices. Its matched runs are separate from the supervised/RL results below.
+The optional [Unsloth comparison](docs/unsloth.md) studies another way to read a decision from the same 0.8B backbone: a joint schema head that scores request-supplied questions and choices. Across three seeds, Clef reached 83.50% mean BANKING77 accuracy versus 81.34% for aliases, with longer prompts and higher measured runtime. Those answer-only runs are separate from the supervised/RL results below. The [original 216K head](docs/candidate-head.md) reached 58.02% in its one-seed experiment and exposed confident routing errors in the demos.
 
 The [documentation index](docs/README.md) groups all guides by task, including model releases, troubleshooting, attribution and further experiments. The [engineering lessons](docs/learnings.md) explain decisions made along the way.
 
