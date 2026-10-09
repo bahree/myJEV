@@ -25,9 +25,9 @@ The calculation holds correctness probability fixed and omits KL. Actual trainin
 
 The supervised loss already trains a scalar correctness head with BCE and the confidence policy with expected squared error. The `sft_brier` control adds Brier loss on the separate selection distribution. The released supervised variants use temperature-scaled selection probabilities as confidence. These distinctions prevent an apparent RL benefit from merely being a comparison against a weak confidence head.
 
-The finite actions have known label-derived rewards. Exact optimization can therefore sum over them. Eight-sample REINFORCE estimates the same expectation with sampling variance; it is a controlled algorithm comparison, not a claim that this task requires long-horizon environmental interaction.
+The finite actions have known label-derived rewards. Exact optimization can therefore sum over them. Eight-sample REINFORCE estimates the same expectation with sampling variance; the comparison tests objective estimation within a single decision. It contains no long-horizon environmental interaction.
 
-Regenerate the [checked arithmetic and cost example](../results/decision-lessons-v1/summary.json) with `python scripts/decision_lessons.py` using the included compact, text-free prediction inputs. The plot is a constructed example, not a trained-model measurement.
+Regenerate the [checked arithmetic and cost example](../results/decision-lessons-v1/summary.json) with `python scripts/decision_lessons.py` using the included compact, text-free prediction inputs. The plot uses constructed values to show the calculation.
 
 ## Choosing whether to act
 
@@ -39,7 +39,7 @@ review expected cost    = 2 + 100 * 0.02 = 4
 act automatically when q >= 0.96
 ```
 
-The threshold comes from assumptions fixed in the teaching script, not optimization over test outcomes. Applied after the study to the released 4B checkpoint's saved BANKING test predictions, it accepts 1,182/3,080 requests (38.38%) with 1.10% observed error among accepted cases. Combining those actual model decisions with the assumed reviewer produces 2.887 simulated cost units per request, compared with 4 for always reviewing and 10.065 for always accepting.
+The teaching script fixes the assumptions that determine the threshold before applying it to the test outcomes. Applied after the study to the released 4B checkpoint's saved BANKING test predictions, it accepts 1,182/3,080 requests (38.38%) with 1.10% observed error among accepted cases. Combining those actual model decisions with the assumed reviewer produces 2.887 simulated cost units per request, compared with 4 for always reviewing and 10.065 for always accepting.
 
 The costs use assumed reviewer behavior and arbitrary units; no human or LLM cascade was measured, and the simulation supplies no deployment guarantee. The perfect-reviewer variant accepts only 5.68% and has a simulated cost of 1.984 versus 2 for always reviewing. The estimated gain changes with the assumed reviewer error. Human reviewers may have higher error specifically on the difficult cases the model defers; distributions and costs can also change.
 
@@ -51,7 +51,7 @@ TF-IDF learns a fixed set of labels. When those labels are stable, it offers che
 
 The saved classifier is 12.8 MiB. The measured CPU p50/p95 was 0.503/0.540 ms per request; process peak RSS was 428 MiB including the Python stack. The [CPU baseline profile](../results/tfidf-serving-v1/summary.json) records vectorization plus classification on 512 frozen BANKING inputs, two CPU threads and concurrency one. Do not divide its time by Qwen's three-candidate HTTP benchmark to claim a speedup: inputs, candidate count and measurement boundaries differ. Whole-process CPU RSS and PyTorch allocated GPU memory are different accounting scopes.
 
-GLiClass already provides an untouched pretrained-encoder control. Its pinned small checkpoint's 10.81% accuracy does not establish that pretrained encoders are inherently weak. The [ModernBERT control](../results/encoder-control-v1/report.md) shows why that broader conclusion would be wrong: a 149.7M-parameter fixed-taxonomy model reached 90.78% accuracy and 0.0555 temperature-calibrated Brier. It used one seed and 23,997 example exposures versus Qwen's 8,000, so the result demonstrates an alternative for fixed labels without isolating architecture as the cause. Its weights are a separate local experimental artifact, not one of the six published myJEV releases.
+GLiClass already provides an untouched pretrained-encoder control. Its pinned small checkpoint's 10.81% accuracy does not establish that pretrained encoders are inherently weak. The [ModernBERT control](../results/encoder-control-v1/report.md) shows why that broader conclusion would be wrong: a 149.7M-parameter fixed-taxonomy model reached 90.78% accuracy and 0.0555 temperature-calibrated Brier. It used one seed and 23,997 example exposures versus Qwen's 8,000, so the result demonstrates an alternative for fixed labels without isolating architecture as the cause. Its weights remain a local experimental artifact outside the six published myJEV releases.
 
 ## Broader decision systems and recent work
 
@@ -59,11 +59,11 @@ GLiClass already provides an untouched pretrained-encoder control. Its pinned sm
 
 The [JEVal / InnerJev preprint](https://arxiv.org/abs/2610.03935) studies composed decisions and distillation of reasoning-endpoint distributions into a first-token readout. It motivates two different questions: can training transfer useful decision behavior, and does the resulting component improve complete workflows? Good component accuracy does not establish multi-step reliability. Repeated decisions also need task completion, accumulated errors and latency measured end to end.
 
-The [37-dataset Jev evaluation](https://arxiv.org/abs/2609.37647) and [political-science comparison](https://arxiv.org/abs/2610.06625) motivate task-specific thresholds and an explicit distinction between online routing and offline batch annotation. Their figures are source-specific, not local myJEV measurements. The papers are recent preprints, and publisher model cards are disclosures rather than independent verification.
+The [37-dataset Jev evaluation](https://arxiv.org/abs/2609.37647) and [political-science comparison](https://arxiv.org/abs/2610.06625) motivate task-specific thresholds and an explicit distinction between online routing and offline batch annotation. Read their figures under each paper's stated experimental conditions; no local myJEV run reproduced them. The papers are recent preprints, and publisher model cards are disclosures rather than independent verification.
 
 ## What stronger evidence would require
 
-Periodic validation is needed to study saturation or early stopping. Saved endpoint evaluations cannot recreate the missing curve. Archive correctness claims need reviewed labels and related-post grouping, not merely schema-valid machine responses. Scratch failure attribution needs controls that isolate tokenization, optimization, capacity and pretraining. Changing all of them together cannot identify a cause.
+Periodic validation is needed to study saturation or early stopping. Saved endpoint evaluations cannot recreate the missing curve. Archive correctness claims require reviewed labels and related-post grouping. Schema validation only checks response structure. Scratch failure attribution needs controls that isolate tokenization, optimization, capacity and pretraining. Changing all of them together cannot identify a cause.
 
 The companion [experiments guide](experiments.md), [scratch guide](scratch.md) and [archive card](datasets/blog-archive.md) distinguish completed follow-ups, prospective protocols and unresolved evidence. Distillation, more backbone families and a full Jev-compatible multimodal API are separate extensions.
 
@@ -88,7 +88,7 @@ Across these three seeds, raw Brier training produced worse test calibration tha
 
 ![Seed 11 toy reliability curves and bin counts](../results/calibration-lab-v1/reliability.png)
 
-The diagram uses seed 11 and ten equal-width confidence bins. Empty bins are omitted from curves; bars retain their counts. The diagonal marks agreement between confidence and observed accuracy. Connecting lines are a visual aid, not observations between bins. The saved figure provenance identifies its source JSON and generating script.
+The diagram uses seed 11 and ten equal-width confidence bins. Empty bins are omitted from curves; bars retain their counts. The diagonal marks agreement between confidence and observed accuracy. Lines help the reader follow occupied bins; no observations support the intervening values. The saved figure provenance identifies its source JSON and generating script.
 
 Three implementation details matter. First, calibration divides already-computed logits by a positive temperature; it never sends those logits through the input classifier again. Second, temperature inherits the logits' device and dtype and preserves their argmax. Third, 8% uniform label replacement changes only 6% of labels in expectation with four classes, because replacement can redraw the original label. The true observed distribution is `(1 - 0.08) * p_clean + 0.08 / 4`, and the generator returns it for oracle probability-error measurement.
 

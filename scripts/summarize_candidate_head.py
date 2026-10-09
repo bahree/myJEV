@@ -16,7 +16,9 @@ def main():
     def read(name):
         path=root/name;sources[path.as_posix()]=hashlib.sha256(path.read_bytes()).hexdigest()
         return json.loads(path.read_text())
-    plan=json.loads(Path('configs/candidate-head-v1.json').read_text())
+    plan_path=Path('configs/candidate-head-v1.json')
+    plan=json.loads(plan_path.read_text())
+    sources[plan_path.as_posix()]=hashlib.sha256(plan_path.read_bytes()).hexdigest()
     tiny=read('diagnostic/tiny-fit.json');pilot=read('pilot/complete.json');reload=read('pilot/reload.json')
     done=read('main/complete.json');init=read('main/initialization.json')
     raw=read('main/raw-metrics.json');cal=read('main/temperature-metrics.json')

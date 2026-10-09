@@ -97,7 +97,7 @@ On a one-GPU host, run them sequentially with `CUDA_VISIBLE_DEVICES=0`. The orch
 .venv-unsloth/bin/python scripts/orchestrate_head_comparison.py main
 ```
 
-The first loading attempt required `bitsandbytes`, even though quantization was disabled. The lock includes it. The first compiled Clef backward pass then failed with a tensor-stride assertion. The experiment configuration disables Torch and Unsloth compilation for both arms. Both arms also use the reference PyTorch causal convolution rather than the optional optimized extension. These are eager-runtime measurements, not a benchmark of the fastest available Unsloth settings. The [environment record](../results/unsloth-head-v1/environment.json) identifies dependencies, hardware and the public source checkpoint.
+The first loading attempt required `bitsandbytes`, even though quantization was disabled. The lock includes it. The first compiled Clef backward pass then failed with a tensor-stride assertion. The experiment configuration disables Torch and Unsloth compilation for both arms. Both arms also use the reference PyTorch causal convolution rather than the optional optimized extension. The measurements apply to eager execution. The fastest available Unsloth settings remain unbenchmarked here. The [environment record](../results/unsloth-head-v1/environment.json) identifies dependencies, hardware and the public source checkpoint.
 
 Every run saves training JSONL, configuration, data/order hashes, parameter counts and memory measurements. The local checkpoint contains adapters and, for Clef, the head; it still needs the pinned backbone. These research checkpoints use this script's loader and are not accepted by the released `myjev score` CLI.
 

@@ -2,7 +2,7 @@
 
 The published model can already score a request. This guide asks what further training teaches it, then shows how to reproduce the Qwen comparison. Try the [first request and demos](quickstart.md#download-and-score-the-default) before starting a training run. For the forward computation, read [architecture](architecture.md); to build without pretrained weights, use the [scratch guide](scratch.md).
 
-## Why fine-tune an already pretrained model?
+## What fine-tuning adds to an existing model
 
 **Supervised fine-tuning (SFT)** learns from requests with labelled answers. **Reinforcement learning (RL)** uses a reward assigned to the model's answer and confidence. Continued SFT gives the supervised model more training examples; it is our control for whether more training alone explains a gain. The exact and sampled RL methods compute the same reward objective in different ways, explained below.
 
@@ -16,7 +16,7 @@ Training tests whether examples improve discrimination among closely related BAN
 
 The supervised stage establishes the adapted decision model and its confidence estimates. Continued supervision, exact RL and sampled RL then start from that same supervised artifact. This tests whether confidence-aware RL adds value beyond additional supervised exposure. Temperature scaling tests whether simpler post-hoc calibration is sufficient. Untouched-backbone and TF-IDF controls also leave open the possibility that adaptation is unnecessary or a simpler model is preferable.
 
-### Why LoRA and QLoRA?
+### Choose LoRA and QLoRA for the available memory
 
 **LoRA**, or low-rank adaptation, represents a weight update using two small trainable matrices. We keep the original backbone weights fixed and train rank-8 LoRA adapters on the attention query, key, value and output projections, alongside the confidence heads. The [worked update](walkthrough.md#3-understand-what-the-optimizer-changes) shows the matrix calculation.
 
@@ -40,11 +40,11 @@ The reference machine has three A30s, each with 24 GiB of device memory. We use 
 | 4B | BF16 LoRA | 8.5 GiB |
 | 9B | NF4 QLoRA | 12.0 GiB |
 
-These are 100-update supervised pilot measurements for the tested inputs, not worst-case VRAM reservations or inference requirements. PyTorch allocated peaks also differ from total process memory reported by `nvidia-smi`. Longer inputs, larger batches and different objectives can change memory use. Quantization reduces weight storage but does not guarantee lower latency.
+The 100-update supervised pilots measured memory on their recorded inputs. Worst-case VRAM and inference requirements need separate measurements. PyTorch allocated peaks also differ from total process memory reported by `nvidia-smi`. Longer inputs, larger batches and different objectives can change memory use. Quantization reduces weight storage but does not guarantee lower latency.
 
 For deployment, select the smallest model that meets measured accepted-case error, coverage, latency and memory requirements. A bounded ModernBERT fixed-taxonomy control provides a smaller-model comparison; a distilled student remains prospective. A fixed-label TF-IDF classifier remains a serious low-cost control for BANKING77; request-supplied unfamiliar candidate descriptions motivate studying a language backbone. See [deployment costs](inference.md#what-the-adapter-saves-and-what-inference-still-costs).
 
-### Would an older Microsoft model be a better fit?
+### Keep other backbones as a separate comparison
 
 [Phi-2](https://huggingface.co/microsoft/phi-2) has 2.7B parameters and a 2,048-token context; [Phi-3 Mini](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct) has 3.8B parameters in the linked 4K-context release. Both are language-model alternatives, and both are larger than our 0.8B backbone. They could support direct decision scoring after integration and evaluation, but neither has been tested here. Phi-2's shorter context would change our input limits, so it is not a drop-in replacement for a 4,096-token configuration. A new tokenizer also requires fresh alias verification.
 
@@ -89,7 +89,7 @@ The four approaches are supervised learning, continued supervision, exact RL, an
 
 These are trailing 100-update means from the saved 4,000-update stages. Exact RL logs expected-reward loss; REINFORCE logs a baseline-adjusted gradient surrogate. Their numerical levels are not directly comparable, even though their expected gradients target the same objective. The initial supervised loss has another scale. No panel is a validation curve or evidence of convergence. Regenerate with `python scripts/plot_review_evidence.py`; [source hashes and excerpts](../results/review-teaching-v1/manifest.json) connect the chart to the logs.
 
-## Why 168,000 training steps?
+## Account for 168,000 training steps
 
 The count covers every planned run at all three sizes; it is not the number of optimizers or the training length of a single model.
 
@@ -102,13 +102,13 @@ The count covers every planned run at all three sizes; it is not the number of o
 
 Two learning-rate trials give each approach an equal tuning opportunity. Three main seeds expose run-to-run variation. The supervised artifact is trained once per main seed and reused as the starting point for its three continuation branches. Its creation is not counted three times.
 
-This budget is a declared experimental choice, not evidence that this amount of training is optimal or sufficient for convergence. Larger tuning grids or more seeds could improve the study at additional cost. The present schedule keeps those costs fixed and visible.
+The declared budget fixes the work per method. It does not establish an optimal schedule or convergence. Larger tuning grids or more seeds could improve the study at additional cost. The present schedule keeps those costs fixed and visible.
 
 ## Reading a training counter
 
 The recorded step counter covers optimizer updates. Validation, calibration and test inference also consume time, so the last training update did not mark the end of the experiment. Keep stage exposure, elapsed time and evaluation status separate when inspecting a run.
 
-The three size studies ran on separate GPUs. Their wall-clock durations overlap; adding those durations measures accumulated work, not how long someone waited for all three. The local logs and W&B fields retain those distinctions. No whole-project percentage or finish estimate is needed to interpret the results.
+The three size studies ran on separate GPUs. Their wall-clock durations overlap; their sum measures accumulated GPU work. Overall elapsed time runs from the first start to the last finish. The local logs and W&B fields retain those distinctions. No whole-project percentage or finish estimate is needed to interpret the results.
 
 ## Improvement, epochs and stopping
 
@@ -116,7 +116,7 @@ Each main stage processes 4,000 examples, or about 0.5001 epochs on the 7,999 tr
 
 Training loss is a diagnostic. Compare held-out accuracy/F1, correctness Brier and accepted-case error at fixed coverage to judge improvement. Supervised and RL losses have different meanings. Falling training loss with worsening validation performance suggests overfitting.
 
-Tuning and main evaluations occurred at stage endpoints. They cannot reliably identify a plateau. A future convergence study needs predefined periodic validation, meaningful improvement thresholds and a patience rule; test results must not influence stopping. Numerical failures and resource exhaustion are health conditions, not convergence evidence. The healthy runs completed their frozen budgets.
+Tuning and main evaluations occurred at stage endpoints. They cannot reliably identify a plateau. A future convergence study needs predefined periodic validation, meaningful improvement thresholds and a patience rule; test results must not influence stopping. Numerical failures and resource exhaustion trigger health checks; they provide no evidence of convergence. The healthy runs completed their frozen budgets.
 
 The [W&B guide](tracking.md) explains live epoch counters, individual historical curves, GPU telemetry and retained evidence. The [lessons](learnings.md) describe why hardware, batch size and evaluation work all affect elapsed time.
 
@@ -151,7 +151,7 @@ Per-size logs and state live under `results/longer-v1/`; adapters and resumable 
 
 This batch focuses on the four main methods; correctness-only/Brier ablations were not repeated at longer exposure. Replicated precision controls, broader transfer, exploratory machine-reference archive adaptation and final release selection were completed in separate follow-ups. Keep their actual seeds, data exposure, precision and evaluation scope distinct; see the [roadmap](roadmap.md).
 
-## Which files serve a model, and which resume training?
+## Save inference files and resumable training state
 
 | File or directory | Role | Required for inference? |
 |---|---|---|
@@ -178,7 +178,7 @@ flowchart TB
     E --> J[Predictions and figures]
 ```
 
-The arrows describe a dependency order, not permission to tune again after observing test performance. A new exploratory recipe needs its own declared protocol and honest disclosure of previously inspected tests.
+The arrows describe dependency order. Freeze tuning decisions before observing test performance. A new exploratory recipe needs its own declared protocol and honest disclosure of previously inspected tests.
 
 ## Follow the training branches and data roles
 
@@ -225,4 +225,4 @@ The historical runs used AdamW’s default weight decay of 0.01 and eight REINFO
 
 ## Interpreting the selected learning rates
 
-The validation-selected learning rate was `1e-4` for initial and continued supervision, and `3e-5` for exact and sampled RL, at all three sizes. A learning rate scales the optimizer's parameter update; it is not a confidence threshold. Equal tuning opportunity means the same number of validation trials per method, not forcing objectives with different gradient scales to share a rate. Every main artifact manifest records the selected value.
+The validation-selected learning rate was `1e-4` for initial and continued supervision, and `3e-5` for exact and sampled RL, at all three sizes. A learning rate scales the optimizer's parameter update; it is not a confidence threshold. Each method receives the same number of validation trials and can select a rate suited to its gradient scale. Every main artifact manifest records the selected value.

@@ -4,7 +4,7 @@ Start with [myJEV-4B on Hugging Face](https://huggingface.co/bahree/myJEV-4B) to
 
 There are six trained releases: 0.8B, 4B and 9B, each with a supervised and an RL variant. The sizes refer to the approximate billions of parameters in the Qwen backbone. The loader downloads that backbone as well as the smaller adapter and confidence-head files from Hugging Face. All six releases passed output-equivalence checks across Python, CLI, HTTP and the GPU container. The default is the supervised 4B release with temperature calibration; the [findings](qwen-findings.md) explain that choice.
 
-The [model guide](models.md) explains why both training variants are available and how to choose between them. Both use the same request interface; an `-RL` suffix describes how the model was trained, not a different way to call it.
+The [model guide](models.md) explains why both training variants are available and how to choose between them. Both use the same request interface; the `-RL` suffix identifies reward-based training.
 
 GitHub supplies the code and examples, the Hugging Face Hub supplies the trained files, and Docker Hub supplies the packaged software environment. The Docker image contains no model weights. Its loader obtains the selected release and backbone at startup and can reuse them from a cache. Keeping one inference implementation behind all four entry points lets us check that serving preserves the decisions and confidence we evaluated.
 
@@ -12,13 +12,13 @@ GitHub supplies the code and examples, the Hugging Face Hub supplies the trained
 
 Loading the model requires the **backbone, adapter, confidence heads and calibration**. LoRA stores a small weight update while keeping the pretrained weights frozen during training. That reduces the trainable parameters and optimizer state, but the pretrained layers still run for every request. The [PEFT explanation](https://huggingface.co/docs/peft/main/en/conceptual_guides/lora) shows how the update is combined with the original layer.
 
-A local completed 9B supervised artifact (`longer-v1/9b/main/seed-11/sft`) occupied about 7.6 MiB for the adapter directory and 4.1 MiB for `heads.safetensors`, measured with `du -h`. These are approximate on-disk sizes for that artifact, not total download size, parameter counts or VRAM. The separately pinned backbone is still required. Sharing its cache avoids downloading a new full backbone for every adapter.
+A local completed 9B supervised artifact (`longer-v1/9b/main/seed-11/sft`) occupied about 7.6 MiB for the adapter directory and 4.1 MiB for `heads.safetensors`, measured with `du -h`. Those approximate disk sizes exclude the backbone download. Parameter counts and VRAM are separate quantities. The separately pinned backbone is still required. Sharing its cache avoids downloading a new full backbone for every adapter.
 
-One forward pass reads the whole input and computes the decision scores. Avoiding an autoregressive output loop saves repeated decoding work, but input processing remains substantial, especially with long documents or many candidate descriptions. The completed continued-SFT candidates measured warm HTTP p50 latencies of 57.48, 82.18 and 115.09 ms at 0.8B, 4B and 9B on a short three-candidate request. See [benchmark conditions and p95](hosting.md#completed-candidate-validation-and-local-default); these are measured research workloads, not service guarantees.
+One forward pass reads the whole input and computes the decision scores. Avoiding an autoregressive output loop saves repeated decoding work, but input processing remains substantial, especially with long documents or many candidate descriptions. The completed continued-SFT candidates measured warm HTTP p50 latencies of 57.48, 82.18 and 115.09 ms at 0.8B, 4B and 9B on a short three-candidate request. See [benchmark conditions and p95](hosting.md#completed-candidate-validation-and-local-default). The measurements apply to those workloads and do not establish a service guarantee.
 
 No matched Jev speed comparison has been run. Different GPUs, prompt lengths, candidate counts, batching, server overhead and optimized kernels prevent interpreting another provider's latency as a direct architecture comparison. GPU utilization alone does not establish efficiency.
 
-Merging a compatible adapter into its backbone can remove separate adapter operations; it does not shrink the backbone. Merging and quantization require output-equivalence and calibration checks before release. Kernel/backend optimization and distillation into a smaller model are additional options to measure, not speedups claimed here. The current reference backend prioritizes correct shared behavior across Python, CLI and HTTP.
+Merging a compatible adapter into its backbone can remove separate adapter operations; it does not shrink the backbone. Merging and quantization require output-equivalence and calibration checks before release. Kernel/backend optimization and distillation into a smaller model would need further measurements. The current reference backend prioritizes correct shared behavior across Python, CLI and HTTP.
 
 ## One interface, four entry points
 
@@ -161,7 +161,7 @@ Image **0.1.3** rejects non-finite request numbers (`NaN`, `Infinity`, `-Infinit
 
 `deploy/Dockerfile.patch` applies the reviewed source to the immutable public 0.1.2 dependency image. The root Dockerfile remains the full-build path. BuildKit attempted an additional base unpack and ran out of disk; Docker's legacy builder reused the installed layers successfully. The [build provenance](../results/container-registry-v3/provenance.json) preserves both attempts. The build patches source while retaining the earlier dependency image. The service has a 15-minute health-start grace period, and the research container runs as root.
 
-The [GPU check](../results/container-registry-v3/gpu-check.json) verifies installed Python-file hashes, CLI/HTTP/host equality, managed routes, non-finite 422 responses and the 413 body limits. Its populated-cache readiness time is one observation, not a first-download or latency guarantee. The 203.6-second empty-cache measurement belongs to 0.1.2 and remains labelled with that version.
+The [GPU check](../results/container-registry-v3/gpu-check.json) verifies installed Python-file hashes, CLI/HTTP/host equality, managed routes, non-finite 422 responses and the 413 body limits. Its readiness time is one populated-cache observation. First-download conditions and repeated-start variability require separate checks. The 203.6-second empty-cache measurement belongs to 0.1.2 and remains labelled with that version.
 
 ### Cache conditions in the validation receipts
 

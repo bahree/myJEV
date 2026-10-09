@@ -4,7 +4,7 @@ Run a request, inspect the response, then follow the arithmetic that produced it
 
 ## 1. Install once, choose the amount of compute
 
-Use Python 3.12 on Linux and the [locked installation](quickstart.md#install-and-test). Reading the reports requires no installation. The arithmetic and calibration labs run on CPU without downloaded model weights. Released Qwen scoring was tested on 24 GB A30 GPUs; its first load downloads a separately pinned backbone. The adapter is only the learned update, not the complete inference model.
+Use Python 3.12 on Linux and the [locked installation](quickstart.md#install-and-test). Reading the reports requires no installation. The arithmetic and calibration labs run on CPU without downloaded model weights. Released Qwen scoring was tested on 24 GB A30 GPUs; its first load downloads a separately pinned backbone. An adapter stores the learned update; inference also needs the pinned backbone.
 
 | Route | First executable step | What you learn |
 |---|---|---|
@@ -68,7 +68,7 @@ For correctness `c` and confidence `q`, reward is `c - (q-c)^2`. A correct answe
 
 Use training data for gradients, validation for permitted configuration selection, calibration for temperature or escalation thresholds, and test data once for the frozen comparison. Training loss alone does not establish useful generalization. Seed variation and shared examples matter when comparing methods.
 
-Suppose a fixed threshold accepts 80 of 100 requests and four accepted decisions are wrong. Coverage is 80%, and accepted-case error is 4/80 = 5%, not 4/100. Those counts still need uncertainty and the threshold must have been chosen on calibration data. A perfect reviewer for the other 20 is a simulation unless reviewer performance was measured.
+Suppose a fixed threshold accepts 80 of 100 requests and four accepted decisions are wrong. Coverage is 80%, and accepted-case error is 4/80 = 5%. Dividing by all 100 requests would use the wrong denominator. Those counts still need uncertainty and the threshold must have been chosen on calibration data. A perfect reviewer for the other 20 is a simulation unless reviewer performance was measured.
 
 The [decision lessons](decision-lessons.md) work through the error counts, costs and confidence estimates. For the actual runs, use [experiments](experiments.md). ModernBERT and TF-IDF are worth comparing when the labels are fixed, although their interfaces and training budgets differ from myJEV’s request-supplied choices.
 

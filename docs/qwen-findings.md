@@ -38,7 +38,7 @@ These exploratory intervals are conditional on the three seeds and unadjusted fo
 | 4B | 0.0740 | 0.0818 | 0.1007 |
 | 9B | 0.0742 | 0.0942 | 0.1032 |
 
-Mean correctness Brier, lower is better. Temperature scaling fits the selection logits on calibration data and uses the selected-option probability as confidence. RL reports the expected value of its candidate-conditioned confidence policy. These are distinct confidence sources, not two calibration transforms of the same scalar head.
+Mean correctness Brier, lower is better. Temperature scaling fits the selection logits on calibration data and uses the selected-option probability as confidence. RL reports the expected value of its candidate-conditioned confidence policy. The two configurations therefore report different confidence sources.
 
 ![Completed confidence comparison](../results/longer-v1/figures/confidence.png)
 
@@ -68,7 +68,7 @@ These selection-temperature means also differ in ECE and error ranking. ECE uses
 
 Lower Brier or ECE does not necessarily give better error ranking or lower accepted-case error. All three metrics describe the same fixed exploratory view; none was used to pick a new release.
 
-For the separate learned estimate, the same binary log-odds temperature gives continued-SFT / exact-RL mean Brier of 0.1202 / 0.1425 at 0.8B, 0.0848 / 0.0796 at 4B and 0.0877 / 0.0933 at 9B. The 4B exact-minus-continued deltas are +0.0018 / +0.0004 / -0.0179 for seeds 11 / 22 / 33: only seed 33 drives the lower exact-RL mean. That map minimizes calibration negative log likelihood, not test Brier, and sometimes worsens test Brier. Equal fitting opportunities do not guarantee equal suitability for the different confidence sources.
+For the separate learned estimate, the same binary log-odds temperature gives continued-SFT / exact-RL mean Brier of 0.1202 / 0.1425 at 0.8B, 0.0848 / 0.0796 at 4B and 0.0877 / 0.0933 at 9B. The 4B exact-minus-continued deltas are +0.0018 / +0.0004 / -0.0179 for seeds 11 / 22 / 33: only seed 33 drives the lower exact-RL mean. The map minimizes negative log likelihood on calibration data. Test Brier sometimes worsens after fitting. Equal fitting opportunities do not guarantee equal suitability for the different confidence sources.
 
 At 4B, exact RL's selection-temperature confidence has lower Brier than its native policy, but lower correctness AUROC (0.7617 versus 0.8685). Its error ranking changes along with its probability quality. A lower Brier alone is insufficient for selecting a deferral policy. The [complete report](../results/review-calibration-v1/report.md) includes initial SFT, all four views, reliability bins, per-seed metrics and empirical operating points. Its 18 supervised selection-temperature controls reproduce the original Brier results within 1e-12. Text-free compact predictions allow reproduction without a model download.
 
@@ -86,15 +86,15 @@ Sampling noise could contribute to that gap, but the study does not isolate it f
 
 ## What we learned about scale, data and resources
 
-- The completed 0.8B model is a useful result, not a failed implementation: continued SFT reaches 82.93%. The short pilot and longer study changed exposure, tuning, continuation handling and evaluation size, so their difference is not a clean causal estimate of training duration alone.
-- The best observed mean accuracy, 90.27%, belongs to 4B exact RL. That is a candidate for further evaluation, not an automatically selected production default. We did not perform a paired cross-size superiority test here, and precision complicates the 9B comparison.
+- Continued SFT at 0.8B reaches 82.93% accuracy. The short pilot and longer study changed exposure, tuning, continuation handling and evaluation size, so their difference is not a clean causal estimate of training duration alone.
+- The best observed mean accuracy, 90.27%, belongs to 4B exact RL. That result makes 4B exact RL a candidate for further evaluation before a production choice. We did not perform a paired cross-size superiority test here, and precision complicates the 9B comparison.
 - TF-IDF/logistic regression reached 88.28% on the same official test split using the full training partition. Exposure and tuning differ, so it is not a matched neural training control, but this inexpensive fixed-taxonomy baseline remains operationally relevant.
 - The approximately one-epoch initial-plus-continuation budget supports a matched study; it does not prove convergence. Endpoint evaluations cannot reconstruct a validation learning curve or a principled early-stop decision.
-- LoRA adapters are compact updates, not self-contained inference engines. Final comparisons must include the pinned backbone, heads, precision, input lengths and HTTP overhead. Final-checkpoint measurements cover six packaged candidates; they still do not establish Jev-equivalent performance.
+- LoRA adapters require their backbone to execute inference. Final comparisons must include the pinned backbone, heads, precision, input lengths and HTTP overhead. Final-checkpoint measurements cover six packaged candidates; they still do not establish Jev-equivalent performance.
 
 ## Completed transfer and precision follow-ups
 
-All 36 frozen transfer/robustness jobs completed, covering continued supervision and exact RL at three sizes and three seeds. CLINC diagnostics use fixed subsets, not the complete benchmark. Temperature controls reuse BANKING77 calibration without fitting on transfer outcomes.
+All 36 frozen transfer/robustness jobs completed, covering continued supervision and exact RL at three sizes and three seeds. CLINC diagnostics cover the fixed subsets recorded in the protocol. Temperature controls reuse BANKING77 calibration without fitting on transfer outcomes.
 
 | Size | Continued SFT near / distant accuracy | Exact RL near / distant accuracy | Continued SFT / exact explicit OOS-none accuracy |
 |---|---:|---:|---:|
@@ -125,11 +125,11 @@ All 18 frozen permutation checks completed: three orders per released seed-11 ch
 
 The 4B exact release is illustrative: its original accuracy is 90.55%, versus 90.39-90.65% after permutation. At the fixed 80%-calibration-coverage threshold, however, accepted-case error moves from 3.73% to 4.15-4.33%, while achieved test coverage increases from 82.60% to 83.80-83.93%. The differing achieved coverages prevent equal-coverage inference. Order changes position and alias assignment together. Repeated permutations are not extra independent test observations or new training seeds. The [complete report](../results/review-order-v1/report.md) preserves each result and its original threshold; no order was selected using test outcomes.
 
-There is also a different question: how many requests changed under **at least one** of the three tested permutations? Counting each request only once gives 13.41% and 15.52% for the 0.8B supervised and exact releases, 7.05% and 6.46% at 4B, and 6.62% and 7.79% at 9B. These are descriptive unions over three observed shuffles, not a probability of changing under every possible order. The [union report](../results/review-order-union-v1/report.md) regenerates the counts from the saved predictions without new inference.
+There is also a different question: how many requests changed under **at least one** of the three tested permutations? Counting each request only once gives 13.41% and 15.52% for the 0.8B supervised and exact releases, 7.05% and 6.46% at 4B, and 6.62% and 7.79% at 9B. The unions count changes across those three observed shuffles. They do not estimate change probability over every possible order. The [union report](../results/review-order-union-v1/report.md) regenerates the counts from the saved predictions without new inference.
 
 ## Local default and alternatives
 
-The recommended starting artifact is **4B continued supervision with temperature confidence**, using seed 11 as the fixed packaging convention. Among the currently released configurations it balances 89.23% mean BANKING accuracy, 0.0740 mean correctness Brier, stronger explicit unsupported-option transfer than 4B exact, and approximately 82 ms short-request HTTP p50 on the A30. The recommendation weighs observed trade-offs; no preregistered composite score or production guarantee is claimed. Its confidence is a calibration-only selection-score proxy, not the supervised scalar head. The matched calibration follow-up makes the default a configuration-level recommendation; it does not establish that supervision inherently gives better confidence.
+The recommended starting artifact is **4B continued supervision with temperature confidence**, using seed 11 as the fixed packaging convention. Among the currently released configurations it balances 89.23% mean BANKING accuracy, 0.0740 mean correctness Brier, stronger explicit unsupported-option transfer than 4B exact, and approximately 82 ms short-request HTTP p50 on the A30. The recommendation weighs observed trade-offs; no preregistered composite score or production guarantee is claimed. Its confidence comes from the selected score after calibration; the supervised scalar head is unused by that release. The matched calibration follow-up makes the default a configuration-level recommendation; it does not establish that supervision inherently gives better confidence.
 
 Keep 4B exact RL as the higher in-domain-accuracy alternative (90.27% mean), and 0.8B as the lower-resource option. The measured 9B continued model is slower at approximately 115 ms HTTP p50, has essentially equal BANKING accuracy and better distant-CLINC accuracy; workload-specific priorities can therefore change the choice. Final local measurements use packaged seed-11 checkpoints; quality summaries use all three seeds. They are not measurements of an average model.
 

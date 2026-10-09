@@ -26,7 +26,7 @@ There is one network forward per request, with **two invocations of the shared t
 
 Each byte maps to an integer from 2 to 257. PAD is 0 and BOS is 1. Token positions inside a description matter; positions in the candidate list do not receive embeddings. Caller-supplied IDs remain outside the network. The score head operates on each contextualized candidate, so permuting candidates should permute the outputs. Tests check that behavior in evaluation mode, including confidence heads and mixed-length batches.
 
-The fixture limits are 256 UTF-8 bytes for instructions plus newline plus context, 64 bytes per candidate description, and 32 candidates. These are byte limits, not Qwen tokenizer limits. Oversized input is rejected. Training and quality evidence initially use four candidates; accepting 32 does not establish useful accuracy at that size.
+The fixture limits are 256 UTF-8 bytes for instructions plus newline plus context, 64 bytes per candidate description, and 32 candidates. The scratch encoder counts bytes. The Qwen interface uses its tokenizer to count tokens. Oversized input is rejected. Training and quality evidence initially use four candidates; accepting 32 does not establish useful accuracy at that size.
 
 ## Start with selection, then confidence
 
@@ -65,7 +65,7 @@ python scripts/run_scratch.py evaluate \
 
 Use `--device cuda:0` for a GPU. The frozen synthetic comparison is configured in `configs/scratch-study-v1.json` and run with `python scripts/run_scratch_study.py`. It uses two SFT learning-rate trials, then three seeds and matched continuation exposure. Unlike Qwen, this small study shares the selected supervised learning rate across methods, which limits cross-study conclusions. The runner refuses to overwrite an existing study and does not yet resume partial optimizer state; training histories flush every update and full artifacts save at stage completion.
 
-The dataset has explicit conditional probabilities and sampled latent labels. Those probabilities are evaluator-only metadata, never model inputs. A quarter of examples have two equally likely signals. The test partition additionally holds out ambiguous color pairings. This measures controlled generalization, not broad language understanding. See the [synthetic card](datasets/scratch-routing.md).
+The dataset has explicit conditional probabilities and sampled latent labels. Those probabilities are evaluator-only metadata, never model inputs. A quarter of examples have two equally likely signals. The test partition additionally holds out ambiguous color pairings. The measurement covers transfer between the controlled rules and templates. Natural-language understanding needs a separate test. See the [synthetic card](datasets/scratch-routing.md).
 
 ## Score a saved artifact
 
@@ -113,7 +113,7 @@ The failure belongs to this configuration and training budget. Tokenization, cap
 
 ## Measured deployment check
 
-The seed-11 synthetic SFT artifact was used for an engineering check, not selected as a production default. It contains 809,244 bytes of weights. Python/CLI outputs were identical on the recorded request; Docker GPU HTTP probabilities differed from CPU by less than 1e-8, and the selected ID and artifact revision matched. Oversized HTTP input returned 422.
+The engineering check uses the seed-11 synthetic SFT artifact. No scratch artifact is recommended for production. It contains 809,244 bytes of weights. Python/CLI outputs were identical on the recorded request; Docker GPU HTTP probabilities differed from CPU by less than 1e-8, and the selected ID and artifact revision matched. Oversized HTTP input returned 422.
 
 | Path | Warm p50 | Warm p95 |
 |---|---:|---:|

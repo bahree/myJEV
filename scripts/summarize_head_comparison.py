@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import numpy as np
 from myjev.metrics import cluster_interval
+from fetch_evidence import require_evidence
 
 
 def read(path): return json.loads(Path(path).read_text())
@@ -107,6 +108,8 @@ def main():
         lines += ['## Accuracy and calibration','',
                   'The matched main comparison is not yet complete. No test-based architecture recommendation is made from the feasibility pilot.','']
     else:
+        manifest=Path('results/evidence-manifest.json')
+        if manifest.exists() and 'readout' in read(manifest)['bundles']:require_evidence('readout')
         lines+=['## All three seeds','',
             'Temperatures were fitted on calibration only, after separate learning-rate selection on validation. Confidence here is the selected option probability. Lower Brier is better; ECE uses fifteen equal-width bins.','',
             '| Seed | Readout | Accuracy % | Raw correctness Brier | Calibrated correctness Brier | Calibrated multiclass Brier | Calibrated ECE | Correctness AUROC |',

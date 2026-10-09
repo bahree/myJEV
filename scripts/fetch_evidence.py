@@ -95,7 +95,7 @@ def install_archive(archive, record, root):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[1])
-    parser.add_argument('--bundle', action='append', help='pilot, calibration, order or controls; repeatable; default all')
+    parser.add_argument('--bundle', action='append', help='Bundle name from results/evidence-manifest.json; repeatable; default all')
     parser.add_argument('--archive-dir', type=Path, help='Use downloaded archives without network access')
     parser.add_argument('--check', action='store_true', help='Verify installed files; never download or write')
     args = parser.parse_args()

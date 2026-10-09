@@ -16,7 +16,7 @@ The short pilot below remains separate evidence with different exposure and test
 
 Three seeds (11, 22, 33) are used at each size. The initial supervised run receives 100 updates, with one example per update. Continued supervision and each RL branch receive another 100 updates from the seed-matched supervised checkpoint. All use the same fixed random 256-example BANKING77 official-test subset and 256 reserved calibration examples. The 0.8B and 4B runs use BF16 LoRA; 9B uses NF4 QLoRA.
 
-The 45 pilot evaluations comprise 15 per size: seven seed-11 methods/ablations and four main methods for each of the other two seeds. The table below covers the replicated main comparison, not all ablations.
+The 45 pilot evaluations comprise 15 per size: seven seed-11 methods/ablations and four main methods for each of the other two seeds. The table below covers the replicated main comparison. Separate records contain the remaining ablations.
 
 ## Accuracy and policy confidence
 
@@ -53,7 +53,7 @@ Constant base-rate confidence is included because a low Brier score alone does n
 
 TF-IDF/logistic regression reaches **88.28% accuracy** on all 3,080 official test examples. Temperature scaling reduces correctness Brier from **0.1246 to 0.0703**, without changing argmax decisions. It trains on the complete training partition, so exposure and test-set size differ from the neural pilot.
 
-The completed baseline records include the following results. These are separate interface/exposure controls, not a matched leaderboard:
+The completed baseline records include the following results. Each control has its own interface and exposure budget:
 
 | Control | Test examples | Accuracy | Confidence source |
 |---|---:|---:|---|
@@ -62,7 +62,7 @@ The completed baseline records include the following results. These are separate
 | Untouched Qwen 9B | Same subset | 54.69% | Selection-score proxy |
 | GLiClass small v1.0 | Full 3,080 | 10.81% | Maximum normalized class score |
 
-GLiClass uses revision `21edefaf7951f68c68c505f9139ba536d3b448f7` with supplied label descriptions and no task-specific training here. Its weak result is specific to this checkpoint and interface, not a claim about all generalist classifiers. Low Brier from low confidence is not evidence of a useful selector. The untouched measurements belong to the pilot subset; they do not establish the full-test fine-tuning effect. Source records live under `results/untouched-*-v2-evaluation/` and `results/gliclass/`.
+GLiClass uses revision `21edefaf7951f68c68c505f9139ba536d3b448f7` with supplied label descriptions and no task-specific training here. The weak result applies to this checkpoint and interface; other generalist classifiers need their own evaluations. Low Brier from low confidence is not evidence of a useful selector. The untouched measurements belong to the pilot subset; they do not establish the full-test fine-tuning effect. Source records live under `results/untouched-*-v2-evaluation/` and `results/gliclass/`.
 
 The initial 0.8B transfer/robustness work is limited. The frozen expanded study covers all three sizes and seeds for continued supervision and exact RL. The three-seed 4B NF4 SFT control completed at the same 4,000-example exposure as the BF16 controls, after a 100-update fit pilot. It isolates a training configuration difference, including nonquantized dtype, rather than proving that every scale effect is caused by capacity alone.
 
@@ -114,7 +114,7 @@ These runners skip completed artifacts/evaluations. An existing published `resul
 
 ## Serving measurements
 
-Local GPU container checks passed at all three sizes. Warm concurrency-one HTTP p50/p95 were 60.1/63.7 ms (0.8B), 78.6/81.0 ms (4B), and 101.2/103.7 ms (9B). Each check used 40 short three-candidate requests, cached backbones, and an idle target GPU while another GPU was still training. These are implementation measurements, not an isolated-host service-level guarantee.
+Local GPU container checks passed at all three sizes. Warm concurrency-one HTTP p50/p95 were 60.1/63.7 ms (0.8B), 78.6/81.0 ms (4B), and 101.2/103.7 ms (9B). Each check used 40 short three-candidate requests, cached backbones, and an idle target GPU while another GPU was still training. The measurements describe that concurrent host configuration and do not establish a service-level guarantee.
 
 Read [hosting](hosting.md) for limits, readiness, queues, precision, and deployment details. The replicated precision controls and representative serving measurements have their own recorded protocols; the [scope guide](roadmap.md) separates their findings from untested research extensions.
 
@@ -126,7 +126,7 @@ The [paired extension report](../results/extension-analysis-v1/report.md) analyz
 
 If a calibration-selected threshold accepts 80 of 100 test requests and four accepted answers are wrong, coverage is 80% and accepted-case error is 5%. The denominator changes when you defer. Counts and uncertainty belong alongside percentages, especially for small accepted sets. [Decision lessons](decision-lessons.md) derives the metrics, paired contrasts and cost calculations; the [CPU lab](../results/calibration-lab-v1/report.md) tests confidence against a known synthetic probability distribution.
 
-Run `python scripts/training_mechanics_demo.py` for reward arithmetic and follow the [worked learning route](walkthrough.md) for the connection to training and deployment. The later [seven demos](../results/demos-v1/report.md) are executable examples, not a test-set accuracy estimate. The [ModernBERT control](../results/encoder-control-v1/report.md), [SST-2 transfer](../results/sst2-transfer-v1/report.md) and [failure casebook](../results/failure-casebook-v1/report.md) disclose their separate interfaces, budgets and selection procedures.
+Run `python scripts/training_mechanics_demo.py` for reward arithmetic and follow the [worked learning route](walkthrough.md) for the connection to training and deployment. The later [seven demos](../results/demos-v1/report.md) are authored examples for inspecting behavior. They do not estimate test-set accuracy. The [ModernBERT control](../results/encoder-control-v1/report.md), [SST-2 transfer](../results/sst2-transfer-v1/report.md) and [failure casebook](../results/failure-casebook-v1/report.md) disclose their separate interfaces, budgets and selection procedures.
 
 ![Counts, coverage and accepted error](../results/training-eval-diagrams-v1/ledger-coverage-worked.png)
 
@@ -134,7 +134,7 @@ The ledger above uses constructed counts for teaching; measured results remain i
 
 ## Replay the matched calibration views
 
-The compact inputs contain labels, scores and IDs, not request text. No model download is required. To preserve the published files, use a disposable checkout:
+The compact inputs retain labels, scores and IDs while excluding request text. No model download is required. To preserve the published files, use a disposable checkout:
 
 ```bash
 git clone --local . /tmp/myjev-calibration-replay

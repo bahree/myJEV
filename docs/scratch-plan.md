@@ -16,7 +16,7 @@ Encode context/instructions once and candidates as a padded batch. Candidate rep
 
 Begin with selection only. Add a candidate-conditioned scalar correctness head using detached predictions as supervised correctness targets. After that works, add the experimental 21-bin confidence policy so exact and sampled reward training can reuse the existing objective definitions. Document which heads train in each phase, the source of correctness labels and whether confidence gradients update the encoder. Use a frozen supervised reference for RL.
 
-There is no vocabulary projection for answer aliases and no generation loop. The computation includes multiple encoder operations and candidate attention; calling it non-autoregressive does not make work independent of candidate count. Exact candidate permutation equivariance is a testable design goal in evaluation mode, not an assumed result in every stochastic training step.
+There is no vocabulary projection for answer aliases and no generation loop. The computation includes multiple encoder operations and candidate attention; calling it non-autoregressive does not make work independent of candidate count. Test candidate permutation equivariance in evaluation mode. Stochastic training operations can change that behavior.
 
 ## Validation requirements
 
@@ -32,7 +32,7 @@ These checks distinguish an implementation that works from a model that is usefu
 
 ## Synthetic data and leakage controls
 
-Start with structured routing rules: attributes in a context determine which request-defined option applies. Generate clean cases, distractors, missing-correct-option cases and label-preserving candidate reorderings. Group variants from a source scenario together. Hold out compositions and templates, not merely random rows, to test transfer beyond memorized strings.
+Start with structured routing rules: attributes in a context determine which request-defined option applies. Generate clean cases, distractors, missing-correct-option cases and label-preserving candidate reorderings. Group variants from a source scenario together. Hold out compositions and templates to test transfer beyond memorized strings. A random row split alone would leave those forms shared.
 
 For known uncertainty, generate a latent outcome from an explicit distribution and reveal only controlled evidence. Keep its conditional probabilities available to the evaluator; never expose hidden outcomes or probability metadata to model input. Separate irreducible ambiguity from corrupted labels and from missing information. Compare predicted option probabilities and selected-answer confidence to their appropriate targets.
 
@@ -40,7 +40,7 @@ Freeze generator version, seeds, group IDs and hashes before model selection. Fi
 
 ## Training and resource budget
 
-Run a 100-update memory/throughput pilot for each new configuration. Start at 256 context tokens, 64 tokens per candidate and at most eight candidates. These are initial experiment limits, not release guarantees. Test candidate scaling separately at 2, 8 and 32; larger counts and long documents require fresh fit/latency checks.
+Run a 100-update memory/throughput pilot for each new configuration. Start at 256 context tokens, 64 tokens per candidate and at most eight candidates. These limits define the initial experiment; release limits require separate validation. Test candidate scaling separately at 2, 8 and 32; larger counts and long documents require fresh fit/latency checks.
 
 Use at most two validation-selected learning rates in the first pilot. If selection fails to learn an easy rule, inspect data, masking and optimization before spending on RL. If the pilot is viable, freeze a main budget with three seeds and equal exposure across continued supervision, exact RL and sampled RL. Choose that budget from validation learning curves and measured cost, never test results. Record the decision before main runs. Do not quote a total duration before throughput is measured.
 

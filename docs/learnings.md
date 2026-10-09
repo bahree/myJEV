@@ -4,9 +4,9 @@ Several things went wrong before the model could be trained and served reliably.
 
 The short pilot and longer comparison used different training budgets and test sizes. Use the [longer-study results](../results/longer-v1/summary.md) for the main method comparison.
 
-## Count work across experiments, not as one model
+## Count updates across the experiment
 
-The 168,000-step budget comprises 24,000 tuning steps and 144,000 main-comparison steps. It spans three model sizes, four training approaches, two tuning learning rates and three main seeds. All methods use AdamW; exact and sampled describe objective estimation, not additional optimizers. The [training guide](training.md) gives the full arithmetic.
+The 168,000-step budget comprises 24,000 tuning steps and 144,000 main-comparison steps. It spans three model sizes, four training approaches, two tuning learning rates and three main seeds. All methods use AdamW; exact and sampled identify the two ways of estimating the RL objective. The [training guide](training.md) gives the full arithmetic.
 
 One initial supervised run consumes 4,000 examples. Each continuation consumes another 4,000, starting from that supervised artifact. With 7,999 training rows, each continuation model has roughly one epoch in its ancestry. Reusing the supervised artifact does not mean adding all three continuation branches into one model's history.
 

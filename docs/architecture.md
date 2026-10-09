@@ -49,7 +49,7 @@ Regenerate these original diagrams with `python scripts/draw_decision_diagrams.p
 
 ## What fine-tuning changes
 
-The backbone weights stay frozen. Training updates attention LoRA adapters and the custom confidence heads. The 0.8B/4B backbones use BF16; 9B uses NF4 QLoRA for memory fit. The pretrained model already supports token scoring. Adaptation tests whether task decisions and learned correctness estimates improve over the untouched model and simpler calibration controls. See [why we fine-tune](training.md#why-fine-tune-an-already-pretrained-model) for the rationale, resource trade-offs and limits.
+The backbone weights stay frozen. Training updates attention LoRA adapters and the custom confidence heads. The 0.8B/4B backbones use BF16; 9B uses NF4 QLoRA for memory fit. The pretrained model already supports token scoring. Adaptation tests whether task decisions and learned correctness estimates improve over the untouched model and simpler calibration controls. See [why we fine-tune](training.md#what-fine-tuning-adds-to-an-existing-model) for the rationale, resource trade-offs and limits.
 
 ## Confidence has its own meaning
 
@@ -64,7 +64,7 @@ The loader declares the confidence source explicitly:
 | `selection` | Selected candidate probability, with the artifact's fitted temperature | Released standard variants |
 | `constant` | One fixed confidence value for every answer | Base-rate and constant-confidence controls |
 
-An RL artifact still stores its earlier scalar head, but RL does not optimize that head; post-RL scalar diagnostics are not a trained RL confidence estimate. The matched follow-up calibrates the trained policy expectation instead. See [confidence controls](qwen-findings.md#give-every-method-the-same-calibration-opportunity).
+An RL artifact retains its earlier scalar head unchanged. Post-RL scalar diagnostics therefore measure that inherited head; the RL-trained correctness estimate comes from the policy. The matched follow-up calibrates the trained policy expectation instead. See [confidence controls](qwen-findings.md#give-every-method-the-same-calibration-opportunity).
 
 The normalized selection scores can remain high when the correct option is missing. Unsupported requests therefore need explicit evaluation using the declared confidence source.
 
@@ -92,7 +92,7 @@ PolicyLM supports up to 16 categories per policy and a shared 2,048-token contex
 
 The policy-edit diagnostic below tests explicit exceptions and small rule changes, with expected decisions fixed before inference. It is separate from the training comparison. A moderation classifier does not supply verified archive labels or evidence quotations. No PolicyLM benchmark has been run here.
 
-### What changes when the backbone becomes an encoder?
+### Use an encoder for a fixed set of labels
 
 Our adapted Qwen network retains its causal sequence computation. We read decision features from the final position and stop after that forward pass. Eliminating generated answer tokens saves decoding work, but it does not eliminate the cost of reading the prompt or storing the backbone. A small LoRA adapter only describes the learned update; inference still loads the base model.
 
@@ -112,7 +112,7 @@ Consider two questions: “Does this document contain a refund date?” and “I
 
 Performance belongs to the complete serving system. When comparing timings, record the input length, candidate count, hardware, precision and cache state. Establish whether the system processes the full input or uses retrieval, chunking or another shortcut, and evaluate the resulting decisions under that same configuration. The weights, processing strategy and runtime together determine the work being timed. The [inference guide](inference.md) applies these principles to our own measurements.
 
-### Can an edited policy change the decision?
+### Test the response to edited rules
 
 The PolicyLM discussion prompted a test of rule edits on the existing checkpoints. Before inference, we froze 24 original pairs from six templates: refund windows, numeric boundaries, explicit exceptions, exception removal, irrelevant exceptions, and quoted instructions. Sixteen pairs require an answer change; eight require the answer to stay the same. Each pair keeps the input and candidates fixed and changes only the policy. The six existing seed-11 release candidates then scored all 48 requests, without fitting new calibration parameters.
 

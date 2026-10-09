@@ -1,0 +1,21 @@
+{
+  "python": "3.12.3",
+  "packages": {
+    "torch": "2.14.1",
+    "transformers": "5.18.0",
+    "peft": "0.21.2",
+    "safetensors": "0.8.0",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "wandb": "0.30.0"
+  },
+  "backend": "Transformers AutoModelForCausalLM text backbone; frozen BF16 weights, FP32 candidate head",
+  "gpu": [
+    "NVIDIA A30, 580.178.04, 24576 MiB",
+    "NVIDIA A30, 580.178.04, 24576 MiB",
+    "NVIDIA A30, 580.178.04, 24576 MiB"
+  ],
+  "dependency_lock_sha256": "45e898b72a73dd62410cb593784a8e6b52118659eab437bf6bef4f59507d1e69",
+  "plan_sha256": "f607c55e433455f641d9d6cce4fe8138216a0e19b88af16d3d5563fb01312213",
+  "scope": "Original reference environment, separate from the isolated Unsloth comparison. A30 work is scheduled after the matched worker releases its target GPU."
+}

@@ -28,7 +28,7 @@ export MYJEV_TRACKING_MODE=online
 
 ## Watch an existing longer study
 
-The bridge reads the directory layout created by `scripts/run_longer_study.py`. Prepare BANKING77 and launch the study first, following [the training guide](training.md). This bridge is specific to that three-size study, not a generic monitor for arbitrary training scripts.
+The bridge reads the directory layout created by `scripts/run_longer_study.py`. Prepare BANKING77 and launch the study first, following [the training guide](training.md). The bridge depends on that study's three-size directory structure.
 
 ```bash
 # Terminal 1: live metrics, every minute, for up to 48 hours.
@@ -67,7 +67,7 @@ Stable IDs allow the same study to resume uploading without creating duplicate c
 
 Select these numeric fields in W&B charts. Use saved `step` or `session_seconds` as the x-axis for imported training curves; their upload timestamps are not historical training timestamps. The live monitor shows one observation per minute. Individual historical runs preserve every saved training step after a stage completes. Earlier GPU measurements remain in the evidence CSVs; the live dashboard begins when the bridge starts.
 
-Epoch fields are cleared in the summary during evaluation. The initial 4,000-step supervised model plus one 4,000-step continuation has about one epoch of exposure on 7,999 examples. Do not add sibling continuation branches or seeds as one model's epochs. See [the budget explanation](training.md#why-168000-training-steps).
+Epoch fields are cleared in the summary during evaluation. The initial 4,000-step supervised model plus one 4,000-step continuation has about one epoch of exposure on 7,999 examples. Do not add sibling continuation branches or seeds as one model's epochs. See [the budget explanation](training.md#account-for-168000-training-steps).
 
 The bridge does not yet turn every evaluation file into a W&B scalar chart. Accuracy, Brier, calibration and coverage/error results are available in the versioned evidence artifact as their saved metrics and prediction files. Training loss alone cannot establish improvement or convergence.
 
@@ -84,7 +84,7 @@ To record device-wide telemetry for the live dashboard:
   --output results/longer-v1/gpu-observation --interval 15 --duration 172800
 ```
 
-Use a fresh output directory. GPU utilization does not measure model quality or FLOP efficiency. A chart regenerated from CSV is a chart, not a screenshot. If publishing an actual W&B or NVIDIA terminal screenshot, retain its source run/time and hide credentials.
+Use a fresh output directory. GPU utilization does not measure model quality or FLOP efficiency. Label a figure regenerated from CSV as a telemetry chart. If publishing an actual W&B or NVIDIA terminal screenshot, retain its source run/time and hide credentials.
 
 ## References
 

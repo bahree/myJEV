@@ -6,7 +6,7 @@ I built myJEV to understand how a model can make decisions inside an application
 
 The inspiration is [Jev from TypeSafe AI](https://typesafe.ai/blog/introducing-system-one-models-and-jev). TypeSafe calls it a System One model: its interface accepts typed questions and returns decisions and probability information directly. What interested me was using language understanding to choose among request-supplied options without generating a written answer. Classification is familiar; making the task and choice descriptions part of each request gives us more to investigate. See the [TypeSafe API introduction](https://docs.typesafe.ai/introduction) for its interface and [our attribution notes](docs/attribution.md) for related implementations.
 
-There are two implementations: a small network trained from random weights and adaptations of pretrained Qwen language models. The experiments compare what they learn, how well confidence identifies mistakes, and what each model costs to serve. You can download the trained Qwen versions, inspect the saved outputs or rerun the code. [Amit Bahree](https://blog.desigeek.com) built the project to study these choices; TypeSafe’s underlying architecture remains undisclosed.
+The project has two starting points: a small network trained from random weights and adaptations of pretrained Qwen language models. The experiments compare what they learn, how well confidence identifies mistakes, and what each model costs to serve. You can download the trained Qwen versions, inspect the saved outputs or rerun the code. TypeSafe’s underlying architecture remains undisclosed.
 
 **Try it:** start with the downloadable [myJEV-4B](https://huggingface.co/bahree/myJEV-4B) and the commands below. Training is optional. A compatible NVIDIA GPU is required for the tested Qwen setup. If you prefer Docker, use the [container instructions](docs/quickstart.md#docker). Without a GPU, you can read the [recorded demos](results/demos-v1/report.md) or run the [CPU calibration lab](docs/decision-lessons.md#run-a-small-calibration-lab-on-cpu).
 
@@ -103,7 +103,7 @@ The [documentation index](docs/README.md) groups all guides by task, including m
 
 ## Three sizes, one experimental interface
 
-I used three sizes of the Qwen3.5 family to test what extra capacity adds. The names 0.8B, 4B and 9B refer to approximate billions of learned parameters. **LoRA** trains small weight updates, called adapters, while keeping the original weights fixed. The 9B configuration stores those original weights at lower precision to fit the GPU; this combination is called **QLoRA**. The [training guide](docs/training.md#why-lora-and-qlora) explains these choices and the BF16 and NF4 formats below.
+I used three sizes of the Qwen3.5 family to test what extra capacity adds. The names 0.8B, 4B and 9B refer to approximate billions of learned parameters. **LoRA** trains small weight updates, called adapters, while keeping the original weights fixed. The 9B configuration stores those original weights at lower precision to fit the GPU; this combination is called **QLoRA**. The [training guide](docs/training.md#choose-lora-and-qlora-for-the-available-memory) explains these choices and the BF16 and NF4 formats below.
 
 | Backbone | Pilot precision | Adaptation | Observed training peak* |
 |---|---|---|---:|
