@@ -25,6 +25,7 @@ The scratch route starts from random weights so we can inspect the whole network
 | [Scratch walkthrough](scratch.md) | Build, train and debug the small model, including its language-task failure |
 | [Scratch design](scratch-plan.md) | Design constraints and implementation checks |
 | [Qwen training](training.md) | Adapters, supervised and reward-based training, hardware and the update budget |
+| [Unsloth readout comparison](unsloth.md) | Why a joint schema head changes the experiment, and how to run the matched control |
 | [W&B tracking](tracking.md) | Read training curves, epochs and GPU measurements while retaining local logs |
 | [Engineering lessons](learnings.md) | Why training exposure, hardware and stopping rules matter |
 

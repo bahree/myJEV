@@ -1,0 +1,19 @@
+{
+  "arm": "clef",
+  "seed": 101,
+  "reload_equal": true,
+  "fixture": {
+    "keys": [
+      "billing",
+      "technical",
+      "other"
+    ],
+    "logits": [
+      -1.9025107622146606,
+      -3.7534091472625732,
+      -2.8031809329986572
+    ],
+    "tokens": 169
+  },
+  "single_backbone_call_checked": true
+}

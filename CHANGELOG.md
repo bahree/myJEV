@@ -1,5 +1,9 @@
 # Release history
 
+## Optional decision-head experiment
+
+Added a matched 0.8B alias/Clef comparison, isolated dependency lock, parameter and exposure checks, and a reader guide. Both 100-update BF16 pilots completed on an A30. The new experiment keeps answer-only supervised training and calibration opportunities matched; it does not change the released models.
+
 ## Evidence downloads and results navigation
 
 - Add a results index linking findings, measurements, training records and release checks.

@@ -1,0 +1,79 @@
+{
+  "study": "head-comparison-v1",
+  "scope": "Exploratory 0.8B supervised prompt/readout comparison. New matched runs, separate from the completed supervision/RL study; not a reproduction of Unsloth's mixture benchmark.",
+  "upstream_repository": "https://github.com/unslothai/unsloth",
+  "upstream_revision": "cc9128134156cc51f94eeb76d3d19f80bddbc8a7",
+  "backbone": "Qwen/Qwen3.5-0.8B",
+  "backbone_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "precision": "bf16",
+  "arms": [
+    "alias",
+    "clef"
+  ],
+  "lora_rank": 8,
+  "lora_alpha": 16,
+  "lora_targets": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj"
+  ],
+  "lora_dropout": 0.0,
+  "max_tokens": 4096,
+  "max_candidates": 160,
+  "microbatch": 4,
+  "accumulation": 2,
+  "optimizer": "AdamW",
+  "weight_decay": 0.01,
+  "gradient_clip": 1.0,
+  "schedule": "constant learning rate, no warmup",
+  "loss": "answer cross-entropy only for both arms; no correctness heads, RL, label smoothing or Brier auxiliary term",
+  "head_learning_rate": "same as adapters",
+  "pilot_seed": 101,
+  "pilot_updates": 100,
+  "pilot_learning_rate": 0.0001,
+  "tuning_seed": 101,
+  "tuning_updates": 250,
+  "learning_rates": [
+    3e-05,
+    0.0001
+  ],
+  "validation_selection": "highest validation accuracy, then lowest validation selection NLL, then lowest learning rate",
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "main_updates": 1000,
+  "main_example_exposure": 8000,
+  "checkpoint_every": 100,
+  "evaluation_microbatch": 4,
+  "data": "data/banking77",
+  "data_sha256": {
+    "train": "3b37308dfb4e6be7dbfdbfdba6a3d9b2ce24fa0691ec9387b5353e28a995f360",
+    "validation": "557fbd135aaf844a535f48017de2e808d4e9e5ebf4b540af17f4ee19422586ca",
+    "calibration": "2e095c9b0712cf2ed78f67979cecf5ed023c349aa4be344981780a7063210475",
+    "test": "7d4fb64775dc350e37a99c6bc317edecea1639d54be336ab6b05028622b93f31"
+  },
+  "calibration": "One positive selection temperature per run, fitted on the existing 1000 calibration examples only using myJEV's fitter. Raw and temperature-scaled views; no winner selected on test data.",
+  "test": "All 3080 official test examples, after learning rates are selected separately for both arms on the 997 validation examples.",
+  "candidate_order": "Same example order and candidate permutations for paired training arms. Clef criteria receive neutral zero-padded positional IDs so its built-in key sorting preserves the assigned order and does not reveal original intent IDs.",
+  "order_seed": 11,
+  "order_permutations": [
+    101,
+    202,
+    303
+  ],
+  "order_scope": "All test examples, per-request deterministic permutations, original temperatures and calibration thresholds frozen; report permutations separately.",
+  "uncertainty": "Print all three seed results and paired deltas. Bootstrap example groups conditional on those seeds, with seed spread separate; exploratory comparisons, no production risk guarantee.",
+  "limits": "Reject oversize inputs before calling either backbone. No silent state truncation, no test filtering by outcome.",
+  "latency": "Warm model scoring for the same original three-candidate request and 77-candidate BANKING requests; 10 warmups and 100 measurements on an idle target A30. Record tokens and allocated/reserved memory; no HTTP or vendor-speed equivalence claim.",
+  "multi_question_demo": "Original held-out authored requests, one Clef backbone call for routing/refund/urgency. No multi-question training, no population accuracy or transferred calibration claim.",
+  "fallback": "If the pilot does not fit, halve microbatch and double accumulation while preserving eight examples per update; record an amendment before tuning. Quantization is not mixed between arms.",
+  "differences_from_released_models": "These controls use the same Unsloth runtime and answer-only CE, effective batch eight and native prompts for each readout. The existing releases used auxiliary confidence supervision, batch one and the reference Transformers runtime. No claim that the new comparison isolates only the head or replaces prior results.",
+  "runtime_environment": {
+    "UNSLOTH_COMPILE_DISABLE": "1",
+    "TORCH_COMPILE_DISABLE": "1"
+  },
+  "runtime_amendment": "Before tuning: disable torch/Unsloth compilation for both arms after a Clef first-backward tensor-stride failure on Torch 2.14.1. Keep optimized eager kernels and BF16. No optimizer updates or quality measurements completed before this amendment."
+}

@@ -9,6 +9,7 @@ dist/
 htmlcov/
 # Local environments and credentials
 .venv/
+.venv-*/
 venv/
 .env
 .env.*
@@ -26,6 +27,7 @@ checkpoints/
 *.safetensors
 *.joblib
 wandb/
+unsloth_compiled_cache/
 results/wandb-sync*/
 # Optional study evidence restored by scripts/fetch_evidence.py
 results/pilot-*/

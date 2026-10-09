@@ -1,0 +1,19 @@
+{
+  "arm": "alias",
+  "seed": 101,
+  "reload_equal": true,
+  "fixture": {
+    "keys": [
+      "billing",
+      "technical",
+      "other"
+    ],
+    "logits": [
+      21.0,
+      15.4375,
+      16.125
+    ],
+    "tokens": 92
+  },
+  "single_backbone_call_checked": true
+}

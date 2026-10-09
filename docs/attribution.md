@@ -48,3 +48,7 @@ Cloudflare's [training description](https://blog.cloudflare.com/clef-decision-mo
 - Compare the number of candidate branches, backbone reads and supported questions, rather than treating every non-generative API as identical computational work.
 - A normalized option distribution, an NLI entailment score and a separately estimated probability of answer correctness have different meanings. Measure calibration for the actual deployed output.
 - Audit dataset exposure, licensing, pinned revisions and output equivalence before adding any external checkpoint. None of these newly reviewed weights was downloaded or evaluated for this review.
+
+## Optional Unsloth comparison
+
+[Unsloth’s decision-model guide](https://unsloth.ai/docs/basics/train-your-own-decision-model-with-unsloth) motivated the [matched 0.8B readout experiment](unsloth.md). The wrapper imports the pinned conversion and Clef head; it does not copy their implementation into this MIT repository. The pinned Unsloth decision modules carry AGPL-3.0-only notices and attribute the vendored Cloudflare reference to Apache-2.0. The experiment uses BANKING-only training, answer cross-entropy and matched temperature fitting, rather than reproducing the tutorial’s broader training mixture or claiming its benchmark results.

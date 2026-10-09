@@ -54,6 +54,8 @@ The token-alias readout reuses Qwen’s vocabulary head. That keeps the implemen
 
 Alternative pretrained backbones, including Phi, are deferred. The study has two complementary tracks: building a small decision network from random initialization and adapting pretrained Qwen. A future backbone comparison could reuse the frozen partitions and tuning controls, but it is not scheduled or required for this release.
 
+The [Unsloth comparison](unsloth.md) tests that dedicated-head alternative using a new answer-only supervised control. It keeps the backbone and exposure matched across readouts; the original four-method schedule below remains a separate experiment.
+
 ## Frozen schedule
 
 | Setting | Value |
