@@ -1,0 +1,9 @@
+{
+  "examples": 8000,
+  "min_tokens": 1896,
+  "max_tokens": 1985,
+  "mean_tokens": 1907.722875,
+  "seconds": 76.17467688501347,
+  "truncated": 0,
+  "skipped": 0
+}

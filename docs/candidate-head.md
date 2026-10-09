@@ -64,13 +64,15 @@ logits = self.score(combined).squeeze(-1)
 logits = logits.masked_fill(~valid, -torch.inf)
 ```
 
-`self.score` is `Linear(128,128)`, GELU and `Linear(128,1)`. The same scorer operates on every candidate, so adding another allowed description does not require a new output neuron. Negative infinity excludes padded slots from softmax. The selected candidate maps back to the caller’s original ID.
+Adding `queries` to `evidence` is a residual connection: the scorer receives the candidate and question representation alongside the retrieved context. Layer normalization rescales the 128 features with learned scale and offset parameters. `self.score` is `Linear(128,128)`, GELU and `Linear(128,1)`. The same scorer operates on every candidate, so adding another allowed description does not require a new output neuron. Negative infinity excludes padded slots from softmax. The selected candidate maps back to the caller’s original ID.
 
 A shared scorer is equivariant to reordering candidate vectors while holding all backbone features fixed. Reordering the input text can still change those features: Qwen is causal, and later candidate descriptions can depend on earlier ones. The unit test checks the first property and makes no claim about the second.
 
 ## Train only the head
 
 The frozen protocol uses answer cross-entropy, $L=-\log p_y$, where $y$ is the labelled candidate. Three equal logits yield probability $1/3$ for the correct answer and loss $\log3\approx1.0986$. Training changes the head’s parameters to increase the probability of the labelled choice.
+
+The reference loader loads Qwen’s text model. The optional Unsloth loader also holds unused vision parameters in its text-only experiment, so a memory comparison between these runs would include that loader difference.
 
 The backbone runs under `torch.no_grad()` with BF16 weights. The head, logits and loss use FP32. AdamW updates only the head at learning rate 0.001, with weight decay 0.01 and gradient clipping at 1. A microbatch contains four requests; two microbatches accumulate into one update. The 1,000-update main run sees 8,000 examples, about one pass through the 7,999-row training partition. Candidate order is randomized per example.
 

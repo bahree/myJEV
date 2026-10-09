@@ -139,7 +139,8 @@ class CandidateHeadModel:
         path=Path(path);path.mkdir(parents=True,exist_ok=False)
         save_file({k:v.detach().cpu().contiguous() for k,v in self.head.state_dict().items()},str(path/'head.safetensors'))
         manifest={**self.manifest,'format':'myjev-candidate-attention-v1','head_config':asdict(self.head.config),
-                  'prompt_version':PROMPT_VERSION,'head_sha256':hashlib.sha256((path/'head.safetensors').read_bytes()).hexdigest()}
+                  'prompt_version':PROMPT_VERSION,'backbone_precision':'bf16','head_precision':'fp32',
+                  'backend':'transformers','tokenizer_revision':self.manifest['backbone_revision'],'head_sha256':hashlib.sha256((path/'head.safetensors').read_bytes()).hexdigest()}
         manifest.pop('artifact_revision',None)
         manifest['artifact_revision']=hashlib.sha256(json.dumps(manifest,sort_keys=True).encode()).hexdigest()
         (path/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
@@ -168,6 +169,10 @@ class CandidateHeadModel:
             raise ValueError('Unsupported candidate-head artifact')
         if hashlib.sha256((path/'head.safetensors').read_bytes()).hexdigest()!=manifest['head_sha256']:
             raise ValueError('Head checksum mismatch')
+        if (manifest.get('backbone_precision'),manifest.get('head_precision'),manifest.get('backend'))!=('bf16','fp32','transformers'):
+            raise ValueError('Unsupported candidate-head precision or backend')
+        if manifest.get('tokenizer_revision')!=manifest['backbone_revision']:
+            raise ValueError('Tokenizer revision mismatch')
         temperature=manifest.get('temperature',1.)
         if not 0<float(temperature)<float('inf'):raise ValueError('Invalid temperature')
         model=cls.fresh(manifest,device)

@@ -1,0 +1,12 @@
+{
+  "trainable_parameters": 540672,
+  "total_parameters": 853526592,
+  "dtypes": {
+    "torch.bfloat16": 852891968,
+    "torch.float32": 634624
+  },
+  "initial_adapter_sha256": "94940dd3c9febce95c137c75bc7cb17271e85a98fcb049e487b1df2b3919a7f5",
+  "head_config": null,
+  "runner_sha256": "186d677b85e4eab4d32dc6f4b36173ea34018cd4db29c9e584e50f5ae6e299d0",
+  "source_revision": "318fd3904c2449d04dbac0f9fd5bc1bdf95b5547"
+}

@@ -1,0 +1,5 @@
+{
+  "temperature": 1.0373377213139057,
+  "source_sha256": "2e095c9b0712cf2ed78f67979cecf5ed023c349aa4be344981780a7063210475",
+  "rule": "Positive selection temperature fitted on calibration only; no test selection"
+}

@@ -1,4 +1,6 @@
 {
+  "configs/head-comparison-v1.json": "9705751a258dfdaab4fbceefd936138df442de0247fde3421d4c26cffefe1501",
+  "results/unsloth-head-v1/selection.json": "c3a1679fb5e69b31588c053090bd5c61bc02ce9796a475e2b6931e5cdcbfa437",
   "results/unsloth-head-v1/pilot/alias/complete.json": "5a475707532836a3654762424b0581efb3d733d1f20024f51a735bbdbf662ce3",
   "results/unsloth-head-v1/pilot/alias/initialization.json": "46f23cfcf2c0cfc71b760b1f55deb03ddd90fa84f311c7b4f33d28c02eadc63d",
   "results/unsloth-head-v1/pilot/alias/encoding.json": "17660ef3f144a6f35a7a20a10c47869585109cae4726f763dd2284a85a9704da",
@@ -6,5 +8,9 @@
   "results/unsloth-head-v1/pilot/clef/complete.json": "b8564708bc632e1892869adb6dc5905478683b780bb4066743411191ff3cb09b",
   "results/unsloth-head-v1/pilot/clef/initialization.json": "f4957ef57a624ec55d0665d8255ee08778feb6194c79c36c93ab6f09e67b775f",
   "results/unsloth-head-v1/pilot/clef/encoding.json": "4b312de86ce75a20c6de8425b04c971966c6bfc698a6f2021ce3861a3654dffa",
-  "results/unsloth-head-v1/pilot/clef/run.json": "f8a51614489f8a6f1efdf196ac06187982d5c21a79e16f6a627afde607a0570b"
+  "results/unsloth-head-v1/pilot/clef/run.json": "f8a51614489f8a6f1efdf196ac06187982d5c21a79e16f6a627afde607a0570b",
+  "results/unsloth-head-v1/tuning/alias/lr-3e-05/validation.json": "cc39496dc4510caddac44ea7e39ce09e387b9a0c7dbd41cd70c4b45f62855c23",
+  "results/unsloth-head-v1/tuning/alias/lr-0.0001/validation.json": "4c359fb42aae61c978a2e16213b1768c5b4e6feea71dbbfdcd9d3edf89558ae3",
+  "results/unsloth-head-v1/tuning/clef/lr-3e-05/validation.json": "2c916fda831c8963cbc59c80041fe919831fb1251df9268089a5c2677df5b920",
+  "results/unsloth-head-v1/tuning/clef/lr-0.0001/validation.json": "7d7effac67c6610bfa2edd917a9c2460256fea68e927caac331970f77a08d2d4"
 }

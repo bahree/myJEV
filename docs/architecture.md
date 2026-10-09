@@ -66,7 +66,7 @@ The loader declares the confidence source explicitly:
 
 An RL artifact still stores its earlier scalar head, but RL does not optimize that head; post-RL scalar diagnostics are not a trained RL confidence estimate. The matched follow-up calibrates the trained policy expectation instead. See [confidence controls](qwen-findings.md#give-every-method-the-same-calibration-opportunity).
 
-Selection scores sum to one over the supplied options. Correctness confidence estimates whether the selected answer is right. Missing the correct option can still produce a high selection score, so unsupported requests need explicit evaluation.
+The normalized selection scores can remain high when the correct option is missing. Unsupported requests therefore need explicit evaluation using the declared confidence source.
 
 See [four probability meanings and a numerical reward example](decision-lessons.md#four-probabilities-that-are-easy-to-confuse). The spread of the 21-bin policy is not a validated measure of epistemic uncertainty.
 
@@ -84,7 +84,7 @@ The scoring component alone does not guarantee calibration of the combined, regu
 
 ## PolicyLM and the pretrained-encoder middle ground
 
-PolicyLM is relevant related work, not a measured myJEV baseline. It specializes in moderation, reads policy and content together, and emits category scores without generating explanations. Its pretrained BidirLM encoder derives from Qwen3. This illustrates why backbone ancestry and deployment behavior are separate choices: pretrained language representations can support a non-generative decision interface. See the [announcement](https://www.musubilabs.ai/blog/introducing-policylm-1-7b).
+PolicyLM informed the design discussion; I have not benchmarked it locally. It specializes in moderation, reads policy and content together, and emits category scores without generating explanations. Its pretrained BidirLM encoder derives from Qwen3. This illustrates why backbone ancestry and deployment behavior are separate choices: pretrained language representations can support a non-generative decision interface. See the [announcement](https://www.musubilabs.ai/blog/introducing-policylm-1-7b).
 
 We tested two pretrained encoders locally. The untouched GLiClass small checkpoint reached 10.81% BANKING accuracy; the adapted, fixed-label ModernBERT control performed much better, as the [findings](qwen-findings.md) show. Their task interfaces and training differ, so neither result predicts how a new policy-conditioned encoder would perform.
 
@@ -127,7 +127,7 @@ The PolicyLM discussion prompted a test of rule edits on the existing checkpoint
 
 The small supervised model changed its answer on only 5 of the 16 pairs that required a change. It also kept some wrong answers unchanged. Checking both answers in each pair catches that failure; a score for consistency alone would miss it.
 
-Selection and confidence also told different stories. The 9B exact-RL candidate answered every fixture correctly, yet its confidence Brier was 0.1866, versus 0.0062 for the equally accurate 4B supervised candidate. The former reported expected confidence from its learned grid policy; the latter reported temperature-scaled selected probability. These are the deployed outputs, not a freshly fitted comparison. This result illustrates why correct decisions and useful confidence need separate checks; it does not establish calibration over a population.
+Selection and confidence also told different stories. The 9B exact-RL candidate answered every fixture correctly, yet its confidence Brier was 0.1866, versus 0.0062 for the equally accurate 4B supervised candidate. The former reported expected confidence from its learned grid policy; the latter reported temperature-scaled selected probability. Both checkpoints kept their deployed confidence settings. The fixture results describe answer correctness and confidence under those settings, without establishing population calibration.
 
 The diagnostic covers one seed and six simple templates. It checks whether meaningful rule edits change the answer and irrelevant edits leave it alone. These correlated examples are too narrow to settle the RL comparison, measure scaling or establish reliable real-world policy compliance.
 
@@ -140,3 +140,7 @@ A [seven-case untouched-backbone probe](../results/numeric-readout-v1/report.md)
 `scripts/numeric_readout_probe.py` teacher-forces full candidate continuations, including their closing bracket, and sums suffix log probabilities. It repeats the prompt instead of implementing cached prefill branches; its timings must not be read as a speed comparison. [Numeric readout tests](../tests/test_numeric_readout.py) check suffix arithmetic and token-boundary failures. See the [source review](system-one-research.md) for the external method's distinct training and inference semantics.
 
 Candidate-order change rates are per permutation, each compared with the original order. They are not the fraction of requests that could change under any possible ordering.
+
+## Build an alternative answer head
+
+The [candidate-head guide](candidate-head.md) connects the scratch model’s attention calculation to frozen Qwen features. It explains the field masks and shared scorer, and provides head-only training and inference commands. The [Unsloth guide](unsloth.md) compares alias scoring with Clef’s larger joint schema head under a separate matched protocol.

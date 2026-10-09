@@ -12,11 +12,70 @@ def read(path): return json.loads(Path(path).read_text())
 def compressed(path): return json.loads(gzip.decompress(Path(path).read_bytes()))
 
 
+def probe_report(root,plan,sources):
+    lines=['','## Training time and memory','',
+        'Each main run received 1,000 updates and 8,000 examples. Session time includes training and checkpoint work; it is elapsed time on its assigned GPU rather than a kernel-only measurement. The three seed workers ran on separate A30s.','',
+        '| Seed | Readout | Training seconds | Peak allocated GiB | Mean training tokens |',
+        '|---|---|---:|---:|---:|']
+    def record(path):
+        sources[path.as_posix()]=hashlib.sha256(path.read_bytes()).hexdigest()
+        return read(path)
+    probes={}
+    for seed in plan['seeds']:
+        paired=[]
+        for arm in plan['arms']:
+            base=root/f'main/seed-{seed}/{arm}'
+            done=record(base/'complete.json');encoding=record(base/'encoding.json')
+            init=record(base/'initialization.json');run=record(base/'run.json')
+            paired.append((init,run))
+            probe=record(base/'probe.json')
+            if not probe['reload_equal'] or not probe['single_backbone_call_checked']:
+                raise ValueError('Required reload or one-pass check failed')
+            probes[f'{seed}/{arm}']=probe
+            lines.append(f"| {seed} | {arm} | {done['session_seconds']:.1f} | {done['peak_vram_bytes']/2**30:.3f} | {encoding['mean_tokens']:.1f} |")
+        if paired[0][0]['initial_adapter_sha256']!=paired[1][0]['initial_adapter_sha256']:
+            raise ValueError('Paired initial adapter parameters differ')
+        if paired[0][1]['exposure_sha256']!=paired[1][1]['exposure_sha256']:
+            raise ValueError('Paired training exposure differs')
+    lines+=['','## Candidate order with calibration held fixed','',
+        'Seed 11 checkpoints scored three deterministic per-request shuffles of all 3,080 test requests. Temperature and every acceptance threshold stayed at their original calibration values. Each row describes one permutation; the repeated requests are not pooled as independent evidence.','',
+        '| Readout | Permutation seed | Accuracy | Changed selected ID | Coverage at original 80% threshold | Accepted-case error |',
+        '|---|---:|---:|---:|---:|---:|']
+    for arm in plan['arms']:
+        base=root/f"main/seed-{plan['order_seed']}/{arm}"
+        original=record(base/'temperature-metrics.json')
+        for seed in plan['order_permutations']:
+            m=record(base/f'order-{seed}-metrics.json')
+            if m['temperature']!=original['temperature'] or any(v['threshold']!=original['operating_points'][k]['threshold'] for k,v in m['operating_points'].items()):
+                raise ValueError('Order evaluation changed calibration')
+            op=m['operating_points']['coverage_0.8']
+            err='undefined' if op['error'] is None else f"{100*op['error']:.2f}%"
+            lines.append(f"| {arm} | {seed} | {100*m['accuracy']:.2f}% | {100*m['changed_answer_fraction']:.2f}% | {100*op['coverage']:.2f}% | {err} |")
+    lines+=['','## Warm scoring','',
+        'One request at a time, ten warmups and 100 measured calls on an otherwise idle target A30. Other GPUs may run other seeds. Timings include tokenization and result conversion, exclude HTTP, and use eager execution with the reference causal-convolution implementation.','',
+        '| Readout | Candidates | Tokens | p50 ms | p95 ms | Peak allocated GiB |',
+        '|---|---:|---:|---:|---:|---:|']
+    for arm in plan['arms']:
+        probe=probes[f"{plan['order_seed']}/{arm}"]
+        for timing in probe['latency'].values():
+            lines.append(f"| {arm} | {timing['candidate_count']} | {timing['tokens']} | {timing['p50_ms']:.2f} | {timing['p95_ms']:.2f} | {timing['peak_allocated_bytes']/2**30:.3f} |")
+    demo=probes[f"{plan['order_seed']}/clef"]['multi_question']
+    if demo['backbone_calls']!=1:raise ValueError('Multi-question example repeated the backbone')
+    lines+=['','## Three questions sharing one Clef pass','',demo['semantics'],'',
+            '| Question | Expected | Selected | Raw selected score |','|---|---|---|---:|']
+    for key,value in demo['answers'].items():
+        selected=value['selected_id'];lines.append(f"| {key} | {demo['expected'][key]} | {selected} | {value['selection_scores'][selected]:.4f} |")
+    lines+=['','The probe made one backbone call. All three questions use the Choice type; this does not test other field types, images or general multi-question accuracy.','']
+    return lines,probes
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--root',type=Path,default=Path('results/unsloth-head-v1'))
     args=p.parse_args(); root=args.root
     plan=read('configs/head-comparison-v1.json'); results=[]; sources={}
+    for path in (Path('configs/head-comparison-v1.json'),root/'selection.json'):
+        if path.exists():sources[path.as_posix()]=hashlib.sha256(path.read_bytes()).hexdigest()
     for phase in ('pilot',):
         for arm in plan['arms']:
             base=root/phase/arm
@@ -33,6 +92,16 @@ def main():
         base=root/'pilot'/arm; c=read(base/'complete.json'); i=read(base/'initialization.json'); e=read(base/'encoding.json')
         lines.append(f"| {arm} | {i['trainable_parameters']:,} | {c['peak_vram_bytes']/2**30:.3f} | {c['session_seconds']:.1f} | {e['mean_tokens']:.1f} |")
     lines+=['','These are runtime feasibility observations, not accuracy results. Initial adapter hashes and example/order hashes agree across the paired pilots. A prior compiled attempt failed on its first backward pass. Both reported pilots use eager execution, with no silent input truncation.','']
+    if (root/'selection.json').exists():
+        choice=read(root/'selection.json')
+        lines+=['## Validation-only learning-rate selection','',
+            '| Readout | Learning rate | Validation accuracy | Selection NLL |','|---|---:|---:|---:|']
+        for arm in plan['arms']:
+            for rate in plan['learning_rates']:
+                path=root/f'tuning/{arm}/lr-{rate:g}/validation.json';trial=read(path)
+                sources[path.as_posix()]=hashlib.sha256(path.read_bytes()).hexdigest()
+                lines.append(f"| {arm} | {rate:g} | {100*trial['accuracy']:.2f}% | {trial['selection_nll']:.4f} |")
+        lines+=['', 'Selected rates: '+', '.join(f"{arm} {trial['learning_rate']:g}" for arm,trial in choice['chosen'].items())+'. Each trial received 250 updates on seed 101. The frozen rule used validation accuracy, then NLL, then the lower rate. No test data selected these settings.','']
     required=[root/f'main/seed-{s}/{a}/temperature-metrics.json' for s in plan['seeds'] for a in plan['arms']]
     if not all(path.exists() for path in required):
         lines += ['## Accuracy and calibration','',
@@ -69,13 +138,17 @@ def main():
                 f"The mean difference is {100*deltas.mean():+.2f} points. The conditional test-group interval is [{100*ci[0]:+.2f}, {100*ci[1]:+.2f}] points; the sample seed standard deviation is {100*deltas.std(ddof=1):.2f} points. The interval holds these three trained seed pairs fixed and does not include training variance.", '',
                 '## Accepting decisions or asking for review','',
                 'Thresholds are selected on calibration, then applied unchanged to test. These are empirical operating points, not certified error guarantees. Zero accepted cases have undefined error.','',
-                '| Seed | Readout | Test coverage at calibration 80% threshold | Accepted-case error | Accepted cases |',
-                '|---|---|---:|---:|---:|']
+                '| Seed | Readout | Test coverage at calibration 80% threshold | Accepted-case error | Accepted cases | Group-bootstrap error interval |',
+                '|---|---|---:|---:|---:|---|']
         for r in results:
             op=r['calibrated']['operating_points']['coverage_0.8']
             error='undefined' if op['error'] is None else f"{100*op['error']:.2f}%"
-            lines.append(f"| {r['seed']} | {r['arm']} | {100*op['coverage']:.2f}% | {error} | {op['accepted']} |")
-        output={'runs':results,'paired_accuracy':comparison,'source_sha256':sources}
+            interval=op['error_cluster_ci95']
+            ci_text='undefined' if interval is None else f'[{100*interval[0]:.2f}%, {100*interval[1]:.2f}%]'
+            lines.append(f"| {r['seed']} | {r['arm']} | {100*op['coverage']:.2f}% | {error} | {op['accepted']} | {ci_text} |")
+        extra,probes=probe_report(root,plan,sources)
+        lines+=extra
+        output={'probes':probes,'runs':results,'paired_accuracy':comparison,'source_sha256':sources}
         (root/'summary.json').write_text(json.dumps(output,indent=2)+'\n')
     lines+=['','## Reproduce','',
             'Use the [comparison guide](../../docs/unsloth.md) for dependencies, training commands and scope. Regenerate this report with `python scripts/summarize_head_comparison.py`. The configuration fixes two learning-rate trials per arm and three fresh main seeds. Candidate-order tests keep calibration fixed and are reported separately.','']

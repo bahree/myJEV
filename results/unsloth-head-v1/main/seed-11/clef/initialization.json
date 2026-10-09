@@ -1,0 +1,19 @@
+{
+  "trainable_parameters": 27865604,
+  "total_parameters": 880851524,
+  "dtypes": {
+    "torch.bfloat16": 852891968,
+    "torch.float32": 27959556
+  },
+  "initial_adapter_sha256": "edf9758960d16f02d599f72ce364ba61291ea7b23e5f9ceac2e9bc6fefa0a795",
+  "head_config": {
+    "hidden_size": 1024,
+    "width": 512,
+    "routing_layers": 2,
+    "layers": 4,
+    "heads": 8,
+    "feedforward": 2048
+  },
+  "runner_sha256": "186d677b85e4eab4d32dc6f4b36173ea34018cd4db29c9e584e50f5ae6e299d0",
+  "source_revision": "f2bffd64495f51516532c8cd404e4d738219a961"
+}
