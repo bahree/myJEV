@@ -11,7 +11,7 @@ The released Qwen implementation receives context, instructions, and 2-160 candi
 3. Run the Qwen backbone once. Its internal features at the final input position provide the alias scores and the confidence-head input. No answer tokens are generated.
 4. Normalize the candidate scores to sum to one, select the largest, and map its alias back to the caller's ID, such as `billing`. Return the scores and the configured correctness estimate too.
 
-Training randomizes candidate order. The [full-test permutation check](../results/review-order-v1/report.md) still changes selected answers on about 8-10% of 0.8B requests and 3.6-5.0% at larger sizes per tested permutation. Each request has its own seeded shuffle. Order also reassigns aliases, so this is combined sensitivity, not an isolated position effect.
+Training randomizes candidate order. The [full-test permutation check](../results/review-order-v1/report.md) still changes selected answers on about 8-10% of 0.8B requests and 3.6-5.0% at larger sizes per tested permutation. Each request has its own seeded shuffle. Order also reassigns aliases, so the measured changes combine position and alias-assignment effects.
 
 The reference implementation is in [model.py](../src/myjev/model.py), [prompt.py](../src/myjev/prompt.py), and [inference.py](../src/myjev/inference.py). Custom heads and adapters require this loader; a generic text-generation server does not automatically reproduce the outputs.
 
@@ -135,7 +135,7 @@ The [frozen diagnostic report](https://github.com/bahree/myJEV/blob/main/results
 
 ## Try a numeric suffix readout
 
-A [seven-case untouched-backbone probe](../results/numeric-readout-v1/report.md) compares existing single-token aliases with complete numeric suffix probabilities on the same pinned BF16 4B backbone. Both answered all seven original demos correctly. The prompt and readout both change, the examples were previously viewed, and there is no confidence calibration, so this is a method-inspired implementation demonstration rather than a paper reproduction or broader accuracy result.
+A [seven-case untouched-backbone probe](../results/numeric-readout-v1/report.md) compares existing single-token aliases with complete numeric suffix probabilities on the same pinned BF16 4B backbone. Both answered all seven original demos correctly. The prompt and readout both change, the examples were previously viewed, and there is no confidence calibration, limiting the probe to an implementation demonstration. It reproduces neither the paper’s optimized computation nor a broader accuracy benchmark.
 
 `scripts/numeric_readout_probe.py` teacher-forces full candidate continuations, including their closing bracket, and sums suffix log probabilities. It repeats the prompt instead of implementing cached prefill branches; its timings must not be read as a speed comparison. [Numeric readout tests](../tests/test_numeric_readout.py) check suffix arithmetic and token-boundary failures. See the [source review](system-one-research.md) for the external method's distinct training and inference semantics.
 

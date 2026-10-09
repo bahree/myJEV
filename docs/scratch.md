@@ -44,7 +44,7 @@ The original 100-update selection pilot fit its training surface form but failed
 | Held-out validation layout | 20.7% |
 | Same validation rows restored to training layout | 68.4% |
 
-This supports layout sensitivity as a contributor, without fully isolating it. Variant 2 expands training layouts and nonce lengths. A 500-update selection pilot reached **78.9% validation accuracy**. Both data variety and exposure changed, so this is not a controlled single-factor improvement claim. The original failed pilot remains in `results/scratch-v1/`; the revised pilot is in `results/scratch-v2/`.
+This supports layout sensitivity as a contributor, without fully isolating it. Variant 2 expands training layouts and nonce lengths. A 500-update selection pilot reached **78.9% validation accuracy**. Both data variety and exposure changed, preventing attribution to either intervention alone. The original failed pilot remains in `results/scratch-v1/`; the revised pilot is in `results/scratch-v2/`.
 
 ## Generate and train locally
 
@@ -90,7 +90,7 @@ The shared loader dispatches by the scratch manifest format. It verifies the man
 
 ## Completed controlled study and its limits
 
-The frozen 13,000-update study is complete. Main runs used three seeds, with 1,000 initial SFT updates and separate 1,000-update continuations at batch size 8. The supervised learning rate was chosen using validation, then shared across methods. This is a smaller tuning budget than the Qwen study and is not an optimized test of each method's best possible result.
+The frozen 13,000-update study is complete. Main runs used three seeds, with 1,000 initial SFT updates and separate 1,000-update continuations at batch size 8. The supervised learning rate was chosen using validation, then shared across methods. The smaller tuning budget limits what can be inferred about each method’s best attainable result.
 
 | Method | Mean test accuracy | Seed SD |
 |---|---:|---:|
@@ -113,7 +113,7 @@ The failure belongs to this configuration and training budget. Tokenization, cap
 
 ## Measured deployment check
 
-The seed-11 synthetic SFT artifact was used for an engineering check, not selected as a production default. It contains 809,244 bytes of weights. Python/CLI outputs matched exactly on the recorded request; Docker GPU HTTP probabilities differed from CPU by less than 1e-8, and the selected ID and artifact revision matched. Oversized HTTP input returned 422.
+The seed-11 synthetic SFT artifact was used for an engineering check, not selected as a production default. It contains 809,244 bytes of weights. Python/CLI outputs were identical on the recorded request; Docker GPU HTTP probabilities differed from CPU by less than 1e-8, and the selected ID and artifact revision matched. Oversized HTTP input returned 422.
 
 | Path | Warm p50 | Warm p95 |
 |---|---:|---:|
@@ -132,7 +132,7 @@ Controlled synthetic behavior does not establish useful BANKING77 quality, unfam
 
 ## Packaged teaching checkpoint
 
-The separate local `artifacts/scratch-teaching-release-v1/` package contains the seed-11 initial supervised network's full weights, manifest, MIT license, dataset provenance and [model card](../results/scratch-teaching-release-v1/model-card.md). Seed 11 follows the packaging convention; its relatively strong individual synthetic score does not replace the unstable three-seed results above. This is not the failed BANKING77 diagnostic checkpoint and is not included in the six Qwen adapter releases.
+The separate local `artifacts/scratch-teaching-release-v1/` package contains the seed-11 initial supervised network's full weights, manifest, MIT license, dataset provenance and [model card](../results/scratch-teaching-release-v1/model-card.md). Seed 11 follows the packaging convention; its relatively strong individual synthetic score does not replace the unstable three-seed results above. The package holds the synthetic checkpoint. The failed BANKING77 diagnostic and six Qwen adapter releases are separate artifacts.
 
 The [release manifest](../results/scratch-teaching-release-v1/manifest.json) records every package-file checksum. [CPU verification](../results/scratch-teaching-release-v1/verification.json) confirms byte-identical weights/manifest, exact reload response equality with the original artifact, acceptance at 256 context bytes / 64 description bytes / 32 candidates, and rejection of each limit plus one. Those shape checks do not establish accuracy at the bounds. The package remains local; no downloadable scratch model is claimed.
 
@@ -140,6 +140,6 @@ The [release manifest](../results/scratch-teaching-release-v1/manifest.json) rec
 
 I tested whether the model could at least memorize a tiny training set before changing the architecture. It reached 100% in all three seeds. An initial deterministic fixture then exposed a data mistake: numeric record indices correlated with labels. A successful run could exploit that shortcut, so the original fixture and failed seeds remain in the records, followed by the corrected test.
 
-The [corrected protocol](../results/scratch-ladder-v2/report.md) pairs each nuisance nonce with all four color labels and keeps test nonces out of training. With the same architecture, learning rate and per-run budget, seeds 11/22/33 each recovered the explicit color rule on all 64 held-out decisions across 16 nonce groups. This is a same-template sanity check. It does not repair the original noisy/layout-shift task or the 1.30% BANKING result.
+The [corrected protocol](../results/scratch-ladder-v2/report.md) pairs each nuisance nonce with all four color labels and keeps test nonces out of training. With the same architecture, learning rate and per-run budget, seeds 11/22/33 each recovered the explicit color rule on all 64 held-out decisions across 16 nonce groups. The check tests rule recovery within one template. It does not repair the original noisy/layout-shift task or the 1.30% BANKING result.
 
 The extension used 2,700 total updates including the preserved confounded attempt. Its lesson is narrower and more useful than declaring success or failure of scratch models generally: the network can memorize a small set and recover a simple signal, while broader generalization remains unproven.

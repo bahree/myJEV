@@ -16,6 +16,7 @@ Start with a report, then inspect its measurements if you want to check a claim.
 | Did the scratch model learn useful rules? | [Scratch study](scratch-study-v1/summary.md), [BANKING failure](scratch-banking-diagnostic/report.md) | Controlled synthetic learning and the failed natural-language diagnostic |
 | What did archive adaptation change? | [Archive report](archive-machine-v2/report.md), [paired changes](archive-machine-v2/paired-changes.md) | Agreement with machine labels and forgetting; independent human auditing remains absent |
 | Could a simpler classifier do the job? | [TF-IDF](tfidf/), [ModernBERT](encoder-control-v1/report.md) | Fixed-taxonomy controls with different interfaces and training budgets |
+| Does a different decision head help? | [Unsloth comparison](../docs/unsloth.md), [recorded results](unsloth-head-v1/report.md) | Matched 0.8B prompt/readout study; pilot measurements separated from quality results |
 | What does a real response look like? | [Seven demos](demos-v1/report.md) | Saved requests and responses, including a confident mistake |
 | What does serving cost? | [Model and serving comparison](../docs/models.md), [container evidence](container-registry-v3/README.md) | Measured hardware, precision, startup and latency conditions |
 

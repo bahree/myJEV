@@ -6,13 +6,13 @@ The published model can already score a request. This guide asks what further tr
 
 **Supervised fine-tuning (SFT)** learns from requests with labelled answers. **Reinforcement learning (RL)** uses a reward assigned to the model's answer and confidence. Continued SFT gives the supervised model more training examples; it is our control for whether more training alone explains a gain. The exact and sampled RL methods compute the same reward objective in different ways, explained below.
 
-BANKING77 already supplies the correct banking intent for each training request, so supervised learning is the natural baseline. Those labels also let us compute a reward for every proposed answer: correctness earns reward, while a confidence estimate that disagrees with correctness incurs a penalty. Both methods therefore use the same source of labelled evidence. This is a single-decision RL experiment, not a collection of human preferences or a long interaction with an environment. [Reinforcement Learning - An Introduction](https://blog.desigeek.com/post/2021/07/reinforcement-learning-an-introduction/) provides background on actions, policies and rewards.
+BANKING77 already supplies the correct banking intent for each training request, so supervised learning is the natural baseline. Those labels also let us compute a reward for every proposed answer: correctness earns reward, while a confidence estimate that disagrees with correctness incurs a penalty. Both methods therefore use the same source of labelled evidence. Each labelled request defines one decision and its possible rewards. The experiment uses neither collected human preferences nor extended environment interactions. [Reinforcement Learning - An Introduction](https://blog.desigeek.com/post/2021/07/reinforcement-learning-an-introduction/) provides background on actions, policies and rewards.
 
 Continued supervision checks the benefit of extra training. Exact RL changes the objective; sampled RL estimates that same objective from fewer actions. Temperature calibration tests an adjustment after training. Together, these controls let us ask which part of the procedure changed the result, rather than treating RL as an automatic upgrade.
 
 A pretrained model can already score candidate tokens in one forward pass. Fine-tuning is not required to create that inference interface, and it is not what removes autoregressive decoding. Our untouched-backbone control measures how well the same prompt and readout work before adaptation.
 
-We train to test two additional capabilities. First, can supervised examples improve discrimination among closely related BANKING77 intents when candidate descriptions and their token aliases appear in the request? Second, can the custom confidence heads learn useful estimates of selected-answer correctness? Those heads are newly initialized; simply attaching them to a pretrained backbone does not produce meaningful confidence. Randomizing candidate order discourages learning a permanent answer-to-alias mapping, but does not guarantee generalization or order invariance.
+Training tests whether examples improve discrimination among closely related BANKING77 intents with request-supplied descriptions and aliases. It also trains the newly initialized confidence heads to estimate selected-answer correctness. Those heads require a training signal before their outputs can be interpreted. Randomizing candidate order discourages learning a permanent answer-to-alias mapping, but does not guarantee generalization or order invariance.
 
 The supervised stage establishes the adapted decision model and its confidence estimates. Continued supervision, exact RL and sampled RL then start from that same supervised artifact. This tests whether confidence-aware RL adds value beyond additional supervised exposure. Temperature scaling tests whether simpler post-hoc calibration is sufficient. Untouched-backbone and TF-IDF controls also leave open the possibility that adaptation is unnecessary or a simpler model is preferable.
 
@@ -134,7 +134,7 @@ CUDA_VISIBLE_DEVICES=1 .venv/bin/python scripts/run_longer_study.py 4b
 CUDA_VISIBLE_DEVICES=2 .venv/bin/python scripts/run_longer_study.py 9b
 ```
 
-There are eight tuning runs and twelve main runs per size, plus validation and full evaluation passes. This is a substantial local workload expected to take many hours. The reference setup uses three 24 GB A30s; it does not rent cloud hardware.
+There are eight tuning runs and twelve main runs per size, plus validation and full evaluation passes. The saved logs record elapsed time separately for each run. The reference setup uses three 24 GB A30s; it does not rent cloud hardware.
 
 ## Check progress and resume
 

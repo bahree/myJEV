@@ -1,0 +1,27 @@
+{
+  "python": "3.12.3",
+  "system": "Linux",
+  "machine": "x86_64",
+  "packages": {
+    "torch": "2.14.1",
+    "transformers": "5.17.0",
+    "peft": "0.21.2",
+    "unsloth": "2026.10.3",
+    "unsloth_zoo": "2026.10.3",
+    "triton": "3.8.0",
+    "bitsandbytes": "0.50.2",
+    "wandb": "0.30.0"
+  },
+  "gpu_inventory": [
+    "0, NVIDIA A30, 24576 MiB, 580.178.04",
+    "1, NVIDIA A30, 24576 MiB, 580.178.04",
+    "2, NVIDIA A30, 24576 MiB, 580.178.04"
+  ],
+  "file_sha256": {
+    "requirements.unsloth.lock": "0e510025e379fc59916a6058c4e708dfaf987360dd33d1edd839086077c5ffe7",
+    "configs/head-comparison-v1.json": "9705751a258dfdaab4fbceefd936138df442de0247fde3421d4c26cffefe1501",
+    "scripts/run_head_comparison.py": "186d677b85e4eab4d32dc6f4b36173ea34018cd4db29c9e584e50f5ae6e299d0"
+  },
+  "public_source_revision": "914e0ce",
+  "scope": "Isolated optional head-comparison runtime. The release inference environment is unchanged. BF16 backbone, FP32 adapters/head; eager compilation fallback recorded in the configuration; reference PyTorch causal convolution."
+}

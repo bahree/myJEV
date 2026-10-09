@@ -6,7 +6,7 @@ I built myJEV to understand how a model can make decisions inside an application
 
 The inspiration is [Jev from TypeSafe AI](https://typesafe.ai/blog/introducing-system-one-models-and-jev). TypeSafe calls it a System One model: its interface accepts typed questions and returns decisions and probability information directly. What interested me was using language understanding to choose among request-supplied options without generating a written answer. Classification is familiar; making the task and choice descriptions part of each request gives us more to investigate. See the [TypeSafe API introduction](https://docs.typesafe.ai/introduction) for its interface and [our attribution notes](docs/attribution.md) for related implementations.
 
-There are two implementations: a small network trained from random weights and adaptations of pretrained Qwen language models. The experiments compare what they learn, how well confidence identifies mistakes, and what each model costs to serve. You can download the trained Qwen versions, inspect the saved outputs or rerun the code. This is a learning project by [Amit Bahree](https://blog.desigeek.com); TypeSafe’s underlying architecture remains undisclosed.
+There are two implementations: a small network trained from random weights and adaptations of pretrained Qwen language models. The experiments compare what they learn, how well confidence identifies mistakes, and what each model costs to serve. You can download the trained Qwen versions, inspect the saved outputs or rerun the code. [Amit Bahree](https://blog.desigeek.com) built the project to study these choices; TypeSafe’s underlying architecture remains undisclosed.
 
 **Try it:** start with the downloadable [myJEV-4B](https://huggingface.co/bahree/myJEV-4B) and the commands below. Training is optional. A compatible NVIDIA GPU is required for the tested Qwen setup. If you prefer Docker, use the [container instructions](docs/quickstart.md#docker). Without a GPU, you can read the [recorded demos](results/demos-v1/report.md) or run the [CPU calibration lab](docs/decision-lessons.md#run-a-small-calibration-lab-on-cpu).
 
@@ -37,7 +37,7 @@ The code lives on GitHub; the trained files live on the **Hugging Face Hub**, a 
 
 ## An actual local request and response
 
-For our first example, a customer says, “I was charged twice.” The application needs to route the issue to billing, technical support or another queue. The command reads `examples/request.json`: `context` is the customer message, `instructions` describes the task, and `candidates` lists the permitted answers with their meanings. This is the actual request and saved response for the released 4B model. [Validation evidence](results/release-validation-v1/myjev-4b-continued_sft-seed11/equivalence.json)
+For our first example, a customer says, “I was charged twice.” The application needs to route the issue to billing, technical support or another queue. The command reads `examples/request.json`: `context` is the customer message, `instructions` describes the task, and `candidates` lists the permitted answers with their meanings. The following request and saved response come from the released 4B model. [Validation evidence](results/release-validation-v1/myjev-4b-continued_sft-seed11/equivalence.json)
 
 Request:
 
@@ -91,6 +91,7 @@ Start by scoring a request, then follow it through the network. From there you c
 |---|---|---|
 | Try the model | [Quick start](docs/quickstart.md) and [seven requests](results/demos-v1/report.md) | What goes into a request and how to read the result |
 | Build a small model | [Architecture](docs/architecture.md) and [scratch walkthrough](docs/scratch.md) | How text becomes candidate scores, and where a tiny model fails |
+| Build a decision head | [Candidate-attention head](docs/candidate-head.md) and [alias/Clef comparison](docs/unsloth.md) | How candidate spans and attention turn frozen Qwen features into scores |
 | Adapt Qwen | [Training](docs/training.md) and [W&B tracking](docs/tracking.md) | What adapters learn, why the experiment has several methods, and how to inspect a run |
 | Decide when to trust an answer | [Decision lessons](docs/decision-lessons.md), [CPU lab](results/calibration-lab-v1/report.md), and [findings](docs/qwen-findings.md) | How to check confidence and measure the cost of accepting mistakes |
 | Call it from an application | [Inference](docs/inference.md) and [hosting](docs/hosting.md) | Python, CLI, HTTP, Docker, and the measured startup and serving costs |

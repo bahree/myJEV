@@ -12,6 +12,7 @@ Use Python 3.12 on Linux and the [locked installation](quickstart.md#install-and
 | CPU confidence lab | `.venv/bin/python scripts/calibration_lab.py --output results/my-calibration-lab` | Matched losses, held-out calibration and known probabilities |
 | Published model | `.venv/bin/python scripts/run_demos.py` | Actual decisions and failure cases with no training |
 | Build from scratch | [Scratch commands](scratch.md) | Byte tokens, encoder features, candidate scoring and failure diagnosis |
+| Build a decision head | [Candidate-attention commands](candidate-head.md) | Token spans, masked attention and head-only learning on frozen Qwen |
 | Train adapters | [Training commands](training.md#run-it) | Fixed backbone, LoRA parameters and matched continuation branches |
 | Run a service | [Inference and Docker](inference.md) | The same decision exposed through Python, CLI and HTTP |
 

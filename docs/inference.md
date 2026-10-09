@@ -127,7 +127,7 @@ The first request above routes a duplicate charge to billing. The demo file buil
 
 The runner loads the pinned 4B model once and writes one response per input line, in the same order. The file is JSONL, meaning one JSON object per line. Run `head -n 1 responses.jsonl | .venv/bin/python -m json.tool` to inspect the first answer. The [demo walkthrough](../results/demos-v1/report.md#what-each-request-asks) explains every request, its expected answer, and the recorded outputs for both sizes. You can read it without a GPU or download.
 
-All seven default Python and CLI responses matched exactly. The 0.8B model confidently approved a day-14 refund when the supplied rule allowed fewer than 14 days; that mistake remains in the report. These examples help explain the interface, but do not estimate general accuracy. Expected answers are kept separately and are never sent to the model.
+All seven default Python and CLI responses were identical. The 0.8B model confidently approved a day-14 refund when the supplied rule allowed fewer than 14 days; that mistake remains in the report. These examples help explain the interface, but do not estimate general accuracy. Expected answers are kept separately and are never sent to the model.
 
 ```mermaid
 flowchart TB
@@ -159,7 +159,7 @@ sequenceDiagram
 
 Image **0.1.3** rejects non-finite request numbers (`NaN`, `Infinity`, `-Infinity`) with HTTP 422, including the `/generate` alias. Versions through 0.1.2 could return 500 while serializing their validation errors; invalid requests still never reached the model worker. The patch returns only error type, location and message, without reflecting request content.
 
-`deploy/Dockerfile.patch` applies the reviewed source to the immutable public 0.1.2 dependency image. The root Dockerfile remains the full-build path. BuildKit attempted an additional base unpack and ran out of disk; Docker's legacy builder reused the installed layers successfully. The [build provenance](../results/container-registry-v3/provenance.json) preserves both attempts. This is a documented source patch, not a new dependency rebuild. The service has a 15-minute health-start grace period, and the research container runs as root.
+`deploy/Dockerfile.patch` applies the reviewed source to the immutable public 0.1.2 dependency image. The root Dockerfile remains the full-build path. BuildKit attempted an additional base unpack and ran out of disk; Docker's legacy builder reused the installed layers successfully. The [build provenance](../results/container-registry-v3/provenance.json) preserves both attempts. The build patches source while retaining the earlier dependency image. The service has a 15-minute health-start grace period, and the research container runs as root.
 
 The [GPU check](../results/container-registry-v3/gpu-check.json) verifies installed Python-file hashes, CLI/HTTP/host equality, managed routes, non-finite 422 responses and the 413 body limits. Its populated-cache readiness time is one observation, not a first-download or latency guarantee. The 203.6-second empty-cache measurement belongs to 0.1.2 and remains labelled with that version.
 

@@ -1,0 +1,25 @@
+{
+  "plan_sha256": "9705751a258dfdaab4fbceefd936138df442de0247fde3421d4c26cffefe1501",
+  "rule": "highest validation accuracy, then lowest validation selection NLL, then lowest learning rate",
+  "chosen": {
+    "alias": {
+      "accuracy": 0.6730190571715146,
+      "selection_nll": 1.5628180806577778,
+      "learning_rate": 0.0001,
+      "n": 997
+    },
+    "clef": {
+      "accuracy": 0.708124373119358,
+      "selection_nll": 1.053818130959849,
+      "learning_rate": 0.0001,
+      "n": 997
+    }
+  },
+  "validation_sha256": {
+    "results/unsloth-head-v1/tuning/alias/lr-3e-05/validation.json": "cc39496dc4510caddac44ea7e39ce09e387b9a0c7dbd41cd70c4b45f62855c23",
+    "results/unsloth-head-v1/tuning/alias/lr-0.0001/validation.json": "4c359fb42aae61c978a2e16213b1768c5b4e6feea71dbbfdcd9d3edf89558ae3",
+    "results/unsloth-head-v1/tuning/clef/lr-3e-05/validation.json": "2c916fda831c8963cbc59c80041fe919831fb1251df9268089a5c2677df5b920",
+    "results/unsloth-head-v1/tuning/clef/lr-0.0001/validation.json": "7d7effac67c6610bfa2edd917a9c2460256fea68e927caac331970f77a08d2d4"
+  },
+  "test_used": false
+}

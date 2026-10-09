@@ -10,7 +10,7 @@ In the alias approach, a request assigns a short token such as `A` to each candi
 
 A **joint schema head** reads representations of the context, questions and option descriptions. The schema is the set of questions and allowed answers in the request. Clef's head includes layers that gather evidence from those representations and layers that score the choices. Several questions can share one backbone pass. Attaching this head adds parameters that need training; it does not create another pretrained model from random weights.
 
-The pinned Unsloth conversion gives this 0.8B backbone a width-512 head with two routing layers and four decoder layers. Our load check counted 27,324,932 head parameters. Both arms train the same 540,672 attention-adapter parameters. The head therefore changes both the computation and the number of parameters we optimize. It need not be faster just because it avoids candidate-token aliases.
+The pinned Unsloth conversion gives this 0.8B backbone a width-512 head with two routing layers and four decoder layers. Our load check counted 27,324,932 head parameters. Both arms train the same 540,672 attention-adapter parameters. The head therefore changes both the computation and the number of parameters we optimize. Removing candidate-token aliases does not by itself establish a speed improvement.
 
 ```mermaid
 flowchart TB
@@ -40,7 +40,7 @@ A shared pass is a computation property. It does not establish that the model ca
 
 [Unsloth's tutorial](https://unsloth.ai/docs/basics/train-your-own-decision-model-with-unsloth) uses a broader training mixture, including BANKING77 and CLINC150. Our original study reserves CLINC150 for transfer evaluation. Comparing its headline accuracy with our transfer numbers would compare different tasks and training exposure.
 
-We keep the BANKING partitions, backbone revision, BF16 precision, rank-8 attention adapters, candidate order and example exposure fixed. Both arms use Unsloth in an isolated environment and optimize answer cross-entropy. Neither uses the original scalar-confidence loss or the 21-bin confidence policy. Both receive identical post-hoc temperature fitting on calibration data. This gives the new head a fairer control than comparing it directly with a historical release trained under different settings.
+We keep the BANKING partitions, backbone revision, BF16 precision, rank-8 attention adapters, candidate order and example exposure fixed. Both arms use Unsloth in an isolated environment, BF16 autocast for the forward computation, and answer cross-entropy. Adapter and head parameters are stored in FP32; the raw scores are converted to FP32 before the loss. These numerical settings belong to this comparison rather than the earlier reference-runtime releases. Neither uses the original scalar-confidence loss or the 21-bin confidence policy. Both receive identical post-hoc temperature fitting on calibration data. This gives the new head a fairer control than comparing it directly with a historical release trained under different settings.
 
 The prompts still differ: one teaches Qwen an alias mapping, while the other exposes question and option spans to Clef. Interpret this as a comparison of the two prompt/readout systems. It does not isolate the head alone.
 
@@ -60,6 +60,10 @@ The [configuration](../configs/head-comparison-v1.json) records hashes and all s
 ## What the local pilot measured
 
 Both 100-update pilots completed and fit comfortably on one A30. Peak allocated memory was 2.24 GiB for aliases and 3.01 GiB for Clef. The same requests averaged 876 alias-prompt tokens and 1,908 Clef-prompt tokens, so differences in work reflect the prompt as well as the head. The [saved report](../results/unsloth-head-v1/report.md) distinguishes these feasibility checks from final quality measurements.
+
+## Build your own decision head
+
+The [candidate-head walkthrough](candidate-head.md) implements a smaller original design: one four-head attention layer and a shared scorer on frozen Qwen representations. It explains token spans, masks, the 216,193 trainable parameters and the head-only training procedure. That one-seed experiment is separate from this matched alias/Clef study. Both retain their own settings and results.
 
 ## Reproduce in a separate environment
 
@@ -93,7 +97,7 @@ On a one-GPU host, run them sequentially with `CUDA_VISIBLE_DEVICES=0`. The orch
 .venv-unsloth/bin/python scripts/orchestrate_head_comparison.py main
 ```
 
-The first loading attempt required `bitsandbytes`, even though quantization was disabled. The lock includes it. The first compiled Clef backward pass then failed with a tensor-stride assertion. The experiment configuration disables Torch and Unsloth compilation for both arms. These are eager-runtime measurements, not a benchmark of the fastest available Unsloth settings.
+The first loading attempt required `bitsandbytes`, even though quantization was disabled. The lock includes it. The first compiled Clef backward pass then failed with a tensor-stride assertion. The experiment configuration disables Torch and Unsloth compilation for both arms. Both arms also use the reference PyTorch causal convolution rather than the optional optimized extension. These are eager-runtime measurements, not a benchmark of the fastest available Unsloth settings. The [environment record](../results/unsloth-head-v1/environment.json) identifies dependencies, hardware and the public source checkpoint.
 
 Every run saves training JSONL, configuration, data/order hashes, parameter counts and memory measurements. The local checkpoint contains adapters and, for Clef, the head; it still needs the pinned backbone. These research checkpoints use this script's loader and are not accepted by the released `myjev score` CLI.
 

@@ -4,7 +4,7 @@ The scratch scorer combines a byte encoder, candidate attention and confidence h
 
 ## Purpose and boundaries
 
-Build a small, inspectable decision network from random initialization, then explain what pretrained Qwen adaptation adds. Both tracks accept context, instructions and request-supplied candidate descriptions, select a candidate and estimate its correctness. This is an original teaching model, not a reproduction of TypeSafe Jev's undisclosed architecture. Broad language competence and Jev-equivalent speed are not promised.
+Build a small, inspectable decision network from random initialization, then explain what pretrained Qwen adaptation adds. Both tracks accept context, instructions and request-supplied candidate descriptions, select a candidate and estimate its correctness. The architecture was designed for this teaching experiment. TypeSafe Jev’s undisclosed architecture cannot be reproduced from its announcement. Broad language competence and Jev-equivalent speed are not promised.
 
 Synthetic tasks teach mechanisms; BANKING77 tests limited natural-language learning. Shared-task results can favor one model, but unequal pretraining exposure prevents attributing differences solely to architecture. A decoder-family sweep and large-scale language pretraining are outside this study.
 

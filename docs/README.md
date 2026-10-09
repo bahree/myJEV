@@ -68,3 +68,5 @@ Start with the worked examples if confidence and calibration are unfamiliar. The
 ## Follow the project
 
 [Release history](../CHANGELOG.md) records versioned changes. The [blog](https://blog.desigeek.com) accompanies these guides; [scope and extensions](roadmap.md) explains the limits of the evidence and questions for further study.
+
+The [candidate-head walkthrough](candidate-head.md) builds a small original attention head on frozen Qwen. Its one-seed protocol is separate from the [matched alias/Clef comparison](unsloth.md).
