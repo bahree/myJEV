@@ -1,0 +1,9 @@
+{
+  "source": "results/decision-comparison-v1/summary.json",
+  "source_sha256": "58d5e96a931c49f750eab37d4f344d588c453cee5b3ebb64c44947802d600f4a",
+  "generator": "scripts/plot_decision_comparison.py",
+  "generator_sha256": "6189d912cf7e9d973d06995ebf4f7fbbf0b8e1df355e03b5d4ce88336c8f6c67",
+  "output": "results/decision-comparison-v1/answer-changes.png",
+  "output_sha256": "4d12d442528b57bc933775243224ec5c4e61acdc96b67a94a7c2ba33406fbaa9",
+  "scope": "Observed flips on 64 paired test cases. Columns are dependent. No population-invariance or matched-hardware claim."
+}

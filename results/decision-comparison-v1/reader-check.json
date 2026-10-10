@@ -1,0 +1,112 @@
+{
+  "artifact": "bahree/myJEV-4B",
+  "revision": "38f7cca5a8530483309f576b0c3dd1756bc27c33",
+  "device": "NVIDIA A30",
+  "scope": "Fresh process with populated shared model cache; direct CLI and seven-demo runner. No clean-install or empty-cache claim.",
+  "commands": [
+    "myjev score --artifact bahree/myJEV-4B --revision 38f7cca5a8530483309f576b0c3dd1756bc27c33 --input examples/request.json",
+    "python scripts/run_demos.py"
+  ],
+  "response": {
+    "selected_id": "billing",
+    "selection_scores": {
+      "billing": 0.9834240078926086,
+      "technical": 0.005727097392082214,
+      "other": 0.01084891613572836
+    },
+    "confidence": 0.9834240078926086,
+    "confidence_mode": "selection",
+    "artifact_revision": "3a7979eeff5cfb0bd2cee2fe2ea559c314ad9f5eef2de4ef4cb44759dbd73f02",
+    "calibration_revision": "f0d2ddcaf6650e1f44415d49b1cf8b303d4d6fef5f73bb6198ee91600560e8d1"
+  },
+  "demo_responses": [
+    {
+      "selected_id": "billing",
+      "selection_scores": {
+        "billing": 0.9834240078926086,
+        "technical": 0.005727097392082214,
+        "other": 0.01084891613572836
+      },
+      "confidence": 0.9834240078926086,
+      "confidence_mode": "selection",
+      "artifact_revision": "3a7979eeff5cfb0bd2cee2fe2ea559c314ad9f5eef2de4ef4cb44759dbd73f02",
+      "calibration_revision": "f0d2ddcaf6650e1f44415d49b1cf8b303d4d6fef5f73bb6198ee91600560e8d1"
+    },
+    {
+      "selected_id": "technical",
+      "selection_scores": {
+        "billing": 0.005531083792448044,
+        "technical": 0.9668803811073303,
+        "other": 0.02758847177028656
+      },
+      "confidence": 0.9668803811073303,
+      "confidence_mode": "selection",
+      "artifact_revision": "3a7979eeff5cfb0bd2cee2fe2ea559c314ad9f5eef2de4ef4cb44759dbd73f02",
+      "calibration_revision": "f0d2ddcaf6650e1f44415d49b1cf8b303d4d6fef5f73bb6198ee91600560e8d1"
+    },
+    {
+      "selected_id": "other",
+      "selection_scores": {
+        "billing": 0.011963386088609695,
+        "technical": 0.005189978983253241,
+        "other": 0.9828465580940247
+      },
+      "confidence": 0.9828465580940247,
+      "confidence_mode": "selection",
+      "artifact_revision": "3a7979eeff5cfb0bd2cee2fe2ea559c314ad9f5eef2de4ef4cb44759dbd73f02",
+      "calibration_revision": "f0d2ddcaf6650e1f44415d49b1cf8b303d4d6fef5f73bb6198ee91600560e8d1"
+    },
+    {
+      "selected_id": "approve",
+      "selection_scores": {
+        "approve": 0.9672390818595886,
+        "deny": 0.032760992646217346
+      },
+      "confidence": 0.9672390818595886,
+      "confidence_mode": "selection",
+      "artifact_revision": "3a7979eeff5cfb0bd2cee2fe2ea559c314ad9f5eef2de4ef4cb44759dbd73f02",
+      "calibration_revision": "f0d2ddcaf6650e1f44415d49b1cf8b303d4d6fef5f73bb6198ee91600560e8d1"
+    },
+    {
+      "selected_id": "deny",
+      "selection_scores": {
+        "approve": 0.01651313155889511,
+        "deny": 0.9834868907928467
+      },
+      "confidence": 0.9834868907928467,
+      "confidence_mode": "selection",
+      "artifact_revision": "3a7979eeff5cfb0bd2cee2fe2ea559c314ad9f5eef2de4ef4cb44759dbd73f02",
+      "calibration_revision": "f0d2ddcaf6650e1f44415d49b1cf8b303d4d6fef5f73bb6198ee91600560e8d1"
+    },
+    {
+      "selected_id": "billing",
+      "selection_scores": {
+        "billing": 0.9382840991020203,
+        "technical": 0.02014826238155365,
+        "other": 0.0415676049888134
+      },
+      "confidence": 0.9382840991020203,
+      "confidence_mode": "selection",
+      "artifact_revision": "3a7979eeff5cfb0bd2cee2fe2ea559c314ad9f5eef2de4ef4cb44759dbd73f02",
+      "calibration_revision": "f0d2ddcaf6650e1f44415d49b1cf8b303d4d6fef5f73bb6198ee91600560e8d1"
+    },
+    {
+      "selected_id": "tutorial",
+      "selection_scores": {
+        "tutorial": 0.9974727034568787,
+        "opinion": 0.0015720892697572708,
+        "announcement": 0.0009551699622534215
+      },
+      "confidence": 0.9974727034568787,
+      "confidence_mode": "selection",
+      "artifact_revision": "3a7979eeff5cfb0bd2cee2fe2ea559c314ad9f5eef2de4ef4cb44759dbd73f02",
+      "calibration_revision": "f0d2ddcaf6650e1f44415d49b1cf8b303d4d6fef5f73bb6198ee91600560e8d1"
+    }
+  ],
+  "first_demo_equals_cli": true,
+  "files_sha256": {
+    "examples/request.json": "652783e9dc99e54b3afcfd830a29a07e6546176f3ff2c8ea5083cf67a994b197",
+    "examples/demo-requests.jsonl": "4e03c4dd94feb6cf0ae69298bb16734eb8c63ebdb60c8d1c74e0197abcb1af76",
+    "scripts/run_demos.py": "288a2d7f94fe40cf5bd95f5825045ff6cd570fb19eaba93ffed9e73870cfe67a"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "identity": {
+    "backend": "openrouter",
+    "plan_sha256": "2be7a8238c85cc353890205b4ef637621aa0e2c8abfb7a3bce6b38b727c9950c",
+    "requests_sha256": "fc4d436ce4df9637747fa78fd2e7e19d09e41b7bba404e401b37b1d752fc788e",
+    "artifact": null,
+    "revision": null,
+    "model": "microsoft/microsoft-decision-1",
+    "endpoint": "https://openrouter.ai/api/alpha/decisions",
+    "max_requests": 1400,
+    "max_cost_usd": 2.0,
+    "input_usd_per_million_assumption": 0.042
+  },
+  "started_utc": "2026-10-10T04:10:15.314772+00:00",
+  "expected_calls": 1396,
+  "timing_scope": "Sequential calls, five explicit warmups. Local includes tokenization and result conversion; hosted also includes network and provider queue. No concurrent-load benchmark.",
+  "service_revision_scope": "Returned identifiers are recorded per call. A model name or service version may not identify fixed weights."
+}

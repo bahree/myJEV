@@ -2051,6 +2051,29 @@
           "bytes": 3810491
         }
       }
+    },
+    "decision": {
+      "archive": "myjev-decision-evidence-v3.tar.gz",
+      "url": "https://github.com/bahree/myJEV/releases/download/evidence-v3/myjev-decision-evidence-v3.tar.gz",
+      "release": "https://github.com/bahree/myJEV/releases/tag/evidence-v3",
+      "source_revision": "7904fbd705e6f30779eef142c36bfdce59bd2a29",
+      "source_semantics": "Public frozen protocol and inference/analysis code. Text-free responses are distributed outside Git; complete.json files identify their hashes.",
+      "sha256": "2b24c97c93286316ae3a7671d76933d969a62c6f1fb69b67524e2a1c9ad67d87",
+      "bytes": 4215523,
+      "files": {
+        "results/decision-comparison-v1/decision-1/records.jsonl": {
+          "sha256": "f0dbac9fa36aeb82afaab482b817e13c5e5655c3d0bb2d86fb3fb09140655ef5",
+          "bytes": 6753975
+        },
+        "results/decision-comparison-v1/myjev-4b/records.jsonl": {
+          "sha256": "7e43c8d20c655a14a6637346d88313a15f4498dde1f7cefaea2373d000783637",
+          "bytes": 6446869
+        },
+        "results/decision-comparison-v1/myjev-4b-rl/records.jsonl": {
+          "sha256": "f891e599c8de14bf5d9f964621ea2033a515d4dcfaa807fb3bb4d083c3f36ede",
+          "bytes": 6379286
+        }
+      }
     }
   }
 }

@@ -22,7 +22,7 @@
       "mode": "100644"
     },
     "README.md": {
-      "sha256": "2b4203dbb904ff2a7d20fc2e30cddbe0d02319d44adb2c3b23a7d6a5e4515861",
+      "sha256": "3a3b7d5e5c57821c90b5ffcbdea9557b853e5b90cc12d4250df35d78915db4c1",
       "mode": "100644"
     },
     "configs/0.8b.json": {
@@ -134,7 +134,7 @@
       "mode": "100644"
     },
     "docs/decision-1.md": {
-      "sha256": "697220990f1d3471876a42e52fa2f2403bef57bdef0f02d0f7b777753b415b02",
+      "sha256": "52a6ab170ee1c3ebbc1e7949d345a286ed43a26d7a59774f201fe506e665be88",
       "mode": "100644"
     },
     "docs/decision-lessons.md": {
@@ -294,7 +294,7 @@
       "mode": "100644"
     },
     "results/README.md": {
-      "sha256": "0ee3992ccbe552b61cb4d5a1e96e9cda5da13843e6ed673b0517ad8da3904fb5",
+      "sha256": "c282f6663768bcf5a4d94100085d76c2fc046cc2ffa9dac9d0bca6961208c5d2",
       "mode": "100644"
     },
     "results/archive-machine-v1/config.json": {
@@ -1005,8 +1005,68 @@
       "sha256": "487c214a078219bd4397861b8e8918af70f1840ddb6f9f0f4fd69dbc9870ee60",
       "mode": "100644"
     },
+    "results/decision-comparison-v1/answer-changes.png": {
+      "sha256": "4d12d442528b57bc933775243224ec5c4e61acdc96b67a94a7c2ba33406fbaa9",
+      "mode": "100644"
+    },
+    "results/decision-comparison-v1/decision-1/attempts.jsonl": {
+      "sha256": "2c1045a701d3ad46ca3a5ff7226820ac6b84d01b80883001b83edea39e9a58f3",
+      "mode": "100644"
+    },
+    "results/decision-comparison-v1/decision-1/complete.json": {
+      "sha256": "efd4b60501fb9bdc824175ce781aaa07cf9daab95065c925937f32ae2eddd80b",
+      "mode": "100644"
+    },
+    "results/decision-comparison-v1/decision-1/run.json": {
+      "sha256": "ac4aed948c64f4affe24befe705b5705b80db768cfff15f6557f696e05e5429a",
+      "mode": "100644"
+    },
+    "results/decision-comparison-v1/figure-sources.json": {
+      "sha256": "aa6c989cdea3c5eaa16654d53eb37adba84886533bceb95526ae78c69ebd291b",
+      "mode": "100644"
+    },
+    "results/decision-comparison-v1/myjev-4b-rl/attempts.jsonl": {
+      "sha256": "ef471e5aba56097747596d246c41cd00f2e9f8ba36961aec1b837cc9a9629125",
+      "mode": "100644"
+    },
+    "results/decision-comparison-v1/myjev-4b-rl/complete.json": {
+      "sha256": "93e839b76aa95235facd5d0ef69898b516fec18b5741136b5bd549a45c0147b9",
+      "mode": "100644"
+    },
+    "results/decision-comparison-v1/myjev-4b-rl/run.json": {
+      "sha256": "fb89ed9de92c224b1383a7de2f2ab440732b71f63702bc22d645ae42243fa8e4",
+      "mode": "100644"
+    },
+    "results/decision-comparison-v1/myjev-4b/attempts.jsonl": {
+      "sha256": "7c8bb3765fd80d645f49a34ee281b52c6694e96cfafce60c39fba80aa3b734bf",
+      "mode": "100644"
+    },
+    "results/decision-comparison-v1/myjev-4b/complete.json": {
+      "sha256": "6518505b3acd80ee9d9be1945d5c020abe24ae6611e2602451976af542544b65",
+      "mode": "100644"
+    },
+    "results/decision-comparison-v1/myjev-4b/run.json": {
+      "sha256": "47fd6a9754d2c493fccd80da0e1685269f586fcd3c598806fae4db3966d201ad",
+      "mode": "100644"
+    },
+    "results/decision-comparison-v1/reader-check.json": {
+      "sha256": "a38d431638c3791a6b09a2bb581a6ff7a91c7776494a5b619436ec6de8640b5b",
+      "mode": "100644"
+    },
+    "results/decision-comparison-v1/report.md": {
+      "sha256": "4b66eebc8325ebd550052603bc3b11a70effce53e14431f2f5fd3d14f961236c",
+      "mode": "100644"
+    },
     "results/decision-comparison-v1/source-review.json": {
-      "sha256": "81af9835aa3aa74ca1204bf0915fb7b2f10d95a0f345738c975f5b9cba50a8c2",
+      "sha256": "ea4672112de26a448fd1365eb29c5e27727536649053d75fd3bcada2873d0100",
+      "mode": "100644"
+    },
+    "results/decision-comparison-v1/summary.json": {
+      "sha256": "58d5e96a931c49f750eab37d4f344d588c453cee5b3ebb64c44947802d600f4a",
+      "mode": "100644"
+    },
+    "results/decision-comparison-v1/wandb.json": {
+      "sha256": "f456f6d187c24560497c892b5f18cfe7a02a73c8f1714c5901d2cc9a53982204",
       "mode": "100644"
     },
     "results/decision-lessons-v1/confidence-variance.png": {
@@ -1206,7 +1266,7 @@
       "mode": "100644"
     },
     "results/evidence-manifest.json": {
-      "sha256": "001d9981107d309fe11a4431c6ab97331c243ea981e0190dc55fbeffa3c07275",
+      "sha256": "47a69417beeac3e4324febc061f3331ddcb3e7d001dfc69ad4d2f65e8be9bcbe",
       "mode": "100644"
     },
     "results/extension-analysis-v1/report.md": {
@@ -6985,6 +7045,10 @@
       "sha256": "89632085ffb76fce06c7beef51b3c0ee4fa14d3e592852fa5f777219d39258a7",
       "mode": "100644"
     },
+    "scripts/plot_decision_comparison.py": {
+      "sha256": "6189d912cf7e9d973d06995ebf4f7fbbf0b8e1df355e03b5d4ce88336c8f6c67",
+      "mode": "100644"
+    },
     "scripts/plot_gpu_telemetry.py": {
       "sha256": "cce051e7332eccfb67d481841bf7feaa5449bd17361f2385b331a094036c330c",
       "mode": "100644"
@@ -7207,6 +7271,10 @@
     },
     "scripts/summarize_study.py": {
       "sha256": "7f18280024bfe7e48878b48c0337c6e0936801e76e70d7790924321b82a6c7e2",
+      "mode": "100644"
+    },
+    "scripts/sync_decision_evidence.py": {
+      "sha256": "c2e6845360564560eab6244edcfd564a921b2fec65067a10ec17d7370e050065",
       "mode": "100644"
     },
     "scripts/sync_head_evidence.py": {

@@ -46,6 +46,6 @@
       "scope": "Recipe reviewed; this study executes OpenRouter access."
     }
   ],
-  "protocol_private_commit": "180acaf",
-  "no_new_training": true
+  "no_new_training": true,
+  "protocol_public_commit": "7904fbd705e6f30779eef142c36bfdce59bd2a29"
 }
