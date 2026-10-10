@@ -144,3 +144,7 @@ Candidate-order change rates are per permutation, each compared with the origina
 ## Build an alternative answer head
 
 The [candidate-head guide](candidate-head.md) connects the scratch model’s attention calculation to frozen Qwen features. It explains the field masks and shared scorer, and provides head-only training and inference commands. The [Unsloth guide](unsloth.md) compares alias scoring with Clef’s larger joint schema head under a separate matched protocol.
+
+## Microsoft Decision-1 and the same backbone family
+
+Microsoft describes Decision-1 as Qwen3.5-9B post-trained for single-pass scoring. That shares our largest backbone, while its head architecture, loss and adapter configuration remain undisclosed in the reviewed material. Its 32,768-token text interface and broader task claims do not establish the behavior of our own checkpoints. The [comparison guide](decision-1.md) fixes requests and probability semantics before evaluating the hosted service. Sources: [announcement](https://commandline.microsoft.com/microsoft-decision-1-model-foundry/) and [model card](https://ai.azure.com/catalog/models/Microsoft-Decision-1).

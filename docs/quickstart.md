@@ -97,6 +97,8 @@ Use the same curl request above after `/readyz` succeeds. Stop with `docker stop
 
 For dashboard setup and a safe environment template, see [W&B tracking](tracking.md). For all inference interfaces, container startup and troubleshooting, see [inference and Docker](inference.md).
 
+The optional [Decision-1 comparison](decision-1.md) evaluates an external hosted model. It is independent of the local commands above and needs an OpenRouter account only when you choose to make its API calls.
+
 ## Train the 0.8B pilot
 
 To learn how the model is trained, run this optional small experiment. It prepares BANKING77 and trains a new local model; it does not modify a downloaded release.

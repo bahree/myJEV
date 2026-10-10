@@ -99,6 +99,8 @@ Start by scoring a request, then follow it through the network. From there you c
 
 The optional [Unsloth comparison](docs/unsloth.md) studies another way to read a decision from the same 0.8B backbone: a joint schema head that scores request-supplied questions and choices. Across three seeds, Clef reached 83.50% mean BANKING77 accuracy versus 81.34% for aliases, with longer prompts and higher measured runtime. Those answer-only runs are separate from the supervised/RL results below. The [original 216K head](docs/candidate-head.md) reached 58.02% in its one-seed experiment and exposed confident routing errors in the demos.
 
+The [Microsoft Decision-1 comparison](docs/decision-1.md) uses the same banking requests with local myJEV and a hosted model. It tests whether answer order, identifier spelling and formatting change decisions, and keeps service latency separate from local GPU timing. OpenRouter access is optional; running myJEV uses no hosted account.
+
 The [documentation index](docs/README.md) groups all guides by task, including model releases, troubleshooting, attribution and further experiments. The [engineering lessons](docs/learnings.md) explain decisions made along the way.
 
 ## Three sizes, one experimental interface

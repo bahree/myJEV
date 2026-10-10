@@ -43,6 +43,8 @@ Start with the worked examples if confidence and calibration are unfamiliar. The
 | [Experimental protocol](protocol.md) | Keep training, validation, calibration and test data separate |
 | [Generated comparison](../results/longer-v1/summary.md) | Inspect the numerical summary and its source files |
 
+The [Decision-1 comparison](decision-1.md) adds a hosted reference and tests option IDs, formatting and instruction wording alongside candidate order. Its cloud requests are optional; local model use needs no hosted account.
+
 ## Run and host
 
 | Guide | What it explains |

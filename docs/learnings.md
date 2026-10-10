@@ -50,3 +50,9 @@ The alias/Clef study used equal tuning, example exposure and calibration across 
 Clef had worse raw correctness Brier on two seeds, then lower Brier on all three after both arms received the same calibration-only temperature fit. The [full comparison](unsloth.md) shows the per-seed values and a case where temperature slightly worsened test Brier.
 
 The [original candidate-attention head](candidate-head.md) trained 216,193 parameters while leaving Qwen frozen. It passed the tiny-set fit and artifact checks, then reached 58.02% on BANKING77. The duplicate-charge demo selected `other` with 0.9993 confidence. A small trainable head can learn part of a labelled task while failing a new candidate scheme, and its inference still requires the backbone.
+
+## A hosted model needs an observation record
+
+Microsoft Decision-1 shares the Qwen3.5 backbone family with myJEV, but its reviewed announcement does not disclose the head or training objective. An API model name also need not identify fixed weights. The [comparison runner](decision-1.md) records returned model/provider identifiers, observation times and response hashes alongside the option probabilities. It retains vendor confidence separately because the field need not estimate the same event as our correctness head.
+
+The runner reserves the listed full-context input price before every paid attempt and writes that attempt before sending it. Failures stop execution without automatic retries. Provider token and cost fields supply observed usage; absent fields remain unknown. The returned scores can be reanalyzed on CPU without calling the service again.

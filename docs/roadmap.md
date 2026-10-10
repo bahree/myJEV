@@ -12,6 +12,8 @@ The archive adaptation study measures agreement with machine-generated labels. I
 
 The matched alias/Clef extension holds tuning, example exposure and calibration opportunities equal across three seeds. Clef gained 2.15 accuracy points on average, with higher training and scoring cost in the measured eager runtime. Different prompts prevent attributing the difference to the head alone. The original frozen-backbone candidate head is a separate one-seed teaching experiment; it reached 58.02% on BANKING77 and failed three of seven authored demos. See [the comparison](unsloth.md) and [the head walkthrough](candidate-head.md).
 
+The [Microsoft Decision-1 diagnostic](decision-1.md) compares one hosted service with the released 4B supervised and RL models on 64 fixed BANKING requests under six views. It tests input sensitivity and equal post-hoc calibration opportunities. Its sample, unknown vendor training exposure and different serving hardware limit comparisons with the larger study.
+
 ## Using the released implementation
 
 Six adapter/head packages have immutable Hub revisions. Python, CLI, HTTP and GPU Docker share the reference inference implementation. [Models](models.md), [inference](inference.md), and [hosting](hosting.md) document installation, actual response checks and measured resource use. Publishing weights does not provide a hosted endpoint. The managed-container recipe is unexecuted.

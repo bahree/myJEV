@@ -1,0 +1,51 @@
+{
+  "review_date": "2026-10-09",
+  "sources": [
+    {
+      "url": "https://commandline.microsoft.com/microsoft-decision-1-model-foundry/",
+      "claims": [
+        "post-trained Qwen3.5-9B",
+        "single-pass decisions",
+        "publisher evaluation includes input perturbations"
+      ],
+      "scope": "Publisher claims; not locally reproduced benchmark."
+    },
+    {
+      "url": "https://ai.azure.com/catalog/models/Microsoft-Decision-1",
+      "claims": [
+        "text-only",
+        "32768-token context",
+        "public and synthetic training data"
+      ],
+      "not_disclosed_in_reviewed_material": [
+        "head implementation",
+        "loss",
+        "LoRA configuration",
+        "immutable downloadable weights"
+      ]
+    },
+    {
+      "url": "https://openrouter.ai/blog/insights/what-is-jev/",
+      "claims": [
+        "POST /api/alpha/decisions with state and typed questions"
+      ]
+    },
+    {
+      "url": "https://openrouter.ai/microsoft/microsoft-decision-1",
+      "claims": [
+        "0.042 USD per million input tokens",
+        "free output",
+        "weights may change while API remains stable"
+      ]
+    },
+    {
+      "url": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-microsoft-decision-1-in-microsoft-foundry-for-decision-and-classific/4562742",
+      "claims": [
+        "Foundry deployment route /providers/microsoft/v1/systemone"
+      ],
+      "scope": "Recipe reviewed; this study executes OpenRouter access."
+    }
+  ],
+  "protocol_private_commit": "180acaf",
+  "no_new_training": true
+}

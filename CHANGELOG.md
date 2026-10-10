@@ -1,5 +1,9 @@
 # Release history
 
+## Microsoft Decision-1 comparison
+
+Added a frozen local/OpenRouter evaluation with paired candidate-order, identifier, whitespace and instruction perturbations. The runner records service identity and usage, requires an explicit live-call budget and supports CPU replay from saved probabilities. The six myJEV releases and Docker runtime are unchanged. See the [comparison guide](docs/decision-1.md).
+
 ## Decision-head experiments and walkthroughs
 
 Completed the three-seed 0.8B alias/Clef comparison with equal tuning, training exposure and calibration opportunities. Clef gained 2.15 accuracy points on average, with longer prompts and higher measured runtime. Saved order probes, warm timings and the one-pass multi-question example retain their measured limits.

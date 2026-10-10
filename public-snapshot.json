@@ -10,7 +10,7 @@
       "mode": "100644"
     },
     "CHANGELOG.md": {
-      "sha256": "8ceb438c43b728452c8f1b863113320818f62eeb2e78b93b4977a2391a77b60a",
+      "sha256": "68fb471a9feffe6116a7b17d3640edbb423a0ae393a60f3fee27922a0350f927",
       "mode": "100644"
     },
     "Dockerfile": {
@@ -22,7 +22,7 @@
       "mode": "100644"
     },
     "README.md": {
-      "sha256": "d1ce0c8f235120ca40119c6a28888c4798164d128f798d7e24297b53b5e955f2",
+      "sha256": "2b4203dbb904ff2a7d20fc2e30cddbe0d02319d44adb2c3b23a7d6a5e4515861",
       "mode": "100644"
     },
     "configs/0.8b.json": {
@@ -47,6 +47,10 @@
     },
     "configs/confidence-policy-followup-proposed.json": {
       "sha256": "0a269b111a7786d5becebb1a0eccadbc7db1345db0fba4fa0bfdea76e5499872",
+      "mode": "100644"
+    },
+    "configs/decision-comparison-v1.json": {
+      "sha256": "2be7a8238c85cc353890205b4ef637621aa0e2c8abfb7a3bce6b38b727c9950c",
       "mode": "100644"
     },
     "configs/head-comparison-v1.json": {
@@ -94,11 +98,11 @@
       "mode": "100644"
     },
     "docs/README.md": {
-      "sha256": "15fd03ee44be9dc595622636540a0a8d0d461232ae2a3fe023ce022c520b2da3",
+      "sha256": "994920c4088ec54369eb0b51d760c63e013b0bc8f5de880019ce2fff1b45b022",
       "mode": "100644"
     },
     "docs/architecture.md": {
-      "sha256": "0adc903a3cf7bdbfc48496fed2b7e49f70976a11cfd25cb185fe5e6ca6c70238",
+      "sha256": "e69e49d8e6d55411a31aec2756afbbadf120541366c5c68c497426f09579520c",
       "mode": "100644"
     },
     "docs/attribution.md": {
@@ -129,6 +133,10 @@
       "sha256": "92ef08c587df9f07145ee0964cc11e984aa3097b4f30d501b4760a38ef2eeca6",
       "mode": "100644"
     },
+    "docs/decision-1.md": {
+      "sha256": "697220990f1d3471876a42e52fa2f2403bef57bdef0f02d0f7b777753b415b02",
+      "mode": "100644"
+    },
     "docs/decision-lessons.md": {
       "sha256": "b1cf8fecd44866860b6fb79928c300687e997fe093d895fab083bc73046f7a2c",
       "mode": "100644"
@@ -146,7 +154,7 @@
       "mode": "100644"
     },
     "docs/learnings.md": {
-      "sha256": "60b616887c5be46cf13ab7a0fb62a9e05a483159ee0957e387603206fff3deb1",
+      "sha256": "b859389ecb0e9ee31bd2c3a7fc07dbe2f612dff954cdcdd824b7ddc90fdd26d9",
       "mode": "100644"
     },
     "docs/models.md": {
@@ -162,7 +170,7 @@
       "mode": "100644"
     },
     "docs/quickstart.md": {
-      "sha256": "e94f791f5c2e84eb04d25dc8c90ab4963e853de0afede5ea2944b4e5d93efbe9",
+      "sha256": "de3493bcef144df8f3f9cba683c8fcd2e8d8bcf3c4a24e516662fe7697793c33",
       "mode": "100644"
     },
     "docs/qwen-findings.md": {
@@ -170,7 +178,7 @@
       "mode": "100644"
     },
     "docs/roadmap.md": {
-      "sha256": "c5c19d40ba6e0ae2829f2d0d40608821c7b0c840d308a19a701c9f16edba2ee4",
+      "sha256": "96dccdd2be01f2dcc7763b19cf1453b0f06edf6aeb5c84230884eb6c89f84482",
       "mode": "100644"
     },
     "docs/scratch-plan.md": {
@@ -207,6 +215,10 @@
     },
     "examples/client.py": {
       "sha256": "7c1c257fd7d8656dbd181d9a239b44c91707ff9732e13474fec815ba456056c7",
+      "mode": "100644"
+    },
+    "examples/decision-comparison.env.example": {
+      "sha256": "ec78fdaa162d8c82d4993c1478a9a9a70e28ce6298373bfc632f547c8e98274c",
       "mode": "100644"
     },
     "examples/demo-expectations.json": {
@@ -991,6 +1003,10 @@
     },
     "results/data-preparation.json": {
       "sha256": "487c214a078219bd4397861b8e8918af70f1840ddb6f9f0f4fd69dbc9870ee60",
+      "mode": "100644"
+    },
+    "results/decision-comparison-v1/source-review.json": {
+      "sha256": "81af9835aa3aa74ca1204bf0915fb7b2f10d95a0f345738c975f5b9cba50a8c2",
       "mode": "100644"
     },
     "results/decision-lessons-v1/confidence-variance.png": {
@@ -7005,6 +7021,10 @@
       "sha256": "e84bdc8453a5c3e89a56ad5d4ece3791ac682e9728f6bcd5cf2c83697782cb63",
       "mode": "100644"
     },
+    "scripts/prepare_decision_comparison.py": {
+      "sha256": "e92ed19248cbe569c99068c8c77a982193b94427b576fb6c8f69af2ebf3f9a98",
+      "mode": "100644"
+    },
     "scripts/prepare_hub_release.py": {
       "sha256": "a8b307b87c70098f9e8716e00b60bf0b7560aab734b6c93b19d73d8ae35502ae",
       "mode": "100644"
@@ -7063,6 +7083,10 @@
     },
     "scripts/run_comparison.py": {
       "sha256": "8f9343f6296766846f384df69d999e376a4457e28e51ffc6fc0f8baff7473b47",
+      "mode": "100644"
+    },
+    "scripts/run_decision_comparison.py": {
+      "sha256": "26e8b5ac754a8bf8f3b1de659f92d888ee51705a540fd697a99a95ede3999bbb",
       "mode": "100644"
     },
     "scripts/run_demos.py": {
@@ -7131,6 +7155,10 @@
     },
     "scripts/summarize_candidate_head.py": {
       "sha256": "ae3a107f46c506b570a1bcdff839d25fdbb9f45034bb5e8b714e804cc9e00dfc",
+      "mode": "100644"
+    },
+    "scripts/summarize_decision_comparison.py": {
+      "sha256": "2a32a44fefc17e4306771d3b4cfcee68fbd35b92cc88583f1c34f75f5336e168",
       "mode": "100644"
     },
     "scripts/summarize_demos.py": {
@@ -7281,6 +7309,10 @@
       "sha256": "8e31a46a06578e66d7aff9aa302931b0558279e3afd6c4f726858e604ba79d66",
       "mode": "100644"
     },
+    "src/myjev/decision_comparison.py": {
+      "sha256": "eab18866ad042161c4828f8b32ce8097024dbd40bf8a2f0945e2629b948835de",
+      "mode": "100644"
+    },
     "src/myjev/evaluate.py": {
       "sha256": "124822cc936eae36bac5761e42532d3658152dee5f4ff509e0fb6cb3d353ac6c",
       "mode": "100644"
@@ -7363,6 +7395,10 @@
     },
     "tests/test_contract.py": {
       "sha256": "ca26674d4b93f1353393ad49351f94d634c6ded39b489a21f4f171bf7ef0d80a",
+      "mode": "100644"
+    },
+    "tests/test_decision_comparison.py": {
+      "sha256": "5bb39244a1db24c02753485babe38d26e109db0efaf040e8d98879f7a31bff8c",
       "mode": "100644"
     },
     "tests/test_encoder_control.py": {
