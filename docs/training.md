@@ -10,7 +10,7 @@ BANKING77 already supplies the correct banking intent for each training request,
 
 Continued supervision checks the benefit of extra training. Exact RL changes the objective; sampled RL estimates that same objective from fewer actions. Temperature calibration tests an adjustment after training. Together, these controls let us ask which part of the procedure changed the result, rather than treating RL as an automatic upgrade.
 
-A pretrained model can already score candidate tokens in one forward pass. Fine-tuning is not required to create that inference interface, and it is not what removes autoregressive decoding. Our untouched-backbone control measures how well the same prompt and readout work before adaptation.
+A pretrained model can already score candidate tokens in one forward pass. Our inference code uses those scores directly to avoid autoregressive decoding. Fine-tuning adapts the parameters to the decision task. Our untouched-backbone control measures how well the same prompt and readout work before adaptation.
 
 Training tests whether examples improve discrimination among closely related BANKING77 intents with request-supplied descriptions and aliases. It also trains the newly initialized confidence heads to estimate selected-answer correctness. Those heads require a training signal before their outputs can be interpreted. Randomizing candidate order discourages learning a permanent answer-to-alias mapping, but does not guarantee generalization or order invariance.
 

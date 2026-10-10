@@ -88,7 +88,7 @@ Sampling noise could contribute to that gap, but the study does not isolate it f
 
 - Continued SFT at 0.8B reaches 82.93% accuracy. The short pilot and longer study changed exposure, tuning, continuation handling and evaluation size, so their difference is not a clean causal estimate of training duration alone.
 - The best observed mean accuracy, 90.27%, belongs to 4B exact RL. That result makes 4B exact RL a candidate for further evaluation before a production choice. We did not perform a paired cross-size superiority test here, and precision complicates the 9B comparison.
-- TF-IDF/logistic regression reached 88.28% on the same official test split using the full training partition. Exposure and tuning differ, so it is not a matched neural training control, but this inexpensive fixed-taxonomy baseline remains operationally relevant.
+- TF-IDF/logistic regression reached 88.28% on the same official test split using the full training partition. The inexpensive fixed-taxonomy baseline remains operationally relevant, although different exposure and tuning prevent a matched comparison with the neural training methods.
 - The approximately one-epoch initial-plus-continuation budget supports a matched study; it does not prove convergence. Endpoint evaluations cannot reconstruct a validation learning curve or a principled early-stop decision.
 - LoRA adapters require their backbone to execute inference. Final comparisons must include the pinned backbone, heads, precision, input lengths and HTTP overhead. Final-checkpoint measurements cover six packaged candidates; they still do not establish Jev-equivalent performance.
 
