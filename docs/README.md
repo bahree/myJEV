@@ -45,6 +45,8 @@ Start with the worked examples if confidence and calibration are unfamiliar. The
 
 The [Decision-1 comparison](decision-1.md) adds a hosted reference and tests option IDs, formatting and instruction wording alongside candidate order. Its cloud requests are optional; local model use needs no hosted account.
 
+The [Decision 3.0 comparison](decision3.md) examines another downloadable Qwen-based model on the same A30 hardware, including its answer-code projection and different definition of confidence.
+
 ## Run and host
 
 | Guide | What it explains |

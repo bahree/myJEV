@@ -10,7 +10,7 @@ Each ID selects a learned vector, an array of numbers. The **encoder** combines 
 
 ## Trace one decision through the network
 
-The implemented fixture configuration has two encoder blocks, width 64, four attention heads and a feed-forward width of 256. With candidate interaction enabled it has **201,175 parameters**, smaller than the original 5-20M exploratory design target. This size let us inspect failures in padding masks, training and performance on new examples with less computation. A learned subword tokenizer and a larger encoder remain optional extensions.
+The fixture configuration uses two encoder blocks, width 64, four attention heads and a feed-forward width of 256. I chose these small dimensions to make the color-rule training quick enough to inspect padding, candidate-order and learning failures. Four heads divide the 64 features into groups of 16. The A30 memory limit did not require this size, and no model-size search established it as optimal. A learned subword tokenizer and a larger encoder remain optional extensions.
 
 A **tensor** is an array with several axes. Here B counts requests in a batch, K counts candidates, L is the context length and D is the candidate-description length. The final 64 in a shape is the number of learned features per token or candidate. For one request with three candidates, `1 x 3 x 64` stores three vectors of 64 numbers. More generally, `B x K x 64` stores one such vector for each candidate in each request.
 
@@ -33,6 +33,39 @@ One decision calls the same text encoder twice: once for the context and once fo
 Token positions inside a description matter; positions in the candidate list do not receive embeddings. Caller-supplied IDs remain outside the network. The score head operates on each contextualized candidate, so permuting candidates should permute the outputs. Tests check that behavior in evaluation mode, including confidence heads and mixed-length batches.
 
 The fixture limits are 256 UTF-8 bytes for instructions plus newline plus context, 64 bytes per candidate description, and 32 candidates. Our small model counts bytes. The Qwen interface uses its tokenizer to count tokens. Oversized input is rejected. Training and quality evidence initially use four candidates; accepting 32 does not establish useful accuracy at that size.
+
+## Where the parameter count comes from
+
+**201,175 is the counted result of the configuration**, including candidate interaction and both confidence outputs. The earlier 5-20 million estimate was a proposed larger design. The implemented count breaks down as follows:
+
+| Component | Parameters |
+|---|---:|
+| Byte embedding: 258 IDs x 64 features | 16,512 |
+| Position embedding: 257 positions x 64 features | 16,448 |
+| Two shared encoder blocks | 99,968 |
+| Attention from candidates to context | 16,640 |
+| Candidate interaction block | 49,984 |
+| Final layer normalization | 128 |
+| Selection output | 65 |
+| Scalar correctness output | 65 |
+| 21-bin confidence output | 1,365 |
+| **Total** | **201,175** |
+
+There are 256 byte values and two special IDs, padding and the start marker. The 257 positions allow a 256-byte context plus the start marker. Reusing the encoder for every candidate increases computation while leaving its parameter count unchanged. These figures count allocated weights and biases, including the padding-embedding row.
+
+Run this in the installed Python environment; no GPU or model download is needed:
+
+```bash
+python - <<'PY'
+from myjev.scratch.model import ScratchConfig, ScratchNetwork
+model = ScratchNetwork(ScratchConfig())
+for name, module in model.named_children():
+    print(name, sum(p.numel() for p in module.parameters()))
+print("total", sum(p.numel() for p in model.parameters()))
+PY
+```
+
+The [recorded count](../results/scratch-parameter-count-v1.json) includes the configuration and module totals. Increasing the context limit changes the position table: the separate banking configuration has 217,559 parameters. Its failed language experiment cannot establish whether a larger, differently trained model would work.
 
 ## Start with selection, then confidence
 

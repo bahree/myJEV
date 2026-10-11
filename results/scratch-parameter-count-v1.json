@@ -1,0 +1,25 @@
+{
+  "config": {
+    "width": 64,
+    "layers": 2,
+    "heads": 4,
+    "ff_multiplier": 4,
+    "max_context_bytes": 256,
+    "max_candidate_bytes": 64,
+    "max_candidates": 32,
+    "candidate_interaction": true
+  },
+  "parts": {
+    "token": 16512,
+    "position": 16448,
+    "encoder": 99968,
+    "cross": 16640,
+    "interaction": 49984,
+    "norm": 128,
+    "selection": 65,
+    "scalar": 65,
+    "policy": 1365
+  },
+  "total": 201175,
+  "scope": "Instantiated architecture count; no training or pretrained weights."
+}

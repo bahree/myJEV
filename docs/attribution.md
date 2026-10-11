@@ -52,3 +52,7 @@ Cloudflare's [training description](https://blog.cloudflare.com/clef-decision-mo
 ## Optional Unsloth comparison
 
 [Unsloth’s decision-model guide](https://unsloth.ai/docs/basics/train-your-own-decision-model-with-unsloth) motivated the [matched 0.8B readout experiment](unsloth.md). The wrapper imports the pinned conversion and Clef head; it does not copy their implementation into this MIT repository. The pinned Unsloth decision modules carry AGPL-3.0-only notices and attribute the vendored Cloudflare reference to Apache-2.0. The experiment uses BANKING-only training, answer cross-entropy and matched temperature fitting, rather than reproducing the tutorial’s broader training mixture or claiming its benchmark results.
+
+## Decision 3.0 comparison
+
+The [vLLM Semantic Router team](https://huggingface.co/collections/vllm-sr/decision-30) publishes Decision 3.0 under Apache 2.0. The local comparison imports its pinned runtime from the downloaded package; no upstream implementation or weights are copied into this repository. The D3 runtime credits Perplexity AI for its noncausal attention-mask hook and server design. Our [comparison guide](decision3.md) records the 0.8B/4B model pins, the separate answer-code projection and entropy-based confidence definition. These external released systems have unmatched training exposure; their local evaluation does not extend the earlier myJEV training-method experiment.
