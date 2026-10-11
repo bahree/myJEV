@@ -1,0 +1,28 @@
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]
+Fetching 10 files: 100%|██████████| 10/10 [00:00<00:00, 891.91it/s]
+ERROR:    Traceback (most recent call last):
+  File "/runtime/starlette/routing.py", line 654, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "/usr/local/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/runtime/myjev/server.py", line 62, in lifespan
+    app.state.model = await loop.run_in_executor(app.state.executor, load)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/runtime/myjev/server.py", line 59, in <lambda>
+    load = loader or (lambda: DecisionModel.load(os.environ["MYJEV_ARTIFACT"],
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/runtime/myjev/inference.py", line 98, in load
+    device = resolve_device(device, m["precision"])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/runtime/myjev/inference.py", line 63, in resolve_device
+    raise ValueError("CPU inference is not supported for the released NF4 9B models. Use a BF16 0.8B or 4B release, or expose an NVIDIA GPU.")
+ValueError: CPU inference is not supported for the released NF4 9B models. Use a BF16 0.8B or 4B release, or expose an NVIDIA GPU.
+
+ERROR:    Application startup failed. Exiting.

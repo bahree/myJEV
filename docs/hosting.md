@@ -16,10 +16,10 @@ On the A30 host, two fixed requests exactly at the aggregate byte cap took 0.121
 
 ## Docker
 
-The published image is `amitbahree/myjev@sha256:55c78ef13329ab35712e27c9815eff94c17ba1f5fc145bd58eb705d0f16e1f6d` (tag `amitbahree/myjev:0.1.3`) on [Docker Hub](https://hub.docker.com/r/amitbahree/myjev). It serves the same released models without a host Python installation. Linux `amd64` and a 24 GB NVIDIA A30 are the validated platform and GPU class. The host needs a compatible driver and NVIDIA Container Toolkit.
+The published image is `amitbahree/myjev@sha256:abcc30c2ee218950b00086e3bc06d4909ad1d4a5834a8478410f39e6da2a1ba3` (tag `amitbahree/myjev:0.1.3`) on [Docker Hub](https://hub.docker.com/r/amitbahree/myjev). It serves the same released models without a host Python installation. Linux `amd64` and a 24 GB NVIDIA A30 are the validated platform and GPU class. The host needs a compatible driver and NVIDIA Container Toolkit.
 
 ```bash
-export MYJEV_IMAGE=amitbahree/myjev@sha256:55c78ef13329ab35712e27c9815eff94c17ba1f5fc145bd58eb705d0f16e1f6d
+export MYJEV_IMAGE=amitbahree/myjev@sha256:abcc30c2ee218950b00086e3bc06d4909ad1d4a5834a8478410f39e6da2a1ba3
 docker pull "$MYJEV_IMAGE"
 mkdir -p .cache/huggingface
 docker run --rm --name myjev --gpus device=0 \
@@ -73,7 +73,7 @@ Related work: Avi Chawla, [Build your own Jev (100% local)](https://blog.dailydo
 **Recipe only; no paid endpoint was created.** [Official custom-container documentation](https://huggingface.co/docs/inference-endpoints/en/engines/custom_container) permits custom inference logic and mounts the selected model repository at `/repository`. [Configuration guidance](https://huggingface.co/docs/inference-endpoints/guides/configuration) describes the container port and health-route settings. Hosting adapter weights on the Hub is not an active endpoint.
 
 1. Prepare an artifact-only Hub repository with adapter files, `heads.safetensors`, `manifest.json`, model card and provenance. The six public `bahree/myJEV-*` releases provide this layout. Pin the selected commit. Verify a clean download produces identical outputs. No optimizer state or training text belongs in this release.
-2. Use the tested public image `amitbahree/myjev@sha256:55c78ef13329ab35712e27c9815eff94c17ba1f5fc145bd58eb705d0f16e1f6d`, or publish and verify your own build. Configure a custom container with that image, port 8000, health route `/health` (readiness alias), and environment `MYJEV_ARTIFACT=/repository`, `MYJEV_DEVICE=cuda:0`, `MYJEV_QUEUE_SIZE=8`, `MYJEV_TIMEOUT=30`. Use `/generate` for the managed request handler; locally, `/score` exposes the same scoring contract.
+2. Use the tested public image `amitbahree/myjev@sha256:abcc30c2ee218950b00086e3bc06d4909ad1d4a5834a8478410f39e6da2a1ba3`, or publish and verify your own build. Configure a custom container with that image, port 8000, health route `/health` (readiness alias), and environment `MYJEV_ARTIFACT=/repository`, `MYJEV_DEVICE=cuda:0`, `MYJEV_QUEUE_SIZE=8`, `MYJEV_TIMEOUT=30`. Use `/generate` for the managed request handler; locally, `/score` exposes the same scoring contract.
 3. The manifest currently refers to the separately pinned backbone on the Hub. The container must be allowed to download that backbone into its cache during cold start, with access credentials if the backbone requires them. An adapter-only repository is not fully self-contained. For offline deployment, prewarm the same revision in the image/cache and test with `HF_HUB_OFFLINE=1`; do not assume the endpoint automatically bundles referenced backbones.
 4. Choose GPU RAM from **measured serving peaks** plus headroom at the tested maximum prompt length. Training peaks are not an endpoint sizing benchmark. Test QLoRA/NF4 compatibility on the endpoint GPU family. Do not infer 9B requirements from 0.8B. Start with one replica, one worker and authenticated access; avoid autoscaling until cold-start, timeout and concurrency behavior is measured.
 5. Smoke test with an authenticated request (supply URL and token in your own environment):
@@ -137,7 +137,7 @@ For a new release to your own empty repository, review a package locally (the pu
 
 This command checks local files only. Add `--apply` to create/upload the selected repository using your configured Hugging Face credentials. The helper refuses altered packages, symlinks, nonempty destinations and visibility mismatches. It downloads the immutable uploaded commit and checks every file hash. Then load that pinned commit using `DecisionModel.load("YOUR_NAMESPACE/myjev-4b", revision="COMMIT")` and compare with the local response. The six `bahree` releases have separate upload receipts; a dry-run report alone is not an upload record.
 
-The local `myjev:0.1.1-hub` image is published as `amitbahree/myjev:0.1.1`. Its immutable registry reference is `amitbahree/myjev@sha256:1c69cbac450ad7e938e2b4379cb65099942bce9b7ebe2f9aa6229733ef5f16ab`. The registry digest identifies the manifest index that clients pull. On this Docker 29 host it equals the local inspect ID; the platform manifest and image configuration have separate hashes. A local ID alone does not establish that an image is available from a registry. Publication, an anonymous digest pull and GPU response equivalence are recorded in the [publication receipt](../results/container-registry-v1/publication.json). That is the historical 0.1.1 reference; the recipe above uses 0.1.3. The cloud recipe remains unexecuted and requires no paid deployment to reproduce local results.
+The local `myjev:0.1.1-hub` image is published as `amitbahree/myjev:0.1.1`. Its immutable registry reference is `amitbahree/myjev@sha256:1c69cbac450ad7e938e2b4379cb65099942bce9b7ebe2f9aa6229733ef5f16ab`. The registry digest identifies the manifest index that clients pull. On this Docker 29 host it equals the local inspect ID; the platform manifest and image configuration have separate hashes. A local ID alone does not establish that an image is available from a registry. Publication, an anonymous digest pull and GPU response equivalence are recorded in the [publication receipt](../results/container-registry-v1/publication.json). That is the historical 0.1.1 reference; the recipe above uses 0.1.4. The cloud recipe remains unexecuted and requires no paid deployment to reproduce local results.
 
 The recommended 4B temperature package additionally passed exact 4,096-token requests with 2 and 160 candidates, and rejected 4,097 tokens. Peak allocated VRAM was 9,538,996,736 bytes (8.88 GiB) in both synthetic cases, recorded in `results/release-readiness-v1/default-limits.json`. Other GPUs were active, so those elapsed times are not new isolated latency measurements. Continue using the tested 24 GB GPU class until total-process memory and startup headroom are measured on a smaller target.
 
@@ -164,7 +164,7 @@ A separate fresh host virtual environment also installed `requirements.lock` and
 
 The server loaded a pinned public 4B release through the Hub SDK with a read-only populated cache. `/score` and `/generate` exactly matched the host response, and `/health` passed. Cached readiness took about 17.43 seconds in this observation; this is not a cold-download or isolated-host benchmark. See [build provenance](../results/release-container-v2/provenance.json), [HTTP verification](../results/release-container-v2/hub-http.json), and `scripts/verify_hub_container.py`. The latest card-only revisions and receipts are listed in [models](models.md); runtime files are unchanged.
 
-This historical image was published as `amitbahree/myjev:0.1.1` and is superseded by 0.1.3. Its anonymous digest pull and GPU equality check remain in the [0.1.1 publication receipt](../results/container-registry-v1/publication.json). That check used the card revision recorded in that receipt; runtime files were unchanged. No managed cloud endpoint was launched.
+This historical image was published as `amitbahree/myjev:0.1.1` and is superseded by 0.1.4. Its anonymous digest pull and GPU equality check remain in the [0.1.1 publication receipt](../results/container-registry-v1/publication.json). That check used the card revision recorded in that receipt; runtime files were unchanged. No managed cloud endpoint was launched.
 
 ## Public-source rebuild and empty-model-cache follow-up
 
@@ -189,3 +189,9 @@ A follow-up maximal-byte fixture made only of digits took 0.426-0.433 seconds to
 ### Cache conditions in the validation receipts
 
 The populated-cache GPU checks mounted the model cache read-only with `HF_HUB_OFFLINE=1`. Reader startup examples allow writes and downloads so missing pinned files can be fetched. Enable offline mode only after those files are present. Queue-size and timeout environment variables are optional overrides; the examples without them use the server defaults. The historical 0.1.2 empty-model-cache run is a separate measurement.
+
+## GPU and CPU images
+
+The [Docker platform guide](docker.md) gives complete Windows PowerShell, Linux and macOS commands. Version 0.1.4 selects visible CUDA or warns before CPU fallback for BF16 0.8B/4B. The NF4 9B releases require CUDA. The CPU image has x86-64 and ARM64 builds, defaults to one CPU thread and a 120-second request timeout, and retains the 15-minute startup grace. The GPU image defaults to one CPU thread and 30 seconds per request. Both run as root.
+
+The GPU build applies the public source over the pinned 0.1.3 dependency image; the CPU build uses `Dockerfile.cpu` and `requirements.cpu.lock`. The [publication receipt](../results/container-registry-v4/publication.json) identifies both. CPU smoke checks and ARM64 emulation do not constitute native Windows or Mac validation or a CPU calibration study. The 0.1.2 empty-cache observation above remains historical.

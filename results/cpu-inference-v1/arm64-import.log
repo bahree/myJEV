@@ -1,0 +1,4 @@
+/__w/pytorch/pytorch/third_party/ideep/mkl-dnn/third_party/xbyak_aarch64/src/util_impl_linux.h, 444: Can't open MIDR_EL1 sysfs entry
+aarch64 2.14.1+cpu
+tensor([[2., 2.],
+        [2., 2.]], dtype=torch.bfloat16)

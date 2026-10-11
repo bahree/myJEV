@@ -1,5 +1,5 @@
 {
-  "source_commit": "9cb0e764dc0bb1836b784c9b321a766a8e29874c",
+  "source_commit": "a242d9cf4194a591f922e04abfc6075ee82c38cc",
   "source_publication_manifest": "results/release-readiness-v1/publication-manifest-public-v2.json",
   "models": [
     {
@@ -434,5 +434,10 @@
         }
       ]
     }
-  ]
+  ],
+  "deployment": {
+    "gpu_image": "amitbahree/myjev@sha256:abcc30c2ee218950b00086e3bc06d4909ad1d4a5834a8478410f39e6da2a1ba3",
+    "cpu_image": "amitbahree/myjev@sha256:cdee2c8ec6d6c953b1b18a9b0506ad79b589e5a60127d3a5df11dc8e7316cc07",
+    "guide": "https://github.com/bahree/myJEV/blob/main/docs/docker.md"
+  }
 }

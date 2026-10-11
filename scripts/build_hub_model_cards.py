@@ -21,6 +21,45 @@ INTRO = {
 }
 
 
+def docker_section(row, facts):
+    deployment = facts['deployment']
+    gpu = deployment['gpu_image']
+    cpu = deployment['cpu_image']
+    cpu_note = ('The 9B NF4 release requires CUDA. CPU fallback rejects this configuration with a clear startup error; it does not change the model or precision.' if row['size'] == '9b' else
+        f'For CPU use, replace the image with `{cpu}` and omit `--gpus all`. That CPU image includes x86-64 and ARM64 packages. ARM64 passed import/arithmetic checks under emulation, but full-model warmup exceeded 15 minutes; native Mac and Windows execution remain unverified. Start with the 0.8B model for a CPU trial; 4B needs more RAM and time. CPU scores can differ from the recorded GPU scores, and the GPU calibration study has not been repeated on CPU.')
+    return f'''## Run with Docker
+
+The [published container](https://hub.docker.com/r/amitbahree/myjev) supplies Python and the model-loading code. It downloads this release and the pinned Qwen backbone from Hugging Face when they are absent from the mounted cache. Subsequent starts reuse those files. Running it locally requires no hosted Hugging Face endpoint.
+
+This Bash example uses NVIDIA GPU access on Linux or Windows WSL 2. The [Docker guide](https://github.com/bahree/myJEV/blob/main/docs/docker.md) includes Windows PowerShell commands, macOS CPU instructions, memory notes and the tested platform limits.
+
+```bash
+docker run --rm --name myjev --gpus all \\
+  -p 127.0.0.1:8000:8000 \\
+  -v myjev-hf-cache:/cache/huggingface \\
+  -e MYJEV_ARTIFACT={row['repo_id']} \\
+  -e MYJEV_REVISION={row['runtime_revision']} \\
+  {gpu}
+```
+
+Once the log says `Application startup complete`, open another terminal:
+
+```bash
+docker cp myjev:/app/examples/request.json ./request.json
+curl -fsS http://127.0.0.1:8000/readyz
+curl -fsS http://127.0.0.1:8000/score \\
+  -H 'Content-Type: application/json' --data-binary @request.json
+```
+
+Use `curl.exe` in Windows PowerShell. Stop the service with `docker stop myjev`; the named volume retains the downloads.
+
+{cpu_note}
+
+Device selection defaults to `auto`: use visible CUDA, otherwise CPU for supported releases, with a warning in the logs. An explicit `MYJEV_DEVICE=cuda:0` requires CUDA. Docker itself rejects `--gpus` on an unsupported host before the application starts, so CPU commands omit that flag. The research container runs as root; host authentication and remote HTTPS setup are covered in the [hosting guide](https://github.com/bahree/myJEV/blob/main/docs/hosting.md).
+
+'''
+
+
 def render(row, facts):
     name=row['public_name'];rl=row['method']=='exact';single=row['metrics'][0]
     tagline,choice=INTRO[name]
@@ -39,22 +78,26 @@ def render(row, facts):
         confidence='''**Reported confidence** is the selected option’s probability after temperature scaling on reserved BANKING77 calibration data. In this standard release it is derived from the selection scores, rather than the separate RL confidence policy. Calibration on banking intents does not establish calibration for arbitrary new tasks or candidate descriptions.'''
     precision='NF4 four-bit QLoRA' if row['size']=='9b' else 'BF16 LoRA'
     request=json.dumps({'context':'I was charged twice.','instructions':'Select the appropriate support route.','candidates':[{'id':'billing','description':'Charges, invoices, and refunds'},{'id':'technical','description':'Errors and configuration'},{'id':'other','description':'Neither listed route applies'}]},indent=4)
-    return header+f'''
+    body = header+f'''
 # {name}
 
 {tagline}
 
-Give it a request and descriptions of the allowed choices. It returns the chosen ID, a score for each choice and an estimate of correctness, without generating an answer paragraph. The main training task is banking support routing. Possible workflows include choosing a support queue, selecting the next workflow branch and handing uncertain cases to a reviewer after setting a threshold on your own calibration data.
+Give it a request and descriptions of the allowed choices. For “I was charged twice,” supply `billing`, `technical` and `other` with descriptions of those routes. The model returns a chosen ID, scores for the choices and confidence in its answer, without generating a reply. Banking support routing was its training task; trying new instructions and choices needs evaluation on those requests.
 
 By [Amit Bahree](https://huggingface.co/bahree). [Source and study](https://github.com/bahree/myJEV) | [Training findings](https://github.com/bahree/myJEV/blob/main/docs/qwen-findings.md) | [Inference and hosting](https://github.com/bahree/myJEV/blob/main/docs/inference.md)
+
+Start with [Python](#run-it) or the [Docker container](#run-with-docker). The [seven examples](https://github.com/bahree/myJEV/blob/main/results/demos-v1/report.md#what-each-request-asks) explain support routing, a refund cutoff, a misleading quoted instruction and post-format classification, with recorded outputs and mistakes. They are authored demonstrations, separate from the held-out evaluations below.
 
 ## Why choose this version?
 
 {choice}
 
-**If your labels are fixed, compare a smaller classifier too.** A separate one-seed ModernBERT-base control reached 90.78% BANKING77 accuracy and 0.0555 correctness Brier after temperature calibration. It saw 23,997 training examples over three epochs, versus 8,000 example presentations in these myJEV runs, so this is a practical control with a different budget, not a matched architecture comparison. Its output head fixes the 77 labels; myJEV accepts candidate descriptions with each request. That flexibility does not establish accuracy on an unfamiliar taxonomy. See [the decision guide](https://github.com/bahree/myJEV/blob/main/docs/decision-lessons.md) and [encoder control](https://github.com/bahree/myJEV/blob/main/results/encoder-control-v1/report.md).
+For fixed labels, a smaller classifier is also worth comparing. A separate one-seed ModernBERT-base control reached 90.78% BANKING77 accuracy and 0.0555 correctness Brier after temperature calibration. It saw 23,997 training examples over three epochs, versus 8,000 example presentations in these myJEV runs. The different budgets prevent a matched architecture comparison. Its output head fixes the 77 labels; myJEV accepts candidate descriptions with each request. That flexibility does not establish accuracy on an unfamiliar taxonomy. See [the decision guide](https://github.com/bahree/myJEV/blob/main/docs/decision-lessons.md) and [encoder control](https://github.com/bahree/myJEV/blob/main/results/encoder-control-v1/report.md).
 
-This is a **{row['backbone']} backbone plus a small adapter, confidence heads and calibration settings**. The download here contains the learned additions; the loader also downloads the separately pinned backbone. A small adapter file does not eliminate the backbone’s memory or compute cost. Serving reads the input once and performs no autoregressive generation.
+{name} uses **{row['backbone']}**, the pretrained network that reads the text. This repository supplies the small learned updates (LoRA adapters), output layers for confidence and calibration settings. The myJEV loader downloads the matching backbone as well. Serving needs the full network's memory and computation even though it returns scores in one pass.
+
+Each size has a supervised release and an `-RL` release so we can compare two ways of continuing the same supervised starting model. Supervised training learns from labelled answers. Reinforcement learning (RL) rewards correct decisions and appropriate confidence. Both use the BANKING77 labels and receive the same additional training examples. The [training guide](https://github.com/bahree/myJEV/blob/main/docs/training.md) explains those controls; [Reinforcement Learning - An Introduction](https://blog.desigeek.com/post/2021/07/reinforcement-learning-an-introduction/) introduces the reward approach.
 
 ## Results you can compare
 
@@ -91,14 +134,14 @@ from myjev import DecisionModel
 model = DecisionModel.load(
     "{row['repo_id']}",
     revision="{row['runtime_revision']}",
-    device="cuda:0",
+    device="auto",
 )
 request = {request}
 result = model.score(request)
 print(result["selected_id"], result["confidence"])
 ```
 
-The recorded pinned-runtime check selected `billing` with confidence approximately `{row['response']['confidence']:.4f}` on that exact fixture. It demonstrates a working call, not a guarantee on a new support taxonomy. The immutable revision above contains the tested runtime files; subsequent card-only edits leave those files unchanged.
+The recorded GPU check selected `billing` with confidence approximately `{row['response']['confidence']:.4f}` on this fixture. That demonstrates the call on one request. The immutable revision above contains the tested model files; later edits to this card leave those files unchanged. The default device setting selects CUDA when available. CPU behavior and the 9B restriction are described below.
 
 The same request is checked into the source repository as `examples/request.json`:
 
@@ -116,7 +159,9 @@ curl -fsS http://127.0.0.1:8000/score \\
   -H 'Content-Type: application/json' --data-binary @examples/request.json
 ```
 
-Python, CLI and HTTP return the same response fields. Keep your artifact revision pinned in deployment configuration. Publishing this package does not start a hosted endpoint. The source repository includes tested local Docker instructions and a separate, unexecuted managed-hosting recipe.
+Python, CLI and HTTP return the same response fields. Keep your artifact revision pinned in deployment configuration. These commands run locally; the separate [managed-hosting recipe](https://github.com/bahree/myJEV/blob/main/docs/hosting.md#hugging-face-inference-endpoints-recipe) has not been deployed or tested in the cloud.
+
+{docker_section(row, facts)}
 
 ## What the scores mean
 
@@ -138,7 +183,9 @@ The card tables still describe this released artifact and its unchanged confiden
 
 The matched runs use one example per optimizer update, so the initial and continuation stages each present 4,000 training examples. Training uses the grouped training portion of BANKING77, with separate validation and calibration partitions and the official test split preserved. Candidate order is randomized. The backbone remains frozen while low-rank adapter updates and custom heads learn the task. That reduces training storage; it does not turn the large pretrained backbone into a tiny inference model.
 
-BANKING77 supplies 77 closely related banking intents. It is one task family, not a generalist instruction mixture. CLINC150 was kept outside training and tuning for transfer and unsupported-request evaluation. These released weights have no archive adaptation. The separate blog-archive and scratch-model experiments are documented in the project rather than folded into these results.
+[BANKING77](https://github.com/bahree/myJEV/blob/main/docs/datasets/banking77.md), published by PolyAI, pairs customer banking messages with 77 intent labels. We chose it because closely related requests make routing errors possible to inspect while keeping the expected label defined. It covers one task family. [CLINC150](https://github.com/bahree/myJEV/blob/main/docs/datasets/clinc150.md), introduced by Larson and colleagues, adds 150 intents across ten domains and unsupported requests. We kept it outside training and tuning to test transfer.
+
+These weights have no blog-archive adaptation. The archive study, model built from random weights and new decision-head experiments have their own data and results. The [project walkthrough](https://github.com/bahree/myJEV/blob/main/docs/walkthrough.md) connects those experiments without treating them as properties of this release.
 
 ## The model family
 
@@ -148,7 +195,7 @@ Quality columns are three-seed BANKING77 means. Runtime columns are measured on 
 |---|---:|---:|---:|---:|
 {family}
 
-The standard releases use continued supervised training and temperature scaling. `-RL` releases use exact confidence-aware reward training. The 9B models also change backbone precision to four-bit NF4, so differences cannot be attributed solely to parameter count. The study includes a separate 4B precision control.
+The 9B models also change backbone precision to four-bit NF4, so differences cannot be attributed solely to parameter count. The study includes a separate 4B precision control.
 
 ## Tested scope and limits
 
@@ -169,6 +216,12 @@ The package includes `adapter/`, `heads.safetensors`, `manifest.json`, `LICENSE`
 
 [Source repository](https://github.com/bahree/myJEV) | [Dataset rationale](https://github.com/bahree/myJEV/blob/main/docs/datasets/banking77.md) | [All releases and deployment notes](https://github.com/bahree/myJEV/blob/main/docs/models.md)
 '''
+    # Put the runnable example ahead of the detailed evidence tables.
+    start = body.index('## Results you can compare\n')
+    end = body.index('## Run it\n', start)
+    results = body[start:end]
+    body = body[:start] + body[end:]
+    return body.replace('## What the matched calibration follow-up changed\n', results + '## What the matched calibration follow-up changed\n')
 
 
 def main():

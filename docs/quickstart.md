@@ -1,8 +1,10 @@
 # Quick start
 
+For Windows PowerShell, Linux or macOS without a local Python install, use the [Docker guide](docker.md). It covers NVIDIA access, a smaller CPU trial and automatic device selection.
+
 This guide takes you from installation to one decision, then to a batch and a local HTTP service. It uses the published [myJEV-4B](https://huggingface.co/bahree/myJEV-4B), so you can follow it without training. If you want to build a model yourself, the optional pilot instructions follow the serving examples.
 
-The tested setup is Linux, Python 3.12 and an NVIDIA A30 with 24 GB of GPU memory. The model's GPU runtime also needs a host C compiler; on Debian/Ubuntu, install `gcc` and `libc6-dev` if absent. The [Docker path](#docker) supplies the Python environment and compiler, but still needs the host NVIDIA driver and Container Toolkit. For reading outputs without a GPU or installation, open the [saved demo walkthrough](../results/demos-v1/report.md).
+The tested setup is Linux, Python 3.12 and an NVIDIA A30 with 24 GB of GPU memory. The model's GPU runtime also needs a host C compiler; on Debian/Ubuntu, install `gcc` and `libc6-dev` if absent. The [Docker path](docker.md) supplies the Python environment and compiler. NVIDIA execution needs the host driver and Container Toolkit; the CPU image needs neither. Start with 0.8B for CPU use. For reading outputs without a GPU or installation, open the [saved demo walkthrough](../results/demos-v1/report.md).
 
 ## Install and test
 
@@ -82,7 +84,7 @@ The server runs in the first terminal until you stop it. `/readyz` succeeds afte
 The public [Docker Hub image](https://hub.docker.com/r/amitbahree/myjev) serves the default model without local training or a Python installation. The host needs Docker, an NVIDIA driver and NVIDIA Container Toolkit; the validated GPU class is an A30 with 24 GB VRAM.
 
 ```bash
-export MYJEV_IMAGE=amitbahree/myjev@sha256:55c78ef13329ab35712e27c9815eff94c17ba1f5fc145bd58eb705d0f16e1f6d
+export MYJEV_IMAGE=amitbahree/myjev@sha256:abcc30c2ee218950b00086e3bc06d4909ad1d4a5834a8478410f39e6da2a1ba3
 docker pull "$MYJEV_IMAGE"
 mkdir -p .cache/huggingface
 docker run --rm --name myjev --gpus device=0 \

@@ -51,6 +51,7 @@ The [Decision-1 comparison](decision-1.md) adds a hosted reference and tests opt
 |---|---|
 | [Model releases](models.md) | Choose among the six downloadable Qwen releases and identify their exact versions |
 | [Inference](inference.md) | Load once, score requests, run a batch, and troubleshoot the local GPU path |
+| [Docker on Windows, macOS and Linux](docker.md) | Download a model and run it with GPU access or CPU fallback |
 | [Hosting](hosting.md) | Docker, queues, startup, benchmark conditions and the unexecuted managed-endpoint recipe |
 
 ## Related work and further experiments

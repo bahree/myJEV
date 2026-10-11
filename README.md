@@ -8,7 +8,7 @@ The inspiration is [Jev from TypeSafe AI](https://typesafe.ai/blog/introducing-s
 
 The project has two starting points: a small network trained from random weights and adaptations of pretrained Qwen language models. The experiments compare what they learn, how well confidence identifies mistakes, and what each model costs to serve. You can download the trained Qwen versions, inspect the saved outputs or rerun the code. TypeSafe’s underlying architecture remains undisclosed.
 
-**Try it:** start with the downloadable [myJEV-4B](https://huggingface.co/bahree/myJEV-4B) and the commands below. Training is optional. A compatible NVIDIA GPU is required for the tested Qwen setup. If you prefer Docker, use the [container instructions](docs/quickstart.md#docker). Without a GPU, you can read the [recorded demos](results/demos-v1/report.md) or run the [CPU calibration lab](docs/decision-lessons.md#run-a-small-calibration-lab-on-cpu).
+**Try it:** start with [myJEV-4B on Hugging Face](https://huggingface.co/bahree/myJEV-4B) for the NVIDIA examples below, or the smaller 0.8B release for a slower CPU trial. The [Docker guide](docs/docker.md) has Windows PowerShell, Linux and macOS commands. Its container downloads the selected model and backbone from Hugging Face without a hosted endpoint or local Python installation. You can also inspect the [recorded demos](results/demos-v1/report.md) or run the [CPU calibration lab](docs/decision-lessons.md#run-a-small-calibration-lab-on-cpu).
 
 [Quick start](#quick-start) · [Learning route](#choose-a-learning-route) · [Documentation](docs/README.md) · [Measured results](#what-the-completed-comparison-found)
 

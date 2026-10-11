@@ -1,0 +1,127 @@
+{
+  "verified_utc": "2026-10-11T01:56:48.576525+00:00",
+  "command": [
+    "docker",
+    "run",
+    "-d",
+    "--name",
+    "myjev-device-check-1791683789666451877",
+    "-p",
+    "127.0.0.1:18093:8000",
+    "-v",
+    "/home/amit/jev-pvt/.cache/huggingface:/hf:ro",
+    "-e",
+    "HF_HOME=/hf",
+    "-e",
+    "HF_HUB_OFFLINE=1",
+    "-e",
+    "MYJEV_ARTIFACT=bahree/myJEV-9B-RL",
+    "-e",
+    "MYJEV_REVISION=d22fdbb4b33e76037178459d523010e9b045a40c",
+    "-e",
+    "MYJEV_DEVICE=auto",
+    "-e",
+    "OMP_NUM_THREADS=1",
+    "-e",
+    "MKL_NUM_THREADS=1",
+    "-e",
+    "MYJEV_TIMEOUT=600",
+    "--gpus",
+    "device=0",
+    "myjev:0.1.4"
+  ],
+  "image_inspect": "sha256:abcc30c2ee218950b00086e3bc06d4909ad1d4a5834a8478410f39e6da2a1ba3",
+  "environment": {
+    "machine": "x86_64",
+    "torch": "2.14.1+cu130",
+    "cuda_available": true,
+    "threads": 1
+  },
+  "readiness_seconds": 15.876359733985737,
+  "responses": [
+    {
+      "request": {
+        "context": "I was charged twice.",
+        "instructions": "Select the appropriate support route.",
+        "candidates": [
+          {
+            "id": "billing",
+            "description": "Charges, invoices, and refunds"
+          },
+          {
+            "id": "technical",
+            "description": "Errors and configuration"
+          },
+          {
+            "id": "other",
+            "description": "Neither listed route applies"
+          }
+        ]
+      },
+      "response": {
+        "selected_id": "billing",
+        "selection_scores": {
+          "billing": 0.9999984502792358,
+          "technical": 3.242466917185993e-08,
+          "other": 1.5625734022250981e-06
+        },
+        "confidence": 0.8766478896141052,
+        "confidence_mode": "policy",
+        "artifact_revision": "93499e5c987b1c4bc5278c3fa28df87dc15a56e1f92452d21db4ff143ef4fe0c",
+        "calibration_revision": "uncalibrated"
+      },
+      "seconds": 0.12573181104380637
+    }
+  ],
+  "managed_alias_equal": true,
+  "cli_equal": null,
+  "expected_response_equal": true,
+  "nonfinite_statuses": {
+    "/score:NaN": 422,
+    "/score:Infinity": 422,
+    "/score:-Infinity": 422,
+    "/generate:NaN": 422,
+    "/generate:Infinity": 422,
+    "/generate:-Infinity": 422
+  },
+  "oversize_status": 413,
+  "container_stats_after_requests": {
+    "BlockIO": "12MB / 1.48MB",
+    "CPUPerc": "0.17%",
+    "Container": "myjev-device-check-1791683789666451877",
+    "ID": "1a01b920a8e1",
+    "MemPerc": "2.27%",
+    "MemUsage": "1.422GiB / 62.8GiB",
+    "Name": "myjev-device-check-1791683789666451877",
+    "NetIO": "1.06MB / 6.88kB",
+    "PIDs": "15"
+  },
+  "emulated": false,
+  "source_hashes": {
+    "src/myjev/train.py": "d59d588b30af9cf01af3aa3cedfd7150446da2fca8c15171207b3665f328ab17",
+    "src/myjev/data.py": "8e31a46a06578e66d7aff9aa302931b0558279e3afd6c4f726858e604ba79d66",
+    "src/myjev/evaluate.py": "124822cc936eae36bac5761e42532d3658152dee5f4ff509e0fb6cb3d353ac6c",
+    "src/myjev/objectives.py": "eb8a70e07546a6f9c5d67303e502b4c199c3774d7a76246f2059d16527759b80",
+    "src/myjev/cli.py": "af9c713785581a470141ef60cdf4f4a951412aadb32b0575408cfdb944009ca6",
+    "src/myjev/head_comparison.py": "99502a022c049528f9c6e0f18de7d4c92744d676e92b52fc45638b709056ee15",
+    "src/myjev/metrics.py": "f81e4bb20629544c2545ebdfce88b025f92b7f4243c9f9652c79c28017343d43",
+    "src/myjev/candidate_head.py": "dcc8198aae1edb83193cb2ab70cf440c73f18bbf627fbbbee28cd585540baa1d",
+    "src/myjev/validation.py": "53ca767a7adcaf39247a33f08164ae51182601ffc96a0a28bd23f2f3c9a6d4a8",
+    "src/myjev/calibration.py": "6959d6d88adcb67efe942a2b7554cc9c6b8cf3aa2de7162fb93c9e6eb396a290",
+    "src/myjev/judging.py": "b633e23bf4ecfd471e7d45b6d736ea3800e287d5d3bd652be0cd7355364867af",
+    "src/myjev/inference.py": "db91c2e237f14bd78cbb99bafdb2ad8175792242dc0484fd1e4dd1e190bf712d",
+    "src/myjev/model.py": "e668b74b1760a620ef5db5b01e1bc1b5b5daa4056b638caa6d7064a9b3e314a6",
+    "src/myjev/artifacts.py": "643054347ba05ca6c2461ee045b7b4f0745d8ae01a276f06097f0da770a1e404",
+    "src/myjev/decision_comparison.py": "eab18866ad042161c4828f8b32ce8097024dbd40bf8a2f0945e2629b948835de",
+    "src/myjev/schema.py": "a84d5592087609156e67dd6719e3a2ce671f1e4f0f01c63f150e46ca1fedd563",
+    "src/myjev/prompt.py": "71e4c8ffb0289c5b13e8a5a67276488e4524ea8e105ed35757e7273a70a54e67",
+    "src/myjev/server.py": "b3b9ee20f60f97c3d83b52a8aba7a9f0a763987300875594f690310d3cd285f8",
+    "src/myjev/tracking.py": "4900b0e7c472c09938d36768a8d2459d3ee1320d9b1009c4e81536c48e17117d",
+    "src/myjev/__init__.py": "1d35928e874e1ab0a0e91c8e80535c614294cf6ffdacba9539ee119ad0dea1ab",
+    "src/myjev/scratch/data.py": "8db23629fe4952cca4a9df1a2b9af0f9dec4c92c240e59da6ba81ea0dbabc3fa",
+    "src/myjev/scratch/model.py": "d58cddc9b1aa520ec5b6afaf72fcbb55ee764818bba9e6b67a79137ebb9b1665",
+    "src/myjev/scratch/__init__.py": "d9077948d94f9bdee8610a42642b7fece33a38a70c6f0bb55c15140422b843de"
+  },
+  "scope": "Short request smoke checks with cached weights and the recorded thread count; no full accuracy/calibration evaluation or maximum-input memory claim. Timings include concurrent host activity and are not isolated performance benchmarks.",
+  "passed": true
+}

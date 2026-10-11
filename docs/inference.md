@@ -1,5 +1,7 @@
 # Run inference locally and in Docker
 
+For Windows PowerShell, Linux or macOS without a local Python install, use the [Docker guide](docker.md). It covers NVIDIA access, a smaller CPU trial and automatic device selection.
+
 Start with [myJEV-4B on Hugging Face](https://huggingface.co/bahree/myJEV-4B) to score a request without training a model. This guide shows the same call through Python, the command line, HTTP and the published [Docker image](https://hub.docker.com/r/amitbahree/myjev). Use the [quick start](quickstart.md#install-and-test) to install the Python environment, or go straight to the Docker section below.
 
 There are six trained releases: 0.8B, 4B and 9B, each with a supervised and an RL variant. The sizes refer to the approximate billions of parameters in the Qwen backbone. The loader downloads that backbone as well as the smaller adapter and confidence-head files from Hugging Face. All six releases passed output-equivalence checks across Python, CLI, HTTP and the GPU container. The default is the supervised 4B release with temperature calibration; the [findings](qwen-findings.md) explain that choice.
@@ -37,6 +39,8 @@ request = json.loads(Path("examples/request.json").read_text())
 print(model.score(request))
 ```
 
+Device selection defaults to `auto`: visible CUDA is used first, otherwise the BF16 0.8B/4B releases run on CPU with a warning. Explicit `device="cuda:0"` remains strict, and the NF4 9B releases reject CPU execution. CPU results can differ from the published GPU results; see [CPU validation](../results/cpu-inference-v1/report.md).
+
 The first load downloads the release files and the separately pinned backbone/tokenizer. These repositories are not self-contained merged models and require the custom loader. Local artifact directories remain supported.
 
 CLI with the same public release:
@@ -71,7 +75,7 @@ Readiness requires model loading and warmup. Health is available at `/healthz`. 
 Use the published Linux `amd64` image on a host with a compatible NVIDIA driver and NVIDIA Container Toolkit. A 24 GB A30 is the tested GPU class. No local Python installation or training run is required.
 
 ```bash
-export MYJEV_IMAGE=amitbahree/myjev@sha256:55c78ef13329ab35712e27c9815eff94c17ba1f5fc145bd58eb705d0f16e1f6d
+export MYJEV_IMAGE=amitbahree/myjev@sha256:abcc30c2ee218950b00086e3bc06d4909ad1d4a5834a8478410f39e6da2a1ba3
 docker pull "$MYJEV_IMAGE"
 mkdir -p .cache/huggingface
 docker run --rm --name myjev --gpus device=0 \
@@ -84,7 +88,7 @@ docker run --rm --name myjev --gpus device=0 \
 
 Once `/readyz` succeeds, send the HTTP request shown above. Stop from another terminal with `docker stop myjev`. First startup downloads the artifact and its separately pinned backbone; the image itself contains no weights. Keep the cache volume for subsequent starts. The image occupies about 10.5 GB as reported by Docker on this host (compressed registry layers total 3.48 GB), plus the separately downloaded models. Our published-image check reused cached image layers and model files; it is not a fresh-machine download-time measurement.
 
-The [publication receipt](../results/container-registry-v3/publication.json) records the immutable digest, anonymous pull and exact GPU HTTP/host response match. The shorter tag `amitbahree/myjev:0.1.3` refers to this release; use the digest for reproducibility. [Docker Hub overview](../deploy/README.container.md) supplies a self-contained request example and runtime details.
+The [publication receipt](../results/container-registry-v4/publication.json) records the immutable images, public source and GPU/CPU checks. The shorter tag `amitbahree/myjev:0.1.4` refers to this release; use the digest for reproducibility. [Docker Hub overview](../deploy/README.container.md) supplies a self-contained request example and runtime details.
 
 To build from the checked-out source instead, run `docker build -t myjev:local .`. For a locally trained artifact, the Compose path remains:
 

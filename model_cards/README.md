@@ -8,18 +8,18 @@ In a public checkout these files live under `model_cards/`; in the author worksp
 python scripts/build_hub_model_cards.py
 # Use fresh paths for the next edition. Without --apply, no upload occurs.
 python scripts/publish_hub_model_cards.py \
-  --manifest results/model-card-refresh-v2/publication-manifest.json \
+  --manifest results/model-card-refresh-v5/publication-manifest.json \
   --packages artifacts/hub-reader-next \
   --output results/model-card-refresh-next/publication-manifest.json
 # Review the six cards and prepared package, then publish the same snapshot.
 python scripts/publish_hub_model_cards.py \
-  --manifest results/model-card-refresh-v2/publication-manifest.json \
+  --manifest results/model-card-refresh-v5/publication-manifest.json \
   --packages artifacts/hub-reader-next \
   --output results/model-card-refresh-next/publication-manifest.json --apply
 ```
 
 The upload commands are maintainer operations. They require the original package directories listed by the publication manifest, which are not in Git. Readers can regenerate the cards without uploading; to reproduce inference, download the pinned Hub release using the public loader instead.
 
-Each edition needs a fresh `--packages` path and `--output` manifest. The published reader edition uses `artifacts/hub-reader-v4` and [the v4 publication manifest](../results/model-card-refresh-v4/publication-manifest.json). Edition 4 qualifies the 4B seed results, explains the learned-confidence contrast driven by seed 33, and links the order and threshold evidence. Edition 3 introduced the matched calibration comparison, explicit adapter metadata and a tested public loader revision. Editions 1 through 3 remain historical receipts. Old packages, cards and receipts remain intact. The publisher changes only `README.md`; all weight, head, calibration, license and manifest hashes must match the prior release.
+Each edition needs a fresh `--packages` path and `--output` manifest. The published reader edition uses `artifacts/hub-reader-v5` and [the v5 publication manifest](../results/model-card-refresh-v5/publication-manifest.json). Edition 5 puts runnable examples before the detailed results, adds GPU/CPU Docker commands and platform links, explains backbone downloads and why both supervised and RL variants are available, and expands the dataset rationale. Runtime files are unchanged. Edition 4 qualifies the 4B seed results, explains the learned-confidence contrast driven by seed 33, and links the order and threshold evidence. Edition 3 introduced the matched calibration comparison, explicit adapter metadata and a tested public loader revision. Editions 1 through 4 remain historical receipts. Old packages, cards and receipts remain intact. The publisher changes only `README.md`; all weight, head, calibration, license and manifest hashes must match the prior release.
 
-The code samples pin a verified earlier immutable artifact revision with identical runtime files. A card cannot embed its own not-yet-known Git commit hash, so a later card-only commit does not replace the examples' runtime pin. The source code pin includes support for both Hugging Face cache layouts.
+The code samples pin a verified earlier immutable artifact revision with identical runtime files. A card cannot embed its own not-yet-known Git commit hash, so a later card-only commit does not replace the examples' runtime pin. The source code pin supports both Hugging Face cache layouts and automatic CUDA/CPU selection.
