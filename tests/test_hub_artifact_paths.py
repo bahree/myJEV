@@ -25,7 +25,7 @@ def make_snapshot(tmp_path, monkeypatch):
     (snapshot / 'adapter/README.md').symlink_to(blob)
     manifest = {'schema_version': 1, 'prompt_version': inference.PROMPT_VERSION,
                 'backbone_revision': 'b' * 40, 'tokenizer_revision': 'b' * 40,
-                'backbone': 'owner/backbone',
+                'backbone': 'owner/backbone', 'precision': 'bf16',
                 'checksums': {'adapter/README.md': hashlib.sha256(payload).hexdigest()}}
     manifest_blob = blobs / 'manifest-content'
     manifest_blob.write_text(json.dumps(manifest))

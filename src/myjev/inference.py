@@ -1,5 +1,6 @@
 import hashlib
 import json
+import logging
 import re
 from pathlib import Path
 import torch
@@ -45,6 +46,26 @@ def _artifact_file(directory, filename, *, hub_revision=None):
     raise ValueError(f"unsafe artifact path: {filename}")
 
 
+LOGGER = logging.getLogger(__name__)
+
+
+def resolve_device(device, precision=None):
+    """Choose a device before loading weights; explicit CUDA requests stay strict."""
+    automatic = device == "auto"
+    if automatic:
+        device = "cuda:0" if torch.cuda.is_available() else "cpu"
+    target = torch.device(device)
+    if target.type not in {"cpu", "cuda"}:
+        raise ValueError("myJEV supports cpu, cuda:N or auto; other devices are unverified")
+    if target.type == "cuda" and not torch.cuda.is_available():
+        raise RuntimeError("CUDA was requested but is unavailable. Check GPU access, or use device='auto' for CPU fallback.")
+    if target.type == "cpu" and precision == "nf4":
+        raise ValueError("CPU inference is not supported for the released NF4 9B models. Use a BF16 0.8B or 4B release, or expose an NVIDIA GPU.")
+    if automatic and target.type == "cpu":
+        LOGGER.warning("No CUDA GPU is available to this process. Falling back to CPU inference, which uses system RAM and can be much slower. The selected model is unchanged.")
+    return str(target)
+
+
 class DecisionModel:
     def __init__(self, network, tokenizer, manifest):
         self.network = network.eval()
@@ -52,7 +73,7 @@ class DecisionModel:
         self.manifest = manifest
 
     @classmethod
-    def load(cls, artifact, revision=None, device="cuda:0", adapter_trainable=False):
+    def load(cls, artifact, revision=None, device="auto", adapter_trainable=False):
         path = Path(artifact)
         hub_revision = None
         if not path.is_dir():
@@ -65,7 +86,7 @@ class DecisionModel:
             if adapter_trainable:
                 raise ValueError("scratch artifacts do not contain LoRA adapters")
             from .scratch.model import ScratchDecisionModel
-            return ScratchDecisionModel.load(path, device=device)
+            return ScratchDecisionModel.load(path, device=resolve_device(device))
         if m["schema_version"] != 1 or m["prompt_version"] != PROMPT_VERSION:
             raise ValueError("unsupported manifest/prompt version")
         if not re.fullmatch(r"[0-9a-f]{40}", m["backbone_revision"]):
@@ -74,6 +95,7 @@ class DecisionModel:
             p = _artifact_file(path, filename, hub_revision=hub_revision)
             if hashlib.sha256(p.read_bytes()).hexdigest() != digest:
                 raise ValueError(f"artifact checksum mismatch: {filename}")
+        device = resolve_device(device, m["precision"])
         tokenizer = AutoTokenizer.from_pretrained(m["backbone"], revision=m["tokenizer_revision"])
         if len(set(m["alias_ids"])) != len(m["aliases"]):
             raise ValueError("alias IDs must be distinct")

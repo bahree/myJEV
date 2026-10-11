@@ -1,7 +1,11 @@
 *
 !Dockerfile
+!Dockerfile.cpu
 !requirements.lock
+!requirements.cpu.lock
 !pyproject.toml
 !src
 !src/**
 !LICENSE
+!examples
+!examples/request.json

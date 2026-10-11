@@ -2,7 +2,7 @@
   "schema_version": 1,
   "files": {
     ".dockerignore": {
-      "sha256": "ecc32f1a5939e03d166283c5395e54116c4a0158f47a472321d0f062994c9cbc",
+      "sha256": "de18295a0c45587e086f0ef54dd21d3b28e5c287fe82fe00ed39c0bf7fbd5eb8",
       "mode": "100644"
     },
     ".gitignore": {
@@ -14,7 +14,11 @@
       "mode": "100644"
     },
     "Dockerfile": {
-      "sha256": "80be4d4588077421ff6ef3b29c8769599553c2351fb8c418483c11bf42322d10",
+      "sha256": "41fa9dd00e10982bb7b090f2661fe890f9fdf3612723198c03196b5e408c98f5",
+      "mode": "100644"
+    },
+    "Dockerfile.cpu": {
+      "sha256": "32a4def895bdeaeec7bcd53587828999e2532bae11f58f80cd76c565dfafa9cc",
       "mode": "100644"
     },
     "LICENSE": {
@@ -86,7 +90,7 @@
       "mode": "100644"
     },
     "deploy/Dockerfile.patch": {
-      "sha256": "b3318f2c27dd4c632ed4e2db1e41e4afc62affd8aa839c2b7c6f7d2572aa8102",
+      "sha256": "dbec7a0c3aee7fae2b7c72c0b189afc2f3a6cb477c7fb7fe1b9456d44d2e698e",
       "mode": "100644"
     },
     "deploy/README.container.md": {
@@ -275,6 +279,10 @@
     },
     "pyproject.toml": {
       "sha256": "fe763d03bf9aee9816bdd16a94a4227d273b74c459baa0b52504bc70d0609be1",
+      "mode": "100644"
+    },
+    "requirements.cpu.lock": {
+      "sha256": "7e6c927ed05fceb0f202acbb028eac7ad14a0411ed2647cadde35ed21c3a4f0e",
       "mode": "100644"
     },
     "requirements.lock": {
@@ -7370,7 +7378,7 @@
       "mode": "100644"
     },
     "src/myjev/cli.py": {
-      "sha256": "6f0a5646a8d4659920d65cd65fdffffeaf64c06766680d0dae996c670236f7c3",
+      "sha256": "af9c713785581a470141ef60cdf4f4a951412aadb32b0575408cfdb944009ca6",
       "mode": "100644"
     },
     "src/myjev/data.py": {
@@ -7390,7 +7398,7 @@
       "mode": "100644"
     },
     "src/myjev/inference.py": {
-      "sha256": "4b7a03ffd2545660c320e198300923056b908390009b4b181880c81c9a1fb994",
+      "sha256": "db91c2e237f14bd78cbb99bafdb2ad8175792242dc0484fd1e4dd1e190bf712d",
       "mode": "100644"
     },
     "src/myjev/judging.py": {
@@ -7430,7 +7438,7 @@
       "mode": "100644"
     },
     "src/myjev/server.py": {
-      "sha256": "84ada60b0cfeec3a6cf9aecb432dab744d4ab87f4d4a68c9abb7e22c1a109d6c",
+      "sha256": "b3b9ee20f60f97c3d83b52a8aba7a9f0a763987300875594f690310d3cd285f8",
       "mode": "100644"
     },
     "src/myjev/tracking.py": {
@@ -7469,6 +7477,10 @@
       "sha256": "5bb39244a1db24c02753485babe38d26e109db0efaf040e8d98879f7a31bff8c",
       "mode": "100644"
     },
+    "tests/test_device_selection.py": {
+      "sha256": "efc5af5f418f77e996c45dcce1b0f2b0b697996e01dc9cc2acc9629808982f3c",
+      "mode": "100644"
+    },
     "tests/test_encoder_control.py": {
       "sha256": "76aa017fead1ea92bc428935d30c926e97879bc5e82600c4d26fd21ad8ae06e6",
       "mode": "100644"
@@ -7486,7 +7498,7 @@
       "mode": "100644"
     },
     "tests/test_hub_artifact_paths.py": {
-      "sha256": "dd13ea6dfefa8feee9eea94b57c417741fdfa5d5dfdb05e90de013c0f146c4c7",
+      "sha256": "cf46dab5d90696edf1973a0cd5724964405d02ed2aed885d311bb190ecc3c529",
       "mode": "100644"
     },
     "tests/test_judging.py": {

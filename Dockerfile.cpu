@@ -1,0 +1,31 @@
+# Install target-platform binary wheels using a native build stage. The final
+# ARM64 stage has no RUN steps, so building it needs no privileged emulator.
+FROM --platform=$BUILDPLATFORM python:3.12.3-slim-bookworm@sha256:afc139a0a640942491ec481ad8dda10f2c5b753f5c969393b12480155fe15a63 AS packages
+ARG TARGETARCH
+WORKDIR /build
+COPY pyproject.toml LICENSE requirements.cpu.lock ./
+COPY src ./src
+RUN pip install --no-cache-dir setuptools==84.0.0 wheel==0.45.1 \
+    && pip wheel --no-deps --no-build-isolation --wheel-dir /wheels .
+RUN case "$TARGETARCH" in amd64) wheel_arch=x86_64 ;; arm64) wheel_arch=aarch64 ;; *) exit 1 ;; esac \
+    && set -- \
+    && for glibc_minor in 36 35 34 33 32 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17; do \
+         set -- "$@" --platform "manylinux_2_${glibc_minor}_${wheel_arch}"; \
+       done \
+    && pip install --no-cache-dir --no-compile --only-binary=:all: \
+         --platform "manylinux2014_${wheel_arch}" "$@" \
+         --python-version 3.12 --implementation cp --abi cp312 \
+         --target /runtime -r requirements.cpu.lock /wheels/*.whl
+
+FROM python:3.12.3-slim-bookworm@sha256:afc139a0a640942491ec481ad8dda10f2c5b753f5c969393b12480155fe15a63
+ARG SOURCE_REVISION=unknown
+LABEL org.opencontainers.image.source="https://github.com/bahree/myJEV" org.opencontainers.image.revision=$SOURCE_REVISION org.opencontainers.image.version="0.1.4-cpu"
+ENV PYTHONUNBUFFERED=1 HF_HOME=/cache/huggingface PYTHONPATH=/runtime PATH=/runtime/bin:$PATH \
+    MYJEV_DEVICE=auto OMP_NUM_THREADS=8 MKL_NUM_THREADS=8 MYJEV_TIMEOUT=120
+WORKDIR /app
+COPY --from=packages /runtime /runtime
+COPY LICENSE ./LICENSE
+COPY examples/request.json ./examples/request.json
+EXPOSE 8000
+HEALTHCHECK --interval=30s --start-period=900s CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/readyz')"
+CMD ["python", "-m", "uvicorn", "myjev.server:app_factory", "--factory", "--host", "0.0.0.0", "--port", "8000", "--no-access-log", "--workers", "1"]

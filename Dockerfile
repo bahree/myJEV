@@ -1,11 +1,14 @@
 FROM python:3.12.3-slim-bookworm@sha256:afc139a0a640942491ec481ad8dda10f2c5b753f5c969393b12480155fe15a63
-ENV PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1 HF_HOME=/cache/huggingface
+ARG SOURCE_REVISION=unknown
+LABEL org.opencontainers.image.source="https://github.com/bahree/myJEV" org.opencontainers.image.revision=$SOURCE_REVISION org.opencontainers.image.version="0.1.4"
+ENV PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1 HF_HOME=/cache/huggingface MYJEV_DEVICE=auto OMP_NUM_THREADS=8 MKL_NUM_THREADS=8
 WORKDIR /app
 COPY requirements.lock pyproject.toml LICENSE ./
 RUN pip install --no-cache-dir -r requirements.lock
 # Triton compiles a small host launcher during the first real GPU forward.
 RUN apt-get update && apt-get install --no-install-recommends -y gcc libc6-dev && rm -rf /var/lib/apt/lists/*
 COPY src ./src
+COPY examples/request.json ./examples/request.json
 RUN pip install --no-deps .
 EXPOSE 8000
 HEALTHCHECK --interval=30s --start-period=900s CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/readyz')"

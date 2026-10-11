@@ -1,4 +1,5 @@
 import asyncio
+import logging
 import os
 from concurrent.futures import ThreadPoolExecutor
 from contextlib import asynccontextmanager
@@ -56,9 +57,12 @@ def create_app(loader=None, queue_size=8, timeout=30.0):
         app.state.executor = ThreadPoolExecutor(max_workers=1)
         loop = asyncio.get_running_loop()
         load = loader or (lambda: DecisionModel.load(os.environ["MYJEV_ARTIFACT"],
-            revision=os.getenv("MYJEV_REVISION"), device=os.getenv("MYJEV_DEVICE", "cuda:0")))
+            revision=os.getenv("MYJEV_REVISION"), device=os.getenv("MYJEV_DEVICE", "auto")))
         try:
             app.state.model = await loop.run_in_executor(app.state.executor, load)
+            if hasattr(app.state.model, "network"):
+                device = next(app.state.model.network.parameters()).device
+                logging.getLogger("uvicorn.error").info("myJEV loaded on %s; warming up", device)
             await loop.run_in_executor(app.state.executor, app.state.model.score, WARMUP)
             app.state.ready = True
             yield
