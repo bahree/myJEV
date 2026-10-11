@@ -16,9 +16,22 @@ Training tests whether examples improve discrimination among closely related BAN
 
 The supervised stage establishes the adapted decision model and its confidence estimates. Continued supervision, exact RL and sampled RL then start from that same supervised artifact. This tests whether confidence-aware RL adds value beyond additional supervised exposure. Temperature scaling tests whether simpler post-hoc calibration is sufficient. Untouched-backbone and TF-IDF controls also leave open the possibility that adaptation is unnecessary or a simpler model is preferable.
 
+The diagram follows the two continuations published on Hugging Face. We repeat them at 0.8B, 4B and 9B, giving six releases. A name without `-RL` identifies continued supervision; `-RL` identifies exact expected-reward training. Sampled RL is a separate study comparison and has no published model package.
+
+```mermaid
+%%{init: {"flowchart": {"wrappingWidth": 260}}}%%
+flowchart TB
+  Q[Pretrained Qwen] --> L[Add LoRA adapters<br/>and confidence heads]
+  L --> S[Train on labelled examples<br/>Save the supervised model]
+  S -->|Copy the trained model| U[Continue supervised learning<br/>Learn from labelled answers]
+  S -->|Copy the trained model| R[Continue with RL<br/>Reward the answer and confidence]
+  U --> US[Supervised release<br/>e.g. myJEV-4B]
+  R --> RS[RL release<br/>e.g. myJEV-4B-RL]
+```
+
 ### Choose LoRA and QLoRA for the available memory
 
-**LoRA**, or low-rank adaptation, represents a weight update using two small trainable matrices. We keep the original backbone weights fixed and train rank-8 LoRA adapters on the attention query, key, value and output projections, alongside the confidence heads. The [worked update](walkthrough.md#3-understand-what-the-optimizer-changes) shows the matrix calculation.
+**LoRA**, or low-rank adaptation, represents a weight update using two small trainable matrices. We keep the original backbone weights fixed and train rank-8 LoRA adapters on the attention query, key, value and output projections, alongside the confidence heads. Both supervised learning and RL train these adapters. LoRA specifies which weights can change; the training objective determines how each example contributes to their update. The added confidence heads estimate correctness from Qwen's representations. They are output layers, separate from the attention computations inside Qwen. The [worked update](walkthrough.md#3-understand-what-the-optimizer-changes) shows the matrix calculation.
 
 The 0.8B and 4B backbones use **BF16**, a 16-bit floating-point format. The 9B backbone uses **NF4**, a four-bit representation for the stored weights, alongside LoRA. This combination is commonly called **QLoRA** and reduces backbone storage on the available 24 GB GPUs. Configuration files record the precision and adapter settings; four-bit storage does not mean every operation or temporary tensor uses four bits.
 
