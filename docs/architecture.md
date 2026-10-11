@@ -147,9 +147,41 @@ The [frozen diagnostic report](https://github.com/bahree/myJEV/blob/main/results
 
 ## Try a numeric suffix readout
 
-A [seven-case untouched-backbone probe](../results/numeric-readout-v1/report.md) compares existing single-token aliases with complete numeric suffix probabilities on the same pinned BF16 4B backbone. Both answered all seven original demos correctly. The prompt and readout both change, the examples were previously viewed, and there is no confidence calibration, limiting the probe to an implementation demonstration. It reproduces neither the paper’s optimized computation nor a broader accuracy benchmark.
+[LLM-as-Jev](https://huggingface.co/papers/2610.02076) describes a numeric-suffix alternative to single-token aliases. It processes the common prompt once and caches that computation, called **prefill**, before scoring the possible endings. The [source review](system-one-research.md) records the paper's training data, results and limits. Our probe below checks the scoring arithmetic with a simpler implementation.
 
-`scripts/numeric_readout_probe.py` supplies each complete candidate continuation, including its closing bracket, and asks the model to score its tokens. This procedure is called **teacher forcing**. Adding the token log probabilities gives a score for the whole suffix. The probe reads the prompt again for each candidate. The paper's implementation caches the shared prompt computation and reuses it across branches, so our timings would measure a different implementation. [Numeric readout tests](../tests/test_numeric_readout.py) check suffix arithmetic and token-boundary failures. See the [source review](system-one-research.md) for the external method's distinct training and inference semantics.
+A numeric readout labels options with identifiers such as `[0]`, `[1]` and `[12]`. Our alias interface already accepts different numbers of choices, within its verified token inventory and input limits. Numeric identifiers offer another way to label them, without finding a separate single-token alias for every option.
+
+An identifier may span several tokens. We therefore need a score for the complete identifier, including its closing bracket. Each token has a probability conditioned on the prompt and any earlier tokens in that identifier. Multiplying those probabilities gives the full suffix probability. In code we add their logarithms, which makes the same calculation easier to work with numerically. For a suffix with tokens $u_1,\ldots,u_m$, the equations are:
+
+$$s_i=\sum_{t=1}^{m_i}\log P(u_t\mid\mathrm{prompt},u_{<t}),\qquad
+p_i=\frac{\exp(s_i)}{\sum_j\exp(s_j)}.$$
+
+Here, `i` identifies the candidate, `m_i` counts its suffix tokens, and `u_<t` means the tokens before position `t` in that suffix. The first equation computes a complete suffix score `s_i`. The second normalizes those scores across the candidates to produce `p_i`.
+
+In our probe the common prompt ends with `[`, so the suffixes include the numeric ID and closing `]`. The closing bracket contributes to the score too. We tokenize the full prompt and suffix together and check that the prompt tokens remain an unchanged prefix. A tokenizer can merge text differently at a boundary, which would invalidate scoring a separately tokenized suffix.
+
+Longer identifiers may require more token predictions. Dividing the summed log probability by the token count would change the scoring rule, so the probe keeps the sum shown in the equation.
+
+```mermaid
+flowchart TB
+    P["Shared prompt ending with ["] --> A["Score suffix 0]"]
+    P --> B["Score suffix 1]"]
+    P --> C["Score suffix 2]"]
+    A --> N[Normalize complete suffix scores]
+    B --> N
+    C --> N
+    N --> D[Choose the highest score]
+```
+
+Suppose the three complete suffix probabilities were 0.06, 0.03 and 0.01. Their sum is 0.10, so dividing by that sum gives `[0.6, 0.3, 0.1]`. Each suffix probability was calculated using the model's probabilities over its vocabulary before we restricted the final result to our three candidates.
+
+Another implementation might discard invalid next tokens and normalize at each step along the identifier. That can change the result because each branch can assign a different amount of probability to discarded tokens. We would need to compare the paper's training and inference calculations explicitly before assuming those ways of scoring are equivalent.
+
+The probe in `scripts/numeric_readout_probe.py` compares this calculation with single-token aliases on the seven demos, using the same pinned BF16 4B backbone without our fine-tuning. Both aliases and numeric suffixes answered 7/7 correctly. This shows that the alternative computation runs; it demonstrates no accuracy advantage. The prompt format changes along with the readout, so the comparison cannot isolate the effect of brackets alone. The examples were previously viewed, and no confidence calibration was fitted. The [probe report](../results/numeric-readout-v1/report.md) retains every output. The [numeric readout tests](../tests/test_numeric_readout.py) check suffix arithmetic and token-boundary failures.
+
+The probe supplies each candidate's complete continuation and asks the model to score its tokens, a procedure called **teacher forcing**. It repeats the prompt for each candidate. The paper's method caches the shared prompt computation and reuses it across branches, so timing our probe would measure a different implementation.
+
+A broader comparison would need fixed evaluation cases, candidate-order tests and a check that caching preserves the uncached scores before changing a release. Numeric labels can name image choices too, but processing those images still requires a model and input pipeline with vision support.
 
 Candidate-order change rates are per permutation, each compared with the original order. They are not the fraction of requests that could change under any possible ordering.
 
