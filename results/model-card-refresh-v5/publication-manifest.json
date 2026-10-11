@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "uploaded": false,
+  "uploaded": true,
   "namespace": "bahree",
   "visibility": "public",
   "source_code_revision": "c0147b69d57fbe541cdc2e1bc85c472938e4dda0",
@@ -24,7 +24,7 @@
       },
       "repo_id": "bahree/myJEV-0.8B",
       "public_name": "myJEV-0.8B",
-      "hub_revision": "f806b7ef3ecb0d3ba3220a68a822068566c37a20"
+      "hub_revision": "37e3abdce51c9893260f43098c8403d296746e12"
     },
     {
       "name": "myjev-0.8b-exact-seed11",
@@ -44,7 +44,7 @@
       },
       "repo_id": "bahree/myJEV-0.8B-RL",
       "public_name": "myJEV-0.8B-RL",
-      "hub_revision": "c1254abdf3d24a643d614ae0b6a63dceaa13f1e3"
+      "hub_revision": "55e898202c2bb791c4cffbb4d048cc81a67a4cbb"
     },
     {
       "name": "myjev-4b-continued_sft-seed11",
@@ -64,7 +64,7 @@
       },
       "repo_id": "bahree/myJEV-4B",
       "public_name": "myJEV-4B",
-      "hub_revision": "93646ec69970216c0d88ab201816ffc981622b9b"
+      "hub_revision": "ee791f325af47edd4f7c757d09be955ef4b5765a"
     },
     {
       "name": "myjev-4b-exact-seed11",
@@ -84,7 +84,7 @@
       },
       "repo_id": "bahree/myJEV-4B-RL",
       "public_name": "myJEV-4B-RL",
-      "hub_revision": "d71cec2a37acbf2af195dff7c3f711c3612fa667"
+      "hub_revision": "28f80fa85ba1399d5cc87415a66a721c1a9a83d3"
     },
     {
       "name": "myjev-9b-continued_sft-seed11",
@@ -104,7 +104,7 @@
       },
       "repo_id": "bahree/myJEV-9B",
       "public_name": "myJEV-9B",
-      "hub_revision": "72c1db2ab6b92b60c9b8e0e0b6917d3153304224"
+      "hub_revision": "f39821531e02909ea3c1f646408b4db06e3d605c"
     },
     {
       "name": "myjev-9b-exact-seed11",
@@ -124,7 +124,7 @@
       },
       "repo_id": "bahree/myJEV-9B-RL",
       "public_name": "myJEV-9B-RL",
-      "hub_revision": "dae260d661dfb7d6b426ec9bac0360ea0d8d181e"
+      "hub_revision": "8b0d30c66c0148e69b5e1080f5f6f6b033a7c45b"
     }
   ],
   "previous_publication_manifest": "results/model-card-refresh-v4/publication-manifest.json",

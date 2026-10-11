@@ -74,5 +74,18 @@
   "gpu_build": "Source patch over immutable published 0.1.3 dependencies. Root Dockerfile is the full-installation path.",
   "cpu_build": "Native build stage installs pinned target-platform binary wheels into x86-64 and ARM64 images; no privileged emulator required for build.",
   "cpu_validation": "../cpu-inference-v1/report.md",
-  "historical_empty_cache_measurement": "0.1.2: 203.6 seconds, disposable tmpfs model cache, image layers present. No new empty-model-cache measurement."
+  "historical_empty_cache_measurement": "0.1.2: 203.6 seconds, disposable tmpfs model cache, image layers present. No new empty-model-cache measurement.",
+  "cpu_extended_checks": {
+    "models": 4,
+    "requests_per_model": 8,
+    "total_requests": 32,
+    "thread_count": 1,
+    "all_http_success": true
+  },
+  "arm64_full_model_emulation": {
+    "passed": false,
+    "readiness_timeout_seconds": 900,
+    "native_arm64_unverified": true,
+    "import_arithmetic_passed": true
+  }
 }

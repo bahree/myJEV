@@ -154,11 +154,11 @@
       "mode": "100644"
     },
     "docs/hosting.md": {
-      "sha256": "4c99227a5b32642826ea549bbf0a2edcf8e87072813fa3d4ebfc6d28e4594310",
+      "sha256": "4fc6877296c9c8a1c4c11cb50904d5998e2579c6e07fbbadd555c0b2fcdd581a",
       "mode": "100644"
     },
     "docs/inference.md": {
-      "sha256": "435f387d3f44f45925685e79fefa05bfd631d07bfbae452d8d5a2deabee4b3f7",
+      "sha256": "5705c0ab36dc7c364c28fd303872486171ce46c6555d39b1274226772b633f0f",
       "mode": "100644"
     },
     "docs/learnings.md": {
@@ -1062,7 +1062,7 @@
       "mode": "100644"
     },
     "results/container-registry-v4/publication.json": {
-      "sha256": "8d4eaaecc509c83599feeddc2d234a8e3fd22af41dbcb6e6cc033f05e4d614e3",
+      "sha256": "b128ea0078488d7efba7f273153445b9c23fe0cadeab59f423cd8a9b733bfaa3",
       "mode": "100644"
     },
     "results/cpu-inference-v1/arm64-import.log": {
@@ -1081,12 +1081,20 @@
       "sha256": "775b43ba7c68159cc1383edb9845dc33778cd4f89ed1379d1106898699def733",
       "mode": "100644"
     },
+    "results/cpu-inference-v1/cpu-one-thread/myJEV-4B-RL.json": {
+      "sha256": "85a36b31c30b0051ce01b82da1cf55fab4908c703b5e6d4a5cc554c29696c11e",
+      "mode": "100644"
+    },
     "results/cpu-inference-v1/cpu-one-thread/myJEV-4B.json": {
       "sha256": "27370e1cad202aa35cb62e62413d7c376ba8d654692aed37903c8e0b893d3dbc",
       "mode": "100644"
     },
     "results/cpu-inference-v1/feasibility.jsonl": {
       "sha256": "bc67d4de36c79e27c3059e80e1976626e47d9a6747491e585dd5a904f3c50e76",
+      "mode": "100644"
+    },
+    "results/cpu-inference-v1/final-arm64-import.log": {
+      "sha256": "b4de4f112762577456e1d2dc5564b7f45951dc6990ddee293ee2568106d6b963",
       "mode": "100644"
     },
     "results/cpu-inference-v1/final-cpu-amd64.json": {
@@ -1130,7 +1138,7 @@
       "mode": "100644"
     },
     "results/cpu-inference-v1/report.md": {
-      "sha256": "f5b5f52eb39bda4b77988f56e7a44af68910271238c105ad1f7aced80c88df04",
+      "sha256": "91adb80a4036b1c477aada1c4d30566408bdba5d90c84e6324d8523090496ebd",
       "mode": "100644"
     },
     "results/data-preparation.json": {
@@ -4077,8 +4085,32 @@
       "sha256": "f6ab9e5d6151e956d884c63a40dfa787e4ca780ca248d3c8cea244357950a9e3",
       "mode": "100644"
     },
+    "results/model-card-refresh-v5/prior-receipts/myJEV-0.8B-RL.json": {
+      "sha256": "bf1765a3404d765a97806eaf617111c15b645abe5f91257d23fa5db24f0530b2",
+      "mode": "100644"
+    },
+    "results/model-card-refresh-v5/prior-receipts/myJEV-0.8B.json": {
+      "sha256": "03c845b82f61881c6e12897d20f4edae4c951b80875c3054e491727936e04576",
+      "mode": "100644"
+    },
+    "results/model-card-refresh-v5/prior-receipts/myJEV-4B-RL.json": {
+      "sha256": "b22754847c41b17068e654b0fce987f718e07788e6209b2fe599fbd8bd6fc5a3",
+      "mode": "100644"
+    },
+    "results/model-card-refresh-v5/prior-receipts/myJEV-4B.json": {
+      "sha256": "35809416de80bddc57af04c09b8a2909f381041d760730b8f39c3db26fb92127",
+      "mode": "100644"
+    },
+    "results/model-card-refresh-v5/prior-receipts/myJEV-9B-RL.json": {
+      "sha256": "4b2a5c03daba1539e05817698a5ec6815ade9f82227e7f2422a8ae52083ac0af",
+      "mode": "100644"
+    },
+    "results/model-card-refresh-v5/prior-receipts/myJEV-9B.json": {
+      "sha256": "7484e5d6b535df80fb095f5718cfb52a39585f4a24a46d46574c66fb5465ef66",
+      "mode": "100644"
+    },
     "results/model-card-refresh-v5/publication-manifest.json": {
-      "sha256": "151e933cf0b10ffb2a10404bb16b73960aee6cf244b281a3a343dc81c2e6a75e",
+      "sha256": "0de1002861a98cc3d00e6876b7f7c10093af4b76f2547e15c5e3fcbbe2bf6f7e",
       "mode": "100644"
     },
     "results/numeric-readout-v1/environment.json": {
@@ -4286,27 +4318,27 @@
       "mode": "100644"
     },
     "results/release-readiness-v1/hub/myJEV-0.8B-RL.json": {
-      "sha256": "bf1765a3404d765a97806eaf617111c15b645abe5f91257d23fa5db24f0530b2",
+      "sha256": "593a4105a5188461c17071ebc931f6f0754d7fc54428a77f7e8fbcb006572b26",
       "mode": "100644"
     },
     "results/release-readiness-v1/hub/myJEV-0.8B.json": {
-      "sha256": "03c845b82f61881c6e12897d20f4edae4c951b80875c3054e491727936e04576",
+      "sha256": "d65bd226445c86106e2880735f79fa10a98c098406805e86e92ab2dd80aaf951",
       "mode": "100644"
     },
     "results/release-readiness-v1/hub/myJEV-4B-RL.json": {
-      "sha256": "b22754847c41b17068e654b0fce987f718e07788e6209b2fe599fbd8bd6fc5a3",
+      "sha256": "7b09c2cb4abca6a3c67702316d0b55312734c19b9481554fe7fd517ffedb0eca",
       "mode": "100644"
     },
     "results/release-readiness-v1/hub/myJEV-4B.json": {
-      "sha256": "35809416de80bddc57af04c09b8a2909f381041d760730b8f39c3db26fb92127",
+      "sha256": "d6efe24db34534b139a3b4a803ae4bc543abb97128d98682c0b9ffc22802c713",
       "mode": "100644"
     },
     "results/release-readiness-v1/hub/myJEV-9B-RL.json": {
-      "sha256": "4b2a5c03daba1539e05817698a5ec6815ade9f82227e7f2422a8ae52083ac0af",
+      "sha256": "50eb919388d9dbff84e01ab2a3ca05568a02b34b045da5f4637cdc8e90ebf22e",
       "mode": "100644"
     },
     "results/release-readiness-v1/hub/myJEV-9B.json": {
-      "sha256": "7484e5d6b535df80fb095f5718cfb52a39585f4a24a46d46574c66fb5465ef66",
+      "sha256": "b37f94f8b3debf1bd9f923743b758ddda9409289ab5f9fe7ef9a35cdb3ed0c34",
       "mode": "100644"
     },
     "results/release-readiness-v1/image-environment.json": {

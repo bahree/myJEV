@@ -12,6 +12,7 @@ Each extended run scored the included duplicate-charge fixture plus the seven au
 |---|---:|---:|---:|---|---:|
 | [myJEV-0.8B-RL](cpu-one-thread/myJEV-0.8B-RL.json) | 8 | 22.0 s | 8.49-15.10 s | billing | 0.872612 |
 | [myJEV-0.8B](cpu-one-thread/myJEV-0.8B.json) | 8 | 24.1 s | 8.89-15.58 s | billing | 0.975705 |
+| [myJEV-4B-RL](cpu-one-thread/myJEV-4B-RL.json) | 8 | 58.6 s | 55.63-101.82 s | billing | 0.859048 |
 | [myJEV-4B](cpu-one-thread/myJEV-4B.json) | 8 | 60.9 s | 57.15-102.61 s | billing | 0.984125 |
 
 The [final x86-64 CPU image check](final-cpu-amd64.json) additionally verifies its included request file, CLI/HTTP equality, the managed route, non-finite 422 responses and body-limit 413 responses. The [GPU image without GPU access](final-gpu-image-cpu-fallback.json) confirms automatic CPU selection on the same 0.8B fixture. These final-image checks used one thread and the same runtime source as the extended runs; image IDs remain in each record.
@@ -30,7 +31,7 @@ The earlier [direct Python feasibility observations](feasibility.jsonl) used the
 
 ## ARM64 scope
 
-The CPU image index includes Linux amd64 and arm64. ARM64 imported PyTorch 2.14.1+cpu and completed a BF16 matrix multiplication under QEMU 8.2.2, using a read-only mounted emulator. No host binfmt or privileged emulator was installed. The initial eight-thread attempt was stopped while still warming up. The one-thread retry exceeded the 900-second readiness deadline. [One-thread attempt](arm64-one-thread.log), [import/arithmetic log](arm64-import.log).
+The CPU image index includes Linux amd64 and arm64. ARM64 imported PyTorch 2.14.1+cpu and completed a BF16 matrix multiplication under QEMU 8.2.2, using a read-only mounted emulator. No host binfmt or privileged emulator was installed. The initial eight-thread attempt was stopped while still warming up. The one-thread retry exceeded the 900-second readiness deadline. [One-thread attempt](arm64-one-thread.log), [final-image import/arithmetic log](final-arm64-import.log).
 
 The Apple Silicon instructions therefore describe an experimental ARM64 build. They do not claim native Mac execution or full ARM64 output equivalence. QEMU timing cannot predict native Apple Silicon performance. Windows instructions use Docker Desktop's documented Linux-container/WSL 2 behavior but have no native Windows test receipt.
 

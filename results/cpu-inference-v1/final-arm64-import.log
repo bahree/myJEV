@@ -1,0 +1,2 @@
+/__w/pytorch/pytorch/third_party/ideep/mkl-dnn/third_party/xbyak_aarch64/src/util_impl_linux.h, 444: Can't open MIDR_EL1 sysfs entry
+{"machine": "aarch64", "torch": "2.14.1+cpu", "threads": 1, "bf16_matmul_passed": true}

@@ -176,11 +176,11 @@ Reproduce with `python scripts/verify_first_use.py --image YOUR_VERIFIED_IMAGE -
 
 The research image runs as **root** inside the container. Non-root deployment needs separate cache and runtime-compiler permission checks; it is not claimed by this release. The validation patch sets a 15-minute health-start period to allow first-use downloads. This grace period does not guarantee startup time or restart an unhealthy container by itself.
 
-## Validation patch release
+## Historical 0.1.3 validation patch
 
 Image **0.1.3** rejects non-finite request numbers (`NaN`, `Infinity`, `-Infinity`) with HTTP 422, including the `/generate` alias. Versions through 0.1.2 could return 500 while serializing their validation errors; invalid requests still never reached the model worker. The patch returns only error type, location and message, without reflecting request content.
 
-`deploy/Dockerfile.patch` applies the reviewed source to the immutable public 0.1.2 dependency image. The root Dockerfile remains the full-build path. BuildKit attempted an additional base unpack and ran out of disk; Docker's legacy builder reused the installed layers successfully. The [build provenance](../results/container-registry-v3/provenance.json) preserves both attempts. This is a documented source patch, not a new dependency rebuild. The service has a 15-minute health-start grace period, and the research container runs as root.
+The 0.1.3 build used `deploy/Dockerfile.patch` to apply its reviewed source over the immutable public 0.1.2 dependency image. The 0.1.4 build uses the later base identified in its receipt. The root Dockerfile remains the full-build path. BuildKit attempted an additional base unpack and ran out of disk; Docker's legacy builder reused the installed layers successfully. The [build provenance](../results/container-registry-v3/provenance.json) preserves both attempts. This is a documented source patch, not a new dependency rebuild. The service has a 15-minute health-start grace period, and the research container runs as root.
 
 The [GPU check](../results/container-registry-v3/gpu-check.json) verifies installed Python-file hashes, CLI/HTTP/host equality, managed routes, non-finite 422 responses and the 413 body limits. Its populated-cache readiness time is one observation, not a first-download or latency guarantee. The 203.6-second empty-cache measurement belongs to 0.1.2 and remains labelled with that version.
 
