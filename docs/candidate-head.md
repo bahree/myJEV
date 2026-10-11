@@ -47,7 +47,7 @@ The fast tokenizer returns character offsets for each token. A token overlapping
 
 For a batch of $B$ requests with $L$ padded token positions and up to $K$ candidates, Qwen returns $H\in\mathbb{R}^{B\times L\times1024}$. A learned projection produces
 
-$$X=\operatorname{Linear}_{1024\to128}(\operatorname{LayerNorm}(H)).$$
+$$X=\mathrm{Linear}_{1024\to128}(\mathrm{LayerNorm}(H)).$$
 
 `context_mask` and `question_mask` have shape `B x L`; `candidate_mask` has shape `B x K x L`. They identify the token positions pooled or attended to. `valid`, shaped `B x K`, marks candidates present in each request. Pooling divides the sum of a field’s vectors by its token count, so a longer description does not receive a larger vector merely because it contains more tokens.
 
@@ -57,7 +57,7 @@ Let $c_i$ be the mean projected representation for candidate $i$, and $u$ the me
 
 Each attention head uses learned matrices to form queries $Q$, keys $K_c$ and values $V_c$. The keys and values come from context positions. For one attention head,
 
-$$E=\operatorname{softmax}\left(\frac{QK_c^\top}{\sqrt{32}}+M\right)V_c.$$
+$$E=\mathrm{softmax}\left(\frac{QK_c^\top}{\sqrt{32}}+M\right)V_c.$$
 
 The 128 projected features are divided among four attention heads, giving 32 query/key features per head. $M$ is zero on context positions and negative infinity elsewhere. Softmax runs across token positions. PyTorch combines the four outputs through a learned projection.
 
