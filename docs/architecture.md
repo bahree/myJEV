@@ -2,19 +2,19 @@
 
 The [first request](../examples/request.json) asks whether a duplicate charge belongs to billing, technical support or another route. This guide follows how the model turns that input into an answer. Start with the [walkthrough](walkthrough.md#2-follow-one-decision) if you want to inspect the response fields first.
 
-The released Qwen implementation receives context, instructions, and 2-160 candidate IDs and descriptions. The caller supplies those choices with each request. A **backbone** is the pretrained network that reads the text; an **adapter** stores learned changes to its computation; a **head** maps internal features to an output such as confidence. The [scratch model](scratch.md) uses the same kind of request but learns its text features from random weights.
+The released Qwen implementation receives context, instructions, and 2-160 candidate IDs and descriptions. The caller supplies those choices with each request. A **backbone** is the pretrained network that reads the text; an **adapter** stores learned changes to its computation; a **head** maps internal features to an output such as confidence. The [small model we built from scratch](scratch.md) uses the same kind of request but learns its text features from random weights.
 
 ## What each model has already learned
 
-Qwen starts with weights learned during language pretraining. Our adapters adjust that existing network for the decision task. The scratch network starts with random weights and has to learn from our small set of examples. I first trained it to read color signals, then tested a separate version on BANKING77, a dataset of customer messages with 77 banking-intent labels.
+Qwen starts with weights learned during language pretraining. Our adapters adjust that existing network for the decision task. Our small model starts with random weights and has to learn from our small set of examples. I first trained it to read color signals, then tested a separate version on BANKING77, a dataset of customer messages with 77 banking-intent labels.
 
 Comparing their results includes both the network design and these different training histories. To isolate the effect of design, we would need matched training conditions. Resource comparisons also need the complete Qwen model: its small adapter still requires the pretrained backbone at inference.
 
-A pretrained encoder offers another starting point. The [ModernBERT control](qwen-findings.md) uses existing language features to classify requests into a fixed set of 77 labels. Supplying new descriptions cannot give that classifier a new task. Qwen and the scratch model instead receive candidate descriptions with each request.
+A pretrained encoder offers another starting point. The [ModernBERT control](qwen-findings.md) uses existing language features to classify requests into a fixed set of 77 labels. Supplying new descriptions cannot give that classifier a new task. Qwen and our small model instead receive candidate descriptions with each request.
 
 ## One forward pass
 
-1. Give each candidate a short **alias**. For example, `billing`, `technical` and `other` can become `A`, `B` and `C`. Each alias is verified to occupy one tokenizer unit, or token, so we can read all their scores at the same output position. Put the aliases, descriptions and context into the saved prompt template.
+1. Qwen already computes scores for possible next tokens. To use those scores for our choices, our code assigns a short label to each candidate: for example, `A` for `billing`, `B` for `technical` and `C` for `other`. These labels are called **aliases**. Put each alias beside its candidate description in the prompt, with the context and instructions. The labels each occupy one token so their scores can be read at the same next-token position; the code retains the mapping back to the caller’s IDs.
 2. Convert the prompt into token IDs. Reject inputs beyond the model package's configured limit rather than silently cutting away text.
 3. Run the Qwen backbone once. Its internal features at the final input position provide the alias scores and the confidence-head input. No answer tokens are generated.
 4. Normalize the candidate scores to sum to one, select the largest, and map its alias back to the caller's ID, such as `billing`. Return the scores and the configured correctness estimate too.
@@ -38,7 +38,7 @@ flowchart TB
   S --> A[Selected ID and confidence]
 ```
 
-The scratch model follows a different path. It encodes the context and candidate descriptions separately using shared weights, then lets each candidate attend to the context. Those are two calls to the same encoder inside one decision computation. The [scratch guide](scratch.md) explains the arrays and attention operations.
+Our small model follows a different path. It encodes the context and candidate descriptions separately using shared weights, then lets each candidate attend to the context. Those are two calls to the same encoder inside one decision computation. The [build-from-scratch guide](scratch.md) explains the arrays and attention operations.
 
 
 ```mermaid
@@ -108,11 +108,11 @@ The policy-edit diagnostic below tests explicit exceptions and small rule change
 
 Our adapted Qwen network retains its causal sequence computation. We read decision features from the final position and stop after that forward pass. Eliminating generated answer tokens saves decoding work, but it does not eliminate the cost of reading the prompt or storing the backbone. A small LoRA adapter only describes the learned update; inference still loads the base model.
 
-A bidirectional encoder lets token representations use context on both sides. That can suit classification because the entire policy and document are available before a decision is made. Pretraining supplies language features; the specialized head supplies task outputs. Our scratch encoder has the same broad opportunity to use both directions, but it starts with random weights and a tiny training corpus. Architecture alone does not supply the knowledge and representations learned during large-scale pretraining.
+A bidirectional encoder lets token representations use context on both sides. That can suit classification because the entire policy and document are available before a decision is made. Pretraining supplies language features; the specialized head supplies task outputs. The encoder in our small model has the same broad opportunity to use both directions, but it starts with random weights and a tiny training corpus. Architecture alone does not supply the knowledge and representations learned during large-scale pretraining.
 
 Moderation can assign high scores to several categories at once. myJEV chooses one candidate and reports confidence in that selection. A comparison therefore needs a common task and an explicit meaning for each probability before fitting calibration or comparing error rates.
 
-A policy-conditioned pretrained encoder is a possible extension: it could supply the language knowledge missing from the scratch model while accepting new candidate descriptions. We would still need to train and evaluate that interface on our tasks. Archive label reliability would remain a separate problem.
+A policy-conditioned pretrained encoder is a possible extension: it could supply the language knowledge missing from our small model while accepting new candidate descriptions. We would still need to train and evaluate that interface on our tasks. Archive label reliability would remain a separate problem.
 
 ### Separate the backbone, decision head and training method
 
@@ -155,7 +155,7 @@ Candidate-order change rates are per permutation, each compared with the origina
 
 ## Build an alternative answer head
 
-The [candidate-head guide](candidate-head.md) connects the scratch model’s attention calculation to frozen Qwen features. It explains the field masks and shared scorer, and provides head-only training and inference commands. The [Unsloth guide](unsloth.md) compares alias scoring with Clef’s larger joint schema head under a separate matched protocol.
+The [candidate-head guide](candidate-head.md) connects our small model’s attention calculation to frozen Qwen features. It explains the field masks and shared scorer, and provides head-only training and inference commands. The [Unsloth guide](unsloth.md) compares alias scoring with Clef’s larger joint schema head under a separate matched protocol.
 
 ## Microsoft Decision-1 and the same backbone family
 

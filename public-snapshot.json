@@ -98,11 +98,11 @@
       "mode": "100644"
     },
     "docs/README.md": {
-      "sha256": "994920c4088ec54369eb0b51d760c63e013b0bc8f5de880019ce2fff1b45b022",
+      "sha256": "3129230fb3de36bd58e1ca1efe0bab616f3219f531b7fd73e521795b7b36f24a",
       "mode": "100644"
     },
     "docs/architecture.md": {
-      "sha256": "7be25bf48865164bba45d4be6f2540177b796f30f39c79d7e2a0ccadf7f07540",
+      "sha256": "8718fab8fff2e6eb014d97c5e2670db6e1f442c320119f854578eab25d848c85",
       "mode": "100644"
     },
     "docs/attribution.md": {
@@ -114,7 +114,7 @@
       "mode": "100644"
     },
     "docs/datasets/banking77.md": {
-      "sha256": "4f636595e5145fb3983c58fb810a225a7fc1d123ba27121858e796e97c8a18e0",
+      "sha256": "cc9cd13fc26ced410b7110ac8d0c7b2dac21f13bccfee1576bed81722571bed6",
       "mode": "100644"
     },
     "docs/datasets/blog-archive.md": {
@@ -122,7 +122,7 @@
       "mode": "100644"
     },
     "docs/datasets/clinc150.md": {
-      "sha256": "0b186cdc5f5b6a171e3deee8fd05222ee59374d5f8475738ae4276920412ca1a",
+      "sha256": "cd725857d293bd4c4ba015ab35036c844e89d6d7b1f58daea1c51d5298879243",
       "mode": "100644"
     },
     "docs/datasets/scratch-routing.md": {
@@ -186,7 +186,7 @@
       "mode": "100644"
     },
     "docs/scratch.md": {
-      "sha256": "b8ad4a79e09deb4d7a91175ff65c1a61995a4e6a46145b8f001865b532782877",
+      "sha256": "d37c7b0cfbc61bf7179bca824ef2ce4a16e41c854a2a8792b96e926e64e72662",
       "mode": "100644"
     },
     "docs/system-one-peer-review.md": {
@@ -210,7 +210,7 @@
       "mode": "100644"
     },
     "docs/walkthrough.md": {
-      "sha256": "fdd7d581ae973aa497eceea2032065d482770d56cecdfad1265c72f2f8bca712",
+      "sha256": "16fa36383e242be1219c0434e4ac90874192280e3354a7f8589c3bbe36a5807e",
       "mode": "100644"
     },
     "examples/client.py": {

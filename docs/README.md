@@ -11,19 +11,19 @@ If you are new to the project, start with the [quick start](quickstart.md) and [
 | Can I try real requests and see the failures? | [Seven runnable demos](../results/demos-v1/report.md) |
 | Can I explore confidence on a CPU? | [Calibration lab](../results/calibration-lab-v1/report.md) and [decision lessons](decision-lessons.md) |
 | How do I install and score my first request? | [Quick start](quickstart.md) |
-| How do I understand or build the model? | [Architecture](architecture.md), then [scratch walkthrough](scratch.md) or [Qwen training](training.md) |
+| How do I understand or build the model? | [Architecture](architecture.md), then [build-from-scratch walkthrough](scratch.md) or [Qwen training](training.md) |
 | Which results should guide my choice? | [Findings](qwen-findings.md), with worked definitions in [decision lessons](decision-lessons.md) |
 | How do I call it from another application? | [Python, CLI and HTTP](inference.md), then [hosting](hosting.md) |
 
 ## Build and train
 
-The scratch route starts from random weights so we can inspect the whole network. The Qwen route starts from pretrained language knowledge and studies what further training adds. They answer different questions; their training exposure is not matched.
+Building a small model from scratch starts its weights with random values so we can inspect how the whole network learns. The Qwen route starts from pretrained language knowledge and studies what further training adds. They answer different questions; their training exposure is not matched.
 
 | Guide | What it explains |
 |---|---|
 | [Architecture](architecture.md) | How a request becomes candidate scores and confidence |
-| [Scratch walkthrough](scratch.md) | Build, train and debug the small model, including its language-task failure |
-| [Scratch design](scratch-plan.md) | Design constraints and implementation checks |
+| [Build-from-scratch walkthrough](scratch.md) | Build, train and debug the small model, including its language-task failure |
+| [Small-model design](scratch-plan.md) | Design constraints and implementation checks |
 | [Qwen training](training.md) | Adapters, supervised and reward-based training, hardware and the update budget |
 | [Unsloth readout comparison](unsloth.md) | Why a joint schema head changes the experiment, and how to run the matched control |
 | [W&B tracking](tracking.md) | Read training curves, epochs and GPU measurements while retaining local logs |
@@ -59,13 +59,20 @@ The [Decision-1 comparison](decision-1.md) adds a hosted reference and tests opt
 
 ## Data and provenance
 
-- [BANKING77](datasets/banking77.md): controlled intent routing, official test split preserved.
-- [CLINC150](datasets/clinc150.md): unfamiliar-task and unsupported-request evaluation, excluded from tuning.
-- [Blog archive](datasets/blog-archive.md): post-format, instructional-completeness and claim-support rubrics; completed machine-reference adaptation and forgetting study; human correctness remains unaudited.
-- [Synthetic fixtures](datasets/synthetic.md): objective arithmetic and controlled uncertainty.
-- [Scratch routing](datasets/scratch-routing.md): original rules, known ambiguity, versioned templates and held-out combinations.
-- [Attribution](attribution.md): JevK5, SemIf, and JevForge architecture distinctions.
-- [OpenJev](openjev.md): a related released model with different scale, confidence semantics, and licensing.
+Each source answers a different question. The dataset cards explain preparation, labels, partitions and limits.
+
+| Dataset and source | Why we chose it | Role in the study |
+|---|---|---|
+| [BANKING77](datasets/banking77.md), PolyAI’s labelled online-banking queries | Closely related requests test whether a model understands the customer’s intent; existing labels supply training targets and rewards | Main training and evaluation, with the official test split preserved |
+| [CLINC150](datasets/clinc150.md), crowdsourced intent and out-of-scope data released by Larson and colleagues | Test unfamiliar categories and requests the supported choices cannot answer | Transfer evaluation, excluded from training and tuning |
+| [SST-2](../results/sst2-transfer-v1/report.md), Stanford’s human-labelled movie-review sentiment data | Test positive/negative sentiment instead of another routing task | Evaluation on the public validation split, without sentiment training or calibration |
+| [Blog archive](datasets/blog-archive.md), posts from Amit Bahree’s RSS feed | Test longer documents, new rubrics and adaptation | Post format, instructional completeness and claim support; reference labels come from models and remain unaudited |
+| [Generated color examples](datasets/scratch-routing.md), original Python-generated rules | Inspect learning where the answer probabilities are known | Small-model training with versioned layouts and held-out color combinations |
+| [Synthetic test cases](datasets/synthetic.md), authored for this project | Verify reward arithmetic, gradients and controlled uncertainty | Implementation checks; these are separate from natural-data evaluation |
+
+The [CPU calibration lab](../results/calibration-lab-v1/report.md) also generates its own numerical features and labels from a known probability distribution. That lets us measure probability error directly; it does not measure language understanding.
+
+[Attribution](attribution.md) explains the JevK5, SemIf and JevForge architecture influences. [OpenJev](openjev.md) describes a related released model with different scale, confidence semantics and licensing.
 
 ## Follow the project
 

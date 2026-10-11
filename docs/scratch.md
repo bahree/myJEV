@@ -1,6 +1,6 @@
-# Build and run the scratch decision model
+# Build and train a small decision model from scratch
 
-I built a small network from random weights to follow how a decision model learns. We start with a controlled task: read a color signal and choose the matching option. The network receives context and candidate descriptions, converts the text to numbers, and learns to score each choice. This guide follows those steps and the failures we found. The [Qwen study](qwen-findings.md) starts with language knowledge learned during pretraining, which the scratch model has to do without.
+I built a small network from random weights to follow how a decision model learns. We start with a controlled task: read a color signal and choose the matching option. The network receives context and candidate descriptions, converts the text to numbers, and learns to score each choice. This guide follows those steps and the failures we found. The [Qwen study](qwen-findings.md) starts with language knowledge learned during pretraining, which our small model has to learn from its training examples.
 
 You can [generate data and train this model on CPU](#generate-and-train-locally) without downloading pretrained weights. First install and activate the environment in the [quick start](quickstart.md#install-and-test). If you only want to inspect a saved result, the [recorded scratch response](../results/scratch-deployment/equivalence-and-model-timings.json) is available without installation.
 
@@ -32,7 +32,7 @@ One decision calls the same text encoder twice: once for the context and once fo
 
 Token positions inside a description matter; positions in the candidate list do not receive embeddings. Caller-supplied IDs remain outside the network. The score head operates on each contextualized candidate, so permuting candidates should permute the outputs. Tests check that behavior in evaluation mode, including confidence heads and mixed-length batches.
 
-The fixture limits are 256 UTF-8 bytes for instructions plus newline plus context, 64 bytes per candidate description, and 32 candidates. The scratch encoder counts bytes. The Qwen interface uses its tokenizer to count tokens. Oversized input is rejected. Training and quality evidence initially use four candidates; accepting 32 does not establish useful accuracy at that size.
+The fixture limits are 256 UTF-8 bytes for instructions plus newline plus context, 64 bytes per candidate description, and 32 candidates. Our small model counts bytes. The Qwen interface uses its tokenizer to count tokens. Oversized input is rejected. Training and quality evidence initially use four candidates; accepting 32 does not establish useful accuracy at that size.
 
 ## Start with selection, then confidence
 
@@ -119,7 +119,7 @@ The failure belongs to this configuration and training budget. Tokenization, cap
 
 ## Measured deployment check
 
-The engineering check uses the seed-11 synthetic SFT artifact with 201,175 parameters. Its recorded request asks for a color. The failed 217,559-parameter BANKING77 model above is a separate checkpoint trained on different data. No scratch artifact is recommended for production. It contains 809,244 bytes of weights. Python/CLI outputs were identical on the recorded request; Docker GPU HTTP probabilities differed from CPU by less than 1e-8, and the selected ID and artifact revision matched. Oversized HTTP input returned 422.
+The engineering check uses the seed-11 synthetic SFT artifact with 201,175 parameters. Its recorded request asks for a color. The failed 217,559-parameter BANKING77 model above is a separate checkpoint trained on different data. No saved version of this small model is recommended for production. It contains 809,244 bytes of weights. Python/CLI outputs were identical on the recorded request; Docker GPU HTTP probabilities differed from CPU by less than 1e-8, and the selected ID and artifact revision matched. Oversized HTTP input returned 422.
 
 | Path | Warm p50 | Warm p95 |
 |---|---:|---:|
@@ -134,7 +134,7 @@ The [raw deployment evidence](../results/scratch-deployment/equivalence-and-mode
 
 ## What remains separate
 
-Controlled synthetic behavior does not establish useful BANKING77 quality, unfamiliar natural-language competence or Jev-equivalent speed. The [design and validation guide](scratch-plan.md) distinguishes the natural-language diagnostic from additional candidate-count/length checks and release requirements. Compare complete scratch weights with the entire Qwen deployment, including its backbone, and keep synthetic results outside the BANKING77 accuracy table.
+Controlled synthetic behavior does not establish useful BANKING77 quality, unfamiliar natural-language competence or Jev-equivalent speed. The [design and validation guide](scratch-plan.md) distinguishes the natural-language diagnostic from additional candidate-count/length checks and release requirements. Compare the small model’s complete weights with the entire Qwen deployment, including its backbone, and keep synthetic results outside the BANKING77 accuracy table.
 
 ## Packaged teaching checkpoint
 
