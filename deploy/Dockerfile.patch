@@ -8,7 +8,7 @@
 FROM amitbahree/myjev@sha256:55c78ef13329ab35712e27c9815eff94c17ba1f5fc145bd58eb705d0f16e1f6d
 ARG SOURCE_REVISION=unknown
 LABEL org.opencontainers.image.source="https://github.com/bahree/myJEV" org.opencontainers.image.revision=$SOURCE_REVISION org.opencontainers.image.version="0.1.4"
-ENV MYJEV_DEVICE=auto OMP_NUM_THREADS=8 MKL_NUM_THREADS=8
+ENV MYJEV_DEVICE=auto OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
 WORKDIR /app
 COPY src ./src
 COPY examples/request.json ./examples/request.json

@@ -21,7 +21,7 @@ FROM python:3.12.3-slim-bookworm@sha256:afc139a0a640942491ec481ad8dda10f2c5b753f
 ARG SOURCE_REVISION=unknown
 LABEL org.opencontainers.image.source="https://github.com/bahree/myJEV" org.opencontainers.image.revision=$SOURCE_REVISION org.opencontainers.image.version="0.1.4-cpu"
 ENV PYTHONUNBUFFERED=1 HF_HOME=/cache/huggingface PYTHONPATH=/runtime PATH=/runtime/bin:$PATH \
-    MYJEV_DEVICE=auto OMP_NUM_THREADS=8 MKL_NUM_THREADS=8 MYJEV_TIMEOUT=120
+    MYJEV_DEVICE=auto OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 MYJEV_TIMEOUT=120
 WORKDIR /app
 COPY --from=packages /runtime /runtime
 COPY LICENSE ./LICENSE

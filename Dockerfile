@@ -1,7 +1,7 @@
 FROM python:3.12.3-slim-bookworm@sha256:afc139a0a640942491ec481ad8dda10f2c5b753f5c969393b12480155fe15a63
 ARG SOURCE_REVISION=unknown
 LABEL org.opencontainers.image.source="https://github.com/bahree/myJEV" org.opencontainers.image.revision=$SOURCE_REVISION org.opencontainers.image.version="0.1.4"
-ENV PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1 HF_HOME=/cache/huggingface MYJEV_DEVICE=auto OMP_NUM_THREADS=8 MKL_NUM_THREADS=8
+ENV PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1 HF_HOME=/cache/huggingface MYJEV_DEVICE=auto OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
 WORKDIR /app
 COPY requirements.lock pyproject.toml LICENSE ./
 RUN pip install --no-cache-dir -r requirements.lock

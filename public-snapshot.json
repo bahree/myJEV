@@ -14,11 +14,11 @@
       "mode": "100644"
     },
     "Dockerfile": {
-      "sha256": "41fa9dd00e10982bb7b090f2661fe890f9fdf3612723198c03196b5e408c98f5",
+      "sha256": "7e56fd19ca00c7687b36690a1e55eca27499081e309bc476b628af51d8732bee",
       "mode": "100644"
     },
     "Dockerfile.cpu": {
-      "sha256": "32a4def895bdeaeec7bcd53587828999e2532bae11f58f80cd76c565dfafa9cc",
+      "sha256": "77b87232f18d922ab5085f6dac80e0fe27bf8ae475a09108d93d4cf30c0c706d",
       "mode": "100644"
     },
     "LICENSE": {
@@ -90,7 +90,7 @@
       "mode": "100644"
     },
     "deploy/Dockerfile.patch": {
-      "sha256": "dbec7a0c3aee7fae2b7c72c0b189afc2f3a6cb477c7fb7fe1b9456d44d2e698e",
+      "sha256": "197e9395a199c30fae5597d12c58a879e64a2ba491cd7c43d9647057fea7e5c7",
       "mode": "100644"
     },
     "deploy/README.container.md": {
