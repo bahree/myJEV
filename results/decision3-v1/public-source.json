@@ -1,0 +1,13 @@
+{
+  "public_source_revision": "1f44cba1803bbeb6ef711dc710f0f00b13b540cc",
+  "public_source_url": "https://github.com/bahree/myJEV/tree/1f44cba1803bbeb6ef711dc710f0f00b13b540cc",
+  "files_sha256": {
+    "configs/decision3-v1.json": "17e85a858ff44d0e19563add1285b2e27d1a47372a1a21dd05786cfb993a372d",
+    "scripts/run_decision3.py": "950e399c7c8e5cce1b3a19fe5f32b77e730fa39d76c7c3bbeae1b38eef03f22a",
+    "src/myjev/decision3.py": "5a713568c2731bcc7b46158ae3ea4dec18b237fdae597f9cde902a63531698dd",
+    "src/myjev/decision_comparison.py": "eab18866ad042161c4828f8b32ce8097024dbd40bf8a2f0945e2629b948835de",
+    "requirements.lock": "45e898b72a73dd62410cb593784a8e6b52118659eab437bf6bef4f59507d1e69",
+    "requirements.decision3.lock": "b84882ded3d095e13d687938f91191ac32896fb3dae1afe79959192cea2755eb"
+  },
+  "scope": "The frozen evaluation runner, request construction, protocol and environment files match accessible public source. Execution receipts retain the original working-repository commits; this mapping supplies reader-accessible equivalents. Later reporting helpers are versioned with the reports."
+}

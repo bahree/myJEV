@@ -1,4 +1,5 @@
 """Draw figures from the completed comparison; no model execution."""
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -11,7 +12,10 @@ import numpy as np
 
 
 def main():
-    root = Path('results/decision3-v1')
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--root', type=Path, default=Path('results/decision3-v1'))
+    args = parser.parse_args()
+    root = args.root
     source = root / 'summary.json'
     data = json.loads(source.read_text())
     order = ['myjev-0.8b', 'myjev-0.8b-rl', 'd3-lite', 'myjev-4b', 'myjev-4b-rl', 'd3-mini']
@@ -61,7 +65,8 @@ def main():
                   'latency.png':'07_blog/myjev-part4-inference-and-hosting/images/decision3-latency.png'}
     for name,target in destinations.items():
         path=Path(target)
-        if path.parent.is_dir():shutil.copyfile(root/name,path)
+        if root == Path('results/decision3-v1') and path.parent.is_dir():
+            shutil.copyfile(root/name,path)
     print(json.dumps(receipt,indent=2))
 
 

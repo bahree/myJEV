@@ -14,11 +14,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--wandb', action='store_true')
     parser.add_argument('--resume', action='store_true')
+    parser.add_argument('--output', type=Path, default=Path('results/decision3-v1'))
     args = parser.parse_args()
     root = Path.cwd()
-    output = root / 'results/decision3-v1'
+    output = args.output.resolve()
     logdir = output / 'execution'
-    logdir.mkdir(exist_ok=True)
+    logdir.mkdir(parents=True, exist_ok=True)
     environment = os.environ.copy()
     environment.update(HF_HOME=str(root / '.cache/huggingface'), PYTHONPATH=str(root / 'src'),
                        OMP_NUM_THREADS='1', MKL_NUM_THREADS='1', TOKENIZERS_PARALLELISM='false',
@@ -34,7 +35,7 @@ def main():
     def run(model, gpu, phase):
         executable = str(root / '.venv-decision3/bin/python') if model.startswith('d3-') else sys.executable
         command = [executable, '-u', 'scripts/run_decision3.py', '--model', model,
-                   '--phase', phase, '--device', 'cuda:' + str(gpu)]
+                   '--phase', phase, '--device', 'cuda:' + str(gpu), '--output', str(output)]
         if args.resume: command.append('--resume')
         if args.wandb and phase == 'quality': command.append('--wandb')
         event(action='start', model=model, gpu=gpu, phase=phase)
@@ -57,7 +58,7 @@ def main():
     for model in ['myjev-4b', 'd3-lite', 'myjev-0.8b-rl', 'd3-mini', 'myjev-0.8b', 'myjev-4b-rl']:
         run(model, 0, 'benchmark')
     with (logdir / 'summarize.log').open('w') as log:
-        subprocess.run([sys.executable, 'scripts/summarize_decision3.py', '--require-benchmark'],
+        subprocess.run([sys.executable, 'scripts/summarize_decision3.py', '--root', str(output), '--require-benchmark'],
                        env=environment, stdout=log, stderr=subprocess.STDOUT, check=True)
     event(action='complete')
 

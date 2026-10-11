@@ -51,7 +51,14 @@ python3.12 -m venv .venv-decision3
 
 The recorded host reused the reference environment's packages through a `.pth` file and installed that Transformers version locally; it did not change the released runtime. The commands above give a self-contained installation instead. The run receipts list the imported versions. Neither optimized FLA nor `causal-conv1d` was installed.
 
-Prepare BANKING77 and CLINC150 using their [dataset cards](README.md#data-and-provenance). Download the two complete D3 snapshots, including their example assets: upstream integrity verification checks those files too. Model weights and cards remain under their upstream Apache 2.0 license.
+Prepare the same BANKING77 and CLINC150 partitions from their pinned source revisions. Their [dataset cards](README.md#data-and-provenance) explain the labels and exclusions. Use a separate output for new model evaluations so the recorded study files remain available:
+
+```bash
+python scripts/prepare_banking.py --revision 57ec275d8078af65b7731c2a98be812d844a6d6b
+python scripts/prepare_clinc.py --revision 828f8093932c8fe6ca7936c3d2e52903b1c523de
+```
+
+Download the two complete D3 snapshots, including their example assets: upstream integrity verification checks those files too. Model weights and cards remain under their upstream Apache 2.0 license.
 
 ```bash
 export HF_HOME="$PWD/.cache/huggingface"
@@ -61,25 +68,28 @@ hf download vllm-sr/d3-mini --revision a475367de0d8133a3c1a2a0dc12303d89cfa2ab4
 # Activate the D3 environment:
 source .venv-decision3/bin/activate
 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python scripts/run_decision3.py \
-  --model d3-lite --phase quality --device cuda:0
+  --model d3-lite --phase quality --device cuda:0 --output results/decision3-replay
 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python scripts/run_decision3.py \
-  --model d3-mini --phase quality --device cuda:0
+  --model d3-mini --phase quality --device cuda:0 --output results/decision3-replay
 
 # Switch back to the installed reference environment:
 source .venv/bin/activate
-python scripts/run_decision3.py --model myjev-0.8b --phase quality --device cuda:0
-python scripts/run_decision3.py --model myjev-0.8b-rl --phase quality --device cuda:0
-python scripts/run_decision3.py --model myjev-4b --phase quality --device cuda:0
-python scripts/run_decision3.py --model myjev-4b-rl --phase quality --device cuda:0
+python scripts/run_decision3.py --model myjev-0.8b --phase quality --device cuda:0 --output results/decision3-replay
+python scripts/run_decision3.py --model myjev-0.8b-rl --phase quality --device cuda:0 --output results/decision3-replay
+python scripts/run_decision3.py --model myjev-4b --phase quality --device cuda:0 --output results/decision3-replay
+python scripts/run_decision3.py --model myjev-4b-rl --phase quality --device cuda:0 --output results/decision3-replay
 ```
 
-Each run validates the frozen data hashes and saves predictions as it goes. `--resume` requires matching protocol and runner hashes. Run each model again with `--phase benchmark` in its corresponding environment while the GPU is otherwise idle, then regenerate the report:
+Each run validates the frozen data hashes and saves predictions as it goes. `--resume` requires matching protocol and runner hashes. Run each model again with `--phase benchmark --output results/decision3-replay` in its corresponding environment while the GPU is otherwise idle, then regenerate the report and figures:
 
 ```bash
-python scripts/summarize_decision3.py --require-benchmark
+python scripts/summarize_decision3.py --root results/decision3-replay --require-benchmark
+python scripts/plot_decision3.py --root results/decision3-replay
 ```
 
-`scripts/run_decision3_study.py` automates the three-GPU schedule and subsequent isolated benchmarks when the reference environment and `.venv-decision3` are both available. Its optional `--wandb` flag uses the existing [tracking configuration](tracking.md). Local prediction and progress files remain authoritative if cloud tracking is unavailable.
+`scripts/run_decision3_study.py --output results/decision3-replay` automates the three-GPU schedule and subsequent isolated benchmarks when the reference environment and `.venv-decision3` are both available. It runs with Hugging Face downloads disabled, so populate the cache first. The two `hf download` commands above cache D3. For myJEV, run `scripts/run_decision3.py --model NAME --phase smoke --output results/decision3-replay` for each of the four release names in the reference environment; its loader downloads the required adapters, heads and pinned backbones. Add `--resume` to continue an identical evaluation.
+
+The driver's optional `--wandb` flag uses the existing [tracking configuration](tracking.md). It uploads request progress and system telemetry; predictions are also flushed to local files after every request. After completing the quality and benchmark phases and drawing the figures, `python scripts/sync_decision3.py --upload` adds the recorded study's summary tables, figures and text-free predictions to W&B. Use `--root results/decision3-replay` for your new run. The analysis and figures can be regenerated from local evidence without W&B access.
 
 ## Sources
 

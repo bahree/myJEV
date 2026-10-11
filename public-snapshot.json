@@ -154,7 +154,7 @@
       "mode": "100644"
     },
     "docs/decision3.md": {
-      "sha256": "b6a26a8d1a50ee100eff8492119c066cab63f5bac9f8b78bf02b826532e16563",
+      "sha256": "d8bc26842b83800cac1efdfc019c5d3a605100f1642912449f70d2527d0d2b83",
       "mode": "100644"
     },
     "docs/docker.md": {
@@ -1263,6 +1263,10 @@
     },
     "results/decision-lessons-v1/training-mechanics-demo.json": {
       "sha256": "4e6767358278657418dc4e1069ea5c627656e32043a450e9ac6be366c5b096ee",
+      "mode": "100644"
+    },
+    "results/decision3-v1/public-source.json": {
+      "sha256": "41dbbc1b2a8d5a06577209b02344a6af9db1099952a2df26ae815fec8031a90a",
       "mode": "100644"
     },
     "results/decision3-v1/source-review.json": {
@@ -7282,7 +7286,7 @@
       "mode": "100644"
     },
     "scripts/plot_decision3.py": {
-      "sha256": "3345b8a742a77486cdfcc99e03423dab7c64ad333feea42abad1d02fd6a2ae20",
+      "sha256": "49382ed69fc46f25af84ed3b8e03e61b4ebaf24f497dcb463305320835d40fee",
       "mode": "100644"
     },
     "scripts/plot_decision_comparison.py": {
@@ -7398,7 +7402,7 @@
       "mode": "100644"
     },
     "scripts/run_decision3_study.py": {
-      "sha256": "18dd49804734ee907cfda66809a88529231d7e3d76cd95a493dda88eef793e0e",
+      "sha256": "61dddffd2ecc13ce0f59cdac7c0d73e047899c4ef31979e67b3c76c94adf0323",
       "mode": "100644"
     },
     "scripts/run_decision_comparison.py": {
@@ -7527,6 +7531,10 @@
     },
     "scripts/summarize_study.py": {
       "sha256": "7f18280024bfe7e48878b48c0337c6e0936801e76e70d7790924321b82a6c7e2",
+      "mode": "100644"
+    },
+    "scripts/sync_decision3.py": {
+      "sha256": "aec16215520be1a41cb5309c8381311d97478123e4838f0f18b88a4c023d0549",
       "mode": "100644"
     },
     "scripts/sync_decision_evidence.py": {
