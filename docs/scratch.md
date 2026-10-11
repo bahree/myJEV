@@ -1,16 +1,22 @@
 # Build and run the scratch decision model
 
-What does the pretrained model contribute? To explore that question, I built a much smaller network whose weights start at random. It receives a context and candidate descriptions, learns to score each choice, and returns a decision. This guide follows its computation and the failures we found when training it. The [Qwen study](qwen-findings.md) explores the other route, starting with language knowledge learned during pretraining.
+I built a small network from random weights to follow how a decision model learns. We start with a controlled task: read a color signal and choose the matching option. The network receives context and candidate descriptions, converts the text to numbers, and learns to score each choice. This guide follows those steps and the failures we found. The [Qwen study](qwen-findings.md) starts with language knowledge learned during pretraining, which the scratch model has to do without.
 
 You can [generate data and train this model on CPU](#generate-and-train-locally) without downloading pretrained weights. First install and activate the environment in the [quick start](quickstart.md#install-and-test). If you only want to inspect a saved result, the [recorded scratch response](../results/scratch-deployment/equivalence-and-model-timings.json) is available without installation.
 
-The model converts text to UTF-8 bytes, assigns each byte an integer ID, and learns a vector of numbers for each ID. Its **encoder** combines those vectors into features that can be compared with the candidate descriptions. Unlike Qwen's alias readout, this model scores the candidate features directly. The table below follows those arrays through the network.
+The model converts text to UTF-8 bytes and gives each byte an integer ID. For `red`, the byte values are 114, 101 and 100. Our encoder adds two to those values and prepends a start marker, giving `[1, 116, 103, 102]`. The byte IDs run from 2 to 257. ID 1 is the beginning-of-sequence marker (BOS); ID 0 is padding (PAD), the empty slots used to make sequences in a batch the same length.
+
+Each ID selects a learned vector, an array of numbers. The **encoder** combines information across text positions to update those vectors. We use them to compare the request with the candidate descriptions, then score each choice. Qwen instead reads scores for the short aliases assigned to candidates, as the [architecture guide](architecture.md#one-forward-pass) shows.
 
 ## Trace one decision through the network
 
-The implemented fixture configuration has two encoder blocks, width 64, four attention heads and a feed-forward width of 256. With candidate interaction enabled it has **201,175 parameters**, smaller than the original 5-20M exploratory design target. Starting smaller makes masking, optimization and generalization failures easier to inspect before spending on scale. A learned subword tokenizer and a larger encoder remain optional extensions.
+The implemented fixture configuration has two encoder blocks, width 64, four attention heads and a feed-forward width of 256. With candidate interaction enabled it has **201,175 parameters**, smaller than the original 5-20M exploratory design target. This size let us inspect failures in padding masks, training and performance on new examples with less computation. A learned subword tokenizer and a larger encoder remain optional extensions.
 
-A **tensor** is an array with several axes. Here B counts requests in a batch, K counts candidates, L is the context length and D is the candidate-description length. The final 64 in a shape is the number of learned features per token or candidate. For example, `B x K x 64` stores one 64-number feature vector for every candidate in every request:
+A **tensor** is an array with several axes. Here B counts requests in a batch, K counts candidates, L is the context length and D is the candidate-description length. The final 64 in a shape is the number of learned features per token or candidate. For one request with three candidates, `1 x 3 x 64` stores three vectors of 64 numbers. More generally, `B x K x 64` stores one such vector for each candidate in each request.
+
+To turn a whole description into one vector, we average its encoded token vectors and leave out the padding. That operation is called **mean pooling**. Each resulting candidate vector then gathers information from the context through attention. Four attention heads perform that calculation in parallel, each using 16 features. These internal attention operations are separate from the output heads that produce scores or confidence.
+
+The arrays change as follows:
 
 | Operation | Tensor shape | What is shared |
 |---|---|---|
@@ -22,9 +28,9 @@ A **tensor** is an array with several axes. Here B counts requests in a batch, K
 | Scalar score per candidate | B x K | One shared selection head |
 | Scalar correctness / 21-bin confidence policy | B x K / B x K x 21 | Separate confidence heads |
 
-There is one network forward per request, with **two invocations of the shared text encoder**, one for context and one for batched candidates. This differs from Qwen's one combined-context backbone read. Candidate count and description length still increase computation. Parameter sharing does not make processing cost constant.
+One decision calls the same text encoder twice: once for the context and once for all the candidate descriptions together. Both calls use the same learned weights. Qwen reads a combined prompt containing all those fields in one backbone pass. Candidate count and description length still increase computation. Parameter sharing does not make processing cost constant.
 
-Each byte maps to an integer from 2 to 257. PAD is 0 and BOS is 1. Token positions inside a description matter; positions in the candidate list do not receive embeddings. Caller-supplied IDs remain outside the network. The score head operates on each contextualized candidate, so permuting candidates should permute the outputs. Tests check that behavior in evaluation mode, including confidence heads and mixed-length batches.
+Token positions inside a description matter; positions in the candidate list do not receive embeddings. Caller-supplied IDs remain outside the network. The score head operates on each contextualized candidate, so permuting candidates should permute the outputs. Tests check that behavior in evaluation mode, including confidence heads and mixed-length batches.
 
 The fixture limits are 256 UTF-8 bytes for instructions plus newline plus context, 64 bytes per candidate description, and 32 candidates. The scratch encoder counts bytes. The Qwen interface uses its tokenizer to count tokens. Oversized input is rejected. Training and quality evidence initially use four candidates; accepting 32 does not establish useful accuracy at that size.
 
@@ -36,7 +42,7 @@ Supervised confidence training adds a scalar correctness loss for the currently 
 
 ## Reproduce the first learning failure
 
-The original 100-update selection pilot fit its training surface form but failed a changed layout:
+The original 100-update selection pilot learned to answer examples arranged like its training inputs. Moving the same fields to a different layout reduced accuracy. Restoring the validation inputs to the training layout recovered some of it:
 
 | Diagnostic | Accuracy |
 |---|---:|
@@ -44,7 +50,7 @@ The original 100-update selection pilot fit its training surface form but failed
 | Held-out validation layout | 20.7% |
 | Same validation rows restored to training layout | 68.4% |
 
-This supports layout sensitivity as a contributor, without fully isolating it. Variant 2 expands training layouts and nonce lengths. A 500-update selection pilot reached **78.9% validation accuracy**. Both data variety and exposure changed, preventing attribution to either intervention alone. The original failed pilot remains in `results/scratch-v1/`; the revised pilot is in `results/scratch-v2/`.
+The comparison points to text layout as one contributor. In variant 2, I varied the layouts and the lengths of irrelevant record strings, called **nonces**. A 500-update selection pilot reached **78.9% validation accuracy**. I changed both the examples and the amount of training, so the result cannot tell us how much each change contributed. The original failed pilot remains in `results/scratch-v1/`; the revised pilot is in `results/scratch-v2/`.
 
 ## Generate and train locally
 
@@ -90,7 +96,7 @@ The shared loader dispatches by the scratch manifest format. It verifies the man
 
 ## Completed controlled study and its limits
 
-The frozen 13,000-update study is complete. Main runs used three seeds, with 1,000 initial SFT updates and separate 1,000-update continuations at batch size 8. The supervised learning rate was chosen using validation, then shared across methods. The smaller tuning budget limits what can be inferred about each method’s best attainable result.
+The frozen study used 13,000 updates in total. SFT labels supervised learning from known answers in the result files. Main runs used three seeds, which control random choices such as initial weights and example order. Each run had 1,000 initial SFT updates and separate 1,000-update continuations at batch size 8. The supervised learning rate was chosen using validation, then shared across methods. The smaller tuning budget limits what can be inferred about each method’s best attainable result.
 
 | Method | Mean test accuracy | Seed SD |
 |---|---:|---:|
@@ -113,7 +119,7 @@ The failure belongs to this configuration and training budget. Tokenization, cap
 
 ## Measured deployment check
 
-The engineering check uses the seed-11 synthetic SFT artifact. No scratch artifact is recommended for production. It contains 809,244 bytes of weights. Python/CLI outputs were identical on the recorded request; Docker GPU HTTP probabilities differed from CPU by less than 1e-8, and the selected ID and artifact revision matched. Oversized HTTP input returned 422.
+The engineering check uses the seed-11 synthetic SFT artifact with 201,175 parameters. Its recorded request asks for a color. The failed 217,559-parameter BANKING77 model above is a separate checkpoint trained on different data. No scratch artifact is recommended for production. It contains 809,244 bytes of weights. Python/CLI outputs were identical on the recorded request; Docker GPU HTTP probabilities differed from CPU by less than 1e-8, and the selected ID and artifact revision matched. Oversized HTTP input returned 422.
 
 | Path | Warm p50 | Warm p95 |
 |---|---:|---:|
@@ -140,6 +146,6 @@ The [release manifest](../results/scratch-teaching-release-v1/manifest.json) rec
 
 I tested whether the model could at least memorize a tiny training set before changing the architecture. It reached 100% in all three seeds. An initial deterministic fixture then exposed a data mistake: numeric record indices correlated with labels. A successful run could exploit that shortcut, so the original fixture and failed seeds remain in the records, followed by the corrected test.
 
-The [corrected protocol](../results/scratch-ladder-v2/report.md) pairs each nuisance nonce with all four color labels and keeps test nonces out of training. With the same architecture, learning rate and per-run budget, seeds 11/22/33 each recovered the explicit color rule on all 64 held-out decisions across 16 nonce groups. The check tests rule recovery within one template. It does not repair the original noisy/layout-shift task or the 1.30% BANKING result.
+The [corrected protocol](../results/scratch-ladder-v2/report.md) pairs each irrelevant record string with all four color labels. Its value therefore cannot identify the answer. Strings used in the test examples are kept out of training. With the same architecture, learning rate and per-run budget, seeds 11/22/33 each recovered the explicit color rule on all 64 held-out decisions across 16 nonce groups. The check tests rule recovery within one template. It does not repair the original noisy/layout-shift task or the 1.30% BANKING result.
 
-The extension used 2,700 total updates including the preserved confounded attempt. Its lesson is narrower and more useful than declaring success or failure of scratch models generally: the network can memorize a small set and recover a simple signal, while broader generalization remains unproven.
+The extension used 2,700 total updates including the preserved confounded attempt. The network learned to memorize a small set and recover a simple signal. Learning to handle other layouts, ambiguous examples and natural-language banking requests remains unresolved by this diagnostic.

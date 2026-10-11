@@ -4,9 +4,17 @@ The [first request](../examples/request.json) asks whether a duplicate charge be
 
 The released Qwen implementation receives context, instructions, and 2-160 candidate IDs and descriptions. The caller supplies those choices with each request. A **backbone** is the pretrained network that reads the text; an **adapter** stores learned changes to its computation; a **head** maps internal features to an output such as confidence. The [scratch model](scratch.md) uses the same kind of request but learns its text features from random weights.
 
+## What each model has already learned
+
+Qwen starts with weights learned during language pretraining. Our adapters adjust that existing network for the decision task. The scratch network starts with random weights and has to learn from our small set of examples. I first trained it to read color signals, then tested a separate version on BANKING77, a dataset of customer messages with 77 banking-intent labels.
+
+Comparing their results includes both the network design and these different training histories. To isolate the effect of design, we would need matched training conditions. Resource comparisons also need the complete Qwen model: its small adapter still requires the pretrained backbone at inference.
+
+A pretrained encoder offers another starting point. The [ModernBERT control](qwen-findings.md) uses existing language features to classify requests into a fixed set of 77 labels. Supplying new descriptions cannot give that classifier a new task. Qwen and the scratch model instead receive candidate descriptions with each request.
+
 ## One forward pass
 
-1. Give each candidate a short **alias**, a label verified to occupy one tokenizer unit, or token. Put those aliases, the candidate descriptions and the context into the saved prompt template.
+1. Give each candidate a short **alias**. For example, `billing`, `technical` and `other` can become `A`, `B` and `C`. Each alias is verified to occupy one tokenizer unit, or token, so we can read all their scores at the same output position. Put the aliases, descriptions and context into the saved prompt template.
 2. Convert the prompt into token IDs. Reject inputs beyond the model package's configured limit rather than silently cutting away text.
 3. Run the Qwen backbone once. Its internal features at the final input position provide the alias scores and the confidence-head input. No answer tokens are generated.
 4. Normalize the candidate scores to sum to one, select the largest, and map its alias back to the caller's ID, such as `billing`. Return the scores and the configured correctness estimate too.
@@ -53,9 +61,13 @@ The backbone weights stay frozen. Training updates attention LoRA adapters and t
 
 ## Confidence has its own meaning
 
-Selection scores choose the answer; confidence estimates whether that answer is right. The supervised stage trains both a **scalar** head, which produces one correctness estimate per candidate, and a confidence policy over 21 values: 0.00, 0.05, …, 1.00. The RL continuation optimizes the latter. Its released confidence is the probability-weighted average of those values for the selected answer. The ordinary supervised releases instead use the selected probability after temperature calibration. These are different sources for the same reported quantity, as the table shows.
+Selection scores choose the answer; confidence estimates whether that answer is right. Suppose the three selection scores are 0.55, 0.30 and 0.15. The first candidate wins. A separate head might report 0.68 confidence in that choice. The 0.55 ranks the supplied options; the 0.68 estimates selected-answer correctness. Both calculations need evaluation against actual answers.
 
-The loader declares the confidence source explicitly:
+The supervised stage trains two confidence heads. A **scalar** head produces one correctness estimate per candidate. The other head assigns probabilities to 21 possible confidence values: 0.00, 0.05, and so on through 1.00. The RL continuation optimizes this confidence policy.
+
+At inference, the RL release chooses the highest-scoring answer and averages the policy's confidence values for that answer, weighted by their probabilities. For an illustrative policy with probabilities 0.2, 0.7 and 0.1 on confidence values 0.6, 0.8 and 1.0, that gives `0.2*0.6 + 0.7*0.8 + 0.1*1.0 = 0.78`. During sampled training, it draws an answer and a confidence value instead. We evaluate that sampled behavior separately from the deployed decision.
+
+The standard supervised releases use the selected score after temperature calibration. Each manifest records the computation used for confidence in its `confidence_mode` field:
 
 | `confidence_mode` | Correctness estimate | Where it is used |
 |---|---|---|
@@ -137,7 +149,7 @@ The [frozen diagnostic report](https://github.com/bahree/myJEV/blob/main/results
 
 A [seven-case untouched-backbone probe](../results/numeric-readout-v1/report.md) compares existing single-token aliases with complete numeric suffix probabilities on the same pinned BF16 4B backbone. Both answered all seven original demos correctly. The prompt and readout both change, the examples were previously viewed, and there is no confidence calibration, limiting the probe to an implementation demonstration. It reproduces neither the paper’s optimized computation nor a broader accuracy benchmark.
 
-`scripts/numeric_readout_probe.py` teacher-forces full candidate continuations, including their closing bracket, and sums suffix log probabilities. It repeats the prompt instead of implementing cached prefill branches; its timings must not be read as a speed comparison. [Numeric readout tests](../tests/test_numeric_readout.py) check suffix arithmetic and token-boundary failures. See the [source review](system-one-research.md) for the external method's distinct training and inference semantics.
+`scripts/numeric_readout_probe.py` supplies each complete candidate continuation, including its closing bracket, and asks the model to score its tokens. This procedure is called **teacher forcing**. Adding the token log probabilities gives a score for the whole suffix. The probe reads the prompt again for each candidate. The paper's implementation caches the shared prompt computation and reuses it across branches, so our timings would measure a different implementation. [Numeric readout tests](../tests/test_numeric_readout.py) check suffix arithmetic and token-boundary failures. See the [source review](system-one-research.md) for the external method's distinct training and inference semantics.
 
 Candidate-order change rates are per permutation, each compared with the original order. They are not the fraction of requests that could change under any possible ordering.
 

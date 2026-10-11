@@ -102,7 +102,7 @@
       "mode": "100644"
     },
     "docs/architecture.md": {
-      "sha256": "e69e49d8e6d55411a31aec2756afbbadf120541366c5c68c497426f09579520c",
+      "sha256": "7be25bf48865164bba45d4be6f2540177b796f30f39c79d7e2a0ccadf7f07540",
       "mode": "100644"
     },
     "docs/attribution.md": {
@@ -186,7 +186,7 @@
       "mode": "100644"
     },
     "docs/scratch.md": {
-      "sha256": "21a7ac8957d615f35e4497b44b9c6713fb08ee8cc1d5936c79a028f94c6794c4",
+      "sha256": "b8ad4a79e09deb4d7a91175ff65c1a61995a4e6a46145b8f001865b532782877",
       "mode": "100644"
     },
     "docs/system-one-peer-review.md": {
@@ -210,7 +210,7 @@
       "mode": "100644"
     },
     "docs/walkthrough.md": {
-      "sha256": "f17ac7679ab1cb32ded0c94e61069b9b3ec8316a149c442d5d574af7dd96019c",
+      "sha256": "fdd7d581ae973aa497eceea2032065d482770d56cecdfad1265c72f2f8bca712",
       "mode": "100644"
     },
     "examples/client.py": {

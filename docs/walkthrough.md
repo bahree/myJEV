@@ -39,7 +39,7 @@ The selected route is `billing`. The selection scores rank the three supplied ch
 
 This release uses the selected option's score as its confidence after **temperature calibration**, an adjustment fitted on separate examples. That is why the two numbers match here. Other releases calculate confidence with a separate learned head. The fields describe different things even when their values happen to be equal.
 
-For candidate logits `z` and positive temperature `T`, selection probabilities are `softmax(z/T)`. The largest value selects a candidate. Changing a positive scalar temperature preserves the winner but changes probability sharpness. The RL artifact instead has a conditional distribution over 21 confidence actions for each candidate, and reports the selected candidate's expected confidence.
+For candidate logits `z` and positive temperature `T`, selection probabilities are `softmax(z/T)`. The largest value selects a candidate. Changing a positive scalar temperature preserves the winner but changes probability sharpness. The RL artifact instead assigns probabilities to 21 possible confidence values for each candidate. It reports their probability-weighted average for the selected answer. The [architecture guide](architecture.md#confidence-has-its-own-meaning) works through that calculation.
 
 ```mermaid
 flowchart TB
@@ -53,6 +53,25 @@ flowchart TB
 ```
 
 To see what changes with the input, follow the [seven-request walkthrough](../results/demos-v1/report.md#what-each-request-asks). It starts with this billing request and an app crash, adds an outside request, tests a refund rule at days 13 and 14, then tries a quoted instruction and a short post. Each example explains the expected answer before showing the recorded output. The smaller 0.8B model approves the day-14 refund with confidence 0.9892 even though the rule requires fewer than 14 days. A confident answer can be wrong in a small, clear example.
+
+Those seven requests were written to illustrate the interface. They use one loaded model with different instructions and choices. The short tutorial example is separate from the [archive evaluation](datasets/blog-archive.md), which uses actual blog posts.
+
+To try a changed refund rule:
+
+1. Open `examples/demo-requests.jsonl`. Copy its two refund requests into a new file named `refund-30-days.jsonl`, keeping one complete JSON request per line.
+2. In both requests, change `instructions` to: “Approve a refund only if fewer than 30 full days have passed since purchase. On day 30 or later, deny it. Apply this policy exactly.”
+3. Set the first request's `context` to “The refund request was made 29 full days after purchase.” Set the second to the same sentence with 30 instead of 29. Keep the candidates unchanged.
+4. Write down the expected decisions before running: `approve` at day 29 and `deny` at day 30.
+
+Run the two requests and save the responses:
+
+```bash
+myjev score --artifact bahree/myJEV-4B \
+  --revision 38f7cca5a8530483309f576b0c3dd1756bc27c33 \
+  --jsonl --input refund-30-days.jsonl > refund-30-results.jsonl
+```
+
+Compare each `selected_id` with the expected answer, then inspect its `confidence`. Keep the request file and complete responses together, including any wrong answers. These are instructions for your own experiment; the recorded day-13/day-14 results above used the original rule.
 
 See [architecture](architecture.md) for the network computation and [contract tests](../tests/test_contract.py) for the checks on request and response structure.
 
