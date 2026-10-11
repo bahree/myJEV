@@ -2,6 +2,7 @@
 import argparse
 import json
 from pathlib import Path
+from fetch_evidence import require_evidence
 
 
 def main():
@@ -9,6 +10,8 @@ def main():
     parser.add_argument('--source', type=Path, default=Path('results/release-validation-v1'))
     parser.add_argument('--output', type=Path, default=Path('results/release-readiness-v1/serving-summary.json'))
     args = parser.parse_args()
+    if args.source == Path('results/release-validation-v1'):
+        require_evidence('records')
     rows = []
     for folder in sorted(args.source.glob('myjev-*')):
         equivalence = json.loads((folder / 'equivalence.json').read_text())

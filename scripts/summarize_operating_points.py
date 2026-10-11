@@ -6,6 +6,9 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
+from fetch_evidence import require_evidence
+
+require_evidence('records')
 
 ROOT=Path('results/longer-v1')
 OUT=ROOT/'operational'

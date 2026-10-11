@@ -2,6 +2,9 @@
 import hashlib
 import json
 from pathlib import Path
+from fetch_evidence import require_evidence
+
+require_evidence('records')
 
 ROOT=Path('results/generalization-v1')
 plan=json.loads((ROOT/'frozen-plan.json').read_text())

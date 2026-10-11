@@ -71,7 +71,7 @@ The initial 0.8B transfer/robustness work is limited. The frozen expanded study 
 
 ## Find the underlying evidence
 
-The [results index](../results/README.md) separates browsable reports from optional evidence downloads. Restore the relevant bundle before replaying an analysis that reads individual predictions. Inference does not use these files.
+The [results index](../results/README.md) separates browsable reports from optional evidence downloads. Fetch `records` for per-run metrics and training traces, then the relevant prediction bundle when an analysis needs individual responses. Inference does not use these files.
 
 | Evidence | Location |
 |---|---|
@@ -85,11 +85,11 @@ The [results index](../results/README.md) separates browsable reports from optio
 | Historical pilot seed-11 metrics and predictions (download `pilot`) | `results/pilot-{size}-{method}-evaluation/` |
 | Historical pilot seed-22/33 metrics and predictions (download `pilot`) | `results/three-seed-{size}/seed-{seed}/{method}/` |
 | Temperature and constant controls | Corresponding `*-posthoc/` directories |
-| Training manifests and update records | [artifact-manifests](../results/artifact-manifests/) |
+| Training manifests and update records (download `records`) | `results/artifact-manifests/` |
 | HTTP benchmark measurements | [docker-size-validation](../results/docker-size-validation/) |
 | Full observed GPU activity | [telemetry chart](../results/gpu-telemetry-20261004T205942Z/gpu-activity.png) |
 
-Per-run reports contain macro-F1, correctness/selection Brier metrics, confidence discrimination, disclosed ECE bins, reliability values, and calibration-selected coverage/error results. Paired bootstrap intervals are conditional on the observed seeds and are not adjusted for multiple comparisons. Consult [the protocol](protocol.md) before treating pilot numbers as production error guarantees.
+The downloaded per-run reports contain macro-F1, correctness/selection Brier metrics, confidence discrimination, disclosed ECE bins, reliability values, and calibration-selected coverage/error results. Paired bootstrap intervals are conditional on the observed seeds and are not adjusted for multiple comparisons. Consult [the protocol](protocol.md) before treating pilot numbers as production error guarantees.
 
 ## Reproduce figures or train new runs
 
@@ -103,6 +103,14 @@ python3 scripts/fetch_evidence.py --bundle pilot
 ```
 
 These commands use the restored evaluation evidence and require no model download. Run them in a writable checkout; they regenerate output files.
+
+To regenerate the longer study's summary or its training and reliability plots, restore the detailed records:
+
+```bash
+python3 scripts/fetch_evidence.py --bundle records
+python3 scripts/summarize_longer_study.py
+python3 scripts/plot_review_evidence.py
+```
 
 For new training, begin with the supervised 0.8B artifact in the [quick start](quickstart.md). Then, in a separate experiment checkout if you want to preserve the published results unchanged:
 

@@ -2,6 +2,8 @@
 
 Use Weights & Biases (W&B) to compare training curves and watch a run in progress. The local JSONL logs, evaluation outputs and manifests remain available if the dashboard is down. Uploads copy those records; they exclude model weights, optimizer state, credentials and archive annotations.
 
+To inspect the published study's training logs locally, run `python scripts/fetch_evidence.py --bundle records`. The [results guide](../results/README.md) explains the optional downloads. New training runs write their own logs as they proceed.
+
 ## Set up your own project
 
 Create a W&B project with the visibility you intend, then install the pinned optional SDK and create a local configuration:

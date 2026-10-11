@@ -37,14 +37,38 @@ def matches(path, record):
             and sha256(path) == record['sha256'])
 
 
+def resolve_bundles(manifest, selected):
+    """Install prerequisites first; reject unknown names and dependency cycles."""
+    ordered, visiting, visited = [], set(), set()
+
+    def visit(name):
+        if name not in manifest['bundles']:
+            raise ValueError(f'Unknown evidence bundle: {name}')
+        if name in visiting:
+            raise ValueError(f'Evidence dependency cycle: {name}')
+        if name in visited:
+            return
+        visiting.add(name)
+        for dependency in manifest['bundles'][name].get('requires', []):
+            visit(dependency)
+        visiting.remove(name)
+        visited.add(name)
+        ordered.append(name)
+
+    for name in selected:
+        visit(name)
+    return ordered
+
+
 def require_evidence(bundle, root=Path('.')):
     """Stop replay scripts before writing partial results when inputs are absent."""
     manifest_path = root / 'results/evidence-manifest.json'
     if not manifest_path.exists():
         return  # Older or independent experiment trees have no release manifest.
     manifest = json.loads(manifest_path.read_text())
-    if any(not (root / name).is_file() for name in manifest['bundles'][bundle]['files']):
-        raise SystemExit(f'Missing {bundle} evidence. Run: python scripts/fetch_evidence.py --bundle {bundle}')
+    for required in resolve_bundles(manifest, [bundle]):
+        if any(not (root / name).is_file() for name in manifest['bundles'][required]['files']):
+            raise SystemExit(f'Missing {required} evidence. Run: python scripts/fetch_evidence.py --bundle {bundle}')
 
 
 def install_archive(archive, record, root):
@@ -108,7 +132,7 @@ def main():
         parser.error('Unknown bundle; choose from ' + ', '.join(manifest['bundles']))
     checked = 0
     try:
-        for key in dict.fromkeys(selected):
+        for key in resolve_bundles(manifest, selected):
             record = manifest['bundles'][key]
             missing = [name for name, info in record['files'].items()
                        if not matches(checked_path(root, name), info)]

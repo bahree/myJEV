@@ -206,7 +206,7 @@ myJEV/
 ├── examples/        Request fixtures and client examples
 ├── deploy/          Local Docker Compose and managed-hosting configuration
 ├── docs/            Reader guides, protocol, dataset cards, and roadmap
-├── results/         Study reports, metrics, training logs, and figures
+├── results/         Reports, summaries, figures, and optional evidence downloads
 ├── Dockerfile       Reference inference container
 └── CHANGELOG.md     Versioned release history
 ```

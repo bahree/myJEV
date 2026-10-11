@@ -74,6 +74,8 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--root',type=Path,default=Path('results/unsloth-head-v1'))
     args=p.parse_args(); root=args.root
+    if root == Path('results/unsloth-head-v1'):
+        require_evidence('records')
     plan=read('configs/head-comparison-v1.json'); results=[]; sources={}
     for path in (Path('configs/head-comparison-v1.json'),root/'selection.json'):
         if path.exists():sources[path.as_posix()]=hashlib.sha256(path.read_bytes()).hexdigest()

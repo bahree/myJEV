@@ -3,6 +3,9 @@ import hashlib
 import json
 from pathlib import Path
 import statistics
+from fetch_evidence import require_evidence
+
+require_evidence('records')
 
 ROOT=Path('results/precision-v1')
 rows=[];sources={}

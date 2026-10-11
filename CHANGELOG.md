@@ -1,5 +1,9 @@
 # Release history
 
+## Smaller results checkout
+
+Keep reports, aggregate summaries, figures, demos and linked release evidence in the working tree. Move 1,448 detailed records to a checksum-pinned optional download, preserving their original contents and public history. The evidence helper restores prerequisites automatically for the head and decision comparisons. See the [results guide](results/README.md).
+
 ## Microsoft Decision-1 comparison
 
 Added a frozen local/OpenRouter evaluation with paired candidate-order, identifier, whitespace and instruction perturbations. The runner records service identity and usage, requires an explicit live-call budget and supports CPU replay from saved probabilities. The six myJEV releases and Docker runtime are unchanged. See the [comparison guide](docs/decision-1.md).

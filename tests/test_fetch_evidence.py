@@ -100,3 +100,34 @@ def test_cli_offline_restore_and_check(tmp_path):
     assert missing.returncode == 1 and 'missing or changed' in missing.stderr
     subprocess.run(args + ['--archive-dir', str(archive.parent)], check=True, capture_output=True)
     subprocess.run(args + ['--check'], check=True, capture_output=True)
+
+
+def test_cli_restores_prerequisites_and_reports_missing_records(tmp_path):
+    entries = {}
+    for name in ('records', 'decision'):
+        archive, record = bundle(tmp_path, [(f'results/{name}/input.json', name.encode(), tarfile.REGTYPE)])
+        archive = archive.rename(tmp_path / f'{name}.tar.gz')
+        record['archive'] = archive.name
+        entries[name] = record
+    entries['decision']['requires'] = ['records']
+    root = tmp_path / 'checkout'
+    (root / 'results').mkdir(parents=True)
+    (root / 'results/evidence-manifest.json').write_text(json.dumps({'schema_version': 1, 'bundles': entries}))
+    with pytest.raises(SystemExit, match='Missing records evidence.*--bundle decision'):
+        fetch.require_evidence('decision', root)
+    args = [sys.executable, str(SCRIPT), '--root', str(root), '--bundle', 'decision']
+    subprocess.run(args + ['--archive-dir', str(tmp_path)], check=True, capture_output=True)
+    assert (root / 'results/records/input.json').read_bytes() == b'records'
+    assert (root / 'results/decision/input.json').read_bytes() == b'decision'
+    subprocess.run(args + ['--check'], check=True, capture_output=True)
+    fetch.require_evidence('decision', root)
+
+
+def test_dependencies_reject_cycles_and_unknown_bundles():
+    manifest = {'bundles': {'records': {}, 'decision': {'requires': ['records']}}}
+    assert fetch.resolve_bundles(manifest, ['decision', 'records']) == ['records', 'decision']
+    with pytest.raises(ValueError, match='Unknown evidence bundle'):
+        fetch.resolve_bundles(manifest, ['unknown'])
+    manifest['bundles']['records']['requires'] = ['decision']
+    with pytest.raises(ValueError, match='dependency cycle'):
+        fetch.resolve_bundles(manifest, ['decision'])
