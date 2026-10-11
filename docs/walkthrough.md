@@ -4,7 +4,7 @@ Run a request, inspect the response, then follow the arithmetic that produced it
 
 ## 1. Install once, choose the amount of compute
 
-Use Python 3.12 on Linux and the [locked installation](quickstart.md#install-and-test). Reading the reports requires no installation. The arithmetic and calibration labs run on CPU without downloaded model weights. Released Qwen scoring was tested on 24 GB A30 GPUs; its first load downloads a separately pinned backbone. An adapter stores the learned update; inference also needs the pinned backbone.
+For one request or the seven demos, use the [Docker commands](docker.md#try-one-request-without-starting-a-service), starting with CPU if NVIDIA access is unavailable. To run the Python exercises below, use Python 3.12 on Linux and the [locked installation](quickstart.md#install-and-test). Reading the reports requires no installation. The arithmetic and calibration labs run on CPU without downloaded model weights. Released Qwen scoring was tested on 24 GB A30 GPUs; its first load downloads a separately pinned backbone. An adapter stores the learned update; inference also needs the pinned backbone.
 
 | Route | First executable step | What you learn |
 |---|---|---|
@@ -42,14 +42,23 @@ This release uses the selected option's score as its confidence after **temperat
 For candidate logits `z` and positive temperature `T`, selection probabilities are `softmax(z/T)`. The largest value selects a candidate. Changing a positive scalar temperature preserves the winner but changes probability sharpness. The RL artifact instead assigns probabilities to 21 possible confidence values for each candidate. It reports their probability-weighted average for the selected answer. The [architecture guide](architecture.md#confidence-has-its-own-meaning) works through that calculation.
 
 ```mermaid
+%%{init: {"flowchart": {"wrappingWidth": 230}}}%%
 flowchart TB
-  I[Input tokens] --> G[Backbone pass]
-  G --> T[Output token]
-  T --> R[Append token and repeat]
-  R --> G
-  I --> D[Single backbone pass]
-  D --> S[Candidate scores]
-  S --> A[Selected ID and confidence]
+  I[Input tokens]
+
+  subgraph GENERATE["LLM text generation"]
+    G[Backbone pass] --> T[Output token]
+    T --> R[Append token]
+    R -->|Repeat until finished| G
+  end
+
+  subgraph SCORE["myJEV decision scoring"]
+    D[One Qwen backbone pass] --> S[Candidate scores]
+    S --> A[Selected ID and confidence]
+  end
+
+  I --> G
+  I --> D
 ```
 
 To see what changes with the input, follow the [seven-request walkthrough](../results/demos-v1/report.md#what-each-request-asks). It starts with this billing request and an app crash, adds an outside request, tests a refund rule at days 13 and 14, then tries a quoted instruction and a short post. Each example explains the expected answer before showing the recorded output. The smaller 0.8B model approves the day-14 refund with confidence 0.9892 even though the rule requires fewer than 14 days. A confident answer can be wrong in a small, clear example.

@@ -1,6 +1,6 @@
 # Quick start
 
-For Windows PowerShell, Linux or macOS without a local Python install, use the [Docker guide](docker.md). It covers NVIDIA access, a smaller CPU trial and automatic device selection.
+To score the included request without installing Python, use the [single-request Docker commands](docker.md#try-one-request-without-starting-a-service). Start with 0.8B on CPU, or choose 4B with NVIDIA GPU access. The [Docker batch commands](docker.md#score-your-own-files-or-the-seven-demos) continue with all seven examples. The instructions below install Python for readers who want to work with the code.
 
 This guide takes you from installation to one decision, then to a batch and a local HTTP service. It uses the published [myJEV-4B](https://huggingface.co/bahree/myJEV-4B), so you can follow it without training. If you want to build a model yourself, the optional pilot instructions follow the serving examples.
 
@@ -34,6 +34,8 @@ The first call downloads files from the Hugging Face Hub: the small updates trai
 The input file asks where to route “I was charged twice,” with billing, technical support and other as the choices. The recorded response selects `billing` with confidence approximately `0.9834`. It also contains a score for every choice and hashes identifying the model and calibration. The [README example](../README.md#an-actual-local-request-and-response) shows the complete request and saved output; the [walkthrough](walkthrough.md#2-follow-one-decision) explains the fields.
 
 ## Try more requests
+
+Docker users can follow the [batch walkthrough](docker.md#score-your-own-files-or-the-seven-demos). The following commands use the Python environment installed above.
 
 ```bash
 python scripts/run_demos.py > demo-results.jsonl

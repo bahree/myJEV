@@ -26,7 +26,11 @@
       "mode": "100644"
     },
     "README.md": {
-      "sha256": "75b68474c8db9f7c08ac7ddbb575849c52d095379b4607f7abf08520419e45e9",
+      "sha256": "ba6de00f2b4645f916f3ae6be81e1f15301cee56b96ff3c0c8d7e7aa568207d2",
+      "mode": "100644"
+    },
+    "assets/windows-cpu-inference.png": {
+      "sha256": "d910838ff4e9af81cef4b81163bd9fb9242424c9199c15e378c38069c56f8819",
       "mode": "100644"
     },
     "configs/0.8b.json": {
@@ -106,7 +110,7 @@
       "mode": "100644"
     },
     "docs/architecture.md": {
-      "sha256": "67818347dc6a6436713f39e6b47209d7699d2a5c5f7b49ee35d5b692c6314e18",
+      "sha256": "34b6a0afb9d4648e58b780b9ed277ffcfb7cc215fe2cbf304058633404b0fcee",
       "mode": "100644"
     },
     "docs/attribution.md": {
@@ -146,7 +150,7 @@
       "mode": "100644"
     },
     "docs/docker.md": {
-      "sha256": "c37892b5253ec3f7e159a9768f9eef16d3b13cc678a70094f6c1930bdcafb054",
+      "sha256": "72941377705fa4b29e481f5218338839242bd3ad40a324b7722739ab80d215bf",
       "mode": "100644"
     },
     "docs/experiments.md": {
@@ -158,7 +162,7 @@
       "mode": "100644"
     },
     "docs/inference.md": {
-      "sha256": "5705c0ab36dc7c364c28fd303872486171ce46c6555d39b1274226772b633f0f",
+      "sha256": "52110c9a12b22e8323a350e8bc1ce0f88e342e7dccbbf00d4248b2f384da38e3",
       "mode": "100644"
     },
     "docs/learnings.md": {
@@ -178,7 +182,7 @@
       "mode": "100644"
     },
     "docs/quickstart.md": {
-      "sha256": "d4c0bb13dc113faf07391a5a73e68d0933aaac54bfb663fcb0a093c2a42ebe0a",
+      "sha256": "bf427e3cdb9a9abe7cd8909144ea9061b1f3424b5442c4a15224d5fcc0b6fe4d",
       "mode": "100644"
     },
     "docs/qwen-findings.md": {
@@ -218,7 +222,7 @@
       "mode": "100644"
     },
     "docs/walkthrough.md": {
-      "sha256": "16fa36383e242be1219c0434e4ac90874192280e3354a7f8589c3bbe36a5807e",
+      "sha256": "ddcf4f263466342ce6ca5dc2ccda629d7d096a19b4d9c8dbe819212c9ab79a53",
       "mode": "100644"
     },
     "examples/client.py": {
@@ -1299,6 +1303,50 @@
     },
     "results/docker-equivalence.json": {
       "sha256": "8a6187780dcc82bc42646b3a79b93a6c28492de00dde6e4f29a0b1a8440108b4",
+      "mode": "100644"
+    },
+    "results/docker-reader-v1/commands.json": {
+      "sha256": "bfbc16d4e71289d78cbd1082e5235d999c067c0a55c8dc0bf8b222bc9cf7aa41",
+      "mode": "100644"
+    },
+    "results/docker-reader-v1/cpu-batch-responses.jsonl": {
+      "sha256": "1fae397a4502d9dd2c8accfccebeb2268be8aabf7fbe7eafa1847b5f940a8b07",
+      "mode": "100644"
+    },
+    "results/docker-reader-v1/cpu-batch-stderr.log": {
+      "sha256": "73e8e21339da0a3dd899f6f214330e06d3a6bacf09fdf8b8aff1c7732e84e1de",
+      "mode": "100644"
+    },
+    "results/docker-reader-v1/cpu-single-responses.jsonl": {
+      "sha256": "4eb728e69e195d334fddba7575cdad3a6ddf923247f12f84dda96b94d84d2da8",
+      "mode": "100644"
+    },
+    "results/docker-reader-v1/cpu-single-stderr.log": {
+      "sha256": "4a7a37629c0a2b9ab620ae119dd06b77b2871e62139672aca9e0973e0378bd68",
+      "mode": "100644"
+    },
+    "results/docker-reader-v1/gpu-batch-responses.jsonl": {
+      "sha256": "9f8bd80b5bf15a9a5065ebc0177b873dcc0435ebfb7ee73f2f2b170c5caf5c7a",
+      "mode": "100644"
+    },
+    "results/docker-reader-v1/gpu-batch-stderr.log": {
+      "sha256": "8f8a111efb9d5be34c6afd2d5069df85894fb425aead84f8d30ba897661ef430",
+      "mode": "100644"
+    },
+    "results/docker-reader-v1/gpu-single-responses.jsonl": {
+      "sha256": "2a6133c59b2cc75fc4ef1d8ad269a49ab2b6b35392989a0eafa4d06033999bed",
+      "mode": "100644"
+    },
+    "results/docker-reader-v1/gpu-single-stderr.log": {
+      "sha256": "e682f7c299ba115c28402a15bc7734a8fae29d83e2e200d68c79bea3503ef065",
+      "mode": "100644"
+    },
+    "results/docker-reader-v1/owner-screenshot.json": {
+      "sha256": "824dac45f08266f4cbb0d18cd8b8a909f6df33fdd558455d50600010aecffea3",
+      "mode": "100644"
+    },
+    "results/docker-reader-v1/report.md": {
+      "sha256": "1d76ab5fa2e2236e183a84f2369dbccf65aae4a7c61bed208eb75e3b4cb9b6be",
       "mode": "100644"
     },
     "results/docker-size-validation/0.8b/equivalence.json": {

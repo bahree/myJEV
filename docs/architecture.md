@@ -28,14 +28,23 @@ The reference implementation is in [model.py](../src/myjev/model.py), [prompt.py
 The first diagram contrasts repeated answer-token generation with the Qwen scoring path above. The network still reads the input; the saving is that we stop after computing candidate scores instead of generating an answer.
 
 ```mermaid
+%%{init: {"flowchart": {"wrappingWidth": 230}}}%%
 flowchart TB
-  I[Input tokens] --> G[Backbone pass]
-  G --> T[Output token]
-  T --> R[Append token and repeat]
-  R --> G
-  I --> D[Single backbone pass]
-  D --> S[Candidate scores]
-  S --> A[Selected ID and confidence]
+  I[Input tokens]
+
+  subgraph GENERATE["LLM text generation"]
+    G[Backbone pass] --> T[Output token]
+    T --> R[Append token]
+    R -->|Repeat until finished| G
+  end
+
+  subgraph SCORE["myJEV decision scoring"]
+    D[One Qwen backbone pass] --> S[Candidate scores]
+    S --> A[Selected ID and confidence]
+  end
+
+  I --> G
+  I --> D
 ```
 
 Our small model follows a different path. It encodes the context and candidate descriptions separately using shared weights, then lets each candidate attend to the context. Those are two calls to the same encoder inside one decision computation. The [build-from-scratch guide](scratch.md) explains the arrays and attention operations.

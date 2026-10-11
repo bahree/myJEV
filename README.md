@@ -14,6 +14,41 @@ The project has two starting points: a small network trained from random weights
 
 ## Quick start
 
+To try one request, start with the smaller 0.8B CPU model. Docker supplies Python and the dependencies. Windows PowerShell:
+
+```powershell
+docker run --rm `
+  -v myjev-hf-cache:/cache/huggingface `
+  amitbahree/myjev:0.1.4-cpu `
+  myjev score `
+  --artifact bahree/myJEV-0.8B `
+  --revision 1c956c89d21c0ab136e98ffe66a16752fa37d823 `
+  --device cpu `
+  --input /app/examples/request.json
+```
+
+<details>
+<summary>Linux, WSL or macOS terminal</summary>
+
+```bash
+docker run --rm \
+  -v myjev-hf-cache:/cache/huggingface \
+  amitbahree/myjev:0.1.4-cpu \
+  myjev score \
+  --artifact bahree/myJEV-0.8B \
+  --revision 1c956c89d21c0ab136e98ffe66a16752fa37d823 \
+  --device cpu \
+  --input /app/examples/request.json
+```
+
+</details>
+
+The command downloads the model, prints a decision and exits. The named volume keeps its downloads. The 0.8B CPU request was completed on Linux and, in the owner's [PowerShell screenshot](docs/docker.md#try-one-request-without-starting-a-service), on Windows. Allow 8 GiB of memory for a starting CPU trial. Full Apple Silicon inference remains experimental.
+
+For the **4B NVIDIA model used in the recorded results below**, use the [GPU command](docs/docker.md#4b-on-nvidia-gpu). The current image accelerates only NVIDIA CUDA; it does not use Intel/AMD GPUs or laptop NPUs. A Docker `--gpus` failure occurs before model startup, so use the CPU command when GPU passthrough is unavailable. See [all platform instructions](docs/docker.md) for setup and limits.
+
+### Install Python if you want to work with the code
+
 Tested environment: Linux, Python 3.12, and an NVIDIA A30 for GPU execution. The lock file includes CUDA-enabled PyTorch; install size is substantial even when only running CPU tests.
 
 ```bash
@@ -81,7 +116,7 @@ Response:
 
 The model selected `billing` and reported about 98.34% confidence. The selection scores rank the supplied choices. Confidence estimates whether the chosen answer is correct. Here those numbers match because this release uses the selected score after **temperature calibration**, an adjustment fitted on separate examples. Other releases use a separate learned confidence calculation. The [hands-on guide](docs/walkthrough.md#2-follow-one-decision) works through that distinction.
 
-A high confidence value can still accompany a wrong answer. Run `python scripts/run_demos.py > demo-results.jsonl` in the activated environment to try seven requests: duplicate charges, an app crash, a hiking question, two refund dates, a misleading quote and a short post. The [demo walkthrough](results/demos-v1/report.md) explains each expected answer and retains the smaller model's confident refund mistake. It also lets you inspect the saved outputs without a GPU.
+A high confidence value can still accompany a wrong answer. Follow the [Docker batch commands](docs/docker.md#score-your-own-files-or-the-seven-demos), or run `python scripts/run_demos.py > demo-results.jsonl` in the installed Python environment, to try seven requests: duplicate charges, an app crash, a hiking question, two refund dates, a misleading quote and a short post. The [demo walkthrough](results/demos-v1/report.md) explains each expected answer and retains the smaller model's confident refund mistake. It also lets you inspect the saved outputs without a GPU.
 
 ## Choose a learning route
 

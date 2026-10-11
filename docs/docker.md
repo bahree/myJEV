@@ -4,6 +4,84 @@ The container supplies Python, the myJEV loader and its dependencies. On first s
 
 Use the supervised 4B model for the NVIDIA example, or the smaller supervised 0.8B model for the CPU example. They accept the same requests. CPU execution takes longer and can produce different scores; the published GPU accuracy and calibration results have not been remeasured on CPU.
 
+## Try one request without starting a service
+
+Use the 0.8B CPU command if Docker has no NVIDIA GPU access. The 4B NVIDIA command uses the model from the recorded GPU examples. The image contains the request file, and each command prints a JSON response and exits. No clone, local Python install or HTTP service is needed.
+
+The current runtime uses CPU or NVIDIA CUDA. Intel/AMD GPUs and laptop NPUs have no supported backend in this image. CPU fallback keeps the selected model; it never substitutes 0.8B for 4B automatically.
+
+### 0.8B on CPU
+
+Windows PowerShell (each backtick must be the last character on its line):
+
+```powershell
+docker run --rm `
+  -v myjev-hf-cache:/cache/huggingface `
+  amitbahree/myjev:0.1.4-cpu `
+  myjev score `
+  --artifact bahree/myJEV-0.8B `
+  --revision 1c956c89d21c0ab136e98ffe66a16752fa37d823 `
+  --device cpu `
+  --input /app/examples/request.json
+```
+
+<details>
+<summary>Linux, WSL or macOS terminal</summary>
+
+```bash
+docker run --rm \
+  -v myjev-hf-cache:/cache/huggingface \
+  amitbahree/myjev:0.1.4-cpu \
+  myjev score \
+  --artifact bahree/myJEV-0.8B \
+  --revision 1c956c89d21c0ab136e98ffe66a16752fa37d823 \
+  --device cpu \
+  --input /app/examples/request.json
+```
+
+</details>
+
+### 4B on NVIDIA GPU
+
+Windows PowerShell (each backtick must be the last character on its line):
+
+```powershell
+docker run --rm --gpus all `
+  -v myjev-hf-cache:/cache/huggingface `
+  amitbahree/myjev:0.1.4 `
+  myjev score `
+  --artifact bahree/myJEV-4B `
+  --revision 38f7cca5a8530483309f576b0c3dd1756bc27c33 `
+  --device cuda:0 `
+  --input /app/examples/request.json
+```
+
+<details>
+<summary>Linux, WSL terminal</summary>
+
+```bash
+docker run --rm --gpus all \
+  -v myjev-hf-cache:/cache/huggingface \
+  amitbahree/myjev:0.1.4 \
+  myjev score \
+  --artifact bahree/myJEV-4B \
+  --revision 38f7cca5a8530483309f576b0c3dd1756bc27c33 \
+  --device cuda:0 \
+  --input /app/examples/request.json
+```
+
+</details>
+
+The first run downloads the image and the pinned model files. The named volume keeps model downloads for later calls. The `--revision` value pins the model files; [immutable image digests](../results/container-registry-v4/publication.json) are available for deployments.
+
+The owner completed the CPU command on a Windows laptop through PowerShell. It selected `billing` with confidence `0.9767757654190063` (about 97.68%):
+
+![Windows PowerShell CPU inference selecting billing with myJEV-0.8B](../assets/windows-cpu-inference.png)
+
+This screenshot records one completed Windows CPU request. Hardware specifications, memory and timings were not captured. The broader checks below ran on Linux. The 4B GPU fixture reports about 98.34% confidence; it uses a different model size and device, so the difference does not isolate a CPU effect. [Screenshot provenance](../results/docker-reader-v1/owner-screenshot.json)
+
+The unauthenticated Hugging Face warning in the screenshot concerns download limits. The PyTorch implementation warnings explain slower computation. A JSON result follows them; those messages did not prevent this request from completing.
+
 ## Choose an image for your machine
 
 | Machine | Image | Execution |
@@ -16,7 +94,7 @@ Use the supervised 4B model for the NVIDIA example, or the smaller supervised 0.
 
 The CPU image contains both x86-64 and ARM64 versions; Docker selects the matching one. It does not use Apple's GPU. The GPU image is x86-64. Docker Desktop's NVIDIA passthrough requires Windows and the WSL 2 backend; see [Docker's GPU setup](https://docs.docker.com/desktop/features/gpu/). On Linux, follow [NVIDIA's Container Toolkit setup](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html).
 
-The checks were run on Linux with A30 GPUs and an AMD CPU. The ARM64 image imported its packages and performed BF16 arithmetic under QEMU, but a full-model warmup exceeded the 900-second readiness deadline. Full ARM64 inference remains unverified. Native Mac and Windows hosts were unavailable; their commands are documented platform adaptations, not native test results. The [validation record](../results/cpu-inference-v1/report.md) gives the requests, outputs and limits of each check.
+The checks were run on Linux with A30 GPUs and an AMD CPU. The ARM64 image imported its packages and performed BF16 arithmetic under QEMU, but a full-model warmup exceeded the 900-second readiness deadline. Full ARM64 inference remains unverified. The owner-provided Windows CPU screenshot above adds one completed request. The automated checks did not run on a Windows host, and native Mac inference remains unverified. The [validation record](../results/cpu-inference-v1/report.md) gives the requests, outputs and limits of each check.
 
 For a CPU trial, start with 0.8B and allow 8 GiB of memory in Docker Desktop. A 4B trial needs more memory; allow 16 GiB as a starting budget. These budgets leave room beyond the short-request observations and do not establish a maximum-input memory requirement. The original short CPU checks used about 2.3 GiB process peak memory at 0.8B and 8.0 GiB at 4B. Also allow disk space for the image and downloaded model. The 9B NF4 releases require CUDA in this loader.
 
@@ -92,11 +170,112 @@ curl.exe -fsS http://127.0.0.1:8000/score `
 
 `curl.exe` selects the curl program, avoiding the `curl` alias in older PowerShell versions. The named volume also avoids Windows drive-letter and bind-mount path differences.
 
+## Score your own files or the seven demos
+
+The image includes `request.json`; download the separate seven-request file to run the batch. From an empty folder, download the requests and expected answers:
+
+Windows PowerShell:
+
+```powershell
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-requests.jsonl" -OutFile demo-requests.jsonl
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-expectations.json" -OutFile demo-expectations.json
+```
+
+<details>
+<summary>Linux, WSL or macOS terminal</summary>
+
+```bash
+curl -fsSLo demo-requests.jsonl "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-requests.jsonl"
+curl -fsSLo demo-expectations.json "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-expectations.json"
+```
+
+</details>
+
+Only `demo-requests.jsonl` is passed to the model. The expectation file is for checking the answers afterward. The download links pin the inputs to a public source revision.
+
+### CPU batch
+
+Windows PowerShell (each backtick must be the last character on its line):
+
+```powershell
+docker run --rm `
+  -v myjev-hf-cache:/cache/huggingface `
+  --mount "type=bind,source=$PWD,target=/requests,readonly" `
+  amitbahree/myjev:0.1.4-cpu `
+  myjev score `
+  --artifact bahree/myJEV-0.8B `
+  --revision 1c956c89d21c0ab136e98ffe66a16752fa37d823 `
+  --device cpu `
+  --input /requests/demo-requests.jsonl --jsonl > demo-results.jsonl
+```
+
+<details>
+<summary>Linux, WSL or macOS terminal</summary>
+
+```bash
+docker run --rm \
+  -v myjev-hf-cache:/cache/huggingface \
+  --mount "type=bind,source=$PWD,target=/requests,readonly" \
+  amitbahree/myjev:0.1.4-cpu \
+  myjev score \
+  --artifact bahree/myJEV-0.8B \
+  --revision 1c956c89d21c0ab136e98ffe66a16752fa37d823 \
+  --device cpu \
+  --input /requests/demo-requests.jsonl --jsonl > demo-results.jsonl
+```
+
+</details>
+
+### NVIDIA batch
+
+Windows PowerShell (each backtick must be the last character on its line):
+
+```powershell
+docker run --rm --gpus all `
+  -v myjev-hf-cache:/cache/huggingface `
+  --mount "type=bind,source=$PWD,target=/requests,readonly" `
+  amitbahree/myjev:0.1.4 `
+  myjev score `
+  --artifact bahree/myJEV-4B `
+  --revision 38f7cca5a8530483309f576b0c3dd1756bc27c33 `
+  --device cuda:0 `
+  --input /requests/demo-requests.jsonl --jsonl > demo-results.jsonl
+```
+
+<details>
+<summary>Linux, WSL terminal</summary>
+
+```bash
+docker run --rm --gpus all \
+  -v myjev-hf-cache:/cache/huggingface \
+  --mount "type=bind,source=$PWD,target=/requests,readonly" \
+  amitbahree/myjev:0.1.4 \
+  myjev score \
+  --artifact bahree/myJEV-4B \
+  --revision 38f7cca5a8530483309f576b0c3dd1756bc27c33 \
+  --device cuda:0 \
+  --input /requests/demo-requests.jsonl --jsonl > demo-results.jsonl
+```
+
+</details>
+
+Run these commands from the folder containing the input file. The bind mount exposes that folder read-only at `/requests` in the container. The output redirection is handled by your shell and saves `demo-results.jsonl` on the host. Each line contains one response, in input order; the model stays loaded for the batch.
+
+Open the result in a text editor, or inspect its first line in PowerShell:
+
+```powershell
+Get-Content demo-results.jsonl -TotalCount 1 | ConvertFrom-Json | ConvertTo-Json -Depth 10
+```
+
+The [recorded demo table](../results/demos-v1/report.md) contains GPU results. A new CPU run may differ. These seven authored examples illustrate behavior; they do not estimate accuracy over a population of requests.
+
+For an edited request file, keep it in the mounted folder and change `--input /requests/demo-requests.jsonl` to that file's name under `/requests`. Use a new output filename after `>` to preserve each run. Keep the model and device fixed when testing a changed rule.
+
 ## What CPU fallback does
 
 `MYJEV_DEVICE=auto` is the default. The loader selects a CUDA GPU if one is visible to the process. Otherwise it selects CPU for the BF16 0.8B and 4B releases and prints a warning. It keeps the chosen model and its precision. CPU fallback is available in the GPU image too; the separate CPU image supplies a smaller runtime and native ARM64 packages.
 
-Docker processes `--gpus` before starting our application. If that flag fails because the host lacks NVIDIA support, the loader never gets to choose CPU. Use the CPU command, which omits the flag. To require GPU execution, add `-e MYJEV_DEVICE=cuda:0`. To require CPU, add `-e MYJEV_DEVICE=cpu`.
+The error `WSL environment detected but no adapters were found` means Docker could not expose an NVIDIA GPU to the container. Docker processes `--gpus` before starting our application. If that flag fails because the host lacks NVIDIA support, the loader never gets to choose CPU. Use the CPU command, which omits the flag. To require GPU execution, add `-e MYJEV_DEVICE=cuda:0`. To require CPU, add `-e MYJEV_DEVICE=cpu`.
 
 The loader rejects a 9B NF4 model on CPU with a message naming the supported alternatives. It also keeps an explicit CUDA request strict. It does not catch GPU out-of-memory errors and silently move the workload to CPU.
 

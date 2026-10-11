@@ -1,0 +1,142 @@
+{
+  "passed": true,
+  "downloads": [
+    {
+      "url": "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-requests.jsonl",
+      "sha256": "4e03c4dd94feb6cf0ae69298bb16734eb8c63ebdb60c8d1c74e0197abcb1af76",
+      "matches_repository_file": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-expectations.json",
+      "sha256": "bd98b1634e7cb9c989b491fe6dcdea67d7c67ca29e9fa454a61654c7e8c682c6",
+      "matches_repository_file": true
+    }
+  ],
+  "checks": [
+    {
+      "kind": "cpu",
+      "task": "single",
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "-v",
+        "${HF_CACHE_DIR}:/cache/huggingface:ro",
+        "-e",
+        "HF_HUB_OFFLINE=1",
+        "amitbahree/myjev:0.1.4-cpu",
+        "myjev",
+        "score",
+        "--artifact",
+        "bahree/myJEV-0.8B",
+        "--revision",
+        "1c956c89d21c0ab136e98ffe66a16752fa37d823",
+        "--device",
+        "cpu",
+        "--input",
+        "/app/examples/request.json"
+      ],
+      "returncode": 0,
+      "response_count": 1,
+      "seconds_including_load": 24.213641016045585,
+      "recorded_4b_gpu_responses_equal": null
+    },
+    {
+      "kind": "cpu",
+      "task": "batch",
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "-v",
+        "${HF_CACHE_DIR}:/cache/huggingface:ro",
+        "-e",
+        "HF_HUB_OFFLINE=1",
+        "--mount",
+        "type=bind,source=${REQUEST_DIR_WITH_SPACES},target=/requests,readonly",
+        "amitbahree/myjev:0.1.4-cpu",
+        "myjev",
+        "score",
+        "--artifact",
+        "bahree/myJEV-0.8B",
+        "--revision",
+        "1c956c89d21c0ab136e98ffe66a16752fa37d823",
+        "--device",
+        "cpu",
+        "--input",
+        "/requests/demo-requests.jsonl",
+        "--jsonl"
+      ],
+      "returncode": 0,
+      "response_count": 7,
+      "seconds_including_load": 91.66208668099716,
+      "recorded_4b_gpu_responses_equal": null
+    },
+    {
+      "kind": "gpu",
+      "task": "single",
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "-v",
+        "${HF_CACHE_DIR}:/cache/huggingface:ro",
+        "-e",
+        "HF_HUB_OFFLINE=1",
+        "--gpus",
+        "all",
+        "amitbahree/myjev:0.1.4",
+        "myjev",
+        "score",
+        "--artifact",
+        "bahree/myJEV-4B",
+        "--revision",
+        "38f7cca5a8530483309f576b0c3dd1756bc27c33",
+        "--device",
+        "cuda:0",
+        "--input",
+        "/app/examples/request.json"
+      ],
+      "returncode": 0,
+      "response_count": 1,
+      "seconds_including_load": 20.65496952191461,
+      "recorded_4b_gpu_responses_equal": true
+    },
+    {
+      "kind": "gpu",
+      "task": "batch",
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "-v",
+        "${HF_CACHE_DIR}:/cache/huggingface:ro",
+        "-e",
+        "HF_HUB_OFFLINE=1",
+        "--gpus",
+        "all",
+        "--mount",
+        "type=bind,source=${REQUEST_DIR_WITH_SPACES},target=/requests,readonly",
+        "amitbahree/myjev:0.1.4",
+        "myjev",
+        "score",
+        "--artifact",
+        "bahree/myJEV-4B",
+        "--revision",
+        "38f7cca5a8530483309f576b0c3dd1756bc27c33",
+        "--device",
+        "cuda:0",
+        "--input",
+        "/requests/demo-requests.jsonl",
+        "--jsonl"
+      ],
+      "returncode": 0,
+      "response_count": 7,
+      "seconds_including_load": 19.254692379035987,
+      "recorded_4b_gpu_responses_equal": true
+    }
+  ],
+  "powershell_and_bash_argument_sequences_match": true,
+  "scope": "Actual published images on Linux, cached read-only model files and offline model loading. Request files downloaded from the pinned public source and mounted from a folder with spaces. CPU and GPU checks ran concurrently; durations are completion logs, not latency benchmarks. PowerShell syntax checked by normalized argument comparison; the owner screenshot separately records one Windows CPU request. No new Windows batch, NPU or Mac execution.",
+  "host_path_notation": "Host-specific paths are replaced with descriptive placeholders. The cache was mounted read-only and the temporary request directory contained spaces. All container paths and remaining command arguments are unchanged."
+}

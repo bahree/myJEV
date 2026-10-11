@@ -1,6 +1,6 @@
 # Run inference locally and in Docker
 
-For Windows PowerShell, Linux or macOS without a local Python install, use the [Docker guide](docker.md). It covers NVIDIA access, a smaller CPU trial and automatic device selection.
+To try one request without starting a server, use the [Docker CLI commands](docker.md#try-one-request-without-starting-a-service). They offer 0.8B CPU and 4B NVIDIA options for PowerShell and Bash. The [batch commands](docker.md#score-your-own-files-or-the-seven-demos) accept your own JSONL files without a local Python installation.
 
 Start with [myJEV-4B on Hugging Face](https://huggingface.co/bahree/myJEV-4B) to score a request without training a model. This guide shows the same call through Python, the command line, HTTP and the published [Docker image](https://hub.docker.com/r/amitbahree/myjev). Use the [quick start](quickstart.md#install-and-test) to install the Python environment, or go straight to the Docker section below.
 
