@@ -19,6 +19,7 @@ Start with a report, then inspect its measurements if you want to check a claim.
 | Does a different decision head help? | [Unsloth comparison](../docs/unsloth.md), [recorded results](unsloth-head-v1/report.md) | Three seeds, equal tuning/exposure/calibration, order probes and warm timings |
 | Can a small new head use frozen language features? | [Candidate-head walkthrough](../docs/candidate-head.md), [saved report](candidate-head-v1/report.md) | One seed, 1,000 updates, full BANKING test and seven unselected demos |
 | How does a hosted decision model behave on the same requests? | [Decision-1 comparison](../docs/decision-1.md), [saved report](decision-comparison-v1/report.md) | One fixed 64-case diagnostic, six views, equal calibration fitting and dated service metadata |
+| How do other downloadable models compare on this GPU? | [Decision 3.0 comparison](../docs/decision3.md), [saved report](decision3-v1/report.md) | Six pinned releases, full BANKING77 test, CLINC cohorts, matched calibration opportunity and isolated A30 timings |
 | What does a real response look like? | [Seven demos](demos-v1/report.md) | Saved requests and responses, including a confident mistake |
 | What does serving cost? | [Model and serving comparison](../docs/models.md), [container evidence](container-registry-v3/README.md) | Measured hardware, precision, startup and latency conditions |
 
@@ -29,7 +30,7 @@ For the short pilot, read the [experiment guide](../docs/experiments.md), [summa
 No model download, API key or GPU is needed to retrieve the evidence. From the repository root, using Python 3.12:
 
 ```bash
-# All seven bundles; verifies archive and individual-file SHA-256 hashes.
+# All eight bundles; verifies archive and individual-file SHA-256 hashes.
 python3 scripts/fetch_evidence.py
 
 # Or just the inputs needed for matched calibration.
@@ -50,8 +51,11 @@ The command restores original `results/` paths, so analysis scripts keep their i
 | `readout` | 22.5 MiB | 12 text-free input files for alias/Clef calibration, test and order replay | `python scripts/replay_head_evaluation.py --study readout --output /tmp/readout-replay.json` |
 | `candidate` | 3.6 MiB | One text-free calibration/test input for the frozen-backbone head | `python scripts/replay_head_evaluation.py --study candidate --output /tmp/candidate-replay.json` |
 | `decision` | 4.0 MiB | Three text-free response files for the local/hosted comparison | `python scripts/summarize_decision_comparison.py` |
+| `decision3` | 42.9 MiB | Twelve text-free quality and timing files for six local releases | `python scripts/summarize_decision3.py --require-benchmark` |
 
 The [manifest](evidence-manifest.json) lists every file, size and checksum, with the public source revision. The four `evidence-v1` bundles restore files published at their recorded revision. The `evidence-v2` head-study bundles add text-free logits outside Git; their source revisions identify the public implementation and metric records. The `evidence-v3` decision bundle records the observed hosted/local responses; its revision identifies the frozen public protocol and code. Small demonstration fixtures stay in Git. Archive inputs retain their existing privacy boundary: compact correctness/confidence records, without the private post text or raw annotations.
+
+The `evidence-v4` bundle adds the Decision 3.0 comparison. Its [source mapping](decision3-v1/public-source.json) identifies public files matching the recorded runner, and the [verification](decision3-v1/verification.json) checks request identity, score arithmetic and equality between quality and isolated benchmark outputs. The six models each completed 5,731 quality requests and 227 measured benchmark calls. The JSONL files contain IDs, labels, probabilities and timings, without request text.
 
 Analysis commands need the installed project environment described in the [experiment guide](../docs/experiments.md). Reading the saved reports and fetching their inputs do not require installing PyTorch.
 

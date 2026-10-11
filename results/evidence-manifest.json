@@ -2074,6 +2074,65 @@
           "bytes": 6379286
         }
       }
+    },
+    "decision3": {
+      "archive": "myjev-evidence-v4-decision3.tar.gz",
+      "url": "https://github.com/bahree/myJEV/releases/download/evidence-v4/myjev-evidence-v4-decision3.tar.gz",
+      "release": "https://github.com/bahree/myJEV/releases/tag/evidence-v4",
+      "source_revision": "1f44cba1803bbeb6ef711dc710f0f00b13b540cc",
+      "source_semantics": "Public frozen protocol and evaluation runner. Six released models, full BANKING77 test, calibration, transfer, perturbations, demonstrations and isolated local timings. Text-free predictions remain outside the public Git tree. Each complete.json records its original checksum.",
+      "sha256": "d792b6daf7f05db2a2ac759359460badfc31c4f9770f3187be99eb1283df3a85",
+      "bytes": 44985161,
+      "files": {
+        "results/decision3-v1/d3-lite/quality/records.jsonl": {
+          "sha256": "9c5938123eafce8854a52d80b34f97ea566791feb76a35cfadf80fbc815038cc",
+          "bytes": 26427541
+        },
+        "results/decision3-v1/d3-lite/benchmark/records.jsonl": {
+          "sha256": "46bde89ff6076b93d439c833def305c1ee60f0d87849e82ae9aa428245ffa47e",
+          "bytes": 829185
+        },
+        "results/decision3-v1/d3-mini/quality/records.jsonl": {
+          "sha256": "0bfae3bc65a0449cf424946f474827e8e8f0666d4cf047bddf031ca548ddfa04",
+          "bytes": 26442513
+        },
+        "results/decision3-v1/d3-mini/benchmark/records.jsonl": {
+          "sha256": "285e13ae5d0f5c278ca227823f9746bd17d4ea476074de60385de97cb0fc358a",
+          "bytes": 829676
+        },
+        "results/decision3-v1/myjev-0.8b/quality/records.jsonl": {
+          "sha256": "6e11b0874530048b77562754f1cf2d57bc14d1a6e887342673de769196fb585e",
+          "bytes": 26881064
+        },
+        "results/decision3-v1/myjev-0.8b/benchmark/records.jsonl": {
+          "sha256": "462661cd32b8cc72d1db104171a1c4cf3d5efdabd3e424c31c5ca67256379fef",
+          "bytes": 850351
+        },
+        "results/decision3-v1/myjev-0.8b-rl/quality/records.jsonl": {
+          "sha256": "4683735293379eac6d7491ebe74a4760bd94b5fdc006c4aeb7deeb247be2e3a2",
+          "bytes": 26760863
+        },
+        "results/decision3-v1/myjev-0.8b-rl/benchmark/records.jsonl": {
+          "sha256": "30593ecc40bf739deac021b683a8b363236f8cfbc166b8d235d32e0283da8889",
+          "bytes": 841888
+        },
+        "results/decision3-v1/myjev-4b/quality/records.jsonl": {
+          "sha256": "08f32047cce1beec421e7cb4de4d869184515e698917a0a44c6fd14a63532e81",
+          "bytes": 26977467
+        },
+        "results/decision3-v1/myjev-4b/benchmark/records.jsonl": {
+          "sha256": "83414e3213351b862aa2d5f1b92ecb0cdcafdb1e66f1ee21bd2d0d52321edc23",
+          "bytes": 852438
+        },
+        "results/decision3-v1/myjev-4b-rl/quality/records.jsonl": {
+          "sha256": "58371073756eaa3fa60730d6a7d3c05efc444bb97bac151cb501e785ddda293b",
+          "bytes": 26761610
+        },
+        "results/decision3-v1/myjev-4b-rl/benchmark/records.jsonl": {
+          "sha256": "6c59bb28b8e20eb0f322e2e54ca77926203cf44025a1a7d769e13ca5d8a36772",
+          "bytes": 840377
+        }
+      }
     }
   }
 }

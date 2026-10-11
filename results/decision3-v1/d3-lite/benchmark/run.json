@@ -1,0 +1,70 @@
+{
+  "identity": {
+    "model": "d3-lite",
+    "spec": {
+      "backend": "d3",
+      "repo": "vllm-sr/d3-lite",
+      "revision": "a8d25a91ef75552803f7009d25b7bd435991abd9",
+      "size": "0.8b"
+    },
+    "phase": "benchmark",
+    "protocol_sha256": "17e85a858ff44d0e19563add1285b2e27d1a47372a1a21dd05786cfb993a372d",
+    "requests_sha256": "2bceb70f0686e0efa41cdc52c151303cbc04c4f2064e1b7c516bf61dc02f624b",
+    "code_sha256": {
+      "scripts/run_decision3.py": "950e399c7c8e5cce1b3a19fe5f32b77e730fa39d76c7c3bbeae1b38eef03f22a",
+      "src/myjev/decision3.py": "5a713568c2731bcc7b46158ae3ea4dec18b237fdae597f9cde902a63531698dd",
+      "src/myjev/decision_comparison.py": "eab18866ad042161c4828f8b32ce8097024dbd40bf8a2f0945e2629b948835de"
+    }
+  },
+  "started_utc": "2026-10-11T22:30:38.418643+00:00",
+  "packages": {
+    "torch": "2.14.1",
+    "transformers": "5.17.0",
+    "peft": "0.21.2",
+    "numpy": "2.5.3",
+    "huggingface_hub": "1.33.0",
+    "safetensors": "0.8.0",
+    "flash-linear-attention": null,
+    "causal-conv1d": null
+  },
+  "python": "3.12.3",
+  "source_commit": "8d9b38d4991255631cea8039461e36017aa47d29",
+  "scope": "Local text scoring. Quality jobs can overlap on different GPUs; use the separate isolated benchmark for latency.",
+  "expected_requests": 227,
+  "loader": {
+    "decision_config": {
+      "format_version": 1,
+      "format_id": "d3-code-readout-v1",
+      "prompt": "d3",
+      "base_model": "Qwen/Qwen3.5-0.8B",
+      "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+      "temperature": 1.0,
+      "attention_mode": "noncausal_full_attention",
+      "pooling": "last",
+      "max_length": null,
+      "readout_dtype": "float32"
+    },
+    "kernels": {
+      "torch_chunk_gated_delta_rule": "torch-reference",
+      "causal_conv1d_fn": "torch-reference",
+      "fla": "missing (ModuleNotFoundError)"
+    },
+    "amd_fast_path_active": false,
+    "amd_fast_path_skipped": "not a ROCm GPU",
+    "source_sha256": {
+      "pipeline_d3.py": "4f9297c7c74e596e9b67df91a1e6823cfada48bf781336f141974ff6a2f1038e",
+      "modeling_d3.py": "f8f8db23ff58f1a990ffa24977d744a50e1b4446d02a64c22070967705b6dbef",
+      "d3_server.py": "f9b8f2481461a074f469b4f58da3b0d7004824096528366d5b1f23187dd6e692",
+      "d3_runtime.py": "6c049aa7d3da8da3738602a2812572879d0a47b03c28c3e33f36d7300257de89",
+      "d3_format.py": "187a0f359f6f89a844e723377769556f78133b118851e702e4b0fe5123ccb0f1",
+      "d3_engine.py": "086238942762df45047a32cd9a8e2bedd9b63167eb40be260c776de567979f53",
+      "d3_fast.py": "68a1fb9a2c3bde9ac2763bf504decae592ca12722698fbde1b39a31262955535",
+      "d3_kernels.py": "8f7534ca1e1846ebf7c4c73058002f3be4dbf0d5d426f0815150ae0cbe7677bd"
+    },
+    "manifest_sha256": "810a04f3e6979adb2289aa8fc151155bf8fd2c2bc33a60248d33238632b22716"
+  },
+  "cached_load_seconds": 3.5174661739729345,
+  "hardware": "NVIDIA A30",
+  "device": "cuda:0",
+  "gpu_total_bytes": 25337004032
+}

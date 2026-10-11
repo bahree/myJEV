@@ -1,0 +1,79 @@
+{
+  "passed": true,
+  "scope": "Independent row-by-row checks of frozen request identity, one backbone call, score arithmetic, D3 entropy definition, test accuracy/Brier/threshold counts and isolated benchmark equality. No additional model execution.",
+  "protocol_sha256": "17e85a858ff44d0e19563add1285b2e27d1a47372a1a21dd05786cfb993a372d",
+  "phase_counts_per_model": {
+    "calibration": 1000,
+    "test": 3080,
+    "perturbation": 320,
+    "clinc/near": 256,
+    "clinc/distant": 256,
+    "clinc/unsupported-near-none": 150,
+    "clinc/unsupported-near-deferral": 150,
+    "clinc/oos-none": 256,
+    "clinc/oos-deferral": 256,
+    "demo": 7
+  },
+  "models": {
+    "d3-lite": {
+      "quality_rows": 5731,
+      "benchmark_rows": 227,
+      "all_request_hashes_match": true,
+      "all_forwards_one": true,
+      "probabilities_valid": true,
+      "test_metrics_recomputed": true,
+      "benchmark_scores_equal_quality": true,
+      "native_confidence_definition_checked": true
+    },
+    "d3-mini": {
+      "quality_rows": 5731,
+      "benchmark_rows": 227,
+      "all_request_hashes_match": true,
+      "all_forwards_one": true,
+      "probabilities_valid": true,
+      "test_metrics_recomputed": true,
+      "benchmark_scores_equal_quality": true,
+      "native_confidence_definition_checked": true
+    },
+    "myjev-0.8b": {
+      "quality_rows": 5731,
+      "benchmark_rows": 227,
+      "all_request_hashes_match": true,
+      "all_forwards_one": true,
+      "probabilities_valid": true,
+      "test_metrics_recomputed": true,
+      "benchmark_scores_equal_quality": true,
+      "native_confidence_definition_checked": false
+    },
+    "myjev-0.8b-rl": {
+      "quality_rows": 5731,
+      "benchmark_rows": 227,
+      "all_request_hashes_match": true,
+      "all_forwards_one": true,
+      "probabilities_valid": true,
+      "test_metrics_recomputed": true,
+      "benchmark_scores_equal_quality": true,
+      "native_confidence_definition_checked": false
+    },
+    "myjev-4b": {
+      "quality_rows": 5731,
+      "benchmark_rows": 227,
+      "all_request_hashes_match": true,
+      "all_forwards_one": true,
+      "probabilities_valid": true,
+      "test_metrics_recomputed": true,
+      "benchmark_scores_equal_quality": true,
+      "native_confidence_definition_checked": false
+    },
+    "myjev-4b-rl": {
+      "quality_rows": 5731,
+      "benchmark_rows": 227,
+      "all_request_hashes_match": true,
+      "all_forwards_one": true,
+      "probabilities_valid": true,
+      "test_metrics_recomputed": true,
+      "benchmark_scores_equal_quality": true,
+      "native_confidence_definition_checked": false
+    }
+  }
+}

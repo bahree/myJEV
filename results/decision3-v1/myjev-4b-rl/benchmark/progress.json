@@ -1,0 +1,10 @@
+{
+  "model": "myjev-4b-rl",
+  "phase": "benchmark",
+  "completed": 227,
+  "total": 227,
+  "percent": 100.0,
+  "requests_per_second": 5.10208190303948,
+  "eta_seconds": 0.0,
+  "utc": "2026-10-11T22:34:52.681128+00:00"
+}

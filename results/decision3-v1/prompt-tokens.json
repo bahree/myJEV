@@ -1,0 +1,2244 @@
+{
+  "scope": "Descriptive input-length accounting for the frozen benchmark requests. D3 lengths come from saved usage; myJEV lengths are recomputed with its pinned tokenizer and release prompt. No model weights are loaded.",
+  "protocol_sha256": "17e85a858ff44d0e19563add1285b2e27d1a47372a1a21dd05786cfb993a372d",
+  "models": {
+    "d3-lite": {
+      "workloads": {
+        "banking": {
+          "requests": 64,
+          "min": 944,
+          "median": 950.5,
+          "max": 971
+        },
+        "short-demos": {
+          "requests": 7,
+          "min": 111,
+          "median": 145.0,
+          "max": 187
+        }
+      },
+      "requests": [
+        {
+          "key": "test/banking77-test-26/original",
+          "workload": "banking",
+          "input_tokens": 957
+        },
+        {
+          "key": "test/banking77-test-102/original",
+          "workload": "banking",
+          "input_tokens": 945
+        },
+        {
+          "key": "test/banking77-test-108/original",
+          "workload": "banking",
+          "input_tokens": 947
+        },
+        {
+          "key": "test/banking77-test-122/original",
+          "workload": "banking",
+          "input_tokens": 947
+        },
+        {
+          "key": "test/banking77-test-130/original",
+          "workload": "banking",
+          "input_tokens": 955
+        },
+        {
+          "key": "test/banking77-test-177/original",
+          "workload": "banking",
+          "input_tokens": 953
+        },
+        {
+          "key": "test/banking77-test-322/original",
+          "workload": "banking",
+          "input_tokens": 961
+        },
+        {
+          "key": "test/banking77-test-356/original",
+          "workload": "banking",
+          "input_tokens": 949
+        },
+        {
+          "key": "test/banking77-test-379/original",
+          "workload": "banking",
+          "input_tokens": 956
+        },
+        {
+          "key": "test/banking77-test-383/original",
+          "workload": "banking",
+          "input_tokens": 944
+        },
+        {
+          "key": "test/banking77-test-396/original",
+          "workload": "banking",
+          "input_tokens": 950
+        },
+        {
+          "key": "test/banking77-test-418/original",
+          "workload": "banking",
+          "input_tokens": 947
+        },
+        {
+          "key": "test/banking77-test-419/original",
+          "workload": "banking",
+          "input_tokens": 952
+        },
+        {
+          "key": "test/banking77-test-456/original",
+          "workload": "banking",
+          "input_tokens": 948
+        },
+        {
+          "key": "test/banking77-test-511/original",
+          "workload": "banking",
+          "input_tokens": 952
+        },
+        {
+          "key": "test/banking77-test-571/original",
+          "workload": "banking",
+          "input_tokens": 955
+        },
+        {
+          "key": "test/banking77-test-636/original",
+          "workload": "banking",
+          "input_tokens": 951
+        },
+        {
+          "key": "test/banking77-test-653/original",
+          "workload": "banking",
+          "input_tokens": 964
+        },
+        {
+          "key": "test/banking77-test-814/original",
+          "workload": "banking",
+          "input_tokens": 953
+        },
+        {
+          "key": "test/banking77-test-881/original",
+          "workload": "banking",
+          "input_tokens": 951
+        },
+        {
+          "key": "test/banking77-test-895/original",
+          "workload": "banking",
+          "input_tokens": 957
+        },
+        {
+          "key": "test/banking77-test-902/original",
+          "workload": "banking",
+          "input_tokens": 946
+        },
+        {
+          "key": "test/banking77-test-914/original",
+          "workload": "banking",
+          "input_tokens": 949
+        },
+        {
+          "key": "test/banking77-test-952/original",
+          "workload": "banking",
+          "input_tokens": 950
+        },
+        {
+          "key": "test/banking77-test-1003/original",
+          "workload": "banking",
+          "input_tokens": 960
+        },
+        {
+          "key": "test/banking77-test-1083/original",
+          "workload": "banking",
+          "input_tokens": 956
+        },
+        {
+          "key": "test/banking77-test-1126/original",
+          "workload": "banking",
+          "input_tokens": 947
+        },
+        {
+          "key": "test/banking77-test-1138/original",
+          "workload": "banking",
+          "input_tokens": 947
+        },
+        {
+          "key": "test/banking77-test-1139/original",
+          "workload": "banking",
+          "input_tokens": 947
+        },
+        {
+          "key": "test/banking77-test-1200/original",
+          "workload": "banking",
+          "input_tokens": 945
+        },
+        {
+          "key": "test/banking77-test-1378/original",
+          "workload": "banking",
+          "input_tokens": 953
+        },
+        {
+          "key": "test/banking77-test-1393/original",
+          "workload": "banking",
+          "input_tokens": 950
+        },
+        {
+          "key": "test/banking77-test-1408/original",
+          "workload": "banking",
+          "input_tokens": 954
+        },
+        {
+          "key": "test/banking77-test-1470/original",
+          "workload": "banking",
+          "input_tokens": 947
+        },
+        {
+          "key": "test/banking77-test-1481/original",
+          "workload": "banking",
+          "input_tokens": 950
+        },
+        {
+          "key": "test/banking77-test-1550/original",
+          "workload": "banking",
+          "input_tokens": 948
+        },
+        {
+          "key": "test/banking77-test-1556/original",
+          "workload": "banking",
+          "input_tokens": 947
+        },
+        {
+          "key": "test/banking77-test-1718/original",
+          "workload": "banking",
+          "input_tokens": 947
+        },
+        {
+          "key": "test/banking77-test-1728/original",
+          "workload": "banking",
+          "input_tokens": 966
+        },
+        {
+          "key": "test/banking77-test-1731/original",
+          "workload": "banking",
+          "input_tokens": 966
+        },
+        {
+          "key": "test/banking77-test-1839/original",
+          "workload": "banking",
+          "input_tokens": 962
+        },
+        {
+          "key": "test/banking77-test-1881/original",
+          "workload": "banking",
+          "input_tokens": 964
+        },
+        {
+          "key": "test/banking77-test-2069/original",
+          "workload": "banking",
+          "input_tokens": 953
+        },
+        {
+          "key": "test/banking77-test-2196/original",
+          "workload": "banking",
+          "input_tokens": 946
+        },
+        {
+          "key": "test/banking77-test-2232/original",
+          "workload": "banking",
+          "input_tokens": 950
+        },
+        {
+          "key": "test/banking77-test-2233/original",
+          "workload": "banking",
+          "input_tokens": 946
+        },
+        {
+          "key": "test/banking77-test-2261/original",
+          "workload": "banking",
+          "input_tokens": 949
+        },
+        {
+          "key": "test/banking77-test-2298/original",
+          "workload": "banking",
+          "input_tokens": 971
+        },
+        {
+          "key": "test/banking77-test-2413/original",
+          "workload": "banking",
+          "input_tokens": 949
+        },
+        {
+          "key": "test/banking77-test-2418/original",
+          "workload": "banking",
+          "input_tokens": 950
+        },
+        {
+          "key": "test/banking77-test-2465/original",
+          "workload": "banking",
+          "input_tokens": 951
+        },
+        {
+          "key": "test/banking77-test-2472/original",
+          "workload": "banking",
+          "input_tokens": 951
+        },
+        {
+          "key": "test/banking77-test-2533/original",
+          "workload": "banking",
+          "input_tokens": 949
+        },
+        {
+          "key": "test/banking77-test-2574/original",
+          "workload": "banking",
+          "input_tokens": 951
+        },
+        {
+          "key": "test/banking77-test-2619/original",
+          "workload": "banking",
+          "input_tokens": 948
+        },
+        {
+          "key": "test/banking77-test-2661/original",
+          "workload": "banking",
+          "input_tokens": 948
+        },
+        {
+          "key": "test/banking77-test-2771/original",
+          "workload": "banking",
+          "input_tokens": 949
+        },
+        {
+          "key": "test/banking77-test-2859/original",
+          "workload": "banking",
+          "input_tokens": 958
+        },
+        {
+          "key": "test/banking77-test-2872/original",
+          "workload": "banking",
+          "input_tokens": 948
+        },
+        {
+          "key": "test/banking77-test-2932/original",
+          "workload": "banking",
+          "input_tokens": 951
+        },
+        {
+          "key": "test/banking77-test-2988/original",
+          "workload": "banking",
+          "input_tokens": 954
+        },
+        {
+          "key": "test/banking77-test-3016/original",
+          "workload": "banking",
+          "input_tokens": 952
+        },
+        {
+          "key": "test/banking77-test-3033/original",
+          "workload": "banking",
+          "input_tokens": 952
+        },
+        {
+          "key": "test/banking77-test-3037/original",
+          "workload": "banking",
+          "input_tokens": 952
+        },
+        {
+          "key": "demo/billing/original",
+          "workload": "short-demos",
+          "input_tokens": 111
+        },
+        {
+          "key": "demo/technical/original",
+          "workload": "short-demos",
+          "input_tokens": 118
+        },
+        {
+          "key": "demo/none-of-these/original",
+          "workload": "short-demos",
+          "input_tokens": 123
+        },
+        {
+          "key": "demo/refund-day-13/original",
+          "workload": "short-demos",
+          "input_tokens": 145
+        },
+        {
+          "key": "demo/refund-day-14/original",
+          "workload": "short-demos",
+          "input_tokens": 145
+        },
+        {
+          "key": "demo/quoted-instruction/original",
+          "workload": "short-demos",
+          "input_tokens": 145
+        },
+        {
+          "key": "demo/synthetic-blog-format/original",
+          "workload": "short-demos",
+          "input_tokens": 187
+        }
+      ]
+    },
+    "d3-mini": {
+      "workloads": {
+        "banking": {
+          "requests": 64,
+          "min": 944,
+          "median": 950.5,
+          "max": 971
+        },
+        "short-demos": {
+          "requests": 7,
+          "min": 111,
+          "median": 145.0,
+          "max": 187
+        }
+      },
+      "requests": [
+        {
+          "key": "test/banking77-test-26/original",
+          "workload": "banking",
+          "input_tokens": 957
+        },
+        {
+          "key": "test/banking77-test-102/original",
+          "workload": "banking",
+          "input_tokens": 945
+        },
+        {
+          "key": "test/banking77-test-108/original",
+          "workload": "banking",
+          "input_tokens": 947
+        },
+        {
+          "key": "test/banking77-test-122/original",
+          "workload": "banking",
+          "input_tokens": 947
+        },
+        {
+          "key": "test/banking77-test-130/original",
+          "workload": "banking",
+          "input_tokens": 955
+        },
+        {
+          "key": "test/banking77-test-177/original",
+          "workload": "banking",
+          "input_tokens": 953
+        },
+        {
+          "key": "test/banking77-test-322/original",
+          "workload": "banking",
+          "input_tokens": 961
+        },
+        {
+          "key": "test/banking77-test-356/original",
+          "workload": "banking",
+          "input_tokens": 949
+        },
+        {
+          "key": "test/banking77-test-379/original",
+          "workload": "banking",
+          "input_tokens": 956
+        },
+        {
+          "key": "test/banking77-test-383/original",
+          "workload": "banking",
+          "input_tokens": 944
+        },
+        {
+          "key": "test/banking77-test-396/original",
+          "workload": "banking",
+          "input_tokens": 950
+        },
+        {
+          "key": "test/banking77-test-418/original",
+          "workload": "banking",
+          "input_tokens": 947
+        },
+        {
+          "key": "test/banking77-test-419/original",
+          "workload": "banking",
+          "input_tokens": 952
+        },
+        {
+          "key": "test/banking77-test-456/original",
+          "workload": "banking",
+          "input_tokens": 948
+        },
+        {
+          "key": "test/banking77-test-511/original",
+          "workload": "banking",
+          "input_tokens": 952
+        },
+        {
+          "key": "test/banking77-test-571/original",
+          "workload": "banking",
+          "input_tokens": 955
+        },
+        {
+          "key": "test/banking77-test-636/original",
+          "workload": "banking",
+          "input_tokens": 951
+        },
+        {
+          "key": "test/banking77-test-653/original",
+          "workload": "banking",
+          "input_tokens": 964
+        },
+        {
+          "key": "test/banking77-test-814/original",
+          "workload": "banking",
+          "input_tokens": 953
+        },
+        {
+          "key": "test/banking77-test-881/original",
+          "workload": "banking",
+          "input_tokens": 951
+        },
+        {
+          "key": "test/banking77-test-895/original",
+          "workload": "banking",
+          "input_tokens": 957
+        },
+        {
+          "key": "test/banking77-test-902/original",
+          "workload": "banking",
+          "input_tokens": 946
+        },
+        {
+          "key": "test/banking77-test-914/original",
+          "workload": "banking",
+          "input_tokens": 949
+        },
+        {
+          "key": "test/banking77-test-952/original",
+          "workload": "banking",
+          "input_tokens": 950
+        },
+        {
+          "key": "test/banking77-test-1003/original",
+          "workload": "banking",
+          "input_tokens": 960
+        },
+        {
+          "key": "test/banking77-test-1083/original",
+          "workload": "banking",
+          "input_tokens": 956
+        },
+        {
+          "key": "test/banking77-test-1126/original",
+          "workload": "banking",
+          "input_tokens": 947
+        },
+        {
+          "key": "test/banking77-test-1138/original",
+          "workload": "banking",
+          "input_tokens": 947
+        },
+        {
+          "key": "test/banking77-test-1139/original",
+          "workload": "banking",
+          "input_tokens": 947
+        },
+        {
+          "key": "test/banking77-test-1200/original",
+          "workload": "banking",
+          "input_tokens": 945
+        },
+        {
+          "key": "test/banking77-test-1378/original",
+          "workload": "banking",
+          "input_tokens": 953
+        },
+        {
+          "key": "test/banking77-test-1393/original",
+          "workload": "banking",
+          "input_tokens": 950
+        },
+        {
+          "key": "test/banking77-test-1408/original",
+          "workload": "banking",
+          "input_tokens": 954
+        },
+        {
+          "key": "test/banking77-test-1470/original",
+          "workload": "banking",
+          "input_tokens": 947
+        },
+        {
+          "key": "test/banking77-test-1481/original",
+          "workload": "banking",
+          "input_tokens": 950
+        },
+        {
+          "key": "test/banking77-test-1550/original",
+          "workload": "banking",
+          "input_tokens": 948
+        },
+        {
+          "key": "test/banking77-test-1556/original",
+          "workload": "banking",
+          "input_tokens": 947
+        },
+        {
+          "key": "test/banking77-test-1718/original",
+          "workload": "banking",
+          "input_tokens": 947
+        },
+        {
+          "key": "test/banking77-test-1728/original",
+          "workload": "banking",
+          "input_tokens": 966
+        },
+        {
+          "key": "test/banking77-test-1731/original",
+          "workload": "banking",
+          "input_tokens": 966
+        },
+        {
+          "key": "test/banking77-test-1839/original",
+          "workload": "banking",
+          "input_tokens": 962
+        },
+        {
+          "key": "test/banking77-test-1881/original",
+          "workload": "banking",
+          "input_tokens": 964
+        },
+        {
+          "key": "test/banking77-test-2069/original",
+          "workload": "banking",
+          "input_tokens": 953
+        },
+        {
+          "key": "test/banking77-test-2196/original",
+          "workload": "banking",
+          "input_tokens": 946
+        },
+        {
+          "key": "test/banking77-test-2232/original",
+          "workload": "banking",
+          "input_tokens": 950
+        },
+        {
+          "key": "test/banking77-test-2233/original",
+          "workload": "banking",
+          "input_tokens": 946
+        },
+        {
+          "key": "test/banking77-test-2261/original",
+          "workload": "banking",
+          "input_tokens": 949
+        },
+        {
+          "key": "test/banking77-test-2298/original",
+          "workload": "banking",
+          "input_tokens": 971
+        },
+        {
+          "key": "test/banking77-test-2413/original",
+          "workload": "banking",
+          "input_tokens": 949
+        },
+        {
+          "key": "test/banking77-test-2418/original",
+          "workload": "banking",
+          "input_tokens": 950
+        },
+        {
+          "key": "test/banking77-test-2465/original",
+          "workload": "banking",
+          "input_tokens": 951
+        },
+        {
+          "key": "test/banking77-test-2472/original",
+          "workload": "banking",
+          "input_tokens": 951
+        },
+        {
+          "key": "test/banking77-test-2533/original",
+          "workload": "banking",
+          "input_tokens": 949
+        },
+        {
+          "key": "test/banking77-test-2574/original",
+          "workload": "banking",
+          "input_tokens": 951
+        },
+        {
+          "key": "test/banking77-test-2619/original",
+          "workload": "banking",
+          "input_tokens": 948
+        },
+        {
+          "key": "test/banking77-test-2661/original",
+          "workload": "banking",
+          "input_tokens": 948
+        },
+        {
+          "key": "test/banking77-test-2771/original",
+          "workload": "banking",
+          "input_tokens": 949
+        },
+        {
+          "key": "test/banking77-test-2859/original",
+          "workload": "banking",
+          "input_tokens": 958
+        },
+        {
+          "key": "test/banking77-test-2872/original",
+          "workload": "banking",
+          "input_tokens": 948
+        },
+        {
+          "key": "test/banking77-test-2932/original",
+          "workload": "banking",
+          "input_tokens": 951
+        },
+        {
+          "key": "test/banking77-test-2988/original",
+          "workload": "banking",
+          "input_tokens": 954
+        },
+        {
+          "key": "test/banking77-test-3016/original",
+          "workload": "banking",
+          "input_tokens": 952
+        },
+        {
+          "key": "test/banking77-test-3033/original",
+          "workload": "banking",
+          "input_tokens": 952
+        },
+        {
+          "key": "test/banking77-test-3037/original",
+          "workload": "banking",
+          "input_tokens": 952
+        },
+        {
+          "key": "demo/billing/original",
+          "workload": "short-demos",
+          "input_tokens": 111
+        },
+        {
+          "key": "demo/technical/original",
+          "workload": "short-demos",
+          "input_tokens": 118
+        },
+        {
+          "key": "demo/none-of-these/original",
+          "workload": "short-demos",
+          "input_tokens": 123
+        },
+        {
+          "key": "demo/refund-day-13/original",
+          "workload": "short-demos",
+          "input_tokens": 145
+        },
+        {
+          "key": "demo/refund-day-14/original",
+          "workload": "short-demos",
+          "input_tokens": 145
+        },
+        {
+          "key": "demo/quoted-instruction/original",
+          "workload": "short-demos",
+          "input_tokens": 145
+        },
+        {
+          "key": "demo/synthetic-blog-format/original",
+          "workload": "short-demos",
+          "input_tokens": 187
+        }
+      ]
+    },
+    "myjev-0.8b": {
+      "workloads": {
+        "banking": {
+          "requests": 64,
+          "min": 866,
+          "median": 872.0,
+          "max": 893
+        },
+        "short-demos": {
+          "requests": 7,
+          "min": 92,
+          "median": 123.0,
+          "max": 167
+        }
+      },
+      "requests": [
+        {
+          "key": "test/banking77-test-26/original",
+          "workload": "banking",
+          "input_tokens": 878
+        },
+        {
+          "key": "test/banking77-test-102/original",
+          "workload": "banking",
+          "input_tokens": 867
+        },
+        {
+          "key": "test/banking77-test-108/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-122/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-130/original",
+          "workload": "banking",
+          "input_tokens": 876
+        },
+        {
+          "key": "test/banking77-test-177/original",
+          "workload": "banking",
+          "input_tokens": 875
+        },
+        {
+          "key": "test/banking77-test-322/original",
+          "workload": "banking",
+          "input_tokens": 883
+        },
+        {
+          "key": "test/banking77-test-356/original",
+          "workload": "banking",
+          "input_tokens": 871
+        },
+        {
+          "key": "test/banking77-test-379/original",
+          "workload": "banking",
+          "input_tokens": 878
+        },
+        {
+          "key": "test/banking77-test-383/original",
+          "workload": "banking",
+          "input_tokens": 866
+        },
+        {
+          "key": "test/banking77-test-396/original",
+          "workload": "banking",
+          "input_tokens": 872
+        },
+        {
+          "key": "test/banking77-test-418/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-419/original",
+          "workload": "banking",
+          "input_tokens": 874
+        },
+        {
+          "key": "test/banking77-test-456/original",
+          "workload": "banking",
+          "input_tokens": 870
+        },
+        {
+          "key": "test/banking77-test-511/original",
+          "workload": "banking",
+          "input_tokens": 874
+        },
+        {
+          "key": "test/banking77-test-571/original",
+          "workload": "banking",
+          "input_tokens": 876
+        },
+        {
+          "key": "test/banking77-test-636/original",
+          "workload": "banking",
+          "input_tokens": 873
+        },
+        {
+          "key": "test/banking77-test-653/original",
+          "workload": "banking",
+          "input_tokens": 885
+        },
+        {
+          "key": "test/banking77-test-814/original",
+          "workload": "banking",
+          "input_tokens": 875
+        },
+        {
+          "key": "test/banking77-test-881/original",
+          "workload": "banking",
+          "input_tokens": 873
+        },
+        {
+          "key": "test/banking77-test-895/original",
+          "workload": "banking",
+          "input_tokens": 878
+        },
+        {
+          "key": "test/banking77-test-902/original",
+          "workload": "banking",
+          "input_tokens": 868
+        },
+        {
+          "key": "test/banking77-test-914/original",
+          "workload": "banking",
+          "input_tokens": 871
+        },
+        {
+          "key": "test/banking77-test-952/original",
+          "workload": "banking",
+          "input_tokens": 872
+        },
+        {
+          "key": "test/banking77-test-1003/original",
+          "workload": "banking",
+          "input_tokens": 882
+        },
+        {
+          "key": "test/banking77-test-1083/original",
+          "workload": "banking",
+          "input_tokens": 878
+        },
+        {
+          "key": "test/banking77-test-1126/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-1138/original",
+          "workload": "banking",
+          "input_tokens": 868
+        },
+        {
+          "key": "test/banking77-test-1139/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-1200/original",
+          "workload": "banking",
+          "input_tokens": 867
+        },
+        {
+          "key": "test/banking77-test-1378/original",
+          "workload": "banking",
+          "input_tokens": 874
+        },
+        {
+          "key": "test/banking77-test-1393/original",
+          "workload": "banking",
+          "input_tokens": 872
+        },
+        {
+          "key": "test/banking77-test-1408/original",
+          "workload": "banking",
+          "input_tokens": 876
+        },
+        {
+          "key": "test/banking77-test-1470/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-1481/original",
+          "workload": "banking",
+          "input_tokens": 871
+        },
+        {
+          "key": "test/banking77-test-1550/original",
+          "workload": "banking",
+          "input_tokens": 870
+        },
+        {
+          "key": "test/banking77-test-1556/original",
+          "workload": "banking",
+          "input_tokens": 868
+        },
+        {
+          "key": "test/banking77-test-1718/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-1728/original",
+          "workload": "banking",
+          "input_tokens": 887
+        },
+        {
+          "key": "test/banking77-test-1731/original",
+          "workload": "banking",
+          "input_tokens": 888
+        },
+        {
+          "key": "test/banking77-test-1839/original",
+          "workload": "banking",
+          "input_tokens": 884
+        },
+        {
+          "key": "test/banking77-test-1881/original",
+          "workload": "banking",
+          "input_tokens": 886
+        },
+        {
+          "key": "test/banking77-test-2069/original",
+          "workload": "banking",
+          "input_tokens": 875
+        },
+        {
+          "key": "test/banking77-test-2196/original",
+          "workload": "banking",
+          "input_tokens": 868
+        },
+        {
+          "key": "test/banking77-test-2232/original",
+          "workload": "banking",
+          "input_tokens": 872
+        },
+        {
+          "key": "test/banking77-test-2233/original",
+          "workload": "banking",
+          "input_tokens": 868
+        },
+        {
+          "key": "test/banking77-test-2261/original",
+          "workload": "banking",
+          "input_tokens": 871
+        },
+        {
+          "key": "test/banking77-test-2298/original",
+          "workload": "banking",
+          "input_tokens": 893
+        },
+        {
+          "key": "test/banking77-test-2413/original",
+          "workload": "banking",
+          "input_tokens": 870
+        },
+        {
+          "key": "test/banking77-test-2418/original",
+          "workload": "banking",
+          "input_tokens": 872
+        },
+        {
+          "key": "test/banking77-test-2465/original",
+          "workload": "banking",
+          "input_tokens": 873
+        },
+        {
+          "key": "test/banking77-test-2472/original",
+          "workload": "banking",
+          "input_tokens": 873
+        },
+        {
+          "key": "test/banking77-test-2533/original",
+          "workload": "banking",
+          "input_tokens": 871
+        },
+        {
+          "key": "test/banking77-test-2574/original",
+          "workload": "banking",
+          "input_tokens": 872
+        },
+        {
+          "key": "test/banking77-test-2619/original",
+          "workload": "banking",
+          "input_tokens": 870
+        },
+        {
+          "key": "test/banking77-test-2661/original",
+          "workload": "banking",
+          "input_tokens": 870
+        },
+        {
+          "key": "test/banking77-test-2771/original",
+          "workload": "banking",
+          "input_tokens": 871
+        },
+        {
+          "key": "test/banking77-test-2859/original",
+          "workload": "banking",
+          "input_tokens": 880
+        },
+        {
+          "key": "test/banking77-test-2872/original",
+          "workload": "banking",
+          "input_tokens": 870
+        },
+        {
+          "key": "test/banking77-test-2932/original",
+          "workload": "banking",
+          "input_tokens": 873
+        },
+        {
+          "key": "test/banking77-test-2988/original",
+          "workload": "banking",
+          "input_tokens": 876
+        },
+        {
+          "key": "test/banking77-test-3016/original",
+          "workload": "banking",
+          "input_tokens": 874
+        },
+        {
+          "key": "test/banking77-test-3033/original",
+          "workload": "banking",
+          "input_tokens": 874
+        },
+        {
+          "key": "test/banking77-test-3037/original",
+          "workload": "banking",
+          "input_tokens": 874
+        },
+        {
+          "key": "demo/billing/original",
+          "workload": "short-demos",
+          "input_tokens": 92
+        },
+        {
+          "key": "demo/technical/original",
+          "workload": "short-demos",
+          "input_tokens": 99
+        },
+        {
+          "key": "demo/none-of-these/original",
+          "workload": "short-demos",
+          "input_tokens": 104
+        },
+        {
+          "key": "demo/refund-day-13/original",
+          "workload": "short-demos",
+          "input_tokens": 123
+        },
+        {
+          "key": "demo/refund-day-14/original",
+          "workload": "short-demos",
+          "input_tokens": 123
+        },
+        {
+          "key": "demo/quoted-instruction/original",
+          "workload": "short-demos",
+          "input_tokens": 126
+        },
+        {
+          "key": "demo/synthetic-blog-format/original",
+          "workload": "short-demos",
+          "input_tokens": 167
+        }
+      ]
+    },
+    "myjev-0.8b-rl": {
+      "workloads": {
+        "banking": {
+          "requests": 64,
+          "min": 866,
+          "median": 872.0,
+          "max": 893
+        },
+        "short-demos": {
+          "requests": 7,
+          "min": 92,
+          "median": 123.0,
+          "max": 167
+        }
+      },
+      "requests": [
+        {
+          "key": "test/banking77-test-26/original",
+          "workload": "banking",
+          "input_tokens": 878
+        },
+        {
+          "key": "test/banking77-test-102/original",
+          "workload": "banking",
+          "input_tokens": 867
+        },
+        {
+          "key": "test/banking77-test-108/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-122/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-130/original",
+          "workload": "banking",
+          "input_tokens": 876
+        },
+        {
+          "key": "test/banking77-test-177/original",
+          "workload": "banking",
+          "input_tokens": 875
+        },
+        {
+          "key": "test/banking77-test-322/original",
+          "workload": "banking",
+          "input_tokens": 883
+        },
+        {
+          "key": "test/banking77-test-356/original",
+          "workload": "banking",
+          "input_tokens": 871
+        },
+        {
+          "key": "test/banking77-test-379/original",
+          "workload": "banking",
+          "input_tokens": 878
+        },
+        {
+          "key": "test/banking77-test-383/original",
+          "workload": "banking",
+          "input_tokens": 866
+        },
+        {
+          "key": "test/banking77-test-396/original",
+          "workload": "banking",
+          "input_tokens": 872
+        },
+        {
+          "key": "test/banking77-test-418/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-419/original",
+          "workload": "banking",
+          "input_tokens": 874
+        },
+        {
+          "key": "test/banking77-test-456/original",
+          "workload": "banking",
+          "input_tokens": 870
+        },
+        {
+          "key": "test/banking77-test-511/original",
+          "workload": "banking",
+          "input_tokens": 874
+        },
+        {
+          "key": "test/banking77-test-571/original",
+          "workload": "banking",
+          "input_tokens": 876
+        },
+        {
+          "key": "test/banking77-test-636/original",
+          "workload": "banking",
+          "input_tokens": 873
+        },
+        {
+          "key": "test/banking77-test-653/original",
+          "workload": "banking",
+          "input_tokens": 885
+        },
+        {
+          "key": "test/banking77-test-814/original",
+          "workload": "banking",
+          "input_tokens": 875
+        },
+        {
+          "key": "test/banking77-test-881/original",
+          "workload": "banking",
+          "input_tokens": 873
+        },
+        {
+          "key": "test/banking77-test-895/original",
+          "workload": "banking",
+          "input_tokens": 878
+        },
+        {
+          "key": "test/banking77-test-902/original",
+          "workload": "banking",
+          "input_tokens": 868
+        },
+        {
+          "key": "test/banking77-test-914/original",
+          "workload": "banking",
+          "input_tokens": 871
+        },
+        {
+          "key": "test/banking77-test-952/original",
+          "workload": "banking",
+          "input_tokens": 872
+        },
+        {
+          "key": "test/banking77-test-1003/original",
+          "workload": "banking",
+          "input_tokens": 882
+        },
+        {
+          "key": "test/banking77-test-1083/original",
+          "workload": "banking",
+          "input_tokens": 878
+        },
+        {
+          "key": "test/banking77-test-1126/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-1138/original",
+          "workload": "banking",
+          "input_tokens": 868
+        },
+        {
+          "key": "test/banking77-test-1139/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-1200/original",
+          "workload": "banking",
+          "input_tokens": 867
+        },
+        {
+          "key": "test/banking77-test-1378/original",
+          "workload": "banking",
+          "input_tokens": 874
+        },
+        {
+          "key": "test/banking77-test-1393/original",
+          "workload": "banking",
+          "input_tokens": 872
+        },
+        {
+          "key": "test/banking77-test-1408/original",
+          "workload": "banking",
+          "input_tokens": 876
+        },
+        {
+          "key": "test/banking77-test-1470/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-1481/original",
+          "workload": "banking",
+          "input_tokens": 871
+        },
+        {
+          "key": "test/banking77-test-1550/original",
+          "workload": "banking",
+          "input_tokens": 870
+        },
+        {
+          "key": "test/banking77-test-1556/original",
+          "workload": "banking",
+          "input_tokens": 868
+        },
+        {
+          "key": "test/banking77-test-1718/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-1728/original",
+          "workload": "banking",
+          "input_tokens": 887
+        },
+        {
+          "key": "test/banking77-test-1731/original",
+          "workload": "banking",
+          "input_tokens": 888
+        },
+        {
+          "key": "test/banking77-test-1839/original",
+          "workload": "banking",
+          "input_tokens": 884
+        },
+        {
+          "key": "test/banking77-test-1881/original",
+          "workload": "banking",
+          "input_tokens": 886
+        },
+        {
+          "key": "test/banking77-test-2069/original",
+          "workload": "banking",
+          "input_tokens": 875
+        },
+        {
+          "key": "test/banking77-test-2196/original",
+          "workload": "banking",
+          "input_tokens": 868
+        },
+        {
+          "key": "test/banking77-test-2232/original",
+          "workload": "banking",
+          "input_tokens": 872
+        },
+        {
+          "key": "test/banking77-test-2233/original",
+          "workload": "banking",
+          "input_tokens": 868
+        },
+        {
+          "key": "test/banking77-test-2261/original",
+          "workload": "banking",
+          "input_tokens": 871
+        },
+        {
+          "key": "test/banking77-test-2298/original",
+          "workload": "banking",
+          "input_tokens": 893
+        },
+        {
+          "key": "test/banking77-test-2413/original",
+          "workload": "banking",
+          "input_tokens": 870
+        },
+        {
+          "key": "test/banking77-test-2418/original",
+          "workload": "banking",
+          "input_tokens": 872
+        },
+        {
+          "key": "test/banking77-test-2465/original",
+          "workload": "banking",
+          "input_tokens": 873
+        },
+        {
+          "key": "test/banking77-test-2472/original",
+          "workload": "banking",
+          "input_tokens": 873
+        },
+        {
+          "key": "test/banking77-test-2533/original",
+          "workload": "banking",
+          "input_tokens": 871
+        },
+        {
+          "key": "test/banking77-test-2574/original",
+          "workload": "banking",
+          "input_tokens": 872
+        },
+        {
+          "key": "test/banking77-test-2619/original",
+          "workload": "banking",
+          "input_tokens": 870
+        },
+        {
+          "key": "test/banking77-test-2661/original",
+          "workload": "banking",
+          "input_tokens": 870
+        },
+        {
+          "key": "test/banking77-test-2771/original",
+          "workload": "banking",
+          "input_tokens": 871
+        },
+        {
+          "key": "test/banking77-test-2859/original",
+          "workload": "banking",
+          "input_tokens": 880
+        },
+        {
+          "key": "test/banking77-test-2872/original",
+          "workload": "banking",
+          "input_tokens": 870
+        },
+        {
+          "key": "test/banking77-test-2932/original",
+          "workload": "banking",
+          "input_tokens": 873
+        },
+        {
+          "key": "test/banking77-test-2988/original",
+          "workload": "banking",
+          "input_tokens": 876
+        },
+        {
+          "key": "test/banking77-test-3016/original",
+          "workload": "banking",
+          "input_tokens": 874
+        },
+        {
+          "key": "test/banking77-test-3033/original",
+          "workload": "banking",
+          "input_tokens": 874
+        },
+        {
+          "key": "test/banking77-test-3037/original",
+          "workload": "banking",
+          "input_tokens": 874
+        },
+        {
+          "key": "demo/billing/original",
+          "workload": "short-demos",
+          "input_tokens": 92
+        },
+        {
+          "key": "demo/technical/original",
+          "workload": "short-demos",
+          "input_tokens": 99
+        },
+        {
+          "key": "demo/none-of-these/original",
+          "workload": "short-demos",
+          "input_tokens": 104
+        },
+        {
+          "key": "demo/refund-day-13/original",
+          "workload": "short-demos",
+          "input_tokens": 123
+        },
+        {
+          "key": "demo/refund-day-14/original",
+          "workload": "short-demos",
+          "input_tokens": 123
+        },
+        {
+          "key": "demo/quoted-instruction/original",
+          "workload": "short-demos",
+          "input_tokens": 126
+        },
+        {
+          "key": "demo/synthetic-blog-format/original",
+          "workload": "short-demos",
+          "input_tokens": 167
+        }
+      ]
+    },
+    "myjev-4b": {
+      "workloads": {
+        "banking": {
+          "requests": 64,
+          "min": 866,
+          "median": 872.0,
+          "max": 893
+        },
+        "short-demos": {
+          "requests": 7,
+          "min": 92,
+          "median": 123.0,
+          "max": 167
+        }
+      },
+      "requests": [
+        {
+          "key": "test/banking77-test-26/original",
+          "workload": "banking",
+          "input_tokens": 878
+        },
+        {
+          "key": "test/banking77-test-102/original",
+          "workload": "banking",
+          "input_tokens": 867
+        },
+        {
+          "key": "test/banking77-test-108/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-122/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-130/original",
+          "workload": "banking",
+          "input_tokens": 876
+        },
+        {
+          "key": "test/banking77-test-177/original",
+          "workload": "banking",
+          "input_tokens": 875
+        },
+        {
+          "key": "test/banking77-test-322/original",
+          "workload": "banking",
+          "input_tokens": 883
+        },
+        {
+          "key": "test/banking77-test-356/original",
+          "workload": "banking",
+          "input_tokens": 871
+        },
+        {
+          "key": "test/banking77-test-379/original",
+          "workload": "banking",
+          "input_tokens": 878
+        },
+        {
+          "key": "test/banking77-test-383/original",
+          "workload": "banking",
+          "input_tokens": 866
+        },
+        {
+          "key": "test/banking77-test-396/original",
+          "workload": "banking",
+          "input_tokens": 872
+        },
+        {
+          "key": "test/banking77-test-418/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-419/original",
+          "workload": "banking",
+          "input_tokens": 874
+        },
+        {
+          "key": "test/banking77-test-456/original",
+          "workload": "banking",
+          "input_tokens": 870
+        },
+        {
+          "key": "test/banking77-test-511/original",
+          "workload": "banking",
+          "input_tokens": 874
+        },
+        {
+          "key": "test/banking77-test-571/original",
+          "workload": "banking",
+          "input_tokens": 876
+        },
+        {
+          "key": "test/banking77-test-636/original",
+          "workload": "banking",
+          "input_tokens": 873
+        },
+        {
+          "key": "test/banking77-test-653/original",
+          "workload": "banking",
+          "input_tokens": 885
+        },
+        {
+          "key": "test/banking77-test-814/original",
+          "workload": "banking",
+          "input_tokens": 875
+        },
+        {
+          "key": "test/banking77-test-881/original",
+          "workload": "banking",
+          "input_tokens": 873
+        },
+        {
+          "key": "test/banking77-test-895/original",
+          "workload": "banking",
+          "input_tokens": 878
+        },
+        {
+          "key": "test/banking77-test-902/original",
+          "workload": "banking",
+          "input_tokens": 868
+        },
+        {
+          "key": "test/banking77-test-914/original",
+          "workload": "banking",
+          "input_tokens": 871
+        },
+        {
+          "key": "test/banking77-test-952/original",
+          "workload": "banking",
+          "input_tokens": 872
+        },
+        {
+          "key": "test/banking77-test-1003/original",
+          "workload": "banking",
+          "input_tokens": 882
+        },
+        {
+          "key": "test/banking77-test-1083/original",
+          "workload": "banking",
+          "input_tokens": 878
+        },
+        {
+          "key": "test/banking77-test-1126/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-1138/original",
+          "workload": "banking",
+          "input_tokens": 868
+        },
+        {
+          "key": "test/banking77-test-1139/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-1200/original",
+          "workload": "banking",
+          "input_tokens": 867
+        },
+        {
+          "key": "test/banking77-test-1378/original",
+          "workload": "banking",
+          "input_tokens": 874
+        },
+        {
+          "key": "test/banking77-test-1393/original",
+          "workload": "banking",
+          "input_tokens": 872
+        },
+        {
+          "key": "test/banking77-test-1408/original",
+          "workload": "banking",
+          "input_tokens": 876
+        },
+        {
+          "key": "test/banking77-test-1470/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-1481/original",
+          "workload": "banking",
+          "input_tokens": 871
+        },
+        {
+          "key": "test/banking77-test-1550/original",
+          "workload": "banking",
+          "input_tokens": 870
+        },
+        {
+          "key": "test/banking77-test-1556/original",
+          "workload": "banking",
+          "input_tokens": 868
+        },
+        {
+          "key": "test/banking77-test-1718/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-1728/original",
+          "workload": "banking",
+          "input_tokens": 887
+        },
+        {
+          "key": "test/banking77-test-1731/original",
+          "workload": "banking",
+          "input_tokens": 888
+        },
+        {
+          "key": "test/banking77-test-1839/original",
+          "workload": "banking",
+          "input_tokens": 884
+        },
+        {
+          "key": "test/banking77-test-1881/original",
+          "workload": "banking",
+          "input_tokens": 886
+        },
+        {
+          "key": "test/banking77-test-2069/original",
+          "workload": "banking",
+          "input_tokens": 875
+        },
+        {
+          "key": "test/banking77-test-2196/original",
+          "workload": "banking",
+          "input_tokens": 868
+        },
+        {
+          "key": "test/banking77-test-2232/original",
+          "workload": "banking",
+          "input_tokens": 872
+        },
+        {
+          "key": "test/banking77-test-2233/original",
+          "workload": "banking",
+          "input_tokens": 868
+        },
+        {
+          "key": "test/banking77-test-2261/original",
+          "workload": "banking",
+          "input_tokens": 871
+        },
+        {
+          "key": "test/banking77-test-2298/original",
+          "workload": "banking",
+          "input_tokens": 893
+        },
+        {
+          "key": "test/banking77-test-2413/original",
+          "workload": "banking",
+          "input_tokens": 870
+        },
+        {
+          "key": "test/banking77-test-2418/original",
+          "workload": "banking",
+          "input_tokens": 872
+        },
+        {
+          "key": "test/banking77-test-2465/original",
+          "workload": "banking",
+          "input_tokens": 873
+        },
+        {
+          "key": "test/banking77-test-2472/original",
+          "workload": "banking",
+          "input_tokens": 873
+        },
+        {
+          "key": "test/banking77-test-2533/original",
+          "workload": "banking",
+          "input_tokens": 871
+        },
+        {
+          "key": "test/banking77-test-2574/original",
+          "workload": "banking",
+          "input_tokens": 872
+        },
+        {
+          "key": "test/banking77-test-2619/original",
+          "workload": "banking",
+          "input_tokens": 870
+        },
+        {
+          "key": "test/banking77-test-2661/original",
+          "workload": "banking",
+          "input_tokens": 870
+        },
+        {
+          "key": "test/banking77-test-2771/original",
+          "workload": "banking",
+          "input_tokens": 871
+        },
+        {
+          "key": "test/banking77-test-2859/original",
+          "workload": "banking",
+          "input_tokens": 880
+        },
+        {
+          "key": "test/banking77-test-2872/original",
+          "workload": "banking",
+          "input_tokens": 870
+        },
+        {
+          "key": "test/banking77-test-2932/original",
+          "workload": "banking",
+          "input_tokens": 873
+        },
+        {
+          "key": "test/banking77-test-2988/original",
+          "workload": "banking",
+          "input_tokens": 876
+        },
+        {
+          "key": "test/banking77-test-3016/original",
+          "workload": "banking",
+          "input_tokens": 874
+        },
+        {
+          "key": "test/banking77-test-3033/original",
+          "workload": "banking",
+          "input_tokens": 874
+        },
+        {
+          "key": "test/banking77-test-3037/original",
+          "workload": "banking",
+          "input_tokens": 874
+        },
+        {
+          "key": "demo/billing/original",
+          "workload": "short-demos",
+          "input_tokens": 92
+        },
+        {
+          "key": "demo/technical/original",
+          "workload": "short-demos",
+          "input_tokens": 99
+        },
+        {
+          "key": "demo/none-of-these/original",
+          "workload": "short-demos",
+          "input_tokens": 104
+        },
+        {
+          "key": "demo/refund-day-13/original",
+          "workload": "short-demos",
+          "input_tokens": 123
+        },
+        {
+          "key": "demo/refund-day-14/original",
+          "workload": "short-demos",
+          "input_tokens": 123
+        },
+        {
+          "key": "demo/quoted-instruction/original",
+          "workload": "short-demos",
+          "input_tokens": 126
+        },
+        {
+          "key": "demo/synthetic-blog-format/original",
+          "workload": "short-demos",
+          "input_tokens": 167
+        }
+      ]
+    },
+    "myjev-4b-rl": {
+      "workloads": {
+        "banking": {
+          "requests": 64,
+          "min": 866,
+          "median": 872.0,
+          "max": 893
+        },
+        "short-demos": {
+          "requests": 7,
+          "min": 92,
+          "median": 123.0,
+          "max": 167
+        }
+      },
+      "requests": [
+        {
+          "key": "test/banking77-test-26/original",
+          "workload": "banking",
+          "input_tokens": 878
+        },
+        {
+          "key": "test/banking77-test-102/original",
+          "workload": "banking",
+          "input_tokens": 867
+        },
+        {
+          "key": "test/banking77-test-108/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-122/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-130/original",
+          "workload": "banking",
+          "input_tokens": 876
+        },
+        {
+          "key": "test/banking77-test-177/original",
+          "workload": "banking",
+          "input_tokens": 875
+        },
+        {
+          "key": "test/banking77-test-322/original",
+          "workload": "banking",
+          "input_tokens": 883
+        },
+        {
+          "key": "test/banking77-test-356/original",
+          "workload": "banking",
+          "input_tokens": 871
+        },
+        {
+          "key": "test/banking77-test-379/original",
+          "workload": "banking",
+          "input_tokens": 878
+        },
+        {
+          "key": "test/banking77-test-383/original",
+          "workload": "banking",
+          "input_tokens": 866
+        },
+        {
+          "key": "test/banking77-test-396/original",
+          "workload": "banking",
+          "input_tokens": 872
+        },
+        {
+          "key": "test/banking77-test-418/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-419/original",
+          "workload": "banking",
+          "input_tokens": 874
+        },
+        {
+          "key": "test/banking77-test-456/original",
+          "workload": "banking",
+          "input_tokens": 870
+        },
+        {
+          "key": "test/banking77-test-511/original",
+          "workload": "banking",
+          "input_tokens": 874
+        },
+        {
+          "key": "test/banking77-test-571/original",
+          "workload": "banking",
+          "input_tokens": 876
+        },
+        {
+          "key": "test/banking77-test-636/original",
+          "workload": "banking",
+          "input_tokens": 873
+        },
+        {
+          "key": "test/banking77-test-653/original",
+          "workload": "banking",
+          "input_tokens": 885
+        },
+        {
+          "key": "test/banking77-test-814/original",
+          "workload": "banking",
+          "input_tokens": 875
+        },
+        {
+          "key": "test/banking77-test-881/original",
+          "workload": "banking",
+          "input_tokens": 873
+        },
+        {
+          "key": "test/banking77-test-895/original",
+          "workload": "banking",
+          "input_tokens": 878
+        },
+        {
+          "key": "test/banking77-test-902/original",
+          "workload": "banking",
+          "input_tokens": 868
+        },
+        {
+          "key": "test/banking77-test-914/original",
+          "workload": "banking",
+          "input_tokens": 871
+        },
+        {
+          "key": "test/banking77-test-952/original",
+          "workload": "banking",
+          "input_tokens": 872
+        },
+        {
+          "key": "test/banking77-test-1003/original",
+          "workload": "banking",
+          "input_tokens": 882
+        },
+        {
+          "key": "test/banking77-test-1083/original",
+          "workload": "banking",
+          "input_tokens": 878
+        },
+        {
+          "key": "test/banking77-test-1126/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-1138/original",
+          "workload": "banking",
+          "input_tokens": 868
+        },
+        {
+          "key": "test/banking77-test-1139/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-1200/original",
+          "workload": "banking",
+          "input_tokens": 867
+        },
+        {
+          "key": "test/banking77-test-1378/original",
+          "workload": "banking",
+          "input_tokens": 874
+        },
+        {
+          "key": "test/banking77-test-1393/original",
+          "workload": "banking",
+          "input_tokens": 872
+        },
+        {
+          "key": "test/banking77-test-1408/original",
+          "workload": "banking",
+          "input_tokens": 876
+        },
+        {
+          "key": "test/banking77-test-1470/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-1481/original",
+          "workload": "banking",
+          "input_tokens": 871
+        },
+        {
+          "key": "test/banking77-test-1550/original",
+          "workload": "banking",
+          "input_tokens": 870
+        },
+        {
+          "key": "test/banking77-test-1556/original",
+          "workload": "banking",
+          "input_tokens": 868
+        },
+        {
+          "key": "test/banking77-test-1718/original",
+          "workload": "banking",
+          "input_tokens": 869
+        },
+        {
+          "key": "test/banking77-test-1728/original",
+          "workload": "banking",
+          "input_tokens": 887
+        },
+        {
+          "key": "test/banking77-test-1731/original",
+          "workload": "banking",
+          "input_tokens": 888
+        },
+        {
+          "key": "test/banking77-test-1839/original",
+          "workload": "banking",
+          "input_tokens": 884
+        },
+        {
+          "key": "test/banking77-test-1881/original",
+          "workload": "banking",
+          "input_tokens": 886
+        },
+        {
+          "key": "test/banking77-test-2069/original",
+          "workload": "banking",
+          "input_tokens": 875
+        },
+        {
+          "key": "test/banking77-test-2196/original",
+          "workload": "banking",
+          "input_tokens": 868
+        },
+        {
+          "key": "test/banking77-test-2232/original",
+          "workload": "banking",
+          "input_tokens": 872
+        },
+        {
+          "key": "test/banking77-test-2233/original",
+          "workload": "banking",
+          "input_tokens": 868
+        },
+        {
+          "key": "test/banking77-test-2261/original",
+          "workload": "banking",
+          "input_tokens": 871
+        },
+        {
+          "key": "test/banking77-test-2298/original",
+          "workload": "banking",
+          "input_tokens": 893
+        },
+        {
+          "key": "test/banking77-test-2413/original",
+          "workload": "banking",
+          "input_tokens": 870
+        },
+        {
+          "key": "test/banking77-test-2418/original",
+          "workload": "banking",
+          "input_tokens": 872
+        },
+        {
+          "key": "test/banking77-test-2465/original",
+          "workload": "banking",
+          "input_tokens": 873
+        },
+        {
+          "key": "test/banking77-test-2472/original",
+          "workload": "banking",
+          "input_tokens": 873
+        },
+        {
+          "key": "test/banking77-test-2533/original",
+          "workload": "banking",
+          "input_tokens": 871
+        },
+        {
+          "key": "test/banking77-test-2574/original",
+          "workload": "banking",
+          "input_tokens": 872
+        },
+        {
+          "key": "test/banking77-test-2619/original",
+          "workload": "banking",
+          "input_tokens": 870
+        },
+        {
+          "key": "test/banking77-test-2661/original",
+          "workload": "banking",
+          "input_tokens": 870
+        },
+        {
+          "key": "test/banking77-test-2771/original",
+          "workload": "banking",
+          "input_tokens": 871
+        },
+        {
+          "key": "test/banking77-test-2859/original",
+          "workload": "banking",
+          "input_tokens": 880
+        },
+        {
+          "key": "test/banking77-test-2872/original",
+          "workload": "banking",
+          "input_tokens": 870
+        },
+        {
+          "key": "test/banking77-test-2932/original",
+          "workload": "banking",
+          "input_tokens": 873
+        },
+        {
+          "key": "test/banking77-test-2988/original",
+          "workload": "banking",
+          "input_tokens": 876
+        },
+        {
+          "key": "test/banking77-test-3016/original",
+          "workload": "banking",
+          "input_tokens": 874
+        },
+        {
+          "key": "test/banking77-test-3033/original",
+          "workload": "banking",
+          "input_tokens": 874
+        },
+        {
+          "key": "test/banking77-test-3037/original",
+          "workload": "banking",
+          "input_tokens": 874
+        },
+        {
+          "key": "demo/billing/original",
+          "workload": "short-demos",
+          "input_tokens": 92
+        },
+        {
+          "key": "demo/technical/original",
+          "workload": "short-demos",
+          "input_tokens": 99
+        },
+        {
+          "key": "demo/none-of-these/original",
+          "workload": "short-demos",
+          "input_tokens": 104
+        },
+        {
+          "key": "demo/refund-day-13/original",
+          "workload": "short-demos",
+          "input_tokens": 123
+        },
+        {
+          "key": "demo/refund-day-14/original",
+          "workload": "short-demos",
+          "input_tokens": 123
+        },
+        {
+          "key": "demo/quoted-instruction/original",
+          "workload": "short-demos",
+          "input_tokens": 126
+        },
+        {
+          "key": "demo/synthetic-blog-format/original",
+          "workload": "short-demos",
+          "input_tokens": 167
+        }
+      ]
+    }
+  }
+}

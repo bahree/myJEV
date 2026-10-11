@@ -1,0 +1,9 @@
+{
+  "source": "results/decision3-v1/summary.json",
+  "source_sha256": "63993aaa8995bbef0cfb925d9a24d6b10be683b401a99fd8a2ee92c01681b573",
+  "scope": "Original test accuracy with conditional group intervals, native/equally fitted selection confidence, and isolated local scoring latency. No training-seed or HTTP inference.",
+  "figures": {
+    "quality.png": "443fd4b2f6ace78ba9982952693917b840916f52f6cb0b9899c7f74ba3736185",
+    "latency.png": "dcf8384f3476d05613e6892c4494308f1915bbb5e90c3e61892f92210a34211f"
+  }
+}

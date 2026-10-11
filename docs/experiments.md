@@ -51,6 +51,8 @@ Constant base-rate confidence is included because a low Brier score alone does n
 
 ## Other evidence
 
+The [Decision 3.0 comparison](decision3.md) evaluates six pinned releases on the full BANKING77 test, six CLINC cohorts, five request perturbations and seven authored demos. It uses equal post-hoc selection-temperature fitting and separate isolated A30 timings. D3 scores higher at both matching sizes in this run, while its banking thresholds falsely accept more unsupported CLINC requests. This compares released systems with different training histories, alongside the matched myJEV training-method study.
+
 TF-IDF/logistic regression reaches **88.28% accuracy** on all 3,080 official test examples. Temperature scaling reduces correctness Brier from **0.1246 to 0.0703**, without changing argmax decisions. It trains on the complete training partition, so exposure and test-set size differ from the neural pilot.
 
 The completed baseline records include the following results. Each control has its own interface and exposure budget:

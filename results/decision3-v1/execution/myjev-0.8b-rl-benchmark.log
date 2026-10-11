@@ -1,0 +1,10 @@
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Fetching 10 files: 100%|██████████| 10/10 [00:00<00:00, 911.51it/s]
+Loading weights:   0%|          | 0/320 [00:00<?, ?it/s]Loading weights: 100%|██████████| 320/320 [00:00<00:00, 3435.89it/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+{"model": "myjev-0.8b-rl", "phase": "benchmark", "completed": 50, "total": 227, "percent": 22.026431718061673, "requests_per_second": 8.161090204431046, "eta_seconds": 21.68827884096885, "utc": "2026-10-11T22:31:33.806074+00:00"}
+{"model": "myjev-0.8b-rl", "phase": "benchmark", "completed": 100, "total": 227, "percent": 44.052863436123346, "requests_per_second": 8.569531037603259, "eta_seconds": 14.819947491026252, "utc": "2026-10-11T22:31:39.348668+00:00"}
+{"model": "myjev-0.8b-rl", "phase": "benchmark", "completed": 150, "total": 227, "percent": 66.07929515418502, "requests_per_second": 8.72155980497761, "eta_seconds": 8.828695981199852, "utc": "2026-10-11T22:31:44.878173+00:00"}
+{"model": "myjev-0.8b-rl", "phase": "benchmark", "completed": 200, "total": 227, "percent": 88.10572687224669, "requests_per_second": 8.832046534923418, "eta_seconds": 3.0570491101057264, "utc": "2026-10-11T22:31:50.324225+00:00"}
+{"model": "myjev-0.8b-rl", "phase": "benchmark", "completed": 227, "total": 227, "percent": 100.0, "requests_per_second": 9.396084908171444, "eta_seconds": 0.0, "utc": "2026-10-11T22:31:51.838412+00:00"}
+{"finished_utc": "2026-10-11T22:31:51.838881+00:00", "requests": 227, "records_sha256": "30593ecc40bf739deac021b683a8b363236f8cfbc166b8d235d32e0283da8889", "session_seconds": 24.160760267986916, "peak_allocated_bytes": 1648727552, "peak_reserved_bytes": 1763704832}

@@ -1,0 +1,10 @@
+{
+  "model": "d3-lite",
+  "phase": "benchmark",
+  "completed": 227,
+  "total": 227,
+  "percent": 100.0,
+  "requests_per_second": 9.16930696403012,
+  "eta_seconds": 0.0,
+  "utc": "2026-10-11T22:31:08.628321+00:00"
+}

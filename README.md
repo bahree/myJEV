@@ -136,6 +136,8 @@ The optional [Unsloth comparison](docs/unsloth.md) studies another way to read a
 
 The [Microsoft Decision-1 comparison](docs/decision-1.md) uses the same banking requests with local myJEV and a hosted model. It tests whether answer order, identifier spelling and formatting change decisions, and keeps service latency separate from local GPU timing. On its fixed 64 original test cases, Decision-1 answered 59 correctly, supervised myJEV 60 and RL 61. The small diagnostic does not choose a new default. OpenRouter access is optional; running myJEV uses no hosted account.
 
+The [Decision 3.0 comparison](docs/decision3.md) runs downloadable d3-lite and d3-mini weights on the same A30 as myJEV. They reached 89.81% and 92.27% on the full BANKING77 test, exceeding the corresponding myJEV releases. After the same temperature fitting and threshold selection for 80% calibration coverage, they also accepted more missing-answer requests in the tested CLINC cohorts. The guide compares those errors, confidence definitions, native prompts and isolated latency; different training histories prevent attributing the result to the output head alone.
+
 The [documentation index](docs/README.md) groups all guides by task, including model releases, troubleshooting, attribution and further experiments. The [engineering lessons](docs/learnings.md) explain decisions made along the way.
 
 ## Three sizes, one experimental interface

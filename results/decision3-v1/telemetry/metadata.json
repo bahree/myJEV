@@ -1,0 +1,6 @@
+{
+  "started_utc": "2026-10-11T21:54:12.501409+00:00",
+  "interval_seconds": 5.0,
+  "duration_seconds": 7200.0,
+  "scope": "Device-wide samples during concurrent study jobs; not per-run GPU efficiency or isolated latency."
+}

@@ -1,0 +1,8 @@
+{
+  "finished_utc": "2026-10-11T22:05:31.728778+00:00",
+  "requests": 5731,
+  "records_sha256": "6e11b0874530048b77562754f1cf2d57bc14d1a6e887342673de769196fb585e",
+  "session_seconds": 663.2880620949436,
+  "peak_allocated_bytes": 1714713088,
+  "peak_reserved_bytes": 1881145344
+}

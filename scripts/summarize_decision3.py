@@ -82,6 +82,11 @@ def main():
     parser.add_argument('--root', type=Path, default=Path('results/decision3-v1'))
     parser.add_argument('--require-benchmark', action='store_true')
     args = parser.parse_args()
+    manifest = Path('results/evidence-manifest.json')
+    if args.root == Path('results/decision3-v1') and manifest.exists():
+        if 'decision3' in json.loads(manifest.read_text())['bundles']:
+            from fetch_evidence import require_evidence
+            require_evidence('decision3')
     torch.set_num_threads(1)
     plan_path = Path('configs/decision3-v1.json')
     plan = json.loads(plan_path.read_text())
@@ -152,6 +157,8 @@ def main():
             result['benchmark'] = {'cached_load_seconds': brun['cached_load_seconds'],
                                    'peak_allocated_gib': bdone['peak_allocated_bytes'] / 1024**3,
                                    'peak_reserved_gib': bdone['peak_reserved_bytes'] / 1024**3,
+                                   'initial_warmups': plan['warmup_requests'],
+                                   'warmups_per_workload': plan['warmup_requests'],
                                    'workloads': {}}
             for workload in ['banking', 'short-demos']:
                 selected = [r for r in bench if r['phase'] == workload]
@@ -201,7 +208,7 @@ def main():
         if b:
             bank=b['workloads']['banking']['local_scoring_p50_p95_ms'];short=b['workloads']['short-demos']['local_scoring_p50_p95_ms']
             lines.append(f"| {name} | {bank[0]:.2f} / {bank[1]:.2f} | {short[0]:.2f} / {short[1]:.2f} | {b['peak_allocated_gib']:.3f} | {b['cached_load_seconds']:.2f} |")
-    lines += ['', 'The separate benchmark runs one model at a time on GPU 0. Timing includes tokenization, scoring and response conversion, with CUDA synchronization, and excludes HTTP and downloading. Each workload has five warmups. D3 retains its vision tower and verifies the full package during loading. myJEV uses its release loader. Backbone CUDA-event timings and reserved memory are also saved. Quality-run timings may overlap other GPU work and are not used for this table.', '',
+    lines += ['', 'The separate benchmark runs one model at a time on GPU 0. Timing includes tokenization, scoring and response conversion, with CUDA synchronization, and excludes HTTP and downloading. Each run has five initial warmups, then five more at the start of each benchmark workload. D3 retains its vision tower and verifies the full package during loading. myJEV uses its release loader. Backbone CUDA-event timings and reserved memory are also saved. Quality-run timings may overlap other GPU work and are not used for this table.', '',
               '## Seven authored demonstrations', '', '| Model | Case | Expected | Selected | Selected probability | Native confidence |', '|---|---|---|---|---:|---:|']
     for name,result in summary['models'].items():
         for r in result['demos']: lines.append(f"| {name} | {r['id']} | {r['label']} | {r['selected_id']} | {r['confidence']:.4f} | {r['native_confidence']:.4f} |")

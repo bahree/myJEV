@@ -23,7 +23,7 @@ def main():
     colors = ['#31688e', '#7851a9', '#168a78'] * 2
     plt.rcParams.update({'font.family':'DejaVu Sans', 'font.size':11, 'axes.spines.top':False,
                          'axes.spines.right':False, 'figure.facecolor':'white', 'savefig.facecolor':'white'})
-    fig, axes = plt.subplots(1, 2, figsize=(13,5.2), layout='constrained')
+    fig, axes = plt.subplots(2, 1, figsize=(9,8.6), layout='constrained')
     x = np.arange(len(order))
     native = [data['models'][key]['modes']['native-selection']['phases']['test'] for key in order]
     calibrated = [data['models'][key]['modes']['temperature']['phases']['test'] for key in order]
@@ -33,17 +33,17 @@ def main():
     axes[0].errorbar(x,accuracy,yerr=[accuracy-bounds[:,0],bounds[:,1]-accuracy],fmt='none',color='#222222',capsize=3)
     axes[0].set_ylabel('Correct answers (%)');axes[0].set_ylim(0,105)
     axes[0].set_title('BANKING77: all 3,080 test requests')
-    for i,value in enumerate(accuracy): axes[0].text(i,value+3,f'{value:.2f}',ha='center',fontsize=9)
+    for i,value in enumerate(accuracy): axes[0].text(i,value+3,f'{value:.2f}',ha='center',fontsize=10)
     axes[1].bar(x-.18,[m['correctness_brier'] for m in native],width=.34,color=colors,alpha=.35,label='Released selected probability')
     axes[1].bar(x+.18,[m['correctness_brier'] for m in calibrated],width=.34,color=colors,label='Equal temperature fitting')
     axes[1].set_ylabel('Correctness Brier (lower is better)')
     axes[1].set_title('Fit temperatures on calibration only');axes[1].legend(fontsize=9)
     for ax in axes:
-        ax.set_xticks(x,labels,fontsize=9);ax.grid(axis='y',alpha=.18);ax.set_axisbelow(True)
+        ax.set_xticks(x,labels,fontsize=10);ax.grid(axis='y',alpha=.18);ax.set_axisbelow(True)
         ax.axvline(2.5,color='#aaaaaa',linewidth=.7)
     fig.suptitle('Released systems with different training histories',fontsize=14)
     fig.savefig(root/'quality.png',dpi=170);plt.close(fig)
-    fig,axes=plt.subplots(1,2,figsize=(13,5.1),layout='constrained')
+    fig,axes=plt.subplots(2,1,figsize=(9,8.6),layout='constrained')
     for i,key in enumerate(order):
         m=data['models'][key];b=m['benchmark']
         if not b: raise ValueError('Complete isolated benchmark before drawing figures')
@@ -51,10 +51,11 @@ def main():
             med,p95=b['workloads'][workload]['local_scoring_p50_p95_ms']
             ax.bar(i,med,color=colors[i],width=.62)
             ax.vlines(i,med,p95,color='#222222');ax.hlines(p95,i-.1,i+.1,color='#222222')
-            ax.text(i,p95+2,f'{med:.1f}',ha='center',fontsize=9)
+            ax.text(i,p95+2,f'{med:.1f}',ha='center',fontsize=10)
             ax.set_title(title);ax.set_ylabel('Local scoring milliseconds')
     for ax in axes:
-        ax.set_xticks(x,labels,fontsize=9);ax.grid(axis='y',alpha=.18);ax.set_axisbelow(True)
+        ax.set_xticks(x,labels,fontsize=10);ax.grid(axis='y',alpha=.18);ax.set_axisbelow(True)
+        ax.set_ylim(0,ax.get_ylim()[1]*1.12)
     fig.suptitle('NVIDIA A30, one loaded model; bars p50, whiskers p95',fontsize=14)
     fig.savefig(root/'latency.png',dpi=170);plt.close(fig)
     receipt={'source':str(source),'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),

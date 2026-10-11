@@ -1,0 +1,6 @@
+{
+  "stopped_utc": "2026-10-11T22:36:31.521831+00:00",
+  "reason": "All six quality runs and isolated benchmarks completed; stopped only the comparison telemetry session.",
+  "planned_duration_seconds": 7200,
+  "scope": "Original metadata retains the requested maximum duration; CSV timestamps record actual sampling."
+}
