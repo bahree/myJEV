@@ -172,23 +172,26 @@ curl.exe -fsS http://127.0.0.1:8000/score `
 
 ## Score your own files or the seven demos
 
-The image includes the single-request file `request.json`. The seven demos are a separate download. Each block below downloads them into your current folder, runs the batch and displays the answers. No repository clone is needed.
+The seven examples use the same loaded model with different instructions and choices. They are separate from the single-request file included in the image.
 
-| File | What it contains |
-|---|---|
-| `demo-requests.jsonl` | The seven inputs sent to the model, one JSON request per line |
-| `demo-expectations.json` | The expected answers, kept separate from the model input |
-| `demo-results.jsonl` | The model's seven responses, written by the command below |
-
-Only the request file is sent to the model. The download links pin the inputs and expected answers to a public source revision. Choose one complete block and run it from the folder where you want to save the files.
+| Example | What we ask the model to do | Expected answer |
+|---|---|---|
+| 1 | Route “I was charged twice.” | `billing` |
+| 2 | Route a report that the app crashes when opening settings. | `technical` |
+| 3 | Route a hiking recommendation request using the same support choices. | `other` |
+| 4 | Apply a rule allowing refunds only before day 14 to a request made after 13 full days. | `approve` |
+| 5 | Apply the same rule to a request made after 14 full days. | `deny` |
+| 6 | Route a duplicate-charge report containing a quoted instruction to choose `technical`. | `billing` |
+| 7 | Classify a four-step guide to backing up and restoring a folder. | `tutorial` |
 
 ### CPU batch
+
+Run the whole block from the folder where you want to keep the files. It downloads `demo-requests.jsonl`, runs **myJEV-0.8B on CPU**, saves all seven responses in `demo-results.jsonl` and displays the selected IDs and confidence. The expected answers are in the table above and the [expectation file](../examples/demo-expectations.json); they are not sent to the model.
 
 Windows PowerShell (each backtick must be the last character on its line):
 
 ```powershell
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-requests.jsonl" -OutFile ".\demo-requests.jsonl" -ErrorAction Stop
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-expectations.json" -OutFile ".\demo-expectations.json" -ErrorAction Stop
 
 $responses = docker run --rm `
   -v myjev-hf-cache:/cache/huggingface `
@@ -217,7 +220,6 @@ Get-Content .\demo-results.jsonl -Encoding utf8 |
 
 ```bash
 curl -fsSLo demo-requests.jsonl "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-requests.jsonl" &&
-curl -fsSLo demo-expectations.json "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-expectations.json" &&
 docker run --rm \
   -v myjev-hf-cache:/cache/huggingface \
   --mount "type=bind,source=$PWD,target=/requests,readonly" \
@@ -232,15 +234,32 @@ cat demo-results.jsonl
 
 </details>
 
+The `/requests` mount lets Docker read the downloaded file. Loading messages appear in the terminal while the answers are saved on your machine in `demo-results.jsonl`, one response per line in input order. Warnings naming `causal_conv1d_fn` or `chunk_gated_delta_rule` mean PyTorch is using slower reference implementations for the CPU run. A traceback or a nonzero Docker exit code indicates a failure.
+
+The [saved Linux CPU run](../results/docker-reader-v1/cpu-batch-responses.jsonl) returned these selected IDs and confidence values, rounded to four decimals. Your scores may differ by machine.
+
+```text
+selected_id  confidence
+-----------  ----------
+billing      0.9757
+technical    0.9843
+other        0.8077
+approve      0.9885
+approve      0.9882
+billing      0.9684
+tutorial     0.9533
+```
+
+The fifth response is wrong: the model approved the day-14 refund with about **98.82% confidence**, even though the rule says to deny it. The other six responses match the expected answers. These are authored examples for trying the interface; seven requests cannot establish accuracy or reliable confidence on new inputs. The [demo walkthrough](../results/demos-v1/report.md) includes the full requests and original GPU comparisons.
+
 ### NVIDIA batch
 
-Docker must be able to expose an NVIDIA GPU. If `--gpus all` fails before the container starts, use the CPU block above; the application cannot switch devices before it runs.
+This version uses **myJEV-4B**. Docker must be able to expose an NVIDIA GPU. If `--gpus all` fails before the container starts, use the CPU block above; the application cannot switch devices before it runs.
 
 Windows PowerShell (each backtick must be the last character on its line):
 
 ```powershell
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-requests.jsonl" -OutFile ".\demo-requests.jsonl" -ErrorAction Stop
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-expectations.json" -OutFile ".\demo-expectations.json" -ErrorAction Stop
 
 $responses = docker run --rm --gpus all `
   -v myjev-hf-cache:/cache/huggingface `
@@ -269,7 +288,6 @@ Get-Content .\demo-results.jsonl -Encoding utf8 |
 
 ```bash
 curl -fsSLo demo-requests.jsonl "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-requests.jsonl" &&
-curl -fsSLo demo-expectations.json "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-expectations.json" &&
 docker run --rm --gpus all \
   -v myjev-hf-cache:/cache/huggingface \
   --mount "type=bind,source=$PWD,target=/requests,readonly" \
@@ -284,15 +302,15 @@ cat demo-results.jsonl
 
 </details>
 
-The mount makes your current folder available at `/requests` inside the container. The model reads `demo-requests.jsonl` from that folder and stays loaded for all seven requests. Loading messages appear in the terminal while the answers are saved in `demo-results.jsonl`. Opening `demo-requests.jsonl` shows the inputs again; open `demo-results.jsonl` to see what the model decided.
+Both PowerShell blocks save UTF-8 without a byte-order mark explicitly, because Windows PowerShell 5.1 and PowerShell 7 have different default output encodings. See [Microsoft's encoding documentation](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_character_encoding). The saved file retains the full JSON responses, including selection scores and model revisions; the displayed table shows two fields.
 
-On CPU, warnings naming `causal_conv1d_fn` or `chunk_gated_delta_rule` say that PyTorch is using slower reference implementations. Those warnings can accompany a successful run. You do not need to install the CUDA kernels for this CPU example. A traceback or a nonzero Docker exit code means the command failed.
+### Change the refund rule
 
-The PowerShell block saves UTF-8 without a byte-order mark on both Windows PowerShell 5.1 and PowerShell 7. Their default output encodings differ, so the block writes the file explicitly instead of relying on `>`. See [PowerShell's encoding documentation](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_character_encoding). The displayed table contains the selected ID and confidence; the saved file retains the complete responses, including scores and revisions.
+Copy requests 4 and 5 from `demo-requests.jsonl` into a new file called `refund-boundary-30.jsonl`. In both, change the instruction to “Approve a refund only if fewer than 30 full days have passed since purchase. Otherwise, deny it.” Set one context to 29 days and the other to 30 days. The expected answers are `approve` for day 29 and `deny` for day 30.
 
-The responses follow the input order. The [recorded demo table](../results/demos-v1/report.md) contains GPU results. A new CPU run may differ. These seven authored examples illustrate behavior; they do not estimate accuracy over a population of requests.
+Rerun the Docker portion of your block with `--input /requests/refund-boundary-30.jsonl --jsonl`. Skip the example download and change the output filename to `refund-boundary-30-results.jsonl`. Keep the model and device the same. Compare the answers and confidence, and save both requests and responses, including mistakes.
 
-To score an edited request, keep its JSONL file in the mounted folder and use the Docker portion of the block with `--input /requests/your-file.jsonl --jsonl`. Skip the example downloads, and choose a new results filename to preserve each run. Keep the model and device fixed when testing a changed rule.
+For other requests, place your JSONL file in the mounted folder and use its filename under `/requests` with `--input`. Choose a new output filename to preserve each run.
 
 ## What CPU fallback does
 
