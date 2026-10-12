@@ -191,7 +191,7 @@ Our duplicate-charge request selected `other`. The following is the recorded res
 
 The request uses three broad support routes. Training used 77 banking intents with their own descriptions. Even a familiar phrase such as “charged twice” can appear under a different candidate scheme, and this model assigned the wrong route a probability of 0.9993. The example shows why a BANKING calibration fit cannot establish confidence quality for another schema.
 
-I ran all seven examples introduced in Part 1, retaining the expected answers only for evaluation:
+I ran the [same seven requests](docker.md#cpu-batch) through the new candidate head on an A30. The Docker walkthrough shows the released 0.8B model on CPU; the table below records this separate head experiment. Expected answers stayed outside the model inputs.
 
 | Request | Expected | Selected | Reported confidence |
 |---|---|---|---:|

@@ -120,7 +120,7 @@ The [Hugging Face custom-container recipe](hosting.md#hugging-face-inference-end
 
 ## Try seven original requests
 
-The first request above routes a duplicate charge to billing. The demo file builds on it with an app crash, an unrelated hiking question, two refund requests on either side of a rule's boundary, a misleading quoted instruction, and a short how-to post. These are seven inputs to the same model; each supplies the instructions and choices for its task.
+The [CPU batch walkthrough](docker.md#score-your-own-files-or-the-seven-demos) outlines the seven requests and shows the saved 0.8B output. The commands below run the same inputs through **myJEV-4B on an NVIDIA GPU**, using the installed Python environment.
 
 ```bash
 .venv/bin/python scripts/run_demos.py > responses.jsonl
@@ -129,9 +129,9 @@ The first request above routes a duplicate charge to billing. The demo file buil
   --input examples/demo-requests.jsonl --jsonl > cli-responses.jsonl
 ```
 
-The runner loads the pinned 4B model once and writes one response per input line, in the same order. The file is JSONL, meaning one JSON object per line. Run `head -n 1 responses.jsonl | .venv/bin/python -m json.tool` to inspect the first answer. The [demo walkthrough](../results/demos-v1/report.md#what-each-request-asks) explains every request, its expected answer, and the recorded outputs for both sizes. You can read it without a GPU or download.
+The runner loads the pinned 4B model once and writes one response per input line, in the same order. The file is JSONL, meaning one JSON object per line. Run `head -n 1 responses.jsonl | .venv/bin/python -m json.tool` to inspect the first answer. The [GPU demo report](../results/demos-v1/report.md#recorded-answers) retains the 4B and 0.8B results separately from the CPU walkthrough.
 
-All seven default Python and CLI responses were identical. The 0.8B model confidently approved a day-14 refund when the supplied rule allowed fewer than 14 days; that mistake remains in the report. These examples help explain the interface, but do not estimate general accuracy. Expected answers are kept separately and are never sent to the model.
+All seven saved 4B GPU responses matched across the Python runner and CLI and selected the expected answers. The 0.8B GPU run approved the day-14 refund incorrectly, as did the separate CPU run. These authored examples demonstrate behavior; they are too few to estimate general accuracy. Expected answers are kept outside the model inputs.
 
 ```mermaid
 flowchart TB

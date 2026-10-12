@@ -26,7 +26,7 @@
       "mode": "100644"
     },
     "README.md": {
-      "sha256": "1eb1d7d33542482235be44e4f88bfd128b5c7ffa2e8720a2ddcc6a8a6e1420aa",
+      "sha256": "05635e19fea515416d5461eff079161b2c3a09438b6198c19dbd51e02bfc4de5",
       "mode": "100644"
     },
     "assets/windows-cpu-inference.png": {
@@ -110,7 +110,7 @@
       "mode": "100644"
     },
     "docs/README.md": {
-      "sha256": "a5a8ec0e403f75d1f605702e05604ba62c0c9958fb3cfb711f2daff585b2033e",
+      "sha256": "5a555ddcc86651859bf3664f44172fcedeb82438644e3534ac07c1ee60ccc661",
       "mode": "100644"
     },
     "docs/architecture.md": {
@@ -122,7 +122,7 @@
       "mode": "100644"
     },
     "docs/candidate-head.md": {
-      "sha256": "b3844982aca143ecb2173c5eeb3219e3f2e2557b9b673166e5747ab14ba3dcf2",
+      "sha256": "3c9eaeba6674553e505dc3b88f6a118f6f1e91071290b5fe665168e51ba08af7",
       "mode": "100644"
     },
     "docs/datasets/banking77.md": {
@@ -170,7 +170,7 @@
       "mode": "100644"
     },
     "docs/inference.md": {
-      "sha256": "52110c9a12b22e8323a350e8bc1ce0f88e342e7dccbbf00d4248b2f384da38e3",
+      "sha256": "54f768832f16732f92c3149aaecaa1ee2fdb49d3113c7a7219f2c8b61554e31f",
       "mode": "100644"
     },
     "docs/learnings.md": {
@@ -190,7 +190,7 @@
       "mode": "100644"
     },
     "docs/quickstart.md": {
-      "sha256": "bf427e3cdb9a9abe7cd8909144ea9061b1f3424b5442c4a15224d5fcc0b6fe4d",
+      "sha256": "51d4ff60160919be736809052b09064c90f287fc9df1d3ebd1dc8f13b4d36ca8",
       "mode": "100644"
     },
     "docs/qwen-findings.md": {
@@ -230,7 +230,7 @@
       "mode": "100644"
     },
     "docs/walkthrough.md": {
-      "sha256": "2076539fa5e5aca485697e14236015cd1fa07d15e81f6ce3b884dbc2d2ae7c16",
+      "sha256": "c4747b4e2d0fe551671fd9ba90254a0e2c1ec19f0337e4479e5e4aecaf14f1a5",
       "mode": "100644"
     },
     "examples/client.py": {

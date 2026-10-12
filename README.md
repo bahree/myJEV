@@ -116,7 +116,7 @@ Response:
 
 The model selected `billing` and reported about 98.34% confidence. The selection scores rank the supplied choices. Confidence estimates whether the chosen answer is correct. Here those numbers match because this release uses the selected score after **temperature calibration**, an adjustment fitted on separate examples. Other releases use a separate learned confidence calculation. The [hands-on guide](docs/walkthrough.md#2-follow-one-decision) works through that distinction.
 
-A high confidence value can still accompany a wrong answer. Follow the [Docker batch commands](docs/docker.md#score-your-own-files-or-the-seven-demos), or run `python scripts/run_demos.py > demo-results.jsonl` in the installed Python environment, to try seven requests: duplicate charges, an app crash, a hiking question, two refund dates, a misleading quote and a short post. The [demo walkthrough](results/demos-v1/report.md) explains each expected answer and retains the smaller model's confident refund mistake. It also lets you inspect the saved outputs without a GPU.
+The [seven-example CPU walkthrough](docs/docker.md#cpu-batch) outlines the requests, gives the commands and shows saved output. Its 0.8B model approved a day-14 refund with confidence 0.9882 even though the rule required denial. For Python, [the batch example](docs/quickstart.md#try-more-requests) uses 4B on an NVIDIA GPU. The [original GPU report](results/demos-v1/report.md) retains both model sizes’ responses.
 
 ## Choose a learning route
 
@@ -124,7 +124,7 @@ Start by scoring a request, then follow it through the network. From there you c
 
 | I want to... | Read and run | What I will learn |
 |---|---|---|
-| Try the model | [Quick start](docs/quickstart.md) and [seven requests](results/demos-v1/report.md) | What goes into a request and how to read the result |
+| Try the model | [Quick start](docs/quickstart.md) and [seven CPU examples](docs/docker.md#score-your-own-files-or-the-seven-demos) | What goes into a request and how to read the result |
 | Build a small model | [Architecture](docs/architecture.md) and [scratch walkthrough](docs/scratch.md) | How text becomes candidate scores, and where a tiny model fails |
 | Build a decision head | [Candidate-attention head](docs/candidate-head.md) and [alias/Clef comparison](docs/unsloth.md) | How candidate spans and attention turn frozen Qwen features into scores |
 | Adapt Qwen | [Training](docs/training.md) and [W&B tracking](docs/tracking.md) | What adapters learn, why the experiment has several methods, and how to inspect a run |

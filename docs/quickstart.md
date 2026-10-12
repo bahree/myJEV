@@ -2,7 +2,7 @@
 
 To score the included request without installing Python, use the [single-request Docker commands](docker.md#try-one-request-without-starting-a-service). Start with 0.8B on CPU, or choose 4B with NVIDIA GPU access. The [Docker batch commands](docker.md#score-your-own-files-or-the-seven-demos) continue with all seven examples. The instructions below install Python for readers who want to work with the code.
 
-This guide takes you from installation to one decision, then to a batch and a local HTTP service. It uses the published [myJEV-4B](https://huggingface.co/bahree/myJEV-4B), so you can follow it without training. If you want to build a model yourself, the optional pilot instructions follow the serving examples.
+The Python examples below take you from installation to one decision, then to a batch and a local HTTP service. They use the published [myJEV-4B](https://huggingface.co/bahree/myJEV-4B) on an NVIDIA GPU and require no training. To build a model yourself, follow the optional pilot instructions after the serving examples.
 
 The tested setup is Linux, Python 3.12 and an NVIDIA A30 with 24 GB of GPU memory. The model's GPU runtime also needs a host C compiler; on Debian/Ubuntu, install `gcc` and `libc6-dev` if absent. The [Docker path](docker.md) supplies the Python environment and compiler. NVIDIA execution needs the host driver and Container Toolkit; the CPU image needs neither. Start with 0.8B for CPU use. For reading outputs without a GPU or installation, open the [saved demo walkthrough](../results/demos-v1/report.md).
 
@@ -35,14 +35,14 @@ The input file asks where to route “I was charged twice,” with billing, tech
 
 ## Try more requests
 
-Docker users can follow the [batch walkthrough](docker.md#score-your-own-files-or-the-seven-demos). The following commands use the Python environment installed above.
+The [CPU batch walkthrough](docker.md#cpu-batch) has the seven requests, commands and saved 0.8B output. The following Python commands run those same requests with the 4B model on an NVIDIA GPU.
 
 ```bash
 python scripts/run_demos.py > demo-results.jsonl
 head -n 1 demo-results.jsonl | python -m json.tool
 ```
 
-The runner loads the same 4B model once, then scores seven requests. JSONL stores one request or response per line, and the line order is preserved. The second command prints the first response with indentation. The [seven-request walkthrough](../results/demos-v1/report.md#what-each-request-asks) explains why the expected answers change across support issues, refund dates, a misleading quote and a short post.
+The runner loads 4B once and writes one JSON response per line, in request order. The second command prints the first answer with indentation. In the [recorded GPU run](../results/demos-v1/report.md#recorded-answers), 4B matched all seven expected answers. The separate 0.8B CPU example includes an incorrect day-14 refund approval.
 
 ## Score and serve
 

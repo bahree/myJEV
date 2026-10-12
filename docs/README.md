@@ -2,13 +2,13 @@
 
 myJEV explores how to choose from supplied answers and estimate whether the choice is correct. The [main README](../README.md) introduces Jev, the motivation for this project, and the two approaches we built. These guides take you through using the model, understanding it, training it and checking the results.
 
-If you are new to the project, start with the [quick start](quickstart.md) and [seven example requests](../results/demos-v1/report.md). Then follow the [hands-on walkthrough](walkthrough.md), which connects those outputs to the computation. All commands run from the repository root; the quick start activates the Python environment used by later guides.
+Start with the [Docker commands](docker.md#try-one-request-without-starting-a-service) for one request, then the [seven CPU examples and saved output](docker.md#score-your-own-files-or-the-seven-demos). Docker needs no repository clone or local Python installation. The [hands-on walkthrough](walkthrough.md) connects those outputs to the computation. For Python examples, use the [quick-start installation](quickstart.md#install-and-test) and run commands from the repository root.
 
 ## Choose a starting point
 
 | Question | Guide |
 |---|---|
-| Can I try real requests and see the failures? | [Seven runnable demos](../results/demos-v1/report.md) |
+| Can I try example requests and see the failures? | [Seven CPU examples, commands and output](docker.md#score-your-own-files-or-the-seven-demos) |
 | Can I explore confidence on a CPU? | [Calibration lab](../results/calibration-lab-v1/report.md) and [decision lessons](decision-lessons.md) |
 | How do I install and score my first request? | [Quick start](quickstart.md) |
 | How do I understand or build the model? | [Architecture](architecture.md), then [build-from-scratch walkthrough](scratch.md) or [Qwen training](training.md) |
