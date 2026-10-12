@@ -43,7 +43,7 @@ docker run --rm \
 
 </details>
 
-The command downloads the model, prints a decision and exits. The named volume keeps its downloads. The 0.8B CPU request was completed on Linux and, in the owner's [PowerShell screenshot](docs/docker.md#try-one-request-without-starting-a-service), on Windows. Allow 8 GiB of memory for a starting CPU trial. Full Apple Silicon inference remains experimental.
+The command downloads the model, prints a decision and exits. The named volume keeps its downloads. The 0.8B CPU request was completed on Linux and, in my [PowerShell screenshot](docs/docker.md#try-one-request-without-starting-a-service), on Windows. Allow 8 GiB of memory for a starting CPU trial. Full Apple Silicon inference remains experimental.
 
 For the **4B NVIDIA model used in the recorded results below**, use the [GPU command](docs/docker.md#4b-on-nvidia-gpu). The current image accelerates only NVIDIA CUDA; it does not use Intel/AMD GPUs or laptop NPUs. A Docker `--gpus` failure occurs before model startup, so use the CPU command when GPU passthrough is unavailable. See [all platform instructions](docs/docker.md) for setup and limits.
 

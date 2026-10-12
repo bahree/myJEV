@@ -66,6 +66,14 @@ def analyze(directory):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--root',type=Path,default=Path('results/decision-comparison-v1'));a=p.parse_args()
+    from fetch_evidence import require_evidence, require_inputs
+    if a.root == Path('results/decision-comparison-v1'):
+        require_evidence('decision')
+    markers = sorted(a.root.glob('*/complete.json'))
+    hint = 'For the published study, run python scripts/fetch_evidence.py --bundle decision and use the default --root. Custom roots need completed evaluations.'
+    if not markers:
+        raise SystemExit(f'No completed evaluations under {a.root}. {hint}')
+    require_inputs([marker.parent/name for marker in markers for name in ('records.jsonl','run.json')], hint)
     reports={};sources={}
     for marker in sorted(a.root.glob('*/complete.json')):
         d=marker.parent;reports[d.name]=analyze(d)

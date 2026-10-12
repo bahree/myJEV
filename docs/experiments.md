@@ -149,10 +149,11 @@ The compact inputs retain labels, scores and IDs while excluding request text. N
 ```bash
 git clone --local . /tmp/myjev-calibration-replay
 cd /tmp/myjev-calibration-replay
-python3 scripts/fetch_evidence.py --bundle calibration
+python3 scripts/fetch_evidence.py --bundle calibration --bundle records
 # Use the locked environment created from the original checkout.
 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 python scripts/review_calibration.py --from-compact
 git diff --exit-code -- results/review-calibration-v1
+python3 scripts/fetch_evidence.py --bundle calibration --bundle records --check
 ```
 
-The final command checks byte identity against the committed reports. Select a fresh destination if that example directory already exists. The [evidence guide](../results/longer-v1/README.md) explains why RL scalar diagnostic files are not trained RL confidence estimates.
+The Git command checks the committed reports. The final command checks the compact inputs in `calibration` and the ignored per-run fits and metrics in `records`. Keep the two-thread settings above: changing the thread count can change floating-point results in their last few digits. Select a fresh destination if that example directory already exists. The [evidence guide](../results/longer-v1/README.md) explains why RL scalar diagnostic files are not trained RL confidence estimates.

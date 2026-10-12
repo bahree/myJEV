@@ -6,7 +6,7 @@ The [frozen protocol](../configs/decision3-v1.json) identifies every checkpoint 
 
 ## What the local comparison measured
 
-Each release completed 5,731 quality requests, including all 3,080 official BANKING77 test examples and 1,000 reserved calibration examples. The confidence columns below use the selected option's probability. Correctness Brier compares that number with whether the answer was right; lower is better. D3's entropy-based API confidence and myJEV's learned RL confidence remain separate in the [full report](../results/decision3-v1/report.md).
+Each release completed 5,731 quality requests, including all 3,080 official BANKING77 test examples and 1,000 reserved calibration examples. The confidence columns below use the selected option's probability. Correctness Brier compares that number with whether the answer was right; lower is better. D3's entropy-based API confidence and myJEV's learned RL confidence remain separate in the [full report](../results/decision3-v1/report.md). The supervised myJEV releases already apply a temperature fitted on these calibration rows; their returned selection scores are calibrated, while D3 and myJEV RL return an uncalibrated selection softmax. The common refit therefore chooses temperature 1.0000 for the supervised releases.
 
 | Model | BANKING77 accuracy | Returned selection Brier | Brier after the same temperature fit |
 |---|---:|---:|---:|
@@ -37,7 +37,7 @@ python scripts/summarize_decision3.py --require-benchmark
 python scripts/plot_decision3.py
 ```
 
-[Public source mapping](../results/decision3-v1/public-source.json) identifies an accessible commit matching the frozen evaluation code. [Verification](../results/decision3-v1/verification.json) checks every request hash and score, recomputes test metrics, and confirms that isolated benchmark responses equal the quality-run responses.
+[Public source mapping](../results/decision3-v1/public-source.json) identifies an accessible commit matching the frozen evaluation code. [Verification](../results/decision3-v1/verification.json) checks every request hash and score, recomputes test metrics, and confirms that isolated benchmark responses equal the quality-run responses. Its `native_confidence_definition_checked` field tests D3's entropy formula only. A false value for a myJEV row means that formula does not apply to that model.
 
 ## Follow a request through both models
 
@@ -89,7 +89,7 @@ The native prompts also differ in length. Across the 64 distinct banking benchma
 
 ![Isolated local scoring latency on NVIDIA A30 for short and banking requests](../results/decision3-v1/latency.png)
 
-Each model has 192 measured banking calls and 35 short-demo calls, with five initial warmups and five more at each workload boundary. Numeric labels and bars show p50; whiskers show p95. These are local scoring measurements with CUDA synchronization, including tokenization and response conversion. The saved records also contain backbone GPU-event timings and peak reserved memory. Quality-run timings overlapped other GPUs and are excluded from this table.
+Each model has 192 measured banking calls and 35 short-demo calls, with five initial warmups and five more at each workload boundary. Numeric labels and bars show p50; whiskers show p95. These are local scoring measurements with CUDA synchronization, including tokenization and response conversion. The saved records also contain backbone GPU-event timings and peak reserved memory. Quality-run timings overlapped other GPUs and are excluded from this table. The reference kernels can make these D3 timings pessimistic relative to an optimized D3 deployment. The table does not establish that myJEV would be faster under matched optimized backends.
 
 ## Run the comparison
 

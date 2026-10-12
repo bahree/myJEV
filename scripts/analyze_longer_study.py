@@ -123,5 +123,8 @@ def plot():
 
 if __name__ == '__main__':
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--extract',action='store_true');a=p.parse_args()
+    if not a.extract:
+        from fetch_evidence import require_evidence
+        require_evidence('controls')
     if a.extract: extract()
     analyze();plot()

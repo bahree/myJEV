@@ -10,6 +10,8 @@ import matplotlib.pyplot as plt
 
 
 def main():
+    from fetch_evidence import require_evidence
+    require_evidence('controls')
     out = Path('results/decision-lessons-v1'); out.mkdir(parents=True, exist_ok=True)
     # Outcomes and confidence draws are independent conditional on this fixed case.
     r = .7

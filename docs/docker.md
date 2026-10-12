@@ -6,7 +6,7 @@ Use the supervised 4B model for the NVIDIA example, or the smaller supervised 0.
 
 ## Try one request without starting a service
 
-Use the 0.8B CPU command if Docker has no NVIDIA GPU access. The 4B NVIDIA command uses the model from the recorded GPU examples. The image contains the request file, and each command prints a JSON response and exits. No clone, local Python install or HTTP service is needed.
+Use the 0.8B CPU command if Docker has no NVIDIA GPU access. The 4B NVIDIA command uses the model from the recorded GPU examples. Docker handles `--gpus all` before starting myJEV, so a failed GPU launch cannot fall back inside the application; use the CPU command in that case. The image contains the request file, and each command prints a JSON response and exits. No clone, local Python install or HTTP service is needed.
 
 The current runtime uses CPU or NVIDIA CUDA. Intel/AMD GPUs and laptop NPUs have no supported backend in this image. CPU fallback keeps the selected model; it never substitutes 0.8B for 4B automatically.
 
@@ -74,7 +74,7 @@ docker run --rm --gpus all \
 
 The first run downloads the image and the pinned model files. The named volume keeps model downloads for later calls. The `--revision` value pins the model files; [immutable image digests](../results/container-registry-v4/publication.json) are available for deployments.
 
-The owner completed the CPU command on a Windows laptop through PowerShell. It selected `billing` with confidence `0.9767757654190063` (about 97.68%):
+I completed the CPU command on a Windows laptop through PowerShell. It selected `billing` with confidence `0.9767757654190063` (about 97.68%):
 
 ![Windows PowerShell CPU inference selecting billing with myJEV-0.8B](../assets/windows-cpu-inference.png)
 
@@ -94,7 +94,7 @@ The unauthenticated Hugging Face warning in the screenshot concerns download lim
 
 The CPU image contains both x86-64 and ARM64 versions; Docker selects the matching one. It does not use Apple's GPU. The GPU image is x86-64. Docker Desktop's NVIDIA passthrough requires Windows and the WSL 2 backend; see [Docker's GPU setup](https://docs.docker.com/desktop/features/gpu/). On Linux, follow [NVIDIA's Container Toolkit setup](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html).
 
-The checks were run on Linux with A30 GPUs and an AMD CPU. The ARM64 image imported its packages and performed BF16 arithmetic under QEMU, but a full-model warmup exceeded the 900-second readiness deadline. Full ARM64 inference remains unverified. The owner-provided Windows CPU screenshot above adds one completed request. The automated checks did not run on a Windows host, and native Mac inference remains unverified. The [validation record](../results/cpu-inference-v1/report.md) gives the requests, outputs and limits of each check.
+The checks were run on Linux with A30 GPUs and an AMD CPU. The ARM64 image imported its packages and performed BF16 arithmetic under QEMU, but a full-model warmup exceeded the 900-second readiness deadline. Full ARM64 inference remains unverified. My Windows CPU screenshot above adds one completed request. The automated checks did not run on a Windows host, and native Mac inference remains unverified. The [validation record](../results/cpu-inference-v1/report.md) gives the requests, outputs and limits of each check.
 
 For a CPU trial, start with 0.8B and allow 8 GiB of memory in Docker Desktop. A 4B trial needs more memory; allow 16 GiB as a starting budget. These budgets leave room beyond the short-request observations and do not establish a maximum-input memory requirement. The original short CPU checks used about 2.3 GiB process peak memory at 0.8B and 8.0 GiB at 4B. Also allow disk space for the image and downloaded model. The 9B NF4 releases require CUDA in this loader.
 
@@ -172,47 +172,52 @@ curl.exe -fsS http://127.0.0.1:8000/score `
 
 ## Score your own files or the seven demos
 
-The image includes `request.json`; download the separate seven-request file to run the batch. From an empty folder, download the requests and expected answers:
+The image includes the single-request file `request.json`. The seven demos are a separate download. Each block below downloads them into your current folder, runs the batch and displays the answers. No repository clone is needed.
 
-Windows PowerShell:
+| File | What it contains |
+|---|---|
+| `demo-requests.jsonl` | The seven inputs sent to the model, one JSON request per line |
+| `demo-expectations.json` | The expected answers, kept separate from the model input |
+| `demo-results.jsonl` | The model's seven responses, written by the command below |
 
-```powershell
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-requests.jsonl" -OutFile demo-requests.jsonl
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-expectations.json" -OutFile demo-expectations.json
-```
-
-<details>
-<summary>Linux, WSL or macOS terminal</summary>
-
-```bash
-curl -fsSLo demo-requests.jsonl "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-requests.jsonl"
-curl -fsSLo demo-expectations.json "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-expectations.json"
-```
-
-</details>
-
-Only `demo-requests.jsonl` is passed to the model. The expectation file is for checking the answers afterward. The download links pin the inputs to a public source revision.
+Only the request file is sent to the model. The download links pin the inputs and expected answers to a public source revision. Choose one complete block and run it from the folder where you want to save the files.
 
 ### CPU batch
 
 Windows PowerShell (each backtick must be the last character on its line):
 
 ```powershell
-docker run --rm `
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-requests.jsonl" -OutFile ".\demo-requests.jsonl" -ErrorAction Stop
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-expectations.json" -OutFile ".\demo-expectations.json" -ErrorAction Stop
+
+$responses = docker run --rm `
   -v myjev-hf-cache:/cache/huggingface `
-  --mount "type=bind,source=$PWD,target=/requests,readonly" `
+  --mount "type=bind,source=$($PWD.Path),target=/requests,readonly" `
   amitbahree/myjev:0.1.4-cpu `
   myjev score `
   --artifact bahree/myJEV-0.8B `
   --revision 1c956c89d21c0ab136e98ffe66a16752fa37d823 `
   --device cpu `
-  --input /requests/demo-requests.jsonl --jsonl > demo-results.jsonl
+  --input /requests/demo-requests.jsonl --jsonl
+
+if ($LASTEXITCODE -ne 0) { throw "Scoring failed; see the Docker messages above." }
+[System.IO.File]::WriteAllLines(
+  (Join-Path $PWD.Path "demo-results.jsonl"),
+  [string[]]$responses,
+  [System.Text.UTF8Encoding]::new($false)
+)
+
+Get-Content .\demo-results.jsonl -Encoding utf8 |
+  ForEach-Object { $_ | ConvertFrom-Json } |
+  Select-Object selected_id, confidence
 ```
 
 <details>
 <summary>Linux, WSL or macOS terminal</summary>
 
 ```bash
+curl -fsSLo demo-requests.jsonl "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-requests.jsonl" &&
+curl -fsSLo demo-expectations.json "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-expectations.json" &&
 docker run --rm \
   -v myjev-hf-cache:/cache/huggingface \
   --mount "type=bind,source=$PWD,target=/requests,readonly" \
@@ -221,31 +226,50 @@ docker run --rm \
   --artifact bahree/myJEV-0.8B \
   --revision 1c956c89d21c0ab136e98ffe66a16752fa37d823 \
   --device cpu \
-  --input /requests/demo-requests.jsonl --jsonl > demo-results.jsonl
+  --input /requests/demo-requests.jsonl --jsonl > demo-results.jsonl &&
+cat demo-results.jsonl
 ```
 
 </details>
 
 ### NVIDIA batch
 
+Docker must be able to expose an NVIDIA GPU. If `--gpus all` fails before the container starts, use the CPU block above; the application cannot switch devices before it runs.
+
 Windows PowerShell (each backtick must be the last character on its line):
 
 ```powershell
-docker run --rm --gpus all `
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-requests.jsonl" -OutFile ".\demo-requests.jsonl" -ErrorAction Stop
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-expectations.json" -OutFile ".\demo-expectations.json" -ErrorAction Stop
+
+$responses = docker run --rm --gpus all `
   -v myjev-hf-cache:/cache/huggingface `
-  --mount "type=bind,source=$PWD,target=/requests,readonly" `
+  --mount "type=bind,source=$($PWD.Path),target=/requests,readonly" `
   amitbahree/myjev:0.1.4 `
   myjev score `
   --artifact bahree/myJEV-4B `
   --revision 38f7cca5a8530483309f576b0c3dd1756bc27c33 `
   --device cuda:0 `
-  --input /requests/demo-requests.jsonl --jsonl > demo-results.jsonl
+  --input /requests/demo-requests.jsonl --jsonl
+
+if ($LASTEXITCODE -ne 0) { throw "Scoring failed; see the Docker messages above." }
+[System.IO.File]::WriteAllLines(
+  (Join-Path $PWD.Path "demo-results.jsonl"),
+  [string[]]$responses,
+  [System.Text.UTF8Encoding]::new($false)
+)
+
+Get-Content .\demo-results.jsonl -Encoding utf8 |
+  ForEach-Object { $_ | ConvertFrom-Json } |
+  Select-Object selected_id, confidence
 ```
 
 <details>
-<summary>Linux, WSL terminal</summary>
+<summary>Linux or WSL terminal</summary>
 
 ```bash
+curl -fsSLo demo-requests.jsonl "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-requests.jsonl" &&
+curl -fsSLo demo-expectations.json "https://raw.githubusercontent.com/bahree/myJEV/82f0ee064cd13d8e2f8cee6d468fab065f27a743/examples/demo-expectations.json" &&
 docker run --rm --gpus all \
   -v myjev-hf-cache:/cache/huggingface \
   --mount "type=bind,source=$PWD,target=/requests,readonly" \
@@ -254,22 +278,21 @@ docker run --rm --gpus all \
   --artifact bahree/myJEV-4B \
   --revision 38f7cca5a8530483309f576b0c3dd1756bc27c33 \
   --device cuda:0 \
-  --input /requests/demo-requests.jsonl --jsonl > demo-results.jsonl
+  --input /requests/demo-requests.jsonl --jsonl > demo-results.jsonl &&
+cat demo-results.jsonl
 ```
 
 </details>
 
-Run these commands from the folder containing the input file. The bind mount exposes that folder read-only at `/requests` in the container. The output redirection is handled by your shell and saves `demo-results.jsonl` on the host. Each line contains one response, in input order; the model stays loaded for the batch.
+The mount makes your current folder available at `/requests` inside the container. The model reads `demo-requests.jsonl` from that folder and stays loaded for all seven requests. Loading messages appear in the terminal while the answers are saved in `demo-results.jsonl`. Opening `demo-requests.jsonl` shows the inputs again; open `demo-results.jsonl` to see what the model decided.
 
-Open the result in a text editor, or inspect its first line in PowerShell:
+On CPU, warnings naming `causal_conv1d_fn` or `chunk_gated_delta_rule` say that PyTorch is using slower reference implementations. Those warnings can accompany a successful run. You do not need to install the CUDA kernels for this CPU example. A traceback or a nonzero Docker exit code means the command failed.
 
-```powershell
-Get-Content demo-results.jsonl -TotalCount 1 | ConvertFrom-Json | ConvertTo-Json -Depth 10
-```
+The PowerShell block saves UTF-8 without a byte-order mark on both Windows PowerShell 5.1 and PowerShell 7. Their default output encodings differ, so the block writes the file explicitly instead of relying on `>`. See [PowerShell's encoding documentation](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_character_encoding). The displayed table contains the selected ID and confidence; the saved file retains the complete responses, including scores and revisions.
 
-The [recorded demo table](../results/demos-v1/report.md) contains GPU results. A new CPU run may differ. These seven authored examples illustrate behavior; they do not estimate accuracy over a population of requests.
+The responses follow the input order. The [recorded demo table](../results/demos-v1/report.md) contains GPU results. A new CPU run may differ. These seven authored examples illustrate behavior; they do not estimate accuracy over a population of requests.
 
-For an edited request file, keep it in the mounted folder and change `--input /requests/demo-requests.jsonl` to that file's name under `/requests`. Use a new output filename after `>` to preserve each run. Keep the model and device fixed when testing a changed rule.
+To score an edited request, keep its JSONL file in the mounted folder and use the Docker portion of the block with `--input /requests/your-file.jsonl --jsonl`. Skip the example downloads, and choose a new results filename to preserve each run. Keep the model and device fixed when testing a changed rule.
 
 ## What CPU fallback does
 

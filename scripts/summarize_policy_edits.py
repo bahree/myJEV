@@ -3,6 +3,10 @@ import json
 from pathlib import Path
 from evaluate_policy_edits import summarize
 
+from fetch_evidence import require_evidence
+require_evidence('records')
+require_evidence('controls')
+
 root=Path('results/policy-edits-v1')
 rows=[]
 for size in ['0.8b','4b','9b']:

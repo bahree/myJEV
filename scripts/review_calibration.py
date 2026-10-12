@@ -70,7 +70,21 @@ def main():
     p.add_argument('--source',type=Path,default=Path('results/longer-v1'))
     p.add_argument('--output',type=Path,default=Path('results/review-calibration-v1'))
     p.add_argument('--from-compact',action='store_true',help='Use previously exported text-free inputs')
-    a=p.parse_args(); protocol=json.loads(a.protocol.read_text()); a.output.mkdir(parents=True,exist_ok=True)
+    a=p.parse_args(); protocol=json.loads(a.protocol.read_text())
+    from fetch_evidence import require_evidence, require_inputs
+    if a.from_compact and a.output == Path('results/review-calibration-v1'):
+        require_evidence('calibration')
+    inputs=[]
+    for size in protocol['sizes']:
+      for seed in protocol['seeds']:
+       for method in protocol['methods']:
+        if a.from_compact:
+            inputs.append(a.output/size/f'seed-{seed}'/method/'inputs.json.gz')
+        else:
+            source=a.source/size/'main'/f'seed-{seed}'/method/'evaluation'
+            inputs.extend(source/name for name in ('calibration-predictions.jsonl','predictions.jsonl'))
+    require_inputs(inputs, 'The public replay uses python scripts/fetch_evidence.py --bundle calibration, then --from-compact with the default output. Full-source mode requires the private original predictions.')
+    a.output.mkdir(parents=True,exist_ok=True)
     aggregate=[]; sources={}
     for size in protocol['sizes']:
       for seed in protocol['seeds']:

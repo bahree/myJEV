@@ -5,6 +5,9 @@ from pathlib import Path
 
 
 def main():
+    from fetch_evidence import require_evidence
+    require_evidence('order')
+    require_evidence('records')
     root=Path('results/review-order-v1')
     protocol=json.loads(Path('configs/review-order-v1.json').read_text())
     rows=[];sources={};groups=[]

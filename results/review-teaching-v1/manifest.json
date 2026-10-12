@@ -1,6 +1,6 @@
 {
   "generator": "scripts/plot_review_evidence.py",
-  "generator_sha256": "aba76ba0b2f4274ca3610383138f2c9dce931c87147ddad811493655b07a78c5",
+  "generator_sha256": "7b2209f4c77bfda227cb815622b68b46574c825f14fa0a0d065cf7fdd6ba1eed",
   "scope": "Measured traces and test reliability; no synthetic outcomes or new trained weights.",
   "sources": {
     "results/longer-v1/4b/main/seed-11/sft/training.jsonl": "af2aac96cc9e7e81a6d24fe58c6282476997b5a7feb2d8a7c8578f1b47825a41",

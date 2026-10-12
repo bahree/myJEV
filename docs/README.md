@@ -26,6 +26,7 @@ Building a small model from scratch starts its weights with random values so we 
 | [Small-model design](scratch-plan.md) | Design constraints and implementation checks |
 | [Qwen training](training.md) | Adapters, supervised and reward-based training, hardware and the update budget |
 | [Unsloth readout comparison](unsloth.md) | Why a joint schema head changes the experiment, and how to run the matched control |
+| [Candidate-head walkthrough](candidate-head.md) | Build an original attention head on frozen Qwen; inspect its separate one-seed experiment |
 | [W&B tracking](tracking.md) | Read training curves, epochs and GPU measurements while retaining local logs |
 | [Engineering lessons](learnings.md) | Why training exposure, hardware and stopping rules matter |
 
@@ -80,5 +81,3 @@ The [CPU calibration lab](../results/calibration-lab-v1/report.md) also generate
 ## Follow the project
 
 [Release history](../CHANGELOG.md) records versioned changes. The [blog](https://blog.desigeek.com) accompanies these guides; [scope and extensions](roadmap.md) explains the limits of the evidence and questions for further study.
-
-The [candidate-head walkthrough](candidate-head.md) builds a small original attention head on frozen Qwen. Its one-seed protocol is separate from the [matched alias/Clef comparison](unsloth.md).

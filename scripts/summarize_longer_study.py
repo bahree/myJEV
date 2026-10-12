@@ -8,6 +8,8 @@ ROOT = Path('results/longer-v1')
 
 
 def main():
+    from fetch_evidence import require_evidence
+    require_evidence('records')
     plan = json.loads(Path('configs/study-v1.json').read_text())
     sources = {}
 

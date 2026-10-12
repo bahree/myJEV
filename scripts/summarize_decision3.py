@@ -90,6 +90,15 @@ def main():
     torch.set_num_threads(1)
     plan_path = Path('configs/decision3-v1.json')
     plan = json.loads(plan_path.read_text())
+    from fetch_evidence import require_inputs
+    hint = 'For the published study, run python scripts/fetch_evidence.py --bundle decision3 and use the default --root. A custom root needs completed quality runs and any requested benchmarks.'
+    inputs=[]
+    for name in plan['models']:
+        folder=args.root/name/'quality'
+        inputs.extend([folder/'complete.json',folder/'run.json'])
+        predictions=folder/'records.jsonl'
+        inputs.append(predictions if predictions.is_file() else folder/'records.jsonl.gz')
+    require_inputs(inputs, hint)
     floor = plan['temperature_probability_floor']
     summary = {'protocol_sha256': file_sha(plan_path), 'models': {}, 'paired_accuracy': {},
                'scope': 'Frozen released systems, one checkpoint each; intervals resample test groups and exclude training variation.',

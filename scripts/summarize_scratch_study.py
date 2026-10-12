@@ -8,6 +8,8 @@ ROOT=Path('results/scratch-study-v1')
 
 
 def main():
+    from fetch_evidence import require_evidence
+    require_evidence('records')
     assert json.loads((ROOT/'status.json').read_text())['state']=='completed'
     rows=[];sources={}
     for method in ('sft','continued_sft','exact','sampled'):

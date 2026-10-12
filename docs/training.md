@@ -239,3 +239,5 @@ The historical runs used AdamW’s default weight decay of 0.01 and eight REINFO
 ## Interpreting the selected learning rates
 
 The validation-selected learning rate was `1e-4` for initial and continued supervision, and `3e-5` for exact and sampled RL, at all three sizes. A learning rate scales the optimizer's parameter update; it is not a confidence threshold. Each method receives the same number of validation trials and can select a rate suited to its gradient scale. Every main artifact manifest records the selected value.
+
+The learning-rate selection receipts (`selected-hyperparameters.json` and `selection-*.json`) remain in the private archive. Downloaded artifact manifests record the chosen rates; the `records` bundle also supplies the per-trial validation metrics.

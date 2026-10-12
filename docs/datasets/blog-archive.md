@@ -2,7 +2,7 @@
 
 ## Why this dataset
 
-Amit Bahree’s [blog archive](https://blog.desigeek.com/) gives us a document-classification task beyond banking intents. The study asks whether the model can identify a post’s format and assess properties of the supplied text, then whether adaptation improves those decisions without losing performance on the public tasks.
+My [blog archive](https://blog.desigeek.com/) gives us a document-classification task beyond banking intents. The study asks whether the model can identify a post’s format and assess properties of the supplied text, then whether adaptation improves those decisions without losing performance on the public tasks.
 
 ## Tasks
 
@@ -16,7 +16,7 @@ Claim support does not establish external factual truth. None of these labels me
 
 ## Provenance, preparation and partitions
 
-The owner supplied the [RSS feed](https://blog.desigeek.com/index.xml). The October 4, 2026 snapshot contained 1,332 entries. Sampling across chronological quintiles produced a 200-post pilot in 199 provisional related-post groups.
+I used my [RSS feed](https://blog.desigeek.com/index.xml). The October 4, 2026 snapshot contained 1,332 entries. Sampling across chronological quintiles produced a 200-post pilot in 199 provisional related-post groups.
 
 | Partition | Posts | Status |
 |---|---:|---|
@@ -52,10 +52,10 @@ BANKING77 official-test accuracy changed from 89.94% to 90.10% (3,080 examples).
 
 Deferral-only cohorts omit a correct candidate and therefore have zero selection accuracy by construction. Their saved acceptance metrics use original thresholds and separately BANKING-recalibrated thresholds; no CLINC tuning occurs. Published Qwen releases remain BANKING-trained, not archive-adapted.
 
-Evidence: [adaptation report](../../results/archive-machine-v2/report.md), [majority control](../../results/archive-machine-v2/majority-control.md), and [CLINC forgetting](../../results/archive-machine-v2/clinc-forgetting-report.md). Source hashes, exclusion counts and group-aware metric intervals accompany the reports. The experiment does not claim convergence or human-audited correctness.
+Evidence: [adaptation report](../../results/archive-machine-v2/report.md), [majority control](../../results/archive-machine-v2/majority-control.md), and [CLINC forgetting](../../results/archive-machine-v2/clinc-forgetting-report.md). Source hashes, exclusion counts and group-aware metric intervals accompany the reports. The complete summary generator needs private predictions and rubric mappings; the public downloads support the compact archive-change analysis, rather than reconstruction of every original archive report. The experiment does not claim convergence or human-audited correctness.
 
 ## Remaining limitations and rights
 
 Teacher and student share the Qwen family, so increased agreement can reflect shared errors. A blinded human audit and semantic grouping review remain separate work. This small subjective sample from one author, with historical imbalance and possible pretraining exposure, cannot establish generalist capability or a low production error rate.
 
-The owner supplied the archive for this study; no broader redistribution license is inferred. Post text, individual labels and private annotations remain outside the public repository. This card and the public reports contain design, aggregate results and provenance only.
+I used my archive for this study; this does not grant a broader redistribution license. Post text, individual labels and private annotations remain outside the public repository. This card and the public reports contain design, aggregate results and provenance only.

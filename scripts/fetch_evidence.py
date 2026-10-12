@@ -71,6 +71,13 @@ def require_evidence(bundle, root=Path('.')):
             raise SystemExit(f'Missing {required} evidence. Run: python scripts/fetch_evidence.py --bundle {bundle}')
 
 
+def require_inputs(paths, hint):
+    """Check a complete custom input set before a replay creates output files."""
+    missing = [str(path) for path in paths if not Path(path).is_file()]
+    if missing:
+        raise SystemExit(f'Missing replay input: {missing[0]} ({len(missing)} missing). {hint}')
+
+
 def install_archive(archive, record, root):
     """Validate all members and local conflicts before installing any files."""
     root = root.resolve()

@@ -53,6 +53,9 @@ def main():
     parser.add_argument("--root", type=Path, default=Path("."))
     parser.add_argument("--output", type=Path, default=Path("results/review-order-union-v1"))
     args = parser.parse_args()
+    from fetch_evidence import require_evidence
+    require_evidence('order', args.root)
+    require_evidence('calibration', args.root)
     result = summarize(args.root)
     args.output.mkdir(parents=True, exist_ok=True)
     (args.output / "summary.json").write_text(json.dumps(result, indent=2) + "\n")

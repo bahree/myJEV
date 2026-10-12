@@ -1,5 +1,15 @@
 # Release history
 
+## Runtime 0.1.4 and CPU inference
+
+Published `amitbahree/myjev:0.1.4` for NVIDIA GPUs and `amitbahree/myjev:0.1.4-cpu` for x86-64 and ARM64 CPUs. Automatic device selection uses CPU when CUDA is unavailable after application startup; explicit CUDA requests and 9B NF4 remain strict. The CPU image uses one computation thread and a 120-second request timeout. Linux CPU checks and a Windows PowerShell response are recorded; full native Apple Silicon inference remains unverified.
+
+The [Docker guide](docs/docker.md) includes Windows, Linux and macOS commands, model-cache reuse and complete seven-request batches. PowerShell batches download their input before scoring, save UTF-8 responses and display the answers. Published model weights and calibration are unchanged.
+
+## Decision 3.0 comparison
+
+Compared the released d3-lite and d3-mini models with four myJEV releases on BANKING77, transfer cohorts and authored demos. Saved predictions support calibration-only temperature fitting and checkpoint-conditioned comparisons. Separate A30 timing runs record the reference PyTorch path, prompt lengths and memory. Different training histories and runtime paths limit claims about architecture or optimized serving. See the [comparison guide](docs/decision3.md).
+
 ## Smaller results checkout
 
 Keep reports, aggregate summaries, figures, demos and linked release evidence in the working tree. Move 1,448 detailed records to a checksum-pinned optional download, preserving their original contents and public history. The evidence helper restores prerequisites automatically for the head and decision comparisons. See the [results guide](results/README.md).

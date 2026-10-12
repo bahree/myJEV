@@ -13,6 +13,15 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root',type=Path,default=Path('results/candidate-head-v1'))
     args=parser.parse_args();root=args.root;sources={}
+    from fetch_evidence import require_evidence, require_inputs
+    if root == Path('results/candidate-head-v1'):
+        require_evidence('records')
+    require_inputs([root/name for name in [
+        'diagnostic/tiny-fit.json','pilot/complete.json','pilot/reload.json',
+        'main/complete.json','main/initialization.json','main/raw-metrics.json',
+        'main/temperature-metrics.json','main/validation.json','main/demos.json',
+        'main/latency.json','main/calibrated-reload.json']],
+        'For the published study, run python scripts/fetch_evidence.py --bundle records and use the default --root. Custom roots need their own completed run records.')
     def read(name):
         path=root/name;sources[path.as_posix()]=hashlib.sha256(path.read_bytes()).hexdigest()
         return json.loads(path.read_text())

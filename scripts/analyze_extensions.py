@@ -78,5 +78,8 @@ def analyze():
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--extract',action='store_true');args=parser.parse_args()
+    if not args.extract:
+        from fetch_evidence import require_evidence
+        require_evidence('controls')
     if args.extract: extract()
     analyze()

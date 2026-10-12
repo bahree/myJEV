@@ -15,6 +15,8 @@ OUTPUT = ROOT / 'results/review-teaching-v1'
 
 
 def main():
+    from fetch_evidence import require_evidence
+    require_evidence('records', ROOT)
     OUTPUT.mkdir(parents=True, exist_ok=True)
     sources = []
     trace = []

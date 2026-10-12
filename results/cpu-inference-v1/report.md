@@ -1,5 +1,7 @@
 # CPU and GPU container checks
 
+Reader note: the commands below retain the model revisions used for these CPU measurements. The current [model guide](../../docs/models.md) uses later documentation revisions with identical runtime files, including `1c956c89d21c0ab136e98ffe66a16752fa37d823` for supervised 0.8B. The historical pin and measurements below are unchanged.
+
 Version 0.1.4 adds automatic device selection. Visible CUDA is selected first; otherwise supported BF16 releases load on CPU with a warning. An explicit CUDA request remains strict. NF4 9B CPU loading fails before the backbone loads. Model weights, saved precision and calibration files are unchanged.
 
 The [publication receipt](../container-registry-v4/publication.json) pins both Docker Hub images and public source `a242d9cf4194a591f922e04abfc6075ee82c38cc`. Both are pullable without credentials. These checks ran on Linux with an AMD EPYC 7413 CPU (eight logical processors available), 62 GiB host RAM and three 24 GB A30 GPUs. No native Windows or Mac host was available.
