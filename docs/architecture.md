@@ -162,7 +162,7 @@ A numeric readout labels options with identifiers such as `[0]`, `[1]` and `[12]
 
 An identifier may span several tokens. We therefore need a score for the complete identifier, including its closing bracket. Each token has a probability conditioned on the prompt and any earlier tokens in that identifier. Multiplying those probabilities gives the full suffix probability. In code we add their logarithms, which makes the same calculation easier to work with numerically. For a suffix with tokens $u_1,\ldots,u_m$, the equations are:
 
-$$s_i=\sum_{t=1}^{m_i}\log P(u_t\mid\mathrm{prompt},u_{<t}),\qquad
+$$s_i=\sum_{t=1}^{m_i}\log P(u_t\mid\mathrm{prompt},u_{\lt t}),\qquad
 p_i=\frac{\exp(s_i)}{\sum_j\exp(s_j)}.$$
 
 Here, `i` identifies the candidate, `m_i` counts its suffix tokens, and `u_<t` means the tokens before position `t` in that suffix. The first equation computes a complete suffix score `s_i`. The second normalizes those scores across the candidates to produce `p_i`.
